@@ -1,0 +1,2546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>1.3 नेपालको आर्थिक अवस्था र चालु आवधिक योजना सम्बन्धी</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>1.3 नेपालको आर्थिक अवस्था र चालु आवधिक योजना सम्बन्धी</h1>
+                        <div class="subtitle">Technical Quiz</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">0</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" id="restart-btn">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+const quizConfig = {
+  "quizId": "1-3",
+  "quizTitle": "1.3 नेपालको आर्थिक अवस्था र चालु आवधिक योजना सम्बन्धी",
+  "displayTitle": "1.3 नेपालको आर्थिक अवस्था र चालु आवधिक योजना सम्बन्धी",
+  "topicName": "Technical Quiz",
+  "questionsPerPage": 5
+};
+const rawQuestions = [
+  {
+    "q": "आर्थिक सर्वेक्षण २०८०/८१ अनुसार नेपालको आर्थिक वृद्धिदर कति प्रतिशत रहेको छ?",
+    "options": [
+      "३.८७%",
+      "४.५%",
+      "५.०%",
+      "६.०%"
+    ],
+    "answer": 0,
+    "explanation": "आर्थिक सर्वेक्षण २०८०/८१ अनुसार नेपालको आर्थिक वृद्धिदर ३.८७% रहेको छ। स्रोत: अर्थ मन्त्रालय, नेपाल सरकार"
+  },
+  {
+    "q": "विश्व बैंक अनुसार नेपालको प्रतिव्यक्ति आय (GDP per capita) २०२४ मा कति अमेरिकी डलर रहेको छ?",
+    "options": [
+      "$१,२००",
+      "$१,४५६",
+      "$१,६००",
+      "$१,८००"
+    ],
+    "answer": 1,
+    "explanation": "विश्व बैंक तथा NPC अनुसार नेपालको प्रतिव्यक्ति आय २०२४ मा $१,४५६ रहेको छ (१६औं योजनाको आधार वर्ष तथ्यांक)। स्रोत: World Bank / NPC"
+  },
+  {
+    "q": "नेपाल राष्ट्र बैंक अनुसार २०२४/२५ मा नेपालको विदेशी मुद्रा सञ्चिति कति अमेरिकी डलर रहेको छ?",
+    "options": [
+      "$१५.२६ बिलियन",
+      "$१७.५० बिलियन",
+      "$१९.५० बिलियन",
+      "$२२.४७ बिलियन"
+    ],
+    "answer": 2,
+    "explanation": "नेपाल राष्ट्र बैंक अनुसार विदेशी मुद्रा सञ्चिति $१९.५० बिलियन रहेको छ। स्रोत: Nepal Rastra Bank"
+  },
+  {
+    "q": "नेपाल राष्ट्र बैंक अनुसार २०२४/२५ मा मुद्रास्फीति कति प्रतिशत रहेको छ?",
+    "options": [
+      "३.५७%",
+      "४.०६%",
+      "५.४%",
+      "४.१%"
+    ],
+    "answer": 3,
+    "explanation": "नेपाल राष्ट्र बैंक अनुसार २०२४/२५ मा वार्षिक औसत मुद्रास्फीति ४.१% रहेको छ। स्रोत: Nepal Rastra Bank Annual Report"
+  },
+  {
+    "q": "नेपालको कुल जलविद्युत् क्षमता कति मेगावाट अनुमान गरिएको छ?",
+    "options": [
+      "८३,००० मेगावाट",
+      "५०,००० मेगावाट",
+      "३०,००० मेगावाट",
+      "१,००,००० मेगावाट"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको कुल सैद्धान्तिक जलविद्युत् क्षमता ८३,००० मेगावाट अनुमान गरिएको छ, जसमध्ये ४३,००० मेगावाट प्राविधिक र आर्थिक रूपमा व्यवहारिक मानिएको छ। स्रोत: WECS / NEA"
+  },
+  {
+    "q": "विश्व बैंक अनुसार २०२४/२५ मा नेपालको चालु खाता बचत (Current Account Surplus) GDP को कति प्रतिशत रहेको छ?",
+    "options": [
+      "३.९%",
+      "६.७%",
+      "८.५%",
+      "१०.२%"
+    ],
+    "answer": 1,
+    "explanation": "विश्व बैंक अनुसार २०२४/२५ मा नेपालको चालु खाता बचत GDP को ६.७% रहेको छ। स्रोत: World Bank Nepal Development Update"
+  },
+  {
+    "q": "नेपाल राष्ट्र बैंक अनुसार २०२४/२५ मा रेमिट्यान्स प्रवाह कति प्रतिशतले वृद्धि भएको छ?",
+    "options": [
+      "१०.५%",
+      "१२.८%",
+      "१६.३%",
+      "२०.५%"
+    ],
+    "answer": 2,
+    "explanation": "नेपाल राष्ट्र बैंक अनुसार २०२४/२५ मा रेमिट्यान्स प्रवाह १६.३% ले वृद्धि भएको छ। स्रोत: Nepal Rastra Bank"
+  },
+  {
+    "q": "आर्थिक सर्वेक्षण २०८०/८१ अनुसार नेपालको कृषि क्षेत्रको वृद्धिदर कति प्रतिशत रहेको छ?",
+    "options": [
+      "२.५%",
+      "२.८%",
+      "३.०%",
+      "३.०५%"
+    ],
+    "answer": 3,
+    "explanation": "आर्थिक सर्वेक्षण २०८०/८१ अनुसार नेपालको कृषि क्षेत्रको वृद्धिदर ३.०५% रहेको छ। स्रोत: Ministry of Finance, Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजना (२०८१/८२–२०८५/८६) को दृष्टिकोण (Vision) के हो?",
+    "options": [
+      "सुशासन, सामाजिक न्याय, समृद्धि",
+      "समृद्ध नेपाल, सुखी नेपाली",
+      "विकास र समृद्धि",
+      "आर्थिक क्रान्ति र रूपान्तरण"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनाको दृष्टिकोण 'सुशासन, सामाजिक न्याय र समृद्धि' हो। स्रोत: NPC Nepal (Confirmed: Rising Nepal, Himalaya Times)"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनाको अवधि कति वर्षको हो र कहिलेदेखि कहिलेसम्म?",
+    "options": [
+      "३ वर्ष",
+      "५ वर्ष",
+      "४ वर्ष",
+      "६ वर्ष"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजना ५ वर्षको हो। यसको अवधि २०८१/८२ देखि २०८५/८६ सम्म रहेको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनाको लक्षित औसत आर्थिक वृद्धिदर कति प्रतिशत हो?",
+    "options": [
+      "५.५%",
+      "६.५%",
+      "७.३%",
+      "८.०%"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनाको लक्षित औसत आर्थिक वृद्धिदर ७.३% हो। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "आईएमएफ अनुसार २०२३/२४ मा नेपालको सार्वजनिक ऋण GDP को कति प्रतिशत रहेको छ?",
+    "options": [
+      "४०.५%",
+      "४५.२%",
+      "४७.८%",
+      "४८.३%"
+    ],
+    "answer": 3,
+    "explanation": "आईएमएफ अनुसार २०२३/२४ मा नेपालको सार्वजनिक ऋण GDP को ४८.३% रहेको छ। स्रोत: IMF Debt Sustainability Analysis"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनाको मुख्य उद्देश्य (Objective) के हो?",
+    "options": [
+      "संरचनात्मक रूपान्तरणमार्फत समृद्धि",
+      "कृषि विकास र खाद्य सुरक्षा",
+      "पर्यटन प्रवर्द्धन र रोजगारी",
+      "औद्योगिक विकास र निर्यात"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनाको मुख्य उद्देश्य संरचनात्मक रूपान्तरण मार्फत सुशासन, सामाजिक न्याय र समृद्धि हासिल गर्नु हो। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा गरिबीको रेखामुनिको जनसंख्या कति प्रतिशतमा झार्ने लक्ष्य छ?",
+    "options": [
+      "१५%",
+      "१२%",
+      "१०%",
+      "८%"
+    ],
+    "answer": 1,
+    "explanation": "गरिबीको रेखामुनिको जनसंख्या २०.३% बाट १२% मा झार्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा वार्षिक रोजगारी सिर्जना गर्ने लक्ष्य कति?",
+    "options": [
+      "५ लाख",
+      "८ लाख",
+      "१२ लाख",
+      "१५ लाख"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा वार्षिक १२ लाख रोजगारी सिर्जना गर्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा प्रतिव्यक्ति आय (Per Capita GDP) बढाउने लक्ष्य कति डलर?",
+    "options": [
+      "$१,८००",
+      "$२,०००",
+      "$२,१२०",
+      "$२,३५१"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा प्रतिव्यक्ति आय $२,३५१ पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा मानव विकास सूचकांक (HDI) को लक्ष्य कति राखिएको छ?",
+    "options": [
+      "०.६५०",
+      "०.६५",
+      "०.७०",
+      "०.७५"
+    ],
+    "answer": 0,
+    "explanation": "मानव विकास सूचकांक ०.६०१ बाट ०.६५० पुर्‍याउने लक्ष्य छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा औद्योगिक क्षेत्रको GDP मा योगदान कति प्रतिशत पुर्‍याउने लक्ष्य?",
+    "options": [
+      "१२%",
+      "१५%",
+      "१८%",
+      "२०%"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा औद्योगिक क्षेत्रको GDP मा योगदान १५% पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा कृषि क्षेत्रको GDP मा योगदान घटाउने लक्ष्य कति प्रतिशत?",
+    "options": [
+      "२०%",
+      "२४%",
+      "२२%",
+      "१८%"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा कृषि क्षेत्रको GDP मा योगदान २२% मा झार्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा विदेशी प्रत्यक्ष लगानी (FDI) आकर्षित गर्ने लक्ष्य कति?",
+    "options": [
+      "$१ अर्ब",
+      "$२ अर्ब",
+      "$३ अर्ब",
+      "$४ अर्ब"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा ५ वर्षमा $४ अर्ब विदेशी लगानी आकर्षित गर्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा निर्यात व्यापार बढाउने लक्ष्य कति प्रतिशत?",
+    "options": [
+      "२५%",
+      "३०%",
+      "३५%",
+      "४०%"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा निर्यात व्यापार २५% ले बढाउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा आयात व्यापार घटाउने लक्ष्य कति प्रतिशत?",
+    "options": [
+      "१०%",
+      "१५%",
+      "२०%",
+      "२५%"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा आयात व्यापार १५% ले घटाउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा विद्युत् उत्पादन क्षमता कति मेगावाट पुर्‍याउने लक्ष्य?",
+    "options": [
+      "५,००० मेगावाट",
+      "६,००० मेगावाट",
+      "७,००० मेगावाट",
+      "८,००० मेगावाट"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा विद्युत् उत्पादन क्षमता ७,००० मेगावाट पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा वार्षिक पर्यटक आगमन कति लाख पुर्‍याउने लक्ष्य?",
+    "options": [
+      "१५ लाख",
+      "१८ लाख",
+      "२० लाख",
+      "२२ लाख"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा वार्षिक पर्यटक आगमन २२ लाख पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा सडक सञ्जाल कति किलोमिटर पुर्‍याउने लक्ष्य?",
+    "options": [
+      "३५,००० कि.मी.",
+      "४०,००० कि.मी.",
+      "४५,००० कि.मी.",
+      "५०,००० कि.मी."
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा सडक सञ्जाल ३५,००० किलोमिटर पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा कृषि उत्पादकत्व वृद्धिको लक्ष्य कति प्रतिशत?",
+    "options": [
+      "३.५%",
+      "४.०%",
+      "४.५%",
+      "५.०%"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा कृषि उत्पादकत्व वृद्धिको लक्ष्य ४.०% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा जलविद्युत् निर्यात कति मेगावाटको लक्ष्य?",
+    "options": [
+      "२,००० मेगावाट",
+      "३,००० मेगावाट",
+      "४,००० मेगावाट",
+      "५,००० मेगावाट"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा जलविद्युत् निर्यात ४,००० मेगावाटको लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा इन्टरनेट पहुँचको लक्ष्य कति प्रतिशत पुर्‍याउने?",
+    "options": [
+      "७०%",
+      "७५%",
+      "८५%",
+      "९०%"
+    ],
+    "answer": 3,
+    "explanation": "इन्टरनेट पहुँच ६९.२% बाट ९०% पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा विद्युतीय सेवा पहुँचको लक्ष्य कति प्रतिशत?",
+    "options": [
+      "१००%",
+      "९५%",
+      "९०%",
+      "८५%"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा विद्युतीय सेवा पहुँचको लक्ष्य १००% राखिएको छ। स्रोत: NPC Nepal (Economic Frontline confirmed)"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा सामाजिक सुरक्षा लाभार्थी संख्या कति पुर्‍याउने लक्ष्य?",
+    "options": [
+      "५ लाख",
+      "२० लाख",
+      "५० लाख",
+      "१ करोड"
+    ],
+    "answer": 1,
+    "explanation": "सामाजिक सुरक्षा लाभार्थी संख्या २० लाख पुर्‍याउने लक्ष्य छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा शिक्षाको गुणस्तर सुधारको मुख्य विधि के हो?",
+    "options": [
+      "पाठ्यक्रम सुधार मात्र",
+      "शिक्षक तालिम कार्यक्रम",
+      "सिकाइ उपलब्धि सुधार",
+      "पूर्वाधार विकास"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा शिक्षाको गुणस्तर सुधार सिकाइ उपलब्धि सुधार मार्फत राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा वातावरण अनुकूल विकासको मुख्य लक्ष्य के हो?",
+    "options": [
+      "कार्बन उत्सर्जन मात्र घटाउने",
+      "हरित विकास बाहेक अन्य",
+      "SDG लक्ष्य मात्र",
+      "जलवायु अनुकूलन क्षमता वृद्धि"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा वातावरण अनुकूल विकासको लक्ष्य जलवायु अनुकूलन क्षमता वृद्धि गर्ने राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा लैङ्गिक समानताको मुख्य लक्ष्य के हो?",
+    "options": [
+      "महिला सहभागिता र सशक्तीकरण",
+      "लैङ्गिक हिंसा न्यूनीकरण मात्र",
+      "महिला आर्थिक सशक्तिकरण मात्र",
+      "महिला साक्षरता मात्र"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा लैङ्गिक समानताको लक्ष्य महिला सहभागिता वृद्धि र सशक्तिकरण मार्फत राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा युवा रोजगारी कार्यक्रमको मुख्य रणनीति के हो?",
+    "options": [
+      "सीप विकास तालिम मात्र",
+      "स्वरोजगार प्रवर्द्धन",
+      "विदेशी रोजगारी व्यवस्थापन",
+      "सरकारी रोजगारी विस्तार"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा युवा रोजगारीको मुख्य रणनीति स्वरोजगार प्रवर्द्धन राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा सहरी विकासको मुख्य लक्ष्य के हो?",
+    "options": [
+      "स्मार्ट सिटी मात्र",
+      "सहरी पूर्वाधार विस्तार",
+      "दिगो सहरी विकास",
+      "सहरी गरिबी उन्मूलन"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा सहरी विकासको लक्ष्य दिगो सहरी विकास राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा अनुसन्धान र विकास (R&D) मा लगानीको लक्ष्य GDP को कति?",
+    "options": [
+      "०.५%",
+      "०.७%",
+      "०.९%",
+      "१.०%"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा R&D मा लगानी GDP को १.०% पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा सूचना प्रविधि क्षेत्रको मुख्य लक्ष्य के हो?",
+    "options": [
+      "डिजिटल साक्षरता र IT विकास",
+      "इन्टरनेट पहुँच विस्तार मात्र",
+      "सफ्टवेयर निर्यात वृद्धि",
+      "कृत्रिम बुद्धिमत्ता विकास"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा आइटी पार्क स्थापना र डिजिटल साक्षरता वृद्धि लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा वन क्षेत्रको मुख्य व्यवस्थापन लक्ष्य के हो?",
+    "options": [
+      "वन क्षेत्र मात्र वृद्धि गर्ने",
+      "दिगो वन व्यवस्थापन",
+      "सामुदायिक वन मात्र विस्तार",
+      "काठ निर्यात वृद्धि"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा वन क्षेत्रको लक्ष्य दिगो वन व्यवस्थापन राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा खाद्य सुरक्षाको मुख्य लक्ष्य के हो?",
+    "options": [
+      "खाद्य उत्पादन वृद्धि मात्र",
+      "खाद्य भण्डारण मात्र",
+      "आत्मनिर्भर खाद्य व्यवस्था कायम",
+      "खाद्य आयात घटाउने मात्र"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा खाद्य सुरक्षाको लक्ष्य आत्मनिर्भर खाद्य व्यवस्था कायम गर्ने राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा जलस्रोत व्यवस्थापनको प्राथमिकता के हो?",
+    "options": [
+      "सिँचाइ विस्तार मात्र",
+      "पिउने पानी आपूर्ति मात्र",
+      "जलविद्युत् उत्पादन मात्र",
+      "सिँचाइ, खानेपानी र जलविद्युत्"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा जलस्रोत व्यवस्थापनमा सिँचाइ, पिउने पानी र जलविद्युत् सबै समेटिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा स्वास्थ्य क्षेत्रको मुख्य लक्ष्य के हो?",
+    "options": [
+      "स्वास्थ्य बिमा विस्तार",
+      "अस्पताल पूर्वाधार मात्र",
+      "चिकित्सक संख्या वृद्धि",
+      "रोग नियन्त्रण"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा स्वास्थ्य क्षेत्रको मुख्य लक्ष्य स्वास्थ्य बिमा सार्वभौमिकता राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा शिक्षा क्षेत्रको मुख्य लक्ष्य के हो?",
+    "options": [
+      "साक्षरता दर मात्र",
+      "गुणस्तरीय शिक्षा प्रदान",
+      "प्राविधिक शिक्षा मात्र",
+      "विद्यालय पूर्वाधार"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा शिक्षा क्षेत्रको लक्ष्य गुणस्तरीय शिक्षा प्रदान गर्ने राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा यातायात क्षेत्रको मुख्य लक्ष्य के हो?",
+    "options": [
+      "सडक सञ्जाल मात्र",
+      "रेलमार्ग निर्माण",
+      "सार्वजनिक यातायात सुधार",
+      "हवाई सेवा विस्तार"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा यातायात क्षेत्रको लक्ष्य सार्वजनिक यातायात सुधार र सडक सञ्जाल विस्तार राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा ऊर्जा क्षेत्रको समग्र लक्ष्य के हो?",
+    "options": [
+      "विद्युत् उत्पादन मात्र",
+      "विद्युत् निर्यात मात्र",
+      "नवीकरणीय ऊर्जा मात्र",
+      "उत्पादन, निर्यात र नवीकरणीय ऊर्जा"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा ऊर्जा क्षेत्रको लक्ष्यमा विद्युत् उत्पादन, निर्यात र नवीकरणीय ऊर्जा सबै समेटिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा कृषि आधुनिकीकरणको प्रमुख रणनीति के हो?",
+    "options": [
+      "कृषि यान्त्रिकीकरण",
+      "सिँचाइ विस्तार मात्र",
+      "बीउबिजन सुधार मात्र",
+      "रासायनिक मल प्रयोग"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा कृषि आधुनिकीकरणको प्रमुख रणनीति यान्त्रिकीकरण राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा उद्योग क्षेत्रमा कति औद्योगिक क्षेत्र स्थापना गर्ने लक्ष्य?",
+    "options": [
+      "१०० औद्योगिक क्षेत्र",
+      "१४० औद्योगिक क्षेत्र",
+      "२०० औद्योगिक क्षेत्र",
+      "५० औद्योगिक क्षेत्र"
+    ],
+    "answer": 1,
+    "explanation": "उद्योग क्षेत्रमा १४० औद्योगिक क्षेत्र स्थापना गर्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा वाणिज्य नीति कस्तो रहेको छ?",
+    "options": [
+      "आयात प्रतिस्थापन मात्र",
+      "निर्यात प्रवर्द्धन मात्र",
+      "निर्यात प्रवर्द्धन र आयात प्रतिस्थापन",
+      "मुक्त व्यापार नीति"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा वाणिज्य नीति निर्यात प्रवर्द्धन र आयात प्रतिस्थापन केन्द्रित रहेको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा वित्तीय समावेशीकरणको लक्ष्य कति प्रतिशत?",
+    "options": [
+      "५०%",
+      "६०%",
+      "७०%",
+      "८०%"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा वित्तीय समावेशीकरणको लक्ष्य ८०% पुर्‍याउने राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा गरिबीको रेखामुनिको जनसंख्या कति प्रतिशतमा झार्ने लक्ष्य?",
+    "options": [
+      "१२%",
+      "१५%",
+      "१८%",
+      "२०%"
+    ],
+    "answer": 0,
+    "explanation": "गरिबी २०.३% बाट १२% मा झार्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा Gini Coefficient (आय असमानता) कति पुर्‍याउने लक्ष्य?",
+    "options": [
+      "०.२०",
+      "०.२२",
+      "०.२५",
+      "०.२८"
+    ],
+    "answer": 1,
+    "explanation": "Gini Coefficient ०.२४ बाट ०.२२ मा झार्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपाल राष्ट्र बैंक अनुसार २०२४/२५ मा विदेशी मुद्रा सञ्चितिले कति महिनाको आयात धान्न सक्ने अवस्था छ?",
+    "options": [
+      "१२ महिना",
+      "१५ महिना",
+      "१८.२ महिना",
+      "२१ महिना"
+    ],
+    "answer": 2,
+    "explanation": "नेपाल राष्ट्र बैंक अनुसार २०२४/२५ मा विदेशी मुद्रा सञ्चितिले १८.२ महिनाको आयात धान्न सक्ने छ। स्रोत: Nepal Rastra Bank"
+  },
+  {
+    "q": "नेपाल राष्ट्र बैंक अनुसार २०२४/२५ मा रेमिट्यान्स प्रवाह कति अमेरिकी डलर रहेको छ?",
+    "options": [
+      "$८ बिलियन",
+      "$१० बिलियन",
+      "$११ बिलियन",
+      "$१२.६४ बिलियन"
+    ],
+    "answer": 3,
+    "explanation": "नेपाल राष्ट्र बैंक अनुसार २०२४/२५ मा रेमिट्यान्स प्रवाह $१२.६४ बिलियन रहेको छ। स्रोत: Nepal Rastra Bank"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा औद्योगिक क्षेत्रमा रोजगारी सिर्जनाको लक्ष्य कति प्रतिशत?",
+    "options": [
+      "२०%",
+      "२५%",
+      "३०%",
+      "३५%"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा औद्योगिक क्षेत्रमा रोजगारी सिर्जनाको लक्ष्य २०% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा सेवा क्षेत्रमा रोजगारीको लक्ष्य कति प्रतिशत?",
+    "options": [
+      "४०%",
+      "५०%",
+      "६०%",
+      "७०%"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा सेवा क्षेत्रमा रोजगारीको लक्ष्य ५०% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा कृषि क्षेत्रमा रोजगारी घटाउने लक्ष्य कति प्रतिशत?",
+    "options": [
+      "२५%",
+      "२८%",
+      "३०%",
+      "३५%"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा कृषि क्षेत्रमा रोजगारी ३०% मा झार्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा Gender Development Index (GDI) को लक्ष्य कति?",
+    "options": [
+      "०.९०",
+      "०.९२",
+      "०.९५",
+      "०.९६७"
+    ],
+    "answer": 3,
+    "explanation": "Gender Development Index ०.८८५ बाट ०.९६७ पुर्‍याउने लक्ष्य छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा दिगो विकास लक्ष्य (SDG) हासिल गर्ने लक्ष्य वर्ष कति?",
+    "options": [
+      "२०३०",
+      "२०४०",
+      "२०५०",
+      "२०२५"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा दिगो विकास लक्ष्य (SDG) २०३० सम्म हासिल गर्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको LDC (Least Developed Country) बाट स्नातक हुने लक्ष्य वर्ष कति?",
+    "options": [
+      "२०२६",
+      "२०२८",
+      "२०३०",
+      "२०३२"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा LDC बाट २०२८ मा स्नातक हुने लक्ष्य राखिएको छ (पहिले २०२६ थियो, विस्तार गरिएको)। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा औसत आयु (Life Expectancy) वृद्धिको लक्ष्य कति वर्ष?",
+    "options": [
+      "७० वर्ष",
+      "७१ वर्ष",
+      "७३ वर्ष",
+      "७५ वर्ष"
+    ],
+    "answer": 2,
+    "explanation": "औसत आयु ७१.३ वर्षबाट ७३ वर्ष पुर्‍याउने लक्ष्य छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा बेरोजगारी दरसम्बन्धी लक्ष्य के हो?",
+    "options": [
+      "५% मा झार्ने",
+      "७% मा झार्ने",
+      "९% मा झार्ने",
+      "११.४% बाट घटाउने"
+    ],
+    "answer": 3,
+    "explanation": "बेरोजगारी दर ११.४% बाट घटाउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा मातृ मृत्युदर घटाउने लक्ष्य प्रति १,००,००० जीवित जन्ममा कति?",
+    "options": [
+      "७०",
+      "८०",
+      "९०",
+      "१००"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा मातृ मृत्युदर घटाउने लक्ष्य प्रति १,००,००० जीवित जन्ममा ७० राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा कुपोषण दर घटाउने लक्ष्य कति प्रतिशत?",
+    "options": [
+      "१५%",
+      "१८%",
+      "२०%",
+      "२५%"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा कुपोषण दर घटाउने लक्ष्य १८% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा साक्षरता दर वृद्धिको लक्ष्य कति प्रतिशत?",
+    "options": [
+      "९०%",
+      "९५%",
+      "८५%",
+      "९८%"
+    ],
+    "answer": 2,
+    "explanation": "साक्षरता दर ८५% पुर्‍याउने लक्ष्य छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा न्यूनतम ज्याला कति रुपैयाँ पुर्‍याउने लक्ष्य?",
+    "options": [
+      "रु. १५,०००",
+      "रु. १८,०००",
+      "रु. २०,०००",
+      "रु. २५,०००"
+    ],
+    "answer": 3,
+    "explanation": "न्यूनतम ज्याला रु. २५,००० प्रति महिना पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा जलविद्युत् निर्यात बाट वार्षिक कति राजस्व लक्ष्य?",
+    "options": [
+      "रु. ४१ अर्ब",
+      "रु. २५ अर्ब",
+      "रु. ६० अर्ब",
+      "रु. १०० अर्ब"
+    ],
+    "answer": 0,
+    "explanation": "जलविद्युत् निर्यातबाट वार्षिक रु. ४१ अर्ब राजस्व लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा सिँचाइ क्षेत्र विस्तारको लक्ष्य कति हेक्टर?",
+    "options": [
+      "१० लाख हेक्टर",
+      "१२ लाख हेक्टर",
+      "१५ लाख हेक्टर",
+      "१८ लाख हेक्टर"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा सिँचाइ क्षेत्र विस्तारको लक्ष्य १२ लाख हेक्टर राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा सडक सञ्जालमा सबै मौसम यातायात सुचारुको लक्ष्य कति?",
+    "options": [
+      "७०%",
+      "७५%",
+      "८०%",
+      "८५%"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा सडक सञ्जालमा सबै मौसमी यातायात सुचारुको लक्ष्य ८०% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा विद्युत् पहुँच र प्रतिव्यक्ति खपत लक्ष्य के हो?",
+    "options": [
+      "९५% पहुँच, ५०० KWh",
+      "९८% पहुँच, ६०० KWh",
+      "१००% पहुँच, ६०० KWh",
+      "१००% पहुँच, ७०० KWh"
+    ],
+    "answer": 3,
+    "explanation": "विद्युत् पहुँच १००% र प्रतिव्यक्ति खपत ७०० KWh पुर्‍याउने लक्ष्य छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा खानेपानी तथा सरसफाइ सेवा पहुँचको लक्ष्य कति?",
+    "options": [
+      "१००%",
+      "९५%",
+      "९०%",
+      "८५%"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा खानेपानी तथा सरसफाइ सेवा पहुँचको लक्ष्य १००% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा इन्टरनेट पहुँचको लक्ष्य कति प्रतिशत?",
+    "options": [
+      "७५%",
+      "९०%",
+      "८०%",
+      "९५%"
+    ],
+    "answer": 1,
+    "explanation": "इन्टरनेट पहुँच ९०% पुर्‍याउने लक्ष्य छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा मोबाइल फोन सेवा पहुँचको लक्ष्य कति?",
+    "options": [
+      "९०%",
+      "९५%",
+      "१००%",
+      "९८%"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा मोबाइल फोन सेवा पहुँचको लक्ष्य १००% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा वन क्षेत्र (Forest Cover) कायम राख्ने लक्ष्य कति?",
+    "options": [
+      "३५%",
+      "३८%",
+      "४०%",
+      "४५%"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा वन क्षेत्र ४५% कायम राख्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा कार्बन उत्सर्जन घटाउने लक्ष्य कति?",
+    "options": [
+      "१५%",
+      "२०%",
+      "२५%",
+      "३०%"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा कार्बन उत्सर्जन घटाउने लक्ष्य १५% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा नवीकरणीय ऊर्जामा लगानी वृद्धिको लक्ष्य कति?",
+    "options": [
+      "२०%",
+      "२५%",
+      "३०%",
+      "३५%"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा नवीकरणीय ऊर्जामा लगानी वृद्धिको लक्ष्य २५% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा सहरी जनसंख्या वृद्धिको लक्ष्य कति प्रतिशत?",
+    "options": [
+      "३०%",
+      "३५%",
+      "४०%",
+      "४५%"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा सहरी जनसंख्या ४०% पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा 'स्वास्थ्य सुविधा आधा घण्टाभित्र पहुँच' को लक्ष्य?",
+    "options": [
+      "७५%",
+      "८०%",
+      "८५%",
+      "९०%"
+    ],
+    "answer": 3,
+    "explanation": "स्वास्थ्य सुविधा आधा घण्टाभित्र पहुँच ९०% पुर्‍याउने लक्ष्य छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा रोजगारीको वृद्धिदर लक्ष्य कति?",
+    "options": [
+      "६.५%",
+      "७.०%",
+      "७.५%",
+      "८.०%"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा रोजगारीको वृद्धिदर लक्ष्य ६.५% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा युवा बेरोजगारी दर घटाउने लक्ष्य कति?",
+    "options": [
+      "१५%",
+      "१८%",
+      "२०%",
+      "२५%"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा युवा बेरोजगारी दर २०% मा झार्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा औद्योगिक उत्पादन वृद्धिको लक्ष्य कति?",
+    "options": [
+      "६%",
+      "७%",
+      "८%",
+      "९%"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा औद्योगिक उत्पादन वृद्धिको लक्ष्य ९% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा सेवा क्षेत्र वृद्धिको लक्ष्य कति?",
+    "options": [
+      "७.५%",
+      "८.०%",
+      "८.५%",
+      "९.०%"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा सेवा क्षेत्र वृद्धिको लक्ष्य ७.५% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा कृषि क्षेत्र वृद्धिको लक्ष्य कति?",
+    "options": [
+      "३.०%",
+      "३.५%",
+      "४.०%",
+      "४.५%"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा कृषि क्षेत्र वृद्धिको लक्ष्य ३.५% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा पूँजीगत खर्च वृद्धिको लक्ष्य कति?",
+    "options": [
+      "१५%",
+      "१८%",
+      "२०%",
+      "२५%"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा पूँजीगत खर्च वृद्धिको लक्ष्य २०% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा चालु खर्च घटाउने लक्ष्य कति?",
+    "options": [
+      "५%",
+      "८%",
+      "१०%",
+      "१२%"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा चालु खर्च १२% ले घटाउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा राजस्व सङ्कलन वृद्धिको लक्ष्य कति?",
+    "options": [
+      "२०%",
+      "२५%",
+      "३०%",
+      "३५%"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा राजस्व सङ्कलन वृद्धिको लक्ष्य २०% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा राजस्व GDP अनुपात वृद्धिको लक्ष्य कति?",
+    "options": [
+      "१५%",
+      "१८%",
+      "२०%",
+      "२२%"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा राजस्व GDP अनुपात १८% पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजना कति वर्षको अवधिभित्र विदेशी लगानी आकर्षित गर्ने लक्ष्य?",
+    "options": [
+      "२ वर्ष",
+      "३ वर्ष",
+      "५ वर्ष",
+      "१० वर्ष"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजना ५ वर्षको अवधिभित्र $४ अर्ब विदेशी लगानी आकर्षित गर्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा घरेलु लगानी वृद्धिको लक्ष्य कति?",
+    "options": [
+      "१५%",
+      "२०%",
+      "२५%",
+      "३०%"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा घरेलु लगानी वृद्धिको लक्ष्य ३०% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा बचत दर वृद्धिको लक्ष्य कति?",
+    "options": [
+      "२५%",
+      "३०%",
+      "३५%",
+      "४०%"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा बचत दर वृद्धिको लक्ष्य २५% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा लगानी दर (Investment Rate) को लक्ष्य कति?",
+    "options": [
+      "२५%",
+      "३०%",
+      "३५%",
+      "४०%"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा लगानी दर ३०% पुर्‍याउने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा निर्यात व्यापार वृद्धिको औसत वार्षिक लक्ष्य कति?",
+    "options": [
+      "५%",
+      "६%",
+      "७%",
+      "८%"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको १६औं आवधिक योजनामा निर्यात व्यापार वृद्धिको औसत वार्षिक लक्ष्य ७% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा आयात व्यापार घटाउने औसत वार्षिक लक्ष्य कति?",
+    "options": [
+      "२%",
+      "३%",
+      "४%",
+      "५%"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा आयात व्यापार घटाउने औसत वार्षिक लक्ष्य ५% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा व्यापार घाटा घटाउने लक्ष्य कति?",
+    "options": [
+      "१५%",
+      "२०%",
+      "२५%",
+      "३०%"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा व्यापार घाटा घटाउने लक्ष्य १५% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा विदेशी मुद्रा सञ्चिति कति महिनाको आयात धान्ने लक्ष्य?",
+    "options": [
+      "१५ महिना",
+      "१८ महिना",
+      "२० महिना",
+      "२४ महिना"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा विदेशी मुद्रा सञ्चिति १८ महिनाको आयात धान्न सक्ने लक्ष्य राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा रेमिट्यान्स GDP को कति प्रतिशत कायम राख्ने लक्ष्य?",
+    "options": [
+      "१५-१८%",
+      "१८-२०%",
+      "२२-२४%",
+      "२५-२८%"
+    ],
+    "answer": 2,
+    "explanation": "रेमिट्यान्स प्रवाह GDP को २२-२४% कायम राख्ने लक्ष्य छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा पर्यटन आगमन वृद्धिको औसत वार्षिक लक्ष्य कति?",
+    "options": [
+      "१०%",
+      "१२%",
+      "१५%",
+      "२०%"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा पर्यटन आगमन वृद्धिको औसत वार्षिक लक्ष्य २०% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा पर्यटनबाट आम्दानी वृद्धिको लक्ष्य कति?",
+    "options": [
+      "रु. १५० अर्ब",
+      "रु. २०० अर्ब",
+      "रु. २५० अर्ब",
+      "रु. ३०० अर्ब"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १६औं आवधिक योजनामा पर्यटनबाट आम्दानी वृद्धिको लक्ष्य रु. १५० अर्ब राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा कृषि उत्पादन वृद्धिको लक्ष्य कति?",
+    "options": [
+      "२.५%",
+      "३.०%",
+      "३.५%",
+      "४.०%"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको १६औं आवधिक योजनामा कृषि उत्पादन वृद्धिको लक्ष्य ३.०% राखिएको छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा कृषि उत्पादकत्व (प्रमुख बाली) को लक्ष्य कति?",
+    "options": [
+      "३.५ मेट्रिक टन/हे.",
+      "३.६ मेट्रिक टन/हे.",
+      "३.७ मेट्रिक टन/हे.",
+      "४.० मेट्रिक टन/हे."
+    ],
+    "answer": 2,
+    "explanation": "प्रमुख कृषि बालीको उत्पादकत्व ३.७ मेट्रिक टन प्रतिहेक्टर पुर्‍याउने लक्ष्य छ। स्रोत: NPC Nepal"
+  },
+  {
+    "q": "नेपालको १६औं आवधिक योजनामा औद्योगिक उत्पादन वृद्धिको औसत वार्षिक लक्ष्य कति?",
+    "options": [
+      "७%",
+      "८%",
+      "९%",
+      "१०%"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको १६औं आवधिक योजनामा औद्योगिक उत्पादन वृद्धिको औसत वार्षिक लक्ष्य १०% राखिएको छ। स्रोत: NPC Nepal"
+  }
+];
+
+const questions = rawQuestions.map((item, index) => {
+    const options = Array.isArray(item.options) ? item.options.map(option => String(option)) : [];
+    const parsedAnswer = Number(item.answer);
+    const answerIndex = Number.isInteger(parsedAnswer) && parsedAnswer >= 0 ? parsedAnswer : 0;
+    return {
+        q: String(item.q ?? item.question ?? `Question ${index + 1}`),
+        options,
+        answer: Math.min(answerIndex, Math.max(options.length - 1, 0)),
+        explanation: String(item.explanation ?? 'No explanation provided.')
+    };
+}).filter(question => question.q && question.options.length > 0);
+
+const quizEl = document.getElementById('quiz');
+const scoreEl = document.getElementById('score');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+const progressTextEl = document.getElementById('progress-text');
+const currentScoreEl = document.getElementById('current-score');
+const questionsAnsweredEl = document.getElementById('questions-answered');
+const questionsTotalEl = document.getElementById('questions-total');
+const accuracyEl = document.getElementById('accuracy');
+const resultsEl = document.getElementById('results');
+const resultsBody = document.getElementById('results-body');
+const streakBadge = document.getElementById('streak-badge');
+const correctSound = document.getElementById('correct-sound');
+const wrongSound = document.getElementById('wrong-sound');
+const restartBtn = document.getElementById('restart-btn');
+
+const QUESTIONS_PER_PAGE = Math.max(1, Number(quizConfig.questionsPerPage) || 5);
+const ANSWER_DELAY = 700;
+let currentIndex = 0;
+let score = 0;
+let timerSeconds = 0;
+let timerInterval = null;
+let currentStreak = 0;
+let maxStreak = 0;
+let quizFinished = false;
+let pendingTimeout = null;
+let userAnswers = questions.map(() => null);
+
+questionsTotalEl.textContent = questions.length;
+progressTextEl.textContent = `0/${questions.length}`;
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timerSeconds += 1;
+        timerEl.textContent = formatTime(timerSeconds);
+    }, 1000);
+}
+
+function updateStats() {
+    const answeredCount = userAnswers.filter(answer => answer !== null).length;
+    const correctCount = userAnswers.filter(answer => answer && answer.isCorrect).length;
+    currentScoreEl.textContent = String(correctCount);
+    questionsAnsweredEl.textContent = String(answeredCount);
+    accuracyEl.textContent = `${answeredCount ? Math.round((correctCount / answeredCount) * 100) : 0}%`;
+    progressTextEl.textContent = `${answeredCount}/${questions.length}`;
+    progressEl.style.width = `${questions.length ? (answeredCount / questions.length) * 100 : 0}%`;
+}
+
+function updateStreak(isCorrect) {
+    if (isCorrect) {
+        currentStreak += 1;
+        maxStreak = Math.max(maxStreak, currentStreak);
+        if (currentStreak >= 3) {
+            streakBadge.textContent = `Streak: ${currentStreak}`;
+            streakBadge.classList.add('show');
+            setTimeout(() => streakBadge.classList.remove('show'), 1800);
+        }
+    } else {
+        currentStreak = 0;
+    }
+}
+
+function playSound(audioEl) {
+    try {
+        audioEl.currentTime = 0;
+        audioEl.play().catch(() => {});
+    } catch (error) {
+        // Ignore autoplay restrictions.
+    }
+}
+
+function drawConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = Array.from({ length: 150 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        vx: (Math.random() - 0.5) * 4,
+        vy: Math.random() * 3 + 2,
+        color: ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'][Math.floor(Math.random() * 5)],
+        size: Math.random() * 6 + 2,
+        rotation: Math.random() * 360
+    }));
+
+    let animationId;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+        particles.forEach(particle => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.rotation += 2;
+            if (particle.y < canvas.height + 20) {
+                active = true;
+                ctx.save();
+                ctx.translate(particle.x, particle.y);
+                ctx.rotate((particle.rotation * Math.PI) / 180);
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size);
+                ctx.restore();
+            }
+        });
+        if (active) {
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+    animate();
+    setTimeout(() => cancelAnimationFrame(animationId), 5000);
+}
+
+function createActionButton(label, className, onClick) {
+    const button = document.createElement('button');
+    button.className = className;
+    button.innerHTML = label;
+    button.addEventListener('click', onClick);
+    return button;
+}
+
+function renderQuestion() {
+    if (quizFinished) return;
+    quizEl.innerHTML = '';
+    scoreEl.textContent = '';
+    resultsEl.classList.add('hidden');
+
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    const pageEnd = Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length);
+
+    for (let questionIndex = pageStart; questionIndex < pageEnd; questionIndex += 1) {
+        const question = questions[questionIndex];
+        const questionWrapper = document.createElement('div');
+        questionWrapper.className = 'question-wrapper';
+
+        const questionCard = document.createElement('div');
+        questionCard.className = 'question-card';
+        questionCard.dataset.index = String(questionIndex);
+
+        const questionHeader = document.createElement('div');
+        questionHeader.className = 'question-header';
+        questionHeader.innerHTML = `
+            <div class="question-number">${questionIndex + 1}</div>
+            <div class="question-text">${question.q}</div>
+        `;
+
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'options';
+
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.textContent = question.explanation;
+
+        const shuffledOptions = shuffle(question.options.map((text, optionIndex) => ({ text, optionIndex })));
+
+        shuffledOptions.forEach((option, displayIndex) => {
+            const button = document.createElement('button');
+            button.className = 'option-btn';
+            button.innerHTML = `
+                <span class="option-indicator">${String.fromCharCode(65 + displayIndex)}</span>
+                <span>${option.text}</span>
+            `;
+            button.addEventListener('click', () => handleAnswer(questionIndex, option.optionIndex, option.text, button, optionsContainer, explanationDiv));
+            optionsContainer.appendChild(button);
+        });
+
+        questionCard.appendChild(questionHeader);
+        questionCard.appendChild(optionsContainer);
+        questionCard.appendChild(explanationDiv);
+        questionWrapper.appendChild(questionCard);
+        quizEl.appendChild(questionWrapper);
+    }
+
+    const actionBar = document.createElement('div');
+    actionBar.className = 'action-bar';
+    actionBar.appendChild(createActionButton('⊘ Skip Remaining', 'btn btn-skip', skipRemainingQuestionsOnPage));
+    quizEl.appendChild(actionBar);
+}
+
+function lockOptions(optionsContainer) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        button.disabled = true;
+    });
+}
+
+function revealCorrectAnswer(optionsContainer, correctIndex, questionIndex) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        const optionText = button.querySelector('span:last-child').textContent;
+        if (optionText === questions[questionIndex].options[correctIndex]) {
+            button.classList.add('correct');
+        }
+    });
+}
+
+function moveNext() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+
+    if (currentIndex < questions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+        updateStats();
+    } else {
+        finishQuiz();
+    }
+}
+
+function getCurrentPageBounds() {
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    return {
+        pageStart,
+        pageEnd: Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length)
+    };
+}
+
+function isCurrentPageComplete() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] === null) return false;
+    }
+    return true;
+}
+
+function scheduleNextStep() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+    }
+    pendingTimeout = setTimeout(() => {
+        if (isCurrentPageComplete()) {
+            const { pageEnd } = getCurrentPageBounds();
+            if (pageEnd >= questions.length) {
+                finishQuiz();
+            } else {
+                currentIndex = pageEnd;
+                renderQuestion();
+                updateStats();
+            }
+        }
+    }, ANSWER_DELAY);
+}
+
+function skipRemainingQuestionsOnPage() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] !== null) continue;
+        const card = quizEl.querySelector(`.question-card[data-index="${i}"]`);
+        if (!card) continue;
+        const explanationDiv = card.querySelector('.explanation');
+        const optionsContainer = card.querySelector('.options');
+        skipQuestion(i, explanationDiv, optionsContainer);
+    }
+}
+
+function handleAnswer(questionIndex, selectedIndex, selectedText, clickedButton, optionsContainer, explanationDiv) {
+    if (userAnswers[questionIndex] !== null) return;
+
+    const question = questions[questionIndex];
+    const isCorrect = selectedIndex === question.answer;
+    lockOptions(optionsContainer);
+    revealCorrectAnswer(optionsContainer, question.answer, questionIndex);
+
+    if (!isCorrect) {
+        clickedButton.classList.add('wrong');
+        playSound(wrongSound);
+    } else {
+        clickedButton.classList.add('correct');
+        playSound(correctSound);
+        score += 1;
+    }
+
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText,
+        isCorrect,
+        skipped: false
+    };
+    currentIndex = questionIndex;
+    updateStreak(isCorrect);
+    updateStats();
+    scheduleNextStep();
+}
+
+function skipQuestion(questionIndex, explanationDiv, optionsContainer) {
+    if (userAnswers[questionIndex] !== null) return;
+    lockOptions(optionsContainer);
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText: 'Skipped',
+        isCorrect: false,
+        skipped: true
+    };
+    currentIndex = questionIndex;
+    updateStreak(false);
+    updateStats();
+    scheduleNextStep();
+}
+
+function finishQuiz() {
+    quizFinished = true;
+    clearInterval(timerInterval);
+    quizEl.innerHTML = '';
+
+    const percentage = questions.length ? ((score / questions.length) * 100).toFixed(1) : '0.0';
+    let message = 'Keep learning! You\'ll improve!';
+    let emoji = '📚';
+
+    if (Number(percentage) >= 90) {
+        message = 'Outstanding! You\'re a master!';
+        emoji = '🏆';
+        drawConfetti();
+    } else if (Number(percentage) >= 70) {
+        message = 'Great job! Well done!';
+        emoji = '🌟';
+    } else if (Number(percentage) >= 50) {
+        message = 'Good effort! Keep practicing!';
+        emoji = '💪';
+    }
+
+    scoreEl.innerHTML = `
+        <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+        <div class="score-display">${percentage}%</div>
+        <div class="score-label">${message}</div>
+        <div style="margin-top: 1rem; color: var(--text-secondary);">
+            ${score} correct out of ${questions.length} questions<br>
+            Time: ${formatTime(timerSeconds)} | Best Streak: ${maxStreak}
+        </div>
+    `;
+
+    resultsBody.innerHTML = questions.map((question, index) => {
+        const answer = userAnswers[index];
+        const userAnswer = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.selectedText;
+        const status = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.isCorrect ? 'Correct' : 'Wrong';
+        const statusClass = status.toLowerCase().replace(' ', '-');
+        const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : status === 'Skipped' ? '⊘' : '•';
+        return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${question.q}</td>
+                <td>${userAnswer}</td>
+                <td>${question.options[question.answer] ?? ''}</td>
+                <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                <td class="explanation-cell">${question.explanation}</td>
+            </tr>
+        `;
+    }).join('');
+
+    resultsEl.classList.remove('hidden');
+}
+
+function restartQuiz() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+    clearInterval(timerInterval);
+    currentIndex = 0;
+    score = 0;
+    timerSeconds = 0;
+    currentStreak = 0;
+    maxStreak = 0;
+    quizFinished = false;
+    userAnswers = questions.map(() => null);
+    timerEl.textContent = '00:00';
+    streakBadge.classList.remove('show');
+    updateStats();
+    renderQuestion();
+    startTimer();
+}
+
+restartBtn.addEventListener('click', restartQuiz);
+window.addEventListener('resize', () => {
+    const canvas = document.getElementById('confetti-canvas');
+    if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+});
+
+updateStats();
+renderQuestion();
+startTimer();
+    </script>
+</body>
+</html>

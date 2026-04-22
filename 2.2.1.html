@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>2.2.1 निजामती सेवाको गठन, संगठन संरचना, पदपूर्ति गर्ने तरिका र प्रक्रियाहरू (Office Procedure)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>2.2.1 निजामती सेवाको गठन, संगठन संरचना, पदपूर्ति गर्ने तरिका र प्रक्रियाहरू (Office Procedure)</h1>
+                        <div class="subtitle">Technical Quiz</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">0</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" id="restart-btn">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+const quizConfig = {
+  "quizId": "2-2-1",
+  "quizTitle": "2.2.1 निजामती सेवाको गठन, संगठन संरचना, पदपूर्ति गर्ने तरिका र प्रक्रियाहरू (Office Procedure)",
+  "displayTitle": "2.2.1 निजामती सेवाको गठन, संगठन संरचना, पदपूर्ति गर्ने तरिका र प्रक्रियाहरू (Office Procedure)",
+  "topicName": "Technical Quiz",
+  "questionsPerPage": 5
+};
+const rawQuestions = [
+  {
+    "q": "नेपालको संविधानको कुन धारामा निजामती सेवाको पद सम्बन्धी व्यवस्था उल्लेख छ?",
+    "options": [
+      "धारा २४३",
+      "धारा २५५",
+      "धारा २६०",
+      "धारा २७०"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधानको धारा २४३ मा निजामती सेवाको पद भन्नाले सैनिक वा नेपाल प्रहरी वा सशस्त्र प्रहरी बल, नेपालको कर्मचारीको सेवाको पद तथा निजामती सेवाले पद होइन भनी ऐन बमोजिम तोकिएको अन्य सेवाको पद बाहेक नेपाल सरकारका अरु सेवाको पद समभन्नु पर्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "नेपालमा हाल लागू भएको निजामती सेवा ऐन कुन हो?",
+    "options": [
+      "निजामती सेवा ऐन, २०४५",
+      "निजामती सेवा ऐन, २०४९",
+      "निजामती सेवा ऐन, २०५५",
+      "निजामती सेवा ऐन, २०६३"
+    ],
+    "answer": 1,
+    "explanation": "नेपालमा हाल लागू भएको निजामती सेवा ऐन, २०४९ हो। यसमा परिच्छेद १०, दफा ७६ र प्रमाणीकरण २०५०।०२।०४ भएको छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवा ऐन, २०४९ मा कतिवटा परिच्छेद (Section) छन्?",
+    "options": [
+      "८ वटा",
+      "९ वटा",
+      "१० वटा",
+      "१२ वटा"
+    ],
+    "answer": 2,
+    "explanation": "निजामती सेवा ऐन, २०४९ मा १० वटा परिच्छेद (Section) छन् र कुल ७६ वटा दफा (Dafa) छन्। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवा ऐन, २०४९ को पहिलो संशोधन (First Amendment) कुन मितिमा भयो?",
+    "options": [
+      "२०५०।०२।०४",
+      "२०५५।०३।२९",
+      "२०५८।०४।२३",
+      "२०५५।३।२९"
+    ],
+    "answer": 3,
+    "explanation": "निजामती सेवा ऐन, २०४९ को पहिलो संशोधन (First Amendment) २०५५।३।२९ मा भयो। अन्य संशोधनहरू: दोस्रो-२०५८।०४।२३, तेस्रो-२०६०।१९।२।१२, चौथो-२०७२।०३।२९। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवा नियमावली, २०५० मा कतिवटा परिच्छेद (Section) छन्?",
+    "options": [
+      "१६ वटा",
+      "१२ वटा",
+      "१० वटा",
+      "२० वटा"
+    ],
+    "answer": 0,
+    "explanation": "निजामती सेवा नियमावली, २०५० मा १६ वटा परिच्छेद (Section), १३८ वटा दफा (Dafa) र १९ वटा अनुसूची (Schedule) छन्। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवा नियमावली, २०५० को अन्तिम संशोधन (Last Amendment) कुन मितिमा भयो?",
+    "options": [
+      "२०७२।०३।२९",
+      "२०७६।०९।१३०",
+      "२०७८।०४।२३",
+      "२०७५।०५।१५"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवा नियमावली, २०५० को अन्तिम संशोधन (Last Amendment) २०७६।०९।१३० मा भएको छ। यसमा जम्मा १५ पटक संशोधन भएको छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवा ऐन, २०४९ को दफा ३ बमोजिम नेपाल सरकारले कतिवटा निजामती सेवाहरूको गठन गरेको छ?",
+    "options": [
+      "८ वटा",
+      "९ वटा",
+      "१० वटा",
+      "१२ वटा"
+    ],
+    "answer": 2,
+    "explanation": "निजामती सेवा ऐन, २०४९ को दफा ३ बमोजिम नेपाल सरकारले देहाय बमोजिमका १० वटा निजामती सेवाहरूको गठन गरेको छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवा ऐन, २०४९ अनुसार गठित निजामती सेवाहरूमध्ये कुन सही सूची हो?",
+    "options": [
+      "नेपाल आर्थिक योजना, नेपाल इन्जिनियरिङ, नेपाल कृषि, नेपाल न्याय, नेपाल प्रशासन र नेपाल शिक्षक सेवा",
+      "नेपाल प्रहरी, नेपाल सेना, नेपाल न्याय, नेपाल कृषि, नेपाल वन र नेपाल लेखा",
+      "नेपाल प्रशासन, नेपाल न्याय, नेपाल कृषि, नेपाल इन्जिनियरिङ र नेपाल सेना",
+      "नेपाल आर्थिक योजना तथा तथ्याङ्क, नेपाल इन्जिनियरिङ, नेपाल कृषि, नेपाल न्याय, नेपाल परराष्ट्र, नेपाल प्रशासन, नेपाल लेखा परिक्षण, नेपाल वन, नेपाल विविध र नेपाल शिक्षक सेवा"
+    ],
+    "answer": 3,
+    "explanation": "निजामती सेवा ऐन, २०४९ को दफा ३ बमोजिम गठित १० निजामती सेवाहरू: (१) नेपाल आर्थिक योजना तथा तथ्याङ्क सेवा, (२) नेपाल इन्जिनियरिङ सेवा, (३) नेपाल कृषि सेवा, (४) नेपाल न्याय सेवा, (५) नेपाल परराष्ट्र सेवा, (६) नेपाल प्रशासन सेवा, (७) नेपाल लेखा परिक्षण सेवा, (८) नेपाल वन सेवा, (९) नेपाल विविध सेवा, (१०) नेपाल शिक्षक सेवा। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'राजपत्राङ्कित' श्रेणीमा कतिवटा तह हुन्छन्?",
+    "options": [
+      "४ वटा: विशिष्ट, प्रथम, द्वितीय र तृतीय",
+      "३ वटा: प्रथम, द्वितीय र तृतीय",
+      "५ वटा",
+      "२ वटा: वरिष्ठ र कनिष्ठ"
+    ],
+    "answer": 0,
+    "explanation": "राजपत्राङ्कित श्रेणीमा ४ वटा तह हुन्छन्: (१) विशिष्ट श्रेणी (सचिव), (२) प्रथम श्रेणी (स सचिव), (३) द्वितीय श्रेणी (उप सचिव), (४) तृतीय श्रेणी (शाखा अधिकृत)। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'राजपत्र अनंकित' श्रेणीमा कतिवटा तह हुन्छन्?",
+    "options": [
+      "३ वटा",
+      "५ वटा: प्रथम, द्वितीय, तृतीय, चतुर्थ र पाँचौं",
+      "४ वटा",
+      "६ वटा"
+    ],
+    "answer": 1,
+    "explanation": "राजपत्र अनंकित श्रेणीमा ५ वटा तह हुन्छन्: प्रथम (नायब सुब्बा), द्वितीय (खरिदार), तृतीय (मुखिया), चतुर्थ (बैदार) र पाँचौं (का.स.)। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा राजपत्राङ्कित विशिष्ट श्रेणीमा कुन पद पर्छ?",
+    "options": [
+      "उप सचिव",
+      "स सचिव",
+      "सचिव",
+      "शाखा अधिकृत"
+    ],
+    "answer": 2,
+    "explanation": "राजपत्राङ्कित विशिष्ट श्रेणीमा सचिव पदधारी हुन्छन्। यो निजामती सेवाको सर्वोच्च तह हो। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा 'नायब सुब्बा' पद कुन श्रेणी/तहमा पर्छ?",
+    "options": [
+      "राजपत्राङ्कित तृतीय श्रेणी",
+      "राजपत्र अनंकित द्वितीय श्रेणी",
+      "राजपत्राङ्कित द्वितीय श्रेणी",
+      "राजपत्र अनंकित प्रथम श्रेणी"
+    ],
+    "answer": 3,
+    "explanation": "नायब सुब्बा पद राजपत्र अनंकित प्रथम श्रेणीमा पर्छ। राजपत्र अनंकित श्रेणीमा: प्रथम=नायब सुब्बा, द्वितीय=खरिदार, तृतीय=मुखिया, चतुर्थ=बैदार, पाँचौं=का.स.। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा 'शाखा अधिकृत' पद कुन श्रेणी/तहमा पर्छ?",
+    "options": [
+      "राजपत्राङ्कित तृतीय श्रेणी",
+      "राजपत्राङ्कित द्वितीय श्रेणी",
+      "राजपत्र अनंकित प्रथम श्रेणी",
+      "राजपत्राङ्कित प्रथम श्रेणी"
+    ],
+    "answer": 0,
+    "explanation": "शाखा अधिकृत पद राजपत्राङ्कित तृतीय श्रेणीमा पर्छ। राजपत्राङ्कित श्रेणीमा: विशिष्ट=सचिव, प्रथम=स सचिव, द्वितीय=उप सचिव, तृतीय=शाखा अधिकृत। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा पदपूर्ति (Vacancy Fulfillment) गर्ने मुख्य तरिकाहरू कतिवटा छन्?",
+    "options": [
+      "२ वटा",
+      "३ वटा: खुल्ला प्रतियोगिता, बढुवा र सोझै नियुक्ति",
+      "४ वटा",
+      "५ वटा"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवामा पदपूर्ति ३ वटा मुख्य तरिकाबाट हुन्छ: (१) खुल्ला प्रतियोगिता, (२) बढुवा (कार्यक्षमताको मूल्याङ्कन, आन्तरिक प्रतियोगितात्मक परीक्षा र ज्येष्ठता र कार्य सम्पादन मूल्याङ्कन), र (३) विशेष व्यवस्था। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा 'श्रेणी विहीन/राजपत्र अनंकित पाँचौं' पदको पदपूर्ति कसरी हुन्छ?",
+    "options": [
+      "५०% खुल्ला + ५०% बढुवा",
+      "७०% बढुवा + ३०% खुल्ला",
+      "१००% खुल्ला प्रतियोगिताद्वारा मात्र",
+      "५०% खुल्ला + ५०% आन्तरिक"
+    ],
+    "answer": 2,
+    "explanation": "श्रेणी विहीन/राजपत्र अनंकित पाँचौं पदको पदपूर्ति १००% खुल्ला प्रतियोगिताद्वारा मात्र हुन्छ। बढुवाबाट पदपूर्ति हुँदैन। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "राजपत्र अनंकित द्वितीय श्रेणीको पदपूर्ति कसरी हुन्छ?",
+    "options": [
+      "१००% खुल्ला",
+      "५०% खुल्ला + ५०% बढुवा",
+      "७०% खुल्ला + ३०% बढुवा",
+      "७०% खुल्ला प्रतियोगिता + २०% आन्तरिक प्रतियोगितात्मक परीक्षाद्वारा + १०% ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा"
+    ],
+    "answer": 3,
+    "explanation": "राजपत्र अनंकित द्वितीय श्रेणीको पदपूर्ति: ७०% खुल्ला प्रतियोगिता + २०% आन्तरिक प्रतियोगितात्मक परीक्षाद्वारा बढुवा + १०% ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा बढुवा। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "राजपत्र अनंकित प्रथम श्रेणीको पदपूर्ति कसरी हुन्छ?",
+    "options": [
+      "७०% खुल्ला + २०% कार्यक्षमताको मूल्याङ्कनद्वारा बढुवा + १०% ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा बढुवा",
+      "१००% खुल्ला",
+      "५०% खुल्ला + ५०% बढुवा",
+      "६०% खुल्ला + ४०% बढुवा"
+    ],
+    "answer": 0,
+    "explanation": "राजपत्र अनंकित प्रथम श्रेणीको पदपूर्ति: ७०% खुल्ला + २०% कार्यक्षमताको मूल्याङ्कनद्वारा बढुवा + १०% ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा बढुवा। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "राजपत्राङ्कित तृतीय श्रेणीको पदपूर्ति कसरी हुन्छ?",
+    "options": [
+      "१००% खुल्ला",
+      "७०% खुल्ला प्रतियोगिता + ३०% ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा बढुवा",
+      "५०% खुल्ला + ५०% बढुवा",
+      "६०% खुल्ला + ४०% बढुवा"
+    ],
+    "answer": 1,
+    "explanation": "राजपत्राङ्कित तृतीय श्रेणीको पदपूर्ति: ७०% खुल्ला प्रतियोगिता + ३०% ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा बढुवा। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "राजपत्राङ्कित द्वितीय श्रेणीको पदपूर्ति कसरी हुन्छ?",
+    "options": [
+      "१००% खुल्ला",
+      "७०% खुल्ला + ३०% बढुवा",
+      "१०% खुल्ला + ३५% कार्यक्षमताको मूल्याङ्कन + २०% आन्तरिक प्रतियोगितात्मक + ३५% ज्येष्ठता र कार्य सम्पादन",
+      "५०% खुल्ला + ५०% बढुवा"
+    ],
+    "answer": 2,
+    "explanation": "राजपत्राङ्कित द्वितीय श्रेणीको पदपूर्ति: १०% खुल्ला + ३५% कार्यक्षमताको मूल्याङ्कनद्वारा बढुवा + २०% आन्तरिक प्रतियोगितात्मक परीक्षाद्वारा + ३५% ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "राजपत्राङ्कित प्रथम र विशिष्ट श्रेणीको पदपूर्ति कसरी हुन्छ?",
+    "options": [
+      "१००% खुल्ला",
+      "५०% खुल्ला + ५०% बढुवा",
+      "७०% खुल्ला + ३०% बढुवा",
+      "१०% खुल्ला + ३५% कार्यक्षमताको मूल्याङ्कन + २०% आन्तरिक प्रतियोगितात्मक + ३५% ज्येष्ठता र कार्य सम्पादन"
+    ],
+    "answer": 3,
+    "explanation": "राजपत्राङ्कित प्रथम र विशिष्ट श्रेणीको पदपूर्ति: १०% खुल्ला + ३५% कार्यक्षमताको मूल्याङ्कनद्वारा + २०% आन्तरिक प्रतियोगितात्मक परीक्षाद्वारा + ३५% ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको पदपूर्ति प्रक्रियामा 'वार्षिक कार्यतालिका प्रकाशन' कुन चरणमा पर्छ?",
+    "options": [
+      "पहिलो चरणमा",
+      "तेस्रो चरणमा",
+      "पाँचौं चरणमा",
+      "अन्तिम चरणमा"
+    ],
+    "answer": 0,
+    "explanation": "निजामती सेवाको पदपूर्ति प्रक्रियाको पहिलो चरण वार्षिक कार्यतालिका प्रकाशन हो। त्यसपछि क्रमशः पाठ्यक्रम निर्धारण, टिकट पदको माग, पदपूर्ति प्रतिशत निर्धारण, विज्ञापन प्रकाशन आदि हुन्छन्। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको भर्ना तथा छनौटका चरणगत प्रक्रियाहरूमध्ये कुल कतिवटा चरण छन्?",
+    "options": [
+      "१० वटा",
+      "१४ वटा",
+      "१२ वटा",
+      "८ वटा"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवाको भर्ना तथा छनौटका चरणगत प्रक्रियाहरू कुल १४ वटा छन्: वार्षिक कार्यतालिका देखि नियुक्ति सिफारिससम्म। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "लोकसेवा आयोगबाट खुल्ला प्रतियोगिताद्वारा सिफारिस भएका उमेदवारलाई सिफारिस पत्र दाखिला भएको मितिले राजपत्राङ्कित पदको हकमा कति दिनभित्र नियुक्ति दिनुपर्छ?",
+    "options": [
+      "१ महिनाभित्र",
+      "१५ दिनभित्र",
+      "२ महिनाभित्र",
+      "३ महिनाभित्र"
+    ],
+    "answer": 2,
+    "explanation": "लोकसेवा आयोगबाट खुल्ला प्रतियोगिताद्वारा सिफारिस भएका उमेदवारलाई सिफारिस पत्र दाखिला भएको मितिले राजपत्राङ्कित पदको हकमा २ महिनाभित्र र राजपत्र अनंकित पदको हकमा १५ दिनभित्र नियुक्ति दिनुपर्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा नियुक्ति हुँदा सुरुमा हाजिर हुनुपर्ने समयसीमा कति हो?",
+    "options": [
+      "७ दिनभित्र",
+      "२१ दिनभित्र",
+      "१ महिनाभित्र",
+      "नियुक्ती हुँदा ३५ दिनभित्र हाजिर हुनुपर्छ र सरुवा भएको खण्डमा २१ दिनभित्र"
+    ],
+    "answer": 3,
+    "explanation": "निजामती सेवामा नियुक्ती हुँदा ३५ दिनभित्र हाजिर हुनुपर्छ र सरुवा भएको खण्डमा २१ दिनभित्र हाजिर हुनुपर्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा समावेशीकरण (Inclusion) अन्तर्गत खुल्ला प्रतियोगिताद्वारा पूर्ति हुने पदहरूमध्ये ४५% पद छुट्याई सो प्रतिशतलाई १००% मानी देहाय बमोजिम उम्मेदवार बीचमा मात्रै छुट्टाछुट्टै प्रतिस्पर्धा गराई पदपूर्ति गरिन्छ। महिलाको प्रतिशत कति हो?",
+    "options": [
+      "३३%",
+      "२०%",
+      "२७%",
+      "९%"
+    ],
+    "answer": 0,
+    "explanation": "निजामती सेवाको समावेशीकरणमा: महिला-३३%, आ.ज.-२७%, मधेशी-२२%, दलित-९%, अपाङ्ग-५%, पि.क्षे.-४% गरी जम्मा १००%। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको समावेशीकरणमा आदिवासी/जनजाति (आ.ज.) को प्रतिशत कति हो?",
+    "options": [
+      "२२%",
+      "२७%",
+      "३३%",
+      "९%"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवाको समावेशीकरणमा आदिवासी/जनजाति (आ.ज.) को प्रतिशत २७% हो। (महिला-३३%, आ.ज.-२७%, मधेशी-२२%, दलित-९%, अपाङ्ग-५%, पि.क्षे.-४%)। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको समावेशीकरणमा मधेशी समुदायको प्रतिशत कति हो?",
+    "options": [
+      "२७%",
+      "९%",
+      "२२%",
+      "३३%"
+    ],
+    "answer": 2,
+    "explanation": "निजामती सेवाको समावेशीकरणमा मधेशी समुदायको प्रतिशत २२% हो। सम्पूर्ण वितरण: महिला-३३%, आ.ज.-२७%, मधेशी-२२%, दलित-९%, अपाङ्ग-५%, पि.क्षे.-४%। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको समावेशीकरणमा 'पिछडिएको क्षेत्र' (पि.क्षे.) को प्रतिशत कति हो र यस अन्तर्गत कतिवटा जिल्ला पर्छन्?",
+    "options": [
+      "५%, ७ जिल्ला",
+      "९%, ९ जिल्ला",
+      "४%, ७ जिल्ला",
+      "४%, ९ जिल्ला: डोल्पा, हुम्ला, जुम्ला, मुगु, कालिकोट, बझाङ, बाजुरा, जाजरकोट र अछाम"
+    ],
+    "answer": 3,
+    "explanation": "पिछडिएको क्षेत्र (पि.क्षे.) को प्रतिशत ४% हो र यस अन्तर्गत ९ वटा जिल्ला पर्छन्: डोल्पा, हुम्ला, जुम्ला, मुगु, कालिकोट, बझाङ, बाजुरा, जाजरकोट र अछाम। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा नियुक्ति दिने अधिकार कसलाई हुन्छ?",
+    "options": [
+      "राजपत्राङ्कित पदमा नेपाल राजपत्रमा प्रकाशित गरे र राजपत्र अनंकित पदमा विभागीय प्रमुखले",
+      "लोकसेवा आयोगले",
+      "संसदीय समितिले",
+      "मन्त्रिपरिषद्ले मात्र"
+    ],
+    "answer": 0,
+    "explanation": "राजपत्राङ्कित पदमा नेपाल सरकारले सूचना राजपत्रमा प्रकाशित गरे र राजपत्र अनंकित पदमा विभागीय प्रमुखले नियुक्ति दिन्छन्। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको कार्यक्षमताको मूल्याङ्कन गर्दा देहाय बमोजिम ढाँचामा कतिवटा शीर्षकमा अङ्क दिइन्छ र कुल कति अङ्क हुन्छ?",
+    "options": [
+      "३ शीर्षक, ७० अङ्क",
+      "५ शीर्षक, १०० अङ्क",
+      "४ शीर्षक, ९० अङ्क",
+      "६ शीर्षक, ११० अङ्क"
+    ],
+    "answer": 1,
+    "explanation": "निजामती कर्मचारीको कार्यक्षमताको मूल्याङ्कन गर्दा ५ शीर्षकमा कुल १०० अङ्क दिइन्छ: (१) कार्य सम्पादन मूल्याङ्कन वापत-८० अङ्क, (२) ज्येष्ठता वापत-३० अङ्क, (३) शैक्षिक योग्यता वापत-१२ अङ्क, (४) भौगोलिक क्षेत्रमा काम गरेवापत-१६ अङ्क, (५) तालिम वापत-२ अङ्क। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती कर्मचारीको बढुवाका लागि 'कार्य सम्पादन मूल्याङ्कन वापत' कति अङ्क दिइन्छ?",
+    "options": [
+      "५० अङ्क",
+      "७० अङ्क",
+      "८० अङ्क",
+      "९० अङ्क"
+    ],
+    "answer": 2,
+    "explanation": "निजामती कर्मचारीको बढुवाका लागि कार्यक्षमताको मूल्याङ्कनमा 'कार्य सम्पादन मूल्याङ्कन वापत' सबैभन्दा बढी ८० अङ्क दिइन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "बढुवा मूल्याङ्कनमा 'ज्येष्ठता वापत' कति अङ्क र 'शैक्षिक योग्यता वापत' कति अङ्क दिइन्छ?",
+    "options": [
+      "ज्येष्ठता-२० अङ्क, शैक्षिक-१५ अङ्क",
+      "ज्येष्ठता-२५ अङ्क, शैक्षिक-१५ अङ्क",
+      "ज्येष्ठता-२० अङ्क, शैक्षिक-१२ अङ्क",
+      "ज्येष्ठता-३० अङ्क, शैक्षिक-१२ अङ्क"
+    ],
+    "answer": 3,
+    "explanation": "बढुवा मूल्याङ्कनमा ज्येष्ठता वापत ३० अङ्क र शैक्षिक योग्यता वापत १२ अङ्क दिइन्छ। कुल: कार्य सम्पादन-८०, ज्येष्ठता-३०, शैक्षिक-१२, भौगोलिक-१६, तालिम-२ = जम्मा १०० अङ्क+बोनस। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवा ऐन, २०४९ अनुसार निजामती कर्मचारीको परीक्षण काल (Probation Period) कति हुन्छ?",
+    "options": [
+      "पुरुष कर्मचारीको हकमा १२ महिना र महिला कर्मचारीको हकमा ६ महिना",
+      "सबैको लागि १ वर्ष",
+      "सबैको लागि ६ महिना",
+      "पुरुषको ६ महिना र महिलाको ३ महिना"
+    ],
+    "answer": 0,
+    "explanation": "निजामती सेवाको परीक्षण काल (Probation Period): पुरुष कर्मचारीको हकमा १२ महिना र महिला कर्मचारीको हकमा ६ महिना हुन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "नेपालमा 'लोक सेवा आयोग' को स्थापना कहिले भयो?",
+    "options": [
+      "२०१३ साल असार १ गते",
+      "२००८ साल असार १ गते",
+      "२०१५ साल",
+      "२०१० साल"
+    ],
+    "answer": 1,
+    "explanation": "नेपालमा लोक सेवा आयोगको स्थापना २००८ साल असार १ गते भएको हो। नेपालमा पहिलो पटक निजामती ऐन २०१३ सालमा बनेको थियो र प्रत्येक वर्ष भदौ २२ गते निजामती दिवस मनाइन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "नेपालमा पहिलो पटक निजामती सेवा ऐन कति सालमा बनेको थियो?",
+    "options": [
+      "२०१० सालमा",
+      "२०१५ सालमा",
+      "२०१३ सालमा",
+      "२०१९ सालमा"
+    ],
+    "answer": 2,
+    "explanation": "नेपालमा पहिलो पटक (पहिलो पटक) निजामती ऐन २०१३ साल भदौ २२ गते बनेको थियो। प्रत्येक वर्ष भदौ २२ गते निजामती दिवस मनाइन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "नेपालमा प्रत्येक वर्ष 'निजामती दिवस' कुन मिति मनाइन्छ?",
+    "options": [
+      "असार १ गते",
+      "श्रावण १ गते",
+      "बैशाख १ गते",
+      "भदौ २२ गते"
+    ],
+    "answer": 3,
+    "explanation": "नेपालमा प्रत्येक वर्ष भदौ २२ गते निजामती दिवस मनाइन्छ। यही मिति २०१३ सालमा पहिलो पटक निजामती ऐन बनेको थियो। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "नेपालको संविधान, २०७२ को कुन धारामा सरकारी सेवाको गठन सम्बन्धी व्यवस्था छ?",
+    "options": [
+      "धारा २४५",
+      "धारा २३०",
+      "धारा २५५",
+      "धारा २७५"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान, २०७२ को धारा २४५ मा सरकारी सेवाको गठन सम्बन्धी व्यवस्था रहेको छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको विकास 'प्राचीन चीनको हान वंश' सँग जोडिएको छ, यो कुन समयको हो?",
+    "options": [
+      "इ.पू. ३०० देखि ५०० सम्म",
+      "इ.पू. २०६ देखि २२० सम्म",
+      "इ.पू. १०० देखि ४०० सम्म",
+      "इ.पू. ५०० देखि ७०० सम्म"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवाको सुरुवात प्राचीन चीनको हान वंशले (इ.पू. २०६-२२०) मा गरेको थियो। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "नेपालको अन्तरिम शासन विधान कुन सालमा बन्यो जसमा लोकसेवा आयोग (Public Service Commission) को व्यवस्था गरियो?",
+    "options": [
+      "२०१५ सालमा",
+      "१९९९ सालमा",
+      "२००७ सालमा",
+      "२०१३ सालमा"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको अन्तरिम शासन विधान २००७ मा बन्यो जसमा लोकसेवा आयोग (Public Service Commission) को व्यवस्था गरियो। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको पदपूर्तिमा बढुवाका तरिकाहरूमध्ये कुन–कुन पर्छन्?",
+    "options": [
+      "खुल्ला प्रतियोगिता र आन्तरिक प्रतियोगिता मात्र",
+      "ज्येष्ठता र कार्यसम्पादन मात्र",
+      "कार्यक्षमताको मूल्याङ्कन मात्र",
+      "कार्यक्षमताको मूल्याङ्कनद्वारा, आन्तरिक प्रतियोगितात्मक परीक्षाद्वारा र ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा"
+    ],
+    "answer": 3,
+    "explanation": "निजामती सेवामा बढुवाका तीन तरिका छन्: (१) कार्यक्षमताको मूल्याङ्कनद्वारा, (२) आन्तरिक प्रतियोगितात्मक परीक्षाद्वारा, र (३) ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा प्राबिधिक कर्मचारी (Technical Personnel) लाई काम गर्ने प्रकृतिको आधारमा कसरी वर्गीकरण गरिन्छ?",
+    "options": [
+      "प्राबिधिक कर्मचारी र अप्राबिधिक कर्मचारी",
+      "स्थायी र अस्थायी कर्मचारी",
+      "राजपत्राङ्कित र राजपत्र अनंकित",
+      "सरकारी र निजी कर्मचारी"
+    ],
+    "answer": 0,
+    "explanation": "काम गर्ने प्रकृतिको आधारमा कर्मचारीलाई: (क) प्राबिधिक कर्मचारी र (ख) अप्राबिधिक कर्मचारी गरी दुई प्रकारमा वर्गीकरण गरिन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको संगठन संरचनामा 'स्थायित्वका आधारमा' कर्मचारीको वर्गीकरण कसरी हुन्छ?",
+    "options": [
+      "राजपत्राङ्कित र राजपत्र अनंकित",
+      "स्थायी कर्मचारी र अस्थायी कर्मचारी",
+      "सरकारी र निजी",
+      "तालिमप्राप्त र तालिमरहित"
+    ],
+    "answer": 1,
+    "explanation": "स्थायित्वका आधारमा कर्मचारीलाई स्थायी कर्मचारी र अस्थायी कर्मचारी गरी दुई प्रकारमा वर्गीकरण गरिन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'स्तरको आधारमा' कर्मचारीको वर्गीकरण कसरी हुन्छ?",
+    "options": [
+      "प्राबिधिक र अप्राबिधिक",
+      "स्थायी र अस्थायी",
+      "अधिकृत स्तर र सहायक स्तर",
+      "सरकारी र निजी"
+    ],
+    "answer": 2,
+    "explanation": "स्तरको आधारमा कर्मचारीलाई अधिकृत स्तर र सहायक स्तर गरी दुई प्रकारमा वर्गीकरण गरिन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा 'संगठनको आधारमा' कर्मचारीको वर्गीकरण कसरी हुन्छ?",
+    "options": [
+      "अधिकृत र सहायक स्तर",
+      "प्राबिधिक र अप्राबिधिक",
+      "स्थायी र अस्थायी",
+      "सरकारी कर्मचारी र निजी कर्मचारी"
+    ],
+    "answer": 3,
+    "explanation": "संगठनको आधारमा कर्मचारीलाई सरकारी कर्मचारी र निजी कर्मचारी गरी वर्गीकरण गरिन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'छनौटको आधारमा' कर्मचारीको वर्गीकरण कसरी हुन्छ?",
+    "options": [
+      "योग्यतामा आधारित कर्मचारी र नियुक्तिमा आधारित कर्मचारी",
+      "स्थायी र अस्थायी",
+      "राजपत्राङ्कित र राजपत्र अनंकित",
+      "प्राबिधिक र अप्राबिधिक"
+    ],
+    "answer": 0,
+    "explanation": "छनौटको आधारमा कर्मचारीलाई योग्यतामा आधारित कर्मचारी र नियुक्तिमा आधारित कर्मचारी गरी वर्गीकरण गरिन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'निजामती सेवा ऐन, २०४९ अनुसार' कर्मचारीको वर्गीकरण कति प्रकारको हुन्छ?",
+    "options": [
+      "एक प्रकार",
+      "दुई प्रकार: राजपत्राङ्कित र राजपत्र अनंकित",
+      "तीन प्रकार",
+      "चार प्रकार"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवा ऐन, २०४९ अनुसार कर्मचारीको वर्गीकरण दुई प्रकारको हुन्छ: (क) राजपत्राङ्कित कर्मचारी र (ख) राजपत्र अनंकित कर्मचारी। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको पदपूर्ति प्रक्रियामा 'विज्ञापन प्रकाशन' कुन निकायले गर्छ?",
+    "options": [
+      "सामान्य प्रशासन मन्त्रालय",
+      "सम्बन्धित मन्त्रालय",
+      "लोकसेवा आयोग",
+      "राष्ट्रपति कार्यालय"
+    ],
+    "answer": 2,
+    "explanation": "निजामती सेवाको पदपूर्तिको लागि विज्ञापन लोकसेवा आयोगले प्रकाशन गर्छ। पदपूर्तिको आवश्यकता सम्बन्धित निकायले आयोगलाई जानकारी दिन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'आन्तरिक प्रतियोगितात्मक परीक्षा' द्वारा बढुवाको लागि न्यूनतम सेवा अवधि कति हुनुपर्छ?",
+    "options": [
+      "१ वर्ष",
+      "३ वर्ष",
+      "२ वर्ष",
+      "५ वर्ष सम्म सेवा अवधि पूरा गरेका कर्मचारी"
+    ],
+    "answer": 3,
+    "explanation": "आन्तरिक प्रतियोगितात्मक परीक्षाद्वारा बढुवाको लागि न्यूनतम सेवा अवधि: सम्बन्धित श्रेणीमा कम्तीमा ५ वर्ष सेवा गरेको हुनुपर्छ। स्रोत: निजामती सेवा नियमावली, २०५०"
+  },
+  {
+    "q": "निजामती सेवाको पदपूर्तिमा 'खुल्ला प्रतियोगिता' मा सहभागी हुन उमेरको सीमा कति हुनुपर्छ (सामान्यतः)?",
+    "options": [
+      "१८ वर्ष पूरा र ३५ वर्ष ननाघेको",
+      "२१ वर्ष पूरा र ३५ वर्ष ननाघेको",
+      "१८ वर्ष पूरा र ४० वर्ष ननाघेको",
+      "२५ वर्ष र ४५ वर्ष ननाघेको"
+    ],
+    "answer": 0,
+    "explanation": "निजामती सेवाको खुल्ला प्रतियोगितामा सहभागी हुन सामान्यतः १८ वर्ष पूरा र ३५ वर्ष ननाघेको हुनुपर्छ। स्रोत: निजामती सेवा ऐन, २०४९"
+  },
+  {
+    "q": "निजामती सेवाको पदपूर्ति प्रक्रियाको पाँचौं चरणमा के हुन्छ?",
+    "options": [
+      "वार्षिक कार्यतालिका प्रकाशन",
+      "विज्ञापन प्रकाशन",
+      "पदपूर्ति प्रतिशत निर्धारण",
+      "टिकट पदको माग सङ्कलन"
+    ],
+    "answer": 1,
+    "explanation": "भर्ना प्रक्रियाको क्रम: (१) वार्षिक कार्यतालिका प्रकाशन, (२) पाठ्यक्रम निर्धारण तथा परिमार्जन, (३) टिकट पदको माग सङ्कलन, (४) पदपूर्ति प्रतिशत निर्धारण, (५) विज्ञापन प्रकाशन। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा नियुक्तिका लागि 'दरखास्त सङ्कलन' भर्ना प्रक्रियाको कुन चरणमा हुन्छ?",
+    "options": [
+      "चौथो चरण",
+      "पाँचौं चरण",
+      "छैठौं चरण",
+      "सातौं चरण"
+    ],
+    "answer": 2,
+    "explanation": "भर्ना प्रक्रियाको क्रमानुसार: (५) विज्ञापन प्रकाशन, (६) दरखास्त सङ्कलन, (७) प्रश्नपत्र निर्माण, (८) लिखित परीक्षा सञ्चालन...। दरखास्त सङ्कलन छैठौं चरणमा हुन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको भर्ना प्रक्रियामा 'उत्तर पुस्तिका परीक्षण' कुन चरणमा हुन्छ?",
+    "options": [
+      "७औं",
+      "८औं",
+      "१०औं",
+      "९औं"
+    ],
+    "answer": 3,
+    "explanation": "भर्ना प्रक्रियाको क्रम: (७) प्रश्नपत्र निर्माण, (८) लिखित परीक्षा सञ्चालन, (९) उत्तर पुस्तिका परीक्षण, (१०) लिखित परीक्षाको नतिजा प्रकाशन...। उत्तर पुस्तिका परीक्षण ९औं चरणमा हुन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा अन्तिम नतिजा (योग्यताक्रम सहितको अन्तिम नतिजा प्रकाशन) कुन चरणमा हुन्छ?",
+    "options": [
+      "तेह्रौं चरणमा",
+      "बाह्रौं चरणमा",
+      "चौधौं चरणमा",
+      "पन्ध्रौं चरणमा"
+    ],
+    "answer": 0,
+    "explanation": "भर्ना प्रक्रियाको क्रम: (११) प्रयोगात्मक परीक्षा सञ्चालन, (१२) सामूहिक छलफल तथा व्यक्तिगत अन्तर्वार्ता, (१३) योग्यताक्रम सहितको अन्तिम नतिजा प्रकाशन, (१४) नियुक्ति सिफारिस। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा कुनै पद रिक्त भएमा त्यसको सूचना कति दिनभित्र लोकसेवा आयोगलाई दिनुपर्छ?",
+    "options": [
+      "१५ दिनभित्र",
+      "३० दिनभित्र",
+      "४५ दिनभित्र",
+      "६० दिनभित्र"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवाको कुनै पद रिक्त भएमा त्यसको सूचना पद रिक्त भएको ३० दिनभित्रमा सम्बन्धित निकायले लोकसेवा आयोगलाई दिई सोको जानकारी सामान्य प्रशासन मन्त्रालयलाई दिनुपर्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा 'सहायक कर्मचारी'का प्रकार कतिवटा छन् र तिनीहरू कुन हुन्?",
+    "options": [
+      "२ वटा",
+      "४ वटा",
+      "३ वटा: फाँटवाला, पी.ए. र सम्पर्क सहायक",
+      "५ वटा"
+    ],
+    "answer": 2,
+    "explanation": "सहायक कर्मचारी ३ प्रकारका हुन्छन्: (१) फाँटवाला, (२) पी.ए. (Personal Assistant), र (३) सम्पर्क सहायक। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'स्थायी रूपमा राख्नुपर्ने' कागजातहरूमध्ये कुन पर्छ?",
+    "options": [
+      "सरुवा पत्र",
+      "बैठक बस्ने पत्र",
+      "परिपत्र",
+      "विदेशी राष्ट्रसँग भएका सम्भौता, देशका नकसाहरू, मन्त्रिपरिषदको निर्णयहरू, लालमोहर लागेका कागज"
+    ],
+    "answer": 3,
+    "explanation": "स्थायी रूपमा राख्नुपर्ने कागजातहरू: विदेशी राष्ट्रसँग भएका सम्भौता, देशका नकसाहरू, मन्त्रिपरिषदको निर्णयहरू, लालमोहर लागेका कागज, देशको सिमाना सम्बन्धित लेख, कर्मचारीको सिटरोल, आयोगको प्रतिवेदन आदि। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको कर्मचारीको 'काम गर्ने प्रकृति' को आधारमा वर्गीकरण गर्दा कति प्रकार हुन्छन्?",
+    "options": [
+      "२ प्रकार: प्राबिधिक र अप्राबिधिक",
+      "३ प्रकार",
+      "४ प्रकार",
+      "५ प्रकार"
+    ],
+    "answer": 0,
+    "explanation": "काम गर्ने प्रकृतिको आधारमा कर्मचारीलाई २ प्रकारमा वर्गीकरण गरिन्छ: (क) प्राबिधिक कर्मचारी र (ख) अप्राबिधिक कर्मचारी। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको पदपूर्तिमा 'समावेशीकरण' अन्तर्गत खुल्ला प्रतियोगिताद्वारा पूर्ति हुने कुल पदको कति प्रतिशत छुट्याइन्छ?",
+    "options": [
+      "३३%",
+      "४५%",
+      "५०%",
+      "४०%"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवाको समावेशीकरण अन्तर्गत खुल्ला प्रतियोगिताद्वारा पूर्ति हुने पदहरूमध्ये ४५% पद छुट्याई सो प्रतिशतलाई १००% मानी विभिन्न समूहका उम्मेदवार बीचमा मात्रै छुट्टाछुट्टै प्रतिस्पर्धा गराई पदपूर्ति गरिन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको समावेशीकरणमा 'दलित' समुदायको प्रतिशत कति हो?",
+    "options": [
+      "५%",
+      "४%",
+      "९%",
+      "२%"
+    ],
+    "answer": 2,
+    "explanation": "निजामती सेवाको समावेशीकरणमा दलित समुदायको प्रतिशत ९% हो। सम्पूर्ण वितरण: महिला-३३%, आ.ज.-२७%, मधेशी-२२%, दलित-९%, अपाङ्ग-५%, पि.क्षे.-४%। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको समावेशीकरणमा 'अपाङ्ग' समुदायको प्रतिशत कति हो?",
+    "options": [
+      "९%",
+      "४%",
+      "३%",
+      "५%"
+    ],
+    "answer": 3,
+    "explanation": "निजामती सेवाको समावेशीकरणमा अपाङ्ग समुदायको प्रतिशत ५% हो। सम्पूर्ण वितरण: महिला-३३%, आ.ज.-२७%, मधेशी-२२%, दलित-९%, अपाङ्ग-५%, पि.क्षे.-४%। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको पदपूर्ति प्रक्रियामा 'लिखित परीक्षाको नतिजा प्रकाशन' कुन चरणमा हुन्छ?",
+    "options": [
+      "दशौं चरणमा",
+      "नवौं चरणमा",
+      "एघारौं चरणमा",
+      "बाह्रौं चरणमा"
+    ],
+    "answer": 0,
+    "explanation": "भर्ना प्रक्रियाको क्रम: ... (८) लिखित परीक्षा सञ्चालन, (९) उत्तर पुस्तिका परीक्षण, (१०) लिखित परीक्षाको नतिजा प्रकाशन, (११) प्रयोगात्मक परीक्षा सञ्चालन...। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "नेपालमा पहिलो पटक निजामती सेवा नियमावली कुन सालमा जारी भएको थियो?",
+    "options": [
+      "२०१३ सालमा",
+      "२०२१ सालमा",
+      "२०१५ सालमा",
+      "२०२५ सालमा"
+    ],
+    "answer": 1,
+    "explanation": "नेपालमा पहिलो पटक निजामती सेवा नियमावली २०२१ मा जारी भएको थियो। हाल लागू भएको निजामती सेवा नियमावली २०५० हो। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको पदपूर्ति प्रक्रियाको अन्तिम (१४औं) चरण कुन हो?",
+    "options": [
+      "योग्यताक्रम नतिजा प्रकाशन",
+      "अन्तर्वार्ता सञ्चालन",
+      "नियुक्ति सिफारिस",
+      "प्रयोगात्मक परीक्षा"
+    ],
+    "answer": 2,
+    "explanation": "निजामती सेवाको भर्ना प्रक्रियाको अन्तिम (१४औं) चरण नियुक्ति सिफारिस हो। यसपछि सम्बन्धित निकायले नियुक्ति दिन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'राजपत्राङ्कित द्वितीय श्रेणी' मा कुन पद पर्छ?",
+    "options": [
+      "सचिव",
+      "स सचिव",
+      "शाखा अधिकृत",
+      "उप सचिव"
+    ],
+    "answer": 3,
+    "explanation": "राजपत्राङ्कित द्वितीय श्रेणीमा उप सचिव पद पर्छ। राजपत्राङ्कित श्रेणीहरू: विशिष्ट=सचिव, प्रथम=स सचिव, द्वितीय=उप सचिव, तृतीय=शाखा अधिकृत। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'राजपत्राङ्कित प्रथम श्रेणी' मा कुन पद पर्छ?",
+    "options": [
+      "स सचिव (Joint Secretary)",
+      "सचिव",
+      "उप सचिव",
+      "शाखा अधिकृत"
+    ],
+    "answer": 0,
+    "explanation": "राजपत्राङ्कित प्रथम श्रेणीमा स सचिव (Joint Secretary) पद पर्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा 'का.स.' (कार्यालय सहायक) पद कुन श्रेणीमा पर्छ?",
+    "options": [
+      "राजपत्र अनंकित प्रथम श्रेणी",
+      "राजपत्र अनंकित पाँचौं श्रेणी",
+      "राजपत्राङ्कित तृतीय श्रेणी",
+      "राजपत्र अनंकित चतुर्थ श्रेणी"
+    ],
+    "answer": 1,
+    "explanation": "का.स. (कार्यालय सहायक) पद राजपत्र अनंकित पाँचौं श्रेणीमा पर्छ। राजपत्र अनंकित पाँचौं श्रेणी निजामती सेवाको सबैभन्दा न्यून तह हो। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको बढुवा मूल्याङ्कनमा 'भौगोलिक क्षेत्रमा काम गरेवापत' कति अङ्क र 'तालिम वापत' कति अङ्क दिइन्छ?",
+    "options": [
+      "भौगोलिक-१२ अङ्क, तालिम-५ अङ्क",
+      "भौगोलिक-१५ अङ्क, तालिम-५ अङ्क",
+      "भौगोलिक-१६ अङ्क, तालिम-२ अङ्क",
+      "भौगोलिक-१० अङ्क, तालिम-३ अङ्क"
+    ],
+    "answer": 2,
+    "explanation": "बढुवा मूल्याङ्कनमा भौगोलिक क्षेत्रमा काम गरेवापत १६ अङ्क र तालिम वापत २ अङ्क दिइन्छ। (कार्य सम्पादन-८०, ज्येष्ठता-३०, शैक्षिक-१२, भौगोलिक-१६, तालिम-२ = जम्मा १४०)। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'खरिदार' पद कुन श्रेणी/तहमा पर्छ?",
+    "options": [
+      "राजपत्र अनंकित प्रथम श्रेणी",
+      "राजपत्र अनंकित तृतीय श्रेणी",
+      "राजपत्राङ्कित तृतीय श्रेणी",
+      "राजपत्र अनंकित द्वितीय श्रेणी"
+    ],
+    "answer": 3,
+    "explanation": "खरिदार पद राजपत्र अनंकित द्वितीय श्रेणीमा पर्छ। (प्रथम=नायब सुब्बा, द्वितीय=खरिदार, तृतीय=मुखिया, चतुर्थ=बैदार, पाँचौं=का.स.)। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवामा 'मुखिया' पद कुन श्रेणी/तहमा पर्छ?",
+    "options": [
+      "राजपत्र अनंकित तृतीय श्रेणी",
+      "राजपत्र अनंकित प्रथम श्रेणी",
+      "राजपत्र अनंकित द्वितीय श्रेणी",
+      "राजपत्र अनंकित चतुर्थ श्रेणी"
+    ],
+    "answer": 0,
+    "explanation": "मुखिया पद राजपत्र अनंकित तृतीय श्रेणीमा पर्छ। (प्रथम=नायब सुब्बा, द्वितीय=खरिदार, तृतीय=मुखिया, चतुर्थ=बैदार, पाँचौं=का.स.)। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको 'बैदार' पद कुन श्रेणी/तहमा पर्छ?",
+    "options": [
+      "राजपत्र अनंकित तृतीय श्रेणी",
+      "राजपत्र अनंकित चतुर्थ श्रेणी",
+      "राजपत्र अनंकित पाँचौं श्रेणी",
+      "राजपत्र अनंकित द्वितीय श्रेणी"
+    ],
+    "answer": 1,
+    "explanation": "बैदार पद राजपत्र अनंकित चतुर्थ श्रेणीमा पर्छ। (प्रथम=नायब सुब्बा, द्वितीय=खरिदार, तृतीय=मुखिया, चतुर्थ=बैदार, पाँचौं=का.स.)। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको पदपूर्तिमा 'क' वा 'ख' वर्गको भौगोलिक क्षेत्रको कार्यालयमा कम्तीमा कति वर्षको अवधिमा काम गरिसकेको कर्मचारीलाई 'ग' र 'घ' वर्गको भौगोलिक क्षेत्रको कार्यालयमा कम्तिमा २ वर्षका लागि सरुवा गरिन्छ?",
+    "options": [
+      "१ वर्ष",
+      "५ वर्ष",
+      "डढे वर्ष (दुई वर्षको अवधिसम्म)",
+      "३ वर्ष"
+    ],
+    "answer": 2,
+    "explanation": "'क' वा 'ख' वर्गको भौगोलिक क्षेत्रको कार्यालयमा कम्तीमा डढे वर्ष (दुई वर्षको अवधि)सम्म काम गरिसकेका कर्मचारीलाई 'ग' र 'घ' वर्गको भौगोलिक क्षेत्रको कार्यालयमा कम्तिमा २ वर्षको लागि सरुवा गरिन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको सरुवा (Transfer) सम्बन्धी नियमअनुसार 'ग' र 'घ' वर्गको भौगोलिक क्षेत्रको कार्यालयमा काम गरिसकेका कर्मचारीलाई 'क' वा 'ख' वर्गको भौगोलिक क्षेत्रको कार्यालयमा कति वर्षका लागि सरुवा गरिन्छ?",
+    "options": [
+      "१ वर्ष",
+      "डढे वर्ष",
+      "५ वर्ष",
+      "कम्तिमा २ वर्षको लागि"
+    ],
+    "answer": 3,
+    "explanation": "'ग' र 'घ' वर्गको भौगोलिक क्षेत्रको कार्यालयमा कम्तिमा २ वर्ष अवधिसम्म काम गरिसकेका कर्मचारीलाई 'क' वा 'ख' वर्गको भौगोलिक क्षेत्रको कार्यालयमा कम्तिमा २ वर्षको लागि सरुवा गरिन्छ। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवा ऐन, २०४९ को चौथो संशोधन (Fourth Amendment) कुन मितिमा भयो?",
+    "options": [
+      "२०७२।०३।२९",
+      "२०७०।०३।२९",
+      "२०७५।०५।१५",
+      "२०७६।०१।१५"
+    ],
+    "answer": 0,
+    "explanation": "निजामती सेवा ऐन, २०४९ को चौथो संशोधन (Fourth Amendment) २०७२।०३।२९ मा भयो। (पहिलो-२०५५।३।२९, दोस्रो-२०५८।०४।२३, तेस्रो-२०६०।१९।२।१२)। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवा नियमावली, २०५० मा कतिवटा अनुसूची (Schedule) छन्?",
+    "options": [
+      "१५ वटा",
+      "१९ वटा",
+      "१७ वटा",
+      "२१ वटा"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवा नियमावली, २०५० मा १९ वटा अनुसूची (Schedule) छन्। यसमा १६ वटा परिच्छेद र १३८ वटा दफा पनि छन्। स्रोत: Public_management.pdf"
+  },
+  {
+    "q": "निजामती सेवाको पदपूर्तिमा 'ज्येष्ठता र कार्य सम्पादन मूल्याङ्कन' द्वारा बढुवाको लागि कुन शर्त अनिवार्य छ?",
+    "options": [
+      "न्यूनतम ३ वर्ष सेवा",
+      "न्यूनतम ५ वर्ष सेवा र उत्कृष्ट कार्य सम्पादन",
+      "सम्बन्धित पदमा न्यूनतम तोकिएको वर्ष सेवा गरेको र कार्य सम्पादन मूल्याङ्कनमा न्यूनतम अङ्क प्राप्त गरेको हुनुपर्छ",
+      "न्यूनतम १० वर्ष सेवा र स्नातकोत्तर उत्तीर्ण"
+    ],
+    "answer": 2,
+    "explanation": "ज्येष्ठता र कार्य सम्पादन मूल्याङ्कनद्वारा बढुवाको लागि: सम्बन्धित पदमा न्यूनतम तोकिएको वर्ष सेवा गरेको र कार्य सम्पादन मूल्याङ्कनमा न्यूनतम निर्धारित अङ्क प्राप्त गरेको हुनुपर्छ। स्रोत: निजामती सेवा नियमावली, २०५०"
+  }
+];
+
+const questions = rawQuestions.map((item, index) => {
+    const options = Array.isArray(item.options) ? item.options.map(option => String(option)) : [];
+    const parsedAnswer = Number(item.answer);
+    const answerIndex = Number.isInteger(parsedAnswer) && parsedAnswer >= 0 ? parsedAnswer : 0;
+    return {
+        q: String(item.q ?? item.question ?? `Question ${index + 1}`),
+        options,
+        answer: Math.min(answerIndex, Math.max(options.length - 1, 0)),
+        explanation: String(item.explanation ?? 'No explanation provided.')
+    };
+}).filter(question => question.q && question.options.length > 0);
+
+const quizEl = document.getElementById('quiz');
+const scoreEl = document.getElementById('score');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+const progressTextEl = document.getElementById('progress-text');
+const currentScoreEl = document.getElementById('current-score');
+const questionsAnsweredEl = document.getElementById('questions-answered');
+const questionsTotalEl = document.getElementById('questions-total');
+const accuracyEl = document.getElementById('accuracy');
+const resultsEl = document.getElementById('results');
+const resultsBody = document.getElementById('results-body');
+const streakBadge = document.getElementById('streak-badge');
+const correctSound = document.getElementById('correct-sound');
+const wrongSound = document.getElementById('wrong-sound');
+const restartBtn = document.getElementById('restart-btn');
+
+const QUESTIONS_PER_PAGE = Math.max(1, Number(quizConfig.questionsPerPage) || 5);
+const ANSWER_DELAY = 700;
+let currentIndex = 0;
+let score = 0;
+let timerSeconds = 0;
+let timerInterval = null;
+let currentStreak = 0;
+let maxStreak = 0;
+let quizFinished = false;
+let pendingTimeout = null;
+let userAnswers = questions.map(() => null);
+
+questionsTotalEl.textContent = questions.length;
+progressTextEl.textContent = `0/${questions.length}`;
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timerSeconds += 1;
+        timerEl.textContent = formatTime(timerSeconds);
+    }, 1000);
+}
+
+function updateStats() {
+    const answeredCount = userAnswers.filter(answer => answer !== null).length;
+    const correctCount = userAnswers.filter(answer => answer && answer.isCorrect).length;
+    currentScoreEl.textContent = String(correctCount);
+    questionsAnsweredEl.textContent = String(answeredCount);
+    accuracyEl.textContent = `${answeredCount ? Math.round((correctCount / answeredCount) * 100) : 0}%`;
+    progressTextEl.textContent = `${answeredCount}/${questions.length}`;
+    progressEl.style.width = `${questions.length ? (answeredCount / questions.length) * 100 : 0}%`;
+}
+
+function updateStreak(isCorrect) {
+    if (isCorrect) {
+        currentStreak += 1;
+        maxStreak = Math.max(maxStreak, currentStreak);
+        if (currentStreak >= 3) {
+            streakBadge.textContent = `Streak: ${currentStreak}`;
+            streakBadge.classList.add('show');
+            setTimeout(() => streakBadge.classList.remove('show'), 1800);
+        }
+    } else {
+        currentStreak = 0;
+    }
+}
+
+function playSound(audioEl) {
+    try {
+        audioEl.currentTime = 0;
+        audioEl.play().catch(() => {});
+    } catch (error) {
+        // Ignore autoplay restrictions.
+    }
+}
+
+function drawConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = Array.from({ length: 150 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        vx: (Math.random() - 0.5) * 4,
+        vy: Math.random() * 3 + 2,
+        color: ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'][Math.floor(Math.random() * 5)],
+        size: Math.random() * 6 + 2,
+        rotation: Math.random() * 360
+    }));
+
+    let animationId;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+        particles.forEach(particle => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.rotation += 2;
+            if (particle.y < canvas.height + 20) {
+                active = true;
+                ctx.save();
+                ctx.translate(particle.x, particle.y);
+                ctx.rotate((particle.rotation * Math.PI) / 180);
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size);
+                ctx.restore();
+            }
+        });
+        if (active) {
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+    animate();
+    setTimeout(() => cancelAnimationFrame(animationId), 5000);
+}
+
+function createActionButton(label, className, onClick) {
+    const button = document.createElement('button');
+    button.className = className;
+    button.innerHTML = label;
+    button.addEventListener('click', onClick);
+    return button;
+}
+
+function renderQuestion() {
+    if (quizFinished) return;
+    quizEl.innerHTML = '';
+    scoreEl.textContent = '';
+    resultsEl.classList.add('hidden');
+
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    const pageEnd = Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length);
+
+    for (let questionIndex = pageStart; questionIndex < pageEnd; questionIndex += 1) {
+        const question = questions[questionIndex];
+        const questionWrapper = document.createElement('div');
+        questionWrapper.className = 'question-wrapper';
+
+        const questionCard = document.createElement('div');
+        questionCard.className = 'question-card';
+        questionCard.dataset.index = String(questionIndex);
+
+        const questionHeader = document.createElement('div');
+        questionHeader.className = 'question-header';
+        questionHeader.innerHTML = `
+            <div class="question-number">${questionIndex + 1}</div>
+            <div class="question-text">${question.q}</div>
+        `;
+
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'options';
+
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.textContent = question.explanation;
+
+        const shuffledOptions = shuffle(question.options.map((text, optionIndex) => ({ text, optionIndex })));
+
+        shuffledOptions.forEach((option, displayIndex) => {
+            const button = document.createElement('button');
+            button.className = 'option-btn';
+            button.innerHTML = `
+                <span class="option-indicator">${String.fromCharCode(65 + displayIndex)}</span>
+                <span>${option.text}</span>
+            `;
+            button.addEventListener('click', () => handleAnswer(questionIndex, option.optionIndex, option.text, button, optionsContainer, explanationDiv));
+            optionsContainer.appendChild(button);
+        });
+
+        questionCard.appendChild(questionHeader);
+        questionCard.appendChild(optionsContainer);
+        questionCard.appendChild(explanationDiv);
+        questionWrapper.appendChild(questionCard);
+        quizEl.appendChild(questionWrapper);
+    }
+
+    const actionBar = document.createElement('div');
+    actionBar.className = 'action-bar';
+    actionBar.appendChild(createActionButton('⊘ Skip Remaining', 'btn btn-skip', skipRemainingQuestionsOnPage));
+    quizEl.appendChild(actionBar);
+}
+
+function lockOptions(optionsContainer) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        button.disabled = true;
+    });
+}
+
+function revealCorrectAnswer(optionsContainer, correctIndex, questionIndex) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        const optionText = button.querySelector('span:last-child').textContent;
+        if (optionText === questions[questionIndex].options[correctIndex]) {
+            button.classList.add('correct');
+        }
+    });
+}
+
+function moveNext() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+
+    if (currentIndex < questions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+        updateStats();
+    } else {
+        finishQuiz();
+    }
+}
+
+function getCurrentPageBounds() {
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    return {
+        pageStart,
+        pageEnd: Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length)
+    };
+}
+
+function isCurrentPageComplete() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] === null) return false;
+    }
+    return true;
+}
+
+function scheduleNextStep() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+    }
+    pendingTimeout = setTimeout(() => {
+        if (isCurrentPageComplete()) {
+            const { pageEnd } = getCurrentPageBounds();
+            if (pageEnd >= questions.length) {
+                finishQuiz();
+            } else {
+                currentIndex = pageEnd;
+                renderQuestion();
+                updateStats();
+            }
+        }
+    }, ANSWER_DELAY);
+}
+
+function skipRemainingQuestionsOnPage() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] !== null) continue;
+        const card = quizEl.querySelector(`.question-card[data-index="${i}"]`);
+        if (!card) continue;
+        const explanationDiv = card.querySelector('.explanation');
+        const optionsContainer = card.querySelector('.options');
+        skipQuestion(i, explanationDiv, optionsContainer);
+    }
+}
+
+function handleAnswer(questionIndex, selectedIndex, selectedText, clickedButton, optionsContainer, explanationDiv) {
+    if (userAnswers[questionIndex] !== null) return;
+
+    const question = questions[questionIndex];
+    const isCorrect = selectedIndex === question.answer;
+    lockOptions(optionsContainer);
+    revealCorrectAnswer(optionsContainer, question.answer, questionIndex);
+
+    if (!isCorrect) {
+        clickedButton.classList.add('wrong');
+        playSound(wrongSound);
+    } else {
+        clickedButton.classList.add('correct');
+        playSound(correctSound);
+        score += 1;
+    }
+
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText,
+        isCorrect,
+        skipped: false
+    };
+    currentIndex = questionIndex;
+    updateStreak(isCorrect);
+    updateStats();
+    scheduleNextStep();
+}
+
+function skipQuestion(questionIndex, explanationDiv, optionsContainer) {
+    if (userAnswers[questionIndex] !== null) return;
+    lockOptions(optionsContainer);
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText: 'Skipped',
+        isCorrect: false,
+        skipped: true
+    };
+    currentIndex = questionIndex;
+    updateStreak(false);
+    updateStats();
+    scheduleNextStep();
+}
+
+function finishQuiz() {
+    quizFinished = true;
+    clearInterval(timerInterval);
+    quizEl.innerHTML = '';
+
+    const percentage = questions.length ? ((score / questions.length) * 100).toFixed(1) : '0.0';
+    let message = 'Keep learning! You\'ll improve!';
+    let emoji = '📚';
+
+    if (Number(percentage) >= 90) {
+        message = 'Outstanding! You\'re a master!';
+        emoji = '🏆';
+        drawConfetti();
+    } else if (Number(percentage) >= 70) {
+        message = 'Great job! Well done!';
+        emoji = '🌟';
+    } else if (Number(percentage) >= 50) {
+        message = 'Good effort! Keep practicing!';
+        emoji = '💪';
+    }
+
+    scoreEl.innerHTML = `
+        <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+        <div class="score-display">${percentage}%</div>
+        <div class="score-label">${message}</div>
+        <div style="margin-top: 1rem; color: var(--text-secondary);">
+            ${score} correct out of ${questions.length} questions<br>
+            Time: ${formatTime(timerSeconds)} | Best Streak: ${maxStreak}
+        </div>
+    `;
+
+    resultsBody.innerHTML = questions.map((question, index) => {
+        const answer = userAnswers[index];
+        const userAnswer = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.selectedText;
+        const status = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.isCorrect ? 'Correct' : 'Wrong';
+        const statusClass = status.toLowerCase().replace(' ', '-');
+        const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : status === 'Skipped' ? '⊘' : '•';
+        return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${question.q}</td>
+                <td>${userAnswer}</td>
+                <td>${question.options[question.answer] ?? ''}</td>
+                <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                <td class="explanation-cell">${question.explanation}</td>
+            </tr>
+        `;
+    }).join('');
+
+    resultsEl.classList.remove('hidden');
+}
+
+function restartQuiz() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+    clearInterval(timerInterval);
+    currentIndex = 0;
+    score = 0;
+    timerSeconds = 0;
+    currentStreak = 0;
+    maxStreak = 0;
+    quizFinished = false;
+    userAnswers = questions.map(() => null);
+    timerEl.textContent = '00:00';
+    streakBadge.classList.remove('show');
+    updateStats();
+    renderQuestion();
+    startTimer();
+}
+
+restartBtn.addEventListener('click', restartQuiz);
+window.addEventListener('resize', () => {
+    const canvas = document.getElementById('confetti-canvas');
+    if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+});
+
+updateStats();
+renderQuestion();
+startTimer();
+    </script>
+</body>
+</html>

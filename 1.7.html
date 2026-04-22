@@ -1,0 +1,2535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>1.7 नेपालको संविधान (भाग १ देखि ५ सम्म र अनुसूचीहरू)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>1.7 नेपालको संविधान (भाग १ देखि ५ सम्म र अनुसूचीहरू)</h1>
+                        <div class="subtitle">Technical Quiz</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">0</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" id="restart-btn">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+const quizConfig = {
+  "quizId": "1-7",
+  "quizTitle": "1.7 नेपालको संविधान (भाग १ देखि ५ सम्म र अनुसूचीहरू)",
+  "displayTitle": "1.7 नेपालको संविधान (भाग १ देखि ५ सम्म र अनुसूचीहरू)",
+  "topicName": "Technical Quiz",
+  "questionsPerPage": 5
+};
+const rawQuestions = [
+  {
+    "q": "नेपालको संविधान २०७२ कहिले जारी भयो?",
+    "options": [
+      "असोज ३, २०७२",
+      "भाद्र १५, २०७२",
+      "कार्तिक १, २०७२",
+      "मंसिर १५, २०७२"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ असोज ३ गते जारी भएको थियो। स्रोत: नेपाल सरकार"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार नेपाल कस्तो शासन प्रणालीमा आधारित छ?",
+    "options": [
+      "संघीय लोकतान्त्रिक गणतन्त्र",
+      "संघीय लोकतान्त्रिक गणतन्त्रात्मक शासन प्रणाली",
+      "संसदीय लोकतन्त्र",
+      "संघीय गणतन्त्र"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ४ अनुसार नेपाल संघीय लोकतान्त्रिक गणतन्त्रात्मक शासन प्रणालीमा आधारित छ। स्रोत: नेपालको संविधान २०७२, धारा ४"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राज्यको शक्तिको मूल स्रोत के हो?",
+    "options": [
+      "संसद्",
+      "राष्ट्रपति",
+      "जनता",
+      "प्रधानमन्त्री"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा २ अनुसार राज्यको शक्तिको स्रोत जनता हो। स्रोत: नेपालको संविधान २०७२, धारा २"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार नेपालको राष्ट्रिय भाषा के हो?",
+    "options": [
+      "नेपाली र अङ्ग्रेजी",
+      "मैथिली",
+      "भोजपुरी",
+      "नेपाली"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ७ अनुसार नेपालको राष्ट्रिय भाषा नेपाली हो। स्रोत: नेपालको संविधान २०७२, धारा ७"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार कति वटा प्रदेशहरू रहेका छन्?",
+    "options": [
+      "७ वटा",
+      "६ वटा",
+      "५ वटा",
+      "८ वटा"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ५६ अनुसार ७ वटा प्रदेशहरू रहेका छन्। स्रोत: नेपालको संविधान २०७२, धारा ५६"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार स्थानीय तहहरू कति वटा छन्?",
+    "options": [
+      "७४४ वटा",
+      "७५३ वटा",
+      "७७० वटा",
+      "७६० वटा"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ अनुसार ७५३ वटा स्थानीय तहहरू रहेका छन् (६ महानगरपालिका, ११ उप-महानगरपालिका, २७६ नगरपालिका र ४६० गाउँपालिका)। स्रोत: नेपालको संविधान २०७२"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार नागरिकताको व्यवस्था कुन भागमा छ?",
+    "options": [
+      "भाग १",
+      "भाग ३",
+      "भाग २",
+      "भाग ४"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को भाग २ मा नागरिकताको व्यवस्था गरिएको छ (धारा १०–१५)। स्रोत: नेपालको संविधान २०७२, भाग २"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार एकल संघीय नागरिकताको व्यवस्था कुन धारामा गरिएको छ?",
+    "options": [
+      "धारा ११",
+      "धारा १२",
+      "धारा १३",
+      "धारा १०"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा १० मा एकल संघीय नागरिकतासहित प्रदेशको पहिचान सम्बन्धी व्यवस्था गरिएको छ। स्रोत: नेपालको संविधान २०७२, धारा १०"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार कुनै पनि नागरिकलाई नागरिकता प्राप्त गर्ने अधिकारबाट वञ्चित गर्न मिल्छ?",
+    "options": [
+      "मिल्दैन",
+      "मिल्छ",
+      "केही अवस्थामा मिल्छ",
+      "संसद्को निर्णय अनुसार मिल्छ"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा १० अनुसार कुनै पनि नागरिकलाई नागरिकता प्राप्त गर्ने अधिकारबाट वञ्चित गर्न मिल्दैन।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार वंशजको आधारमा नागरिकता प्राप्त गर्ने व्यवस्था कुन धारामा छ?",
+    "options": [
+      "धारा १०",
+      "धारा ११",
+      "धारा १२",
+      "धारा १३"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ११ मा वंशजको आधारमा नागरिकता प्राप्त गर्ने व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार मौलिक हकहरू कुन भागमा व्यवस्था गरिएको छ?",
+    "options": [
+      "भाग २",
+      "भाग ४",
+      "भाग ३",
+      "भाग ५"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को भाग ३ मा मौलिक हकहरू व्यवस्था गरिएको छ (धारा १६–४७)।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार कति वटा मौलिक हकहरू रहेका छन्?",
+    "options": [
+      "२५ वटा",
+      "२८ वटा",
+      "३० वटा",
+      "३१ वटा"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को भाग ३ मा धारा १६ देखि ४७ सम्म गरी ३१ वटा मौलिक हकहरू व्यवस्था गरिएको छ। स्रोत: नेपालको संविधान २०७२"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार जीवनको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा १६",
+      "धारा १७",
+      "धारा १८",
+      "धारा १९"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा १६ मा जीवनको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार मृत्युदण्डको व्यवस्था कस्तो छ?",
+    "options": [
+      "रहेको छ",
+      "हटाइएको छ",
+      "केही अपराधमा मात्र रहेको छ",
+      "सैनिक अदालतमा मात्र रहेको छ"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा १६ अनुसार मृत्युदण्ड हटाइएको छ। कुनै पनि कानूनले मृत्युदण्डको व्यवस्था गर्न मिल्दैन।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार स्वतन्त्रताको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा १५",
+      "धारा १६",
+      "धारा १७",
+      "धारा १८"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा १७ मा स्वतन्त्रताको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को धारा १७ अनुसार नागरिकलाई कति वटा मौलिक स्वतन्त्रताहरू प्राप्त छन्?",
+    "options": [
+      "३ वटा",
+      "४ वटा",
+      "५ वटा",
+      "६ वटा"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा १७ अनुसार ६ वटा मौलिक स्वतन्त्रताहरू छन्: विचार र अभिव्यक्ति, शान्तिपूर्ण भेला, राजनीतिक दल गठन, संगठन स्थापना, देशमा बसोबास र रोजगारी।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार समानताको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा १८",
+      "धारा १९",
+      "धारा २०",
+      "धारा २१"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा १८ मा समानताको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार सञ्चारको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा १७",
+      "धारा १९",
+      "धारा २०",
+      "धारा २१"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा १९ मा सञ्चारको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार न्याय सम्बन्धी हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा १८",
+      "धारा १९",
+      "धारा २०",
+      "धारा २१"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा २० मा न्याय सम्बन्धी हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार पक्राउ गरिएको व्यक्तिलाई कति समयभित्र न्यायिक निकायसमक्ष पेश गर्नुपर्छ?",
+    "options": [
+      "१२ घण्टा",
+      "१८ घण्टा",
+      "२० घण्टा",
+      "२४ घण्टा"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा २० अनुसार पक्राउ गरिएको व्यक्तिलाई २४ घण्टाभित्र न्यायिक निकायसमक्ष पेश गर्नुपर्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार यातना विरुद्धको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा २२",
+      "धारा २३",
+      "धारा २४",
+      "धारा २५"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा २२ मा यातना विरुद्धको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार छुवाछुत तथा भेदभाव विरुद्धको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा २२",
+      "धारा २४",
+      "धारा २५",
+      "धारा २६"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा २४ मा छुवाछुत तथा भेदभाव विरुद्धको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार सम्पत्तिको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा २४",
+      "धारा २५",
+      "धारा २६",
+      "धारा २७"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा २५ मा सम्पत्तिको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार धार्मिक स्वतन्त्रताको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा २४",
+      "धारा २५",
+      "धारा २७",
+      "धारा २६"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा २६ मा धार्मिक स्वतन्त्रताको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार सूचना प्राप्त गर्ने हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा २७",
+      "धारा २८",
+      "धारा २९",
+      "धारा ३०"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा २७ मा सूचना प्राप्त गर्ने हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार गोपनीयताको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा २७",
+      "धारा २८",
+      "धारा २९",
+      "धारा ३०"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा २८ मा गोपनीयताको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार शोषण विरुद्धको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा २८",
+      "धारा २९",
+      "धारा ३०",
+      "धारा ३१"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा २९ मा शोषण विरुद्धको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार स्वच्छ वातावरणको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा २७",
+      "धारा २८",
+      "धारा २९",
+      "धारा ३०"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३० मा स्वच्छ वातावरणको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार शिक्षासम्बन्धी हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३१",
+      "धारा ३२",
+      "धारा ३३",
+      "धारा ३४"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३१ मा शिक्षासम्बन्धी हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार भाषा तथा संस्कृतिको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३१",
+      "धारा ३२",
+      "धारा ३३",
+      "धारा ३४"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३२ मा भाषा तथा संस्कृतिको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार रोजगारीको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३२",
+      "धारा ३३",
+      "धारा ३४",
+      "धारा ३५"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३३ मा रोजगारीको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार श्रमसम्बन्धी हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३२",
+      "धारा ३३",
+      "धारा ३५",
+      "धारा ३४"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३४ मा श्रमसम्बन्धी हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार स्वास्थ्यसम्बन्धी हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३५",
+      "धारा ३६",
+      "धारा ३७",
+      "धारा ३८"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३५ मा स्वास्थ्यसम्बन्धी हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार खाद्यसम्बन्धी हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३५",
+      "धारा ३६",
+      "धारा ३७",
+      "धारा ३८"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३६ मा खाद्यसम्बन्धी हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार आवासको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३५",
+      "धारा ३६",
+      "धारा ३७",
+      "धारा ३९"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३७ मा आवासको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार महिलाको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३५",
+      "धारा ३६",
+      "धारा ३७",
+      "धारा ३८"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३८ मा महिलाको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार बालबालिकाको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३९",
+      "धारा ४०",
+      "धारा ४१",
+      "धारा ४२"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३९ मा बालबालिकाको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार दलितको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३९",
+      "धारा ४०",
+      "धारा ४१",
+      "धारा ४२"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ४० मा दलितको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार ज्येष्ठ नागरिकको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३९",
+      "धारा ४०",
+      "धारा ४१",
+      "धारा ४३"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा ४१ मा ज्येष्ठ नागरिकको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार सामाजिक न्यायको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ३९",
+      "धारा ४०",
+      "धारा ४३",
+      "धारा ४२"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ४२ मा सामाजिक न्यायको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार सामाजिक सुरक्षाको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ४३",
+      "धारा ४४",
+      "धारा ४५",
+      "धारा ४६"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ४३ मा सामाजिक सुरक्षाको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार उपभोक्ताको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ४३",
+      "धारा ४४",
+      "धारा ४५",
+      "धारा ४६"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ४४ मा उपभोक्ताको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार निर्वासन विरुद्धको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ४३",
+      "धारा ४४",
+      "धारा ४५",
+      "धारा ४७"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा ४५ मा निर्वासन विरुद्धको हक व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार संवैधानिक उपचारको हक कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ४३",
+      "धारा ४५",
+      "धारा ४७",
+      "धारा ४६"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ४६ मा संवैधानिक उपचारको हक व्यवस्था गरिएको छ। यो मौलिक हकहरूमध्ये अन्तिम हक हो।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार मौलिक हक कार्यान्वयनको व्यवस्था कुन धारामा छ?",
+    "options": [
+      "धारा ४७",
+      "धारा ४८",
+      "धारा ४९",
+      "धारा ५०"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ४७ मा मौलिक हक कार्यान्वयनको व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार नागरिकको कर्तव्य कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ४७",
+      "धारा ४८",
+      "धारा ४९",
+      "धारा ५०"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ४८ मा नागरिकको कर्तव्य व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राज्यको निर्देशक सिद्धान्त, नीति र दायित्वहरू कुन भागमा व्यवस्था गरिएको छ?",
+    "options": [
+      "भाग ३",
+      "भाग ५",
+      "भाग ४",
+      "भाग ६"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को भाग ४ मा राज्यको निर्देशक सिद्धान्त, नीति र दायित्वहरू व्यवस्था गरिएको छ (धारा ४९–५५)।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार निर्देशक सिद्धान्तहरू कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ४९",
+      "धारा ५१",
+      "धारा ५२",
+      "धारा ५०"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ५० मा निर्देशक सिद्धान्तहरू व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राज्यका नीतिहरू कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा ५१",
+      "धारा ५२",
+      "धारा ५३",
+      "धारा ५४"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ५१ मा राज्यका नीतिहरू व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राष्ट्रपति र उपराष्ट्रपतिको व्यवस्था कुन भागमा छ?",
+    "options": [
+      "भाग ४",
+      "भाग ५",
+      "भाग ६",
+      "भाग ७"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को भाग ५ मा राष्ट्रपति र उपराष्ट्रपतिको व्यवस्था छ (धारा ६१–७२)।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राष्ट्रपति बन्न न्यूनतम उमेर कति हुनुपर्छ?",
+    "options": [
+      "३० वर्ष",
+      "३५ वर्ष",
+      "४० वर्ष",
+      "४५ वर्ष"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ६२ अनुसार राष्ट्रपति बन्न न्यूनतम उमेर ४५ वर्ष हुनुपर्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार संघीय संसद्को गठन कस्तो हुन्छ?",
+    "options": [
+      "द्विसदनीय",
+      "एकसदनीय",
+      "त्रिसदनीय",
+      "चतुःसदनीय"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ८३ अनुसार संघीय संसद् द्विसदनीय हुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार प्रतिनिधिसभाको सदस्य संख्या कति हुन्छ?",
+    "options": [
+      "२५० जना",
+      "२७५ जना",
+      "३०० जना",
+      "३३० जना"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ८४ अनुसार प्रतिनिधिसभाको सदस्य संख्या २७५ जना हुन्छ (१६५ प्रत्यक्ष + ११० समानुपातिक)।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राष्ट्रिय सभाको सदस्य संख्या कति हुन्छ?",
+    "options": [
+      "५० जना",
+      "५६ जना",
+      "५९ जना",
+      "६५ जना"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा ८६ अनुसार राष्ट्रिय सभाको सदस्य संख्या ५९ जना हुन्छ (५६ निर्वाचित + ३ राष्ट्रपति मनोनीत)।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राष्ट्रिय सभाको सदस्यको कार्यकाल कति वर्षको हुन्छ?",
+    "options": [
+      "३ वर्ष",
+      "४ वर्ष",
+      "५ वर्ष",
+      "६ वर्ष"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ८६ अनुसार राष्ट्रिय सभाको सदस्यको कार्यकाल ६ वर्षको हुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ संशोधन गर्न कति प्रतिशत मत आवश्यक पर्छ?",
+    "options": [
+      "दुई तिहाई",
+      "तीन चौथाई",
+      "पूर्ण बहुमत",
+      "साधारण बहुमत"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा २७४ अनुसार संविधान संशोधन गर्न दुई तिहाई मत आवश्यक पर्छ।"
+  },
+  {
+    "q": "संघीय कानून र प्रदेश कानून बीच द्वन्द्व भएमा कुन कानून प्रभावी हुन्छ?",
+    "options": [
+      "प्रदेश कानून",
+      "संघीय कानून",
+      "दुवै समान हुन्छन्",
+      "सर्वोच्च अदालतको निर्णयले तय गर्छ"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा १३३ अनुसार संघीय कानून र प्रदेश कानून बीच द्वन्द्व भएमा संघीय कानून प्रभावी हुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार सर्वोच्च अदालतको असाधारण (Extraordinary) अधिकारक्षेत्र कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा १२८",
+      "धारा १३०",
+      "धारा १३३",
+      "धारा १३५"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा १३३ मा सर्वोच्च अदालतको असाधारण अधिकारक्षेत्र (बन्दीप्रत्यक्षीकरण, परमादेश आदि) व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार उच्च अदालतको असाधारण अधिकारक्षेत्र कुन धारामा व्यवस्था गरिएको छ?",
+    "options": [
+      "धारा १४०",
+      "धारा १४१",
+      "धारा १४२",
+      "धारा १४४"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा १४४ मा उच्च अदालतको असाधारण अधिकारक्षेत्र व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को अनुसूची १ मा केको व्यवस्था छ?",
+    "options": [
+      "नेपालको राष्ट्रिय झण्डा र राष्ट्रिय चिन्ह",
+      "संघीय अधिकार सूची",
+      "प्रदेश अधिकार सूची",
+      "स्थानीय तह अधिकार सूची"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को अनुसूची १ मा नेपालको राष्ट्रिय झण्डा र राष्ट्रिय चिन्हको व्यवस्था छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को अनुसूची ५ मा केको व्यवस्था छ?",
+    "options": [
+      "प्रदेश अधिकार सूची",
+      "संघीय अधिकार सूची",
+      "संयुक्त अधिकार सूची",
+      "स्थानीय तह अधिकार सूची"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को अनुसूची ५ मा संघीय अधिकार सूची व्यवस्था छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को अनुसूची ६ मा केको व्यवस्था छ?",
+    "options": [
+      "संघीय अधिकार सूची",
+      "स्थानीय तह अधिकार सूची",
+      "प्रदेश अधिकार सूची",
+      "संयुक्त अधिकार सूची"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को अनुसूची ६ मा प्रदेश अधिकार सूची व्यवस्था छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को अनुसूची ८ मा केको व्यवस्था छ?",
+    "options": [
+      "प्रदेश अधिकार सूची",
+      "संयुक्त अधिकार सूची",
+      "संघीय अधिकार सूची",
+      "स्थानीय तह अधिकार सूची"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को अनुसूची ८ मा स्थानीय तह अधिकार सूची व्यवस्था छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को अनुसूची ९ मा केको व्यवस्था छ?",
+    "options": [
+      "संयुक्त अधिकार सूची",
+      "संघीय अधिकार सूची",
+      "प्रदेश अधिकार सूची",
+      "स्थानीय तह अधिकार सूची"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को अनुसूची ९ मा संयुक्त (संघ, प्रदेश र स्थानीय) अधिकार सूची व्यवस्था छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार कति वटा अनुसूचीहरू रहेका छन्?",
+    "options": [
+      "७ वटा",
+      "९ वटा",
+      "१० वटा",
+      "१२ वटा"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ मा जम्मा ९ वटा अनुसूचीहरू रहेका छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार संवैधानिक इजलासमा कति जना न्यायाधीशहरू हुन्छन्?",
+    "options": [
+      "५ जना",
+      "६ जना",
+      "७ जना",
+      "९ जना"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा १३७ अनुसार संवैधानिक इजलासमा ७ जना न्यायाधीशहरू हुन्छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार प्रधानन्यायाधीशको कार्यकाल कति वर्षको हुन्छ?",
+    "options": [
+      "३ वर्ष",
+      "४ वर्ष",
+      "५ वर्ष",
+      "६ वर्ष"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा १२९ अनुसार प्रधानन्यायाधीशको कार्यकाल ६ वर्षको हुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार निर्वाचन आयोगको प्रमुखको पदनाम के हो?",
+    "options": [
+      "प्रमुख आयुक्त",
+      "प्रमुख निर्वाचन आयुक्त",
+      "सभापति",
+      "अध्यक्ष"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा २४५ अनुसार निर्वाचन आयोगको प्रमुखलाई प्रमुख निर्वाचन आयुक्त भनिन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार महालेखा परीक्षकको नियुक्ति कसले गर्छ?",
+    "options": [
+      "प्रधानमन्त्री",
+      "सभामुख",
+      "राष्ट्रपति",
+      "संसद्"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा २४० अनुसार महालेखा परीक्षकको नियुक्ति राष्ट्रपतिले संवैधानिक परिषद्को सिफारिसमा गर्नुहुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार अख्तियार दुरुपयोग अनुसन्धान आयोगको प्रमुखलाई के भनिन्छ?",
+    "options": [
+      "अध्यक्ष",
+      "प्रमुख",
+      "सभापति",
+      "प्रमुख आयुक्त"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा २३८ अनुसार अख्तियार दुरुपयोग अनुसन्धान आयोगको प्रमुखलाई प्रमुख आयुक्त भनिन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राष्ट्रिय मानव अधिकार आयोगको प्रमुखलाई के भनिन्छ?",
+    "options": [
+      "अध्यक्ष",
+      "प्रधानमन्त्री",
+      "राष्ट्रपति",
+      "सभामुख"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा २५२ अनुसार राष्ट्रिय मानव अधिकार आयोगको प्रमुखलाई अध्यक्ष भनिन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राष्ट्रिय प्राकृतिक स्रोत तथा वित्त आयोगको अध्यक्ष कसले नियुक्त गर्छ?",
+    "options": [
+      "प्रधानमन्त्री",
+      "राष्ट्रपति",
+      "सभामुख",
+      "प्रधानन्यायाधीश"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा २५९ अनुसार राष्ट्रिय प्राकृतिक स्रोत तथा वित्त आयोगको अध्यक्ष राष्ट्रपतिले नियुक्त गर्नुहुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार संघीय संसद्को अधिवेशन बोलाउने अधिकार कसलाई छ?",
+    "options": [
+      "प्रधानमन्त्री",
+      "सभामुख",
+      "राष्ट्रपति",
+      "प्रधानन्यायाधीश"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा ९३ अनुसार संघीय संसद्को अधिवेशन बोलाउने अधिकार राष्ट्रपतिलाई छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राष्ट्रिय आपतकालीन अवस्था घोषणा गर्ने अधिकार कसलाई छ?",
+    "options": [
+      "प्रधानमन्त्री",
+      "सभामुख",
+      "संसद्",
+      "राष्ट्रपति"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा २७३ अनुसार राष्ट्रिय आपतकालीन अवस्था घोषणा गर्ने अधिकार राष्ट्रपतिलाई छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार अध्यादेश जारी गर्ने अधिकार कसलाई छ?",
+    "options": [
+      "राष्ट्रपति",
+      "प्रधानमन्त्री",
+      "सभामुख",
+      "प्रधानन्यायाधीश"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ११४ अनुसार अध्यादेश जारी गर्ने अधिकार राष्ट्रपतिलाई छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार अध्यादेश कति दिनभित्र संसद्बाट पारित गराउनुपर्छ?",
+    "options": [
+      "३० दिन",
+      "६० दिन",
+      "९० दिन",
+      "१२० दिन"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ११४ अनुसार अध्यादेश ६० दिनभित्र संसद्बाट पारित गराउनुपर्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार संसद् विघटन गर्ने अधिकार कसलाई छ?",
+    "options": [
+      "प्रधानमन्त्री",
+      "सभामुख",
+      "राष्ट्रपति",
+      "प्रधानन्यायाधीश"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा ७६ अनुसार संसद् विघटन गर्ने अधिकार राष्ट्रपतिलाई छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार प्रधानमन्त्री नियुक्त गर्ने अधिकार कसलाई छ?",
+    "options": [
+      "सभामुख",
+      "प्रधानन्यायाधीश",
+      "संसद्",
+      "राष्ट्रपति"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ७६ अनुसार प्रधानमन्त्री नियुक्त गर्ने अधिकार राष्ट्रपतिलाई छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार प्रधानमन्त्रीको न्यूनतम उमेर कति हुनुपर्छ?",
+    "options": [
+      "३५ वर्ष",
+      "४० वर्ष",
+      "४५ वर्ष",
+      "५० वर्ष"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ७६ अनुसार प्रधानमन्त्रीको न्यूनतम उमेर ३५ वर्ष हुनुपर्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार मन्त्रिपरिषद्को अध्यक्ष को हुन्छ?",
+    "options": [
+      "राष्ट्रपति",
+      "प्रधानमन्त्री",
+      "सभामुख",
+      "उपप्रधानमन्त्री"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ७६ अनुसार मन्त्रिपरिषद्को अध्यक्ष प्रधानमन्त्री हुन्छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार विश्वासको मत प्राप्त गर्न नसकेमा प्रधानमन्त्रीले के गर्नुपर्छ?",
+    "options": [
+      "पदबाट राजीनामा दिनुपर्छ",
+      "संसद् विघटनको सिफारिस गर्न सक्छ",
+      "पुनः विश्वासको मत माग्न सक्छ",
+      "राष्ट्रपतिसमक्ष बैठक बोलाउन सिफारिस गर्न सक्छ"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा १०० अनुसार विश्वासको मत प्राप्त गर्न नसकेमा प्रधानमन्त्रीले पदबाट राजीनामा दिनुपर्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार अविश्वासको प्रस्ताव पारित गर्न कति मत चाहिन्छ?",
+    "options": [
+      "साधारण बहुमत",
+      "दुई तिहाई",
+      "तीन चौथाई",
+      "प्रतिनिधिसभाको सम्पूर्ण सदस्यको बहुमत"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा १०० अनुसार अविश्वासको प्रस्ताव प्रतिनिधिसभाका सम्पूर्ण सदस्यहरूको बहुमतबाट पारित हुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राष्ट्रिय सभाको बैठक कसले अध्यक्षता गर्छ?",
+    "options": [
+      "अध्यक्ष",
+      "उपाध्यक्ष",
+      "सभामुख",
+      "राष्ट्रपति"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ९१ अनुसार राष्ट्रिय सभाको बैठक अध्यक्षले अध्यक्षता गर्छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार प्रतिनिधिसभाको बैठक कसले अध्यक्षता गर्छ?",
+    "options": [
+      "राष्ट्रपति",
+      "सभामुख",
+      "उपसभामुख",
+      "प्रधानमन्त्री"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ९१ अनुसार प्रतिनिधिसभाको बैठक सभामुखले अध्यक्षता गर्छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार न्यायिक समितिको अध्यक्ष को हुन्छ?",
+    "options": [
+      "प्रधानन्यायाधीश",
+      "राष्ट्रपति",
+      "सभामुख",
+      "प्रधानमन्त्री"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा ९७ अनुसार न्यायिक समितिको अध्यक्ष सभामुख हुन्छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार संसदीय सुनुवाइ समितिमा कति जना सदस्यहरू हुन्छन्?",
+    "options": [
+      "१५ जना",
+      "१८ जना",
+      "२० जना",
+      "२१ जना"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा २९२ अनुसार संसदीय सुनुवाइ समितिमा २१ जना सदस्यहरू हुन्छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राष्ट्रपतिले कहिले राजीनामा दिन सक्छन्?",
+    "options": [
+      "जुनसुकै बेला",
+      "मात्र कार्यकाल सकिएपछि",
+      "संसद्को निर्णय अनुसार मात्र",
+      "प्रधानमन्त्रीको सिफारिसमा मात्र"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ६८ अनुसार राष्ट्रपतिले जुनसुकै बेला राजीनामा दिन सक्छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार उपराष्ट्रपतिले राजीनामा कसलाई दिन्छन्?",
+    "options": [
+      "प्रधानमन्त्रीलाई",
+      "राष्ट्रपतिलाई",
+      "सभामुखलाई",
+      "प्रधानन्यायाधीशलाई"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को धारा ७१ अनुसार उपराष्ट्रपतिले आफ्नो राजीनामा राष्ट्रपतिलाई दिन्छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार राष्ट्रपतिको निर्वाचन कसरी हुन्छ?",
+    "options": [
+      "प्रत्यक्ष निर्वाचन",
+      "समानुपातिक निर्वाचन",
+      "निर्वाचक मण्डलबाट निर्वाचन",
+      "संसद्को नियुक्ति"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा ६२ अनुसार राष्ट्रपतिको निर्वाचन निर्वाचक मण्डलबाट हुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार उपराष्ट्रपतिको कार्यकाल कति वर्षको हुन्छ?",
+    "options": [
+      "३ वर्ष",
+      "४ वर्ष",
+      "६ वर्ष",
+      "५ वर्ष"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा ७० अनुसार उपराष्ट्रपतिको कार्यकाल ५ वर्षको हुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ जारी भएपछि संविधानसभाको उत्तराधिकारीका रूपमा कुन निकाय कायम भयो?",
+    "options": [
+      "संघीय संसद्",
+      "सर्वोच्च अदालत",
+      "संवैधानिक परिषद्",
+      "राष्ट्रिय सभा मात्र"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ असोज ३, २०७२ मा जारी भएपछि संविधानसभाको विघटन भई संघीय संसद् (प्रतिनिधिसभा र राष्ट्रिय सभा) कायम भयो। स्रोत: नेपालको संविधान २०७२, धारा २९६"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को भाग ५ मा कुन विषयको व्यवस्था गरिएको छ?",
+    "options": [
+      "मौलिक हकहरू",
+      "राष्ट्रपति र उपराष्ट्रपति",
+      "निर्देशक सिद्धान्त",
+      "न्यायपालिका"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को भाग ५ मा राष्ट्रपति र उपराष्ट्रपतिसँग सम्बन्धित व्यवस्थाहरू (धारा ६१–७२) रहेका छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार लोकसेवा आयोगको अध्यक्षको पदावधि कति हुन्छ?",
+    "options": [
+      "४ वर्ष",
+      "५ वर्ष",
+      "६ वर्ष",
+      "७ वर्ष"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा २४३ अनुसार लोकसेवा आयोगको अध्यक्ष र सदस्यको पदावधि ६ वर्षको हुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को अनुसूची ७ मा केको व्यवस्था छ?",
+    "options": [
+      "स्थानीय तह अधिकार सूची",
+      "संघीय अधिकार सूची",
+      "प्रदेश अधिकार सूची",
+      "संघ र प्रदेशको साझा अधिकार सूची"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को अनुसूची ७ मा संघ र प्रदेशको साझा (Concurrent) अधिकार सूची व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार संविधानको संरक्षक को हो?",
+    "options": [
+      "सर्वोच्च अदालत",
+      "राष्ट्रपति",
+      "संवैधानिक परिषद्",
+      "प्रधानमन्त्री"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा १२८ अनुसार सर्वोच्च अदालत संविधानको संरक्षक हो।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को भाग १ मा कति वटा धाराहरू छन्?",
+    "options": [
+      "३ वटा",
+      "९ वटा",
+      "१२ वटा",
+      "१५ वटा"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधान २०७२ को भाग १ (प्रारम्भिक) मा धारा १ देखि धारा ९ सम्म गरी ९ वटा धाराहरू छन्।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को धारा १ मा के व्यवस्था छ?",
+    "options": [
+      "शासन प्रणाली",
+      "राज्यशक्तिको स्रोत",
+      "नेपालको संविधान सर्वोच्च कानुन भएको व्यवस्था",
+      "नागरिकताको व्यवस्था"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको संविधान २०७२ को धारा १ मा नेपालको संविधान नेपालको सर्वोच्च कानुन हो र यससँग बाझिने अन्य कानुन बाझिएकोसम्म स्वतः अमान्य हुने व्यवस्था छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ को धारा २७५ अनुसार संविधान कार्यान्वयनमा बाधा पुर्याउने कार्यलाई कस्तो अपराध मानिन्छ?",
+    "options": [
+      "साधारण अपराध",
+      "कुनै सजाय छैन",
+      "प्रशासनिक कारवाही",
+      "राजद्रोहसरहको गम्भीर अपराध"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान २०७२ को धारा २७५ अनुसार संविधान कार्यान्वयनमा बाधा पुर्याउने कार्य राजद्रोहसरहको गम्भीर अपराध मानिन्छ र त्यस्तो कार्यको कुनै मान्यता हुँदैन।"
+  }
+];
+
+const questions = rawQuestions.map((item, index) => {
+    const options = Array.isArray(item.options) ? item.options.map(option => String(option)) : [];
+    const parsedAnswer = Number(item.answer);
+    const answerIndex = Number.isInteger(parsedAnswer) && parsedAnswer >= 0 ? parsedAnswer : 0;
+    return {
+        q: String(item.q ?? item.question ?? `Question ${index + 1}`),
+        options,
+        answer: Math.min(answerIndex, Math.max(options.length - 1, 0)),
+        explanation: String(item.explanation ?? 'No explanation provided.')
+    };
+}).filter(question => question.q && question.options.length > 0);
+
+const quizEl = document.getElementById('quiz');
+const scoreEl = document.getElementById('score');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+const progressTextEl = document.getElementById('progress-text');
+const currentScoreEl = document.getElementById('current-score');
+const questionsAnsweredEl = document.getElementById('questions-answered');
+const questionsTotalEl = document.getElementById('questions-total');
+const accuracyEl = document.getElementById('accuracy');
+const resultsEl = document.getElementById('results');
+const resultsBody = document.getElementById('results-body');
+const streakBadge = document.getElementById('streak-badge');
+const correctSound = document.getElementById('correct-sound');
+const wrongSound = document.getElementById('wrong-sound');
+const restartBtn = document.getElementById('restart-btn');
+
+const QUESTIONS_PER_PAGE = Math.max(1, Number(quizConfig.questionsPerPage) || 5);
+const ANSWER_DELAY = 700;
+let currentIndex = 0;
+let score = 0;
+let timerSeconds = 0;
+let timerInterval = null;
+let currentStreak = 0;
+let maxStreak = 0;
+let quizFinished = false;
+let pendingTimeout = null;
+let userAnswers = questions.map(() => null);
+
+questionsTotalEl.textContent = questions.length;
+progressTextEl.textContent = `0/${questions.length}`;
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timerSeconds += 1;
+        timerEl.textContent = formatTime(timerSeconds);
+    }, 1000);
+}
+
+function updateStats() {
+    const answeredCount = userAnswers.filter(answer => answer !== null).length;
+    const correctCount = userAnswers.filter(answer => answer && answer.isCorrect).length;
+    currentScoreEl.textContent = String(correctCount);
+    questionsAnsweredEl.textContent = String(answeredCount);
+    accuracyEl.textContent = `${answeredCount ? Math.round((correctCount / answeredCount) * 100) : 0}%`;
+    progressTextEl.textContent = `${answeredCount}/${questions.length}`;
+    progressEl.style.width = `${questions.length ? (answeredCount / questions.length) * 100 : 0}%`;
+}
+
+function updateStreak(isCorrect) {
+    if (isCorrect) {
+        currentStreak += 1;
+        maxStreak = Math.max(maxStreak, currentStreak);
+        if (currentStreak >= 3) {
+            streakBadge.textContent = `Streak: ${currentStreak}`;
+            streakBadge.classList.add('show');
+            setTimeout(() => streakBadge.classList.remove('show'), 1800);
+        }
+    } else {
+        currentStreak = 0;
+    }
+}
+
+function playSound(audioEl) {
+    try {
+        audioEl.currentTime = 0;
+        audioEl.play().catch(() => {});
+    } catch (error) {
+        // Ignore autoplay restrictions.
+    }
+}
+
+function drawConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = Array.from({ length: 150 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        vx: (Math.random() - 0.5) * 4,
+        vy: Math.random() * 3 + 2,
+        color: ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'][Math.floor(Math.random() * 5)],
+        size: Math.random() * 6 + 2,
+        rotation: Math.random() * 360
+    }));
+
+    let animationId;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+        particles.forEach(particle => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.rotation += 2;
+            if (particle.y < canvas.height + 20) {
+                active = true;
+                ctx.save();
+                ctx.translate(particle.x, particle.y);
+                ctx.rotate((particle.rotation * Math.PI) / 180);
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size);
+                ctx.restore();
+            }
+        });
+        if (active) {
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+    animate();
+    setTimeout(() => cancelAnimationFrame(animationId), 5000);
+}
+
+function createActionButton(label, className, onClick) {
+    const button = document.createElement('button');
+    button.className = className;
+    button.innerHTML = label;
+    button.addEventListener('click', onClick);
+    return button;
+}
+
+function renderQuestion() {
+    if (quizFinished) return;
+    quizEl.innerHTML = '';
+    scoreEl.textContent = '';
+    resultsEl.classList.add('hidden');
+
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    const pageEnd = Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length);
+
+    for (let questionIndex = pageStart; questionIndex < pageEnd; questionIndex += 1) {
+        const question = questions[questionIndex];
+        const questionWrapper = document.createElement('div');
+        questionWrapper.className = 'question-wrapper';
+
+        const questionCard = document.createElement('div');
+        questionCard.className = 'question-card';
+        questionCard.dataset.index = String(questionIndex);
+
+        const questionHeader = document.createElement('div');
+        questionHeader.className = 'question-header';
+        questionHeader.innerHTML = `
+            <div class="question-number">${questionIndex + 1}</div>
+            <div class="question-text">${question.q}</div>
+        `;
+
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'options';
+
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.textContent = question.explanation;
+
+        const shuffledOptions = shuffle(question.options.map((text, optionIndex) => ({ text, optionIndex })));
+
+        shuffledOptions.forEach((option, displayIndex) => {
+            const button = document.createElement('button');
+            button.className = 'option-btn';
+            button.innerHTML = `
+                <span class="option-indicator">${String.fromCharCode(65 + displayIndex)}</span>
+                <span>${option.text}</span>
+            `;
+            button.addEventListener('click', () => handleAnswer(questionIndex, option.optionIndex, option.text, button, optionsContainer, explanationDiv));
+            optionsContainer.appendChild(button);
+        });
+
+        questionCard.appendChild(questionHeader);
+        questionCard.appendChild(optionsContainer);
+        questionCard.appendChild(explanationDiv);
+        questionWrapper.appendChild(questionCard);
+        quizEl.appendChild(questionWrapper);
+    }
+
+    const actionBar = document.createElement('div');
+    actionBar.className = 'action-bar';
+    actionBar.appendChild(createActionButton('⊘ Skip Remaining', 'btn btn-skip', skipRemainingQuestionsOnPage));
+    quizEl.appendChild(actionBar);
+}
+
+function lockOptions(optionsContainer) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        button.disabled = true;
+    });
+}
+
+function revealCorrectAnswer(optionsContainer, correctIndex, questionIndex) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        const optionText = button.querySelector('span:last-child').textContent;
+        if (optionText === questions[questionIndex].options[correctIndex]) {
+            button.classList.add('correct');
+        }
+    });
+}
+
+function moveNext() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+
+    if (currentIndex < questions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+        updateStats();
+    } else {
+        finishQuiz();
+    }
+}
+
+function getCurrentPageBounds() {
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    return {
+        pageStart,
+        pageEnd: Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length)
+    };
+}
+
+function isCurrentPageComplete() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] === null) return false;
+    }
+    return true;
+}
+
+function scheduleNextStep() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+    }
+    pendingTimeout = setTimeout(() => {
+        if (isCurrentPageComplete()) {
+            const { pageEnd } = getCurrentPageBounds();
+            if (pageEnd >= questions.length) {
+                finishQuiz();
+            } else {
+                currentIndex = pageEnd;
+                renderQuestion();
+                updateStats();
+            }
+        }
+    }, ANSWER_DELAY);
+}
+
+function skipRemainingQuestionsOnPage() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] !== null) continue;
+        const card = quizEl.querySelector(`.question-card[data-index="${i}"]`);
+        if (!card) continue;
+        const explanationDiv = card.querySelector('.explanation');
+        const optionsContainer = card.querySelector('.options');
+        skipQuestion(i, explanationDiv, optionsContainer);
+    }
+}
+
+function handleAnswer(questionIndex, selectedIndex, selectedText, clickedButton, optionsContainer, explanationDiv) {
+    if (userAnswers[questionIndex] !== null) return;
+
+    const question = questions[questionIndex];
+    const isCorrect = selectedIndex === question.answer;
+    lockOptions(optionsContainer);
+    revealCorrectAnswer(optionsContainer, question.answer, questionIndex);
+
+    if (!isCorrect) {
+        clickedButton.classList.add('wrong');
+        playSound(wrongSound);
+    } else {
+        clickedButton.classList.add('correct');
+        playSound(correctSound);
+        score += 1;
+    }
+
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText,
+        isCorrect,
+        skipped: false
+    };
+    currentIndex = questionIndex;
+    updateStreak(isCorrect);
+    updateStats();
+    scheduleNextStep();
+}
+
+function skipQuestion(questionIndex, explanationDiv, optionsContainer) {
+    if (userAnswers[questionIndex] !== null) return;
+    lockOptions(optionsContainer);
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText: 'Skipped',
+        isCorrect: false,
+        skipped: true
+    };
+    currentIndex = questionIndex;
+    updateStreak(false);
+    updateStats();
+    scheduleNextStep();
+}
+
+function finishQuiz() {
+    quizFinished = true;
+    clearInterval(timerInterval);
+    quizEl.innerHTML = '';
+
+    const percentage = questions.length ? ((score / questions.length) * 100).toFixed(1) : '0.0';
+    let message = 'Keep learning! You\'ll improve!';
+    let emoji = '📚';
+
+    if (Number(percentage) >= 90) {
+        message = 'Outstanding! You\'re a master!';
+        emoji = '🏆';
+        drawConfetti();
+    } else if (Number(percentage) >= 70) {
+        message = 'Great job! Well done!';
+        emoji = '🌟';
+    } else if (Number(percentage) >= 50) {
+        message = 'Good effort! Keep practicing!';
+        emoji = '💪';
+    }
+
+    scoreEl.innerHTML = `
+        <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+        <div class="score-display">${percentage}%</div>
+        <div class="score-label">${message}</div>
+        <div style="margin-top: 1rem; color: var(--text-secondary);">
+            ${score} correct out of ${questions.length} questions<br>
+            Time: ${formatTime(timerSeconds)} | Best Streak: ${maxStreak}
+        </div>
+    `;
+
+    resultsBody.innerHTML = questions.map((question, index) => {
+        const answer = userAnswers[index];
+        const userAnswer = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.selectedText;
+        const status = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.isCorrect ? 'Correct' : 'Wrong';
+        const statusClass = status.toLowerCase().replace(' ', '-');
+        const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : status === 'Skipped' ? '⊘' : '•';
+        return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${question.q}</td>
+                <td>${userAnswer}</td>
+                <td>${question.options[question.answer] ?? ''}</td>
+                <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                <td class="explanation-cell">${question.explanation}</td>
+            </tr>
+        `;
+    }).join('');
+
+    resultsEl.classList.remove('hidden');
+}
+
+function restartQuiz() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+    clearInterval(timerInterval);
+    currentIndex = 0;
+    score = 0;
+    timerSeconds = 0;
+    currentStreak = 0;
+    maxStreak = 0;
+    quizFinished = false;
+    userAnswers = questions.map(() => null);
+    timerEl.textContent = '00:00';
+    streakBadge.classList.remove('show');
+    updateStats();
+    renderQuestion();
+    startTimer();
+}
+
+restartBtn.addEventListener('click', restartQuiz);
+window.addEventListener('resize', () => {
+    const canvas = document.getElementById('confetti-canvas');
+    if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+});
+
+updateStats();
+renderQuestion();
+startTimer();
+    </script>
+</body>
+</html>

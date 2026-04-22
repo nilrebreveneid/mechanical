@@ -1,0 +1,2557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>1.6 जनस्वास्थ्य, रोग, खाद्य र पोषण सम्बन्धी सामान्य जानकारी</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>1.6 जनस्वास्थ्य, रोग, खाद्य र पोषण सम्बन्धी सामान्य जानकारी</h1>
+                        <div class="subtitle">Technical Quiz</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">0</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" id="restart-btn">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+const quizConfig = {
+  "quizId": "1-6",
+  "quizTitle": "1.6 जनस्वास्थ्य, रोग, खाद्य र पोषण सम्बन्धी सामान्य जानकारी",
+  "displayTitle": "1.6 जनस्वास्थ्य, रोग, खाद्य र पोषण सम्बन्धी सामान्य जानकारी",
+  "topicName": "Technical Quiz",
+  "questionsPerPage": 5
+};
+const rawQuestions = [
+  {
+    "q": "विश्व स्वास्थ्य संगठन (WHO) को परिभाषा अनुसार स्वास्थ्य भनेको के हो?",
+    "options": [
+      "शारीरिक, मानसिक र सामाजिक रूपमा पूर्ण सुस्थितिको अवस्था",
+      "केवल रोग नलागेको अवस्था",
+      "शारीरिक रूपमा ठीक भएको अवस्था",
+      "मानसिक र शारीरिक स्वस्थता"
+    ],
+    "answer": 0,
+    "explanation": "WHO को परिभाषा अनुसार स्वास्थ्य भनेको केवल रोग नलागेको मात्र नभई शारीरिक, मानसिक र सामाजिक रूपमा पूर्ण सुस्थितिको अवस्था हो। स्रोत: WHO Constitution"
+  },
+  {
+    "q": "नेपालमा स्वास्थ्य सेवा सञ्चालन गर्ने मुख्य सरकारी मन्त्रालय कुन हो?",
+    "options": [
+      "शिक्षा मन्त्रालय",
+      "स्वास्थ्य तथा जनसंख्या मन्त्रालय",
+      "समाज कल्याण मन्त्रालय",
+      "महिला तथा बालबालिका मन्त्रालय"
+    ],
+    "answer": 1,
+    "explanation": "नेपालमा स्वास्थ्य सेवा सञ्चालन गर्ने मुख्य सरकारी मन्त्रालय स्वास्थ्य तथा जनसंख्या मन्त्रालय हो।"
+  },
+  {
+    "q": "मानव शरीरका लागि आवश्यक मुख्य पोषक तत्वहरूको संख्या कति हो?",
+    "options": [
+      "३",
+      "५",
+      "६",
+      "८"
+    ],
+    "answer": 2,
+    "explanation": "मानव शरीरका लागि आवश्यक मुख्य पोषक तत्वहरू ६ वटा हन् — कार्बोहाइड्रेट, प्रोटिन, फ्याट, भिटामिन, खनिज र पानी।"
+  },
+  {
+    "q": "नेपालमा प्राथमिक स्वास्थ्य केन्द्र (PHC) को अवधारणा कुन सम्मेलनबाट आएको हो?",
+    "options": [
+      "Ottawa Charter, 1986",
+      "Alma Ata Conference, 1980",
+      "Jakarta Declaration, 1997",
+      "Alma Ata Declaration, 1978"
+    ],
+    "answer": 3,
+    "explanation": "प्राथमिक स्वास्थ्य केन्द्रको अवधारणा Alma Ata Declaration 1978 बाट आएको हो।"
+  },
+  {
+    "q": "ओरल रिहाइड्रेशन सोल्युसन (ORS) मा के-के हुन्छ?",
+    "options": [
+      "नुन, चिनी र सफा पानी",
+      "नुन, दूध र पानी",
+      "चिनी, दूध र पानी",
+      "नुन, चिनी र दही"
+    ],
+    "answer": 0,
+    "explanation": "ORS मा नुन (सोडियम क्लोराइड), चिनी र सफा पानी हुन्छ। यो झाडापखाला रोकथामका लागि प्रयोग गरिन्छ।"
+  },
+  {
+    "q": "नेपालमा राष्ट्रिय खोप कार्यक्रम (EPI) कहिलेदेखि सुरु भयो?",
+    "options": [
+      "२०३२ साल",
+      "२०३५ साल",
+      "२०४० साल",
+      "२०४५ साल"
+    ],
+    "answer": 1,
+    "explanation": "नेपालमा विस्तारित खोप कार्यक्रम (EPI) २०३५ साल (सन् १९७८) देखि सुरु भएको हो।"
+  },
+  {
+    "q": "भिटामिन C को कमीले कुन रोग लाग्छ?",
+    "options": [
+      "रिकेट्स",
+      "बेरीबेरी",
+      "स्कर्भी",
+      "रतनधोले"
+    ],
+    "answer": 2,
+    "explanation": "भिटामिन C को कमीले स्कर्भी (Scurvy) रोग लाग्छ जसमा मसिना फुट्ने, दाँतको मसुरा सुनिने समस्या हुन्छ।"
+  },
+  {
+    "q": "HIV/AIDS रोग कसबाट सर्छ?",
+    "options": [
+      "हावाबाट",
+      "पानीबाट",
+      "छुनाछुनाबाट",
+      "असुरक्षित यौन सम्पर्क, सुई साझा गर्नाले र माताबाट शिशुमा"
+    ],
+    "answer": 3,
+    "explanation": "HIV/AIDS असुरक्षित यौन सम्पर्क, संक्रमित रगत/सुई साझा गर्नाले र HIV संक्रमित माताबाट शिशुमा सर्छ।"
+  },
+  {
+    "q": "नेपालको मातृ मृत्युदर (MMR) प्रति १,००,००० जीवित जन्ममा कति रहेको छ?",
+    "options": [
+      "१५१",
+      "२५९",
+      "२०६",
+      "१७२"
+    ],
+    "answer": 0,
+    "explanation": "NDHS 2022 अनुसार नेपालको MMR प्रति १,००,००० जीवित जन्ममा १५१ रहेको छ। स्रोत: MoHP/NDHS 2022"
+  },
+  {
+    "q": "नेपालमा पाँच वर्षमुनिका बालबालिकामा स्टन्टिङ (Stunting) दर NDHS २०२२ अनुसार कति छ?",
+    "options": [
+      "२४%",
+      "२५%",
+      "३२%",
+      "१९%"
+    ],
+    "answer": 1,
+    "explanation": "NDHS 2022 अनुसार नेपालमा ५ वर्षमुनिका बालबालिकामा स्टन्टिङ दर २५% छ। स्रोत: NDHS 2022"
+  },
+  {
+    "q": "खाद्य सुरक्षाका चार आयामहरू मध्ये कुन पर्दैन?",
+    "options": [
+      "उपलब्धता",
+      "पहुँच",
+      "उपयोगिता",
+      "स्वास्थ्य सेवा"
+    ],
+    "answer": 3,
+    "explanation": "खाद्य सुरक्षाका चार आयाम Availability, Access, Utilization र Stability हुन्। त्यसैले 'स्वास्थ्य सेवा' यसमा पर्दैन।"
+  },
+  {
+    "q": "नेपालमा टाइफाइड (Typhoid) रोग कसरी सर्छ?",
+    "options": [
+      "हावाबाट",
+      "जीवजन्तुको टोकाइबाट",
+      "छोएर सर्छ",
+      "दूषित खाना र पानीबाट"
+    ],
+    "answer": 3,
+    "explanation": "टाइफाइड Salmonella typhi ब्याक्टेरियाबाट हुन्छ र दूषित खाना र पानीबाट सर्छ।"
+  },
+  {
+    "q": "WHO को सिफारिस अनुसार शिशुलाई जन्मेदेखि कति महिनासम्म एक्लो स्तनपान गराउनुपर्छ?",
+    "options": [
+      "६ महिना",
+      "४ महिना",
+      "३ महिना",
+      "१२ महिना"
+    ],
+    "answer": 0,
+    "explanation": "WHO को सिफारिस अनुसार शिशुलाई जन्मेदेखि ६ महिनासम्म एक्लो स्तनपान (Exclusive Breastfeeding) गराउनुपर्छ।"
+  },
+  {
+    "q": "नेपालमा कालाजार (Kala-azar) रोग कुन जीवाणुबाट हुन्छ?",
+    "options": [
+      "Plasmodium vivax",
+      "Leishmania donovani",
+      "Wuchereria bancrofti",
+      "Trypanosoma cruzi"
+    ],
+    "answer": 1,
+    "explanation": "कालाजार (Visceral Leishmaniasis) Leishmania donovani परजीवीबाट हुन्छ र Phlebotomus sandfly को टोकाइबाट सर्छ।"
+  },
+  {
+    "q": "नेपालमा 'आयोडिनयुक्त नुन' प्रयोग अनिवार्य गर्नुको मुख्य कारण के हो?",
+    "options": [
+      "रक्तअल्पता रोकथाम",
+      "भिटामिन A को कमी रोकथाम",
+      "घेँडागाँठ रोकथाम",
+      "रिकेट्स रोकथाम"
+    ],
+    "answer": 2,
+    "explanation": "आयोडिनको कमीले थाइरोइड ग्रन्थी फुल्ने (Goitre) र मस्तिष्क विकासमा समस्या हुन्छ। आयोडिनयुक्त नुन यसको रोकथामका लागि अनिवार्य छ।"
+  },
+  {
+    "q": "डेंगी (Dengue) रोग कुन लामखुट्टेले फैलाउँछ?",
+    "options": [
+      "Anopheles mosquito",
+      "Culex mosquito",
+      "Mansonia mosquito",
+      "Aedes aegypti mosquito"
+    ],
+    "answer": 3,
+    "explanation": "डेंगी ज्वरो Aedes aegypti लामखुट्टेले फैलाउँछ। यो दिनमा टोक्ने लामखुट्टे हो।"
+  },
+  {
+    "q": "नेपालमा मलेरिया नियन्त्रण कार्यक्रम कुन जिल्लाहरूमा केन्द्रित छ?",
+    "options": [
+      "तराईका जिल्लाहरू, विशेषतः तराई-मधेस प्रदेशका",
+      "हिमाली जिल्लाहरू",
+      "काठमाडौं उपत्यका",
+      "पहाडी जिल्लाहरू"
+    ],
+    "answer": 0,
+    "explanation": "मलेरिया मुख्यतः नेपालको तराई क्षेत्रका जिल्लाहरूमा हुन्छ।"
+  },
+  {
+    "q": "नेपालको राष्ट्रिय पोषण नीति अनुसार SAM (Severe Acute Malnutrition) उपचार कहाँ गरिन्छ?",
+    "options": [
+      "जिल्ला अस्पतालमा मात्र",
+      "Therapeutic Feeding Centre र Community-based",
+      "केवल काठमाडौंका अस्पतालमा",
+      "घरमा नै"
+    ],
+    "answer": 1,
+    "explanation": "SAM को उपचार Therapeutic Feeding Centre (TFC) मा Inpatient र CMAM मार्फत Outpatient गरिन्छ।"
+  },
+  {
+    "q": "नेपालमा क्षयरोग (TB) उपचारको DOTS कार्यक्रम पूर्ण उपचार अवधि कति हो?",
+    "options": [
+      "३ महिना",
+      "४ महिना",
+      "६ महिना",
+      "१२ महिना"
+    ],
+    "answer": 2,
+    "explanation": "नेपालमा DOTS अन्तर्गत TB उपचार अवधि सामान्यतः ६ महिना (नयाँ केसका लागि) हुन्छ।"
+  },
+  {
+    "q": "भिटामिन A को कमीले कुन समस्या हुन्छ?",
+    "options": [
+      "रिकेट्स",
+      "स्कर्भी",
+      "बेरीबेरी",
+      "रतनधोले र रोगप्रतिरोधक क्षमता कमजोर"
+    ],
+    "answer": 3,
+    "explanation": "भिटामिन A को कमीले रतनधोले (Night Blindness), Xerophthalmia र रोगप्रतिरोधक क्षमता कमजोर हुन्छ।"
+  },
+  {
+    "q": "नेपालको स्वास्थ्य बीमा कार्यक्रम कहिलेदेखि सुरु भयो?",
+    "options": [
+      "२०७३ साल",
+      "२०७५ साल",
+      "२०७० साल",
+      "२०७८ साल"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको स्वास्थ्य बीमा कार्यक्रम २०७३ साल (सन् २०१६) देखि कैलाली र बागलुङबाट परीक्षण शुरू भएको हो।"
+  },
+  {
+    "q": "कोभिड-१९ (COVID-19) रोग कुन भाइरसबाट हुन्छ?",
+    "options": [
+      "Influenza A virus",
+      "SARS-CoV-2",
+      "Ebola virus",
+      "Marburg virus"
+    ],
+    "answer": 1,
+    "explanation": "COVID-19 SARS-CoV-2 भाइरसबाट हुन्छ। यो सन् २०१९ मा चीनको वुहानमा पहिलो पटक पहिचान भयो।"
+  },
+  {
+    "q": "नेपालमा AYUSH सेवा कुन संस्थाले सञ्चालन गर्छ?",
+    "options": [
+      "NHRC",
+      "NAMS",
+      "DAMS",
+      "IOM"
+    ],
+    "answer": 2,
+    "explanation": "नेपालमा DAMS ले आयुर्वेद र वैकल्पिक चिकित्सा सेवा सञ्चालन गर्छ।"
+  },
+  {
+    "q": "संसारमा NCDs (Non-Communicable Diseases) ले कति प्रतिशत मृत्यु ओगट्छ?",
+    "options": [
+      "५०%",
+      "५५%",
+      "६५%",
+      "७४%"
+    ],
+    "answer": 3,
+    "explanation": "WHO को तथ्याङ्क अनुसार संसारमा हुने कुल मृत्युमध्ये ७४% NCDs बाट हुन्छ। स्रोत: WHO NCD Report 2023"
+  },
+  {
+    "q": "नेपालमा 'एक घर एक धारा, एक घर एक चर्पी' कार्यक्रम कुन क्षेत्रसँग सम्बन्धित छ?",
+    "options": [
+      "खानेपानी र सरसफाइ",
+      "खाद्य सुरक्षा",
+      "मातृ स्वास्थ्य",
+      "बाल पोषण"
+    ],
+    "answer": 0,
+    "explanation": "'एक घर एक धारा, एक घर एक चर्पी' WASH (Water, Sanitation and Hygiene) क्षेत्रसँग सम्बन्धित छ।"
+  },
+  {
+    "q": "नेपालमा लसीकाजन्य रोग (Lymphatic Filariasis) फैलाउने कारक के हो?",
+    "options": [
+      "Anopheles mosquito",
+      "Culex mosquito र Wuchereria bancrofti",
+      "Aedes mosquito",
+      "Sandfly"
+    ],
+    "answer": 1,
+    "explanation": "Filariasis Wuchereria bancrofti परजीवीबाट हुन्छ जुन Culex mosquito मार्फत सर्छ।"
+  },
+  {
+    "q": "नेपालमा NCD नियन्त्रणका लागि कुन राष्ट्रिय कार्यक्रम छ?",
+    "options": [
+      "BCCP",
+      "EHCS",
+      "NPCDCS",
+      "FCHV Programme"
+    ],
+    "answer": 2,
+    "explanation": "NPCDCS ले नेपालमा NCD नियन्त्रणको काम गर्छ।"
+  },
+  {
+    "q": "नेपालमा स्वास्थ्य स्वयंसेविका (FCHV) कार्यक्रम कहिले सुरु भयो?",
+    "options": [
+      "२०३५ साल",
+      "२०४० साल",
+      "२०४५ साल",
+      "२०४८ साल"
+    ],
+    "answer": 3,
+    "explanation": "नेपालमा FCHV कार्यक्रम २०४८ साल (सन् १९८८) देखि सुरु भएको हो। हाल ५१,०००+ FCHV क्रियाशील छन्।"
+  },
+  {
+    "q": "BCG खोप कहिले लगाइन्छ?",
+    "options": [
+      "जन्मेको दिनदेखि वा जन्मको ४५ दिनभित्र",
+      "६ हप्तामा",
+      "९ महिनामा",
+      "१ वर्षमा"
+    ],
+    "answer": 0,
+    "explanation": "BCG (Bacillus Calmette-Guérin) खोप TB विरुद्ध जन्मेको दिन वा सकेसम्म छिटो (जन्मको ४५ दिनभित्र) लगाइन्छ।"
+  },
+  {
+    "q": "नेपालले कुष्ठरोग (Leprosy) उन्मूलनको लक्ष्य कहिले प्राप्त गर्यो?",
+    "options": [
+      "२०५७ साल",
+      "२०६२ साल",
+      "२०७० साल",
+      "२०७५ साल"
+    ],
+    "answer": 1,
+    "explanation": "नेपालले प्रति १०,००० जनसंख्यामा १ भन्दा कम केस भनी कुष्ठरोग उन्मूलनको लक्ष्य २०६२ साल (सन् २००५) मा प्राप्त गर्यो।"
+  },
+  {
+    "q": "हैजा (Cholera) रोग कुन ब्याक्टेरियाबाट हुन्छ?",
+    "options": [
+      "Salmonella typhi",
+      "E. coli",
+      "Vibrio cholerae",
+      "Shigella dysenteriae"
+    ],
+    "answer": 2,
+    "explanation": "हैजा Vibrio cholerae ब्याक्टेरियाबाट हुन्छ र दूषित पानी र खानाबाट सर्छ।"
+  },
+  {
+    "q": "मानव शरीरमा रगतको pH मान सामान्यतः कति हुन्छ?",
+    "options": [
+      "६.५ - ७.०",
+      "७.५ - ८.०",
+      "६.० - ७.०",
+      "७.३५ - ७.४५"
+    ],
+    "answer": 3,
+    "explanation": "मानव शरीरमा रगतको सामान्य pH मान ७.३५ - ७.४५ हुन्छ।"
+  },
+  {
+    "q": "नेपालको संविधान २०७२ अनुसार स्वास्थ्य सम्बन्धी मौलिक हक कुन धाराले व्यवस्था गर्छ?",
+    "options": [
+      "धारा ३५",
+      "धारा ३२",
+      "धारा ३९",
+      "धारा ४२"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान २०७२ को धारा ३५ ले स्वास्थ्य सम्बन्धी मौलिक हकको व्यवस्था गरेको छ।"
+  },
+  {
+    "q": "इन्सुलिन (Insulin) कुन रोगको उपचारमा प्रयोग गरिन्छ?",
+    "options": [
+      "रक्तचाप",
+      "मधुमेह",
+      "हैजा",
+      "क्षयरोग"
+    ],
+    "answer": 1,
+    "explanation": "इन्सुलिन Pancreas ले निकाल्छ र मधुमेह (Diabetes Mellitus) को उपचार/नियन्त्रणमा प्रयोग गरिन्छ।"
+  },
+  {
+    "q": "नेपालमा HIV/AIDS बिरामीलाई ART थेरापी निःशुल्क उपलब्ध गराउने संस्था कुन हो?",
+    "options": [
+      "Red Cross",
+      "UNICEF",
+      "NCASC",
+      "NNFSP"
+    ],
+    "answer": 2,
+    "explanation": "नेपालमा NCASC ले HIV/AIDS बिरामीलाई ART थेरापी निःशुल्क उपलब्ध गराउँछ।"
+  },
+  {
+    "q": "विश्व स्वास्थ्य दिवस (World Health Day) कहिले मनाइन्छ?",
+    "options": [
+      "जनवरी १",
+      "मार्च २४",
+      "सेप्टेम्बर १",
+      "अप्रिल ७"
+    ],
+    "answer": 3,
+    "explanation": "विश्व स्वास्थ्य दिवस प्रत्येक वर्ष अप्रिल ७ मा मनाइन्छ। यो WHO को स्थापना दिवस (१९४८) को सम्मानमा मनाइन्छ।"
+  },
+  {
+    "q": "NDHS 2022 अनुसार नेपालमा संस्थागत प्रसव (Institutional Delivery) दर कति रहेको छ?",
+    "options": [
+      "७९%",
+      "७२%",
+      "६५%",
+      "८८%"
+    ],
+    "answer": 0,
+    "explanation": "NDHS 2022 अनुसार नेपालमा संस्थागत प्रसव दर ७९% छ जुन NDHS 2016 को ५७% भन्दा उल्लेखनीय वृद्धि हो। स्रोत: NDHS 2022"
+  },
+  {
+    "q": "नेपालमा बाल मृत्युदर (Under-5 Mortality Rate) NDHS 2022 अनुसार प्रति १,००० जीवित जन्ममा कति छ?",
+    "options": [
+      "२८",
+      "३३",
+      "४५",
+      "२०"
+    ],
+    "answer": 1,
+    "explanation": "NDHS 2022 अनुसार नेपालमा ५ वर्षमुनिका बालबालिकाको मृत्युदर प्रति १,००० जीवित जन्ममा ३३ छ।"
+  },
+  {
+    "q": "कुपोषणमा 'Wasting' भनेको के हो?",
+    "options": [
+      "उचाइको तुलनामा उमेर कम भएको",
+      "तौलको तुलनामा उचाइ कम भएको",
+      "उचाइको तुलनामा तौल कम भएको",
+      "सूक्ष्म पोषक तत्व कमी"
+    ],
+    "answer": 2,
+    "explanation": "Wasting भनेको उचाइको तुलनामा तौल कम हुनु (Weight-for-Height < -2 SD) हो। यो Acute Malnutrition को संकेत हो।"
+  },
+  {
+    "q": "नेपालमा पोलियो उन्मूलन (Polio Free) कहिले घोषणा भयो?",
+    "options": [
+      "२०५० साल",
+      "२०५५ साल",
+      "२०५८ साल",
+      "२०७१ साल"
+    ],
+    "answer": 3,
+    "explanation": "WHO SEARO ले दक्षिण-पूर्व एसिया क्षेत्रलाई सन् २०१४ (२०७१ साल) मा पोलियो-मुक्त घोषणा गर्यो। स्रोत: WHO SEARO 2014"
+  },
+  {
+    "q": "नेपालको १५औं पञ्चवर्षीय योजनाले MMR को लक्ष्य के राखेको थियो?",
+    "options": [
+      "प्रति १,००,००० जीवित जन्ममा ९५ भन्दा कम",
+      "प्रति १,००,००० जीवित जन्ममा १०० भन्दा कम",
+      "प्रति १,००,००० जीवित जन्ममा ७०",
+      "प्रति १,००,००० जीवित जन्ममा ५०"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको १५औं पञ्चवर्षीय योजना (२०७६-२०८०) ले MMR प्रति १,००,००० जीवित जन्ममा ९५ भन्दा कम पुर्याउने लक्ष्य राखेको थियो।"
+  },
+  {
+    "q": "SDG Goal 3 ले स्वास्थ्य सम्बन्धी के लक्ष्य तय गरेको छ?",
+    "options": [
+      "Universal Basic Income प्रदान गर्ने",
+      "सबैका लागि स्वस्थ जीवन सुनिश्चित गर्ने र सबै उमेरका लागि सुखी जीवन प्रवर्द्धन गर्ने",
+      "शिक्षा र स्वास्थ्य एकीकरण गर्ने",
+      "NCDs मात्र नियन्त्रण गर्ने"
+    ],
+    "answer": 1,
+    "explanation": "SDG Goal 3: 'Ensure healthy lives and promote well-being for all at all ages'"
+  },
+  {
+    "q": "नेपालमा आत्महत्याको दर WHO data अनुसार कति छ?",
+    "options": [
+      "विश्वमा सबैभन्दा बढी, प्रति १ लाखमा ५०",
+      "विश्वमा मध्यम, प्रति १ लाखमा ७",
+      "उच्च दरमध्ये, प्रति १ लाखमा १६-१८",
+      "न्यून दरमध्ये, प्रति १ लाखमा ३"
+    ],
+    "answer": 2,
+    "explanation": "WHO को तथ्याङ्क अनुसार नेपालमा आत्महत्याको दर प्रति १ लाखमा करिब १६-१८ छ जुन विश्व औसत (९) भन्दा उच्च हो।"
+  },
+  {
+    "q": "नेपालको स्वास्थ्य खर्च GDP को कति प्रतिशत छ?",
+    "options": [
+      "१०.२%",
+      "७.५%",
+      "४.१%",
+      "५.९%"
+    ],
+    "answer": 3,
+    "explanation": "WHO Nepal Health Profile अनुसार नेपालको कुल स्वास्थ्य खर्च GDP को करिब ५.९% रहेको छ।"
+  },
+  {
+    "q": "Nepal को National Action Plan on AMR (Antimicrobial Resistance) कहिले तयार भयो?",
+    "options": [
+      "२०७४ साल",
+      "२०७० साल",
+      "२०७८ साल",
+      "२०७२ साल"
+    ],
+    "answer": 0,
+    "explanation": "नेपालले AMR सम्बन्धी National Action Plan २०७४ साल (सन् २०१७) मा तयार गर्यो।"
+  },
+  {
+    "q": "नेपालको NDHS 2022 अनुसार कुल प्रजनन दर (TFR) कति रहेको छ?",
+    "options": [
+      "१.८",
+      "२.१",
+      "२.३",
+      "२.५"
+    ],
+    "answer": 1,
+    "explanation": "NDHS 2022 अनुसार नेपालको TFR (Total Fertility Rate) २.१ छ। स्रोत: NDHS 2022 Nepal"
+  },
+  {
+    "q": "नेपालमा तम्बाकू नियन्त्रण ऐन कहिले लागू भयो?",
+    "options": [
+      "२०५५ साल",
+      "२०५८ साल",
+      "२०६८ साल",
+      "२०७२ साल"
+    ],
+    "answer": 2,
+    "explanation": "नेपालमा तम्बाकू नियन्त्रण तथा नियमन ऐन २०६८ साल (सन् २०११) मा लागू भयो।"
+  },
+  {
+    "q": "नेपालमा NDHS 2022 अनुसार बालबालिकामा पूर्ण खोप (Fully Immunized) दर कति रहेको छ?",
+    "options": [
+      "७२%",
+      "७८%",
+      "८३%",
+      "८०%"
+    ],
+    "answer": 3,
+    "explanation": "NDHS 2022 अनुसार नेपालमा १२-२३ महिनाका बालबालिकामा पूर्ण खोप दर ८०% रहेको छ। स्रोत: NDHS 2022"
+  },
+  {
+    "q": "पेलाग्रा (Pellagra) रोग कुन भिटामिनको कमीले हुन्छ?",
+    "options": [
+      "नियासिन",
+      "थायमिन",
+      "एस्कर्बिक एसिड",
+      "क्याल्सिफेरोल"
+    ],
+    "answer": 0,
+    "explanation": "पेलाग्रा नियासिन (Niacin / Vitamin B3) को कमीले हुन्छ। यसमा Dermatitis, Diarrhoea र Dementia (3 D) को लक्षण हुन्छ।"
+  },
+  {
+    "q": "जापानी एन्सेफलाइटिस (JE) रोग नेपालमा कुन क्षेत्रमा बढी पाइन्छ र यसको भेक्टर के हो?",
+    "options": [
+      "हिमाली क्षेत्र, Aedes mosquito",
+      "तराई र भित्री मधेस, Culex mosquito",
+      "काठमाडौं उपत्यका, Anopheles mosquito",
+      "पहाडी क्षेत्र, Sandfly"
+    ],
+    "answer": 1,
+    "explanation": "JE नेपालको तराई र भित्री मधेस क्षेत्रमा बढी पाइन्छ र Culex tritaeniorhynchus mosquito यसको मुख्य भेक्टर हो।"
+  },
+  {
+    "q": "खाद्य सुरक्षाको अवस्था मापन गर्ने FAO को सूचकाँक कुन हो?",
+    "options": [
+      "HDI",
+      "GNI",
+      "GHI",
+      "GINI Coefficient"
+    ],
+    "answer": 2,
+    "explanation": "Global Hunger Index (GHI) ले विश्वका देशहरूको खाद्य सुरक्षा र भोकमरीको अवस्था मापन गर्छ।"
+  },
+  {
+    "q": "नेपालमा राष्ट्रिय स्वास्थ्य अनुसन्धान परिषद् (NHRC) को स्थापना कहिले भयो?",
+    "options": [
+      "२०२५ साल",
+      "२०३२ साल",
+      "२०४५ साल",
+      "२०४७ साल"
+    ],
+    "answer": 3,
+    "explanation": "Nepal Health Research Council (NHRC) को स्थापना २०४७ साल (सन् १९९१) मा भएको हो।"
+  },
+  {
+    "q": "मलेरिया (Malaria) कुन परजीवीबाट हुन्छ?",
+    "options": [
+      "Plasmodium",
+      "Leishmania",
+      "Trypanosoma",
+      "Wuchereria"
+    ],
+    "answer": 0,
+    "explanation": "मलेरिया Plasmodium परजीवीबाट हुन्छ। नेपालमा मुख्यतः P. vivax र P. falciparum पाइन्छ।"
+  },
+  {
+    "q": "फोलिक एसिड (Folic Acid) कुन भिटामिन हो र यसको कमीले के हुन्छ?",
+    "options": [
+      "Vitamin B12, रतनधोले",
+      "Vitamin B9, Neural Tube Defect र Anaemia",
+      "Vitamin C, स्कर्भी",
+      "Vitamin D, रिकेट्स"
+    ],
+    "answer": 1,
+    "explanation": "फोलिक एसिड Vitamin B9 हो। गर्भावस्थामा यसको कमीले Neural Tube Defect र Megaloblastic Anaemia हुन्छ।"
+  },
+  {
+    "q": "BMI (Body Mass Index) कसरी गणना गरिन्छ?",
+    "options": [
+      "तौल / उचाइ",
+      "तौल × उचाइ",
+      "तौल / उचाइ²",
+      "उचाइ - तौल"
+    ],
+    "answer": 2,
+    "explanation": "BMI = तौल (kg) / उचाइ² (m²)। सामान्य BMI 18.5-24.9 kg/m² हुन्छ।"
+  },
+  {
+    "q": "शिशु मृत्युदर (Infant Mortality Rate) को परिभाषा के हो?",
+    "options": [
+      "प्रति १० हजार जीवित जन्ममा ५ वर्षमुनि मृत्यु",
+      "प्रति हजार जनसंख्यामा मृत्यु",
+      "प्रति १ लाख जीवित जन्ममा मृत्यु",
+      "प्रति १,००० जीवित जन्ममा १ वर्षमुनिका शिशुको मृत्यु"
+    ],
+    "answer": 3,
+    "explanation": "IMR = प्रति १,००० जीवित जन्ममा जन्मेको पहिलो वर्षभित्र मृत शिशुको संख्या। NDHS 2022: Nepal IMR = २८।"
+  },
+  {
+    "q": "नेपालमा 'Aama Programme' अन्तर्गत संस्थागत प्रसवका लागि दिइने प्रोत्साहन रकम के हो?",
+    "options": [
+      "पहाड/हिमाल: रु. ३,०००; तराई: रु. २,०००",
+      "पहाड: रु. १,५००; तराई: रु. १,०००",
+      "पहाड: रु. ५,०००; तराई: रु. ३,०००",
+      "सबैलाई रु. २,५०० समान"
+    ],
+    "answer": 0,
+    "explanation": "Aama Programme अन्तर्गत पहाड/हिमाली जिल्लामा रु. ३,००० र तराई जिल्लामा रु. २,००० प्रोत्साहन भत्ता प्रदान गरिन्छ।"
+  },
+  {
+    "q": "आहारको ऊर्जा एकाइ कुन हो र वयस्क व्यक्तिलाई दैनिक कति kcal आवश्यक हुन्छ?",
+    "options": [
+      "Joule, २,५०० Joule",
+      "Kilocalorie, २,०००-२,५०० kcal",
+      "Calorie, ५,०००",
+      "Megajoule, ८ MJ"
+    ],
+    "answer": 1,
+    "explanation": "आहारको ऊर्जा Kilocalorie (kcal) मा मापन गरिन्छ। वयस्क महिलालाई २,००० kcal र पुरुषलाई २,५०० kcal दैनिक आवश्यक पर्छ।"
+  },
+  {
+    "q": "नेपालको स्वास्थ्य प्रणालीको तहगत संरचना (Referral System) कस्तो छ?",
+    "options": [
+      "२ तह: प्राथमिक र तृतीयक",
+      "३ तह: केन्द्रीय, प्रादेशिक र जिल्ला",
+      "३ तह: प्राथमिक, द्वितीयक र तृतीयक",
+      "५ तह: PHCC, PHC, District, Zonal, Central"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको स्वास्थ्य सेवा प्रणालीमा ३ तह छन्: Primary (Health Post/PHC), Secondary (District/Provincial Hospital) र Tertiary (Teaching/Central Hospital)।"
+  },
+  {
+    "q": "नेपालमा HIV/AIDS को MARP (Most at Risk Population) मध्ये कुन पर्दैन?",
+    "options": [
+      "Injecting Drug Users",
+      "Female Sex Workers",
+      "Men who have Sex with Men",
+      "Primary School Children"
+    ],
+    "answer": 3,
+    "explanation": "MARP मा IDU, FSW, MSM, Male Labor Migrants र Transgender पर्छन्। Primary School Children MARP मा पर्दैनन्।"
+  },
+  {
+    "q": "NDHS 2022 अनुसार नेपालमा परिवार नियोजन (mCPR) दर कति छ?",
+    "options": [
+      "५३.३%",
+      "४५.७%",
+      "६०.२%",
+      "४९.१%"
+    ],
+    "answer": 0,
+    "explanation": "NDHS 2022 अनुसार नेपालमा विवाहित महिलामा Modern Contraceptive Prevalence Rate ५३.३% छ।"
+  },
+  {
+    "q": "विश्व क्षयरोग (TB) दिवस कहिले मनाइन्छ?",
+    "options": [
+      "फेब्रुअरी ४",
+      "मार्च २४",
+      "अक्टोबर ३",
+      "नोभेम्बर १४"
+    ],
+    "answer": 1,
+    "explanation": "विश्व TB दिवस प्रत्येक वर्ष मार्च २४ मा मनाइन्छ। सन् १८८२ मा यही दिन Robert Koch ले TB ब्याक्टेरिया पत्ता लगाएका थिए।"
+  },
+  {
+    "q": "नेपालमा आर्सेनिक (Arsenic) प्रदूषण मुख्यतः कुन क्षेत्रमा पाइन्छ?",
+    "options": [
+      "हिमाली क्षेत्र, फोक्सोको रोग",
+      "काठमाडौं, मुटु रोग",
+      "तराईका जिल्लाहरू, छाला र फोक्सोको क्यान्सर",
+      "पहाडी क्षेत्र, हड्डीको रोग"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको तराई क्षेत्रका जिल्लाहरूमा भूमिगत पानीमा आर्सेनिक पाइन्छ। दीर्घकालीन सेवनले छाला र फोक्सोको क्यान्सर हुन्छ।"
+  },
+  {
+    "q": "नेपालमा 'Reaching Every District (RED)' रणनीति कुन कार्यक्रमसँग सम्बन्धित छ?",
+    "options": [
+      "पोषण कार्यक्रम",
+      "मलेरिया नियन्त्रण",
+      "HIV नियन्त्रण",
+      "खोप कार्यक्रम"
+    ],
+    "answer": 3,
+    "explanation": "RED (Reaching Every District) रणनीति खोप कार्यक्रम (EPI) सँग सम्बन्धित छ।"
+  },
+  {
+    "q": "रिकेट्स (Rickets) कुन भिटामिनको कमीले हुन्छ?",
+    "options": [
+      "भिटामिन D",
+      "भिटामिन A",
+      "भिटामिन B12",
+      "भिटामिन K"
+    ],
+    "answer": 0,
+    "explanation": "रिकेट्स भिटामिन D को कमीले हुन्छ। यसमा हड्डी नरम भई झुकिन्छ।"
+  },
+  {
+    "q": "कुन खाद्यपदार्थमा प्रोटिनको मात्रा सबैभन्दा बढी हुन्छ?",
+    "options": [
+      "आलु",
+      "दाल र माछा/मासु",
+      "चामल",
+      "तेल"
+    ],
+    "answer": 1,
+    "explanation": "प्रोटिनको उत्तम स्रोतहरूमा दाल, माछा, मासु, अन्डा, दूध आदि पर्छन्।"
+  },
+  {
+    "q": "नेपालमा स्वास्थ्य सेवाको मुख्य ऐन कुन हो?",
+    "options": [
+      "नेपाल मेडिकल काउन्सिल ऐन",
+      "अस्पताल व्यवस्थापन ऐन",
+      "स्वास्थ्य सेवा ऐन, २०५३",
+      "नेपाल नर्सिङ काउन्सिल ऐन"
+    ],
+    "answer": 2,
+    "explanation": "नेपालमा स्वास्थ्य सेवाको मुख्य ऐन 'स्वास्थ्य सेवा ऐन, २०५३' हो।"
+  },
+  {
+    "q": "विश्व AIDS दिवस कहिले मनाइन्छ?",
+    "options": [
+      "अप्रिल ७",
+      "मार्च २४",
+      "अक्टोबर १०",
+      "डिसेम्बर १"
+    ],
+    "answer": 3,
+    "explanation": "विश्व AIDS दिवस प्रत्येक वर्ष डिसेम्बर १ मा मनाइन्छ।"
+  },
+  {
+    "q": "नेपालमा जनस्वास्थ्य सेवा ऐन (Public Health Service Act) कहिले लागू भयो?",
+    "options": [
+      "२०७५ साल",
+      "२०७२ साल",
+      "२०७० साल",
+      "२०७७ साल"
+    ],
+    "answer": 0,
+    "explanation": "नेपालमा जनस्वास्थ्य सेवा ऐन २०७५ साल (सन् २०१८) मा लागू भयो।"
+  },
+  {
+    "q": "नेपालको 'आधारभूत स्वास्थ्य सेवा प्याकेज' (EHCP) मा कति प्रकारका सेवाहरू छन्?",
+    "options": [
+      "१५ सेवा",
+      "२० सेवा",
+      "१२ सेवा",
+      "२५ सेवा"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको Essential Health Care Package (EHCP) मा करिब २० प्रकारका आधारभूत स्वास्थ्य सेवाहरू समावेश छन्।"
+  },
+  {
+    "q": "NDHS 2022 अनुसार ५ वर्षमुनिका बालबालिकामा Underweight (तौल कम) दर कति छ?",
+    "options": [
+      "२४%",
+      "१८%",
+      "१९%",
+      "१५%"
+    ],
+    "answer": 2,
+    "explanation": "NDHS 2022 अनुसार नेपालमा ५ वर्षमुनिका बालबालिकामा Underweight दर १९% छ।"
+  },
+  {
+    "q": "नेपालमा 'प्रदेश अस्पताल' कुन तहको स्वास्थ्य सेवा प्रदान गर्छ?",
+    "options": [
+      "प्राथमिक तह, २५ शैय्या",
+      "प्राथमिक तह, ५० शैय्या",
+      "तृतीयक तह, ५०० शैय्या",
+      "द्वितीयक/तृतीयक तह, १०० देखि ३०० वा सोभन्दा बढी शैय्या"
+    ],
+    "answer": 3,
+    "explanation": "प्रदेश अस्पतालहरू द्वितीयक/तृतीयक तहको सेवा प्रदान गर्छन्।"
+  },
+  {
+    "q": "ओजोन तहको क्षतिले मानव स्वास्थ्यमा कस्तो असर पार्छ?",
+    "options": [
+      "छाला क्यान्सर, मोतियाबिन्द र रोगप्रतिरोधक क्षमता कमजोर",
+      "श्वासप्रश्वास रोग मात्र",
+      "मुटु रोग मात्र",
+      "मानसिक स्वास्थ्यमा असर मात्र"
+    ],
+    "answer": 0,
+    "explanation": "ओजोन तहको क्षतिले अतिबैंगनी किरण बढेर छाला क्यान्सर, मोतियाबिन्द र रोगप्रतिरोधक क्षमता कमजोर हुन्छ।"
+  },
+  {
+    "q": "NDHS 2022 अनुसार नेपालको Crude Birth Rate कति छ?",
+    "options": [
+      "१५ प्रति हजार",
+      "१९.५ प्रति हजार",
+      "२५ प्रति हजार",
+      "१२ प्रति हजार"
+    ],
+    "answer": 1,
+    "explanation": "NDHS 2022 अनुसार नेपालको Crude Birth Rate करिब १९.५ प्रति हजार जनसंख्या रहेको छ।"
+  },
+  {
+    "q": "'DPT3 Coverage' ले के जनाउँछ?",
+    "options": [
+      "डिफ्थेरिया मात्रको खोप",
+      "टिटानसको तेस्रो मात्रा",
+      "डिफ्थेरिया, पर्टुसिस र टिटानसको तेस्रो मात्रा पाएका बालबालिकाको प्रतिशत",
+      "पोलियोको तेस्रो मात्रा"
+    ],
+    "answer": 2,
+    "explanation": "DPT3 Coverage भनेको डिफ्थेरिया, पर्टुसिस र टिटानस (DPT) को तेस्रो मात्रा पाएका बालबालिकाको प्रतिशत हो।"
+  },
+  {
+    "q": "नेपालमा सार्वजनिक स्वास्थ्यको दृष्टिले सबैभन्दा चुनौतीपूर्ण जिल्लाहरू कुन हुन्?",
+    "options": [
+      "काठमाडौं र ललितपुर",
+      "मोरङ र झापा",
+      "चितवन र पोखरा",
+      "हुम्ला, मुगु, डोल्पा जस्ता दुर्गम हिमाली जिल्लाहरू"
+    ],
+    "answer": 3,
+    "explanation": "हुम्ला, मुगु, डोल्पा जस्ता दुर्गम हिमाली जिल्लाहरूमा स्वास्थ्य सेवाको पहुँच, कुपोषण र मातृशिशु मृत्युदरको दृष्टिले सबैभन्दा बढी चुनौती छ।"
+  },
+  {
+    "q": "नेपालको राष्ट्रिय स्वास्थ्य नीति (National Health Policy) को पछिल्लो संस्करण कहिले आयो?",
+    "options": [
+      "२०७६ साल",
+      "२०७२ साल",
+      "२०७४ साल",
+      "२०७८ साल"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको पछिल्लो National Health Policy २०७६ साल (सन् २०१९) मा जारी भएको हो।"
+  },
+  {
+    "q": "UHC (Universal Health Coverage) को मुख्य सिद्धान्त के हो?",
+    "options": [
+      "केवल निःशुल्क उपचार",
+      "Financial protection, Quality services, र सबैका लागि पहुँच",
+      "सरकारी अस्पताल मात्र",
+      "धनीलाई मात्र सेवा"
+    ],
+    "answer": 1,
+    "explanation": "UHC को सिद्धान्त: Financial Hardship बिना सबैले गुणस्तरीय स्वास्थ्य सेवामा पहुँच पाउनु। SDG 3.8।"
+  },
+  {
+    "q": "नेपालमा Suicide को दर कुन उमेर समूहमा सबैभन्दा बढी छ?",
+    "options": [
+      "५ - १५ वर्ष",
+      "६० वर्षभन्दा माथि",
+      "१५ - ४९ वर्ष",
+      "५ वर्षमुनि"
+    ],
+    "answer": 2,
+    "explanation": "नेपालमा आत्महत्याको दर कार्यशील उमेर समूह (१५-४९ वर्ष) मा सबैभन्दा बढी देखिन्छ।"
+  },
+  {
+    "q": "नेपालको १६औं पञ्चवर्षीय योजना (२०८१-२०८५) मा स्वास्थ्य क्षेत्रको प्रमुख लक्ष्य के हो?",
+    "options": [
+      "मृत्युदर शून्यमा झार्ने",
+      "केवल NCDs नियन्त्रण गर्ने",
+      "विदेशी डाक्टर ल्याउने",
+      "UHC प्राप्ति र सबैलाई आधारभूत स्वास्थ्य सेवा पुर्याउने"
+    ],
+    "answer": 3,
+    "explanation": "१६औं योजना (२०८१-२०८५) मा UHC प्राप्ति र सबैलाई आधारभूत स्वास्थ्य सेवा पुर्याउने प्रमुख लक्ष्य छ।"
+  },
+  {
+    "q": "एनिमिया (Anaemia) रोग कुन पदार्थको कमीले हुन्छ?",
+    "options": [
+      "फलाम र फोलिक एसिड",
+      "क्याल्सियम",
+      "पोटासियम",
+      "म्याग्नेसियम"
+    ],
+    "answer": 0,
+    "explanation": "रक्तअल्पता (Anaemia) मुख्यतः फलाम (Iron) र फोलिक एसिडको कमीले हुन्छ।"
+  },
+  {
+    "q": "विश्व मधुमेह दिवस (World Diabetes Day) कहिले मनाइन्छ?",
+    "options": [
+      "अक्टोबर ७",
+      "नोभेम्बर १४",
+      "जनवरी १५",
+      "फेब्रुअरी ४"
+    ],
+    "answer": 1,
+    "explanation": "विश्व मधुमेह दिवस नोभेम्बर १४ मा मनाइन्छ। यो Frederick Banting को जन्मदिन पनि हो।"
+  },
+  {
+    "q": "स्तनपानका फाइदामध्ये कुन पर्दैन?",
+    "options": [
+      "बच्चामा रोग प्रतिरोधक क्षमता बढाउँछ",
+      "बच्चाको मस्तिष्क विकास गर्छ",
+      "बच्चाको उचाइ तीव्र रूपमा बढाउँछ",
+      "माताको क्यान्सर जोखिम घटाउँछ"
+    ],
+    "answer": 2,
+    "explanation": "स्तनपानले बच्चाको immunity, brain development र माताको स्वास्थ्यमा फाइदा गर्छ। तर उचाइ तीव्र बढाउँछ भन्ने दावी सही छैन।"
+  },
+  {
+    "q": "हात धुने सही तरिका के हो?",
+    "options": [
+      "पानी मात्रले धुने",
+      "माटोले माझेर पानीले धुने",
+      "केवल एन्टिसेप्टिक लोशन लगाउने",
+      "साबुन र पानीले कम्तीमा २० सेकेन्ड राम्ररी मल्ने"
+    ],
+    "answer": 3,
+    "explanation": "WHO को सिफारिस अनुसार साबुन र पानीले कम्तीमा २० सेकेन्ड राम्ररी मलेर हात धुनु सबैभन्दा प्रभावकारी हो।"
+  },
+  {
+    "q": "नवजात शिशु स्याहारको 'Kangaroo Mother Care (KMC)' के हो?",
+    "options": [
+      "कम तौल भएका शिशुलाई माताको छातीमा त्वचा-देखि-त्वचा सम्पर्कमा राख्ने विधि",
+      "शिशुलाई बाहिर घुमाउने विधि",
+      "शिशुलाई चिसो राख्ने विधि",
+      "शिशुलाई गाढा खाना खुवाउने विधि"
+    ],
+    "answer": 0,
+    "explanation": "KMC भनेको कम तौल (LBW) वा समयपूर्व जन्मेका शिशुलाई माताको छातीमा त्वचादेखि त्वचा सम्पर्कमा राखेर स्याहार गर्ने WHO सिफारिस गरिएको विधि हो।"
+  },
+  {
+    "q": "नेपालमा खाद्य सुरक्षा र पोषण सम्बन्धी मुख्य नोडल एजेन्सी कुन हो?",
+    "options": [
+      "कृषि मन्त्रालय",
+      "स्वास्थ्य तथा जनसंख्या मन्त्रालय",
+      "खाद्य व्यवस्था तथा व्यापार कम्पनी",
+      "महिला बालबालिका तथा ज्येष्ठ नागरिक मन्त्रालय"
+    ],
+    "answer": 1,
+    "explanation": "नेपालमा पोषण क्षेत्रको मुख्य नोडल एजेन्सी स्वास्थ्य तथा जनसंख्या मन्त्रालय हो।"
+  },
+  {
+    "q": "नेपालको 'MSNP' (Multi-Sector Nutrition Plan) को दोस्रो चरण कहिलेसम्म लागू भएको थियो?",
+    "options": [
+      "२०७२-२०७७",
+      "२०७०-२०७५",
+      "२०७५-२०८२",
+      "२०७३-२०७८"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको MSNP II को दोस्रो चरण २०७५-२०८२ सम्म लागू भएको थियो।"
+  },
+  {
+    "q": "'सुपोषण नेपाल' अभियान कसले सञ्चालन गर्छ?",
+    "options": [
+      "UNICEF, बाल सुरक्षा",
+      "WFP, खाद्य वितरण",
+      "FAO, कृषि विकास",
+      "नेपाल सरकार, कुपोषण उन्मूलन र पोषण सुधार"
+    ],
+    "answer": 3,
+    "explanation": "सुपोषण नेपाल अभियान नेपाल सरकारले कुपोषण उन्मूलन र पोषण स्थिति सुधारका लागि सञ्चालन गरेको राष्ट्रिय अभियान हो।"
+  },
+  {
+    "q": "पानी शुद्ध पार्ने सर्वाधिक सुलभ र सस्तो विधि कुन हो?",
+    "options": [
+      "उमाल्ने",
+      "Reverse Osmosis",
+      "UV Filter",
+      "Chemical Treatment"
+    ],
+    "answer": 0,
+    "explanation": "पानी उमाल्ने (Boiling at 100°C) पानी शुद्ध पार्ने सबैभन्दा सुलभ र प्रभावकारी परम्परागत विधि हो।"
+  },
+  {
+    "q": "नेपालमा घरेलु हिंसाको रोकथाम कुन ऐनले गर्छ?",
+    "options": [
+      "मुलुकी अपराध संहिता",
+      "घरेलु हिंसा ऐन, २०६६",
+      "लैंगिक समानता ऐन",
+      "महिला हिंसा निवारण ऐन"
+    ],
+    "answer": 1,
+    "explanation": "नेपालमा घरेलु हिंसा (कसुर र सजाय) ऐन, २०६६ ले घरेलु हिंसाको रोकथाम गर्छ।"
+  },
+  {
+    "q": "'Complete Protein' कुन हो?",
+    "options": [
+      "दाल र सिमी",
+      "सागपात",
+      "अन्डा, माछा र मासु",
+      "चामल र गहुँ"
+    ],
+    "answer": 2,
+    "explanation": "Complete Protein (सबै आवश्यक Amino Acid सहित) अन्डा, माछा, मासु र दूधमा पाइन्छ।"
+  },
+  {
+    "q": "नेपालमा राष्ट्रिय मानसिक स्वास्थ्य नीति कहिले आयो?",
+    "options": [
+      "२०५० साल",
+      "२०५५ साल",
+      "२०६५ साल",
+      "२०७३ साल"
+    ],
+    "answer": 3,
+    "explanation": "नेपालमा राष्ट्रिय मानसिक स्वास्थ्य नीति २०७३ साल (सन् २०१७) मा स्वीकृत भएको हो।"
+  },
+  {
+    "q": "नेपालमा 'DALYs' को दृष्टिले कुन रोगको भार सबैभन्दा बढी छ?",
+    "options": [
+      "मानसिक स्वास्थ्य समस्या, Neurological र NCD हरू",
+      "Communicable diseases मात्र",
+      "Accidents मात्र",
+      "Malnutrition मात्र"
+    ],
+    "answer": 0,
+    "explanation": "नेपालमा हाल NCD र मानसिक स्वास्थ्य (Depression, Anxiety) ले DALYs को दृष्टिले उल्लेखनीय भार ओगटेको छ।"
+  },
+  {
+    "q": "नेपालमा 'SHIB (Social Health Insurance Board)' ले के काम गर्छ?",
+    "options": [
+      "औषधि नियमन गर्छ",
+      "स्वास्थ्य बीमा कार्यक्रम सञ्चालन र व्यवस्थापन गर्छ",
+      "अस्पताल निर्माण गर्छ",
+      "मेडिकल शिक्षा नियमन गर्छ"
+    ],
+    "answer": 1,
+    "explanation": "SHIB ले नेपालमा राष्ट्रिय स्वास्थ्य बीमा कार्यक्रम सञ्चालन गर्छ। हाल यो सबै ७७ जिल्लामा विस्तार भएको छ।"
+  },
+  {
+    "q": "नेपालले सन् २०२३ मा WHO बाट कुन रोगको उन्मूलन प्रमाणित गर्यो?",
+    "options": [
+      "Malaria Elimination",
+      "TB Elimination",
+      "Trachoma Elimination as a Public Health Problem",
+      "HIV Elimination"
+    ],
+    "answer": 2,
+    "explanation": "नेपालले सन् २०२३ मा WHO बाट Trachoma (आँखाको संक्रामक रोग) को उन्मूलन प्रमाणीकरण प्राप्त गर्यो।"
+  },
+  {
+    "q": "नेपालमा COVID-19 महामारीको समयमा कुन नयाँ प्रावधान लागू गरियो?",
+    "options": [
+      "सबै अस्पताल बन्द गरियो",
+      "खोप कार्यक्रम स्थगित गरियो",
+      "केवल सरकारी अस्पताललाई अनुमति दिइयो",
+      "जनस्वास्थ्य सेवा ऐन अन्तर्गत 'सार्वजनिक स्वास्थ्य आपतकाल' घोषणा गरियो"
+    ],
+    "answer": 3,
+    "explanation": "COVID-19 महामारीमा नेपाल सरकारले जनस्वास्थ्य सेवा ऐन, २०७५ अन्तर्गत 'सार्वजनिक स्वास्थ्य आपतकाल' घोषणा गर्यो।"
+  },
+  {
+    "q": "नेपालमा Hepatitis B को प्रसार दर र मुख्य रोकथाम उपाय के हो?",
+    "options": [
+      "करिब ०.७-१%, खोप र सुरक्षित रगत सञ्चार",
+      "१०%, केवल एन्टिबायोटिक",
+      "५%, केवल परहेज",
+      "०.१%, कुनै रोकथाम छैन"
+    ],
+    "answer": 0,
+    "explanation": "नेपालमा Hepatitis B को HBsAg Prevalence करिब ०.७-१% छ। नवजात शिशुमा Hepatitis B खोप मुख्य रोकथाम उपाय हो।"
+  },
+  {
+    "q": "नेपालमा 'One Health' अवधारणामा के-के समावेश हुन्छ?",
+    "options": [
+      "केवल मानव स्वास्थ्य",
+      "मानव, पशु र वातावरणीय स्वास्थ्यको एकीकृत दृष्टिकोण",
+      "केवल पशु स्वास्थ्य",
+      "वातावरण संरक्षण मात्र"
+    ],
+    "answer": 1,
+    "explanation": "'One Health' भनेको मानव, पशु र वातावरणीय स्वास्थ्यलाई एकीकृत रूपमा हेर्ने अवधारणा हो।"
+  },
+  {
+    "q": "नेपालको 'आर्थिक वर्ष २०८०/८१' मा स्वास्थ्य क्षेत्रमा कुल बजेटको कति प्रतिशत विनियोजन गरिएको थियो?",
+    "options": [
+      "१०.५%",
+      "८.७%",
+      "७.२%",
+      "१२.३%"
+    ],
+    "answer": 2,
+    "explanation": "नेपालको आर्थिक वर्ष २०८०/८१ मा स्वास्थ्य क्षेत्रलाई कुल बजेटको करिब ७.२% विनियोजन गरिएको थियो।"
+  },
+  {
+    "q": "नेपालमा 'Neglected Tropical Diseases (NTDs)' मा कुन रोगहरू पर्छन्?",
+    "options": [
+      "HIV, TB, Malaria",
+      "Diabetes, Hypertension, Cancer",
+      "Influenza, COVID-19, Dengue",
+      "Kala-azar, Lymphatic Filariasis, Trachoma, Leprosy"
+    ],
+    "answer": 3,
+    "explanation": "नेपालमा WHO सूचीकृत NTDs: Kala-azar, Lymphatic Filariasis, Trachoma र Leprosy मा नेपालले उल्लेखनीय प्रगति गरेको छ। Trachoma 2023 मा उन्मूलन प्रमाणित भयो।"
+  }
+];
+
+const questions = rawQuestions.map((item, index) => {
+    const options = Array.isArray(item.options) ? item.options.map(option => String(option)) : [];
+    const parsedAnswer = Number(item.answer);
+    const answerIndex = Number.isInteger(parsedAnswer) && parsedAnswer >= 0 ? parsedAnswer : 0;
+    return {
+        q: String(item.q ?? item.question ?? `Question ${index + 1}`),
+        options,
+        answer: Math.min(answerIndex, Math.max(options.length - 1, 0)),
+        explanation: String(item.explanation ?? 'No explanation provided.')
+    };
+}).filter(question => question.q && question.options.length > 0);
+
+const quizEl = document.getElementById('quiz');
+const scoreEl = document.getElementById('score');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+const progressTextEl = document.getElementById('progress-text');
+const currentScoreEl = document.getElementById('current-score');
+const questionsAnsweredEl = document.getElementById('questions-answered');
+const questionsTotalEl = document.getElementById('questions-total');
+const accuracyEl = document.getElementById('accuracy');
+const resultsEl = document.getElementById('results');
+const resultsBody = document.getElementById('results-body');
+const streakBadge = document.getElementById('streak-badge');
+const correctSound = document.getElementById('correct-sound');
+const wrongSound = document.getElementById('wrong-sound');
+const restartBtn = document.getElementById('restart-btn');
+
+const QUESTIONS_PER_PAGE = Math.max(1, Number(quizConfig.questionsPerPage) || 5);
+const ANSWER_DELAY = 700;
+let currentIndex = 0;
+let score = 0;
+let timerSeconds = 0;
+let timerInterval = null;
+let currentStreak = 0;
+let maxStreak = 0;
+let quizFinished = false;
+let pendingTimeout = null;
+let userAnswers = questions.map(() => null);
+
+questionsTotalEl.textContent = questions.length;
+progressTextEl.textContent = `0/${questions.length}`;
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timerSeconds += 1;
+        timerEl.textContent = formatTime(timerSeconds);
+    }, 1000);
+}
+
+function updateStats() {
+    const answeredCount = userAnswers.filter(answer => answer !== null).length;
+    const correctCount = userAnswers.filter(answer => answer && answer.isCorrect).length;
+    currentScoreEl.textContent = String(correctCount);
+    questionsAnsweredEl.textContent = String(answeredCount);
+    accuracyEl.textContent = `${answeredCount ? Math.round((correctCount / answeredCount) * 100) : 0}%`;
+    progressTextEl.textContent = `${answeredCount}/${questions.length}`;
+    progressEl.style.width = `${questions.length ? (answeredCount / questions.length) * 100 : 0}%`;
+}
+
+function updateStreak(isCorrect) {
+    if (isCorrect) {
+        currentStreak += 1;
+        maxStreak = Math.max(maxStreak, currentStreak);
+        if (currentStreak >= 3) {
+            streakBadge.textContent = `Streak: ${currentStreak}`;
+            streakBadge.classList.add('show');
+            setTimeout(() => streakBadge.classList.remove('show'), 1800);
+        }
+    } else {
+        currentStreak = 0;
+    }
+}
+
+function playSound(audioEl) {
+    try {
+        audioEl.currentTime = 0;
+        audioEl.play().catch(() => {});
+    } catch (error) {
+        // Ignore autoplay restrictions.
+    }
+}
+
+function drawConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = Array.from({ length: 150 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        vx: (Math.random() - 0.5) * 4,
+        vy: Math.random() * 3 + 2,
+        color: ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'][Math.floor(Math.random() * 5)],
+        size: Math.random() * 6 + 2,
+        rotation: Math.random() * 360
+    }));
+
+    let animationId;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+        particles.forEach(particle => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.rotation += 2;
+            if (particle.y < canvas.height + 20) {
+                active = true;
+                ctx.save();
+                ctx.translate(particle.x, particle.y);
+                ctx.rotate((particle.rotation * Math.PI) / 180);
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size);
+                ctx.restore();
+            }
+        });
+        if (active) {
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+    animate();
+    setTimeout(() => cancelAnimationFrame(animationId), 5000);
+}
+
+function createActionButton(label, className, onClick) {
+    const button = document.createElement('button');
+    button.className = className;
+    button.innerHTML = label;
+    button.addEventListener('click', onClick);
+    return button;
+}
+
+function renderQuestion() {
+    if (quizFinished) return;
+    quizEl.innerHTML = '';
+    scoreEl.textContent = '';
+    resultsEl.classList.add('hidden');
+
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    const pageEnd = Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length);
+
+    for (let questionIndex = pageStart; questionIndex < pageEnd; questionIndex += 1) {
+        const question = questions[questionIndex];
+        const questionWrapper = document.createElement('div');
+        questionWrapper.className = 'question-wrapper';
+
+        const questionCard = document.createElement('div');
+        questionCard.className = 'question-card';
+        questionCard.dataset.index = String(questionIndex);
+
+        const questionHeader = document.createElement('div');
+        questionHeader.className = 'question-header';
+        questionHeader.innerHTML = `
+            <div class="question-number">${questionIndex + 1}</div>
+            <div class="question-text">${question.q}</div>
+        `;
+
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'options';
+
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.textContent = question.explanation;
+
+        const shuffledOptions = shuffle(question.options.map((text, optionIndex) => ({ text, optionIndex })));
+
+        shuffledOptions.forEach((option, displayIndex) => {
+            const button = document.createElement('button');
+            button.className = 'option-btn';
+            button.innerHTML = `
+                <span class="option-indicator">${String.fromCharCode(65 + displayIndex)}</span>
+                <span>${option.text}</span>
+            `;
+            button.addEventListener('click', () => handleAnswer(questionIndex, option.optionIndex, option.text, button, optionsContainer, explanationDiv));
+            optionsContainer.appendChild(button);
+        });
+
+        questionCard.appendChild(questionHeader);
+        questionCard.appendChild(optionsContainer);
+        questionCard.appendChild(explanationDiv);
+        questionWrapper.appendChild(questionCard);
+        quizEl.appendChild(questionWrapper);
+    }
+
+    const actionBar = document.createElement('div');
+    actionBar.className = 'action-bar';
+    actionBar.appendChild(createActionButton('⊘ Skip Remaining', 'btn btn-skip', skipRemainingQuestionsOnPage));
+    quizEl.appendChild(actionBar);
+}
+
+function lockOptions(optionsContainer) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        button.disabled = true;
+    });
+}
+
+function revealCorrectAnswer(optionsContainer, correctIndex, questionIndex) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        const optionText = button.querySelector('span:last-child').textContent;
+        if (optionText === questions[questionIndex].options[correctIndex]) {
+            button.classList.add('correct');
+        }
+    });
+}
+
+function moveNext() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+
+    if (currentIndex < questions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+        updateStats();
+    } else {
+        finishQuiz();
+    }
+}
+
+function getCurrentPageBounds() {
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    return {
+        pageStart,
+        pageEnd: Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length)
+    };
+}
+
+function isCurrentPageComplete() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] === null) return false;
+    }
+    return true;
+}
+
+function scheduleNextStep() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+    }
+    pendingTimeout = setTimeout(() => {
+        if (isCurrentPageComplete()) {
+            const { pageEnd } = getCurrentPageBounds();
+            if (pageEnd >= questions.length) {
+                finishQuiz();
+            } else {
+                currentIndex = pageEnd;
+                renderQuestion();
+                updateStats();
+            }
+        }
+    }, ANSWER_DELAY);
+}
+
+function skipRemainingQuestionsOnPage() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] !== null) continue;
+        const card = quizEl.querySelector(`.question-card[data-index="${i}"]`);
+        if (!card) continue;
+        const explanationDiv = card.querySelector('.explanation');
+        const optionsContainer = card.querySelector('.options');
+        skipQuestion(i, explanationDiv, optionsContainer);
+    }
+}
+
+function handleAnswer(questionIndex, selectedIndex, selectedText, clickedButton, optionsContainer, explanationDiv) {
+    if (userAnswers[questionIndex] !== null) return;
+
+    const question = questions[questionIndex];
+    const isCorrect = selectedIndex === question.answer;
+    lockOptions(optionsContainer);
+    revealCorrectAnswer(optionsContainer, question.answer, questionIndex);
+
+    if (!isCorrect) {
+        clickedButton.classList.add('wrong');
+        playSound(wrongSound);
+    } else {
+        clickedButton.classList.add('correct');
+        playSound(correctSound);
+        score += 1;
+    }
+
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText,
+        isCorrect,
+        skipped: false
+    };
+    currentIndex = questionIndex;
+    updateStreak(isCorrect);
+    updateStats();
+    scheduleNextStep();
+}
+
+function skipQuestion(questionIndex, explanationDiv, optionsContainer) {
+    if (userAnswers[questionIndex] !== null) return;
+    lockOptions(optionsContainer);
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText: 'Skipped',
+        isCorrect: false,
+        skipped: true
+    };
+    currentIndex = questionIndex;
+    updateStreak(false);
+    updateStats();
+    scheduleNextStep();
+}
+
+function finishQuiz() {
+    quizFinished = true;
+    clearInterval(timerInterval);
+    quizEl.innerHTML = '';
+
+    const percentage = questions.length ? ((score / questions.length) * 100).toFixed(1) : '0.0';
+    let message = 'Keep learning! You\'ll improve!';
+    let emoji = '📚';
+
+    if (Number(percentage) >= 90) {
+        message = 'Outstanding! You\'re a master!';
+        emoji = '🏆';
+        drawConfetti();
+    } else if (Number(percentage) >= 70) {
+        message = 'Great job! Well done!';
+        emoji = '🌟';
+    } else if (Number(percentage) >= 50) {
+        message = 'Good effort! Keep practicing!';
+        emoji = '💪';
+    }
+
+    scoreEl.innerHTML = `
+        <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+        <div class="score-display">${percentage}%</div>
+        <div class="score-label">${message}</div>
+        <div style="margin-top: 1rem; color: var(--text-secondary);">
+            ${score} correct out of ${questions.length} questions<br>
+            Time: ${formatTime(timerSeconds)} | Best Streak: ${maxStreak}
+        </div>
+    `;
+
+    resultsBody.innerHTML = questions.map((question, index) => {
+        const answer = userAnswers[index];
+        const userAnswer = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.selectedText;
+        const status = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.isCorrect ? 'Correct' : 'Wrong';
+        const statusClass = status.toLowerCase().replace(' ', '-');
+        const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : status === 'Skipped' ? '⊘' : '•';
+        return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${question.q}</td>
+                <td>${userAnswer}</td>
+                <td>${question.options[question.answer] ?? ''}</td>
+                <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                <td class="explanation-cell">${question.explanation}</td>
+            </tr>
+        `;
+    }).join('');
+
+    resultsEl.classList.remove('hidden');
+}
+
+function restartQuiz() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+    clearInterval(timerInterval);
+    currentIndex = 0;
+    score = 0;
+    timerSeconds = 0;
+    currentStreak = 0;
+    maxStreak = 0;
+    quizFinished = false;
+    userAnswers = questions.map(() => null);
+    timerEl.textContent = '00:00';
+    streakBadge.classList.remove('show');
+    updateStats();
+    renderQuestion();
+    startTimer();
+}
+
+restartBtn.addEventListener('click', restartQuiz);
+window.addEventListener('resize', () => {
+    const canvas = document.getElementById('confetti-canvas');
+    if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+});
+
+updateStats();
+renderQuestion();
+startTimer();
+    </script>
+</body>
+</html>

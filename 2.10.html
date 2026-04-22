@@ -1,0 +1,2557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>2.10 मानवीय मूल्य मान्यता (Human Values), नागरिक कर्तव्य र दायित्व तथा अनुशासन (Office Procedure)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>2.10 मानवीय मूल्य मान्यता (Human Values), नागरिक कर्तव्य र दायित्व तथा अनुशासन (Office Procedure)</h1>
+                        <div class="subtitle">Technical Quiz</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">0</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" id="restart-btn">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+const quizConfig = {
+  "quizId": "2-10",
+  "quizTitle": "2.10 मानवीय मूल्य मान्यता (Human Values), नागरिक कर्तव्य र दायित्व तथा अनुशासन (Office Procedure)",
+  "displayTitle": "2.10 मानवीय मूल्य मान्यता (Human Values), नागरिक कर्तव्य र दायित्व तथा अनुशासन (Office Procedure)",
+  "topicName": "Public Service",
+  "questionsPerPage": 5
+};
+const rawQuestions = [
+  {
+    "q": "कार्यालय सञ्चालनका लागि आवश्यक पर्ने कार्य तथा औपचारिक कियाकलापहरूको व्यवस्थित विधि तथा चरणलाई के भनिन्छ?",
+    "options": [
+      "कार्यालय व्यवस्थापन",
+      "पत्र व्यवहार",
+      "कार्यालय कार्यविधि",
+      "चलानी"
+    ],
+    "answer": 2,
+    "explanation": "कार्यालय कार्यविधि भनेको औपचारिक कार्यहरूको व्यवस्थित विधि हो, जुन व्यवस्थापन वा पत्र व्यवहारभन्दा फरक छ।"
+  },
+  {
+    "q": "तलका मध्ये कुन कार्यालय कार्यविधिका कार्य होइन?",
+    "options": [
+      "पत्रव्यवहार",
+      "दर्ता र चलानी",
+      "वित्तीय निर्णय",
+      "परिपत्र र तोक आदेश"
+    ],
+    "answer": 2,
+    "explanation": "वित्तीय निर्णय वित्तीय व्यवस्थापनको हिस्सा हो, कार्यालय कार्यविधिको होइन।"
+  },
+  {
+    "q": "कार्यालय कार्यविधि सञ्चालन गर्दा एउटा आदर्श चिठीपत्रमा हुनुपर्ने गुणहरू तलकामध्ये कुन हो?",
+    "options": [
+      "सरल भाषा र संक्षिप्तता",
+      "पूर्णता र स्पष्टता",
+      "मौलिकता र विनम्रता",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "आदर्श चिठी सरल, स्पष्ट, पूर्ण, मौलिक र विनम्र हुनुपर्छ।"
+  },
+  {
+    "q": "चिठीपत्रको पहिलो भाग तलका मध्ये कुन हो?",
+    "options": [
+      "शीर्षक",
+      "बोधार्थ",
+      "नाम र पद",
+      "अभिवादन"
+    ],
+    "answer": 0,
+    "explanation": "शीर्षक, जसमा पठाउनेको विवरण र मिति हुन्छ, पहिलो भाग हो।"
+  },
+  {
+    "q": "प्राथमिकताका आधारमा चिठीपत्रहरू कति किसिमका हुन्छन्? (गोपनीयताका आधारमा गोप्य र अति गोप्य)",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": 2,
+    "explanation": "चिठीपत्रहरू साधारण, जरुरी, अति जरुरी र अति गोप्य गरी चार प्रकारका हुन्छन्।"
+  },
+  {
+    "q": "प्रयोगका आधारमा तलको मध्ये कुन चिठीको प्रकार होइन?",
+    "options": [
+      "व्यक्तिगत चिठी",
+      "व्यवसायिक चिठी",
+      "साधारण",
+      "सरकारी पत्र"
+    ],
+    "answer": 2,
+    "explanation": "'साधारण' प्राथमिकता हो, प्रकार होइन; चिठी व्यक्तिगत, व्यवसायिक वा सरकारी हुन्छ।"
+  },
+  {
+    "q": "कार्यालय सञ्चालनका लागि आवश्यक पर्ने लिखित औपचारिक चिठीपत्रहरूको आवानप्रदान गर्ने व्यवस्थित सञ्चाललाई के भनिन्छ?",
+    "options": [
+      "कार्यालय व्यवस्थापन",
+      "पत्र व्यवहार",
+      "कार्यालय कार्यविधि",
+      "दर्ता"
+    ],
+    "answer": 1,
+    "explanation": "पत्र व्यवहारले औपचारिक चिठी आदानप्रदानलाई जनाउँछ।"
+  },
+  {
+    "q": "साधारण पत्र मध्यम निकायमा पेश गर्नुपर्ने भए ७ दिनभित्र पेश गरी कार्यकारवाही गर्नुपर्छ भने आफैले फछ्र्योट गर्नुपर्ने भए कति दिनमा कार्य फछ्र्योट गर्नुपर्छ?",
+    "options": [
+      "2 दिन",
+      "7 दिन",
+      "10 दिन",
+      "12 दिन"
+    ],
+    "answer": 0,
+    "explanation": "आन्तरिक फछ्र्योट २ दिनभित्र हुन्छ।"
+  },
+  {
+    "q": "कार्यालयमा पत्रव्यवहार गर्दा ध्यान दिनुपर्ने कुरा तलको मध्ये कुन पर्दैन?",
+    "options": [
+      "पत्र कुन पदाधिकारी वा निकायलाई लेखिएको हो, सोही अनुरूपको सम्बोधन हुनुपर्छ।",
+      "पत्रले भन्न खोजेको कुरा स्पष्ट र सहजै बुझिने खालको हुनुपर्छ।",
+      "पत्रमा मिति, विषय, दर्ता र च.न. का साथै अन्य व्यक्तिको नाम समेत खुलाउनु हुँदैन।",
+      "पत्रहरूको उद्देश्य र प्रकृति अनुसार उल्लेख गर्ने।"
+    ],
+    "answer": 2,
+    "explanation": "चिठीमा मिति र विषय हुनुपर्छ; आवश्यक भए नाम समावेश गर्न सकिन्छ।"
+  },
+  {
+    "q": "सरकारी कार्यालयमा प्रयोग गरिने चिठीपत्रमा कुन कुरामा ध्यान दिनुपर्छ? i) पत्रसंख्या, चलानी न. र मिति ii) सम्बोधन, विषय र बोधार्थ iii) पदाधिकारीको नाम, पद र हस्ताक्षर iv) कार्यालयको छाप",
+    "options": [
+      "i, ii र iv ठिक",
+      "i, iv ठिक",
+      "i बाहेक सबै ठिक",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "सरकारी चिठीमा सबै विवरण आवश्यक हुन्छ।"
+  },
+  {
+    "q": "कार्यालयमा प्राप्त हुने चिठीको सुरु अभिलेख राख्ने कार्यलाई के भनिन्छ?",
+    "options": [
+      "दर्ता",
+      "चलानी",
+      "टिप्पणी",
+      "पत्रव्यवहार"
+    ],
+    "answer": 0,
+    "explanation": "दर्ताले प्राप्त चिठीको अभिलेख राख्छ।"
+  },
+  {
+    "q": "दर्ता किताबमा कुन कुन कुराहरू उल्लेख गरिन्छ?",
+    "options": [
+      "दर्ता न., दर्ता मिति, प्राप्त पत्रको च.न. र मिति",
+      "चिठी पठाउने कार्यालयको नाम र ठेगाना, विषय",
+      "बुझाइएको शाखा वा फाँट, बुझिलिनेको सहि र कैफियत",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "दर्ता किताबमा सबै विवरण समावेश हुन्छ।"
+  },
+  {
+    "q": "कार्यालयबाट बाहिर पठाउने पत्रहरूको अभिलेख राख्ने कार्यलाई के भनिन्छ?",
+    "options": [
+      "दर्ता",
+      "चलानी",
+      "टिप्पणी",
+      "पत्रव्यवहार"
+    ],
+    "answer": 1,
+    "explanation": "चलानीले बाहिर पठाइने पत्रको अभिलेख राख्छ।"
+  },
+  {
+    "q": "चलानी किताबमा कुन कुन कुराहरू उल्लेख गरिन्छ?",
+    "options": [
+      "चलानी न. र चलानी मिति, पाउने व्यक्ति वा कार्यालयको नाम ठेगाना",
+      "पत्र संख्या, विषय",
+      "पठाइएको साधन, कैफियत",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "चलानी किताबमा सबै विवरण समावेश हुन्छ।"
+  },
+  {
+    "q": "विश्वमा आधुनिक सञ्चारको पहिलो माध्यम तलकामध्ये केलाई मानिन्छ?",
+    "options": [
+      "चिठीपत्र",
+      "हुलाक",
+      "पत्रव्यवहार",
+      "इन्टरनेट"
+    ],
+    "answer": 1,
+    "explanation": "हुलाक पहिलो आधुनिक सञ्चार माध्यम हो।"
+  },
+  {
+    "q": "चिठीका भागहरूमा तलको कुन-कुन पर्छन्?",
+    "options": [
+      "शीर्ष भाग",
+      "मध्य भाग",
+      "अन्तिम भाग",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "चिठीमा शीर्ष, मध्य र अन्तिम भाग हुन्छ।"
+  },
+  {
+    "q": "कुनै पनि सूचना, निर्देशन एकभन्दा बढी कार्यालयसँग सम्बन्ध रहन्छ भने त्यसलाई के भनिन्छ?",
+    "options": [
+      "परिपत्र",
+      "तोक आदेश",
+      "टिप्पणी",
+      "निर्देशन"
+    ],
+    "answer": 0,
+    "explanation": "परिपत्र धेरै कार्यालयका लागि हो।"
+  },
+  {
+    "q": "परिपत्रको उद्देश्य/आवश्यकता/महत्त्व तलको मध्ये कुन हो?",
+    "options": [
+      "संगठनको नयाँ परिवर्तनबारे जानकारी दिन",
+      "नयाँ नीतिहरूको कार्यान्वयन गर्न जानकारी दिन",
+      "नयाँ शाखा वा कार्यालयहरू खुलेको जानकारी दिन र विशेष समारोहमा आमन्त्रण गर्न",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "परिपत्रले परिवर्तन, नीति र समारोहबारे जानकारी दिन्छ।"
+  },
+  {
+    "q": "टिप्पणी लेखनका उद्देश्य तलको मध्ये कुन हो?",
+    "options": [
+      "सहभागितापूर्ण निर्णय प्रक्रियालाई जवाफदेही गर्न",
+      "स्वेच्छाचारिता र अनियमितताको नियन्त्रण गर्न",
+      "नीति, नियम र प्रक्रियामा विशेषताको अधिकतम उपयोग गर्न",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "टिप्पणीले जवाफदेहिता र नीतिको उपयोग सुनिश्चित गर्छ।"
+  },
+  {
+    "q": "परिपत्रका प्रकारहरू तलका मध्ये कुन हो? i) सिधा पठाइएको परिपत्र ii) तहतह हुँदै पठाइएको परिपत्र iii) व्यापारिक परिपत्र iv) गैरव्यापारिक परिपत्र",
+    "options": [
+      "i, ii र iv ठिक",
+      "i, iv ठिक",
+      "i बाहेक सबै ठिक",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "परिपत्र सिधा, तहतह, व्यापारिक वा गैरव्यापारिक हुन सक्छ।"
+  },
+  {
+    "q": "कुनै विषय वा निवेदन माथि अधिकार प्राप्त अधिकारीले के कस्तो कारवाही गर्न हो सोबारेमा त्यसै पत्रमा लिखित रूपमा दिने निवेदनलाई के भनिन्छ?",
+    "options": [
+      "परिपत्र",
+      "तोक आदेश",
+      "टिप्पणी",
+      "निर्देशन"
+    ],
+    "answer": 2,
+    "explanation": "टिप्पणीले निवेदनमा कारवाहीको सुझाव दिन्छ।"
+  },
+  {
+    "q": "तोक आदेशको उद्देश्य/आवश्यकता/महत्त्व तलका मध्ये कुन हो?",
+    "options": [
+      "कार्यको प्राथमिकता अनुसार कार्य सञ्चालन गर्न",
+      "कार्यालयका कार्यलाई निर्दिष्ट समयमा पूरा गर्न",
+      "मातहतका निकाय वा व्यक्तिलाई जिम्मेवार बनाउन",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "तोक आदेशले कार्य प्राथमिकता र जवाफदेहिता सुनिश्चित गर्छ।"
+  },
+  {
+    "q": "कुनै पनि निर्णय गर्नका लागि रायसहित तल्लो निकायबाट माथिल्लो निकायमा प्रस्तुत गरि निर्णय गराइने औपचारिक दस्तावेजलाई के भनिन्छ?",
+    "options": [
+      "परिपत्र",
+      "तोक आदेश",
+      "टिप्पणी",
+      "निर्देशन"
+    ],
+    "answer": 2,
+    "explanation": "टिप्पणी निर्णयका लागि औपचारिक दस्तावेज हो।"
+  },
+  {
+    "q": "कार्यालयमा प्राप्त भएको पत्रको खाममा गोप्य भनी उल्लेख भए आएको पत्रलाई दर्ता गर्न उपयुक्त प्रक्रिया कुन हो?",
+    "options": [
+      "दर्ता नगरी सोझै कार्यालय प्रमुख समक्ष पेश गर्न",
+      "कार्यालय प्रमुखको तोक आदेशपछि दर्ता गर्न",
+      "खाममा नै दर्ता न. उल्लेख गरेर कार्यालय प्रमुख समक्ष पेश गर्न",
+      "छुट्टै रजिस्टर खडा गरेर दर्ता गर्न"
+    ],
+    "answer": 3,
+    "explanation": "गोप्य पत्र छुट्टै रजिस्टरमा दर्ता गरिन्छ।"
+  },
+  {
+    "q": "कार्यालयमा पत्रव्यवहार गर्दा ध्यान दिनुपर्ने कुराहरू तलका मध्ये कुन हो/हुन्?",
+    "options": [
+      "पत्र चलानी गर्दा सम्बन्धित दस्तखत छ कि छैन जाँच गर्नुपर्छ",
+      "पठाउने कार्यालयको नाम र ठेगाना, विषय",
+      "आदेश अनुसारको गोप्य, जरुरी लगायत छ कि छैन जाँच गर्नुपर्छ",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "दस्तखत, पठाउने विवरण र प्राथमिकता जाँच गर्नुपर्छ।"
+  },
+  {
+    "q": "चिठीको प्राथमिकता निर्धारण गर्दा तलका मध्ये कुन-कुन पर्छ?",
+    "options": [
+      "साधारण",
+      "अति जरुरी",
+      "जरुरी",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "प्राथमिकतामा साधारण, जरुरी र अति जरुरी पर्छ।"
+  },
+  {
+    "q": "कार्यालयमा पत्रव्यवहार गर्दा तलका मध्ये कुन कुरामा ध्यान दिनुपर्छ?",
+    "options": [
+      "स्पष्ट र सरल भाषा प्रयोग गर्नुपर्छ",
+      "कार्यालयको छाप र हस्ताक्षर हुनुपर्छ",
+      "पत्रको गोप्यता र जरुरी स्तर स्पष्ट हुनुपर्छ",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "स्पष्ट भाषा, छाप र प्राथमिकता स्तर आवश्यक छ।"
+  },
+  {
+    "q": "विश्वको पहिलो मानव अधिकार बडापत्र सन् १२१५ जुन १५ मा म्याग्नाकार्टा बेलायतमा जारी भएको थियो भने सर्वप्रथम संयुक्त राष्ट्रसंघको प्रयासमा विश्वव्यापी मानव अधिकार घोषणापत्र कहिले जारी भएको थियो?",
+    "options": [
+      "सन् १९४५ डिसेम्बर १",
+      "सन् १९४८ डिसेम्बर १०",
+      "सन् १९५६ डिसेम्बर १",
+      "सन् १९६६ डिसेम्बर १०"
+    ],
+    "answer": 1,
+    "explanation": "विश्वव्यापी मानव अधिकार घोषणापत्र सन् १९४८ डिसेम्बर १० मा अंगीकार भएको थियो।"
+  },
+  {
+    "q": "विश्वव्यापीरूपमा मानव अधिकार सम्बन्धी कार्य गर्न संस्था Amnesty International को स्थापना सन् १९६१ मा भएको हो भने उक्त संस्थाको स्थापना गर्ने बेलायती कानूनविद को हुन्?",
+    "options": [
+      "ए.भी. डाइसी",
+      "पिटर बेन्सन",
+      "जुल कोनेसन",
+      "जोन आस्थिन"
+    ],
+    "answer": 1,
+    "explanation": "पिटर बेन्सनले सन् १९६१ मा एम्नेस्टी स्थापना गरे।"
+  },
+  {
+    "q": "नेपालमा सूचनाको हक सम्बन्धी तलका भनाइहरूमध्ये कुन भनाइ ठिक छ? १) सूचनाको हक व्यक्ति र नागरिकलाई दुवैलाई प्राप्त छ। २) सूचनाको हक नागरिकलाई मात्र प्राप्त छ।",
+    "options": [
+      "१ मात्र ठिक",
+      "२ मात्र ठिक",
+      "दुवै ठिक",
+      "दुवै बेठिक"
+    ],
+    "answer": 1,
+    "explanation": "सूचनाको हक नागरिकलाई मात्र प्राप्त छ।"
+  },
+  {
+    "q": "सूचनाको हक मानव अधिकारको विश्वव्यापी घोषणापत्र १९४८ को धारा १९ सँग सम्बन्धित छ भने विश्वमा सर्वप्रथम सन् १७६६ मा सूचनाको हक सम्बन्धी कानून बनाउने पहिलो देश कुन हो?",
+    "options": [
+      "स्विट्जरल्यान्ड",
+      "स्वीडेन",
+      "क्यानडा",
+      "अमेरिका"
+    ],
+    "answer": 1,
+    "explanation": "स्वीडेनले सन् १७६६ मा पहिलो सूचनाको हक कानून बनायो।"
+  },
+  {
+    "q": "नेपाल संविधानमा सूचनाको हक समावेश भएको कुन धारा हो?",
+    "options": [
+      "पहिलो",
+      "दोस्रो",
+      "तेस्रो",
+      "चौथो"
+    ],
+    "answer": 2,
+    "explanation": "धारा २७ मा सूचनाको हक समावेश छ।"
+  },
+  {
+    "q": "सन् २०२२ मा सूचना सम्बन्धी कानून बनाउने दक्षिण एसियाको पहिलो देश कुन हो?",
+    "options": [
+      "भारत",
+      "पाकिस्तान",
+      "अफगानिस्तान",
+      "नेपाल"
+    ],
+    "answer": 3,
+    "explanation": "नेपालले सन् २००७ मा सूचनाको हक कानून बनायो।"
+  },
+  {
+    "q": "राष्ट्रिय सूचना आयोगको प्रमुख आयुक्त र अन्य आयुक्तको कार्यकाल कति वर्षको हुन्छ?",
+    "options": [
+      "२ वर्ष",
+      "३ वर्ष",
+      "४ वर्ष",
+      "५ वर्ष"
+    ],
+    "answer": 2,
+    "explanation": "आयुक्तहरूको कार्यकाल ४ वर्षको हुन्छ।"
+  },
+  {
+    "q": "राष्ट्रिय सूचना आयोगको स्थापना कहिले भएको हो?",
+    "options": [
+      "वि.सं. २०६४ वैशाख २२",
+      "वि.सं. २०६४ असोज २२",
+      "वि.सं. २०६५ वैशाख २२",
+      "वि.सं. २०६५ असोज २२"
+    ],
+    "answer": 0,
+    "explanation": "वि.सं. २०६४ वैशाख २२ मा स्थापना भएको।"
+  },
+  {
+    "q": "नेपालमा सुशासनको सन्दर्भमा विकास भएका नवीनतम विधिहरू कुन कुन हुन्?",
+    "options": [
+      "सामाजिक परीक्षण",
+      "सार्वजनिक परीक्षण",
+      "सार्वजनिक सुनुवाइ",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "सामाजिक परीक्षण, सार्वजनिक परीक्षण र सुनुवाइ समावेश छ।"
+  },
+  {
+    "q": "नेपालमा पहिलो पटक सूचनाको हक नेपाल अधिराज्यको संविधान, २०४७ को कुन धारामा उल्लेख थियो?",
+    "options": [
+      "धारा १६",
+      "धारा २७",
+      "धारा ३७",
+      "धारा २९"
+    ],
+    "answer": 0,
+    "explanation": "२०४७ को संविधानको धारा १६ मा।"
+  },
+  {
+    "q": "नेपालको संविधान (२०७२) अनुसार संघ, प्रदेश र स्थानीय तहको अधिकारको साझा सूचीमा तलका मध्ये कुन पर्छ?",
+    "options": [
+      "शिक्षा र खेलकुद",
+      "आधारभूत, माध्यमिक र उच्च शिक्षा",
+      "शिक्षा, प्राविधिक तथा व्यावसायिक तालिम र उच्च शिक्षा",
+      "शिक्षा, खेलकुद र पत्रपत्रिका"
+    ],
+    "answer": 0,
+    "explanation": "शिक्षा र खेलकुद साझा अधिकारमा पर्छ।"
+  },
+  {
+    "q": "दलित विद्यार्थीलाई प्राथमिकतासहित उच्च शिक्षासम्म कानुनबमोजिम छात्रवृत्तिसहित निःशुल्क शिक्षाको व्यवस्था गरिने छ। यो हक कुन मौलिक हकमा उल्लेख छ?",
+    "options": [
+      "शिक्षा सम्बन्धी हक",
+      "दलितको हक",
+      "बालबालिकाको हक",
+      "सामाजिक न्यायको हक"
+    ],
+    "answer": 1,
+    "explanation": "दलितको हकअन्तर्गत निःशुल्क शिक्षा।"
+  },
+  {
+    "q": "कुनै पनि व्यक्तिलाई पक्राउ भएको कारणसहितको सूचना नदिई कुनै ठाउँमा राखिने छैन। यो हक कुन मौलिक हकअन्तर्गत पर्छ?",
+    "options": [
+      "न्याय सम्बन्धी हक",
+      "निवारक नजरबन्दविरुद्धको हक",
+      "अपराध पीडितको हक",
+      "यातनाविरुद्धको हक"
+    ],
+    "answer": 0,
+    "explanation": "न्याय सम्बन्धी हकअन्तर्गत सूचना।"
+  },
+  {
+    "q": "कसैलाई पनि निजको इच्छाविरुद्ध काममा लगाइनेछैन। यो प्रावधान कुन मौलिक हकअन्तर्गत छ?",
+    "options": [
+      "स्वतन्त्रताको हक",
+      "सम्मानपूर्वक बाँच्ने हक",
+      "शोषणविरुद्धको हक",
+      "न्याय सम्बन्धी हक"
+    ],
+    "answer": 2,
+    "explanation": "शोषणविरुद्धको हकअन्तर्गत।"
+  },
+  {
+    "q": "संविधानबमोजिम कसलाई आधारभूत शिक्षामा पहुँचको हक हुनेछ?",
+    "options": [
+      "प्रत्येक व्यक्तिलाई",
+      "प्रत्येक नागरिकलाई",
+      "प्रत्येक बालकलाई",
+      "सबै नेपालीलाई"
+    ],
+    "answer": 1,
+    "explanation": "प्रत्येक नागरिकलाई आधारभूत शिक्षा।"
+  },
+  {
+    "q": "सम्मानपूर्वक बाँच्ने हक कसलाई प्राप्त छ?",
+    "options": [
+      "प्रत्येक व्यक्तिलाई",
+      "प्रत्येक नागरिकलाई",
+      "प्रत्येक नेपाली नागरिकलाई",
+      "प्रत्येक नेपालीलाई"
+    ],
+    "answer": 1,
+    "explanation": "प्रत्येक नागरिकलाई सम्मानपूर्वक बाँच्ने हक।"
+  },
+  {
+    "q": "सम्पत्ति तथा पारिवारिक मामिलामा दम्पतीको समान हक हुने व्यवस्था कुन हकले गरेको छ?",
+    "options": [
+      "समानताको हक",
+      "महिलाको हक",
+      "सम्पत्तिको हक",
+      "न्याय सम्बन्धी हक"
+    ],
+    "answer": 1,
+    "explanation": "महिलाको हकअन्तर्गत समान हक।"
+  },
+  {
+    "q": "नेपालको संविधान अनुसार कुन तहसम्मको शिक्षा अनिवार्य र निःशुल्क हुने व्यवस्था छ?",
+    "options": [
+      "प्राथमिक शिक्षा",
+      "आधारभूत शिक्षा",
+      "माध्यमिक शिक्षा",
+      "विद्यालय शिक्षा"
+    ],
+    "answer": 1,
+    "explanation": "आधारभूत शिक्षा अनिवार्य र निःशुल्क छ।"
+  },
+  {
+    "q": "मानवीय मूल्य (Human Values) को मुख्य उद्देश्य के हो?",
+    "options": [
+      "व्यक्तिको नैतिक आचरणलाई मार्गदर्शन गर्नु",
+      "केवल आर्थिक लाभ बढाउनु",
+      "केवल प्रशासनिक आदेश दिनु",
+      "केवल निजी स्वार्थ पूरा गर्नु"
+    ],
+    "answer": 0,
+    "explanation": "मानवीय मूल्यले व्यक्ति र समाजलाई सही आचरण, सम्मान, जिम्मेवारी र नैतिक जीवनतर्फ निर्देशित गर्छ।"
+  },
+  {
+    "q": "तलका मध्ये कुन मानवीय मूल्यको उदाहरण हो?",
+    "options": [
+      "इमानदारी",
+      "ढिलासुस्ती",
+      "स्वेच्छाचारिता",
+      "भेदभाव"
+    ],
+    "answer": 0,
+    "explanation": "इमानदारी मानवीय मूल्यको मूल पक्ष हो; ढिलासुस्ती, स्वेच्छाचारिता र भेदभाव नकारात्मक व्यवहार हुन्।"
+  },
+  {
+    "q": "सार्वजनिक सेवामा अनुशासन कायम गर्ने सबैभन्दा प्रभावकारी आधार कुन हो?",
+    "options": [
+      "समयपालन र जिम्मेवारीबोध",
+      "अनावश्यक ढिलाइ",
+      "गोपनीय जानकारी चुहावट",
+      "अनियमित निर्णय"
+    ],
+    "answer": 0,
+    "explanation": "अनुशासन समयपालन, जिम्मेवारीबोध र नियमको सम्मानबाट मजबुत हुन्छ।"
+  },
+  {
+    "q": "नागरिक कर्तव्यको मूल भाव केसँग सम्बन्धित हुन्छ?",
+    "options": [
+      "कानूनको सम्मान र समाजप्रतिको जिम्मेवारी",
+      "केवल अधिकारको माग",
+      "केवल राजनीतिक लाभ",
+      "केवल व्यक्तिगत सुविधा"
+    ],
+    "answer": 0,
+    "explanation": "नागरिक कर्तव्यमा कानूनको सम्मान, राष्ट्रप्रतिको निष्ठा र सामाजिक जिम्मेवारी पर्दछन्।"
+  },
+  {
+    "q": "कार्यालयलाई सेवा केन्द्र (Service Center) को रूपमा किन लिइन्छ?",
+    "options": [
+      "नागरिकलाई आवश्यक सेवा उपलब्ध गराउने भएकाले",
+      "केवल फाइल थुपार्ने भएकाले",
+      "केवल बैठक बस्ने ठाउँ भएकाले",
+      "केवल आदेश लुकाउने भएकाले"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालयले सेवाग्राहीलाई प्रत्यक्ष वा अप्रत्यक्ष रूपमा सेवा दिन्छ, त्यसैले सेवा केन्द्र भनिन्छ।"
+  },
+  {
+    "q": "कार्यालयलाई सूचना केन्द्र (Information Center) भन्नुको मुख्य कारण के हो?",
+    "options": [
+      "सूचना संकलन, प्रशोधन, भण्डारण र वितरण गर्ने भएकाले",
+      "केवल सामान राख्ने भएकाले",
+      "केवल आर्थिक लेनदेन गर्ने भएकाले",
+      "केवल कर्मचारी उपस्थित गराउने भएकाले"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालयले सूचनाको चक्रलाई व्यवस्थित बनाउँछ, त्यसैले सूचना केन्द्र मानिन्छ।"
+  },
+  {
+    "q": "कार्यालयको “समन्वय केन्द्र” को भूमिका कुन हो?",
+    "options": [
+      "विभिन्न शाखा र निकायबीच तालमेल मिलाउनु",
+      "केवल हाजिरी लिनु",
+      "केवल गोप्य फाइल जलाउनु",
+      "केवल व्यक्तिगत पत्र लेख्नु"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालयले विभिन्न एकाइ, व्यक्ति र प्रक्रियाबीच समन्वय कायम गर्छ।"
+  },
+  {
+    "q": "कार्यालयको “नियन्त्रण केन्द्र” सम्बन्धी महत्वले के जनाउँछ?",
+    "options": [
+      "कार्यसम्पादनको अनुगमन र नियन्त्रण",
+      "केवल भवन रंग्याउने काम",
+      "केवल चिया बनाउने काम",
+      "केवल मनोरञ्जन कार्यक्रम"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालयले कार्यप्रवाह नियमन, अनुगमन र नियन्त्रण गरेर उद्देश्य पूरा गराउँछ।"
+  },
+  {
+    "q": "कार्यालयलाई “स्मृति केन्द्र” (Memory Center) भन्नुको अर्थ के हो?",
+    "options": [
+      "अभिलेख तथा तथ्य सुरक्षित राख्ने स्थान",
+      "केवल बैठक हल",
+      "केवल टेलिफोन गर्ने कक्ष",
+      "केवल पार्किङ स्थल"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालयले विगतका निर्णय, पत्र र कागजात सुरक्षित राखेर संस्थागत स्मृति जोगाउँछ।"
+  },
+  {
+    "q": "कार्यालयलाई “मध्यस्थ केन्द्र” (Intermediary Center) को रूपमा किन लिइन्छ?",
+    "options": [
+      "विभिन्न पक्षबीच सम्पर्क र समन्वय गराउने भएकाले",
+      "केवल निजी कारोबार गर्ने भएकाले",
+      "केवल दण्ड दिने भएकाले",
+      "केवल विज्ञापन गर्ने भएकाले"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालयले नागरिक, निकाय र कर्मचारीबीच मध्यस्थ भूमिकामा काम गर्छ।"
+  },
+  {
+    "q": "स्वामित्वका आधारमा कार्यालयको सही वर्गीकरण कुन हो?",
+    "options": [
+      "सार्वजनिक र निजी",
+      "स्थायी र अस्थायी",
+      "स्थानीय र वैश्विक",
+      "मौखिक र लिखित"
+    ],
+    "answer": 0,
+    "explanation": "स्वामित्वका आधारमा कार्यालयलाई सार्वजनिक र निजी गरी वर्गीकरण गरिन्छ।"
+  },
+  {
+    "q": "सरकारको लगानी, स्वामित्व र नियन्त्रणमा रहेको कार्यालयलाई के भनिन्छ?",
+    "options": [
+      "सार्वजनिक कार्यालय",
+      "निजी कार्यालय",
+      "व्यावसायिक कार्यालय",
+      "अस्थायी कार्यालय"
+    ],
+    "answer": 0,
+    "explanation": "सरकारको स्वामित्व र नियन्त्रणमा रहेका कार्यालय सार्वजनिक कार्यालय हुन्।"
+  },
+  {
+    "q": "नाफा आर्जन गर्ने उद्देश्यले सञ्चालन गरिने कार्यालय कुन हो?",
+    "options": [
+      "निजी कार्यालय",
+      "सार्वजनिक कार्यालय",
+      "प्रादेशिक कार्यालय",
+      "अस्थायी सरकारी इकाई"
+    ],
+    "answer": 0,
+    "explanation": "निजी कार्यालय सामान्यतया नाफा उद्देश्यले सञ्चालन हुन्छ।"
+  },
+  {
+    "q": "शासकीय संरचनाको आधारमा कार्यालयका प्रमुख प्रकार कुन-कुन हुन्?",
+    "options": [
+      "केन्द्रीय, प्रादेशिक र स्थानीय",
+      "सार्वजनिक र निजी मात्र",
+      "फ्रन्ट र ब्याक मात्र",
+      "स्थायी र अस्थायी मात्र"
+    ],
+    "answer": 0,
+    "explanation": "शासकीय संरचनाअनुसार केन्द्रीय, प्रादेशिक र स्थानीय कार्यालय हुन्छन्।"
+  },
+  {
+    "q": "प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय कुन प्रकारको कार्यालय हो?",
+    "options": [
+      "केन्द्रीय कार्यालय",
+      "स्थानीय कार्यालय",
+      "अस्थायी कार्यालय",
+      "निजी कार्यालय"
+    ],
+    "answer": 0,
+    "explanation": "प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय केन्द्रीय सरकारअन्तर्गतको केन्द्रीय कार्यालय हो।"
+  },
+  {
+    "q": "जिल्ला प्रशासन कार्यालय प्रकृतिको आधारमा कुन श्रेणीमा पर्छ?",
+    "options": [
+      "स्थायी कार्यालय",
+      "अस्थायी कार्यालय",
+      "व्यक्तिगत कार्यालय",
+      "अन्तर्राष्ट्रिय कार्यालय"
+    ],
+    "answer": 0,
+    "explanation": "जिल्ला प्रशासन कार्यालय निरन्तर सञ्चालनमा रहने भएकाले स्थायी कार्यालय हो।"
+  },
+  {
+    "q": "निश्चित उद्देश्य पूरा भएपछि बन्द हुने कार्यालयलाई के भनिन्छ?",
+    "options": [
+      "अस्थायी कार्यालय",
+      "केन्द्रीय कार्यालय",
+      "निजी कार्यालय",
+      "अग्र कार्यालय"
+    ],
+    "answer": 0,
+    "explanation": "विशेष उद्देश्यका लागि सीमित समय सञ्चालन हुने कार्यालय अस्थायी कार्यालय हो।"
+  },
+  {
+    "q": "संगठन संरचनाको आधारमा प्रत्यक्ष सेवाग्राहीसँग सम्पर्कमा रहने कार्यालय कुन हो?",
+    "options": [
+      "अग्र कार्यालय (Front Office)",
+      "पृष्ठ कार्यालय (Back Office)",
+      "गोप्य कार्यालय",
+      "अस्थायी कार्यालय"
+    ],
+    "answer": 0,
+    "explanation": "अग्र कार्यालयले प्रत्यक्ष सेवा तथा नागरिकसँगको सम्पर्क सम्हाल्छ।"
+  },
+  {
+    "q": "नीति तथा योजना तर्जुमा गर्ने कार्यालयलाई कुन श्रेणीमा राखिन्छ?",
+    "options": [
+      "पृष्ठ कार्यालय (Back Office)",
+      "अग्र कार्यालय (Front Office)",
+      "चलानी शाखा",
+      "दर्ता कक्ष"
+    ],
+    "answer": 0,
+    "explanation": "पृष्ठ कार्यालयले नीति, योजना, विश्लेषण र सहायक कार्य बढी सम्हाल्छ।"
+  },
+  {
+    "q": "कार्यालयको आधारभूत कार्यमध्ये कुन पर्छ?",
+    "options": [
+      "सूचना संकलन र संरक्षण",
+      "केवल नाफा वितरण",
+      "केवल मनोरञ्जन",
+      "केवल प्रचारप्रसार"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालयका आधारभूत कार्यमा सूचना संकलन, प्रशोधन, संरक्षण र वितरण पर्छन्।"
+  },
+  {
+    "q": "कार्यालयको आधारभूत कार्यमध्ये “सम्पर्क बिन्दु” भन्नाले के बुझिन्छ?",
+    "options": [
+      "नागरिक र कार्यालयबीच सम्पर्कको माध्यम",
+      "कार्यालयको पार्किङ",
+      "केवल फाइल कक्ष",
+      "केवल सुरक्षा गेट"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालय नागरिक, सेवाग्राही वा अन्य निकायसँग सम्पर्कको मुख्य बिन्दु बन्छ।"
+  },
+  {
+    "q": "कार्यालय सञ्चार (Office Communication) भन्नाले के बुझिन्छ?",
+    "options": [
+      "कार्यालयभित्र वा बाहिर सूचना, विचार र सन्देशको आदानप्रदान",
+      "केवल मोबाइल चलाउने काम",
+      "केवल गोप्य पत्र नष्ट गर्ने प्रक्रिया",
+      "केवल दर्ता किताब भर्ने काम"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालय सञ्चारले सूचना, विचार, निर्देशन र प्रतिपुष्टिको आदानप्रदानलाई जनाउँछ।"
+  },
+  {
+    "q": "प्रभावकारी कार्यालय सञ्चारको मुख्य लाभ कुन हो?",
+    "options": [
+      "निर्णयलाई स्पष्ट र समयोचित बनाउनु",
+      "भ्रम बढाउनु",
+      "काम दोहोर्‍याउनु",
+      "जिम्मेवारी अस्पष्ट बनाउनु"
+    ],
+    "answer": 0,
+    "explanation": "प्रभावकारी सञ्चारले निर्णय प्रक्रिया, समन्वय र सेवा प्रवाहलाई प्रभावकारी बनाउँछ।"
+  },
+  {
+    "q": "कार्यालयमा सञ्चारको महत्वमध्ये कुन बुँदा सुशासनसँग प्रत्यक्ष सम्बन्धित छ?",
+    "options": [
+      "पारदर्शिता र सहभागिता बढाउनु",
+      "फाइल हराउनु",
+      "सूचना लुकाउनु",
+      "अनावश्यक गोपनीयता बढाउनु"
+    ],
+    "answer": 0,
+    "explanation": "सञ्चारले पारदर्शिता, पहुँच र सहभागिता बढाएर सुशासन सुदृढ बनाउँछ।"
+  },
+  {
+    "q": "सेवाग्राही र सेवा प्रदायकबीच विश्वास बढाउन कुन कुरा आवश्यक हुन्छ?",
+    "options": [
+      "स्पष्ट र सम्मानजनक सञ्चार",
+      "अस्पष्ट निर्देश",
+      "ढिलाइ र उदासीनता",
+      "अनावश्यक गोपनीयता"
+    ],
+    "answer": 0,
+    "explanation": "स्पष्ट, समयमै र सम्मानजनक सञ्चारले सेवाग्राहीको विश्वास बढाउँछ।"
+  },
+  {
+    "q": "प्रभावकारी योजना निर्माणका लागि कार्यालय सञ्चार किन आवश्यक छ?",
+    "options": [
+      "सही सूचना र प्रतिपुष्टि उपलब्ध गराउने भएकाले",
+      "केवल औपचारिकता पुरा गर्न",
+      "केवल भाषणका लागि",
+      "केवल विज्ञापनका लागि"
+    ],
+    "answer": 0,
+    "explanation": "सही योजना निर्माणका लागि तथ्य, सूचना र प्रतिपुष्टि आवश्यक हुन्छ, जुन सञ्चारबाट प्राप्त हुन्छ।"
+  },
+  {
+    "q": "कार्यालयमा “दोहोरो सञ्चार” (Two-way communication) को विशेषता के हो?",
+    "options": [
+      "सन्देश र प्रतिपुष्टि दुवै हुने",
+      "केवल आदेश जाने",
+      "केवल सूचना फाइलमा राखिने",
+      "केवल बाह्य पत्राचार हुने"
+    ],
+    "answer": 0,
+    "explanation": "दोहोरो सञ्चारमा पठाउने र प्राप्त गर्ने दुवै पक्षबाट प्रतिक्रिया आउँछ।"
+  },
+  {
+    "q": "कार्यालयमा मौखिक सञ्चारभन्दा लिखित सञ्चार कहिले बढी उपयोगी हुन्छ?",
+    "options": [
+      "अभिलेख र प्रमाण आवश्यक हुँदा",
+      "सामान्य अनौपचारिक कुराकानीमा",
+      "चिया ब्रेकमा",
+      "मौखिक सूचना तुरुन्त पुग्दा"
+    ],
+    "answer": 0,
+    "explanation": "लिखित सञ्चारले प्रमाण, स्थायित्व र उत्तरदायित्व सुनिश्चित गर्छ।"
+  },
+  {
+    "q": "अभिलेख व्यवस्थापन (Record Management) को मुख्य उद्देश्य के हो?",
+    "options": [
+      "कागजातलाई सुरक्षित, व्यवस्थित र आवश्यक बेला उपलब्ध गराउनु",
+      "कागजात लुकाउनु",
+      "सिर्फ पुराना फाइल जलाउनु",
+      "केवल सजावट गर्नु"
+    ],
+    "answer": 0,
+    "explanation": "अभिलेख व्यवस्थापनले सूचना तथा प्रमाणलाई सुरक्षित र उपयोगी बनाउँछ।"
+  },
+  {
+    "q": "अभिलेख व्यवस्थापनले कार्यालयलाई प्रत्यक्ष रूपमा कुन पक्षमा सहयोग पुर्‍याउँछ?",
+    "options": [
+      "जवाफदेहिता र पारदर्शिता",
+      "अव्यवस्था र ढिलाइ",
+      "अनावश्यक विवाद",
+      "सूचना लुकावट"
+    ],
+    "answer": 0,
+    "explanation": "व्यवस्थित अभिलेखले पारदर्शिता, जवाफदेहिता र छिटो निर्णयमा मद्दत गर्छ।"
+  },
+  {
+    "q": "अभिलेखलाई प्रमाणका रूपमा प्रयोग गर्न सकिने मुख्य कारण के हो?",
+    "options": [
+      "त्यसमा तथ्यगत र आधिकारिक विवरण सुरक्षित हुन्छ",
+      "त्यो रंगीन हुन्छ",
+      "त्यो ठूलो फाइलमा राखिएको हुन्छ",
+      "त्यसमा धेरै हस्ताक्षर हुन्छ"
+    ],
+    "answer": 0,
+    "explanation": "अभिलेखले आधिकारिक घटना, निर्णय वा पत्राचारको प्रमाण दिन्छ।"
+  },
+  {
+    "q": "सूचना छिटो फेला पार्न अभिलेख व्यवस्थापनमा कुन कुरा सबैभन्दा महत्त्वपूर्ण हुन्छ?",
+    "options": [
+      "वर्गीकरण र अनुक्रमणिका",
+      "कागजको मोटाइ",
+      "फाइलको रंग",
+      "टेबलको आकार"
+    ],
+    "answer": 0,
+    "explanation": "वर्गीकरण, सूचीकरण र अनुक्रमणिकाले अभिलेख पुनःप्राप्ति सजिलो बनाउँछ।"
+  },
+  {
+    "q": "अभिलेख संरक्षणको प्रमुख उद्देश्य कुन हो?",
+    "options": [
+      "दीर्घकालसम्म उपयोगी सूचना सुरक्षित राख्नु",
+      "पुराना कागजात लुकाउनु",
+      "केवल गोप्य फाइल सार्नु",
+      "कर्मचारीलाई व्यस्त देखाउनु"
+    ],
+    "answer": 0,
+    "explanation": "महत्त्वपूर्ण सूचना दीर्घकालसम्म सुरक्षित रहोस् भनेर संरक्षण गरिन्छ।"
+  },
+  {
+    "q": "सरकारी कार्यालयमा अभिलेख व्यवस्थापन कमजोर हुँदा कस्तो असर पर्छ?",
+    "options": [
+      "निर्णय प्रक्रिया ढिलो र अस्पष्ट हुन्छ",
+      "जवाफदेहिता बढ्छ",
+      "सेवा प्रवाह छिटो हुन्छ",
+      "सञ्चार सुधार हुन्छ"
+    ],
+    "answer": 0,
+    "explanation": "कमजोर अभिलेख व्यवस्थापनले सेवा प्रवाह, पारदर्शिता र निर्णय प्रक्रियामा समस्या ल्याउँछ।"
+  },
+  {
+    "q": "सूचनाको हकसम्बन्धी काम प्रभावकारी बनाउन कार्यालयमा कुन पक्ष महत्त्वपूर्ण हुन्छ?",
+    "options": [
+      "अभिलेखको सही संरक्षण र उपलब्धता",
+      "अभिलेख नष्ट गर्ने बानी",
+      "सूचना लुकाउने नीति",
+      "केवल मौखिक उत्तर"
+    ],
+    "answer": 0,
+    "explanation": "सूचना दिन कार्यालयमा सही र अद्यावधिक अभिलेख उपलब्ध हुनुपर्छ।"
+  },
+  {
+    "q": "अभिलेख व्यवस्थापनले निर्णय प्रक्रियालाई कसरी सहयोग गर्छ?",
+    "options": [
+      "विगतका तथ्य र प्रमाण उपलब्ध गराएर",
+      "सूचना लुकाएर",
+      "अनुमानका आधारमा",
+      "केवल मौखिक सम्झनामा"
+    ],
+    "answer": 0,
+    "explanation": "विगतका निर्णय, तथ्यांक र अभिलेखले नयाँ निर्णयलाई आधार दिन्छ।"
+  },
+  {
+    "q": "मानवीय मूल्यअनुसार सार्वजनिक सेवकले सेवाग्राहीसँग कस्तो व्यवहार गर्नुपर्छ?",
+    "options": [
+      "सम्मान, निष्पक्षता र विनम्रतासाथ",
+      "रूखो र भेदभावपूर्ण",
+      "ढिलाइपूर्ण र अस्पष्ट",
+      "स्वार्थअनुसार"
+    ],
+    "answer": 0,
+    "explanation": "सार्वजनिक सेवामा सम्मान, निष्पक्षता र विनम्रता अत्यावश्यक मानवीय मूल्य हुन्।"
+  },
+  {
+    "q": "तलका मध्ये कुन व्यवहार कार्यालय अनुशासनविरुद्ध पर्छ?",
+    "options": [
+      "समयमै नआउनु",
+      "कार्यसम्पादन योजना बनाउनु",
+      "दर्ता-चलानी व्यवस्थित राख्नु",
+      "स्पष्ट निर्देशन दिनु"
+    ],
+    "answer": 0,
+    "explanation": "समयपालन अनुशासनको आधार हो; ढिला आउनु अनुशासनविपरीत हो।"
+  },
+  {
+    "q": "अनुशासित कर्मचारीको एउटा प्रमुख विशेषता कुन हो?",
+    "options": [
+      "नियमको पालना र जिम्मेवारी वहन",
+      "अफवाह फैलाउनु",
+      "काम टार्नु",
+      "अस्पष्ट निर्णय गर्नु"
+    ],
+    "answer": 0,
+    "explanation": "अनुशासित कर्मचारी नियम पालना गर्ने, जिम्मेवार र सेवा-उन्मुख हुन्छ।"
+  },
+  {
+    "q": "तलका मध्ये कुन “नागरिक कर्तव्य” सँग सबैभन्दा बढी मेल खान्छ?",
+    "options": [
+      "सार्वजनिक सम्पत्तिको संरक्षण गर्नु",
+      "सार्वजनिक सम्पत्ति नोक्सान गर्नु",
+      "कानून अवज्ञा गर्नु",
+      "अफवाह फैलाउनु"
+    ],
+    "answer": 0,
+    "explanation": "नागरिक कर्तव्यमा सार्वजनिक सम्पत्तिको संरक्षण र जिम्मेवार आचरण पर्छ।"
+  },
+  {
+    "q": "राष्ट्रप्रतिको निष्ठा र कानूनको सम्मान किन आवश्यक मानिन्छ?",
+    "options": [
+      "सामाजिक सुव्यवस्था र उत्तरदायित्वका लागि",
+      "केवल दण्डबाट बच्न",
+      "केवल निजी लाभका लागि",
+      "केवल चुनावका बेलामा"
+    ],
+    "answer": 0,
+    "explanation": "राष्ट्रप्रतिको निष्ठा र कानूनको सम्मानले सामाजिक सुव्यवस्था र साझा जिम्मेवारी सुदृढ गर्छ।"
+  },
+  {
+    "q": "सूचनाको हक सम्बन्धी ऐन, २०६४ कुन निकायको आधिकारिक कानुनी स्रोतमा प्रकाशित छ?",
+    "options": [
+      "नेपाल कानून आयोग",
+      "केवल निजी प्रकाशन",
+      "स्थानीय क्लब",
+      "कुनै अनौपचारिक ब्लग"
+    ],
+    "answer": 0,
+    "explanation": "सूचनाको हक सम्बन्धी ऐन, २०६४ नेपाल कानून आयोगको आधिकारिक स्रोतमा उपलब्ध छ।"
+  },
+  {
+    "q": "नेपालको संविधानअनुसार सूचनाको हक कुन धारासँग सम्बन्धित छ?",
+    "options": [
+      "धारा २७",
+      "धारा १५",
+      "धारा ४८",
+      "धारा ७२"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको संविधान, २०७२ को धारा २७ ले सूचनाको हकको व्यवस्था गरेको छ।"
+  },
+  {
+    "q": "सूचनाको हक सम्बन्धी ऐन, २०६४ अनुसार सूचना माग गर्ने हक कसलाई छ?",
+    "options": [
+      "नागरिकलाई",
+      "केवल सरकारी कर्मचारीलाई",
+      "केवल पत्रकारलाई",
+      "केवल विदेशीलाई"
+    ],
+    "answer": 0,
+    "explanation": "ऐनले सूचनाको हक नागरिकको हकको रूपमा व्यवस्था गरेको छ।"
+  },
+  {
+    "q": "MOHA को Citizen Charter मा सेवा सम्बन्धी कुन-कुन कुरा उल्लेख हुने संरचना देखिन्छ?",
+    "options": [
+      "Duration, Charge, Responsible Officer/Section, Complain Officer",
+      "केवल कार्यालयको लोगो",
+      "केवल मन्त्रीको नाम",
+      "केवल फोन नम्बर"
+    ],
+    "answer": 0,
+    "explanation": "गृह मन्त्रालयको Citizen Charter पृष्ठमा सेवा अवधि, शुल्क, जिम्मेवार शाखा र गुनासो अधिकारी जस्ता शीर्षक देखिन्छन्।"
+  },
+  {
+    "q": "नागरिक वडापत्र (Citizen Charter) को मुख्य उद्देश्य के हो?",
+    "options": [
+      "सेवा, समय, शुल्क र जिम्मेवार अधिकारीबारे स्पष्ट जानकारी दिनु",
+      "केवल सजावटका लागि टाँस्नु",
+      "सूचना लुकाउनु",
+      "केवल कर्मचारीका लागि निर्देशिका बनाउनु"
+    ],
+    "answer": 0,
+    "explanation": "नागरिक वडापत्रले सेवाग्राहीलाई सेवा सम्बन्धी स्पष्ट र प्रयोगयोग्य जानकारी दिन्छ।"
+  },
+  {
+    "q": "सुशासन (व्यवस्थापन तथा सञ्चालन) ऐन, २०६४ को केन्द्रीय भावना कुनसँग बढी सम्बन्धित छ?",
+    "options": [
+      "पारदर्शिता, जवाफदेहिता र प्रभावकारी सेवा प्रवाह",
+      "गोपनीयता मात्र",
+      "अनावश्यक ढिलाइ",
+      "केवल सजाय"
+    ],
+    "answer": 0,
+    "explanation": "सुशासनसम्बन्धी कानुनी व्यवस्थाको मूल उद्देश्य पारदर्शी, उत्तरदायी र प्रभावकारी प्रशासन हो।"
+  },
+  {
+    "q": "नेपालमा सुशासन प्रवर्द्धनका सन्दर्भमा सामाजिक परीक्षण, सार्वजनिक परीक्षण र सार्वजनिक सुनुवाइ किन महत्त्वपूर्ण छन्?",
+    "options": [
+      "नागरिक सहभागिता र उत्तरदायित्व बढाउन",
+      "फाइल लुकाउन",
+      "गोपनीयता मात्र बढाउन",
+      "सेवा बन्द गर्न"
+    ],
+    "answer": 0,
+    "explanation": "यी विधिहरूले सार्वजनिक निकायलाई नागरिकप्रति बढी उत्तरदायी बनाउँछन्।"
+  },
+  {
+    "q": "NHRC Nepal को “About Us” अनुसार राष्ट्रिय मानव अधिकार आयोग सुरुमा कस्तो निकायका रूपमा स्थापना भएको थियो?",
+    "options": [
+      "स्वतन्त्र वैधानिक निकाय",
+      "निजी कम्पनी",
+      "स्थानीय क्लब",
+      "अन्तर्राष्ट्रिय गैरसरकारी संस्था"
+    ],
+    "answer": 0,
+    "explanation": "NHRC Nepal का अनुसार आयोग सन् 2000 मा स्वतन्त्र वैधानिक निकायका रूपमा स्थापना भएको थियो।"
+  },
+  {
+    "q": "NHRC Nepal का अनुसार वर्तमान संविधान, २०१५ अनुसार आयोग कुन धाराबाट संवैधानिक निकायका रूपमा मान्यता प्राप्त छ?",
+    "options": [
+      "धारा २४८",
+      "धारा २७",
+      "धारा ४८",
+      "धारा १३१"
+    ],
+    "answer": 0,
+    "explanation": "NHRC Nepal ले वर्तमान संविधान, 2015 को धारा 248 बाट आयोगलाई संवैधानिक निकायको हैसियत प्राप्त भएको उल्लेख गरेको छ।"
+  },
+  {
+    "q": "संयुक्त राष्ट्रसंघको Universal Declaration of Human Rights कहिले अंगीकार भएको थियो?",
+    "options": [
+      "१० डिसेम्बर १९४८",
+      "१ जनवरी १९४५",
+      "१५ जून १९६६",
+      "२६ जनवरी १९५०"
+    ],
+    "answer": 0,
+    "explanation": "संयुक्त राष्ट्रसंघका अनुसार UDHR 10 December 1948 मा घोषणा गरिएको थियो।"
+  },
+  {
+    "q": "UDHR को मूल सन्देशमध्ये कुन सही हो?",
+    "options": [
+      "सबै मानव स्वतन्त्र र समान मर्यादासहित जन्मन्छन्",
+      "अधिकार केवल धनी व्यक्तिलाई हुन्छ",
+      "अधिकार राज्यले चाहेकोलाई मात्र दिन्छ",
+      "मानव अधिकार राष्ट्रियतामा मात्र सीमित हुन्छ"
+    ],
+    "answer": 0,
+    "explanation": "UDHR ले सबै मानिस स्वतन्त्र र समान मर्यादा तथा अधिकारसहित जन्मने घोषणा गर्छ।"
+  },
+  {
+    "q": "मानव अधिकार र नागरिक कर्तव्यबीचको सही सम्बन्ध कुन हो?",
+    "options": [
+      "अधिकारको प्रयोग गर्दा अरूको अधिकारको सम्मान गर्नुपर्छ",
+      "अधिकार भए कर्तव्य आवश्यक पर्दैन",
+      "कर्तव्य केवल सरकारको हुन्छ",
+      "अधिकार र कर्तव्यबीच कुनै सम्बन्ध हुँदैन"
+    ],
+    "answer": 0,
+    "explanation": "लोकतान्त्रिक समाजमा अधिकार र कर्तव्य परस्पर पूरक हुन्छन्।"
+  },
+  {
+    "q": "कार्यालयमा गोपनीयता कायम राख्ने सही तरिका कुन हो?",
+    "options": [
+      "गोप्य पत्र छुट्टै दर्ता प्रणालीमा राख्नु",
+      "सबैलाई खुला रूपमा बाँड्नु",
+      "अनौपचारिक रूपमा मौखिक भन्नु",
+      "सामाजिक सञ्जालमा पोस्ट गर्नु"
+    ],
+    "answer": 0,
+    "explanation": "गोप्य सूचनाको विशेष दर्ता, सीमित पहुँच र सावधानीपूर्वक हेरचाह आवश्यक हुन्छ।"
+  },
+  {
+    "q": "सार्वजनिक सेवामा “निष्पक्षता” को अर्थ के हो?",
+    "options": [
+      "सबै सेवाग्राहीलाई समान व्यवहार गर्नु",
+      "चिनेका मानिसलाई मात्र सेवा दिनु",
+      "राजनीतिक झुकावअनुसार सेवा दिनु",
+      "धनका आधारमा प्राथमिकता दिनु"
+    ],
+    "answer": 0,
+    "explanation": "निष्पक्षता भनेको कुनै भेदभाव बिना समान व्यवहार गर्नु हो।"
+  }
+];
+
+const questions = rawQuestions.map((item, index) => {
+    const options = Array.isArray(item.options) ? item.options.map(option => String(option)) : [];
+    const parsedAnswer = Number(item.answer);
+    const answerIndex = Number.isInteger(parsedAnswer) && parsedAnswer >= 0 ? parsedAnswer : 0;
+    return {
+        q: String(item.q ?? item.question ?? `Question ${index + 1}`),
+        options,
+        answer: Math.min(answerIndex, Math.max(options.length - 1, 0)),
+        explanation: String(item.explanation ?? 'No explanation provided.')
+    };
+}).filter(question => question.q && question.options.length > 0);
+
+const quizEl = document.getElementById('quiz');
+const scoreEl = document.getElementById('score');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+const progressTextEl = document.getElementById('progress-text');
+const currentScoreEl = document.getElementById('current-score');
+const questionsAnsweredEl = document.getElementById('questions-answered');
+const questionsTotalEl = document.getElementById('questions-total');
+const accuracyEl = document.getElementById('accuracy');
+const resultsEl = document.getElementById('results');
+const resultsBody = document.getElementById('results-body');
+const streakBadge = document.getElementById('streak-badge');
+const correctSound = document.getElementById('correct-sound');
+const wrongSound = document.getElementById('wrong-sound');
+const restartBtn = document.getElementById('restart-btn');
+
+const QUESTIONS_PER_PAGE = Math.max(1, Number(quizConfig.questionsPerPage) || 5);
+const ANSWER_DELAY = 700;
+let currentIndex = 0;
+let score = 0;
+let timerSeconds = 0;
+let timerInterval = null;
+let currentStreak = 0;
+let maxStreak = 0;
+let quizFinished = false;
+let pendingTimeout = null;
+let userAnswers = questions.map(() => null);
+
+questionsTotalEl.textContent = questions.length;
+progressTextEl.textContent = `0/${questions.length}`;
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timerSeconds += 1;
+        timerEl.textContent = formatTime(timerSeconds);
+    }, 1000);
+}
+
+function updateStats() {
+    const answeredCount = userAnswers.filter(answer => answer !== null).length;
+    const correctCount = userAnswers.filter(answer => answer && answer.isCorrect).length;
+    currentScoreEl.textContent = String(correctCount);
+    questionsAnsweredEl.textContent = String(answeredCount);
+    accuracyEl.textContent = `${answeredCount ? Math.round((correctCount / answeredCount) * 100) : 0}%`;
+    progressTextEl.textContent = `${answeredCount}/${questions.length}`;
+    progressEl.style.width = `${questions.length ? (answeredCount / questions.length) * 100 : 0}%`;
+}
+
+function updateStreak(isCorrect) {
+    if (isCorrect) {
+        currentStreak += 1;
+        maxStreak = Math.max(maxStreak, currentStreak);
+        if (currentStreak >= 3) {
+            streakBadge.textContent = `Streak: ${currentStreak}`;
+            streakBadge.classList.add('show');
+            setTimeout(() => streakBadge.classList.remove('show'), 1800);
+        }
+    } else {
+        currentStreak = 0;
+    }
+}
+
+function playSound(audioEl) {
+    try {
+        audioEl.currentTime = 0;
+        audioEl.play().catch(() => {});
+    } catch (error) {
+        // Ignore autoplay restrictions.
+    }
+}
+
+function drawConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = Array.from({ length: 150 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        vx: (Math.random() - 0.5) * 4,
+        vy: Math.random() * 3 + 2,
+        color: ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'][Math.floor(Math.random() * 5)],
+        size: Math.random() * 6 + 2,
+        rotation: Math.random() * 360
+    }));
+
+    let animationId;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+        particles.forEach(particle => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.rotation += 2;
+            if (particle.y < canvas.height + 20) {
+                active = true;
+                ctx.save();
+                ctx.translate(particle.x, particle.y);
+                ctx.rotate((particle.rotation * Math.PI) / 180);
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size);
+                ctx.restore();
+            }
+        });
+        if (active) {
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+    animate();
+    setTimeout(() => cancelAnimationFrame(animationId), 5000);
+}
+
+function createActionButton(label, className, onClick) {
+    const button = document.createElement('button');
+    button.className = className;
+    button.innerHTML = label;
+    button.addEventListener('click', onClick);
+    return button;
+}
+
+function renderQuestion() {
+    if (quizFinished) return;
+    quizEl.innerHTML = '';
+    scoreEl.textContent = '';
+    resultsEl.classList.add('hidden');
+
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    const pageEnd = Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length);
+
+    for (let questionIndex = pageStart; questionIndex < pageEnd; questionIndex += 1) {
+        const question = questions[questionIndex];
+        const questionWrapper = document.createElement('div');
+        questionWrapper.className = 'question-wrapper';
+
+        const questionCard = document.createElement('div');
+        questionCard.className = 'question-card';
+        questionCard.dataset.index = String(questionIndex);
+
+        const questionHeader = document.createElement('div');
+        questionHeader.className = 'question-header';
+        questionHeader.innerHTML = `
+            <div class="question-number">${questionIndex + 1}</div>
+            <div class="question-text">${question.q}</div>
+        `;
+
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'options';
+
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.textContent = question.explanation;
+
+        const shuffledOptions = shuffle(question.options.map((text, optionIndex) => ({ text, optionIndex })));
+
+        shuffledOptions.forEach((option, displayIndex) => {
+            const button = document.createElement('button');
+            button.className = 'option-btn';
+            button.innerHTML = `
+                <span class="option-indicator">${String.fromCharCode(65 + displayIndex)}</span>
+                <span>${option.text}</span>
+            `;
+            button.addEventListener('click', () => handleAnswer(questionIndex, option.optionIndex, option.text, button, optionsContainer, explanationDiv));
+            optionsContainer.appendChild(button);
+        });
+
+        questionCard.appendChild(questionHeader);
+        questionCard.appendChild(optionsContainer);
+        questionCard.appendChild(explanationDiv);
+        questionWrapper.appendChild(questionCard);
+        quizEl.appendChild(questionWrapper);
+    }
+
+    const actionBar = document.createElement('div');
+    actionBar.className = 'action-bar';
+    actionBar.appendChild(createActionButton('⊘ Skip Remaining', 'btn btn-skip', skipRemainingQuestionsOnPage));
+    quizEl.appendChild(actionBar);
+}
+
+function lockOptions(optionsContainer) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        button.disabled = true;
+    });
+}
+
+function revealCorrectAnswer(optionsContainer, correctIndex, questionIndex) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        const optionText = button.querySelector('span:last-child').textContent;
+        if (optionText === questions[questionIndex].options[correctIndex]) {
+            button.classList.add('correct');
+        }
+    });
+}
+
+function moveNext() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+
+    if (currentIndex < questions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+        updateStats();
+    } else {
+        finishQuiz();
+    }
+}
+
+function getCurrentPageBounds() {
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    return {
+        pageStart,
+        pageEnd: Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length)
+    };
+}
+
+function isCurrentPageComplete() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] === null) return false;
+    }
+    return true;
+}
+
+function scheduleNextStep() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+    }
+    pendingTimeout = setTimeout(() => {
+        if (isCurrentPageComplete()) {
+            const { pageEnd } = getCurrentPageBounds();
+            if (pageEnd >= questions.length) {
+                finishQuiz();
+            } else {
+                currentIndex = pageEnd;
+                renderQuestion();
+                updateStats();
+            }
+        }
+    }, ANSWER_DELAY);
+}
+
+function skipRemainingQuestionsOnPage() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] !== null) continue;
+        const card = quizEl.querySelector(`.question-card[data-index="${i}"]`);
+        if (!card) continue;
+        const explanationDiv = card.querySelector('.explanation');
+        const optionsContainer = card.querySelector('.options');
+        skipQuestion(i, explanationDiv, optionsContainer);
+    }
+}
+
+function handleAnswer(questionIndex, selectedIndex, selectedText, clickedButton, optionsContainer, explanationDiv) {
+    if (userAnswers[questionIndex] !== null) return;
+
+    const question = questions[questionIndex];
+    const isCorrect = selectedIndex === question.answer;
+    lockOptions(optionsContainer);
+    revealCorrectAnswer(optionsContainer, question.answer, questionIndex);
+
+    if (!isCorrect) {
+        clickedButton.classList.add('wrong');
+        playSound(wrongSound);
+    } else {
+        clickedButton.classList.add('correct');
+        playSound(correctSound);
+        score += 1;
+    }
+
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText,
+        isCorrect,
+        skipped: false
+    };
+    currentIndex = questionIndex;
+    updateStreak(isCorrect);
+    updateStats();
+    scheduleNextStep();
+}
+
+function skipQuestion(questionIndex, explanationDiv, optionsContainer) {
+    if (userAnswers[questionIndex] !== null) return;
+    lockOptions(optionsContainer);
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText: 'Skipped',
+        isCorrect: false,
+        skipped: true
+    };
+    currentIndex = questionIndex;
+    updateStreak(false);
+    updateStats();
+    scheduleNextStep();
+}
+
+function finishQuiz() {
+    quizFinished = true;
+    clearInterval(timerInterval);
+    quizEl.innerHTML = '';
+
+    const percentage = questions.length ? ((score / questions.length) * 100).toFixed(1) : '0.0';
+    let message = 'Keep learning! You\'ll improve!';
+    let emoji = '📚';
+
+    if (Number(percentage) >= 90) {
+        message = 'Outstanding! You\'re a master!';
+        emoji = '🏆';
+        drawConfetti();
+    } else if (Number(percentage) >= 70) {
+        message = 'Great job! Well done!';
+        emoji = '🌟';
+    } else if (Number(percentage) >= 50) {
+        message = 'Good effort! Keep practicing!';
+        emoji = '💪';
+    }
+
+    scoreEl.innerHTML = `
+        <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+        <div class="score-display">${percentage}%</div>
+        <div class="score-label">${message}</div>
+        <div style="margin-top: 1rem; color: var(--text-secondary);">
+            ${score} correct out of ${questions.length} questions<br>
+            Time: ${formatTime(timerSeconds)} | Best Streak: ${maxStreak}
+        </div>
+    `;
+
+    resultsBody.innerHTML = questions.map((question, index) => {
+        const answer = userAnswers[index];
+        const userAnswer = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.selectedText;
+        const status = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.isCorrect ? 'Correct' : 'Wrong';
+        const statusClass = status.toLowerCase().replace(' ', '-');
+        const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : status === 'Skipped' ? '⊘' : '•';
+        return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${question.q}</td>
+                <td>${userAnswer}</td>
+                <td>${question.options[question.answer] ?? ''}</td>
+                <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                <td class="explanation-cell">${question.explanation}</td>
+            </tr>
+        `;
+    }).join('');
+
+    resultsEl.classList.remove('hidden');
+}
+
+function restartQuiz() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+    clearInterval(timerInterval);
+    currentIndex = 0;
+    score = 0;
+    timerSeconds = 0;
+    currentStreak = 0;
+    maxStreak = 0;
+    quizFinished = false;
+    userAnswers = questions.map(() => null);
+    timerEl.textContent = '00:00';
+    streakBadge.classList.remove('show');
+    updateStats();
+    renderQuestion();
+    startTimer();
+}
+
+restartBtn.addEventListener('click', restartQuiz);
+window.addEventListener('resize', () => {
+    const canvas = document.getElementById('confetti-canvas');
+    if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+});
+
+updateStats();
+renderQuestion();
+startTimer();
+    </script>
+</body>
+</html>

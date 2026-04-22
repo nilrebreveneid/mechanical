@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>2.1.2 सहायक कर्मचारीका कार्य र गुणहरू</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>2.1.2 सहायक कर्मचारीका कार्य र गुणहरू</h1>
+                        <div class="subtitle">Technical Quiz</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">0</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" id="restart-btn">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+const quizConfig = {
+  "quizId": "2-1-2",
+  "quizTitle": "2.1.2 सहायक कर्मचारीका कार्य र गुणहरू",
+  "displayTitle": "2.1.2 सहायक कर्मचारीका कार्य र गुणहरू",
+  "topicName": "Technical Quiz",
+  "questionsPerPage": 5
+};
+const rawQuestions = [
+  {
+    "q": "निजामती सेवा ऐन २०४९ अनुसार कर्मचारी (Personal) को परिभाषा कुन हो?",
+    "options": [
+      "निश्चित संगठन संरचनामा आबद्ध भई विद्यमान ऐन, नियम र कार्यविधिको अधिनमा रही कार्य सम्पादन गर्ने व्यक्ति",
+      "सरकारले नियुक्त गरेको जुनसुकै व्यक्ति",
+      "तलब पाउने जोसुकै व्यक्ति",
+      "लोक सेवा आयोगबाट सिफारिस भएको व्यक्ति मात्र"
+    ],
+    "answer": 0,
+    "explanation": "निश्चित संगठन संरचनामा आबद्ध भई विद्यमान ऐन, नियम र कार्यविधिको अधिनमा रही कार्य सम्पादन गर्ने व्यक्तिलाई कर्मचारी भनिन्छ। स्रोत: संलग्न नोट्स, १.१.२"
+  },
+  {
+    "q": "सहायक कर्मचारी (Assistant Personal) को परिभाषा के हो?",
+    "options": [
+      "राजपत्राङ्कित श्रेणीका कर्मचारी",
+      "अधिकृत स्तर वा सो भन्दा माथिको तहबाट प्राप्त निर्देशन वा आदेश, जारी भएका परिपत्रहरू आदिका आधारमा कार्य सम्पादन गर्ने कर्मचारी",
+      "प्राविधिक तर्फका मात्र कर्मचारी",
+      "केवल लोक सेवाबाट भर्ना भएका कर्मचारी"
+    ],
+    "answer": 1,
+    "explanation": "अधिकृत स्तर वा सो भन्दा माथिको तहबाट प्राप्त निर्देशन वा आदेश, जारी भएका परिपत्रहरू आदिका आधारमा कार्य सम्पादन गर्ने कर्मचारीलाई सहायक कर्मचारी भनिन्छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीका प्रकार कति वटा छन्?",
+    "options": [
+      "२ वटा",
+      "४ वटा",
+      "३ वटा",
+      "५ वटा"
+    ],
+    "answer": 2,
+    "explanation": "सहायक कर्मचारीका ३ प्रकार छन्: (१) फाँटवाला, (२) पी.ए. (Personal Assistant), र (३) सम्पर्क सहायक। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "निजामती सेवा ऐन २०४९ अनुसार कर्मचारीको वर्गीकरणमा राजपत्राङ्कित श्रेणीमा कति श्रेणी छन्?",
+    "options": [
+      "२ श्रेणी",
+      "३ श्रेणी",
+      "५ श्रेणी",
+      "४ श्रेणी"
+    ],
+    "answer": 3,
+    "explanation": "निजामती सेवा ऐन २०४९ अनुसार राजपत्राङ्कित श्रेणीमा ४ श्रेणी छन्: विशिष्ट (सचिव), प्रथम (स सचिव), द्वितीय (उप सचिव), र तृतीय (शाखा अधिकृत)। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको कार्यमध्ये 'अभिलेख व्यवस्थापन' (Records Management) पर्दछ। यो कुन नम्बरको कार्य हो?",
+    "options": [
+      "पहिलो कार्य",
+      "दोस्रो कार्य",
+      "तेस्रो कार्य",
+      "चौथो कार्य"
+    ],
+    "answer": 0,
+    "explanation": "सहायक कर्मचारीका कार्यहरूको सूचीमा 'अभिलेख व्यवस्थापन (Records Management)' पहिलो कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीका गुणहरूमध्ये कुन समावेश छ?",
+    "options": [
+      "कठोरता र अनुशासनहीनता",
+      "सकारात्मक सोच र मैत्रीपूर्ण व्यवहार",
+      "राजनीतिक सक्रियता",
+      "स्वार्थपरता"
+    ],
+    "answer": 1,
+    "explanation": "सहायक कर्मचारीका गुणहरूमध्ये सकारात्मक सोच र मैत्रीपूर्ण व्यवहार महत्वपूर्ण गुण हुन्। स्रोत: संलग्न नोट्स, गुणहरूको तालिका"
+  },
+  {
+    "q": "राजपत्र अनंकित प्रथम श्रेणीमा कुन पद पर्दछ?",
+    "options": [
+      "नायब सुब्बा",
+      "मुखिया",
+      "खरिदार",
+      "बैदार"
+    ],
+    "answer": 0,
+    "explanation": "निजामती सेवा सम्बन्धी वर्गीकरणअनुसार राजपत्र अनंकित प्रथम श्रेणीमा नायब सुब्बा पर्दछ।"
+  },
+  {
+    "q": "सहायक कर्मचारीको कार्यमध्ये 'दर्ता र चलानी (Registration and Dispatch)' कुन नम्बरमा पर्दछ?",
+    "options": [
+      "पहिलो",
+      "तेस्रो",
+      "चौथो",
+      "दोस्रो"
+    ],
+    "answer": 3,
+    "explanation": "सहायक कर्मचारीका कार्यहरूको सूचीमा 'दर्ता र चलानी (Registration and Dispatch)' दोस्रो कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीका गुणहरूमध्ये 'नियम विधि कानूनको पालना' कस्तो गुणसँग सम्बन्धित छ?",
+    "options": [
+      "कानूनी अनुपालन र नैतिक दायित्वसँग",
+      "शारीरिक क्षमतासँग",
+      "आर्थिक व्यवस्थापनसँग",
+      "राजनीतिक सहभागितासँग"
+    ],
+    "answer": 0,
+    "explanation": "'नियम विधि कानूनको पालना' सहायक कर्मचारीको कानूनी अनुपालन र नैतिक दायित्वसँग सम्बन्धित महत्वपूर्ण गुण हो। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "काम गर्ने प्रकृतिको आधारमा कर्मचारीलाई कति प्रकारमा वर्गीकरण गरिन्छ?",
+    "options": [
+      "तीन प्रकारमा",
+      "दुई प्रकारमा",
+      "चार प्रकारमा",
+      "पाँच प्रकारमा"
+    ],
+    "answer": 1,
+    "explanation": "काम गर्ने प्रकृतिको आधारमा कर्मचारीलाई (क) प्राविधिक कर्मचारी र (ख) अप्राविधिक कर्मचारी गरी दुई प्रकारमा वर्गीकरण गरिन्छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "राजपत्र अनंकित प्रथम श्रेणीमा नायब सुब्बा पर्दछ कि खरिदार?",
+    "options": [
+      "नायब सुब्बा",
+      "दुवै पर्दछन्",
+      "खरिदार",
+      "मुखिया"
+    ],
+    "answer": 0,
+    "explanation": "राजपत्र अनंकित प्रथम श्रेणीमा नायब सुब्बा पर्दछ। खरिदार राजपत्र अनंकित द्वितीय श्रेणीमा पर्छ।"
+  },
+  {
+    "q": "सहायक कर्मचारीको गुण 'शिष्टाचार' भन्नाले के बुझिन्छ?",
+    "options": [
+      "केवल औपचारिक पोशाक लगाउनु",
+      "केवल वरिष्ठलाई मान दिनु",
+      "केवल ग्राहकलाई खुसी राख्नु",
+      "विनम्र र सभ्य व्यवहार गर्नु"
+    ],
+    "answer": 3,
+    "explanation": "'शिष्टाचार' भन्नाले सेवाग्राही, सहकर्मी र वरिष्ठ सबैसँग विनम्र र सभ्य व्यवहार गर्नुलाई बुझिन्छ। यो सहायक कर्मचारीको महत्वपूर्ण गुण हो। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको कार्यमध्ये 'सेवा प्रवाह (Service Delivered)' कुन नम्बरमा पर्दछ?",
+    "options": [
+      "तेस्रो",
+      "पहिलो",
+      "पाँचौँ",
+      "सातौँ"
+    ],
+    "answer": 0,
+    "explanation": "सहायक कर्मचारीका कार्यहरूमा 'सेवा प्रवाह (Service Delivered)' तेस्रो कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "स्थायित्वको आधारमा कर्मचारी कति प्रकारका हुन्छन्?",
+    "options": [
+      "तीन प्रकार",
+      "दुई प्रकार",
+      "चार प्रकार",
+      "एक प्रकार"
+    ],
+    "answer": 1,
+    "explanation": "स्थायित्वको आधारमा कर्मचारीलाई (क) स्थायी कर्मचारी र (ख) अस्थायी कर्मचारी गरी दुई प्रकारमा वर्गीकरण गरिन्छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको गुणहरूमध्ये 'आत्मविश्वास' कस्तो पक्षसँग सम्बन्धित छ?",
+    "options": [
+      "शारीरिक बल",
+      "राजनीतिक जडान",
+      "मनोवैज्ञानिक बल र निर्णय क्षमता",
+      "वित्तीय सम्पन्नता"
+    ],
+    "answer": 2,
+    "explanation": "'आत्मविश्वास' मनोवैज्ञानिक बल र निर्णय क्षमतासँग सम्बन्धित छ। आत्मविश्वासी कर्मचारीले कुशलतापूर्वक काम गर्न सक्दछ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीका जम्मा कति वटा कार्यहरू संलग्न नोट्समा उल्लेख गरिएका छन्?",
+    "options": [
+      "८ वटा",
+      "९ वटा",
+      "१० वटा",
+      "१२ वटा"
+    ],
+    "answer": 3,
+    "explanation": "संलग्न नोट्समा सहायक कर्मचारीका जम्मा १२ वटा कार्यहरू उल्लेख छन्: अभिलेख व्यवस्थापन, दर्ता र चलानी, सेवा प्रवाह, सुचनाको ब्यबस्थापन, निर्देशनको पालना, सार्वजनिक सम्पतिको संरक्षण, नीति कार्यावयान, प्रतिवेदन तयार गर्ने, सक्रिय सम्भागिता, जिन्सी ब्यबस्थापन, तथ्याङ्क संकलन, बिकाश निर्माण सहयोगी। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको कार्यमध्ये 'निर्देशनको पालना (Follow the Instruction)' कुन नम्बरमा पर्दछ?",
+    "options": [
+      "पाँचौँ",
+      "छैटौँ",
+      "सातौँ",
+      "आठौँ"
+    ],
+    "answer": 0,
+    "explanation": "'निर्देशनको पालना (Follow the Instruction)' सहायक कर्मचारीको पाँचौँ कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीका गुणहरूको तालिकामा कति वटा गुण उल्लेख छन्?",
+    "options": [
+      "९ वटा",
+      "१२ वटा",
+      "१५ वटा",
+      "१० वटा"
+    ],
+    "answer": 1,
+    "explanation": "संलग्न नोट्समा सहायक कर्मचारीका गुणहरूको तालिकामा १२ वटा गुण उल्लेख छन्: सकरात्मक सोच, मैत्रीपूर्ण व्यवहार, नियम विधि कानूनको पालना, गतिशिलता, सदाचार एवं नैतिकता, संयम, मिलनसार, शिष्टाचार, नियमितता, समयको परिपालना, आत्मविश्वास, विश्वसनीयता। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "नियुक्तिको छनौटको आधारमा कर्मचारीका कति प्रकार छन्?",
+    "options": [
+      "तीन प्रकार",
+      "चार प्रकार",
+      "दुई प्रकार",
+      "पाँच प्रकार"
+    ],
+    "answer": 2,
+    "explanation": "नियुक्तिको छनौटको आधारमा कर्मचारीलाई (क) योग्यतामा आधारित कर्मचारी र (ख) नियुक्तिमा आधारित कर्मचारी गरी दुई प्रकारमा वर्गीकरण गरिन्छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "राजपत्राङ्कित तृतीय श्रेणी (शाखा अधिकृत) को माथि कुन श्रेणी पर्दछ?",
+    "options": [
+      "राजपत्राङ्कित विशिष्ट (सचिव)",
+      "राजपत्राङ्कित प्रथम (स सचिव)",
+      "राजपत्र अनंकित प्रथम (खरिदार)",
+      "राजपत्राङ्कित द्वितीय"
+    ],
+    "answer": 3,
+    "explanation": "राजपत्राङ्कित श्रेणीको क्रम: विशिष्ट (सचिव) > प्रथम (स सचिव) > द्वितीय (उप सचिव) > तृतीय (शाखा अधिकृत)। तृतीयको माथि द्वितीय श्रेणी पर्दछ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको कार्यमध्ये 'सार्वजनिक सम्पतिको संरक्षण (Protection of Public Property)' कुन नम्बरमा पर्दछ?",
+    "options": [
+      "छैटौँ",
+      "सातौँ",
+      "आठौँ",
+      "नवौँ"
+    ],
+    "answer": 0,
+    "explanation": "'सार्वजनिक सम्पतिको संरक्षण (Protection of Public Property)' सहायक कर्मचारीको छैटौँ कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "निम्नमध्ये कुन सहायक कर्मचारीको गुण होइन?",
+    "options": [
+      "विश्वसनीयता",
+      "राजनीतिक पक्षधरता",
+      "सकारात्मक सोच",
+      "गतिशिलता"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवा ऐन २०४९ को आचरण सम्बन्धी व्यवस्था अनुसार कर्मचारीले राजनीतिमा भाग लिन नहुने भएकाले 'राजनीतिक पक्षधरता' सहायक कर्मचारीको गुण होइन। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको कार्यमध्ये 'जिन्सी ब्यबस्थापन (Goods Management)' कुन नम्बरमा पर्दछ?",
+    "options": [
+      "आठौँ",
+      "नवौँ",
+      "दशौँ",
+      "एघारौँ"
+    ],
+    "answer": 2,
+    "explanation": "'जिन्सी ब्यबस्थापन (Goods Management)' सहायक कर्मचारीको दशौँ कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "राजपत्र अनंकित श्रेणीमा कति श्रेणी छन्?",
+    "options": [
+      "तीन श्रेणी",
+      "चार श्रेणी",
+      "दुई श्रेणी",
+      "पाँच श्रेणी"
+    ],
+    "answer": 3,
+    "explanation": "राजपत्र अनंकित श्रेणीमा पाँच श्रेणी छन्: प्रथम (नायब सुब्बा), द्वितीय (खरिदार), तृतीय (मुखिया), चतुर्थ (बैदार), र पाँचौँ (का.स.)। स्रोत: संलग्न नोट्स, तालिका"
+  },
+  {
+    "q": "सहायक कर्मचारीको गुण 'गतिशिलता' भन्नाले के जनाउँछ?",
+    "options": [
+      "समयसँगै परिवर्तन हुन सक्ने र नयाँ परिस्थितिमा अनुकूलन गर्ने क्षमता",
+      "छिटो हिँड्न सक्ने शारीरिक क्षमता",
+      "एकैसाथ धेरै ठाउँमा काम गर्न सक्ने",
+      "धेरै घण्टा काम गर्ने इच्छाशक्ति"
+    ],
+    "answer": 0,
+    "explanation": "'गतिशिलता' भन्नाले कर्मचारीमा समयसँगै परिवर्तन हुन सक्ने र नयाँ परिस्थितिमा अनुकूलन गर्ने क्षमता रहेको अर्थ बुझिन्छ। यो सहायक कर्मचारीको महत्वपूर्ण गुण हो। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको कार्यमध्ये 'तथ्याङ्क संकलन (Data Collection)' कुन नम्बरमा पर्दछ?",
+    "options": [
+      "दशौँ",
+      "एघारौँ",
+      "बाह्रौँ",
+      "नवौँ"
+    ],
+    "answer": 1,
+    "explanation": "'तथ्याङ्क संकलन (Data Collection)' सहायक कर्मचारीको एघारौँ कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "स्तरका आधारमा कर्मचारीका कति प्रकार छन् र के-के हुन्?",
+    "options": [
+      "तीन प्रकार: अधिकृत, सहायक र प्राविधिक",
+      "चार प्रकार: उच्च, मध्यम, सहायक र न्यून",
+      "दुई प्रकार: अधिकृत स्तर र सहायक स्तर",
+      "तीन प्रकार: राजपत्राङ्कित, राजपत्र अनंकित र विशेष"
+    ],
+    "answer": 2,
+    "explanation": "स्तरका आधारमा कर्मचारीलाई (क) अधिकृत स्तर र (ख) सहायक स्तर गरी दुई प्रकारमा वर्गीकरण गरिन्छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको अन्तिम (बाह्रौँ) कार्य कुन हो?",
+    "options": [
+      "सक्रिय सम्भागिता",
+      "जिन्सी ब्यबस्थापन",
+      "तथ्याङ्क संकलन",
+      "बिकाश निर्माण सहयोगी"
+    ],
+    "answer": 3,
+    "explanation": "'बिकाश निर्माण सहयोगी (Development Management)' सहायक कर्मचारीको बाह्रौँ अर्थात् अन्तिम कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको गुण 'सदाचार एवं नैतिकता' ले कुन पक्षलाई जोड दिन्छ?",
+    "options": [
+      "इमान्दारिता, सत्यनिष्ठा र नैतिक आचरण",
+      "शारीरिक स्वच्छता",
+      "धार्मिक आस्था",
+      "राजनीतिक विचारधारा"
+    ],
+    "answer": 0,
+    "explanation": "'सदाचार एवं नैतिकता' इमान्दारिता, सत्यनिष्ठा र नैतिक आचरणसँग सम्बन्धित गुण हो। यो सुशासन र सार्वजनिक सेवाको आधारभूत मूल्य हो। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "राजपत्र अनंकित चतुर्थ श्रेणीमा कुन पद पर्दछ?",
+    "options": [
+      "का.स.",
+      "बैदार",
+      "मुखिया",
+      "खरिदार"
+    ],
+    "answer": 1,
+    "explanation": "राजपत्र अनंकित चतुर्थ श्रेणीमा बैदार पर्दछ। श्रेणी क्रम: प्रथम (नायब सुब्बा), द्वितीय (खरिदार), तृतीय (मुखिया), चतुर्थ (बैदार), पाँचौँ (का.स.)। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको कार्यमध्ये 'नीति कार्यावयान (Policy Implementation)' कुन नम्बरमा पर्दछ?",
+    "options": [
+      "पाँचौँ",
+      "छैटौँ",
+      "सातौँ",
+      "आठौँ"
+    ],
+    "answer": 2,
+    "explanation": "'नीति कार्यावयान (Policy Implementation)' सहायक कर्मचारीको सातौँ कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "संगठनको आधारमा कर्मचारीका कति प्रकार छन्?",
+    "options": [
+      "तीन प्रकार",
+      "चार प्रकार",
+      "एक प्रकार",
+      "दुई प्रकार"
+    ],
+    "answer": 3,
+    "explanation": "संगठनको आधारमा कर्मचारीलाई (क) सरकारी कर्मचारी र (ख) निजी कर्मचारी गरी दुई प्रकारमा वर्गीकरण गरिन्छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको गुण 'संयम' भन्नाले के बुझिन्छ?",
+    "options": [
+      "आफ्नो भावना र व्यवहारलाई नियन्त्रण राख्ने क्षमता",
+      "कम खर्च गर्ने आदत",
+      "कम बोल्ने स्वभाव नियन्त्रण",
+      "ढिलो काम गर्ने प्रवृत्ति"
+    ],
+    "answer": 0,
+    "explanation": "'संयम' भन्नाले आफ्नो भावना, प्रतिक्रिया र व्यवहारलाई नियन्त्रण राख्ने क्षमता बुझिन्छ। यो सहायक कर्मचारीको महत्वपूर्ण गुण हो। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको कार्यमध्ये 'प्रतिवेदन तयार गर्ने (Making Report)' कुन नम्बरमा पर्दछ?",
+    "options": [
+      "सातौँ",
+      "आठौँ",
+      "नवौँ",
+      "दशौँ"
+    ],
+    "answer": 1,
+    "explanation": "'प्रतिवेदन तयार गर्ने (Making Report)' सहायक कर्मचारीको आठौँ कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको 'सुचनाको ब्यबस्थापन (Information Management)' कुन नम्बरको कार्य हो?",
+    "options": [
+      "तेस्रो",
+      "तृतीय",
+      "चौथो",
+      "पाँचौँ"
+    ],
+    "answer": 2,
+    "explanation": "'सुचनाको ब्यबस्थापन (Information Management)' सहायक कर्मचारीको चौथो कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीको गुणहरूको तालिकामा 'मिलनसार' र 'विश्वसनीयता' कुन पंक्तिमा पर्दछन्?",
+    "options": [
+      "पहिलो पंक्तिमा",
+      "दोस्रो पंक्तिमा",
+      "तेस्रो पंक्तिमा",
+      "तेस्रो र चौथो पंक्तिमा क्रमशः"
+    ],
+    "answer": 3,
+    "explanation": "गुणहरूको तालिकाअनुसार 'मिलनसार' तेस्रो पंक्तिमा र 'विश्वसनीयता' चौथो पंक्तिमा पर्छन्, त्यसैले सही उत्तर 'तेस्रो र चौथो पंक्तिमा क्रमशः' हो।"
+  },
+  {
+    "q": "सहायक कर्मचारीको कार्यमध्ये 'सक्रिय सम्भागिता (Active Participation)' कुन नम्बरमा पर्दछ?",
+    "options": [
+      "नवौँ",
+      "दशौँ",
+      "एघारौँ",
+      "बाह्रौँ"
+    ],
+    "answer": 0,
+    "explanation": "'सक्रिय सम्भागिता (Active Participation)' सहायक कर्मचारीको नवौँ कार्यको रूपमा उल्लेख छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "राजपत्र अनंकित पाँचौँ श्रेणीमा कुन पद पर्दछ?",
+    "options": [
+      "बैदार",
+      "का.स.",
+      "मुखिया",
+      "खरिदार"
+    ],
+    "answer": 1,
+    "explanation": "राजपत्र अनंकित पाँचौँ श्रेणीमा का.स. (कार्यालय सहयोगी) पर्दछ। स्रोत: संलग्न नोट्स, कर्मचारीको प्रकार तालिका"
+  },
+  {
+    "q": "सहायक कर्मचारीको गुण 'नियमितता' भन्नाले के जनाउँछ?",
+    "options": [
+      "नयाँ नियम बनाउने क्षमता",
+      "अनियमित रूपमा काम गर्ने",
+      "समयमै उपस्थित भई नियमित रूपमा कार्यसम्पादन गर्ने",
+      "नियम उल्लंघन गर्ने"
+    ],
+    "answer": 2,
+    "explanation": "'नियमितता' भन्नाले समयमै उपस्थित भई नियमित रूपमा कार्यसम्पादन गर्ने गुण बुझिन्छ। यो सहायक कर्मचारीको महत्वपूर्ण व्यावसायिक गुण हो। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "राजपत्राङ्कित विशिष्ट श्रेणीमा कुन पद पर्दछ?",
+    "options": [
+      "उप सचिव",
+      "स सचिव",
+      "शाखा अधिकृत",
+      "सचिव"
+    ],
+    "answer": 3,
+    "explanation": "राजपत्राङ्कित विशिष्ट श्रेणीमा सचिव पर्दछ। यो राजपत्राङ्कित श्रेणीको सर्वोच्च श्रेणी हो। स्रोत: संलग्न नोट्स, कर्मचारीको प्रकार तालिका"
+  },
+  {
+    "q": "सहायक कर्मचारीको परिभाषा र कर्मचारीको सामान्य परिभाषाबिचको मुख्य भिन्नता के छ?",
+    "options": [
+      "सहायक कर्मचारी माथिल्लो तहको निर्देशन र आदेशमा काम गर्दछ जबकि सामान्य परिभाषाले आफ्नै निर्णयमा काम गर्ने पनि समेट्दछ",
+      "सहायक कर्मचारी केवल राजपत्र अनंकित हुन्छन्",
+      "सहायक कर्मचारी निजी क्षेत्रमा मात्र हुन्छन्",
+      "सहायक कर्मचारीले कानून पालना गर्नुपर्दैन"
+    ],
+    "answer": 0,
+    "explanation": "कर्मचारीको सामान्य परिभाषाले ऐन, नियम र कार्यविधिको अधिनमा काम गर्नेलाई समेट्छ, तर सहायक कर्मचारी विशेषतः माथिल्लो अधिकृत स्तरबाट प्राप्त निर्देशन, आदेश र परिपत्रका आधारमा काम गर्दछ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "निम्न कथनहरूमध्ये कुन सही छ?
+(क) राजपत्राङ्कित श्रेणीमा ४ श्रेणी छन्
+(ख) राजपत्र अनंकित श्रेणीमा ४ श्रेणी छन्
+(ग) सहायक कर्मचारीका ३ प्रकार छन्
+(घ) सहायक कर्मचारीका १२ वटा कार्य छन्",
+    "options": [
+      "(क), (ग) र (घ) मात्र सही",
+      "(क), (ग) र (घ) सही; (ख) गलत",
+      "(ख), (ग) र (घ) मात्र सही",
+      "चारवटै सही"
+    ],
+    "answer": 1,
+    "explanation": "(क) सही — राजपत्राङ्कित ४ श्रेणी। (ख) गलत — राजपत्र अनंकितमा ५ श्रेणी छन् (प्रथम देखि पाँचौँसम्म)। (ग) सही — सहायक कर्मचारीका ३ प्रकार। (घ) सही — १२ वटा कार्य। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीका गुणहरूमध्ये 'समयको परिपालना' र 'नियमितता' बिचको मुख्य भिन्नता के हो?",
+    "options": [
+      "दुवै गुण एकै अर्थ राख्दछन्",
+      "'नियमितता' ठूलो अवधारणा र 'समयको परिपालना' सानो",
+      "'समयको परिपालना' समयमा काम गर्नेसँग र 'नियमितता' निरन्तर उपस्थिति र कार्यसम्पादनसँग सम्बन्धित",
+      "'समयको परिपालना' राजपत्राङ्कितका लागि र 'नियमितता' अनंकितका लागि"
+    ],
+    "answer": 2,
+    "explanation": "'समयको परिपालना' निश्चित समयभित्र काम पूरा गर्नेसँग सम्बन्धित छ भने 'नियमितता' निरन्तर उपस्थिति र कार्यसम्पादनको निरन्तरतासँग सम्बन्धित छ। दुवै सम्बन्धित तर फरक अवधारणा हुन्। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीका ३ प्रकार (फाँटवाला, पी.ए., सम्पर्क सहायक) मध्ये कुन-कुन कार्यमा कुन प्रकार बढी सक्रिय हुन्छ?",
+    "options": [
+      "फाँटवाला — नीति निर्माण; पी.ए. — फाइलिङ; सम्पर्क सहायक — लेखापरीक्षण",
+      "फाँटवाला — बजेट; पी.ए. — प्रशिक्षण; सम्पर्क सहायक — सेवा प्रवाह",
+      "तीनवटै समान कार्य गर्दछन्",
+      "फाँटवाला — अभिलेख र दर्ता; पी.ए. — अधिकृतको व्यक्तिगत सहयोग; सम्पर्क सहायक — बाह्य सम्पर्क र समन्वय"
+    ],
+    "answer": 3,
+    "explanation": "फाँटवालाले अभिलेख व्यवस्थापन, दर्ता–चलानी जस्ता कार्यालयीय काम गर्दछ। पी.ए. (Personal Assistant) ले अधिकृतको व्यक्तिगत कार्यमा सहयोग गर्दछ। सम्पर्क सहायकले बाह्य सम्पर्क र समन्वयमा काम गर्दछ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "तलका कथनहरू विचार गर्नुस्:
+(१) सहायक कर्मचारीले सार्वजनिक सम्पतिको संरक्षण गर्नुपर्छ
+(२) सहायक कर्मचारीले बिकाश निर्माणमा सहयोग गर्नुपर्दैन
+(३) नीति कार्यान्वयन सहायक कर्मचारीको कार्य हो
+(४) सहायक कर्मचारी केवल सरकारी कार्यालयमा हुन्छन्
+कति कथन सही छन्?",
+    "options": [
+      "दुई कथन सही — (१) र (३)",
+      "तीन कथन सही — (१), (२) र (३)",
+      "एउटा मात्र सही — (१)",
+      "चारवटै सही"
+    ],
+    "answer": 0,
+    "explanation": "(१) सही — सार्वजनिक सम्पतिको संरक्षण सहायक कर्मचारीको ६ौँ कार्य हो। (२) गलत — बिकाश निर्माण सहयोगी उनीहरूको १२औँ कार्य हो। (३) सही — नीति कार्यावयान सातौँ कार्य हो। (४) गलत — निजी कार्यालयमा पनि सहायक कर्मचारी हुन्छन्। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "कर्मचारी वर्गीकरणका ६ आधारहरूलाई सही क्रममा राख्नुस्:
+(अ) निजामती सेवा ऐन अनुसार
+(ब) काम गर्ने प्रकृति
+(स) स्थायित्व
+(द) स्तर
+(इ) संगठन
+(ई) छनौट",
+    "options": [
+      "(ब), (अ), (स), (द), (इ), (ई)",
+      "(अ), (ब), (स), (द), (इ), (ई)",
+      "(द), (स), (अ), (ब), (इ), (ई)",
+      "(इ), (ई), (अ), (ब), (स), (द)"
+    ],
+    "answer": 1,
+    "explanation": "संलग्न नोट्समा कर्मचारीको वर्गीकरण क्रम: (१) निजामती सेवा ऐन अनुसार, (२) काम गर्ने प्रकृति, (३) स्थायित्व, (४) स्तर, (५) संगठन, (६) छनौट — यो क्रम सही हो। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "निम्न जोडाहरूमध्ये कुन गलत जोडी हो?
+(श्रेणी — पद)",
+    "options": [
+      "राजपत्राङ्कित द्वितीय — उप सचिव",
+      "राजपत्र अनंकित तृतीय — मुखिया",
+      "राजपत्र अनंकित प्रथम — खरिदार",
+      "राजपत्राङ्कित तृतीय — शाखा अधिकृत"
+    ],
+    "answer": 2,
+    "explanation": "गलत जोडी \"राजपत्र अनंकित प्रथम — खरिदार\" हो। नायब सुब्बा राजपत्र अनंकित प्रथम श्रेणीमा र खरिदार द्वितीय श्रेणीमा पर्छ।"
+  },
+  {
+    "q": "सहायक कर्मचारीका १२ कार्यहरूलाई वर्गीकृत गर्दा कुन समूह बढी सही देखिन्छ?",
+    "options": [
+      "अभिलेख व्यवस्थापन, सेवा प्रवाह, बजेट तर्जुमा, तथ्याङ्क संकलन",
+      "दर्ता–चलानी, नीति निर्माण, बिकाश योजना, मानव संसाधन",
+      "सूचना व्यवस्थापन, राजनीतिक सहभागिता, लेखापरीक्षण, प्रतिवेदन",
+      "अभिलेख व्यवस्थापन, दर्ता–चलानी, सेवा प्रवाह, सूचना व्यवस्थापन, निर्देशन पालना, सम्पति संरक्षण"
+    ],
+    "answer": 3,
+    "explanation": "सहायक कर्मचारीका १२ कार्यहरूमध्ये पहिलो ६ वटा: अभिलेख व्यवस्थापन, दर्ता–चलानी, सेवा प्रवाह, सूचना व्यवस्थापन, निर्देशनको पालना, र सम्पतिको संरक्षण हुन्। नीति निर्माण, बजेट तर्जुमा, राजनीतिक सहभागिता सहायक कर्मचारीका कार्य होइनन्। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीका गुणहरूको तालिकामा उल्लिखित ९ वटा गुण (३×३ तालिका) मध्ये 'नियम विधि कानूनको पालना' कुन स्थानमा छ?",
+    "options": [
+      "पहिलो पंक्तिको तेस्रो स्तम्भमा",
+      "दोस्रो पंक्तिको पहिलो स्तम्भमा",
+      "तेस्रो पंक्तिको दोस्रो स्तम्भमा",
+      "दोस्रो पंक्तिको तेस्रो स्तम्भमा"
+    ],
+    "answer": 0,
+    "explanation": "संलग्न नोट्समा गुणहरूको ३×३ तालिकामा पहिलो पंक्ति: (सकरात्मक सोच | मैत्रीपूर्ण व्यवहार | नियम विधि कानूनको पालना)। त्यसैले 'नियम विधि कानूनको पालना' पहिलो पंक्तिको तेस्रो स्तम्भमा छ। स्रोत: संलग्न नोट्स"
+  },
+  {
+    "q": "सहायक कर्मचारीका गुणहरू र कार्यहरूबिचको सम्बन्धलाई सही रूपमा व्याख्या गर्ने कुन विकल्प उपयुक्त छ?",
+    "options": [
+      "गुणहरू र कार्यहरूको कुनै सम्बन्ध छैन",
+      "सहायक कर्मचारीका गुणहरूले उनीहरूका कार्यहरू प्रभावकारी ढंगले सम्पादन गर्न आधार प्रदान गर्दछ — उदाहरणतः 'नियमितता' गुणले 'दर्ता–चलानी' कार्यलाई सुचारु राख्दछ",
+      "गुणहरूले केवल नियुक्तिमा भूमिका खेल्दछ",
+      "कार्यहरूले गुण निर्धारण गर्दछ, गुणहरूले कार्य होइन"
+    ],
+    "answer": 1,
+    "explanation": "सहायक कर्मचारीका गुणहरू (जस्तै नियमितता, विश्वसनीयता, सदाचार) ले उनीहरूका कार्यहरू (अभिलेख व्यवस्थापन, सेवा प्रवाह, निर्देशन पालना) लाई प्रभावकारी रूपमा सम्पादन गर्न आधार प्रदान गर्दछ। गुण र कार्य परस्पर पूरक हुन्। स्रोत: संलग्न नोट्स"
+  }
+];
+
+const questions = rawQuestions.map((item, index) => {
+    const options = Array.isArray(item.options) ? item.options.map(option => String(option)) : [];
+    const parsedAnswer = Number(item.answer);
+    const answerIndex = Number.isInteger(parsedAnswer) && parsedAnswer >= 0 ? parsedAnswer : 0;
+    return {
+        q: String(item.q ?? item.question ?? `Question ${index + 1}`),
+        options,
+        answer: Math.min(answerIndex, Math.max(options.length - 1, 0)),
+        explanation: String(item.explanation ?? 'No explanation provided.')
+    };
+}).filter(question => question.q && question.options.length > 0);
+
+const quizEl = document.getElementById('quiz');
+const scoreEl = document.getElementById('score');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+const progressTextEl = document.getElementById('progress-text');
+const currentScoreEl = document.getElementById('current-score');
+const questionsAnsweredEl = document.getElementById('questions-answered');
+const questionsTotalEl = document.getElementById('questions-total');
+const accuracyEl = document.getElementById('accuracy');
+const resultsEl = document.getElementById('results');
+const resultsBody = document.getElementById('results-body');
+const streakBadge = document.getElementById('streak-badge');
+const correctSound = document.getElementById('correct-sound');
+const wrongSound = document.getElementById('wrong-sound');
+const restartBtn = document.getElementById('restart-btn');
+
+const QUESTIONS_PER_PAGE = Math.max(1, Number(quizConfig.questionsPerPage) || 5);
+const ANSWER_DELAY = 700;
+let currentIndex = 0;
+let score = 0;
+let timerSeconds = 0;
+let timerInterval = null;
+let currentStreak = 0;
+let maxStreak = 0;
+let quizFinished = false;
+let pendingTimeout = null;
+let userAnswers = questions.map(() => null);
+
+questionsTotalEl.textContent = questions.length;
+progressTextEl.textContent = `0/${questions.length}`;
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timerSeconds += 1;
+        timerEl.textContent = formatTime(timerSeconds);
+    }, 1000);
+}
+
+function updateStats() {
+    const answeredCount = userAnswers.filter(answer => answer !== null).length;
+    const correctCount = userAnswers.filter(answer => answer && answer.isCorrect).length;
+    currentScoreEl.textContent = String(correctCount);
+    questionsAnsweredEl.textContent = String(answeredCount);
+    accuracyEl.textContent = `${answeredCount ? Math.round((correctCount / answeredCount) * 100) : 0}%`;
+    progressTextEl.textContent = `${answeredCount}/${questions.length}`;
+    progressEl.style.width = `${questions.length ? (answeredCount / questions.length) * 100 : 0}%`;
+}
+
+function updateStreak(isCorrect) {
+    if (isCorrect) {
+        currentStreak += 1;
+        maxStreak = Math.max(maxStreak, currentStreak);
+        if (currentStreak >= 3) {
+            streakBadge.textContent = `Streak: ${currentStreak}`;
+            streakBadge.classList.add('show');
+            setTimeout(() => streakBadge.classList.remove('show'), 1800);
+        }
+    } else {
+        currentStreak = 0;
+    }
+}
+
+function playSound(audioEl) {
+    try {
+        audioEl.currentTime = 0;
+        audioEl.play().catch(() => {});
+    } catch (error) {
+        // Ignore autoplay restrictions.
+    }
+}
+
+function drawConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = Array.from({ length: 150 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        vx: (Math.random() - 0.5) * 4,
+        vy: Math.random() * 3 + 2,
+        color: ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'][Math.floor(Math.random() * 5)],
+        size: Math.random() * 6 + 2,
+        rotation: Math.random() * 360
+    }));
+
+    let animationId;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+        particles.forEach(particle => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.rotation += 2;
+            if (particle.y < canvas.height + 20) {
+                active = true;
+                ctx.save();
+                ctx.translate(particle.x, particle.y);
+                ctx.rotate((particle.rotation * Math.PI) / 180);
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size);
+                ctx.restore();
+            }
+        });
+        if (active) {
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+    animate();
+    setTimeout(() => cancelAnimationFrame(animationId), 5000);
+}
+
+function createActionButton(label, className, onClick) {
+    const button = document.createElement('button');
+    button.className = className;
+    button.innerHTML = label;
+    button.addEventListener('click', onClick);
+    return button;
+}
+
+function renderQuestion() {
+    if (quizFinished) return;
+    quizEl.innerHTML = '';
+    scoreEl.textContent = '';
+    resultsEl.classList.add('hidden');
+
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    const pageEnd = Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length);
+
+    for (let questionIndex = pageStart; questionIndex < pageEnd; questionIndex += 1) {
+        const question = questions[questionIndex];
+        const questionWrapper = document.createElement('div');
+        questionWrapper.className = 'question-wrapper';
+
+        const questionCard = document.createElement('div');
+        questionCard.className = 'question-card';
+        questionCard.dataset.index = String(questionIndex);
+
+        const questionHeader = document.createElement('div');
+        questionHeader.className = 'question-header';
+        questionHeader.innerHTML = `
+            <div class="question-number">${questionIndex + 1}</div>
+            <div class="question-text">${question.q}</div>
+        `;
+
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'options';
+
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.textContent = question.explanation;
+
+        const shuffledOptions = shuffle(question.options.map((text, optionIndex) => ({ text, optionIndex })));
+
+        shuffledOptions.forEach((option, displayIndex) => {
+            const button = document.createElement('button');
+            button.className = 'option-btn';
+            button.innerHTML = `
+                <span class="option-indicator">${String.fromCharCode(65 + displayIndex)}</span>
+                <span>${option.text}</span>
+            `;
+            button.addEventListener('click', () => handleAnswer(questionIndex, option.optionIndex, option.text, button, optionsContainer, explanationDiv));
+            optionsContainer.appendChild(button);
+        });
+
+        questionCard.appendChild(questionHeader);
+        questionCard.appendChild(optionsContainer);
+        questionCard.appendChild(explanationDiv);
+        questionWrapper.appendChild(questionCard);
+        quizEl.appendChild(questionWrapper);
+    }
+
+    const actionBar = document.createElement('div');
+    actionBar.className = 'action-bar';
+    actionBar.appendChild(createActionButton('⊘ Skip Remaining', 'btn btn-skip', skipRemainingQuestionsOnPage));
+    quizEl.appendChild(actionBar);
+}
+
+function lockOptions(optionsContainer) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        button.disabled = true;
+    });
+}
+
+function revealCorrectAnswer(optionsContainer, correctIndex, questionIndex) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        const optionText = button.querySelector('span:last-child').textContent;
+        if (optionText === questions[questionIndex].options[correctIndex]) {
+            button.classList.add('correct');
+        }
+    });
+}
+
+function moveNext() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+
+    if (currentIndex < questions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+        updateStats();
+    } else {
+        finishQuiz();
+    }
+}
+
+function getCurrentPageBounds() {
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    return {
+        pageStart,
+        pageEnd: Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length)
+    };
+}
+
+function isCurrentPageComplete() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] === null) return false;
+    }
+    return true;
+}
+
+function scheduleNextStep() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+    }
+    pendingTimeout = setTimeout(() => {
+        if (isCurrentPageComplete()) {
+            const { pageEnd } = getCurrentPageBounds();
+            if (pageEnd >= questions.length) {
+                finishQuiz();
+            } else {
+                currentIndex = pageEnd;
+                renderQuestion();
+                updateStats();
+            }
+        }
+    }, ANSWER_DELAY);
+}
+
+function skipRemainingQuestionsOnPage() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] !== null) continue;
+        const card = quizEl.querySelector(`.question-card[data-index="${i}"]`);
+        if (!card) continue;
+        const explanationDiv = card.querySelector('.explanation');
+        const optionsContainer = card.querySelector('.options');
+        skipQuestion(i, explanationDiv, optionsContainer);
+    }
+}
+
+function handleAnswer(questionIndex, selectedIndex, selectedText, clickedButton, optionsContainer, explanationDiv) {
+    if (userAnswers[questionIndex] !== null) return;
+
+    const question = questions[questionIndex];
+    const isCorrect = selectedIndex === question.answer;
+    lockOptions(optionsContainer);
+    revealCorrectAnswer(optionsContainer, question.answer, questionIndex);
+
+    if (!isCorrect) {
+        clickedButton.classList.add('wrong');
+        playSound(wrongSound);
+    } else {
+        clickedButton.classList.add('correct');
+        playSound(correctSound);
+        score += 1;
+    }
+
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText,
+        isCorrect,
+        skipped: false
+    };
+    currentIndex = questionIndex;
+    updateStreak(isCorrect);
+    updateStats();
+    scheduleNextStep();
+}
+
+function skipQuestion(questionIndex, explanationDiv, optionsContainer) {
+    if (userAnswers[questionIndex] !== null) return;
+    lockOptions(optionsContainer);
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText: 'Skipped',
+        isCorrect: false,
+        skipped: true
+    };
+    currentIndex = questionIndex;
+    updateStreak(false);
+    updateStats();
+    scheduleNextStep();
+}
+
+function finishQuiz() {
+    quizFinished = true;
+    clearInterval(timerInterval);
+    quizEl.innerHTML = '';
+
+    const percentage = questions.length ? ((score / questions.length) * 100).toFixed(1) : '0.0';
+    let message = 'Keep learning! You\'ll improve!';
+    let emoji = '📚';
+
+    if (Number(percentage) >= 90) {
+        message = 'Outstanding! You\'re a master!';
+        emoji = '🏆';
+        drawConfetti();
+    } else if (Number(percentage) >= 70) {
+        message = 'Great job! Well done!';
+        emoji = '🌟';
+    } else if (Number(percentage) >= 50) {
+        message = 'Good effort! Keep practicing!';
+        emoji = '💪';
+    }
+
+    scoreEl.innerHTML = `
+        <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+        <div class="score-display">${percentage}%</div>
+        <div class="score-label">${message}</div>
+        <div style="margin-top: 1rem; color: var(--text-secondary);">
+            ${score} correct out of ${questions.length} questions<br>
+            Time: ${formatTime(timerSeconds)} | Best Streak: ${maxStreak}
+        </div>
+    `;
+
+    resultsBody.innerHTML = questions.map((question, index) => {
+        const answer = userAnswers[index];
+        const userAnswer = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.selectedText;
+        const status = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.isCorrect ? 'Correct' : 'Wrong';
+        const statusClass = status.toLowerCase().replace(' ', '-');
+        const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : status === 'Skipped' ? '⊘' : '•';
+        return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${question.q}</td>
+                <td>${userAnswer}</td>
+                <td>${question.options[question.answer] ?? ''}</td>
+                <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                <td class="explanation-cell">${question.explanation}</td>
+            </tr>
+        `;
+    }).join('');
+
+    resultsEl.classList.remove('hidden');
+}
+
+function restartQuiz() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+    clearInterval(timerInterval);
+    currentIndex = 0;
+    score = 0;
+    timerSeconds = 0;
+    currentStreak = 0;
+    maxStreak = 0;
+    quizFinished = false;
+    userAnswers = questions.map(() => null);
+    timerEl.textContent = '00:00';
+    streakBadge.classList.remove('show');
+    updateStats();
+    renderQuestion();
+    startTimer();
+}
+
+restartBtn.addEventListener('click', restartQuiz);
+window.addEventListener('resize', () => {
+    const canvas = document.getElementById('confetti-canvas');
+    if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+});
+
+updateStats();
+renderQuestion();
+startTimer();
+    </script>
+</body>
+</html>

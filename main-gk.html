@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>General Knowledge MCQ Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+    <base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>General Knowledge MCQ Quiz</h1>
+                        <div class="subtitle">General Knowledge</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">0</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" onclick="restartQuiz()">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+const quizConfig = { quizId: "main-gk", quizTitle: "General Knowledge MCQ Quiz", displayTitle: "General Knowledge MCQ Quiz", topicName: "General Knowledge" };
+const rawQuestions = [
+      {
+        q: "समूह 20% को जनसंख्या BRICS को नयाँ सदस्यता प्राप्त गर्न पुग्नु हो?",
+        options: ["इण्डोनेशिया", "नाइजेरिया", "दक्षिण अफ्रिका", "भुटान"],
+        answer: 0,
+        explanation: "BRICS expanded in 2024 to include Egypt, Ethiopia, Iran, and UAE (effective January 1, 2024). Indonesia, with ~270 million people (~3.4% of global population), is a potential candidate due to its economy, but membership is unconfirmed as of June 2025. The '20%' likely misrepresents population context. Indonesia is the most plausible among options.",
+        tips: "Focus on BRICS expansion years (2024) and key candidates like Indonesia. Eliminate smaller nations like Bhutan."
+      },
+      {
+        q: "विभिन्न आर्थिक र सांस्कृतिक संयोजन (SAARC) को संबिधिलाई कुन देशले तोकेको हो?",
+        options: ["नेपाल", "पाकिस्तान", "बंगलादेश", "श्रीलंका"],
+        answer: 2,
+        explanation: "The SAARC Charter was signed in Dhaka, Bangladesh, on December 8, 1985. Nepal hosts the SAARC Secretariat, but the charter's establishment is credited to Bangladesh.",
+        tips: "Remember SAARC’s founding in Dhaka (1985). Nepal’s role is hosting, not initiating."
+      },
+      {
+        q: "नेपालले सुरक्षा परिषद् (UNSC) को स्थायी सदस्यता प्राप्त गर्न गाह्रो छ किन?",
+        options: ["सैन्य शक्ति अभाव", "वैश्विक समर्थनको कमी", "आर्थिक स्रोतको कमी", "भौगोलिक स्थिति"],
+        answer: 1,
+        explanation: "Nepal lacks global support for UNSC permanent membership due to geopolitical competition and absence of veto power. Military, economic, and geographic factors are secondary to political backing.",
+        tips: "UNSC permanent seats require global consensus. Focus on 'support' as the key barrier."
+      },
+      {
+        q: "नेपालको संविधानको कुन अनुच्छेदमा सम्प्रदाय र समुदायको आधारमा मतदान प्रणाली उल्लेख भएको छ?",
+        options: ["१", "६", "१९", "८६"],
+        answer: 3,
+        explanation: "Article 86 of Nepal’s 2015 Constitution provides for proportional representation to ensure inclusion of communities and groups in the electoral system.",
+        tips: "Link Article 86 to proportional representation. Article 19 is about freedom, not voting."
+      },
+      {
+        q: "नेपालमा हाल मतदाता (Maternal Mortality Rate) प्रति एक लाख जन्ममा कति रहेको छ?",
+        options: ["१५० प्रति १००,०००", "१८६ प्रति १००,०००", "२५० प्रति १००,०००", "३०० प्रति १००,०००"],
+        answer: 1,
+        explanation: "WHO data (2022) estimates Nepal’s Maternal Mortality Rate at ~186 per 100,000 live births, down from 258 in 2016. MMR is measured per 100,000, not in percentages.",
+        tips: "MMR uses per 100,000 live births. Memorize Nepal’s MMR as ~186 for recent exams."
+      },
+      {
+        q: "सबैभन्दा पहिला मधेसी थारुको आत्महत्याको कुरा?",
+        options: ["मधेसी फाट्टे", "थारु साहित्य", "सामाजिक अभियान", "ऐतिहासिक दस्तावेज"],
+        answer: null,
+        explanation: "No historical record specifies the first mention of Madhesi-Tharu suicide. The term 'मधेसी फाट्टे' lacks clear context and may be a cultural reference. Data is insufficient to verify.",
+        tips: "For unclear questions, note 'insufficient data' and move on. Check for cultural references."
+      },
+      {
+        q: "जलवायु परिवर्तन र ग्रिनहाउस ग्यास उत्सर्जनवाट प्रभावित हुन गइरहेकी जापानको Kyoto Protocol मा कसले हस्ताक्षर गरेको छ?",
+        options: ["११ सेप्टेम्बर १९९७", "१६ मार्च १९९८", "११ नोभेम्बर १९९७", "११ डिसेम्बर १९९७"],
+        answer: 3,
+        explanation: "The Kyoto Protocol was adopted on December 11, 1997, in Kyoto, Japan, and opened for signatures on March 16, 1998. Japan signed as the host nation.",
+        tips: "Memorize Kyoto Protocol’s adoption date (Dec 11, 1997). Japan is key as host."
+      },
+      {
+        q: "सोही परिवेशीय योगदान (??%) /??-??% / ??%) को अनुपात ग्रीनहाउस ग्यासको कारण जम्मा कति प्रतिशता पुग्याएको छ रेडियोफोनको हो?",
+        options: ["५%", "१०%", "१५%", "२०%"],
+        answer: null,
+        explanation: "The question is unclear, likely a typo. Greenhouse gas contributions (e.g., CO2 ~76%, CH4 ~16%) don’t align with given percentages or 'रेडियोफोन.' Data is insufficient.",
+        tips: "For garbled questions, select 'insufficient data.' Know CO2 (~76%) dominates GHG."
+      },
+      {
+        q: "पुरातन/जोति आर्थिक पुरातनता के भन्ने?",
+        options: ["नासो", "संस्कृति", "विज्ञान", "परम्परा"],
+        answer: 0,
+        explanation: "In Nepali, 'नासो' refers to ancestral property or tradition, fitting 'पुरातन आर्थिक पुरातनता' (ancient economic tradition).",
+        tips: "Link 'नासो' to ancestral wealth. Eliminate unrelated terms like 'विज्ञान' (science)."
+      },
+      {
+        q: "नेपालको प्रजातन्त्र सम्बन्धी मानक समावेशीताको लिदो रेकी हो?",
+        options: ["४, २० मिनेट", "४, ४० मिनेट", "५, ३० मिनेट", "३, ६० मिनेट"],
+        answer: null,
+        explanation: "The question is unclear, possibly a typo ('लिदो रेकी' for 'लोकतन्त्रको रेकर्ड'?). Democratic inclusion standards aren’t time-based. Data is insufficient.",
+        tips: "Skip time-based options for democracy questions unless context is clear."
+      },
+      {
+        q: "यो देशको मधेसमम आयोजन, तालिम वा अत्याधुनिक पुरा गोरखी ल्यापी निर्जनति कमजोरले नुनम कति अवधी सेता गुरुले आयाम निर्जनति सेता पुन, 20% वा उल्लेख गर्छ कि हो?",
+        options: ["६ महिना", "दुई वर्ष", "तीन वर्ष", "चार वर्ष"],
+        answer: null,
+        explanation: "The question is incoherent, possibly about Madhesi development projects. No specific duration or 'सेता गुरु' (white guru?) is documented. Data is insufficient.",
+        tips: "For unclear questions, note 'insufficient data' and focus on verifiable topics."
+      },
+      {
+        q: "नेपालमा सरकारी बन्देजलाई सहारा र विकास गर्छन् भनी कसले भनेको हो?",
+        options: ["नेपाली काङ्ग्रेस", "नेकपा", "विश्व बैंक", "संयुक्त राष्ट्र संघ"],
+        answer: null,
+        explanation: "The question is unclear; no specific quote matches this claim about government restrictions aiding development. Data is insufficient.",
+        tips: "For unattributed quotes, select 'insufficient data' unless a clear source exists."
+      },
+      {
+        q: "नेपालको हिमाली क्षेत्रमा समुद्री सतहबाट ६,००० मिटरभन्दा बढी उचाइको कतिवटा चुचुरा छन्?",
+        options: ["१३१०", "१२००", "१५००", "१०००"],
+        answer: 0,
+        explanation: "Nepal has over 1,310 peaks above 6,000m, as listed by the Nepal Mountaineering Association.",
+        tips: "Memorize ~1,310 peaks above 6,000m. Eliminate lower numbers."
+      },
+      {
+        q: "नेपालमा कति लेदोहरू छन्, जो सर्काको सुगा नेपाल सर्कारको लेज सुक गर्छन्?",
+        options: ["५० मध्ये २%", "१०० मध्ये ५%", "२०० मध्ये १%", "३०० मध्ये ३%"],
+        answer: null,
+        explanation: "The question is unclear; 'लेदो' (ledger?) and 'सर्काको सुगा' are garbled. No data supports these ratios. Data is insufficient.",
+        tips: "For garbled terms, select 'insufficient data' and move to clearer questions."
+      },
+      {
+        q: "सोही आर्थिक योगदान (??%) /??-??% / ??%) को दायित्वको मध्ये कुन हो?",
+        options: ["शिक्षा, स्वास्थ्य, समृद्धि", "बिकास, सुसासन, समृद्धि", "शान्ति, एकता, प्रगति", "संस्कृति, पर्यटन, अर्थ"],
+        answer: 1,
+        explanation: "Nepal’s development slogan is 'समृद्ध नेपाल, सुखी नेपाली,' aligning with 'बिकास, सुसासन, समृद्धि' (Development, Good Governance, Prosperity).",
+        tips: "Link 'समृद्धि' to Nepal’s national slogan. Eliminate unrelated triplets."
+      },
+      {
+        q: "अनुपन सर्बेक्षाले संकलन गरेको कागजमा गति राज्यमाको कतिले प्राकृतिक गैरको हो?",
+        options: ["१५% / २% / १%", "२०% / ५% / २%", "१०% / १% / ०.५%", "२५% / ३% / १%"],
+        answer: null,
+        explanation: "The question is unclear, likely a typo. No data supports ratios for natural resources. Data is insufficient.",
+        tips: "For unclear ratios, select 'insufficient data.' Focus on resource data if clarified."
+      },
+      {
+        q: "AI को पूर्ण रूप के हो?",
+        options: ["Artificial Intelligence", "Automated Intelligence", "Advanced Innovation", "Artificial Integration"],
+        answer: 0,
+        explanation: "AI stands for Artificial Intelligence, the correct full form.",
+        tips: "AI is always Artificial Intelligence. Eliminate variants like 'Automated.'"
+      },
+      {
+        q: "Riboflavin ले कुन Vitamin लाई जनाउँछ?",
+        options: ["Vitamin B1", "Vitamin B2", "Vitamin C", "Vitamin A"],
+        answer: 1,
+        explanation: "Riboflavin is the chemical name for Vitamin B2, essential for energy metabolism.",
+        tips: "Link Riboflavin to B2. Memorize B vitamins: B1 (Thiamine), B2 (Riboflavin)."
+      },
+      {
+        q: "नेपालको संविधानमा 'उपभोक्ताको हक' कुन धारामा लेखिएको छ?",
+        options: ["२५", "३३", "४०", "५०"],
+        answer: 1,
+        explanation: "Article 33 of Nepal’s 2015 Constitution ensures consumer rights under 'Right to Social Justice.'",
+        tips: "Memorize Article 33 for consumer rights. Check articles in the 30s for social rights."
+      },
+      {
+        q: "संयुक्त राष्ट्र वातावरण कार्यक्रम (United Nations Environment Programme) को मुख्यालय कहाँ राखिएको छ?",
+        options: ["न्युयोर्क, अमेरिका", "लन्डन, बेलायत", "न्योबी, केन्या", "जिनेभा, स्वीट्जरल्याण्ड"],
+        answer: 2,
+        explanation: "The UNEP headquarters is located in Nairobi, Kenya, since its establishment in 1972.",
+        tips: "UNEP = Nairobi, Kenya. Avoid common traps like NYC or Geneva."
+      },
+      {
+        q: "तलका मध्ये कुन क्षेत्रीय सहयोग संगठनमा नेपाल सदस्य छ?",
+        options: ["अफ्रिकी संघ", "ASEAN", "SAARC", "अरब लीग"],
+        answer: 2,
+        explanation: "Nepal is a founding member of SAARC (South Asian Association for Regional Cooperation), established in 1985.",
+        tips: "Nepal is in SAARC and BIMSTEC, not ASEAN or EU. Focus on South Asian groups."
+      },
+      {
+        q: "हाल नेपालले संचालन गरेको High Impact Community Development Project (HICDP) कुन देशको सहयोगमा संचालन भएको हो?",
+        options: ["रूस", "चीन", "जापान", "संयुक्त राजय अमेरिका"],
+        answer: 3,
+        explanation: "The HICDP is supported by USAID (United States Agency for International Development), focusing on community-driven development in Nepal.",
+        tips: "Link HICDP to USAID (USA). Check for US-funded projects in Nepal."
+      },
+      {
+        q: "प्रसिद्ध 'Dreams from My Father' कृतिका लेखक को हो?",
+        options: ["बराक ओबामा", "मार्टिन लुथर किंग", "महात्मा गान्धी", "नेल्सन मन्डेला"],
+        answer: 0,
+        explanation: "Barack Obama authored 'Dreams from My Father,' published in 1995, detailing his early life.",
+        tips: "Obama wrote 'Dreams.' Eliminate non-authors like Gandhi or Mandela."
+      },
+      {
+        q: "तलका मध्ये कुन देश BIMSTEC को सदस्य होइन?",
+        options: ["नेपाल", "भुटान", "माल्दिभ्स", "मंगोलिया"],
+        answer: 3,
+        explanation: "BIMSTEC includes Bangladesh, India, Myanmar, Sri Lanka, Thailand, Bhutan, and Nepal. Mongolia is not a member.",
+        tips: "Memorize BIMSTEC members (7 countries). Exclude landlocked non-regional nations like Mongolia."
+      },
+      {
+        q: "संयुक्त राष्ट्र सङ्घमा महासभाको प्रधानियको गणना कति मुक्का नागरिक निजामति हो?",
+        options: ["१ वर्ष", "२ वर्ष", "३ वर्ष", "४ वर्ष"],
+        answer: 0,
+        explanation: "The UN General Assembly presidency rotates annually, with no specific 'citizen civil' count. The term lasts one year.",
+        tips: "UN GA presidency is 1 year. Ignore vague terms like 'citizen' unless clarified."
+      },
+      {
+        q: "Anopheles नामक प्रजाति कुन जोनमा पाईन्छ?",
+        options: ["आर्कटिक जोन", "मरुभूमि जोन", "उष्ण जोन", "शीत जोन"],
+        answer: 2,
+        explanation: "Anopheles mosquitoes thrive in tropical (उष्ण) zones, where warm, humid conditions support malaria transmission.",
+        tips: "Anopheles = malaria = tropical. Eliminate cold zones like Arctic or Shite."
+      },
+      {
+        q: "नेपालको संवैधानिक अंशुलीको राज्यिय उल्लेख कति छ?",
+        options: ["१%", "२%", "५%", "१०%"],
+        answer: null,
+        explanation: "The term 'अंशुली' is unclear; possibly 'ancestry' or 'share.' No constitutional percentage is specified. Data is insufficient.",
+        tips: "For vague percentage questions, select 'insufficient data' unless context is clear."
+      },
+      {
+        q: "कपुरवटका अधिकारिकारको कुन हो?",
+        options: ["वातावरण संरक्षण", "जलवायु परिवर्तन", "वन संरक्षण", "मरुभूमि व्यवस्थापन"],
+        answer: null,
+        explanation: "The question is unclear; 'कपुरवट' is likely a typo. 'वातावरण कोभिज' (environment coverage?) is speculative. Data is insufficient.",
+        tips: "For typo-heavy questions, note 'insufficient data' and focus on environmental themes if clarified."
+      },
+      {
+        q: "नेपालको प्रथम पंचवर्षीय योजना को अवधि कति हो?",
+        options: ["हि.स. २०१३-२०१८", "हि.स. २०२०-२०२५", "हि.स. २०३०-२०३५", "हि.स. २०१०-२०१५"],
+        answer: 0,
+        explanation: "Nepal’s first Five-Year Plan ran from 1956 to 1961, equivalent to 2013-2018 BS (Bikram Sambat).",
+        tips: "Memorize first plan: 1956-1961 (2013-2018 BS). Check BS dates for Nepal plans."
+      },
+      {
+        q: "तलका मध्ये कुन जोन ठिक हो?",
+        options: ["काठमाडौँ - नेवार", "पोखरा - गुरुङ", "चायार - थार", "इलाम - लिम्बु"],
+        answer: 2,
+        explanation: "'चायार - थार' likely refers to the Tharu community in the Terai region, a plausible cultural zone pairing.",
+        tips: "Link Tharu to Terai. Check ethnic groups and their regions for accuracy."
+      },
+      {
+        q: "लोकेसनको कुन गतिविधि?",
+        options: ["नक्शा", "सुचना", "विश्लेषण", "अनुगमन"],
+        answer: 1,
+        explanation: "If 'लोकेसन' means location, 'सुचना' (information) fits as a primary activity, e.g., location data collection.",
+        tips: "Location questions often involve data or info. Eliminate unrelated terms like 'simulation.'"
+      },
+      {
+        q: "नेपालको निजामति सेवाको सान्नी प्रति दायरे कुन हो?",
+        options: ["निजामति ऐन", "प्रशासनिक नियम", "बजेट योजना", "कर्मचारी तालिम"],
+        answer: 0,
+        explanation: "The scope of Nepal’s civil service is governed by the Civil Service Act (निजामति ऐन), the primary legal framework.",
+        tips: "Civil service scope = Civil Service Act. Eliminate secondary options like training."
+      },
+      {
+        q: "Artificial Intelligence (AI) को पूर्ण रूप के हो?",
+        options: ["Artificial Intelligence", "Automated System", "Artificial Network", "Intelligent Design"],
+        answer: 0,
+        explanation: "AI stands for Artificial Intelligence, the correct full form.",
+        tips: "AI is straightforward: Artificial Intelligence. Avoid distractors like 'Automated System.'"
+      },
+      {
+        q: "BIMSTEC को मुख्य प्रति कुन देशमा रहेको छ?",
+        options: ["थाइल्याण्ड", "भारत", "बंगलादेश", "म्यानमार"],
+        answer: 2,
+        explanation: "The BIMSTEC Secretariat is located in Dhaka, Bangladesh, established in 2014.",
+        tips: "BIMSTEC HQ = Dhaka. Thailand is a member, not host."
+      },
+      {
+        q: "Genetic Engineering लाई अर्को कुन नामले चिनिन्छ?",
+        options: ["Bio-technology", "Gene editing", "Cell technology", "Protein synthesis"],
+        answer: 0,
+        explanation: "Genetic Engineering is a subset of biotechnology, the most common alternate name.",
+        tips: "Genetic Engineering = Biotechnology. Gene editing is a technique, not a synonym."
+      },
+      {
+        q: "वनजातारी Japanese Encephalitis को खोप कति महिनामा लगाईन्छ?",
+        options: ["४", "६", "९", "१२"],
+        answer: 3,
+        explanation: "In Nepal, the Japanese Encephalitis vaccine is typically administered at 9-12 months in endemic areas.",
+        tips: "JE vaccine: 9-12 months. Check vaccination schedules for Nepal."
+      },
+      {
+        q: "संयुक्त राष्ट्र सङ्घको वातावरण कति प्रति रहेको छ?",
+        options: ["१% प्रति वर्ष", "२% प्रति वर्ष", "३% प्रति वर्ष", "५% प्रति वर्ष"],
+        answer: 1,
+        explanation: "UNEP’s budget is ~2% of the UN’s total annual budget, though exact figures vary.",
+        tips: "UNEP budget ~2%. Look for small percentages in UN funding questions."
+      },
+      {
+        q: "नेपालले सुन्दर रसु सवयको ग्राम तिन साँचो रसु कुन हो?",
+        options: ["चीन", "भारत", "बंगलादेश", "श्रीलंका"],
+        answer: 1,
+        explanation: "Unclear question; likely refers to cultural ties. India is a neighbor with deep cultural exchanges, making it plausible.",
+        tips: "For cultural ties, prioritize India due to historical and cultural proximity."
+      },
+      {
+        q: "नेपालको प्रजातन्त्र योगदानको योगजालिको कुन हो?",
+        options: ["२०१३, २०४६, २०६३", "२०१५, २०४०, २०६०", "२०००, २०२०, २०४०", "१९५०, १९८०, २०००"],
+        answer: 0,
+        explanation: "Nepal’s democratic milestones include 2013 BS (1951), 2046 BS (1990), and 2063 BS (2007), marking key democratic transitions.",
+        tips: "Memorize key democratic years: 1951, 1990, 2006-2007 to BS: 2013, 2046, 2063."
+      },
+      {
+        q: "लादितको हिमाल कुन जंगलमा पर्छ?",
+        options: ["काठमाडौँ", "इलाम", "सोलुखुम्बु", "दोलखा"],
+        answer: 3,
+        explanation: "Likely a typo; 'लादित' may mean 'Lantang' or a Dolakha peak like Gaurishankar, located in Dolakha region.",
+        tips: "Dolakha hosts Himalayan peaks. Link to Everest region for accuracy."
+      },
+      {
+        q: "Riboflavin ले कुन Vitamin लाई जनाउँछ?",
+        options: ["Vitamin A", "Vitamin B2", "Vitamin D", "Vitamin E"],
+        answer: 1,
+        explanation: "Riboflavin is Vitamin B2, critical for energy production.",
+        tips: "Riboflavin = B2. Reconfirm other vitamins to avoid confusion."
+      },
+      {
+        q: "संयुक्त राष्ट्र सङ्घको वातावरण कायरेम (United Nations Environment Programme) को मुख्यालय कहाँ रहेको छ?",
+        options: ["टोकियो, जापान", "पेरिस, फ्रान्स", "न्योबी, केन्या", "मस्को, रूस"],
+        answer: 2,
+        explanation: "UNEP headquarters is in Nairobi, Kenya.",
+        tips: "UNEP = Nairobi. Avoid traps like Tokyo or Moscow."
+      },
+      {
+        q: "तलका मध्ये कुन क्षेत्रीय सहयोग संगठनमा नेपाल सदस्य छ?",
+        options: ["अफ्रिकी संघ", "ASEAN", "SAARC", "अरब लीग"],
+        answer: 2,
+        explanation: "Nepal is a SAARC member since 1985.",
+        tips: "SAARC includes Nepal. Eliminate non-South Asian groups like ASEAN."
+      },
+      {
+        q: "हाल नेपालले संचालन गरेको High Impact Community Development Project (HICDP) कुन देशको सहयोगमा संचालन भएको हो?",
+        options: ["जर्मनी", "बेलायत", "फ्रान्स", "संयुक्त राजय अमेरिका"],
+        answer: 3,
+        explanation: "HICDP is supported by USAID.",
+        tips: "HICDP = USAID (USA). Check for US aid programs."
+      },
+      {
+        q: "European Union (EU) को स्थापना कहिले भएको हो?",
+        options: ["१ जनवरी १९९३", "१ डिसेम्बर १९९५", "१ मार्च १९९०", "१ नोभेम्बर १९९८"],
+        answer: 0,
+        explanation: "The EU was established on January 1, 1993, via the Maastricht Treaty.",
+        tips: "EU = 1993. Memorize Maastricht Treaty date."
+      },
+      {
+        q: "नेपालको संविधान अनुसार तलका मध्ये कुन हो?",
+        options: ["संघीय शासन", "राजतन्त्र", "संसदीय प्रणाली", "एकात्मक शासन"],
+        answer: 2,
+        explanation: "Nepal’s 2015 Constitution establishes a parliamentary system.",
+        tips: "Nepal’s system is parliamentary. Eliminate monarchy or unitary options."
+      },
+      {
+        q: "दुवैत दही बनाउन कुन किटानुले सहयोग गर्छ?",
+        options: ["स्ट्रेप्टोकोकस", "ल्याक्टो ब्यासिलस", "एस्चेरिचिया", "साल्मोनेला"],
+        answer: 1,
+        explanation: "Lactobacillus bacteria ferment milk to produce yogurt.",
+        tips: "Yogurt = Lactobacillus. Eliminate harmful bacteria like Salmonella."
+      },
+      {
+        q: "UN Climate Change Conference (COP 30) कति वर्षको अन्तरालमा हुन्छ?",
+        options: ["२ वर्ष", "१ वर्ष", "३ वर्ष", "५ वर्ष"],
+        answer: 1,
+        explanation: "COP conferences occur annually to address climate change.",
+        tips: "COP = annual (1 year). Eliminate longer intervals."
+      },
+      {
+        q: "Genetic Engineering लाई अर्को कुन नामले चिनिन्छ?",
+        options: ["Bio-technology", "Gene therapy", "RNA editing", "Protein engineering"],
+        answer: 0,
+        explanation: "Genetic Engineering is synonymous with biotechnology.",
+        tips: "Biotechnology = Genetic Engineering. Gene therapy is a subset."
+      },
+      {
+        q: "वैज्ञानिक व्यवस्थापनको सिद्धान्त (Scientific Management Theory) का प्रणेता को हो?",
+        options: ["हेनरी फेयोल", "फ्रेडरिक हाजवर्ड", "मैक्स वेबर", "एल्टन मayo"],
+        answer: 1,
+        explanation: "Frederick Taylor developed Scientific Management Theory, focusing on efficiency.",
+        tips: "Taylor = Scientific Management. Fayol is administrative management."
+      },
+      {
+        q: "निम्न मध्ये जोडि चाँजो पाउनुहोस्।",
+        options: ["शाह राजा - पृथ्वी", "किराती राजा - यलम्बर", "मल्ल राजा - जयस्थिति", "राणा - जङ"],
+        answer: 1,
+        explanation: "Yalambar was a legendary Kirati king, correctly matched.",
+        tips: "Yalambar = Kirati. Check historical Nepali dynasties (Kirati, Malla, Shah)."
+      },
+      {
+        q: "उर्जानको Existence, Relatedness, Growth (ERG) सिद्धान्तको प्रणेता को हो?",
+        options: ["अब्राहम मास्लो", "क्लेटन एल्डरफर", "डगलस म्याकग्रेगर", "फ्रेडरिक हर्जबर्ग"],
+        answer: 1,
+        explanation: "Clayton Alderfer proposed the ERG theory, a simplified version of Maslow’s needs hierarchy.",
+        tips: "ERG = Alderfer. Maslow is related but not the answer."
+      },
+      {
+        q: "NASA का चिन्हित अनतरीक्ष यात्री Sunita Williams र Butch Wilmore अनतरीक्ष यात्रामा कहिले गए?",
+        options: ["४ जनवरी २०२४", "४ जुन २०२४", "१ अक्टोबर २०२४", "१ डिसेम्बर २०२४"],
+        answer: 1,
+        explanation: "Sunita Williams and Butch Wilmore launched on June 5, 2024, aboard Boeing’s Starliner, returning March 18, 2025.",
+        tips: "Memorize 2024 for Starliner mission. June is key."
+      },
+      {
+        q: "SAARC का प्राविधिक समितिहरू कति वटा छन्?",
+        options: ["४", "६", "७", "८"],
+        answer: 2,
+        explanation: "SAARC has 7 technical committees, covering areas like agriculture and health.",
+        tips: "SAARC committees = 7. Older sources may cite 6, but 7 is current."
+      },
+      {
+        q: "संयुक्त राष्ट्र सङ्घको प्रथम कायलय कहाँ रहेको छ?",
+        options: ["लन्डन, बेलायत", "न्युयोर्क, अमेरिका", "जिनेभा, स्वीट्जरल्याण्ड", "पेरिस, फ्रान्स"],
+        answer: 1,
+        explanation: "The UN headquarters is in New York, USA, established in 1945.",
+        tips: "UN HQ = New York. Avoid traps like Geneva (other UN offices)."
+      }
+    ];
+const questions = rawQuestions.map((question) => {
+    const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
+    const answer = Number(question.answer);
+    return {
+        q: String(question.q ?? question.question ?? ''),
+        options,
+        answer: Number.isInteger(answer) ? answer : 0,
+        explanation: question.explanation ? String(question.explanation) : 'Explanation not provided.'
+    };
+}).filter((question) => question.q && question.options.length > 0);
+
+const QUESTIONS_PER_PAGE = 5;
+const ANSWER_DELAY = 450;
+const STORAGE_KEY = `quiz-progress-${quizConfig.quizId}`;
+
+let currentPage = 0;
+let score = 0;
+let timerSeconds = 0;
+let timerInterval = null;
+let currentStreak = 0;
+let maxStreak = 0;
+let questionStates = [];
+
+const quizEl = document.getElementById('quiz');
+const scoreEl = document.getElementById('score');
+const resultsEl = document.getElementById('results');
+const resultsBody = document.getElementById('results-body');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+const progressTextEl = document.getElementById('progress-text');
+const currentScoreEl = document.getElementById('current-score');
+const questionsAnsweredEl = document.getElementById('questions-answered');
+const questionsTotalEl = document.getElementById('questions-total');
+const accuracyEl = document.getElementById('accuracy');
+const streakBadge = document.getElementById('streak-badge');
+const correctSound = document.getElementById('correct-sound');
+const wrongSound = document.getElementById('wrong-sound');
+
+function makeDefaultState() {
+    return questions.map(() => ({ status: 'unanswered', selectedIndex: null, selectedText: '', optionOrder: [] }));
+}
+
+function loadState() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+        if (!saved) return false;
+        currentPage = Number.isInteger(saved.currentPage) ? saved.currentPage : 0;
+        score = typeof saved.score === 'number' ? saved.score : 0;
+        timerSeconds = typeof saved.timerSeconds === 'number' ? saved.timerSeconds : 0;
+        currentStreak = typeof saved.currentStreak === 'number' ? saved.currentStreak : 0;
+        maxStreak = typeof saved.maxStreak === 'number' ? saved.maxStreak : 0;
+        questionStates = Array.isArray(saved.questionStates) && saved.questionStates.length === questions.length
+            ? saved.questionStates
+            : makeDefaultState();
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
+
+function saveState() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        currentPage,
+        score,
+        timerSeconds,
+        currentStreak,
+        maxStreak,
+        questionStates
+    }));
+}
+
+function resetState() {
+    currentPage = 0;
+    score = 0;
+    timerSeconds = 0;
+    currentStreak = 0;
+    maxStreak = 0;
+    questionStates = makeDefaultState();
+    localStorage.removeItem(STORAGE_KEY);
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timerSeconds += 1;
+        timerEl.textContent = formatTime(timerSeconds);
+        saveState();
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+function updateStats() {
+    const answeredCount = questionStates.filter((state) => state.status !== 'unanswered').length;
+    const correctCount = questionStates.filter((state) => state.status === 'correct').length;
+    const attemptedCount = questionStates.filter((state) => state.status === 'correct' || state.status === 'wrong').length;
+    const accuracy = attemptedCount > 0 ? Math.round((correctCount / attemptedCount) * 100) : 0;
+    const progressPercentage = questions.length ? (answeredCount / questions.length) * 100 : 0;
+
+    currentScoreEl.textContent = String(correctCount);
+    questionsAnsweredEl.textContent = String(answeredCount);
+    questionsTotalEl.textContent = String(questions.length);
+    accuracyEl.textContent = `${accuracy}%`;
+    progressTextEl.textContent = `${answeredCount}/${questions.length}`;
+    progressEl.style.width = `${progressPercentage}%`;
+}
+
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function getOptionOrder(index) {
+    if (Array.isArray(questionStates[index].optionOrder) && questionStates[index].optionOrder.length === questions[index].options.length) {
+        return questionStates[index].optionOrder;
+    }
+    const order = shuffle(questions[index].options.map((_, optionIndex) => optionIndex));
+    questionStates[index].optionOrder = order;
+    return order;
+}
+
+function getPageBounds(page) {
+    const start = page * QUESTIONS_PER_PAGE;
+    const end = Math.min(start + QUESTIONS_PER_PAGE, questions.length);
+    return { start, end };
+}
+
+function showStreak() {
+    if (currentStreak >= 3) {
+        streakBadge.textContent = `Streak: ${currentStreak}`;
+        streakBadge.classList.add('show');
+        setTimeout(() => streakBadge.classList.remove('show'), 1800);
+    }
+}
+
+function renderQuestionCard(index) {
+    const question = questions[index];
+    const state = questionStates[index];
+    const optionOrder = getOptionOrder(index);
+
+    const optionsHtml = optionOrder.map((optionIndex, displayIndex) => {
+        const optionText = question.options[optionIndex];
+        let extraClass = '';
+        if (state.status !== 'unanswered') {
+            if (optionIndex === question.answer) extraClass = ' correct';
+            else if (optionIndex === state.selectedIndex && state.status === 'wrong') extraClass = ' wrong';
+        }
+        return `
+            <button class="option-btn${extraClass}" data-question-index="${index}" data-option-index="${optionIndex}" ${state.status !== 'unanswered' ? 'disabled' : ''}>
+                <span class="option-indicator">${String.fromCharCode(65 + displayIndex)}</span>
+                <span>${escapeHtml(optionText)}</span>
+            </button>
+        `;
+    }).join('');
+
+    const explanationStyle = state.status === 'unanswered' ? 'display: none;' : 'display: block;';
+    const mutedStyle = state.status === 'skipped' ? 'opacity: 0.7;' : '';
+
+    return `
+        <div class="question-wrapper">
+            <div class="question-card" data-index="${index}" style="${mutedStyle}">
+                <div class="question-header">
+                    <div class="question-number">${index + 1}</div>
+                    <div class="question-text">${escapeHtml(question.q)}</div>
+                </div>
+                <div class="options">${optionsHtml}</div>
+                <div class="explanation" style="${explanationStyle}">${escapeHtml(question.explanation)}</div>
+            </div>
+        </div>
+    `;
+}
+
+function renderActionBar(start, end) {
+    const pageAnswered = questionStates.slice(start, end).every((state) => state.status !== 'unanswered');
+    const isLastPage = end >= questions.length;
+    const primaryLabel = isLastPage ? '✓ Submit Quiz' : 'Next Questions →';
+    return `
+        <div class="action-bar">
+            <button class="btn btn-primary" id="primary-action" ${pageAnswered ? '' : 'disabled'}>${primaryLabel}</button>
+            <button class="btn btn-skip" id="skip-action">⊘ Skip All</button>
+        </div>
+    `;
+}
+
+function renderPage() {
+    if (!questions.length) {
+        quizEl.innerHTML = '<div class="question-card"><div class="question-text">No questions available in this quiz.</div></div>';
+        updateStats();
+        return;
+    }
+
+    const { start, end } = getPageBounds(currentPage);
+    let html = '';
+    for (let index = start; index < end; index += 1) {
+        html += renderQuestionCard(index);
+    }
+    html += renderActionBar(start, end);
+    quizEl.innerHTML = html;
+    attachEventHandlers(start, end);
+    updateStats();
+    timerEl.textContent = formatTime(timerSeconds);
+    saveState();
+}
+
+function updateStreak(isCorrect) {
+    if (isCorrect) {
+        currentStreak += 1;
+        maxStreak = Math.max(maxStreak, currentStreak);
+        showStreak();
+    } else {
+        currentStreak = 0;
+    }
+}
+
+function answerQuestion(questionIndex, optionIndex) {
+    const state = questionStates[questionIndex];
+    if (state.status !== 'unanswered') return;
+
+    const question = questions[questionIndex];
+    state.selectedIndex = optionIndex;
+    state.selectedText = question.options[optionIndex] ?? '';
+    state.status = optionIndex === question.answer ? 'correct' : 'wrong';
+
+    if (state.status === 'correct') {
+        score += 1;
+        correctSound.play().catch(() => {});
+        updateStreak(true);
+    } else {
+        wrongSound.play().catch(() => {});
+        updateStreak(false);
+    }
+
+    renderPage();
+    const { start, end } = getPageBounds(currentPage);
+    const allAnswered = questionStates.slice(start, end).every((pageState) => pageState.status !== 'unanswered');
+    if (allAnswered) {
+        setTimeout(() => {
+            if (currentPage < Math.ceil(questions.length / QUESTIONS_PER_PAGE) - 1) {
+                currentPage += 1;
+                renderPage();
+            }
+        }, ANSWER_DELAY);
+    }
+}
+
+function skipQuestion(questionIndex) {
+    const state = questionStates[questionIndex];
+    if (state.status !== 'unanswered') return;
+    state.status = 'skipped';
+    state.selectedIndex = null;
+    state.selectedText = 'Skipped';
+    currentStreak = 0;
+}
+
+function skipPage(start, end) {
+    for (let index = start; index < end; index += 1) {
+        skipQuestion(index);
+    }
+    renderPage();
+}
+
+function goToNextPageOrFinish() {
+    const { end } = getPageBounds(currentPage);
+    if (end >= questions.length) {
+        endQuiz();
+        return;
+    }
+    currentPage += 1;
+    renderPage();
+}
+
+function statusMarkup(status) {
+    const config = {
+        correct: ['Correct', '✓', 'correct'],
+        wrong: ['Wrong', '✗', 'wrong'],
+        skipped: ['Skipped', '⊘', 'skipped'],
+        unanswered: ['Not attempted', '•', 'not-attempted']
+    }[status] || ['Not attempted', '•', 'not-attempted'];
+
+    return `<span class="status-badge status-${config[2]}">${config[1]} ${config[0]}</span>`;
+}
+
+function drawConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const colors = ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'];
+    const particles = Array.from({ length: 140 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        vx: (Math.random() - 0.5) * 4,
+        vy: Math.random() * 3 + 2,
+        size: Math.random() * 6 + 2,
+        rotation: Math.random() * 360,
+        color: colors[Math.floor(Math.random() * colors.length)]
+    }));
+
+    let frameId = null;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+        particles.forEach((particle) => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.rotation += 2;
+            if (particle.y < canvas.height + 20) {
+                active = true;
+                ctx.save();
+                ctx.translate(particle.x, particle.y);
+                ctx.rotate((particle.rotation * Math.PI) / 180);
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size);
+                ctx.restore();
+            }
+        });
+        if (active) frameId = requestAnimationFrame(animate);
+    }
+    animate();
+    setTimeout(() => cancelAnimationFrame(frameId), 5000);
+}
+
+function endQuiz() {
+    stopTimer();
+    quizEl.innerHTML = '';
+
+    const correctCount = questionStates.filter((state) => state.status === 'correct').length;
+    const percentage = questions.length ? ((correctCount / questions.length) * 100).toFixed(1) : '0.0';
+    let message = 'Keep learning! You will improve!';
+    let emoji = '📚';
+    if (Number(percentage) >= 90) {
+        message = 'Outstanding! You are a master!';
+        emoji = '🏆';
+        drawConfetti();
+    } else if (Number(percentage) >= 70) {
+        message = 'Great job! Well done!';
+        emoji = '🌟';
+    } else if (Number(percentage) >= 50) {
+        message = 'Good effort! Keep practicing!';
+        emoji = '💪';
+    }
+
+    scoreEl.innerHTML = `
+        <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+        <div class="score-display">${percentage}%</div>
+        <div class="score-label">${message}</div>
+        <div style="margin-top: 1rem; color: var(--text-secondary);">
+            ${correctCount} correct out of ${questions.length} questions<br>
+            Time: ${formatTime(timerSeconds)} | Best Streak: ${maxStreak}
+        </div>
+    `;
+
+    resultsBody.innerHTML = questions.map((question, index) => {
+        const state = questionStates[index];
+        const userAnswer = state.status === 'unanswered'
+            ? 'Not attempted'
+            : state.status === 'skipped'
+                ? 'Skipped'
+                : (state.selectedText || 'Not attempted');
+        const correctAnswer = question.options[question.answer] ?? '';
+        return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${escapeHtml(question.q)}</td>
+                <td>${escapeHtml(userAnswer)}</td>
+                <td>${escapeHtml(correctAnswer)}</td>
+                <td>${statusMarkup(state.status)}</td>
+                <td class="explanation-cell">${escapeHtml(question.explanation)}</td>
+            </tr>
+        `;
+    }).join('');
+
+    resultsEl.classList.remove('hidden');
+    localStorage.removeItem(STORAGE_KEY);
+}
+
+function restartQuiz() {
+    resultsEl.classList.add('hidden');
+    scoreEl.innerHTML = '';
+    resetState();
+    startTimer();
+    renderPage();
+}
+
+function attachEventHandlers(start, end) {
+    quizEl.querySelectorAll('.option-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+            answerQuestion(Number(button.dataset.questionIndex), Number(button.dataset.optionIndex));
+        });
+    });
+
+    const primaryAction = document.getElementById('primary-action');
+    if (primaryAction) {
+        primaryAction.addEventListener('click', goToNextPageOrFinish);
+    }
+
+    const skipAction = document.getElementById('skip-action');
+    if (skipAction) {
+        skipAction.addEventListener('click', () => skipPage(start, end));
+    }
+}
+
+function initialize() {
+    questionsTotalEl.textContent = String(questions.length);
+    if (!loadState()) {
+        resetState();
+    }
+    timerEl.textContent = formatTime(timerSeconds);
+    startTimer();
+    renderPage();
+}
+
+initialize();
+window.addEventListener('resize', () => {
+    const canvas = document.getElementById('confetti-canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+    </script>
+</body>
+</html>

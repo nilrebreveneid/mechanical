@@ -1,0 +1,1700 @@
+ 
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junior Mechanics Level 4 preparation portal with topic-wise MCQs, mock tests, public management practice, and GK quizzes.">
+    <meta name="theme-color" content="#07111f">
+    <title>Junior Mechanics (L4) Preparation Portal</title>
+    <script src="https://cdn.counter.dev/script.js" data-id="3df7cf84-4941-413b-8c83-1c2d4cbeb35a" data-utcoffset="6" defer></script>
+    <style>
+        :root {
+            --bg: #07111f;
+            --bg-soft: #0d1b30;
+            --panel: rgba(11, 25, 44, 0.78);
+            --panel-strong: rgba(9, 21, 38, 0.9);
+            --line: rgba(138, 201, 255, 0.18);
+            --text: #edf7ff;
+            --muted: #9db6cf;
+            --accent: #53e5ff;
+            --accent-2: #ff9f5a;
+            --accent-3: #7ef0b8;
+            --shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+            --radius: 24px;
+            --radius-sm: 16px;
+            --max-width: 1240px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Trebuchet MS", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(83, 229, 255, 0.2), transparent 30%),
+                radial-gradient(circle at top right, rgba(255, 159, 90, 0.18), transparent 28%),
+                linear-gradient(180deg, #030814 0%, #07111f 42%, #0a1c30 100%);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(110, 178, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(110, 178, 255, 0.06) 1px, transparent 1px);
+            background-size: 34px 34px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 90%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img, svg { display: block; max-width: 100%; }
+        button, input { font: inherit; }
+
+        .page-shell {
+            position: relative;
+            z-index: 1;
+            width: min(calc(100% - 2rem), var(--max-width));
+            margin: 0 auto;
+            padding: 1rem 0 4rem;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0.75rem;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.9rem 1.1rem;
+            margin-bottom: 1.25rem;
+            background: rgba(8, 19, 35, 0.72);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            backdrop-filter: blur(18px);
+            box-shadow: var(--shadow);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            min-width: 0;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background:
+                linear-gradient(135deg, rgba(83, 229, 255, 0.25), rgba(83, 229, 255, 0.04)),
+                linear-gradient(135deg, #0f2f49, #09162a);
+            border: 1px solid rgba(83, 229, 255, 0.32);
+            box-shadow: inset 0 0 20px rgba(83, 229, 255, 0.16);
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+
+        .brand-copy { min-width: 0; }
+
+        .eyebrow {
+            margin: 0;
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .brand-copy strong {
+            display: block;
+            font-size: 0.98rem;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .topbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-link,
+        .button-link {
+            padding: 0.72rem 1rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .nav-link {
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .nav-link:hover,
+        .nav-link:focus-visible {
+            color: var(--text);
+            border-color: rgba(83, 229, 255, 0.28);
+            background: rgba(83, 229, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .button-link {
+            background: linear-gradient(135deg, var(--accent), #0bd3ff);
+            color: #03131f;
+            font-weight: 800;
+            box-shadow: 0 12px 28px rgba(83, 229, 255, 0.24);
+        }
+
+        .button-link:hover,
+        .button-link:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 32px rgba(83, 229, 255, 0.3);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
+            gap: 1.35rem;
+            align-items: stretch;
+            margin-bottom: 1.4rem;
+        }
+
+        .hero-card,
+        .side-panel,
+        .controls,
+        .section-shell {
+            background: linear-gradient(180deg, rgba(14, 30, 52, 0.88), rgba(8, 20, 36, 0.88));
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(18px);
+        }
+
+        .hero-card {
+            padding: clamp(1.5rem, 2.4vw, 2.5rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            right: -70px;
+            top: -70px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(83, 229, 255, 0.28), transparent 68%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.55rem 0.85rem;
+            border-radius: 999px;
+            color: var(--accent);
+            background: rgba(83, 229, 255, 0.09);
+            border: 1px solid rgba(83, 229, 255, 0.18);
+            font-size: 0.88rem;
+            letter-spacing: 0.03em;
+        }
+
+        .hero h1 {
+            margin: 1rem 0 0.8rem;
+            font-size: clamp(2.2rem, 5vw, 4.3rem);
+            line-height: 0.97;
+            letter-spacing: -0.04em;
+            max-width: 11ch;
+        }
+
+        .hero p {
+            max-width: 62ch;
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            margin-top: 1.4rem;
+        }
+
+        .primary-action,
+        .secondary-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            padding: 0.98rem 1.2rem;
+            border-radius: 16px;
+            font-weight: 800;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .primary-action {
+            color: #03131f;
+            background: linear-gradient(135deg, var(--accent), #69f7e7);
+            box-shadow: 0 16px 30px rgba(83, 229, 255, 0.26);
+        }
+
+        .secondary-action {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(157, 182, 207, 0.22);
+        }
+
+        .primary-action:hover,
+        .secondary-action:hover,
+        .primary-action:focus-visible,
+        .secondary-action:focus-visible {
+            transform: translateY(-2px);
+        }
+
+        .secondary-action:hover,
+        .secondary-action:focus-visible {
+            border-color: rgba(83, 229, 255, 0.3);
+            background: rgba(83, 229, 255, 0.08);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.9rem;
+            margin-top: 1.4rem;
+        }
+
+        .stat {
+            padding: 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .side-panel {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .side-panel h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .side-panel p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .priority-list {
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .priority-item {
+            padding: 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .priority-item strong {
+            display: inline-block;
+            margin-bottom: 0.35rem;
+        }
+
+        .priority-item span {
+            display: block;
+            color: var(--muted);
+            line-height: 1.55;
+            font-size: 0.95rem;
+        }
+
+        .status-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 1.15rem;
+            margin-bottom: 1.3rem;
+            border-radius: 20px;
+            background: linear-gradient(90deg, rgba(126, 240, 184, 0.14), rgba(83, 229, 255, 0.08));
+            border: 1px solid rgba(126, 240, 184, 0.2);
+        }
+
+        .status-strip strong {
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .status-strip p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 0.95rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .controls {
+            padding: 1.15rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .controls-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .controls-top h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .controls-top p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .search-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.85rem 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .search-wrap input {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            color: var(--text);
+        }
+
+        .search-wrap input::placeholder {
+            color: #7d95ac;
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.72rem 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--muted);
+            cursor: pointer;
+            transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn:focus-visible {
+            transform: translateY(-1px);
+            color: var(--text);
+            border-color: rgba(83, 229, 255, 0.24);
+        }
+
+        .filter-btn.active {
+            color: #04131f;
+            background: linear-gradient(135deg, var(--accent), #8ed9ff);
+            border-color: transparent;
+            font-weight: 800;
+        }
+
+        .sections {
+            display: grid;
+            gap: 1.3rem;
+        }
+
+        .section-shell { padding: 1.25rem; }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .section-head h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1.45rem;
+        }
+
+        .section-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-bottom: 0.55rem;
+            padding: 0.34rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(83, 229, 255, 0.18);
+            background: rgba(83, 229, 255, 0.08);
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .section-head p {
+            margin: 0;
+            color: var(--muted);
+            max-width: 62ch;
+        }
+
+        .count-chip {
+            padding: 0.62rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--muted);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .section-guide {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .guide-card {
+            padding: 1rem 1.05rem;
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .guide-card strong {
+            display: block;
+            margin-bottom: 0.35rem;
+            font-size: 1rem;
+        }
+
+        .guide-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 0.92rem;
+        }
+
+        .subsection-block {
+            margin-top: 1.15rem;
+            padding-top: 1.15rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .subsection-block:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: 0;
+        }
+
+        .subsection-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .subsection-head h4 {
+            margin: 0 0 0.3rem;
+            font-size: 1.12rem;
+        }
+
+        .subsection-head p {
+            margin: 0;
+            color: var(--muted);
+            max-width: 60ch;
+            line-height: 1.6;
+            font-size: 0.94rem;
+        }
+
+        .subsection-chip {
+            padding: 0.54rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--muted);
+            font-size: 0.82rem;
+            white-space: nowrap;
+        }
+
+        .subsection-grid {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .section-shell.featured-zone {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-shell.featured-zone::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(83, 229, 255, 0.35), transparent);
+        }
+
+        .topic-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-height: 100%;
+            padding: 1.1rem;
+            border-radius: 22px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+                linear-gradient(180deg, rgba(8, 17, 30, 0.85), rgba(6, 13, 23, 0.92));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .topic-card:hover,
+        .topic-card:focus-within {
+            transform: translateY(-4px);
+            border-color: rgba(83, 229, 255, 0.22);
+            box-shadow: 0 20px 34px rgba(0, 0, 0, 0.26);
+        }
+
+        .topic-top {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 0.8rem;
+        }
+
+        .number-tag {
+            display: inline-flex;
+            min-width: 2.1rem;
+            height: 2.1rem;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0.55rem;
+            border-radius: 12px;
+            color: #03131f;
+            background: linear-gradient(135deg, var(--accent), #7ef0b8);
+            font-size: 0.9rem;
+            font-weight: 900;
+        }
+
+        .track-tag {
+            padding: 0.38rem 0.62rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            color: var(--accent-2);
+            border: 1px solid rgba(255, 159, 90, 0.18);
+            background: rgba(255, 159, 90, 0.08);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .topic-card h4 {
+            margin: 0;
+            font-size: 1.08rem;
+            line-height: 1.45;
+        }
+
+        .topic-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.55;
+            font-size: 0.95rem;
+        }
+
+        .meta-row {
+            display: flex;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.46rem 0.64rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .meta-chip strong { color: var(--text); }
+
+        .open-link {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.95rem 1rem;
+            border-radius: 16px;
+            background: rgba(83, 229, 255, 0.08);
+            border: 1px solid rgba(83, 229, 255, 0.18);
+            color: var(--accent);
+            font-weight: 800;
+            transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .open-link:hover,
+        .open-link:focus-visible {
+            background: rgba(83, 229, 255, 0.14);
+            border-color: rgba(83, 229, 255, 0.32);
+            transform: translateY(-1px);
+        }
+
+        .explore-banner {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 1.25rem;
+            margin-top: 1.35rem;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(255, 159, 90, 0.18), rgba(83, 229, 255, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow);
+        }
+
+        .explore-banner h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1.35rem;
+        }
+
+        .explore-banner p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .banner-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.98rem 1.2rem;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent-2), #ffd166);
+            color: #1d1204;
+            font-weight: 800;
+            white-space: nowrap;
+            box-shadow: 0 14px 28px rgba(255, 159, 90, 0.22);
+            transition: transform 0.25s ease;
+        }
+
+        .banner-link:hover,
+        .banner-link:focus-visible {
+            transform: translateY(-2px);
+        }
+
+        .empty-state {
+            display: none;
+            padding: 1.2rem;
+            border-radius: 22px;
+            margin-top: 1rem;
+            border: 1px dashed rgba(255, 255, 255, 0.14);
+            color: var(--muted);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.4rem;
+            padding: 1.2rem 0.2rem 0;
+            color: var(--muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-note {
+            max-width: 58ch;
+            line-height: 1.6;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            width: 52px;
+            height: 52px;
+            border: 0;
+            border-radius: 50%;
+            color: #04131f;
+            background: linear-gradient(135deg, var(--accent), #7ef0b8);
+            box-shadow: 0 12px 28px rgba(83, 229, 255, 0.28);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+            z-index: 30;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .hide { display: none !important; }
+
+        @media (max-width: 980px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .explore-banner { grid-template-columns: 1fr; }
+            .section-guide { grid-template-columns: 1fr; }
+            .banner-link { width: 100%; }
+        }
+
+        @media (max-width: 760px) {
+            .page-shell {
+                width: min(calc(100% - 1rem), var(--max-width));
+                padding-top: 0.75rem;
+            }
+
+            .topbar {
+                position: static;
+                border-radius: 24px;
+                padding: 1rem;
+            }
+
+            .topbar-nav {
+                width: 100%;
+                justify-content: stretch;
+            }
+
+            .nav-link,
+            .button-link {
+                flex: 1 1 140px;
+                text-align: center;
+            }
+
+            .hero h1 { max-width: none; }
+            .hero-stats { grid-template-columns: 1fr; }
+            .status-strip, footer {
+                flex-direction: column;
+                align-items: start;
+            }
+            .controls-top { align-items: start; }
+        }
+
+        @media (max-width: 540px) {
+            .card-grid { grid-template-columns: 1fr; }
+            .hero-card, .side-panel, .controls, .section-shell { border-radius: 20px; }
+            .filter-row { gap: 0.55rem; }
+
+            .filter-btn {
+                width: calc(50% - 0.28rem);
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">L4</div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Mechanics Preparation Portal</p>
+                    <strong>Junior Mechanics Fourth Level Practice Hub</strong>
+                </div>
+            </div>
+            <nav class="topbar-nav" aria-label="Quick navigation">
+                <a class="nav-link" href="#topics">Core Topics</a>
+                <a class="nav-link" href="#core-support">GK + Public</a>
+                <a class="nav-link" href="#mocks">Mock Zone</a>
+                <a class="button-link" href="#mocks">All Mock Tests</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-card">
+                    <div class="hero-badge">One portal. Topic practice, GK, public management, and mocks.</div>
+                    <h1 id="hero-title">Prepare smarter for Junior Mechanics L4.</h1>
+                    <p>
+                        Move from system-wise revision to GK, public management, and full-paper mock drills without jumping across separate pages. Everything is organized here for faster practice and easier last-minute revision.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="primary-action" href="#topics">Start Topic Practice</a>
+                        <a class="secondary-action" href="#mocks">Go to Mock Zone</a>
+                    </div>
+                    <div class="hero-stats" aria-label="Portal stats">
+                        <div class="stat">
+                            <strong>23</strong>
+                            <span>Technical sets</span>
+                        </div>
+                        <div class="stat">
+                            <strong>27</strong>
+                            <span>GK + Public sets</span>
+                        </div>
+                        <div class="stat">
+                            <strong>20</strong>
+                            <span>Mock and mixed revision sets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="side-panel" aria-labelledby="strategy-title">
+                    <h2 id="strategy-title">Best way to use this portal</h2>
+                    <p>
+                        Start with the technical systems, then add GK and public management, and finish with grouped mock sets that simulate mixed-paper pressure.
+                    </p>
+                    <div class="priority-list">
+                        <div class="priority-item">
+                            <strong>Step 1: Build fundamentals</strong>
+                            <span>Use the core topic cards below to revise the main technical sections one system at a time.</span>
+                        </div>
+                        <div class="priority-item">
+                            <strong>Step 2: Add support content</strong>
+                            <span>Use the GK and public management section when you want to close weak areas outside the technical syllabus.</span>
+                        </div>
+                        <div class="priority-item">
+                            <strong>Step 3: Repeat with mocks</strong>
+                            <span>Use the cleaned-up mock zone for full mocks, public-heavy revision, and GK boosters depending on what you need most.</span>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="status-strip" aria-label="Portal overview">
+                <div>
+                    <strong>Cleaner flow for practice, revision, and final mock rehearsal</strong>
+                    <p>Technical topics, GK, public management, and mock sets now live in one clearer portal with direct quiz-page links.</p>
+                </div>
+                <div class="pill">Single-page practice hub</div>
+            </section>
+
+            <section class="controls" aria-labelledby="controls-title">
+                <div class="controls-top">
+                    <div>
+                        <h2 id="controls-title">Find your next practice set fast</h2>
+                        <p>Search by topic, system, GK, public management, or mock test.</p>
+                    </div>
+                    <div class="pill" id="result-count">Showing 36 sets</div>
+                </div>
+
+                <label class="search-wrap" for="topic-search">
+                    <span aria-hidden="true">Search</span>
+                    <input id="topic-search" type="search" placeholder="Try: engine, hydraulic, gk, public, mock">
+                </label>
+
+                <div class="filter-row" role="group" aria-label="Quick filters">
+                    <button class="filter-btn active" type="button" data-filter="all">All</button>
+                    <button class="filter-btn" type="button" data-filter="core">Core Topics</button>
+                    <button class="filter-btn" type="button" data-filter="public">Public</button>
+                    <button class="filter-btn" type="button" data-filter="gk">GK</button>
+                    <button class="filter-btn" type="button" data-filter="mock">Mock Tests</button>
+                </div>
+
+                <div class="empty-state" id="empty-state">
+                    No matching practice set found. Try a different keyword or switch the filter back to All.
+                </div>
+            </section>
+
+            <div class="sections">
+                <section class="section-shell" id="topics" aria-labelledby="topics-title">
+                    <div class="section-head">
+                        <div>
+                            <h3 id="topics-title">Core Mechanics Topics</h3>
+                            <p>Topic-wise MCQs for the technical sections of the Junior Mechanics Level 4 exam.</p>
+                        </div>
+                        <div class="count-chip">18 technical topics + 5 core mocks</div>
+                    </div>
+
+                    <div class="card-grid">
+                        <article class="topic-card" data-group="core" data-tags="workshop practice mechanics tools exam">
+                            <div class="topic-top"><span class="number-tag">01</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Workshop Practices</h4>
+                            <p>Strengthen basic workshop concepts and tool-handling MCQs before moving to system-based topics.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>40</strong> MCQs</span><span class="meta-chip"><strong>3</strong> likely in exam</span></div>
+                            <a class="open-link" href="workshop-practice.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="welding sheet metal fabrication">
+                            <div class="topic-top"><span class="number-tag">02</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Welding and Sheet Metal Works</h4>
+                            <p>Revise welding processes, sheet work terms, and common fabrication-related exam questions.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>30</strong> MCQs</span><span class="meta-chip"><strong>4</strong> likely in exam</span></div>
+                            <a class="open-link" href="welding-sheet.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="construction equipment machine types">
+                            <div class="topic-top"><span class="number-tag">03</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Construction Equipment Types</h4>
+                            <p>Cover machine classifications, common uses, and introductory knowledge of construction equipment.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>30</strong> MCQs</span><span class="meta-chip"><strong>2</strong> likely in exam</span></div>
+                            <a class="open-link" href="construction-equipment.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="engine ic engine combustion thermo">
+                            <div class="topic-top"><span class="number-tag">04</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Internal Combustion Engine</h4>
+                            <p>Build confidence in engine principles, cycle basics, and I.C. engine-focused MCQs.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>50</strong> MCQs</span><span class="meta-chip"><strong>2</strong> likely in exam</span></div>
+                            <a class="open-link" href="ic-engine-thermo.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="fuel engine injection supply">
+                            <div class="topic-top"><span class="number-tag">05</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Fuel System of I.C. Engine</h4>
+                            <p>Practice questions on fuel delivery, injection concepts, and system components.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>40</strong> MCQs</span><span class="meta-chip"><strong>2</strong> likely in exam</span></div>
+                            <a class="open-link" href="fuel-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="cooling radiator thermostat">
+                            <div class="topic-top"><span class="number-tag">06</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Cooling System</h4>
+                            <p>Review radiator flow, overheating causes, coolant circulation, and related maintenance MCQs.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>32</strong> MCQs</span><span class="meta-chip"><strong>2</strong> likely in exam</span></div>
+                            <a class="open-link" href="cooling-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="braking brake safety stopping">
+                            <div class="topic-top"><span class="number-tag">07</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Braking System</h4>
+                            <p>Sharpen your understanding of brake parts, operation, and safety-related exam questions.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>28</strong> MCQs</span><span class="meta-chip"><strong>2</strong> likely in exam</span></div>
+                            <a class="open-link" href="braking-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="suspension shock absorber chassis">
+                            <div class="topic-top"><span class="number-tag">08</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Suspension System</h4>
+                            <p>Study ride control, suspension components, and common trouble-shooting MCQs.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>20</strong> MCQs</span><span class="meta-chip"><strong>2</strong> likely in exam</span></div>
+                            <a class="open-link" href="suspension-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="steering clutch control direction">
+                            <div class="topic-top"><span class="number-tag">09</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Steering System</h4>
+                            <p>Practice steering control, directional mechanisms, and system fault basics.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>30</strong> MCQs</span><span class="meta-chip"><strong>2</strong> likely in exam</span></div>
+                            <a class="open-link" href="steering-clutch.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="transmission gear power flow">
+                            <div class="topic-top"><span class="number-tag">10</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Transmission System</h4>
+                            <p>Focus on gears, power transfer, clutch relation, and transmission system functions.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>25</strong> MCQs</span><span class="meta-chip"><strong>1</strong> likely in exam</span></div>
+                            <a class="open-link" href="transmission-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="hydraulic pressure fluid">
+                            <div class="topic-top"><span class="number-tag">11</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Hydraulic System</h4>
+                            <p>Revise hydraulic principles, pressure flow, and fluid power questions for quick scoring.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>18</strong> MCQs</span><span class="meta-chip"><strong>1</strong> likely in exam</span></div>
+                            <a class="open-link" href="hydraulic.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="track wheel tyre tires">
+                            <div class="topic-top"><span class="number-tag">12</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Track, Wheel and Tyres</h4>
+                            <p>Cover wheels, tracks, tyre types, and usage-based questions commonly asked in practice sets.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>20</strong> MCQs</span><span class="meta-chip"><strong>1</strong> likely in exam</span></div>
+                            <a class="open-link" href="tyre-starting.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="servicing maintenance inspection">
+                            <div class="topic-top"><span class="number-tag">13</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Servicing and Maintenance of Equipment</h4>
+                            <p>Strengthen periodic service knowledge, preventive maintenance, and inspection-related MCQs.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>39</strong> MCQs</span><span class="meta-chip"><strong>1</strong> likely in exam</span></div>
+                            <a class="open-link" href="maintenance-emission.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="electrical battery starter wiring">
+                            <div class="topic-top"><span class="number-tag">14</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Electrical System</h4>
+                            <p>Revise batteries, charging, starting, and wiring fundamentals through focused MCQs.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>33</strong> MCQs</span><span class="meta-chip"><strong>1</strong> likely in exam</span></div>
+                            <a class="open-link" href="electrical-system.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="record keeping documentation logbook">
+                            <div class="topic-top"><span class="number-tag">15</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Record Keeping</h4>
+                            <p>Prepare for documentation, reporting, and logbook-style questions that support operational accuracy.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>35</strong> MCQs</span><span class="meta-chip"><strong>1</strong> likely in exam</span></div>
+                            <a class="open-link" href="record-keeping.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="safety practices workshop ppe">
+                            <div class="topic-top"><span class="number-tag">16</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Safety Practices</h4>
+                            <p>Review PPE, accident prevention, and workshop safety rules that often appear in the exam.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>40</strong> MCQs</span><span class="meta-chip"><strong>1</strong> likely in exam</span></div>
+                            <a class="open-link" href="safety-practices.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="fuel lubrication coolant lubricants oil">
+                            <div class="topic-top"><span class="number-tag">17</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Coolants, Lubricants and Fuel System</h4>
+                            <p>Use this mixed set to revise fuel quality, lubricants, coolants, and maintenance-focused theory.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>49</strong> MCQs</span><span class="meta-chip"><strong>1</strong> likely in exam</span></div>
+                            <a class="open-link" href="fuel-lubrication.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core" data-tags="air conditioning ac refrigeration">
+                            <div class="topic-top"><span class="number-tag">18</span><span class="track-tag">Core Topic</span></div>
+                            <h4>Air Conditioning</h4>
+                            <p>Practice A/C components, cooling cycles, and machine comfort system basics for final revision.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>40</strong> MCQs</span><span class="meta-chip"><strong>1</strong> likely in exam</span></div>
+                            <a class="open-link" href="air-condition.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core mock" data-tags="mock test 1 mechanical core all in one">
+                            <div class="topic-top"><span class="number-tag">M1</span><span class="track-tag">Mock Test</span></div>
+                            <h4>Mock Test 1 (Mechanical Core)</h4>
+                            <p>All in one mechanical content MCQs for broader revision and timed practice.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>100</strong> MCQs</span><span class="meta-chip"><strong>Core</strong> mixed</span></div>
+                            <a class="open-link" href="mock2.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core mock" data-tags="mock test 2 mechanical core all in one">
+                            <div class="topic-top"><span class="number-tag">M2</span><span class="track-tag">Mock Test</span></div>
+                            <h4>Mock Test 2 (Mechanical Core)</h4>
+                            <p>Another full mechanical revision paper designed to improve speed and retention.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>100</strong> MCQs</span><span class="meta-chip"><strong>Core</strong> mixed</span></div>
+                            <a class="open-link" href="mock2.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core mock" data-tags="mock test 3 mechanical core all in one">
+                            <div class="topic-top"><span class="number-tag">M3</span><span class="track-tag">Mock Test</span></div>
+                            <h4>Mock Test 3 (Mechanical Core)</h4>
+                            <p>Use this set to repeat core technical preparation in a longer all-topic format.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>100</strong> MCQs</span><span class="meta-chip"><strong>Core</strong> mixed</span></div>
+                            <a class="open-link" href="mock3.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core mock" data-tags="mock test 4 mechanical core all in one">
+                            <div class="topic-top"><span class="number-tag">M4</span><span class="track-tag">Mock Test</span></div>
+                            <h4>Mock Test 4 (Mechanical Core)</h4>
+                            <p>Repeat your full-syllabus mechanics preparation with another large practice paper.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>100</strong> MCQs</span><span class="meta-chip"><strong>Core</strong> mixed</span></div>
+                            <a class="open-link" href="mock4.html">Open Practice Set</a>
+                        </article>
+
+                        <article class="topic-card" data-group="core mock" data-tags="mock test 5 mechanical core all in one">
+                            <div class="topic-top"><span class="number-tag">M5</span><span class="track-tag">Mock Test</span></div>
+                            <h4>Mock Test 5 (Mechanical Core)</h4>
+                            <p>Finish the core mechanics mock sequence with a final all-in-one revision paper.</p>
+                            <div class="meta-row"><span class="meta-chip"><strong>100</strong> MCQs</span><span class="meta-chip"><strong>Core</strong> mixed</span></div>
+                            <a class="open-link" href="mock5.html">Open Practice Set</a>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section-shell" id="core-support" aria-labelledby="core-support-title">
+    <div class="section-head">
+        <div>
+            <h3 id="core-support-title">GK and Public Core Content</h3>
+            <p>General awareness and public management sets powered by the shared quiz engine.</p>
+        </div>
+                        <div class="count-chip">27 GK + Public sets</div>
+    </div>
+
+    <div class="card-grid">
+        <article class="topic-card" data-group="gk" data-tags="gk1 geography natural resources nepal">
+            <div class="topic-top"><span class="number-tag">G1</span><span class="track-tag">GK</span></div>
+            <h4>1.1 नेपालको भौगोलिक अवस्था, प्राकृतिक स्रोत र साधनहरू</h4>
+            <p>नेपालको भूगोल, प्राकृतिक स्रोत र साधनसम्बन्धी सामान्य ज्ञान अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>GK</strong> topic</span><span class="meta-chip">🗺️ Geography</span></div>
+            <a class="open-link" href="./1.1.html">Open GK Set</a>
+        </article>
+
+        <article class="topic-card" data-group="gk" data-tags="gk2 history culture society nepal">
+            <div class="topic-top"><span class="number-tag">G2</span><span class="track-tag">GK</span></div>
+            <h4>1.2 नेपालको ऐतिहासिक, सांस्कृतिक र सामाजिक अवस्था सम्बन्धी जानकारी</h4>
+            <p>इतिहास, संस्कृति र सामाजिक अवस्थासम्बन्धी MCQ अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>GK</strong> topic</span><span class="meta-chip">🏛️ Culture</span></div>
+            <a class="open-link" href="./1.2.html">Open GK Set</a>
+        </article>
+
+        <article class="topic-card" data-group="gk" data-tags="gk3 economy periodic plan nepal">
+            <div class="topic-top"><span class="number-tag">G3</span><span class="track-tag">GK</span></div>
+            <h4>1.3 नेपालको आर्थिक अवस्था र चालु आवधिक योजना सम्बन्धी जानकारी</h4>
+            <p>नेपालको आर्थिक अवस्था र आवधिक योजनासम्बन्धी प्रश्नहरू।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>GK</strong> topic</span><span class="meta-chip">📊 Economy</span></div>
+            <a class="open-link" href="./1.3.html">Open GK Set</a>
+        </article>
+
+        <article class="topic-card" data-group="gk" data-tags="gk4 biodiversity environment climate pollution population">
+            <div class="topic-top"><span class="number-tag">G4</span><span class="track-tag">GK</span></div>
+            <h4>1.4 जैविक विविधता, दिगो विकास, वातावरण, प्रदूषण, जलवायु परिवर्तन र जनसंख्या व्यवस्थापन</h4>
+            <p>वातावरण, जैविक विविधता, दिगोपन र जनसंख्या व्यवस्थापनसम्बन्धी अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>GK</strong> topic</span><span class="meta-chip">🌿 Environment</span></div>
+            <a class="open-link" href="./1.4.html">Open GK Set</a>
+        </article>
+
+        <article class="topic-card" data-group="gk" data-tags="gk5 science technology achievements">
+            <div class="topic-top"><span class="number-tag">G5</span><span class="track-tag">GK</span></div>
+            <h4>1.5 मानव जीवनमा प्रत्यक्ष प्रभाव पार्ने विज्ञान र प्रविधिका महत्त्वपूर्ण उपलब्धिहरू</h4>
+            <p>विज्ञान र प्रविधिका महत्त्वपूर्ण उपलब्धिहरूमा आधारित MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>GK</strong> topic</span><span class="meta-chip">🔬 Science</span></div>
+            <a class="open-link" href="./1.5.html">Open GK Set</a>
+        </article>
+
+        <article class="topic-card" data-group="gk" data-tags="gk6 public health disease food nutrition">
+            <div class="topic-top"><span class="number-tag">G6</span><span class="track-tag">GK</span></div>
+            <h4>1.6 जनस्वास्थ्य, रोग, खाद्य र पोषण सम्बन्धी सामान्य जानकारी</h4>
+            <p>जनस्वास्थ्य, रोग, खाद्य र पोषणसम्बन्धी सामान्य ज्ञान अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>GK</strong> topic</span><span class="meta-chip">🥗 Health</span></div>
+            <a class="open-link" href="./1.6.html">Open GK Set</a>
+        </article>
+
+        <article class="topic-card" data-group="gk" data-tags="gk7 constitution nepal schedules">
+            <div class="topic-top"><span class="number-tag">G7</span><span class="track-tag">GK</span></div>
+            <h4>1.7 नेपालको संविधान (भाग १ देखि ५ सम्म र अनुसूचीहरू)</h4>
+            <p>संविधानका मुख्य भाग र अनुसूचीहरूमा आधारित MCQ अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>GK</strong> topic</span><span class="meta-chip">📜 Constitution</span></div>
+            <a class="open-link" href="./1.7.html">Open GK Set</a>
+        </article>
+
+        <article class="topic-card" data-group="gk" data-tags="gk8 united nations specialized agencies">
+            <div class="topic-top"><span class="number-tag">G8</span><span class="track-tag">GK</span></div>
+            <h4>1.8 संयुक्त राष्ट्रसंघ र यसका विशिष्टीकृत संस्था सम्बन्धी जानकारी</h4>
+            <p>संयुक्त राष्ट्रसंघ र विशिष्टीकृत संस्थाहरूसम्बन्धी अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>GK</strong> topic</span><span class="meta-chip">🌐 UN</span></div>
+            <a class="open-link" href="./1.8.html">Open GK Set</a>
+        </article>
+
+        <article class="topic-card" data-group="gk" data-tags="gk9 saarc bimstec asean eu">
+            <div class="topic-top"><span class="number-tag">G9</span><span class="track-tag">GK</span></div>
+            <h4>1.9 क्षेत्रीय संगठन (सार्क, बिमस्टेक, आसियान र युरोपियन संघ) सम्बन्धी जानकारी</h4>
+            <p>क्षेत्रीय संगठनहरू र तिनका सदस्य तथा भूमिकासम्बन्धी MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>GK</strong> topic</span><span class="meta-chip">🤝 Regional</span></div>
+            <a class="open-link" href="./1.9.html">Open GK Set</a>
+        </article>
+
+        <article class="topic-card" data-group="gk" data-tags="gk10 current affairs national international">
+            <div class="topic-top"><span class="number-tag">G10</span><span class="track-tag">NEW</span></div>
+            <h4>1.10 राष्ट्रिय र अन्तर्राष्ट्रिय महत्त्वका समसामयिक गतिविधिहरू</h4>
+            <p>नयाँ र समसामयिक राष्ट्रिय तथा अन्तर्राष्ट्रिय गतिविधिसम्बन्धी MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>GK</strong> topic</span><span class="meta-chip">📰 Current</span></div>
+            <a class="open-link" href="./1.10.html">Open GK Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm1 office introduction importance work types">
+            <div class="topic-top"><span class="number-tag">P1</span><span class="track-tag">Public</span></div>
+            <h4>2.1.1 कार्यालय (Office): परिचय, महत्व, कार्य र प्रकार</h4>
+            <p>कार्यालयको परिचय, महत्व, कार्य र प्रकारसम्बन्धी अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">🏢 Office</span></div>
+            <a class="open-link" href="./2.1.1.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm2 assistant staff duties qualities">
+            <div class="topic-top"><span class="number-tag">P2</span><span class="track-tag">Public</span></div>
+            <h4>2.1.2 सहायक कर्मचारीका कार्य र गुणहरू</h4>
+            <p>सहायक कर्मचारीका काम, गुण र अपेक्षित भूमिकासम्बन्धी MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">👔 Staff</span></div>
+            <a class="open-link" href="./2.1.2.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm3 office resources introduction types">
+            <div class="topic-top"><span class="number-tag">P3</span><span class="track-tag">Public</span></div>
+            <h4>2.1.3 कार्यालय स्रोत साधन (Office Resources): परिचय र प्रकार</h4>
+            <p>कार्यालय स्रोत साधन र तिनका प्रकारसम्बन्धी अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">🗂️ Resources</span></div>
+            <a class="open-link" href="./2.1.3.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm4 office communication importance types tools">
+            <div class="topic-top"><span class="number-tag">P4</span><span class="track-tag">Public</span></div>
+            <h4>2.1.4 कार्यालयमा सञ्चारको महत्व, किसिम र साधन</h4>
+            <p>कार्यालयीय सञ्चारको महत्व, किसिम र माध्यमसम्बन्धी MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">📡 Communication</span></div>
+            <a class="open-link" href="./2.1.4.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm5 office procedure correspondence registration dispatch filing">
+            <div class="topic-top"><span class="number-tag">P5</span><span class="track-tag">Public</span></div>
+            <h4>2.1.5 कार्यालय कार्यविधि: पत्र व्यवहार, दर्ता र चलानी, फाइलिङ, परिपत्र, टिप्पणी लेखन</h4>
+            <p>कार्यालय कार्यविधि र पत्र व्यवहारसम्बन्धी अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">📋 Procedure</span></div>
+            <a class="open-link" href="./2.1.5.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm6 record management">
+            <div class="topic-top"><span class="number-tag">P6</span><span class="track-tag">Public</span></div>
+            <h4>2.1.6 अभिलेख व्यवस्थापन (Record Management)</h4>
+            <p>अभिलेख व्यवस्थापन, रेकर्ड राख्ने तरिका र प्रयोगसम्बन्धी MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">🗃️ Records</span></div>
+            <a class="open-link" href="./2.1.6.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm7 civil service structure recruitment procedures">
+            <div class="topic-top"><span class="number-tag">P7</span><span class="track-tag">Public</span></div>
+            <h4>2.2.1 निजामती सेवाको गठन, संगठन संरचना, पदपूर्ति गर्ने तरिका र प्रक्रियाहरू</h4>
+            <p>निजामती सेवाको संरचना र पदपूर्ति प्रक्रियासम्बन्धी MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">🏛️ Civil Service</span></div>
+            <a class="open-link" href="./2.2.1.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm8 appointment transfer promotion leave retirement punishment">
+            <div class="topic-top"><span class="number-tag">P8</span><span class="track-tag">Public</span></div>
+            <h4>2.2.2 कर्मचारीको नियुक्ति, सरुवा, बढुवा, बिदा, विभागीय सजाय र अवकाश</h4>
+            <p>कर्मचारी व्यवस्थापन, नियुक्ति, सरुवा, बढुवा र अवकाशसम्बन्धी MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">📝 HR Rules</span></div>
+            <a class="open-link" href="./2.2.2.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm9 conduct ethics duty responsibility">
+            <div class="topic-top"><span class="number-tag">P9</span><span class="track-tag">Public</span></div>
+            <h4>2.2.3 कर्मचारीले पालन गर्नुपर्ने आचरण, नैतिक दायित्व र कर्तव्यहरू</h4>
+            <p>आचरण, नैतिकता, दायित्व र कर्तव्यसम्बन्धी MCQ अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">⚖️ Ethics</span></div>
+            <a class="open-link" href="./2.2.3.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm10 ministry federal affairs general administration">
+            <div class="topic-top"><span class="number-tag">P10</span><span class="track-tag">Public</span></div>
+            <h4>2.3 संघीय मामिला तथा सामान्य प्रशासन मन्त्रालय सम्बन्धी जानकारी</h4>
+            <p>संघीय मामिला तथा सामान्य प्रशासन मन्त्रालयसम्बन्धी MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">🏟️ Ministry</span></div>
+            <a class="open-link" href="./2.3.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm11 constitutional bodies nepal">
+            <div class="topic-top"><span class="number-tag">P11</span><span class="track-tag">Public</span></div>
+            <h4>2.4 संवैधानिक निकाय सम्बन्धी जानकारी</h4>
+            <p>संवैधानिक निकायहरू र तिनको भूमिकासम्बन्धी MCQ अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">📜 Bodies</span></div>
+            <a class="open-link" href="./2.4.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm12 budget accounting audit system">
+            <div class="topic-top"><span class="number-tag">P12</span><span class="track-tag">Public</span></div>
+            <h4>2.5 सरकारी बजेट, लेखा र लेखापरीक्षण प्रणाली सम्बन्धी सामान्य जानकारी</h4>
+            <p>सरकारी बजेट, लेखा र लेखापरीक्षण प्रणालीसम्बन्धी MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">💰 Budget</span></div>
+            <a class="open-link" href="./2.5.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm13 public service delivery methods institutions">
+            <div class="topic-top"><span class="number-tag">P13</span><span class="track-tag">Public</span></div>
+            <h4>2.6 सार्वजनिक सेवा प्रवाहको अर्थ, सेवा प्रवाह गर्ने निकाय, तरिका र माध्यमहरू</h4>
+            <p>सार्वजनिक सेवा प्रवाह र सेवाका तरिका तथा निकायसम्बन्धी MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">🤝 Service</span></div>
+            <a class="open-link" href="./2.6.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm14 human rights good governance right to information">
+            <div class="topic-top"><span class="number-tag">P14</span><span class="track-tag">Public</span></div>
+            <h4>2.7 मानव अधिकार, सुशासन र सूचनाको हक सम्बन्धी सामान्य जानकारी</h4>
+            <p>मानव अधिकार, सुशासन र सूचनाको हकसम्बन्धी MCQ अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">🌐 Governance</span></div>
+            <a class="open-link" href="./2.7.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm15 public charter">
+            <div class="topic-top"><span class="number-tag">P15</span><span class="track-tag">Public</span></div>
+            <h4>2.8 सार्वजनिक बडापत्र (Public Charter)</h4>
+            <p>सार्वजनिक बडापत्रसम्बन्धी आधारभूत प्रश्नहरूको अभ्यास।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">📋 Charter</span></div>
+            <a class="open-link" href="./2.8.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm16 management public management leadership motivation control">
+            <div class="topic-top"><span class="number-tag">P16</span><span class="track-tag">Public</span></div>
+            <h4>2.9 व्यवस्थापनको अवधारणा तथा सार्वजनिक व्यवस्थापनमा निर्देशन, नियन्त्रण, समन्वय, निर्णय प्रक्रिया, उत्प्रेरणा र नेतृत्व</h4>
+            <p>व्यवस्थापन र सार्वजनिक व्यवस्थापनसम्बन्धी मुख्य अवधारणाहरूमा आधारित MCQ।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">🎯 Management</span></div>
+            <a class="open-link" href="./2.9.html">Open Public Set</a>
+        </article>
+
+        <article class="topic-card" data-group="public" data-tags="pm17 human values duties discipline new">
+            <div class="topic-top"><span class="number-tag">P17</span><span class="track-tag">NEW</span></div>
+            <h4>2.10 मानवीय मूल्य मान्यता (Human Values), नागरिक कर्तव्य र दायित्व तथा अनुशासन</h4>
+            <p>मानवीय मूल्य, नागरिक कर्तव्य, दायित्व र अनुशासनसम्बन्धी नयाँ MCQ सेट।</p>
+            <div class="meta-row"><span class="meta-chip"><strong>Public</strong> topic</span><span class="meta-chip">🌟 Values</span></div>
+            <a class="open-link" href="./2.10.html">Open Public Set</a>
+        </article>
+    </div>
+</section>
+
+                <section class="section-shell featured-zone" id="mocks" aria-labelledby="mocks-title">
+                    <div class="section-head">
+                        <div>
+                            <div class="section-kicker">Mock Zone</div>
+                            <h3 id="mocks-title">Mock Tests, Public Management and GK</h3>
+                            <p>Choose by purpose instead of guessing: full-paper mocks for exam rhythm, public-management review sets for support coverage, and GK-focused drills for score recovery.</p>
+                        </div>
+                        <div class="count-chip">20 mixed revision sets</div>
+                    </div>
+
+                    <div class="section-guide" aria-label="Mock zone guide">
+                        <div class="guide-card">
+                            <strong>Use full mocks for exam rhythm</strong>
+                            <p>These are best when you want mixed-question pressure, timing practice, and full-paper confidence.</p>
+                        </div>
+                        <div class="guide-card">
+                            <strong>Use public sets to close support gaps</strong>
+                            <p>Choose these when your technical prep is fine but public-management marks still feel unstable.</p>
+                        </div>
+                        <div class="guide-card">
+                            <strong>Use GK drills for quick score boosts</strong>
+                            <p>These are handy near the exam when you want short, focused revision on GK-heavy areas.</p>
+                        </div>
+                    </div>
+
+                    <div class="subsection-block">
+                        <div class="subsection-head">
+                            <div>
+                                <h4>Full Mock Exams</h4>
+                                <p>Start here when you want the closest thing to a mixed-paper rehearsal. These sets combine breadth, speed, and exam-style pressure.</p>
+                            </div>
+                            <div class="subsection-chip">11 mock-focused sets</div>
+                        </div>
+
+                        <div class="card-grid subsection-grid">
+                            <article class="topic-card" data-group="mock" data-tags="mock test 1 50 mcqs full practice beginner mixed">
+                                <div class="topic-top"><span class="number-tag">MX1</span><span class="track-tag">Full Mock</span></div>
+                                <h4>Mock Test 1</h4>
+                                <p>Good first mixed mock for warming up before you move into harder combined sets.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>50</strong> MCQs</span><span class="meta-chip">🧪 Best to start</span></div>
+                                <a class="open-link" href="mock-test1.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="mock" data-tags="mock test 2 50 mcqs full practice second mixed">
+                                <div class="topic-top"><span class="number-tag">MX2</span><span class="track-tag">Full Mock</span></div>
+                                <h4>Mock Test 2</h4>
+                                <p>Second full mixed mock for checking whether your revision is improving round to round.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>50</strong> MCQs</span><span class="meta-chip">📘 Mixed paper</span></div>
+                                <a class="open-link" href="mock-test2.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="mock" data-tags="koshi mock level 4 regional full exam">
+                                <div class="topic-top"><span class="number-tag">MX3</span><span class="track-tag">Full Mock</span></div>
+                                <h4>Koshi Mock Test</h4>
+                                <p>Regional-style mock aimed at Level 4 preparation with full-set practice flow.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>Level 4</strong> format</span><span class="meta-chip">🌊 Koshi set</span></div>
+                                <a class="open-link" href="koshi-mock.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="mock" data-tags="mock test 3 four options speed practice">
+                                <div class="topic-top"><span class="number-tag">MX4</span><span class="track-tag">Full Mock</span></div>
+                                <h4>Mock Test 3</h4>
+                                <p>Four-option mock for faster elimination practice and better decision speed.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>4</strong> options</span><span class="meta-chip">⚡ Speed drill</span></div>
+                                <a class="open-link" href="mock-test3.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="mock" data-tags="mock test 4 four options exam practice">
+                                <div class="topic-top"><span class="number-tag">MX5</span><span class="track-tag">Full Mock</span></div>
+                                <h4>Mock Test 4</h4>
+                                <p>Use this after Mock 3 when you want another full run under the same format.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>4</strong> options</span><span class="meta-chip">📝 Repeat cycle</span></div>
+                                <a class="open-link" href="mock-test4.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="mock" data-tags="mock test 5 four options confidence build">
+                                <div class="topic-top"><span class="number-tag">MX6</span><span class="track-tag">Full Mock</span></div>
+                                <h4>Mock Test 5</h4>
+                                <p>Another exam-style mock for building consistency before you jump into paper-specific sets.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>4</strong> options</span><span class="meta-chip">🎯 Confidence build</span></div>
+                                <a class="open-link" href="mock-test5.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="mock technical" data-tags="mock test 9 senior welder mechanics 2078 paper technical only">
+                                <div class="topic-top"><span class="number-tag">MX7</span><span class="track-tag">Paper Style</span></div>
+                                <h4>Mock Test 9 Senior Welder Mechanics Only</h4>
+                                <p>Technical-only practice based on a 2078 paper style, useful when mechanics needs extra focus.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>2078</strong> style</span><span class="meta-chip">⚙️ Technical only</span></div>
+                                <a class="open-link" href="mock-test9.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="mock technical" data-tags="mock test 10 junior mechanics 2081 final paper">
+                                <div class="topic-top"><span class="number-tag">MX8</span><span class="track-tag">Paper Style</span></div>
+                                <h4>Mock Test 10 Final Junior Mechanics 2081 Paper</h4>
+                                <p>Best used near the end of preparation when you want a final exam-style mechanics check.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>2081</strong> paper</span><span class="meta-chip">🏁 Final rehearsal</span></div>
+                                <a class="open-link" href="mock-test10.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="mock" data-tags="2081 mechanics paper mock past paper full revision">
+                                <div class="topic-top"><span class="number-tag">MX9</span><span class="track-tag">Paper Style</span></div>
+                                <h4>2081 Mechanics Paper Mock Test</h4>
+                                <p>Past-style mechanics revision for testing recall under a more realistic paper pattern.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>Past</strong> pattern</span><span class="meta-chip">🧰 Mechanics focus</span></div>
+                                <a class="open-link" href="2081-4th.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="public gk mock" data-tags="mock test 6 gk public management old questions mixed">
+                                <div class="topic-top"><span class="number-tag">MX10</span><span class="track-tag">Mixed Mock</span></div>
+                                <h4>Mock Test 6 GK and Public Management</h4>
+                                <p>Older mixed questions that are useful for broad recall and quick support-subject review.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>Mixed</strong> archive</span><span class="meta-chip">📚 Old questions</span></div>
+                                <a class="open-link" href="Mock-test6.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="public gk mock" data-tags="public management gk mixed mock practice">
+                                <div class="topic-top"><span class="number-tag">MX11</span><span class="track-tag">Mixed Mock</span></div>
+                                <h4>Public Management and GK</h4>
+                                <p>Balanced mixed practice for users who want both support subjects in one sitting.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>Public</strong> + GK</span><span class="meta-chip">🔄 Mixed support</span></div>
+                                <a class="open-link" href="mock-test16.html">Open Practice Set</a>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="subsection-block">
+                        <div class="subsection-head">
+                            <div>
+                                <h4>Public Management Review</h4>
+                                <p>Use these when you want to reinforce office procedure, governance, or public-management understanding without leaving the mock zone.</p>
+                            </div>
+                            <div class="subsection-chip">4 support-heavy sets</div>
+                        </div>
+
+                        <div class="card-grid subsection-grid">
+                            <article class="topic-card" data-group="public" data-tags="public management summary revision notes quick review">
+                                <div class="topic-top"><span class="number-tag">PM1</span><span class="track-tag">Public Review</span></div>
+                                <h4>Public Management Summarized</h4>
+                                <p>Fast revision notes for office and public-management concepts before attempting full MCQ sets.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>Fast</strong> review</span><span class="meta-chip">🏛️ Concepts first</span></div>
+                                <a class="open-link" href="public-management.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="public gk mock" data-tags="public management gk mock test combined exam style">
+                                <div class="topic-top"><span class="number-tag">PM2</span><span class="track-tag">Public Review</span></div>
+                                <h4>Public Management and GK Mock Test</h4>
+                                <p>Combined exam-style set that strengthens public-management confidence while keeping GK in play.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>Mixed</strong> set</span><span class="meta-chip">📘 Support balance</span></div>
+                                <a class="open-link" href="public2.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="public gk mock" data-tags="latest public gk mock test updated mixed">
+                                <div class="topic-top"><span class="number-tag">PM3</span><span class="track-tag">Public Review</span></div>
+                                <h4>Latest Public and GK Mock Test</h4>
+                                <p>Updated mixed practice for users who want a newer support-subject revision set.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>Latest</strong> mix</span><span class="meta-chip">🚀 Updated set</span></div>
+                                <a class="open-link" href="publics.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="public mock" data-tags="all topic public management mcqs 84 mixed coverage">
+                                <div class="topic-top"><span class="number-tag">PM4</span><span class="track-tag">Public Review</span></div>
+                                <h4>All Topic Public Management MCQs</h4>
+                                <p>Broader public-management coverage when you want a larger pool instead of short revision bursts.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>84</strong> MCQs</span><span class="meta-chip">🗂️ Broad coverage</span></div>
+                                <a class="open-link" href="public-mock.html">Open Practice Set</a>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="subsection-block">
+                        <div class="subsection-head">
+                            <div>
+                                <h4>GK Focus and Booster Sets</h4>
+                                <p>Good for quick score improvement, constitution recall, and latest GK brushing when you do not want a full mixed mock.</p>
+                            </div>
+                            <div class="subsection-chip">5 GK-leaning sets</div>
+                        </div>
+
+                        <div class="card-grid subsection-grid">
+                            <article class="topic-card" data-group="gk mock" data-tags="mock test 7 civil gk sambidhan constitution focus">
+                                <div class="topic-top"><span class="number-tag">GK1</span><span class="track-tag">GK Focus</span></div>
+                                <h4>Mock Test 7 Civil GK and Constitution</h4>
+                                <p>Helpful when you need targeted GK and constitution recall in a civil-style pattern.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>Civil</strong> style</span><span class="meta-chip">📜 Constitution</span></div>
+                                <a class="open-link" href="mock-test7.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="gk mock" data-tags="mock test 8 senior welder gk sambidhan predicted">
+                                <div class="topic-top"><span class="number-tag">GK2</span><span class="track-tag">GK Focus</span></div>
+                                <h4>Mock Test 8 Senior Welder GK and Constitution</h4>
+                                <p>Predicted support-subject practice with a stronger GK and constitution angle.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>Predicted</strong> set</span><span class="meta-chip">🔥 GK booster</span></div>
+                                <a class="open-link" href="mock-test8.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="gk mock" data-tags="gk general knowledge practice quick drill">
+                                <div class="topic-top"><span class="number-tag">GK3</span><span class="track-tag">GK Focus</span></div>
+                                <h4>GK Practice Set</h4>
+                                <p>Shorter focused GK revision when you want to improve support marks quickly.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>GK</strong> only</span><span class="meta-chip">⚡ Quick drill</span></div>
+                                <a class="open-link" href="mock-test17.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="gk mock" data-tags="gk mock test latest exam mode">
+                                <div class="topic-top"><span class="number-tag">GK4</span><span class="track-tag">GK Focus</span></div>
+                                <h4>GK Mock Test</h4>
+                                <p>Dedicated GK paper-style practice for testing recall without technical distractions.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>GK</strong> mock</span><span class="meta-chip">🧠 Recall test</span></div>
+                                <a class="open-link" href="mock-test18.html">Open Practice Set</a>
+                            </article>
+
+                            <article class="topic-card" data-group="gk" data-tags="past exam gk latest 55 recent set">
+                                <div class="topic-top"><span class="number-tag">GK5</span><span class="track-tag">GK Focus</span></div>
+                                <h4>Past GK MCQs Latest Set</h4>
+                                <p>Recent-style GK practice for polishing your final revision before the exam window.</p>
+                                <div class="meta-row"><span class="meta-chip"><strong>55</strong> MCQs</span><span class="meta-chip">📰 Recent GK</span></div>
+                                <a class="open-link" href="main-gk.html">Open Practice Set</a>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="explore-banner" aria-labelledby="explore-all-title">
+                <div>
+                    <h3 id="explore-all-title">Need every mock test in one place?</h3>
+                    <p>Everything is now included inside this page, so you can browse all mock, GK, and public sets from one place.</p>
+                </div>
+                <a class="banner-link" href="#mocks">Jump to Mock Zone</a>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-note">
+                Junior Mechanics Level 4 preparation portal built for fast revision, clear navigation, and reliable use on all screen sizes.
+            </div>
+            <div>© 2025 BerlinNeverDie</div>
+        </footer>
+    </div>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+
+    <script>
+        const cards = Array.from(document.querySelectorAll(".topic-card"));
+        const filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
+        const searchInput = document.getElementById("topic-search");
+        const resultCount = document.getElementById("result-count");
+        const emptyState = document.getElementById("empty-state");
+        const backToTop = document.getElementById("backToTop");
+
+        let activeFilter = "all";
+
+        function matchesFilter(card, filter) {
+            if (filter === "all") return true;
+            const groups = (card.dataset.group || "").split(" ");
+            return groups.includes(filter);
+        }
+
+        function matchesSearch(card, query) {
+            if (!query) return true;
+            const searchableText = `${card.textContent} ${card.dataset.tags || ""}`.toLowerCase();
+            return searchableText.includes(query);
+        }
+
+        function updateCards() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            cards.forEach((card) => {
+                const shouldShow = matchesFilter(card, activeFilter) && matchesSearch(card, query);
+                card.classList.toggle("hide", !shouldShow);
+                if (shouldShow) visibleCount += 1;
+            });
+
+            resultCount.textContent = `Showing ${visibleCount} set${visibleCount === 1 ? "" : "s"}`;
+            emptyState.style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                activeFilter = button.dataset.filter;
+                filterButtons.forEach((btn) => btn.classList.toggle("active", btn === button));
+                updateCards();
+            });
+        });
+
+        searchInput.addEventListener("input", updateCards);
+
+        window.addEventListener("scroll", () => {
+            backToTop.classList.toggle("show", window.scrollY > 420);
+        });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        updateCards();
+    </script>
+</body>
+</html>

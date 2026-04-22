@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>लोक सेवा आयोग – Public Management MCQ Quiz (84 Questions)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+    <base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>लोक सेवा आयोग – Public Management MCQ Quiz (84 Questions)</h1>
+                        <div class="subtitle">Public Service</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">0</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" onclick="restartQuiz()">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+const quizConfig = { quizId: "public-mock", quizTitle: "\u0932\u094b\u0915 \u0938\u0947\u0935\u093e \u0906\u092f\u094b\u0917 \u2013 Public Management MCQ Quiz (84 Questions)", displayTitle: "\u0932\u094b\u0915 \u0938\u0947\u0935\u093e \u0906\u092f\u094b\u0917 \u2013 Public Management MCQ Quiz (84 Questions)", topicName: "Public Service" };
+const rawQuestions = [
+      // 2.1.1: कार्यालय व्यवस्थापन (Office Management) - 8 MCQs
+      { q: "कार्यालयको शाब्दिक अर्थ के हो?", options: ['काम गर्ने ठाउँ', 'नियन्त्रण गर्ने ठाउँ', 'सञ्चार गर्ने ठाउँ', 'भण्डारण गर्ने ठाउँ'], answer: 0, explanation: "कार्यालयको शाब्दिक अर्थ 'काम गर्ने ठाउँ' हो, जहाँ प्रशासनिक र व्यवस्थापकीय कार्यहरू सम्पन्न हुन्छन्।" },
+      { q: "कार्यालयको 'सूचना केन्द्र' को रूपमा कुन भूमिका हुन्छ?", options: ['सेवा प्रदान गर्ने', 'सूचना संकलन र वितरण गर्ने', 'समन्वय गर्ने', 'नियन्त्रण गर्ने'], answer: 1, explanation: "कार्यालयले सूचना केन्द्रको रूपमा सूचना संकलन, प्रशोधन, र वितरण गर्छ, जुन निर्णय प्रक्रियालाई सहज बनाउँछ।" },
+      { q: "स्वामित्वको आधारमा कुन कार्यालय 'सार्वजनिक कार्यालय' को उदाहरण हो?", options: ['बुद्ध एयर', 'नबिल बैंक', 'गृह मन्त्रालय', 'विश्व बैंक'], answer: 2, explanation: "गृह मन्त्रालय सरकारी स्वामित्वको सार्वजनिक कार्यालय हो; अन्य निजी वा अन्तर्राष्ट्रिय संस्थाहरू हुन्।" },
+      { q: "भौगोलिक सीमानाको आधारमा 'राष्ट्रिय कार्यालय' को उदाहरण कुन हो?", options: ['यूनेस्को', 'विश्व बैंक', 'मानव अधिकार आयोग', 'स्थानीय तह कार्यालय'], answer: 2, explanation: "मानव अधिकार आयोग राष्ट्रिय स्तरको कार्यालय हो, जबकि यूनेस्को र विश्व बैंक अन्तर्राष्ट्रिय र स्थानीय तह स्थानिय हुन्।" },
+      { q: "प्रकृतिको आधारमा 'अस्थायी कार्यालय' को उदाहरण कुन हो?", options: ['जिल्ला प्रशासन कार्यालय', 'मालपोत कार्यालय', 'जनगणना कार्यालय', 'केन्द्रीय मन्त्रालय'], answer: 2, explanation: "जनगणना कार्यालय निश्चित अवधिको लागि स्थापना हुने अस्थायी कार्यालय हो।" },
+      { q: "कार्यालयको आधारभूत कार्यमा कुन पर्दैन?", options: ['सूचना संकलन', 'नीति तर्जुमा', 'सूचना संरक्षण', 'प्रशासन सञ्चालन'], answer: 1, explanation: "नीति तर्जुमा कार्यालयको आधारभूत कार्य नभई माथिल्लो तहको नीतिगत कार्य हो।" },
+      { q: "कार्यालयको व्यवस्थापकीय कार्यमा कुन समावेश हुन्छ?", options: ['सूचना संचार', 'मानव संसाधन व्यवस्थापन', 'सम्पर्क बिन्दुको कार्य', 'सूचना प्रशोधन'], answer: 1, explanation: "मानव संसाधन व्यवस्थापन कार्यालयको व्यवस्थापकीय कार्य हो, जसमा कर्मचारी भर्ना र प्रशिक्षण समावेश हुन्छ।" },
+      { q: "सङ्घीय नेपालमा कति वटा स्थानीय तहका कार्यालयहरू स्थापना गरिएको छ?", options: ['७५३', '७५०', '७६०', '७४३'], answer: 0, explanation: "नेपालको संविधान २०७२ अनुसार ७५३ स्थानीय तहका कार्यालयहरू स्थापना भएका छन्।" },
+
+      // 2.1.2: कर्मचारी व्यवस्थापन (Personnel Management) - 10 MCQs
+      { q: "सहायक कर्मचारी भनेको कुन तहका कर्मचारी हुन्?", options: ['अधिकृत तहका', 'माथिल्लो तहबाट निर्देशन पालना गर्ने कर्मचारी', 'नीति निर्माता', 'प्रादेशिक कर्मचारी'], answer: 1, explanation: "सहायक कर्मचारीले माथिल्लो तह (अधिकृत) बाट निर्देशन पालना गर्छन् र प्रशासनिक कार्यमा सहयोग गर्छन्।" },
+      { q: "निजामती कर्मचारीको अवकाश उमेर कति छ?", options: ['५५ वर्ष', '५८ वर्ष', '६० वर्ष', '६२ वर्ष'], answer: 2, explanation: "निजामती सेवा ऐन २०४९ अनुसार कर्मचारीको अवकाश उमेर ६० वर्ष छ।" },
+      { q: "कामको प्रकृतिको आधारमा कर्मचारी कसरी वर्गीकरण गरिन्छ?", options: ['स्थायी र अस्थायी', 'प्राविधिक र अप्राविधिक', 'राजपत्रांकित र अनंकित', 'अधिकृत र सहायक'], answer: 1, explanation: "कामको प्रकृतिमा कर्मचारीलाई प्राविधिक (जस्तै, इन्जिनियर) र अप्राविधिक (जस्तै, प्रशासन) मा वर्गीकरण गरिन्छ।" },
+      { q: "निजामती सेवा ऐन अनुसार राजपत्रांकित कर्मचारीको उच्चतम श्रेणी कुन हो?", options: ['प्रथम श्रेणी', 'विशिष्ट श्रेणी', 'द्वितीय श्रेणी', 'तृतीय श्रेणी'], answer: 1, explanation: "विशिष्ट श्रेणी राजपत्रांकित कर्मचारीको उच्चतम श्रेणी हो, जस्तै, सचिव।" },
+      { q: "सहायक कर्मचारीको कार्यमा कुन समावेश छैन?", options: ['अभिलेख व्यवस्थापन', 'बजेट तर्जुमा', 'सेवा प्रवाह', 'निर्देशन पालना'], answer: 1, explanation: "बजेट तर्जुमा नीतिगत कार्य हो, जुन सहायक कर्मचारीको जिम्मेवारीमा पर्दैन।" },
+      { q: "सहायक कर्मचारीमा हुनुपर्ने गुणमा कुन पर्दैन?", options: ['सकारात्मक सोच', 'नैतिक व्यवहार', 'नीति निर्माण', 'नियम पालना'], answer: 2, explanation: "नीति निर्माण माथिल्लो तहको जिम्मेवारी हो, सहायक कर्मचारीको गुणमा समावेश हुँदैन।" },
+      { q: "१० वर्ष सेवा गरेको कर्मचारीको उपदान कसरी गणना गरिन्छ?", options: ['प्रत्येक वर्षको लागि आधा महिनाको तलब × सेवा वर्ष', 'प्रत्येक वर्षको लागि १ महिनाको तलब × सेवा वर्ष', 'प्रत्येक वर्षको लागि २ महिनाको तलब × सेवा वर्ष', 'अन्तिम तलब × सेवा वर्ष'], answer: 0, explanation: "निजामती सेवा नियमावली अनुसार उपदान = आधा महिनाको तलब × सेवा वर्ष।" },
+      { q: "महिला कर्मचारीको परिक्षण काल (Probation Period) कति हुन्छ?", options: ['६ महिना', '१२ महिना', '१८ महिना', '२४ महिना'], answer: 0, explanation: "महिला कर्मचारीको परिक्षण काल ६ महिना हुन्छ, पुरुषको १ वर्ष।" },
+      { q: "निजामती कर्मचारीले पालना गर्नुपर्ने आचरणमा कुन समावेश छैन?", options: ['समय पालना', 'अनुशासन', 'राजनीतिमा भाग लिने', 'सरकारी आलोचना नगर्ने'], answer: 2, explanation: "निजामती कर्मचारीलाई राजनीतिमा भाग लिन निषेध छ।" },
+      { q: "निजामती कर्मचारीलाई कुन कार्यमा प्रतिबन्ध छ?", options: ['सम्पत्ति विवरण बुझाउने', 'प्रदर्शन र हड्ताल गर्ने', 'सेवा ग्राहीसँग मर्यादित व्यवहार गर्ने', 'समय पालना गर्ने'], answer: 1, explanation: "निजामती कर्मचारीलाई हड्ताल र प्रदर्शनमा प्रतिबन्ध छ।" },
+
+      // 2.1.3: कार्यालय स्रोत साधन (Office Resources) - 5 MCQs
+      { q: "कार्यालय स्रोत साधन भनेको के हो?", options: ['कार्यालयका कर्मचारीहरू', 'कार्यालयका लक्ष्य हासिल गर्न आवश्यक साधनहरू', 'कार्यालयका भौतिक संरचनाहरू', 'कार्यालयका नीतिहरू'], answer: 1, explanation: "स्रोत साधनले कार्यालयको लक्ष्य प्राप्तिका लागि आवश्यक भौतिक, मानव, र वित्तीय साधनहरूलाई जनाउँछ।" },
+      { q: "कुन स्रोत 'भौतिक स्रोत' को रूपमा पर्छ?", options: ['कम्प्युटर र इन्टरनेट', 'भवन र फर्निचर', 'वित्तीय कोष', 'बौद्धिक सम्पत्ति'], answer: 1, explanation: "भवन र फर्निचर भौतिक स्रोत हुन्, जुन कार्यालय सञ्चालनमा प्रयोग हुन्छ।" },
+      { q: "स्रोत साधनको वर्गीकरणमा 'सजीव र निर्जीव' को आधारमा कुन सजीव स्रोत हो?", options: ['भवन', 'कम्प्युटर', 'कर्मचारी', 'गाडी'], answer: 2, explanation: "कर्मचारी सजीव स्रोत हो, बाँकी निर्जीव स्रोत हुन्।" },
+      { q: "कार्यालयमा स्रोत साधनको आवश्यकता किन पर्छ?", options: ['स्रोत परिचालन गर्न', 'नीति तर्जुमा गर्न', 'कर्मचारी भर्ना गर्न', 'सम्पत्ति बिक्री गर्न'], answer: 0, explanation: "स्रोत साधनको परिचालनले कार्यालयको कार्य सम्पादन र सेवा प्रवाहमा सहयोग गर्छ।" },
+      { q: "कार्यालय स्रोत साधनमा कुन समस्या समावेश छ?", options: ['नेतृत्वको कमी', 'कर्मचारीको अभाव', 'नीतिको अभाव', 'बजेटको अभाव'], answer: 0, explanation: "नेतृत्वको कमीले स्रोत साधनको प्रभावकारी उपयोगमा बाधा पुर्‍याउँछ।" },
+
+      // 2.1.4: सञ्चार (Communication) - 7 MCQs
+      { q: "कार्यालय सञ्चार भनेको के हो?", options: ['दैनिक कार्य सञ्चालन र सूचना आदानप्रदान', 'नीति तर्जुमा र कार्यान्वयन', 'स्रोत साधन व्यवस्थापन', 'कर्मचारी भर्ना'], answer: 0, explanation: "कार्यालय सञ्चारले सूचना आदानप्रदानमार्फत कार्य सञ्चालन र समन्वय गर्छ।" },
+      { q: "सञ्चारको पहिलो तत्व कुन हो?", options: ['सन्देश', 'प्रेषक', 'माध्यम', 'प्राप्तकर्ता'], answer: 1, explanation: "प्रेषकले सञ्चार प्रक्रिया शुरू गर्छ, जुन पहिलो तत्व हो।" },
+      { q: "कार्यालयमा सञ्चारको महत्त्व के हो?", options: ['नीति तर्जुमा गर्न', 'सुशासन कायम गर्न', 'स्रोत साधन व्यवस्थापन गर्न', 'कर्मचारी भर्ना गर्न'], answer: 1, explanation: "सञ्चारले सुशासन, पारदर्शिता, र समन्वय कायम गर्छ।" },
+      { q: "सञ्चारको लिखित माध्यममा कुन समावेश हुन्छ?", options: ['टेलिफोन वार्ता', 'प्रत्यक्ष छलफल', 'पत्र र प्रतिवेदन', 'बैठक'], answer: 2, explanation: "पत्र र प्रतिवेदन लिखित सञ्चारका माध्यम हुन्।" },
+      { q: "सञ्चारको कुन प्रकार 'दुतर्फी सञ्चार' को उदाहरण हो?", options: ['टेलिफोन वार्ता', 'पत्राचार', 'रेडियो प्रसारण', 'टेलिभिजन प्रसारण'], answer: 0, explanation: "टेलिफोन वार्ता दुतर्फी सञ्चार हो, जहाँ प्रेषक र प्राप्तकर्ता दुवै सक्रिय हुन्छन्।" },
+      { q: "असल सञ्चारको गुणमा कुन समावेश छ?", options: ['अस्पष्टता', 'एकरूपता', 'अनौपचारिकता', 'जटिलता'], answer: 1, explanation: "एकरूपताले सञ्चारलाई स्पष्ट र प्रभावकारी बनाउँछ।" },
+      { q: "सञ्चारको विशेषतामा कुन समावेश छैन?", options: ['दुई वा बढी पक्षको संलग्नता', 'निरन्तर प्रक्रिया', 'नीति तर्जुमा प्रक्रिया', 'समन्वयको आधार'], answer: 2, explanation: "नीति तर्जुमा सञ्चारको विशेषता नभई छुट्टै प्रक्रिया हो।" },
+
+      // 2.1.5: कार्यालय कार्यविधि (Office Procedures) - 13 MCQs
+      { q: "पत्र व्यवहार भनेको के हो?", options: ['लिखित रूपमा सूचना आदानप्रदान', 'मौखिक रूपमा छलफल', 'स्रोत साधन व्यवस्थापन', 'नीति तर्जुमा'], answer: 0, explanation: "पत्र व्यवहारले लिखित रूपमा औपचारिक सूचना आदानप्रदान गर्छ।" },
+      { q: "पत्र व्यवहारको मुख्य उद्देश्य के हो?", options: ['नीति कार्यान्वयन', 'औपचारिक सम्पर्क कायम गर्न', 'स्रोत परिचालन', 'कर्मचारी भर्ना'], answer: 1, explanation: "पत्र व्यवहारले कार्यालयहरूबीच औपचारिक सम्पर्क र निर्देशन प्रवाह गर्छ।" },
+      { q: "प्रयोगको आधारमा 'सरकारी पत्र' को उदाहरण कुन हो?", options: ['व्यक्तिगत पत्र', 'व्यवसायिक पत्र', 'गृह मन्त्रालयको पत्र', 'आवेदन पत्र'], answer: 2, explanation: "गृह मन्त्रालयको पत्र सरकारी पत्र हो, जुन औपचारिक र प्रशासनिक हुन्छ।" },
+      { q: "'अति जसरी' पत्रलाई माथिल्लो तहमा पठाउनु अघि कति दिनभित्र कारवाही गर्नुपर्छ?", options: ['१ दिन', '३ दिन', '४ दिन', '७ दिन'], answer: 1, explanation: "अति जसरी पत्रलाई ३ दिनभित्र कारवाही गर्नुपर्छ, नभए माथिल्लो तहमा पठाइन्छ।" },
+      { q: "चलानीको महत्त्व के हो?", options: ['नीति तर्जुमा गर्न', 'अभिलेख व्यवस्थापन गर्न', 'स्रोत परिचालन गर्न', 'कर्मचारी भर्ना गर्न'], answer: 1, explanation: "चलानीले पत्रको अभिलेख र ट्र्याकिङमा सहयोग गर्छ।" },
+      { q: "चलानी किताबमा कुन विवरण समावेश हुन्छ?", options: ['कर्मचारीको नाम', 'चलानी नम्बर', 'नीति तर्जुमा', 'स्रोत साधन'], answer: 1, explanation: "चलानी किताबमा चलानी नम्बर, मिति, र प्राप्तकर्ताको विवरण राखिन्छ।" },
+      { q: "परिपत्र कस्तो सूचना हो?", options: ['मातहतका कार्यालयलाई पठाइने सूचना', 'कर्मचारी भर्ना सम्बन्धी सूचना', 'स्रोत साधन सम्बन्धी सूचना', 'नीति तर्जुमा सम्बन्धी सूचना'], answer: 0, explanation: "परिपत्र मातहतका कार्यालयलाई निर्देशन वा सूचना पठाउन प्रयोग हुन्छ।" },
+      { q: "पत्र व्यवहारको कुन प्रकारलाई 'गोप्य' पत्र भनिन्छ?", options: ['साधारण पत्र', 'जसरी पत्र', 'अति जसरी पत्र', 'संवेदनशील सूचनासहितको पत्र'], answer: 3, explanation: "गोप्य पत्रमा संवेदनशील सूचना हुन्छ र गोपनीयताका साथ ह्यान्डल गरिन्छ।" },
+      { q: "एउटा 'साधारण' पत्रलाई माथिल्लो तहमा पठाउनु अघि कति दिनभित्र कारवाही गर्नुपर्छ?", options: ['३ दिन', '४ दिन', '७ दिन', '१० दिन'], answer: 2, explanation: "साधारण पत्रलाई ७ दिनभित्र कारवाही गर्नुपर्छ।" },
+      { q: "दर्ता किताबमा कुन विवरण अनिवार्य रूपमा समावेश हुन्छ?", options: ['कर्मचारीको नाम', 'दर्ता मिति र नम्बर', 'नीति तर्जुमा', 'स्रोत साधन'], answer: 1, explanation: "दर्ता किताबमा पत्रको दर्ता मिति, नम्बर, र विषय अनिवार्य हुन्छ।" },
+      { q: "परिपत्रको मुख्य उद्देश्य के हो?", options: ['सेवा ग्राहीलाई सूचना दिने', 'मातहतका कार्यालयलाई निर्देशन दिने', 'कर्मचारी भर्ना गर्ने', 'स्रोत परिचालन गर्ने'], answer: 1, explanation: "परिपत्रले मातहतका कार्यालयलाई नीति वा निर्देशन कार्यान्वयन गर्न सूचित गर्छ।" },
+      { q: "आदर्श पत्रको कुन विशेषता महत्त्वपूर्ण हुन्छ?", options: ['जटिल भाषा', 'अस्पष्टता', 'संक्षिप्तता', 'अनौपचारिकता'], answer: 2, explanation: "आदर्श पत्र संक्षिप्त, स्पष्ट, र औपचारिक हुन्छ।" },
+      { q: "चलानी प्रक्रियाले कुन कुरामा सहयोग गर्छ?", options: ['सूचना लुकाउन', 'सूचना ट्र्याक गर्न', 'कर्मचारी भर्ना गर्न', 'नीति तर्जुमा गर्न'], answer: 1, explanation: "चलानीले पत्रको गन्तव्य र स्थिति ट्र्याक गर्न सहयोग गर्छ।" },
+
+      // 2.1.6: बजेट, लेखा, लेखापरीक्षण (Budgeting, Accounting, and Auditing) - 11 MCQs
+      { q: "बजेट भनेको के हो?", options: ['राजस्व र व्ययको विवरण', 'स्रोत साधनको व्यवस्थापन', 'कर्मचारी भर्ना प्रक्रिया', 'नीति तर्जुमा प्रक्रिया'], answer: 0, explanation: "बजेटले आगामी आर्थिक वर्षको राजस्व र व्ययको योजनाबद्ध विवरण प्रस्तुत गर्छ।" },
+      { q: "आय र व्ययको आधारमा कुन बजेट 'सन्तुलित बजेट' हो?", options: ['आय र व्यय बराबर हुने', 'आयभन्दा व्यय बढी हुने', 'व्ययभन्दा आय बढी हुने', 'आय र व्यय असन्तुलित हुने'], answer: 0, explanation: "सन्तुलित बजेटमा आय र व्यय बराबर हुन्छ।" },
+      { q: "आ.व. २०७९/८० को कुल बजेट कति थियो?", options: ['रु. १५.९३ खर्ब', 'रु. १७.९३ खर्ब', 'रु. १९.९३ खर्ब', 'रु. १४.९३ खर्ब'], answer: 1, explanation: "आ.व. २०७९/८० को कुल बजेट रु. १७.९३ खर्ब थियो।" },
+      { q: "आ.व. २०७९/८० मा स्वास्थ्य क्षेत्रको बजेट कति थियो?", options: ['रु. १.३१ खर्ब', 'रु. १.५१ खर्ब', 'रु. १.११ खर्ब', 'रु. १.७१ खर्ब'], answer: 0, explanation: "स्वास्थ्य क्षेत्रको बजेट रु. १.३१ खर्ब थियो।" },
+      { q: "नेपालमा पहिलो बजेट कहिले प्रस्तुत गरिएको थियो?", options: ['वि.स. २००५ माघ २१', 'वि.स. २०१० माघ २१', 'वि.स. २००० माघ २१', 'वि.स. २०१५ माघ २१'], answer: 0, explanation: "नेपालको पहिलो बजेट वि.स. २००५ माघ २१ मा प्रस्तुत भएको थियो।" },
+      { q: "आ.व. २०७९/८० को चालु बजेट कति थियो?", options: ['रु. ७.७२ खर्ब', 'रु. ३.८० खर्ब', 'रु. ३.३० खर्ब', 'रु. ४.२९ खर्ब'], answer: 0, explanation: "चालु बजेट रु. ७.७२ खर्ब थियो।" },
+      { q: "आ.व. २०७९/८० को पूँजीगत बजेट कति थियो?", options: ['रु. ७.७२ खर्ब', 'रु. ३.८० खर्ब', 'रु. ३.३० खर्ब', 'रु. ४.२९ खर्ब'], answer: 1, explanation: "पूँजीगत बजेट रु. ३.८० खर्ब थियो।" },
+      { q: "नेपालको पहिलो बजेटको राजस्व कति थियो?", options: ['रु. ३.०४ करोड', 'रु. ४.२४ करोड', 'रु. २.५० करोड', 'रु. ५.०० करोड'], answer: 0, explanation: "पहिलो बजेटको राजस्व रु. ३.०४ करोड थियो।" },
+      { q: "लेखा परिक्षणको मुख्य उद्देश्य के हो?", options: ['बजेट तर्जुमा', 'वित्तीय पारदर्शिता सुनिश्चित गर्ने', 'स्रोत परिचालन', 'कर्मचारी भर्ना'], answer: 1, explanation: "लेखा परिक्षणले वित्तीय लेनदेनको पारदर्शिता र नियमितता सुनिश्चित गर्छ।" },
+      { q: "उद्देश्यको आधारमा कुन बजेटलाई 'कार्यसम्पादन बजेट' भनिन्छ?", options: ['आय र व्यय बराबर हुने', 'कार्यसम्पादनमा आधारित', 'शून्य आधारित', 'चालु बजेट'], answer: 1, explanation: "कार्यसम्पादन बजेटले कार्यको नतिजामा आधारित रकम विनियोजन गर्छ।" },
+      { q: "आ.व. २०७९/८० को बजेटमा कुन क्षेत्रलाई प्राथमिकता दिइएको थियो?", options: ['स्वास्थ्य क्षेत्र', 'कर्मचारी भर्ना', 'स्रोत परिचालन', 'नीति तर्जुमा'], answer: 0, explanation: "स्वास्थ्य क्षेत्रलाई बजेटमा प्राथमिकता दिइएको थियो।" },
+
+      // 2.2.1: योजना र निर्णय प्रक्रिया (Planning and Decision Making) - 4 MCQs
+      { q: "योजनाको मुख्य उद्देश्य के हो?", options: ['कर्मचारी भर्ना', 'लक्ष्य प्राप्ति र समन्वय', 'स्रोत बिक्री', 'नीति परिवर्तन'], answer: 1, explanation: "योजनाले लक्ष्य प्राप्त गर्न र कार्यहरूमा समन्वय गर्न मार्गदर्शन गर्छ।" },
+      { q: "योजनाको पहिलो चरण कुन हो?", options: ['लक्ष्य निर्धारण', 'कार्यान्वयन', 'अनुगमन', 'मूल्यांकन'], answer: 0, explanation: "लक्ष्य निर्धारण योजनाको पहिलो चरण हो।" },
+      { q: "निर्णय प्रक्रियामा कुन तत्वले महत्त्वपूर्ण भूमिका खेल्छ?", options: ['सूचनाको अभाव', 'सूचनाको उपलब्धता', 'कर्मचारीको अनुपस्थिति', 'नीतिको अभाव'], answer: 1, explanation: "सूचनाको उपलब्धताले सूचित र प्रभावकारी निर्णय लिन सहयोग गर्छ।" },
+      { q: "सार्वजनिक प्रशासनमा कस्तो निर्णय प्रक्रिया प्रभावकारी हुन्छ?", options: ['निरंकुश निर्णय', 'सामूहिक र तथ्यमा आधारित निर्णय', 'अनौपचारिक निर्णय', 'जटिल निर्णय'], answer: 1, explanation: "सामूहिक र तथ्यमा आधारित निर्णयले पारदर्शिता र प्रभावकारिता सुनिश्चित गर्छ।" },
+
+      // 2.2.2: संगठन र कर्मचारी व्यवस्थापन (Organization and Staffing) - 3 MCQs
+      { q: "संगठन संरचनाको मुख्य उद्देश्य के हो?", options: ['कर्मचारी भर्ना', 'कार्य विभाजन र समन्वय', 'स्रोत परिचालन', 'नीति तर्जुमा'], answer: 1, explanation: "संगठन संरचनाले कार्य विभाजन र समन्वयलाई व्यवस्थित गर्छ।" },
+      { q: "कर्मचारी भर्ना प्रक्रियामा कुन चरण पहिलो हुन्छ?", options: ['लिखित परीक्षा', 'रिक्त पदको पहिचान', 'सिफारिस', 'नियुक्ति'], answer: 1, explanation: "रिक्त पदको पहिचान भर्ना प्रक्रियाको पहिलो चरण हो।" },
+      { q: "सार्वजनिक क्षेत्रमा कर्मचारी छनोट कसरी गरिन्छ?", options: ['राजनीतिक प्रभावबाट', 'योग्यता र मेरिटको आधारमा', 'अनौपचारिक रूपमा', 'जटिल प्रक्रियाबाट'], answer: 1, explanation: "सार्वजनिक क्षेत्रमा मेरिट र योग्यतामा आधारित छनोट हुन्छ।" },
+
+      // 2.2.3: निर्देशन र नियन्त्रण (Direction and Controlling) - 3 MCQs
+      { q: "निर्देशनको मुख्य उद्देश्य के हो?", options: ['कर्मचारीलाई प्रेरित र मार्गदर्शन गर्ने', 'स्रोत परिचालन गर्ने', 'नीति तर्जुमा गर्ने', 'बजेट तर्जुमा गर्ने'], answer: 0, explanation: "निर्देशनले कर्मचारीलाई प्रेरित गर्छ र कार्य सम्पादनमा मार्गदर्शन गर्छ।" },
+      { q: "नियन्त्रण प्रक्रियाको पहिलो चरण कुन हो?", options: ['मापदण्ड स्थापना', 'कार्यान्वयन', 'मूल्यांकन', 'सुधार'], answer: 0, explanation: "मापदण्ड स्थापना नियन्त्रणको पहिलो चरण हो।" },
+      { q: "सार्वजनिक क्षेत्रमा नियन्त्रण किन आवश्यक छ?", options: ['कर्मचारी भर्ना गर्न', 'कार्यसम्पादन सुनिश्चित गर्न', 'स्रोत बिक्री गर्न', 'नीति परिवर्तन गर्न'], answer: 1, explanation: "नियन्त्रणले कार्यसम्पादनको गुणस्तर र जवाफदेहीता सुनिश्चित गर्छ।" },
+
+      // 2.3: संगठन संरचना र व्यवहार (Organizational Structure and Behavior) - 3 MCQs
+      { q: "सार्वजनिक कार्यालयमा कुन संगठन संरचनाले माथिल्लो तहबाट तल्लो तहसम्म निर्देशन प्रवाह गर्छ?", options: ['समतल संरचना', 'पदानुक्रमिक संरचना', 'कार्यमूलक संरचना', 'म्याट्रिक्स संरचना'], answer: 1, explanation: "पदानुक्रमिक संरचनाले माथिल्लो तहबाट तल्लो तहसम्म निर्देशन प्रवाह गर्छ।" },
+      { q: "कर्मचारीलाई उत्प्रेरणा प्रदान गर्न कुन विधि प्रभावकारी हुन्छ?", options: ['कडा अनुशासन', 'पुरस्कार र मान्यता', 'राजनीतिक प्रभाव', 'नीति परिवर्तन'], answer: 1, explanation: "पुरस्कार र मान्यताले कर्मचारीको मनोबल र उत्प्रेरणा बढाउँछ।" },
+      { q: "सार्वजनिक कार्यालयमा नेतृत्वको कुन शैलीले कर्मचारीको सहभागिता बढाउँछ?", options: ['निरंकुश शैली', 'लोकतान्त्रिक शैली', 'स्वतन्त्र शैली', 'लेनदेन शैली'], answer: 1, explanation: "लोकतान्त्रिक शैलीले कर्मचारीको सहभागिता र सहकार्य बढाउँछ।" },
+
+      // 2.4: सार्वजनिक सेवा प्रवाह (Public Service Delivery) - 3 MCQs
+      { q: "सार्वजनिक सेवा प्रवाहमा कुन कुराले नागरिक सन्तुष्टि बढाउँछ?", options: ['जटिल प्रक्रिया', 'छिटो र पारदर्शी सेवा', 'कर्मचारीको अनुपस्थिति', 'नीति परिवर्तन'], answer: 1, explanation: "छिटो र पारदर्शी सेवाले नागरिकको विश्वास र सन्तुष्टि बढाउँछ।" },
+      { q: "सार्वजनिक सेवा प्रवाहको मापदण्डमा कुन कुरा समावेश हुन्छ?", options: ['समयमै सेवा प्रदान', 'कर्मचारी भर्ना', 'नीति तर्जुमा', 'स्रोत परिचालन'], answer: 0, explanation: "समयमै सेवा प्रदान गर्नु सेवा प्रवाहको प्रमुख मापदण्ड हो।" },
+      { q: "सार्वजनिक सेवा प्रवाहमा कुन कुराले कार्यदक्षता बढाउँछ?", options: ['जटिल प्रक्रिया', 'प्रविधिको प्रयोग', 'कर्मचारीको अनुपस्थिति', 'नीति परिवर्तन'], answer: 1, explanation: "प्रविधिको प्रयोगले सेवा प्रवाहलाई छिटो र प्रभावकारी बनाउँछ।" },
+
+      // 2.5: सुशासन र नैतिकता (Governance and Ethics) - 3 MCQs
+      { q: "सुशासनको मुख्य विशेषता कुन हो?", options: ['गोपनीयता', 'पारदर्शिता', 'जटिलता', 'अनौपचारिकता'], answer: 1, explanation: "पारदर्शिता सुशासनको प्रमुख विशेषता हो, जसले जवाफदेहीता सुनिश्चित गर्छ।" },
+      { q: "सार्वजनिक प्रशासनमा नैतिकताको कुन सिद्धान्तले कर्मचारीलाई निष्पक्ष बनाउँछ?", options: ['राजनीतिक प्रभाव', 'निष्पक्षता र तटस्थता', 'व्यक्तिगत लाभ', 'गोपनीयता'], answer: 1, explanation: "निष्पक्षता र तटस्थताले कर्मचारीलाई निष्पक्ष र नैतिक बनाउँछ।" },
+      { q: "सुशासनमा जवाफदेहीताको कुन तत्वले महत्त्व राख्छ?", options: ['गोपनीयता', 'पारदर्शी जवाफदेहीता', 'जटिलता', 'अनौपचारिकता'], answer: 1, explanation: "पारदर्शी जवाफदेहीताले सुशासनमा विश्वास र प्रभावकारिता बढाउँछ।" },
+
+      // 2.6: अनुगमन र मूल्यांकन (Monitoring and Evaluation) - 3 MCQs
+      { q: "सार्वजनिक कार्यालयमा अनुगमनको मुख्य उद्देश्य के हो?", options: ['कर्मचारी भर्ना', 'कार्यसम्पादन मूल्यांकन', 'नीति तर्जुमा', 'स्रोत परिचालन'], answer: 1, explanation: "अनुगमनले कार्यसम्पादनको गुणस्तर र प्रगति मूल्यांकन गर्छ।" },
+      { q: "सार्वजनिक कार्यालयमा मूल्यांकनको मुख्य आधार के हो?", options: ['कर्मचारी भर्ना', 'कार्यसम्पादन मापदण्ड', 'नीति तर्जुमा', 'स्रोत परिचालन'], answer: 1, explanation: "मूल्यांकन कार्यसम्पादन मापदण्डमा आधारित हुन्छ।" },
+      { q: "अनुगमन प्रक्रियाको अन्तिम चरण कुन हो?", options: ['मापदण्ड स्थापना', 'कार्य समीक्षा', 'प्रतिवेदन तयार', 'सुधार कार्य'], answer: 3, explanation: "सुधार कार्य अनुगमनको अन्तिम चरण हो, जसले कमजोरी सुधार गर्छ।" },
+
+      // 2.7: समसामयिक मुद्दाहरू (Contemporary Issues) - 3 MCQs
+      { q: "ई-गभर्नेन्सले सार्वजनिक सेवामा कसरी सुधार गर्छ?", options: ['जटिल प्रक्रिया बढाएर', 'छिटो र पारदर्शी सेवा प्रदान गरेर', 'कर्मचारीको संख्या घटाएर', 'नीति परिवर्तन गरेर'], answer: 1, explanation: "ई-गभर्नेन्सले प्रविधिमार्फत छिटो, पारदर्शी, र पहुँचयोग्य सेवा प्रदान गर्छ।" },
+      { q: "नेपालमा विकेन्द्रीकरणको मुख्य उद्देश्य के हो?", options: ['केन्द्रीय नियन्त्रण बढाउने', 'स्थानीय तहमा अधिकार हस्तान्तरण गर्ने', 'कर्मचारी भर्ना गर्ने', 'नीति तर्जुमा गर्ने'], answer: 1, explanation: "विकेन्द्रीकरणले स्थानीय तहमा अधिकार र जिम्मेवारी हस्तान्तरण गर्छ।" },
+      { q: "सार्वजनिक-निजी साझेदारी (PPP) को मुख्य उद्देश्य के हो?", options: ['केन्द्रीय नियन्त्रण बढाउने', 'सेवा प्रभावकारिता र दक्षता बढाउने', 'कर्मचारी भर्ना गर्ने', 'नीति तर्जुमा गर्ने'], answer: 1, explanation: "PPP ले निजी क्षेत्रको दक्षतासँग सार्वजनिक सेवाको प्रभावकारिता बढाउँछ।" },
+
+      // 2.8: सार्वजनिक प्रशासनमा नेतृत्व (Leadership in Public Administration) - 3 MCQs
+      { q: "सार्वजनिक प्रशासनमा नेतृत्वको मुख्य भूमिका के हो?", options: ['कर्मचारी भर्ना', 'संगठनलाई दिशानिर्देश गर्ने', 'स्रोत परिचालन', 'नीति परिवर्तन'], answer: 1, explanation: "नेतृत्वले संगठनलाई दिशानिर्देश र प्रेरणा प्रदान गर्छ।" },
+      { q: "सार्वजनिक प्रशासनमा कुन नेतृत्व शैलीले पारदर्शिता बढाउँछ?", options: ['निरंकुश शैली', 'लोकतान्त्रिक शैली', 'स्वतन्त्र शैली', 'लेनदेन शैली'], answer: 1, explanation: "लोकतान्त्रिक शैलीले पारदर्शिता र सहभागिता सुनिश्चित गर्छ।" },
+      { q: "नेतृत्वले कर्मचारीको मनोबल कसरी बढाउँछ?", options: ['कडा अनुशासनबाट', 'प्रेरणा र समर्थनबाट', 'राजनीतिक प्रभावबाट', 'नीति परिवर्तनबाट'], answer: 1, explanation: "प्रेरणा र समर्थनले कर्मचारीको मनोबल र कार्यदक्षता बढाउँछ।" },
+
+      // 2.9: द्वन्द्व व्यवस्थापन (Conflict Management) - 3 MCQs
+      { q: "सार्वजनिक कार्यालयमा द्वन्द्व व्यवस्थापनको मुख्य उद्देश्य के हो?", options: ['कर्मचारी भर्ना', 'सहकार्य र समन्वय कायम गर्ने', 'स्रोत परिचालन', 'नीति परिवर्तन'], answer: 1, explanation: "द्वन्द्व व्यवस्थापनले सहकार्य र कार्य वातावरण सुधार गर्छ।" },
+      { q: "द्वन्द्व समाधानको कुन विधि प्रभावकारी हुन्छ?", options: ['दबाउने', 'समझदारी र मध्यस्थता', 'अनदेखा गर्ने', 'जटिल प्रक्रिया'], answer: 1, explanation: "समझदारी र मध्यस्थताले द्वन्द्वलाई रचनात्मक रूपमा समाधान गर्छ।" },
+      { q: "सार्वजनिक कार्यालयमा द्वन्द्वको मुख्य कारण के हो?", options: ['स्रोतको कमी र अस्पष्ट जिम्मेवारी', 'कर्मचारी भर्ना', 'नीति तर्जुमा', 'स्रोत बिक्री'], answer: 0, explanation: "स्रोतको कमी र अस्पष्ट जिम्मेवारीले द्वन्द्व निम्त्याउँछ।" },
+
+      // 2.10: समय व्यवस्थापन (Time Management) - 3 MCQs
+      { q: "सार्वजनिक कार्यालयमा समय व्यवस्थापनको मुख्य फाइदा के हो?", options: ['कर्मचारी भर्ना', 'कार्यदक्षता र उत्पादकत्व बढाउने', 'स्रोत परिचालन', 'नीति परिवर्तन'], answer: 1, explanation: "समय व्यवस्थापनले कार्यदक्षता र उत्पादकत्व बढाउँछ।" },
+      { q: "समय व्यवस्थापनको पहिलो चरण कुन हो?", options: ['कार्य प्राथमिकीकरण', 'कार्यान्वयन', 'अनुगमन', 'मूल्यांकन'], answer: 0, explanation: "कार्य प्राथमिकीकरण समय व्यवस्थापनको पहिलो चरण हो।" },
+      { q: "सार्वजनिक कार्यालयमा समय व्यवस्थापनमा कुन कुराले बाधा पुर्‍याउँछ?", options: ['स्पष्ट कार्ययोजना', 'अस्पष्ट प्राथमिकता', 'प्रविधिको प्रयोग', 'सहकार्य'], answer: 1, explanation: "अस्पष्ट प्राथमिकताले समय व्यवस्थापनमा बाधा पुर्‍याउँछ।" }
+    ];
+const questions = rawQuestions.map((question) => {
+    const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
+    const answer = Number(question.answer);
+    return {
+        q: String(question.q ?? question.question ?? ''),
+        options,
+        answer: Number.isInteger(answer) ? answer : 0,
+        explanation: question.explanation ? String(question.explanation) : 'Explanation not provided.'
+    };
+}).filter((question) => question.q && question.options.length > 0);
+
+const QUESTIONS_PER_PAGE = 5;
+const ANSWER_DELAY = 450;
+const STORAGE_KEY = `quiz-progress-${quizConfig.quizId}`;
+
+let currentPage = 0;
+let score = 0;
+let timerSeconds = 0;
+let timerInterval = null;
+let currentStreak = 0;
+let maxStreak = 0;
+let questionStates = [];
+
+const quizEl = document.getElementById('quiz');
+const scoreEl = document.getElementById('score');
+const resultsEl = document.getElementById('results');
+const resultsBody = document.getElementById('results-body');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+const progressTextEl = document.getElementById('progress-text');
+const currentScoreEl = document.getElementById('current-score');
+const questionsAnsweredEl = document.getElementById('questions-answered');
+const questionsTotalEl = document.getElementById('questions-total');
+const accuracyEl = document.getElementById('accuracy');
+const streakBadge = document.getElementById('streak-badge');
+const correctSound = document.getElementById('correct-sound');
+const wrongSound = document.getElementById('wrong-sound');
+
+function makeDefaultState() {
+    return questions.map(() => ({ status: 'unanswered', selectedIndex: null, selectedText: '', optionOrder: [] }));
+}
+
+function loadState() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+        if (!saved) return false;
+        currentPage = Number.isInteger(saved.currentPage) ? saved.currentPage : 0;
+        score = typeof saved.score === 'number' ? saved.score : 0;
+        timerSeconds = typeof saved.timerSeconds === 'number' ? saved.timerSeconds : 0;
+        currentStreak = typeof saved.currentStreak === 'number' ? saved.currentStreak : 0;
+        maxStreak = typeof saved.maxStreak === 'number' ? saved.maxStreak : 0;
+        questionStates = Array.isArray(saved.questionStates) && saved.questionStates.length === questions.length
+            ? saved.questionStates
+            : makeDefaultState();
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
+
+function saveState() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        currentPage,
+        score,
+        timerSeconds,
+        currentStreak,
+        maxStreak,
+        questionStates
+    }));
+}
+
+function resetState() {
+    currentPage = 0;
+    score = 0;
+    timerSeconds = 0;
+    currentStreak = 0;
+    maxStreak = 0;
+    questionStates = makeDefaultState();
+    localStorage.removeItem(STORAGE_KEY);
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timerSeconds += 1;
+        timerEl.textContent = formatTime(timerSeconds);
+        saveState();
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+function updateStats() {
+    const answeredCount = questionStates.filter((state) => state.status !== 'unanswered').length;
+    const correctCount = questionStates.filter((state) => state.status === 'correct').length;
+    const attemptedCount = questionStates.filter((state) => state.status === 'correct' || state.status === 'wrong').length;
+    const accuracy = attemptedCount > 0 ? Math.round((correctCount / attemptedCount) * 100) : 0;
+    const progressPercentage = questions.length ? (answeredCount / questions.length) * 100 : 0;
+
+    currentScoreEl.textContent = String(correctCount);
+    questionsAnsweredEl.textContent = String(answeredCount);
+    questionsTotalEl.textContent = String(questions.length);
+    accuracyEl.textContent = `${accuracy}%`;
+    progressTextEl.textContent = `${answeredCount}/${questions.length}`;
+    progressEl.style.width = `${progressPercentage}%`;
+}
+
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function getOptionOrder(index) {
+    if (Array.isArray(questionStates[index].optionOrder) && questionStates[index].optionOrder.length === questions[index].options.length) {
+        return questionStates[index].optionOrder;
+    }
+    const order = shuffle(questions[index].options.map((_, optionIndex) => optionIndex));
+    questionStates[index].optionOrder = order;
+    return order;
+}
+
+function getPageBounds(page) {
+    const start = page * QUESTIONS_PER_PAGE;
+    const end = Math.min(start + QUESTIONS_PER_PAGE, questions.length);
+    return { start, end };
+}
+
+function showStreak() {
+    if (currentStreak >= 3) {
+        streakBadge.textContent = `Streak: ${currentStreak}`;
+        streakBadge.classList.add('show');
+        setTimeout(() => streakBadge.classList.remove('show'), 1800);
+    }
+}
+
+function renderQuestionCard(index) {
+    const question = questions[index];
+    const state = questionStates[index];
+    const optionOrder = getOptionOrder(index);
+
+    const optionsHtml = optionOrder.map((optionIndex, displayIndex) => {
+        const optionText = question.options[optionIndex];
+        let extraClass = '';
+        if (state.status !== 'unanswered') {
+            if (optionIndex === question.answer) extraClass = ' correct';
+            else if (optionIndex === state.selectedIndex && state.status === 'wrong') extraClass = ' wrong';
+        }
+        return `
+            <button class="option-btn${extraClass}" data-question-index="${index}" data-option-index="${optionIndex}" ${state.status !== 'unanswered' ? 'disabled' : ''}>
+                <span class="option-indicator">${String.fromCharCode(65 + displayIndex)}</span>
+                <span>${escapeHtml(optionText)}</span>
+            </button>
+        `;
+    }).join('');
+
+    const explanationStyle = state.status === 'unanswered' ? 'display: none;' : 'display: block;';
+    const mutedStyle = state.status === 'skipped' ? 'opacity: 0.7;' : '';
+
+    return `
+        <div class="question-wrapper">
+            <div class="question-card" data-index="${index}" style="${mutedStyle}">
+                <div class="question-header">
+                    <div class="question-number">${index + 1}</div>
+                    <div class="question-text">${escapeHtml(question.q)}</div>
+                </div>
+                <div class="options">${optionsHtml}</div>
+                <div class="explanation" style="${explanationStyle}">${escapeHtml(question.explanation)}</div>
+            </div>
+        </div>
+    `;
+}
+
+function renderActionBar(start, end) {
+    const pageAnswered = questionStates.slice(start, end).every((state) => state.status !== 'unanswered');
+    const isLastPage = end >= questions.length;
+    const primaryLabel = isLastPage ? '✓ Submit Quiz' : 'Next Questions →';
+    return `
+        <div class="action-bar">
+            <button class="btn btn-primary" id="primary-action" ${pageAnswered ? '' : 'disabled'}>${primaryLabel}</button>
+            <button class="btn btn-skip" id="skip-action">⊘ Skip All</button>
+        </div>
+    `;
+}
+
+function renderPage() {
+    if (!questions.length) {
+        quizEl.innerHTML = '<div class="question-card"><div class="question-text">No questions available in this quiz.</div></div>';
+        updateStats();
+        return;
+    }
+
+    const { start, end } = getPageBounds(currentPage);
+    let html = '';
+    for (let index = start; index < end; index += 1) {
+        html += renderQuestionCard(index);
+    }
+    html += renderActionBar(start, end);
+    quizEl.innerHTML = html;
+    attachEventHandlers(start, end);
+    updateStats();
+    timerEl.textContent = formatTime(timerSeconds);
+    saveState();
+}
+
+function updateStreak(isCorrect) {
+    if (isCorrect) {
+        currentStreak += 1;
+        maxStreak = Math.max(maxStreak, currentStreak);
+        showStreak();
+    } else {
+        currentStreak = 0;
+    }
+}
+
+function answerQuestion(questionIndex, optionIndex) {
+    const state = questionStates[questionIndex];
+    if (state.status !== 'unanswered') return;
+
+    const question = questions[questionIndex];
+    state.selectedIndex = optionIndex;
+    state.selectedText = question.options[optionIndex] ?? '';
+    state.status = optionIndex === question.answer ? 'correct' : 'wrong';
+
+    if (state.status === 'correct') {
+        score += 1;
+        correctSound.play().catch(() => {});
+        updateStreak(true);
+    } else {
+        wrongSound.play().catch(() => {});
+        updateStreak(false);
+    }
+
+    renderPage();
+    const { start, end } = getPageBounds(currentPage);
+    const allAnswered = questionStates.slice(start, end).every((pageState) => pageState.status !== 'unanswered');
+    if (allAnswered) {
+        setTimeout(() => {
+            if (currentPage < Math.ceil(questions.length / QUESTIONS_PER_PAGE) - 1) {
+                currentPage += 1;
+                renderPage();
+            }
+        }, ANSWER_DELAY);
+    }
+}
+
+function skipQuestion(questionIndex) {
+    const state = questionStates[questionIndex];
+    if (state.status !== 'unanswered') return;
+    state.status = 'skipped';
+    state.selectedIndex = null;
+    state.selectedText = 'Skipped';
+    currentStreak = 0;
+}
+
+function skipPage(start, end) {
+    for (let index = start; index < end; index += 1) {
+        skipQuestion(index);
+    }
+    renderPage();
+}
+
+function goToNextPageOrFinish() {
+    const { end } = getPageBounds(currentPage);
+    if (end >= questions.length) {
+        endQuiz();
+        return;
+    }
+    currentPage += 1;
+    renderPage();
+}
+
+function statusMarkup(status) {
+    const config = {
+        correct: ['Correct', '✓', 'correct'],
+        wrong: ['Wrong', '✗', 'wrong'],
+        skipped: ['Skipped', '⊘', 'skipped'],
+        unanswered: ['Not attempted', '•', 'not-attempted']
+    }[status] || ['Not attempted', '•', 'not-attempted'];
+
+    return `<span class="status-badge status-${config[2]}">${config[1]} ${config[0]}</span>`;
+}
+
+function drawConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const colors = ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'];
+    const particles = Array.from({ length: 140 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        vx: (Math.random() - 0.5) * 4,
+        vy: Math.random() * 3 + 2,
+        size: Math.random() * 6 + 2,
+        rotation: Math.random() * 360,
+        color: colors[Math.floor(Math.random() * colors.length)]
+    }));
+
+    let frameId = null;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+        particles.forEach((particle) => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.rotation += 2;
+            if (particle.y < canvas.height + 20) {
+                active = true;
+                ctx.save();
+                ctx.translate(particle.x, particle.y);
+                ctx.rotate((particle.rotation * Math.PI) / 180);
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size);
+                ctx.restore();
+            }
+        });
+        if (active) frameId = requestAnimationFrame(animate);
+    }
+    animate();
+    setTimeout(() => cancelAnimationFrame(frameId), 5000);
+}
+
+function endQuiz() {
+    stopTimer();
+    quizEl.innerHTML = '';
+
+    const correctCount = questionStates.filter((state) => state.status === 'correct').length;
+    const percentage = questions.length ? ((correctCount / questions.length) * 100).toFixed(1) : '0.0';
+    let message = 'Keep learning! You will improve!';
+    let emoji = '📚';
+    if (Number(percentage) >= 90) {
+        message = 'Outstanding! You are a master!';
+        emoji = '🏆';
+        drawConfetti();
+    } else if (Number(percentage) >= 70) {
+        message = 'Great job! Well done!';
+        emoji = '🌟';
+    } else if (Number(percentage) >= 50) {
+        message = 'Good effort! Keep practicing!';
+        emoji = '💪';
+    }
+
+    scoreEl.innerHTML = `
+        <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+        <div class="score-display">${percentage}%</div>
+        <div class="score-label">${message}</div>
+        <div style="margin-top: 1rem; color: var(--text-secondary);">
+            ${correctCount} correct out of ${questions.length} questions<br>
+            Time: ${formatTime(timerSeconds)} | Best Streak: ${maxStreak}
+        </div>
+    `;
+
+    resultsBody.innerHTML = questions.map((question, index) => {
+        const state = questionStates[index];
+        const userAnswer = state.status === 'unanswered'
+            ? 'Not attempted'
+            : state.status === 'skipped'
+                ? 'Skipped'
+                : (state.selectedText || 'Not attempted');
+        const correctAnswer = question.options[question.answer] ?? '';
+        return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${escapeHtml(question.q)}</td>
+                <td>${escapeHtml(userAnswer)}</td>
+                <td>${escapeHtml(correctAnswer)}</td>
+                <td>${statusMarkup(state.status)}</td>
+                <td class="explanation-cell">${escapeHtml(question.explanation)}</td>
+            </tr>
+        `;
+    }).join('');
+
+    resultsEl.classList.remove('hidden');
+    localStorage.removeItem(STORAGE_KEY);
+}
+
+function restartQuiz() {
+    resultsEl.classList.add('hidden');
+    scoreEl.innerHTML = '';
+    resetState();
+    startTimer();
+    renderPage();
+}
+
+function attachEventHandlers(start, end) {
+    quizEl.querySelectorAll('.option-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+            answerQuestion(Number(button.dataset.questionIndex), Number(button.dataset.optionIndex));
+        });
+    });
+
+    const primaryAction = document.getElementById('primary-action');
+    if (primaryAction) {
+        primaryAction.addEventListener('click', goToNextPageOrFinish);
+    }
+
+    const skipAction = document.getElementById('skip-action');
+    if (skipAction) {
+        skipAction.addEventListener('click', () => skipPage(start, end));
+    }
+}
+
+function initialize() {
+    questionsTotalEl.textContent = String(questions.length);
+    if (!loadState()) {
+        resetState();
+    }
+    timerEl.textContent = formatTime(timerSeconds);
+    startTimer();
+    renderPage();
+}
+
+initialize();
+window.addEventListener('resize', () => {
+    const canvas = document.getElementById('confetti-canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+    </script>
+</body>
+</html>
