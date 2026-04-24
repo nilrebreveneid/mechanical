@@ -1147,7 +1147,518 @@ const rawQuestions = [
         options: ["Poor braking action", "Increased braking force", "Cooler brakes", "Faster response"],
         answer: 0,
         explanation: "Air in hydraulic brake lines causes a spongy pedal and poor braking action due to compressibility."
-    }
+    },
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 11 — HYDRAULIC SYSTEM: Additional 81 MCQs
+// Append after your 19 supplied MCQs → total 100
+// Syllabus: 11.1 Introduction · 11.2 Components ·
+//           11.3 Troubleshooting & Maintenance
+// Sources: as-mechanics.pdf · new PSC 2081/3/12 · khanepani.pdf ·
+//          saja_yatayat.pdf · Sewa_sambandi.pdf · all supplied papers
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM NEW PSC PAPER 2081/3/12 ─────────────────────────────
+  {
+    q: "The basic principle of a hydraulic system is that:",
+    options: ["Liquid provides greater increase in workforce", "Liquid transmits applied pressure in all directions", "Liquid will not compress", "All of the above"],
+    answer: 3,
+    explanation: "ALL THREE are principles of hydraulic systems: (1) Pascal's law — pressure transmitted EQUALLY in all directions, (2) INCOMPRESSIBILITY of liquid — unlike air, (3) FORCE MULTIPLICATION — small force on small area = large force on large area. From new PSC paper Q31 — ALL OF ABOVE."
+  },
+  {
+    q: "Water is classified as which type of fluid in hydraulic theory?",
+    options: ["Real fluid", "Ideal fluid", "Newtonian fluid", "Non-Newtonian fluid"],
+    answer: 1,
+    explanation: "Water is considered an IDEAL FLUID in theoretical hydraulics — incompressible, no viscosity in ideal analysis. All real fluids have viscosity, but water's is so low it is treated as approximately ideal. From new PSC Senior paper Q32."
+  },
+
+  // ── FROM khanepani.pdf ────────────────────────────────────────
+  {
+    q: "A hydraulic accumulator is a device used for:",
+    options: ["Lifting heavy weights directly", "Storing the energy of a fluid in the form of pressure energy", "Increasing the pressure intensity of fluid only", "None of the above"],
+    answer: 1,
+    explanation: "HYDRAULIC ACCUMULATOR stores fluid energy as pressure energy using compressed gas (bladder), spring, or gravity (weighted type). Releases stored energy during peak demand, absorbs pressure surges. From khanepani.pdf confirmed."
+  },
+  {
+    q: "The function of guide vanes in a reaction turbine is to allow:",
+    options: ["Water to enter runner without shock", "Water to flow without eddies", "Required quantity of water to enter", "All of the above"],
+    answer: 3,
+    explanation: "Guide vanes (wicket gates) in a reaction turbine: (1) direct water to runner WITHOUT SHOCK, (2) reduce EDDIES for smooth flow, (3) control FLOW QUANTITY. ALL of the above — confirmed from khanepani.pdf."
+  },
+  {
+    q: "A hydraulic press uses Pascal's law. If the small piston has area 2 cm² and large piston has area 200 cm², a force of 10N on the small piston produces force on large piston of:",
+    options: ["100 N", "1000 N", "10000 N", "10 N"],
+    answer: 1,
+    explanation: "Pascal's law: P = F/A is same throughout. F1/A1 = F2/A2. F2 = F1 × (A2/A1) = 10 × (200/2) = 10 × 100 = 1000 N. From khanepani.pdf fluid mechanics section — force multiplication principle."
+  },
+  {
+    q: "The viscosity of hydraulic oil DECREASES when temperature:",
+    options: ["Decreases", "Increases", "Remains constant", "Fluctuates"],
+    answer: 1,
+    explanation: "As temperature INCREASES, hydraulic oil becomes THINNER (lower viscosity) and flows more easily. Cold oil is thick (high viscosity). This is why hydraulic systems need warm-up periods and why viscosity index (VI) of oil is important. From khanepani.pdf."
+  },
+  {
+    q: "The relationship between hydraulic efficiency (ηh), mechanical efficiency (ηm), and overall efficiency (ηo) is:",
+    options: ["ηh = ηo × ηm", "ηm = ηo × ηh", "ηo = ηh × ηm", "None of the above"],
+    answer: 2,
+    explanation: "Overall efficiency = Hydraulic efficiency × Mechanical efficiency (ηo = ηh × ηm). Hydraulic losses (friction, turbulence) and mechanical losses (bearing friction) both reduce overall efficiency. From khanepani.pdf confirmed."
+  },
+  {
+    q: "Cavitation in a hydraulic pump occurs when:",
+    options: ["Oil pressure is too high", "LOCAL PRESSURE DROPS BELOW VAPOR PRESSURE — oil vaporizes forming bubbles that collapse violently causing noise, vibration, and damage", "Oil temperature is too low", "Filter is too clean"],
+    answer: 1,
+    explanation: "CAVITATION: low-pressure zones (usually at pump inlet) drop below oil's vapor pressure → oil VAPORIZES → vapor bubbles → carried to high pressure zone → IMPLODE violently → erosion of pump surfaces, noise, vibration. Prevent: correct oil level, unobstructed suction lines."
+  },
+  {
+    q: "A Pitot-static tube directly measures:",
+    options: ["Volumetric flow rate", "Stagnation pressure (total pressure)", "Viscosity", "Turbulence intensity"],
+    answer: 1,
+    explanation: "Pitot-static tube: impact hole measures STAGNATION (total) pressure, side holes measure static pressure. The difference (dynamic pressure = ½ρV²) gives fluid VELOCITY. From khanepani.pdf fluid mechanics confirmed."
+  },
+  {
+    q: "The pressure at a point in a fluid at rest depends on:",
+    options: ["Shape of container", "Direction of measurement", "Depth below fluid surface", "Flow velocity"],
+    answer: 2,
+    explanation: "Hydrostatic pressure P = ρgh where h = DEPTH below surface. Pressure increases with depth and acts equally in all directions at the same depth. Independent of container shape or measurement direction. From khanepani.pdf and tu5mcqs.pdf confirmed."
+  },
+
+  // ── FROM as-mechanics.pdf PSC 2082 ───────────────────────────
+  {
+    q: "Which maintenance practice helps prevent hydraulic system failures due to contaminated fluid?",
+    options: ["Regularly replacing the hydraulic pump", "Periodically checking and replacing hydraulic fluid AND filters", "Adjusting actuator alignment monthly", "Increasing system pressure periodically"],
+    answer: 1,
+    explanation: "From as-mechanics.pdf PSC 2082 Q37 — confirmed: PERIODICALLY CHECK AND REPLACE hydraulic fluid and filters prevents failures from contaminated fluid. Contamination is the #1 cause of hydraulic system failures."
+  },
+  {
+    q: "What is the purpose of a hydraulic fluid reservoir in a vehicle?",
+    options: ["To store excess engine oil", "To STORE hydraulic fluid for the system, allow air separation, and act as a heat dissipator", "To cool the hydraulic pump only", "To filter contaminants from the fluid"],
+    answer: 1,
+    explanation: "Reservoir functions: (1) STORE hydraulic oil for system supply, (2) ALLOW AIR BUBBLES to rise and separate, (3) DISSIPATE HEAT from returning fluid, (4) Allow EXPANSION of heated fluid. From as-mechanics.pdf PSC 2082 confirmed."
+  },
+  {
+    q: "In a hydraulic system, which tool is used to measure system pressure?",
+    options: ["Thermometer", "Tachometer", "Pressure gauge", "Multimeter"],
+    answer: 2,
+    explanation: "PRESSURE GAUGE: connected to hydraulic lines to measure system pressure in bar or PSI. Essential for troubleshooting — compare measured pressure to specification to diagnose pump, valve, or cylinder problems. From as-mechanics.pdf Q35 confirmed."
+  },
+
+  // ── FROM saja_yatayat.pdf ─────────────────────────────────────
+  {
+    q: "Which of the following does NOT require electricity to run?",
+    options: ["Turbine (water/hydraulic)", "AC motor", "Electric pump", "Refrigerator compressor"],
+    answer: 0,
+    explanation: "HYDRAULIC TURBINE is driven by flowing water/fluid — it GENERATES electricity rather than consuming it. AC motors, electric pumps, and refrigerator compressors all require electrical power. From saja_yatayat.pdf confirmed."
+  },
+  {
+    q: "The idler pulley in a belt/hydraulic pump drive system is used to:",
+    options: ["Drive the hydraulic pump directly", "MAINTAIN BELT TENSION for the hydraulic pump drive belt", "Change the rotation direction of pump", "Act as a hydraulic component"],
+    answer: 1,
+    explanation: "IDLER PULLEY: maintains correct belt tension in the drive system for hydraulic pump. Prevents belt slipping (reduces pump output) or over-tensioning (bearing damage). From saja_yatayat.pdf confirmed."
+  },
+  {
+    q: "Which pump is suitable for HIGH VISCOSITY fluids like heavy hydraulic oil?",
+    options: ["Centrifugal pump", "Screw pump", "Jet pump", "Axial flow pump"],
+    answer: 1,
+    explanation: "SCREW PUMP: helical screws rotate to move viscous fluid smoothly without turbulence. Ideal for high-viscosity hydraulic oils. Centrifugal pumps lose efficiency rapidly with viscous fluids. From saja_yatayat.pdf confirmed."
+  },
+
+  // ── FROM Sewa_sambandi.pdf ────────────────────────────────────
+  {
+    q: "In a hydraulic system, the RELIEF VALVE is set to:",
+    options: ["Maintain minimum system pressure", "LIMIT MAXIMUM system pressure — diverts excess flow to tank when set pressure is exceeded", "Control direction of flow", "Filter contaminants from fluid"],
+    answer: 1,
+    explanation: "RELIEF/SAFETY VALVE: spring-loaded valve opens when pressure EXCEEDS set value → diverts oil to reservoir. PROTECTS: pump, cylinder, hoses, and components from overpressure damage. System's most critical safety device. From Sewa_sambandi.pdf confirmed."
+  },
+  {
+    q: "The telescopic hydraulic cylinder used in dump trucks has:",
+    options: ["Only two stage units", "Only three stage units", "Two or more nested stage units", "Multiple cylinders side by side"],
+    answer: 2,
+    explanation: "TELESCOPIC CYLINDERS: multiple stages nest inside each other — each stage extends successively. Provide very long stroke from compact retracted length. Used in dump truck bodies, refuse trucks, cranes. From as-mechanics.pdf PSC 2082 confirmed."
+  },
+  {
+    q: "Hydraulic oil FOAMING in a system is caused by:",
+    options: ["Correct oil level and type", "AIR ENTERING the system through leaks or wrong oil type without anti-foam additive", "Too much filtration", "Correct operating temperature"],
+    answer: 1,
+    explanation: "FOAMING: air mixes with oil → foam. Causes: LOW OIL LEVEL (pump draws air), SUCTION LINE LEAKS, WRONG OIL TYPE (no anti-foam additives). Foam is compressible → sluggish/erratic cylinder movement, cavitation, pump damage. From Sewa_sambandi.pdf confirmed."
+  },
+
+  // ── 11.1 INTRODUCTION ─────────────────────────────────────────
+  {
+    q: "Pascal's Law states that pressure applied to an enclosed fluid:",
+    options: ["Decreases with distance from the source", "Is transmitted EQUALLY and UNDIMINISHED in all directions throughout the fluid", "Only acts downward due to gravity", "Is absorbed by the container walls"],
+    answer: 1,
+    explanation: "PASCAL'S LAW: P = F/A applied at one point → transmitted EQUALLY in ALL DIRECTIONS throughout the enclosed, incompressible fluid. Foundation of all hydraulic systems. Named after Blaise Pascal (1647). Enables force multiplication: small force on small piston → large force on large piston."
+  },
+  {
+    q: "The main ADVANTAGE of hydraulic power transmission over mechanical transmission is:",
+    options: ["Hydraulic is always cheaper", "INFINITE SPEED VARIATION, remote power transmission, overload protection built-in, smooth force application", "Hydraulic systems are simpler to maintain", "Hydraulic always has 100% efficiency"],
+    answer: 1,
+    explanation: "HYDRAULIC ADVANTAGES: (1) VARIABLE speed/force without mechanical gear changes, (2) REMOTE POWER — flexible hoses transmit power around obstacles, (3) SELF-PROTECTING — relief valve prevents overload damage, (4) SMOOTH — no jerking or vibration, (5) HIGH FORCE DENSITY — large force from compact unit."
+  },
+  {
+    q: "The DISADVANTAGE of hydraulic systems compared to mechanical is:",
+    options: ["Cannot transmit large forces", "LEAKAGE (oil spill hazard, fire risk, environmental issue), EFFICIENCY LOSSES (heat generation), and MAINTENANCE COMPLEXITY", "Cannot be used outdoors", "Cannot be controlled remotely"],
+    answer: 1,
+    explanation: "HYDRAULIC DISADVANTAGES: (1) OIL LEAKS — fire hazard (hot surfaces + oil = fire), environmental contamination, (2) HEAT GENERATION — energy lost as heat in oil, (3) MAINTENANCE — oil changes, filter changes, seal replacements needed, (4) SPEED — limited max speed vs mechanical."
+  },
+  {
+    q: "FLUID POWER FORMULA: Pressure = Force ÷ Area. If force = 500N and area = 0.01 m², pressure equals:",
+    options: ["5000 N/m² (5 kPa)", "50,000 N/m² (50 kPa)", "500 N/m² (0.5 kPa)", "5 N/m²"],
+    answer: 1,
+    explanation: "P = F/A = 500 ÷ 0.01 = 50,000 N/m² = 50 kPa = 0.5 bar. This fundamental formula governs all hydraulic force calculations. In construction hydraulics, pressures of 200-400 bar (20,000-40,000 kPa) are common."
+  },
+  {
+    q: "HYDRAULIC POWER (watts) is calculated as:",
+    options: ["Pressure × Volume", "PRESSURE (Pa) × FLOW RATE (m³/s) = Watts", "Force × Velocity", "Both B and C (they give the same result)"],
+    answer: 3,
+    explanation: "HYDRAULIC POWER: P = p × Q (pressure × flow rate) OR P = F × v (force × velocity). Both formulas give IDENTICAL results — they are different expressions of the same hydraulic power. Used to size pumps and calculate system efficiency."
+  },
+
+  // ── 11.2 COMPONENTS ───────────────────────────────────────────
+  {
+    q: "The HYDRAULIC PUMP converts:",
+    options: ["Hydraulic energy to mechanical energy", "MECHANICAL energy (from engine/motor) to HYDRAULIC ENERGY (flow and pressure)", "Electrical energy to hydraulic pressure", "Heat energy to fluid flow"],
+    answer: 1,
+    explanation: "HYDRAULIC PUMP: an energy converter — takes mechanical rotation (from engine, electric motor, or PTO) and converts to hydraulic energy (FLOW at PRESSURE). Does NOT create pressure by itself — pressure is created by RESISTANCE TO FLOW (load on cylinder, valve, etc.)."
+  },
+  {
+    q: "A GEAR PUMP (external gear type) works by:",
+    options: ["Reciprocating piston displacement", "Two MESHING GEARS that unmesh at the inlet (creating volume = draws oil in) and remesh at outlet (pushes oil out)", "Rotating vanes in a circular housing", "A single screw rotating in a close-fitting bore"],
+    answer: 1,
+    explanation: "EXTERNAL GEAR PUMP: two spur gears mesh and rotate. At inlet — gears UNMESH → volume expands → oil drawn in. Carried in gear tooth spaces around housing. At outlet — gears REMESH → volume decreases → oil FORCED OUT at pressure. Simple, robust, common in construction equipment."
+  },
+  {
+    q: "A VANE PUMP in a hydraulic system uses:",
+    options: ["Gear teeth for pumping", "SPRING-LOADED VANES sliding in and out of slots in a rotor — varying volume between vanes creates pumping action", "Reciprocating pistons", "Screw threads for displacement"],
+    answer: 1,
+    explanation: "VANE PUMP: rotor with spring-loaded vanes spins in an ECCENTRIC HOUSING. Vanes slide out centrifugally → seal against housing. Volume between vanes INCREASES at inlet (draws oil) → DECREASES at outlet (pushes oil). Quieter and smoother than gear pump. Used in power steering pumps."
+  },
+  {
+    q: "An AXIAL PISTON PUMP has which arrangement?",
+    options: ["Pistons radially arranged (pointing outward)", "PISTONS PARALLEL TO DRIVE SHAFT, arranged in a circle — rotated by a swashplate that reciprocates them", "A single large piston", "Pistons driven by cam followers"],
+    answer: 1,
+    explanation: "AXIAL PISTON PUMP: multiple pistons arranged in a circle, parallel to the shaft. A SWASHPLATE (angled disc) causes pistons to reciprocate as barrel rotates. VARIABLE DISPLACEMENT: change swashplate angle → change stroke → change flow. Most efficient pump type. Used in high-pressure excavator/dozer systems."
+  },
+  {
+    q: "VARIABLE DISPLACEMENT pump in construction equipment allows:",
+    options: ["Only fixed output regardless of demand", "OUTPUT FLOW to be varied by changing swashplate angle — system delivers only what is needed = power saving and less heat", "The pump to run at variable speed only", "The pump to work without a motor"],
+    answer: 1,
+    explanation: "VARIABLE DISPLACEMENT: as load demand changes → pump adjusts displacement → delivers ONLY REQUIRED FLOW → less energy wasted as heat. Modern excavators: load-sensing variable displacement pumps → excellent efficiency → less fuel consumption than fixed-displacement systems."
+  },
+  {
+    q: "A DIRECTIONAL CONTROL VALVE (DCV) in a hydraulic system controls:",
+    options: ["System pressure maximum limit", "The DIRECTION of fluid flow — which port fluid enters and exits — determines cylinder extend/retract or motor direction", "Flow rate only", "Oil temperature"],
+    answer: 1,
+    explanation: "DIRECTIONAL CONTROL VALVE: routes oil to correct cylinder port → extends or retracts. SPOOL inside valve slides to open/close ports. Types: 4/2 (four ports, two positions), 4/3 (three positions — extend/neutral/retract). Centre position: block, float, or tandem depending on application."
+  },
+  {
+    q: "A FLOW CONTROL VALVE in a hydraulic system controls:",
+    options: ["Maximum system pressure", "The SPEED of hydraulic actuators by restricting or allowing a set flow rate", "Direction of oil flow", "Oil temperature only"],
+    answer: 1,
+    explanation: "FLOW CONTROL VALVE: restricts or allows flow → controls ACTUATOR SPEED. Slow flow → slow cylinder movement; fast flow → fast movement. Types: THROTTLE (simple restriction), PRESSURE-COMPENSATED (maintains set flow regardless of pressure changes). Used for speed control of work functions."
+  },
+  {
+    q: "A CHECK VALVE in a hydraulic system:",
+    options: ["Limits maximum pressure", "ALLOWS FLOW IN ONE DIRECTION ONLY — spring-loaded ball or poppet opens with forward flow, closes against reverse flow", "Controls flow rate", "Changes flow direction electrically"],
+    answer: 1,
+    explanation: "CHECK VALVE (non-return valve): spring-loaded ball or poppet in seat. Forward flow → overcomes spring → opens. Reverse flow → spring + pressure force ball to seat → BLOCKED. Prevents backflow, maintains circuit pressure, allows free flow forward. Used extensively in hydraulic circuits."
+  },
+  {
+    q: "A PILOT-OPERATED RELIEF VALVE in a construction machine hydraulic system:",
+    options: ["Only opens by mechanical force", "Uses low-pilot pressure signal to control main spool — more PRECISE and lower pressure drop than direct-acting relief", "Cannot be adjusted", "Opens at higher pressures than direct-acting type always"],
+    answer: 1,
+    explanation: "PILOT-OPERATED RELIEF: main valve controlled by a small PILOT VALVE. Pilot opens at set pressure → pilot flow causes main spool to open → relief. ADVANTAGES: more precise pressure setting, lower pressure drop, handles higher flows. Used as main relief in excavators and loaders."
+  },
+  {
+    q: "The HYDRAULIC CYLINDER converts:",
+    options: ["Mechanical energy to hydraulic pressure", "HYDRAULIC PRESSURE and flow into LINEAR mechanical force and motion", "Hydraulic flow to rotational motion", "Heat to mechanical work"],
+    answer: 1,
+    explanation: "HYDRAULIC CYLINDER (linear actuator): pressurized oil enters → acts on piston area → generates LINEAR FORCE (F = P × A) and MOVEMENT. Output force determined by: pressure × bore area. Used for: excavator boom/stick/bucket, dozer blade, loader lift, dump truck hoist."
+  },
+  {
+    q: "A DOUBLE-ACTING HYDRAULIC CYLINDER differs from single-acting because:",
+    options: ["It has two pistons", "It has OIL PORTS on BOTH SIDES of the piston — can exert force in BOTH EXTEND and RETRACT directions", "It uses two pumps", "It can only push, not pull"],
+    answer: 1,
+    explanation: "DOUBLE-ACTING cylinder: oil port each side of piston. Extend: oil into cap end → piston moves out. Retract: oil into rod end → piston pulls in. Both directions powered. SINGLE-ACTING: oil one side only → gravity or spring returns piston. Most construction cylinders are double-acting."
+  },
+  {
+    q: "The HYDRAULIC MOTOR converts:",
+    options: ["Mechanical rotation to hydraulic pressure", "HYDRAULIC pressure and flow into ROTATIONAL mechanical output (torque and speed)", "Electrical energy to hydraulic energy", "Linear motion to rotation only"],
+    answer: 1,
+    explanation: "HYDRAULIC MOTOR: reverse of pump — pressurized fluid enters → acts on pistons/vanes/gears → creates rotation → output shaft turns. Used in: track drive motors (excavator, dozer), fan drives, winches, and anywhere continuous rotation is needed from hydraulic power."
+  },
+  {
+    q: "HYDRAULIC HOSES must be rated for which specification?",
+    options: ["Working pressure only", "WORKING PRESSURE, BURST PRESSURE (minimum 4× working), and TEMPERATURE range — must match system requirements", "Only the flow rate", "Only the fluid type"],
+    answer: 1,
+    explanation: "HOSE SELECTION: (1) WORKING PRESSURE — must exceed system max pressure with safety factor, (2) BURST PRESSURE — minimum 4:1 safety factor over working pressure, (3) TEMPERATURE RANGE — fluid and ambient, (4) FLUID COMPATIBILITY — correct inner liner for hydraulic oil type, (5) BEND RADIUS — minimum radius prevents kinking."
+  },
+  {
+    q: "The HYDRAULIC OIL COOLER prevents:",
+    options: ["Oil from being too cold in winter", "OIL OVERHEATING — high temperature thins oil, degrades additives, damages seals, and reduces efficiency", "Dirt from entering the system", "Pump cavitation"],
+    answer: 1,
+    explanation: "HYDRAULIC OIL COOLER: air-to-oil or water-to-oil cooler limits oil temperature to 60-80°C operating range. Above 80°C: (1) OIL THINS — leaks past seals, reduced film strength, (2) ADDITIVES DEGRADE — oxidation, (3) SEALS HARDEN and crack, (4) PUMP EFFICIENCY drops. Monitor temperature gauge on construction equipment."
+  },
+  {
+    q: "HYDRAULIC OIL CLEANLINESS is rated by ISO CLEANLINESS CODE (e.g., ISO 4406). Lower numbers mean:",
+    options: ["More contamination", "FEWER PARTICLES per ml — CLEANER oil — critical for high-pressure precision systems", "Higher viscosity", "Better lubrication only"],
+    answer: 1,
+    explanation: "ISO CLEANLINESS CODE: counts particles per ml at multiple size ranges. LOWER CODE = FEWER PARTICLES = CLEANER. Servo valves need ISO 14/11 (very clean). Gear pumps tolerate ISO 18/15. Using oil cleaner than required = longer component life. Monitor with particle counters."
+  },
+  {
+    q: "LOAD-SENSING hydraulic system in modern construction equipment means:",
+    options: ["The operator feels the load through the controls", "PUMP OUTPUT ADJUSTS AUTOMATICALLY to match actual load demand — no wasted flow, less heat, better fuel economy", "Only maximum load can be handled", "System locks under heavy load"],
+    answer: 1,
+    explanation: "LOAD-SENSING (LS): signal from work circuit tells pump how much pressure/flow is needed → pump adjusts output EXACTLY to demand. Advantages: no EXCESS FLOW to waste as heat, REDUCED FUEL CONSUMPTION (30%+ savings vs fixed displacement), BETTER FEEL for operator."
+  },
+  {
+    q: "The PRIORITY VALVE in a mobile machine hydraulic system ensures:",
+    options: ["All functions receive equal flow", "CRITICAL FUNCTIONS (steering, brakes) always receive adequate flow BEFORE less critical functions get oil", "Maximum pressure to all functions", "Oil is preheated before use"],
+    answer: 1,
+    explanation: "PRIORITY VALVE: when demand exceeds pump capacity → priority valve ensures STEERING and BRAKES (safety-critical) get their required flow first, BEFORE implement functions. If pump is working hard on boom → steering still gets full flow. Essential safety feature."
+  },
+
+  // ── 11.3 TROUBLESHOOTING AND MAINTENANCE ──────────────────────
+  {
+    q: "SLOW HYDRAULIC CYLINDER MOVEMENT indicates:",
+    options: ["Correct system operation", "LOW FLOW RATE to the cylinder — causes: low pump output, worn pump, incorrect valve setting, or internal cylinder leakage", "Too much oil in reservoir", "Correctly adjusted relief valve"],
+    answer: 1,
+    explanation: "SLOW CYLINDER: (1) WORN PUMP — reduced volumetric efficiency, (2) RELIEF VALVE SET TOO LOW — oil diverts to tank before full speed, (3) FLOW CONTROL VALVE restricting, (4) INTERNAL CYLINDER LEAKAGE — oil bypasses piston seal, (5) BLOCKED FILTER causing pump starvation."
+  },
+  {
+    q: "HYDRAULIC SYSTEM OVERHEATING (oil above 80-90°C) causes include:",
+    options: ["Correct system operation in summer", "RELIEF VALVE OPENING CONTINUOUSLY (wrong setting), INTERNAL LEAKAGE, BLOCKED COOLER, or system working beyond its design capacity", "Cold weather operation only", "Correctly sized pump"],
+    answer: 1,
+    explanation: "OVERHEATING CAUSES: (1) RELIEF VALVE OPEN CONTINUOUSLY — all pump energy wasted as heat, (2) INTERNAL LEAKAGE in cylinders/motors/valves — fluid work converts to heat, (3) BLOCKED OIL COOLER — heat cannot be rejected, (4) UNDERSIZED SYSTEM — working beyond rated capacity."
+  },
+  {
+    q: "NO MOVEMENT of the hydraulic cylinder despite pump running indicates:",
+    options: ["System working correctly at full load", "RELIEF VALVE SET TOO LOW — all flow dumps to tank, or BROKEN/DISCONNECTED CONTROL VALVE — no oil reaching cylinder", "Pump working at maximum efficiency", "Normal warm-up behaviour"],
+    answer: 1,
+    explanation: "NO CYLINDER MOVEMENT: (1) RELIEF VALVE TOO LOW — pump output pressure cannot build high enough to overcome load → all oil to tank at low pressure, (2) DISCONNECTED VALVE — oil not reaching cylinder, (3) SEIZED CYLINDER — mechanically stuck, (4) EMPTY RESERVOIR — pump drawing air."
+  },
+  {
+    q: "SPONGY or JERKY cylinder movement indicates:",
+    options: ["Normal cylinder operation", "AIR IN HYDRAULIC SYSTEM — air is compressible → cylinder moves, stops, moves → jerky; foam in oil causes same effect", "Correct oil type in use", "Relief valve correctly set"],
+    answer: 1,
+    explanation: "JERKY/SPONGY MOVEMENT: AIR IN SYSTEM. Air compresses under pressure → cylinder moves. Air expands → cylinder stops. Cycle repeats → JERKY movement. Also: cylinder won't hold position — air compresses under load. BLEED air from system by cycling cylinders multiple times with reservoir cap loosened."
+  },
+  {
+    q: "HYDRAULIC CYLINDER DRIFTING (slowly sinking under load when valve is closed) indicates:",
+    options: ["Normal behaviour under load", "INTERNAL CYLINDER SEAL LEAKAGE or EXTERNAL CONTROL VALVE LEAKAGE allowing fluid to bypass piston under load pressure", "Pump is over-delivering", "Relief valve is working correctly"],
+    answer: 1,
+    explanation: "CYLINDER DRIFT: valve closed but load slowly descends. Causes: (1) WORN CYLINDER PISTON SEALS — oil bypasses piston from high-pressure to low-pressure side, (2) WORN CONTROL VALVE — spool seal leak allows oil to escape from cylinder port. Safety concern for suspended loads. Replace seals."
+  },
+  {
+    q: "HYDRAULIC OIL must be changed because:",
+    options: ["It lasts indefinitely if filtered well", "Additives DEPLETE (anti-wear, anti-oxidant, anti-foam), oil OXIDIZES (turns acidic, dark, varnish deposits), and WATER INGRESS corrodes components", "Only the viscosity changes with age", "Only needs changing if contaminated by dirt"],
+    answer: 1,
+    explanation: "OIL DEGRADATION: (1) ANTI-WEAR additives deplete → metal wear, (2) OXIDATION — heat + oxygen → acidic oil → corrosion, varnish, sludge deposits in valves, (3) WATER INGRESS — condensation, seal leaks → EMULSION, corrosion, reduced lubrication. Change per schedule OR oil analysis."
+  },
+  {
+    q: "HYDRAULIC FILTER should be replaced when:",
+    options: ["Only when completely blocked and no flow passes", "PER MANUFACTURER SCHEDULE (typically every 500-1000 hours), OR when BYPASS INDICATOR (clogging indicator) activates", "Once per year regardless of hours", "Only when oil is changed"],
+    answer: 1,
+    explanation: "FILTER REPLACEMENT: at SCHEDULED INTERVALS (500-1000 hours typically, or every oil change), OR when BYPASS INDICATOR activates (shows filter is clogged and bypass valve has opened). ALWAYS change after major component FAILURE (metal particles contaminate system). Change RETURN LINE filter most frequently."
+  },
+  {
+    q: "When checking for HYDRAULIC LEAKS, the SAFEST method is:",
+    options: ["Run your hands along hoses to find wet spots", "Use a PIECE OF CARDBOARD to detect spray — NEVER use hands near high-pressure leaks (fluid injection injury is life-threatening)", "Pressurize system to maximum and look at connections", "Use a bare light bulb near hydraulic hoses"],
+    answer: 1,
+    explanation: "HYDRAULIC LEAK SAFETY: HIGH PRESSURE oil (200-400 bar) can inject through skin (fluid injection injury) — looks like a pinprick but destroys tissue. CARDBOARD TEST: run cardboard along line to find spray. If skin injection occurs: IMMEDIATE HOSPITAL — do not wait — it is a medical emergency."
+  },
+  {
+    q: "HYDRAULIC OIL SAMPLING (oil analysis) is done to:",
+    options: ["Improve oil colour aesthetics", "DETECT EARLY WEAR before failure — identify metal particles (pump, cylinder, bearing wear), water contamination, additive depletion, and viscosity change", "Only check if oil needs colour change", "Satisfy regulatory requirements only"],
+    answer: 1,
+    explanation: "OIL ANALYSIS: send sample to laboratory → particle count (wear metals: iron, copper, aluminium indicate which component is wearing), water percentage, viscosity measurement, additive levels. PREDICTIVE MAINTENANCE tool — detect failing component BEFORE it fails catastrophically."
+  },
+  {
+    q: "HYDRAULIC SYSTEM COMMISSIONING (first startup of new or rebuilt system) requires:",
+    options: ["Full speed and load immediately", "FILL WITH CLEAN OIL, BLEED AIR, run at NO-LOAD low pressure initially, check all connections for leaks, gradually increase load", "Maximum pressure test immediately", "No special procedure needed"],
+    answer: 1,
+    explanation: "COMMISSIONING: (1) FILL with clean oil (use filtered oil, clean containers), (2) PRIME PUMP (fill pump case before starting), (3) START at NO LOAD, low pressure, (4) CYCLE actuators slowly to BLEED AIR, (5) CHECK for leaks at all connections, (6) Gradually increase load over first hours. Prevents early failures."
+  },
+  {
+    q: "The HYDRAULIC SYSTEM on a BULLDOZER controls which functions?",
+    options: ["Only the blade lift", "BLADE LIFT, BLADE TILT, RIPPER LIFT/TILT, and TRANSMISSION TORQUE CONVERTER (on some models)", "Only the engine throttle", "Only the ripper"],
+    answer: 1,
+    explanation: "DOZER HYDRAULIC SYSTEM controls: (1) BLADE LIFT (up/down), (2) BLADE TILT (angle left/right), (3) BLADE ANGLE (U-blade models), (4) RIPPER LIFT and TILT (if fitted), (5) STEERING (hydraulic or hydrostatic drive). Understanding which function uses hydraulic power helps troubleshoot problems."
+  },
+  {
+    q: "HYDRAULIC CONTAMINATION causes what percentage of hydraulic system failures?",
+    options: ["About 10% — other causes dominate", "About 20% of failures", "OVER 70-80% of all hydraulic system failures are caused by contamination", "Less than 5%"],
+    answer: 2,
+    explanation: "CONTAMINATION is the #1 CAUSE of hydraulic failures: 70-80% of all failures are contamination-related. Sources: BUILT-IN during manufacture (metal chips, dirt), INGESTED (air, dust through breather), GENERATED IN-SERVICE (wear particles, sealant flakes), INTRODUCED during maintenance (dirty tools, containers). Filter everything."
+  },
+  {
+    q: "The HYDRAULIC BREATHER (air filter on reservoir) prevents:",
+    options: ["Oil from evaporating", "DIRT AND MOISTURE from entering the reservoir as oil level changes during cylinder operation", "Oil from foaming", "Pressure from building in reservoir"],
+    answer: 1,
+    explanation: "HYDRAULIC BREATHER: as cylinders extend → oil level drops → air must enter reservoir to prevent vacuum. As cylinders retract → oil returns → air must exit. Breather FILTERS this air to prevent DIRT INGESTION. Also contains DESICCANT in some designs to absorb moisture. Replace per schedule."
+  },
+  {
+    q: "In a HYDROSTATIC DRIVE system (used in some construction equipment):",
+    options: ["A mechanical gearbox transmits power", "VARIABLE DISPLACEMENT PUMP drives a hydraulic motor — infinitely variable speed and direction without clutch or gearbox", "Electric motors power the tracks directly", "Belt drives transmit engine power"],
+    answer: 1,
+    explanation: "HYDROSTATIC DRIVE: engine → variable pump (swashplate angle controls flow direction and volume) → hydraulic motor → tracks/wheels. ADVANTAGES: infinitely variable speed forward and reverse, smooth load handling, engine braking. Used in: some dozers, skid-steer loaders, compact excavators."
+  },
+  {
+    q: "ELECTROHYDRAULIC systems combine electronics with hydraulics to provide:",
+    options: ["Only manual control with electronic display", "PRECISE PROPORTIONAL CONTROL — electronic signals control proportional valves → precise cylinder positioning, speed control, and automation", "Only on/off valve control", "Emergency backup for electronic failures"],
+    answer: 1,
+    explanation: "ELECTROHYDRAULIC: proportional solenoid valves convert electrical signals (from joystick, sensors, ECU) to proportional hydraulic flow → PRECISE control of speed and position. Modern excavators: electrohydraulic controls, load sensing, auto-idle, grade control (GPS/laser). Much more precise than direct mechanical control."
+  },
+  {
+    q: "HYDRAULIC SYSTEM PRESSURE TESTING should be done:",
+    options: ["By tapping the hoses while under full pressure", "Using CALIBRATED PRESSURE GAUGES at specified test points — system must be WARMED UP before testing — compare to specification", "Only by measuring oil level in reservoir", "By observing cylinder speed only"],
+    answer: 1,
+    explanation: "PRESSURE TESTING: connect CALIBRATED GAUGE at specified test port. WARM UP system (cold oil is thicker → different readings). Compare measured pressure to SPEC (pump relief pressure, standby pressure, working pressure). Pressures below spec → pump worn or relief set too low."
+  },
+  {
+    q: "When REPLACING HYDRAULIC SEALS, the correct procedure includes:",
+    options: ["Use any seal that fits the groove", "Use MANUFACTURER-SPECIFIED SEALS, clean all surfaces, lubricate seals with clean hydraulic oil before assembly, avoid twisting or cutting seals", "Force seals into grooves with tools", "Any generic seal is acceptable if same size"],
+    answer: 1,
+    explanation: "SEAL REPLACEMENT: (1) Use SPECIFIED SEALS (correct material for oil type and temperature — Nitrile, Viton, Polyurethane), (2) CLEAN surfaces, (3) LUBRICATE with CLEAN HYDRAULIC OIL (not grease — incompatible), (4) Install carefully — no sharp edges, no twisting, (5) Torque fittings correctly."
+  },
+  {
+    q: "हाइड्रोलिक तेल फेर्नु पर्ने संकेत के हो? (What are the signs that hydraulic oil needs to be replaced?)",
+    options: ["तेलको रंग मात्र परिवर्तन (Only colour change)", "कालो/मैलो रंग, जलेको गन्ध, पानीको मिसावट, र फोम उत्पन्न हुनु (Dark/dirty colour, burnt smell, water contamination, and foaming)", "इन्जिन तेल परिवर्तन गर्दा (When engine oil is changed)", "कुनै पनि संकेत हुँदैन (No signs at all)"],
+    answer: 1,
+    explanation: "हाइड्रोलिक तेल परिवर्तनका संकेत: (1) कालो वा बाक्लो रंग, (2) जलेको गन्ध — तेल अक्सिडेसन, (3) दूधिया रंग — पानीको मिसावट, (4) फोम — हावा मिश्रण। (Signs for hydraulic oil replacement: dark colour, burnt smell, milky colour indicating water, or foam indicating air.)"
+  },
+  {
+    q: "PROPER HYDRAULIC HOSE INSTALLATION requires:",
+    options: ["Routing hoses as directly as possible regardless of bends", "ADEQUATE LENGTH for movement, CORRECT BEND RADIUS (not less than minimum), CLAMPING away from heat sources, and PROTECTIVE SLEEVES where chafing risk exists", "Maximum tension on all connections", "Hoses touching hot exhaust components for pre-heating"],
+    answer: 1,
+    explanation: "HOSE INSTALLATION: (1) SUFFICIENT LENGTH — allow for movement without stretching, (2) CORRECT BEND RADIUS — kinking cuts life dramatically, (3) SUPPORT with clamps — prevents vibration fatigue, (4) ROUTE AWAY FROM HEAT — exhaust, turbo (heat degrades rubber), (5) PROTECT from abrasion with sleeves where hoses contact structures."
+  },
+  {
+    q: "The HYDRAULIC SYSTEM FLUSHING procedure after a major component failure involves:",
+    options: ["Simply adding new oil to the contaminated system", "DRAIN ALL OLD OIL, disassemble and clean reservoir, replace ALL FILTERS, flush lines with clean oil, refill with new oil, cycle system and recheck filters", "Only replacing the failed component and continuing", "Adding a flushing additive to old oil and running for one hour"],
+    answer: 1,
+    explanation: "POST-FAILURE FLUSH: metal particles from a failed pump or motor contaminate the ENTIRE SYSTEM — cylinders, valves, motor, hoses. Required: (1) DRAIN ALL OIL, (2) CLEAN RESERVOIR (wipe out sludge and particles), (3) REPLACE ALL FILTERS, (4) FLUSH CIRCUITS with clean oil, (5) REFILL with fresh oil, (6) SHORT RUN → check filters again."
+  }  ,
+  {
+    q: "A COUNTERBALANCE VALVE in a hydraulic system is used to:",
+    options: ["Balance pressure between two pumps", "PREVENT LOAD FROM DROPPING uncontrolled — creates back-pressure on return line to control descent of suspended loads", "Balance oil temperature between circuits", "Control pump displacement"],
+    answer: 1,
+    explanation: "COUNTERBALANCE VALVE: installed on cylinder rod-end return line for SUSPENDED LOADS (crane, loader, dump body). Requires minimum PILOT PRESSURE to open → controlled lowering. Prevents load from OVERRUNNING and crashing down if a hose ruptures or control valve fails."
+  },
+  {
+    q: "SEQUENCE VALVES in a hydraulic circuit are used to:",
+    options: ["Control oil cleanliness level", "ENSURE ONE CYLINDER COMPLETES ITS STROKE before another begins — pressure-based sequencing without timers", "Reduce maximum system pressure", "Divert excess flow to tank"],
+    answer: 1,
+    explanation: "SEQUENCE VALVE: pressure-operated valve that OPENS only after a set pressure is reached. If cylinder 1 must finish before cylinder 2 starts → sequence valve on cylinder 2 inlet set above cylinder 1 working pressure → C1 completes first, then pressure rises, opens sequence valve → C2 starts."
+  },
+  {
+    q: "REGENERATIVE HYDRAULIC CIRCUIT increases cylinder EXTENSION SPEED by:",
+    options: ["Adding a second pump", "CONNECTING ROD-END OIL BACK TO CAP END — rod-end discharge adds to pump flow → faster extension (but reduced force)", "Increasing system pressure", "Opening the relief valve partially"],
+    answer: 1,
+    explanation: "REGENERATIVE CIRCUIT: oil from rod-end (normally returned to tank during extend) is RECYCLED to cap end → adds to pump flow → FASTER EXTENSION SPEED. Trade-off: force is reduced (net force = pressure × rod area only). Used when speed is more important than force during extension."
+  },
+  {
+    q: "A HYDRAULIC INTENSIFIER (booster) is used to:",
+    options: ["Boost electric power for hydraulic controls", "MULTIPLY PRESSURE — small pump provides high flow at moderate pressure → intensifier converts to LOW FLOW at VERY HIGH PRESSURE", "Increase oil reservoir capacity", "Clean hydraulic oil"],
+    answer: 1,
+    explanation: "HYDRAULIC INTENSIFIER: two pistons of different areas connected. Low-pressure oil acts on large area → small area delivers oil at proportionally higher pressure. Example: 100 bar in × ratio 5:1 = 500 bar out. Used in: pressing, clamping, testing, where very high pressure needed briefly."
+  },
+  {
+    q: "The HYDRAULIC SYSTEM WARM-UP PROCEDURE on construction equipment in cold weather:",
+    options: ["Not necessary — operate at full load immediately", "Run at LOW SPEED and LOW LOAD for 5-15 minutes — allows oil to warm and thin, seals to soften, prevents cold-start damage", "Open all relief valves to reduce pressure during warm-up", "Avoid using hydraulics until cabin heater warms the oil"],
+    answer: 1,
+    explanation: "COLD START WARM-UP: cold hydraulic oil is THICK → high flow resistance → pump starvation → CAVITATION risk. SEALS are STIFF → slow to seal. WARM-UP: idle engine, cycle implements slowly without load → oil circulates → warms → thins → system ready. Especially important below 0°C."
+  },
+  {
+    q: "HYDRAULIC SYSTEM SAFETY — before working on any hydraulic circuit, you MUST:",
+    options: ["Only lower the engine speed", "LOWER ALL IMPLEMENTS TO GROUND, RELIEVE SYSTEM PRESSURE (cycle controls several times with engine off), and LOCK OUT the machine", "Only put machine in neutral", "Only wear gloves and proceed"],
+    answer: 1,
+    explanation: "HYDRAULIC SAFETY: (1) LOWER all raised implements (gravity → stored potential energy), (2) ENGINE OFF, (3) CYCLE CONTROLS to release stored pressure in accumulators and lines, (4) LOCKOUT/TAGOUT machine, (5) BLOCK/PROP suspended loads before working beneath them. High-pressure injection = medical emergency."
+  },
+  {
+    q: "PISTON PUMP vs GEAR PUMP — which statement is TRUE?",
+    options: ["Gear pump is more efficient and more expensive", "PISTON PUMP: higher efficiency (90%+), higher pressure capability (500+ bar), variable displacement possible, more expensive; GEAR PUMP: lower efficiency, lower pressure, fixed displacement, cheaper", "They have identical performance characteristics", "Gear pump can achieve higher pressure than piston pump"],
+    answer: 1,
+    explanation: "COMPARISON: PISTON PUMP — most efficient (90%+), highest pressure (700+ bar in some systems), variable displacement, expensive, precise. GEAR PUMP — lower efficiency (80-85%), lower max pressure (250-350 bar), fixed displacement, cheap, robust, easy to maintain. Choose based on: pressure needed, budget, efficiency requirement."
+  },
+  {
+    q: "हाइड्रोलिक प्रणालीमा दबाब नभएको अवस्थामा के जाँच्नु पर्छ? (What should be checked when there is no pressure in the hydraulic system?)",
+    options: ["केवल तेलको रंग (Only oil colour)", "तेलको लेभल, पम्पको अवस्था, रिलिफ भल्भको सेटिङ, र फिल्टरको अवस्था (Oil level, pump condition, relief valve setting, and filter condition)", "केवल हाइड्रोलिक होज (Only hydraulic hoses)", "केवल इन्जिनको RPM (Only engine RPM)"],
+    answer: 1,
+    explanation: "No pressure checklist: (1) OIL LEVEL — low level → pump cavitates, no pressure, (2) PUMP CONDITION — worn pump → low output, (3) RELIEF VALVE SETTING — set too low → all oil bypasses to tank, (4) FILTER BLOCKED — starving pump. Check in this order — simpler checks first."
+  },
+  {
+    q: "The HYDRAULIC OIL VISCOSITY GRADE most commonly used in construction equipment is:",
+    options: ["SAE 30 engine oil (acceptable substitute)", "ISO VG 46 or ISO VG 68 hydraulic oil — selected based on operating temperature range", "ATF (automatic transmission fluid) only", "Water-glycol for all temperatures"],
+    answer: 1,
+    explanation: "HYDRAULIC OIL VISCOSITY: ISO VG 46 (moderate temperatures, most common) or ISO VG 68 (high ambient temperatures, tropical climates). Cold climates: VG 32 or multigrade HV type. NEVER substitute engine oil or ATF — different additive packages damage hydraulic seals and pumps."
+  },
+  {
+    q: "A PRESSURE GAUGE installed in the hydraulic system should read ZERO when:",
+    options: ["Engine is running at idle speed", "ALL ACTUATORS are at rest, control valves are in NEUTRAL, and engine is OFF — system pressure fully relieved", "When the filter bypass indicator shows red", "When maximum load is applied"],
+    answer: 1,
+    explanation: "ZERO PRESSURE condition: engine OFF, all controls neutral, actuators at rest → no pump output → no trapped pressure (if relief and check valves work correctly). Some ACCUMULATORS maintain pressure after shutdown — must be bled before service. Check this before loosening any hydraulic fitting."
+  },
+  {
+    q: "Which HYDRAULIC COMPONENT is most sensitive to contamination?",
+    options: ["Hydraulic hoses (most prone to contamination)", "SERVO VALVES and PROPORTIONAL VALVES — clearances of 1-5 microns — a single particle can cause sticking", "Hydraulic reservoir (largest component)", "Return line filter"],
+    answer: 1,
+    explanation: "SERVO/PROPORTIONAL VALVES: spool-to-bore clearance = 1-5 MICRONS (a human hair is 70 microns). Even microscopic particles cause spool STICKING or SCOURING of precision surfaces → loss of control. These valves require ISO 14/11 or cleaner oil. Most expensive hydraulic component to repair."
+  },
+  {
+    q: "HYDRAULIC SYSTEM BACK-PRESSURE (restriction in return line) causes:",
+    options: ["Better cylinder performance", "REDUCED CYLINDER FORCE and INCREASED HEAT GENERATION — return line pressure works against the extending cylinder rod", "Improved oil cooling", "Higher lift capacity"],
+    answer: 1,
+    explanation: "BACK-PRESSURE in return line: cylinder net force = (cap-end pressure × bore area) MINUS (rod-end back-pressure × rod-end area). Back-pressure REDUCES net force. Common cause: CLOGGED RETURN FILTER (bypass opens = dirty oil circulates), undersized return line, cooler restriction."
+  },
+  {
+    q: "Hydraulic system NOISE DIAGNOSIS: HIGH-PITCHED WHINE from pump indicates:",
+    options: ["Correct pump operation", "CAVITATION — pump starved for oil (low level, blocked suction line, cold thick oil, suction line air leak) — destructive to pump", "Hydraulic oil too hot only", "Normal pump startup sound"],
+    answer: 1,
+    explanation: "PUMP WHINE/SCREAM: CAVITATION — pump inlet pressure too low → oil cannot enter fast enough → vapor bubbles form → carried to high-pressure side → IMPLODE. Sounds like gravel in pump. IMMEDIATE ACTION: stop and find cause (low oil, suction restriction, oil too cold). Cavitation destroys pumps rapidly."
+  },
+  {
+    q: "What does BANGING or KNOCKING SOUND from hydraulic cylinders indicate?",
+    options: ["Normal cylinder operation", "AIR IN CYLINDER — air compresses and then suddenly releases → bang when cylinder reaches end of stroke, or during movement", "Relief valve operating normally", "Correct cylinder speed"],
+    answer: 1,
+    explanation: "BANGING IN CYLINDER: large air pocket compresses during stroke → releases suddenly → BANG. Also: CUSHIONING failure at end of stroke → cylinder hits end cap without hydraulic cushioning → mechanical impact. Bleed air from system by cycling slowly. Check cushion valves for wear."
+  },
+  {
+    q: "HYDRAULIC SYSTEM EFFICIENCY is typically:",
+    options: ["Always 100% — no energy losses in fluid systems", "70-90% overall: losses include volumetric (leakage), mechanical (friction), and hydraulic (fluid resistance) losses", "Always below 50%", "Same as input mechanical efficiency"],
+    answer: 1,
+    explanation: "HYDRAULIC EFFICIENCY: total efficiency = volumetric efficiency × mechanical efficiency × hydraulic efficiency. Typical overall: 70-90%. Losses: VOLUMETRIC (internal pump leakage), MECHANICAL (bearing friction, seal friction), HYDRAULIC (fluid friction in lines, valves). All lost as HEAT. Bigger system = more heat management needed."
+  },
+  {
+    q: "The SUCTION STRAINER (coarse filter) at the hydraulic reservoir outlet prevents:",
+    options: ["Fine particles from entering pump", "LARGE DEBRIS (gasket pieces, large metal chips, assembly debris) from entering and destroying pump on startup", "Air from entering system", "Water contamination"],
+    answer: 1,
+    explanation: "SUCTION STRAINER: coarse mesh (100-150 micron typically) at tank outlet. First line of defense against LARGE DEBRIS — not for fine filtration (that's the high-pressure and return filters). PRIMARY ROLE: protect pump from catastrophic damage by large particles during initial start and after major repairs."
+  },
+  {
+    q: "HYDRAULIC OIL COLOUR CHANGE from amber to DARK BROWN/BLACK indicates:",
+    options: ["Normal aging — no action needed", "SEVERE OXIDATION from overheating — oil has degraded, additive depleted, possible varnish formation — REPLACE IMMEDIATELY", "Oil is more concentrated — add more oil only", "Filter is working very effectively"],
+    answer: 1,
+    explanation: "DARK OIL: OXIDATION from overheating. Heat + oxygen → oil molecules break down → VARNISH and SLUDGE form → deposit in valve clearances → sticking valves. Burnt smell confirms thermal breakdown. Replace ALL oil, flush system, fix cooling problem. Dark oil also = depleted anti-wear additives → pump wear."
+  },
+  {
+    q: "A HYDRAULIC JACK should NEVER be used:",
+    options: ["On concrete floors", "As a PERMANENT SUPPORT while working under a vehicle — jacks can slowly leak down → vehicle falls → fatal injury", "For lifting vehicles on level ground", "With clean hydraulic fluid"],
+    answer: 1,
+    explanation: "JACK SAFETY: hydraulic jacks are LIFTING DEVICES only, not SUPPORT DEVICES. Hydraulic seals can slowly leak → jack lowers unexpectedly. ALWAYS place rated AXLE STANDS (jack stands) at chassis jacking points BEFORE going under a vehicle. A falling vehicle can kill instantly."
+  }  ,
+  {
+    q: "HYDRAULIC OIL vs ENGINE OIL — can engine oil be used in hydraulic systems?",
+    options: ["Yes — both are just oil, interchangeable freely", "NO — engine oil has different additives (detergents that cause foaming, ZDDP that damages yellow-metal seals in hydraulic systems) — use DEDICATED HYDRAULIC OIL", "Yes, but only for a short time as emergency", "Only SAE 30 engine oil is compatible"],
+    answer: 1,
+    explanation: "ENGINE OIL in hydraulics: DETERGENT ADDITIVES cause FOAMING (air entrapment), ZDDP (zinc) damages hydraulic pump seals and yellow metals (brass/bronze in valves), different viscosity behaviour. In emergency (no hydraulic oil available): some manufacturers allow temporary use, but FLUSH COMPLETELY as soon as possible."
+  },
+  {
+    q: "The HYDRAULIC POWER STEERING PUMP in a vehicle is sized to provide adequate flow for:",
+    options: ["Maximum vehicle load only", "ADEQUATE STEERING ASSIST at IDLE SPEED (worst case — engine at lowest RPM, slow manoeuvreing requires most assist) while not wasting excessive power at high RPM", "Only highway speed steering", "The maximum engine RPM only"],
+    answer: 1,
+    explanation: "PS PUMP SIZING: worst case = PARKING MANOEUVERS at IDLE RPM (high steering torque demand, low pump speed). Pump must provide adequate flow/pressure here. At high RPM, pump over-supplies → FLOW CONTROL VALVE bypasses excess → avoids over-assist and energy waste. Balance between low-speed assist and high-speed efficiency."
+  }
 ];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
