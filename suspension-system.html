@@ -1153,7 +1153,510 @@ const rawQuestions = [
                 options: ["Air suspension", "Leaf spring suspension", "MacPherson strut", "Independent suspension"],
                 answer: 1,
                 explanation: "Leaf spring suspensions are robust and ideal for heavy-duty load-carrying vehicles."
-            }
+            },
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 8 — SUSPENSION SYSTEM: Additional 80 MCQs
+// Append after your 20 supplied MCQs → total 100
+// Syllabus: 8.1 Introduction & Use · 8.2 Components ·
+//           8.3 Troubleshooting & Maintenance
+// Sources: as-mechanics.pdf · NEW papers (2081/3/12 Senior Mechanics)
+//          saja_yatayat.pdf · Sewa_sambandi.pdf · all supplied papers
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM NEW PSC PAPER (2081/3/12 Senior Mechanics Key A) ────
+  {
+    q: "Which of the following is NOT a component of the suspension system?",
+    options: ["Coil spring", "Leaf spring", "Shock absorber", "Connecting rod"],
+    answer: 3,
+    explanation: "CONNECTING ROD is an engine component (connects piston to crankshaft) — NOT part of the suspension system. Suspension components: springs (coil, leaf, torsion, air), shock absorbers, control arms, ball joints, and anti-roll bars. From new PSC paper Q39."
+  },
+  {
+    q: "The tilting of the front wheels AWAY from the vertical (when viewed from the front) is called:",
+    options: ["Caster", "Camber", "Toe-in", "Toe-out"],
+    answer: 1,
+    explanation: "CAMBER = angle of wheel tilt from vertical. Positive camber = top tilted outward. Negative camber = top tilted inward (used in sports cars for better cornering grip). From new PSC paper Q40 — confirmed wheel alignment term."
+  },
+  {
+    q: "In a leaf spring, one end of the spring is fixed and the other end is attached to a:",
+    options: ["V-bolt", "I-bolt", "Shackle", "Axle shaft"],
+    answer: 2,
+    explanation: "SHACKLE: the movable end of a leaf spring is attached to a shackle (a pivoting link) on the chassis. The shackle allows the spring to change length as it flexes under load. From new PSC paper Q38 — key suspension component."
+  },
+  {
+    q: "The tyre size is designated as 175/65 R14 82S. The aspect ratio of the tyre is:",
+    options: ["175", "65", "14", "82"],
+    answer: 1,
+    explanation: "Tyre marking 175/65 R14 82S: 175 = section width (mm), 65 = ASPECT RATIO (sidewall height as % of width), R = Radial, 14 = rim diameter (inches), 82 = load index, S = speed rating. From new PSC Senior Mechanics paper Q35."
+  },
+  {
+    q: "Which of the following is NOT a type of wheel used in automobiles?",
+    options: ["Wire wheel", "Light alloy cast wheel", "Rim wheel", "Pressed steel disc wheel"],
+    answer: 2,
+    explanation: "'RIM WHEEL' is not a recognized standard wheel type. Standard automobile wheel types: WIRE SPOKE wheels (older/bikes), LIGHT ALLOY CAST (aluminium alloy, modern), PRESSED STEEL DISC (standard factory wheel). From new PSC Senior paper Q36."
+  },
+
+  // ── FROM as-mechanics.pdf PSC 2082 ───────────────────────────
+  {
+    q: "What is the primary purpose of a suspension system in a vehicle?",
+    options: ["Increase engine power", "Provide smooth ride by absorbing road shocks", "Improve fuel efficiency", "Enhance braking"],
+    answer: 1,
+    explanation: "Suspension system's primary purpose: provide SMOOTH RIDE by absorbing/isolating road shocks AND maintain tyre contact with road for safety. Appeared in as-mechanics.pdf PSC 2082 and multiple papers — confirmed repeat."
+  },
+  {
+    q: "The objective of the suspension system in a vehicle includes:",
+    options: ["Prevent road shocks from reaching passengers only", "Safeguard occupants and preserve vehicle stability only", "Prevent shocks, safeguard occupants, AND preserve vehicle stability", "Only improve fuel consumption"],
+    answer: 2,
+    explanation: "Suspension serves ALL THREE: (1) PREVENT shock transmission to occupants, (2) SAFEGUARD occupants from jolts, (3) PRESERVE vehicle STABILITY during cornering and on rough surfaces. From as-mechanics.pdf — classic ALL OF ABOVE pattern."
+  },
+  {
+    q: "A sign of worn-out struts or shock absorbers is:",
+    options: ["Excessive bouncing after hitting a bump", "Squeaking brakes", "Engine misfiring", "Hard steering only"],
+    answer: 0,
+    explanation: "Worn shock absorbers: cannot dampen spring oscillations → vehicle CONTINUES BOUNCING excessively after hitting a bump (more than 1-2 bounces = worn). From as-mechanics.pdf PSC 2082 confirmed question."
+  },
+  {
+    q: "What is a symptom of a faulty suspension system?",
+    options: ["Smooth braking", "Coolant leakage", "Air filter clogging", "Uneven tyre wear"],
+    answer: 3,
+    explanation: "UNEVEN TYRE WEAR is a key symptom of faulty suspension — worn components cause incorrect wheel alignment, making one part of the tyre wear faster. Also: excessive bouncing, pulling, clunking noise. From as-mechanics.pdf confirmed."
+  },
+  {
+    q: "A vehicle has excessive inside rear tyre wear on the right rear tyre. The cause could be:",
+    options: ["Bent rear spindle", "Excessive negative caster", "Excessive positive camber", "Worn front struts"],
+    answer: 2,
+    explanation: "EXCESSIVE POSITIVE CAMBER (wheel top tilted outward) → inner tyre bears more load → INSIDE TYRE WEAR. Negative camber → outside wear. Centre wear → overinflation. Edge wear → underinflation. From as-mechanics.pdf PSC 2082."
+  },
+  {
+    q: "Leaf spring absorbs shocks by:",
+    options: ["Expanding", "Bending", "Compression", "Twisting"],
+    answer: 1,
+    explanation: "Leaf springs absorb road shocks by BENDING. The spring flexes/bends under load and returns to shape, absorbing energy. From as-mechanics.pdf PSC 2082 Q44 — confirmed."
+  },
+
+  // ── FROM saja_yatayat.pdf ─────────────────────────────────────
+  {
+    q: "The problem caused by wheel IMBALANCE is:",
+    options: ["Hard steering and hard ride", "Poor acceleration and hard steering", "STEERING WHEEL VIBRATION and uneven tyre wear", "Poor acceleration only"],
+    answer: 2,
+    explanation: "Wheel imbalance: tyre/wheel mass unevenly distributed → tyre bounces and wobbles at speed → STEERING WHEEL VIBRATION (especially at certain speeds) and PATCHY TYRE WEAR. Solution: wheel balancing with small weights on rim."
+  },
+  {
+    q: "The low air pressure inside a tyre causes:",
+    options: ["Rapid tyre wear at centre", "Slow tyre wear", "Excessive tyre wear at centre", "Excessive tyre wear at edges"],
+    answer: 3,
+    explanation: "Under-inflated tyre: sidewalls flex excessively → tyre's EDGES carry more load → EXCESSIVE EDGE WEAR (both shoulders). Over-inflated → centre wear. Correct pressure → even wear across full tread width."
+  },
+  {
+    q: "What does the number '205' represent in a tyre size marking like 205/55 R16?",
+    options: ["The tyre diameter in inches", "The aspect ratio of the tyre", "The tyre section WIDTH in millimeters", "The load rating"],
+    answer: 2,
+    explanation: "205/55 R16: 205 = section WIDTH in millimeters, 55 = aspect ratio (sidewall height as % of width), R = Radial, 16 = rim diameter in inches. From saja_yatayat.pdf confirmed tyre size question."
+  },
+
+  // ── FROM Sewa_sambandi.pdf ────────────────────────────────────
+  {
+    q: "Tyre rotation is done to:",
+    options: ["Change tyre size", "EQUALIZE WEAR across all four tyres", "Reduce maintenance cost only", "Increase tyre pressure"],
+    answer: 1,
+    explanation: "TYRE ROTATION equalizes wear across all four tyres. Front tyres wear differently from rear (different steering/drive forces). Rotate every 8-12,000 km — extends total tyre life by making wear patterns even."
+  },
+  {
+    q: "What is the 'slip angle' of a tyre?",
+    options: ["Angle of tyre tread pattern", "Angle through which the wheel must turn sideways to sustain a lateral side force", "Camber angle of the wheel", "Tyre sidewall angle"],
+    answer: 1,
+    explanation: "SLIP ANGLE: when a tyre is subjected to a lateral force (cornering), it actually moves in a direction slightly different from where it points — this angular difference is the slip angle. From as-mechanics.pdf PSC 2082 Q45."
+  },
+
+  // ── 8.1 INTRODUCTION AND PURPOSE ─────────────────────────────
+  {
+    q: "The suspension system of a vehicle CONNECTS the:",
+    options: ["Engine to gearbox", "Wheels to the vehicle body/chassis while allowing relative movement", "Steering wheel to the wheels", "Propeller shaft to the differential"],
+    answer: 1,
+    explanation: "Suspension CONNECTS wheel assemblies to the body/chassis via springs, dampers, and linkages — while allowing the wheels to move up/down independently of the body. This is what enables both ride comfort and handling."
+  },
+  {
+    q: "The suspension system serves which combination of purposes?",
+    options: ["Speed and power only", "Comfort AND road-holding — these two goals conflict and must be balanced by design", "Fuel economy and emissions only", "Engine cooling and lubrication"],
+    answer: 1,
+    explanation: "Fundamental suspension CONFLICT: COMFORT needs soft springs (absorb bumps), ROAD HOLDING needs firm springs (keep tyres on ground). Engineers find the optimal balance. Sports cars = firm (handling priority); limousines = soft (comfort priority)."
+  },
+  {
+    q: "UNSPRUNG WEIGHT in a vehicle refers to the weight of:",
+    options: ["The vehicle body and passengers above the springs", "Components BELOW the springs: wheels, tyres, brakes, axles — not supported by springs", "The engine and drivetrain", "The fuel and luggage"],
+    answer: 1,
+    explanation: "UNSPRUNG WEIGHT: all mass NOT isolated by springs — wheels, tyres, brake discs/drums, hub, part of suspension arms. LOWER unsprung weight = better wheel control = better road contact = improved ride and handling. Key design goal."
+  },
+  {
+    q: "SPRUNG WEIGHT in a vehicle is:",
+    options: ["Weight of the tyres and wheels", "Weight of the BODY, engine, passengers, and cargo — everything supported by the springs", "Weight of the springs themselves", "Weight of the axles"],
+    answer: 1,
+    explanation: "SPRUNG WEIGHT: everything supported by the suspension springs — body, engine, transmission, fuel, passengers, cargo. The RATIO of sprung to unsprung weight affects ride quality. Higher ratio = smoother ride."
+  },
+  {
+    q: "Ride FREQUENCY of a suspension system refers to:",
+    options: ["Maximum vehicle speed on rough roads", "The NATURAL OSCILLATION RATE of the sprung mass — soft springs = low frequency = comfortable", "Number of bumps the car hits per minute", "Frequency of suspension service"],
+    answer: 1,
+    explanation: "RIDE FREQUENCY: how fast the sprung mass bounces = √(spring stiffness/sprung mass). Comfortable: ~60-90 cycles/min (1-1.5 Hz) matching human walking pace. Too high = harsh; too low = sea-sickness feeling."
+  },
+
+  // ── 8.2 COMPONENTS ───────────────────────────────────────────
+  {
+    q: "A COIL SPRING in a suspension system works by:",
+    options: ["Bending when loaded", "COMPRESSING and storing energy elastically, releasing it as the wheel drops", "Twisting along its axis", "Expanding laterally under load"],
+    answer: 1,
+    explanation: "COIL SPRING: a spiral of spring steel wire. Under load, it COMPRESSES (coils get closer) → stores elastic energy. As wheel drops into a hole, spring EXTENDS releasing stored energy. Used in MacPherson strut and double-wishbone suspensions."
+  },
+  {
+    q: "A MULTI-LEAF spring consists of:",
+    options: ["Multiple coil springs stacked together", "Graduated-length steel strips clamped together — each strip (leaf) adds to the spring's load capacity", "Multiple torsion bars in parallel", "A rubber and steel sandwich"],
+    answer: 1,
+    explanation: "MULTI-LEAF spring: multiple strips of spring steel (leaves) of varying length clamped together with a centre bolt. Longest leaf (main leaf) has eyes at each end for mounting. Each additional leaf increases load capacity and stiffness."
+  },
+  {
+    q: "The main leaf (longest leaf) of a leaf spring has what special feature at its ends?",
+    options: ["Rubber bushings inside a coil", "EYES (curved loops) for attaching to chassis brackets and shackle", "U-bolt clamps", "Greased sliding pads"],
+    answer: 1,
+    explanation: "MAIN LEAF: has eyes (rolled/formed loops) at both ends. One eye attaches to fixed chassis bracket; other eye attaches to the SHACKLE (pivoting link) which accommodates spring length change during flexing."
+  },
+  {
+    q: "A TORSION BAR spring works by:",
+    options: ["Bending when compressed", "TWISTING along its longitudinal axis — one end fixed to chassis, other to suspension arm", "Compressing when loaded", "Expanding when wheel drops"],
+    answer: 1,
+    explanation: "TORSION BAR: solid or hollow steel bar. When wheel hits a bump, suspension arm rotates → TWISTS the torsion bar → torsional (twisting) resistance acts as the spring. Advantage: compact, easily adjustable ride height. Used in some 4WD vehicles."
+  },
+  {
+    q: "AIR SUSPENSION uses:",
+    options: ["Coil springs with special material", "Rubber AIR BELLOWS/BAGS filled with compressed air as the spring medium", "Springs inside oil-filled cylinders", "Electromagnetic repulsion for suspension"],
+    answer: 1,
+    explanation: "AIR SUSPENSION: rubber-reinforced air bags replace conventional springs. Compressor maintains air pressure. ADVANTAGES: variable stiffness (adjust with pressure), self-leveling under load, very smooth ride. Used in luxury cars, trucks, coaches."
+  },
+  {
+    q: "The SHOCK ABSORBER (damper) in a suspension system:",
+    options: ["Supports the vehicle weight", "DAMPENS (controls) spring oscillations by converting kinetic energy to heat through hydraulic fluid resistance", "Steers the front wheels", "Drives the wheel axle"],
+    answer: 1,
+    explanation: "SHOCK ABSORBER: works with the spring. Spring would bounce indefinitely — shock absorber contains piston moving through hydraulic oil → hydraulic resistance DAMPS oscillation → converts kinetic energy to HEAT → dissipated. Without it, car would bounce continuously."
+  },
+  {
+    q: "A TELESCOPIC shock absorber operates on the principle of:",
+    options: ["Compressed gas spring", "A PISTON moving through hydraulic oil — oil is forced through small orifices creating resistance", "Electromagnetic damping", "Friction between metal surfaces"],
+    answer: 1,
+    explanation: "TELESCOPIC damper: piston rod moves in/out of cylinder containing hydraulic oil. Oil forced through VALVES (orifices) in piston → resistance to movement. COMPRESSION stroke: wheel hits bump. EXTENSION stroke: wheel drops into hole. Valves control each differently."
+  },
+  {
+    q: "A GAS-CHARGED shock absorber (gas damper) contains:",
+    options: ["Only compressed gas", "Hydraulic oil PLUS a charge of nitrogen gas under pressure — prevents oil foaming (cavitation)", "Air at atmospheric pressure", "Spring oil mixed with air"],
+    answer: 1,
+    explanation: "GAS-CHARGED damper: pressurized nitrogen gas (typically 15-30 bar) in a separate chamber or mixed with oil (monotube). Nitrogen PREVENTS OIL FOAMING (cavitation) during rapid movement — better performance when hot/heavily worked."
+  },
+  {
+    q: "The MacPHERSON STRUT combines which two functions in one unit?",
+    options: ["Spring and steering column", "SHOCK ABSORBER (damper) and structural SUSPENSION LEG — also acts as upper suspension link", "Spring and wheel bearing", "Anti-roll bar and damper"],
+    answer: 1,
+    explanation: "MacPHERSON STRUT: integrates the telescopic damper inside a structural leg that replaces the upper wishbone/control arm. Simple, compact, cost-effective. Widely used in front suspension of most modern passenger cars."
+  },
+  {
+    q: "DOUBLE WISHBONE (double A-arm) suspension uses:",
+    options: ["One control arm and a MacPherson strut", "TWO CONTROL ARMS (upper and lower wishbones) connecting wheel hub to chassis", "A solid axle with leaf springs", "A single trailing arm per wheel"],
+    answer: 1,
+    explanation: "DOUBLE WISHBONE: upper and lower A-shaped control arms (wishbones) connect the wheel steering knuckle to the chassis. More complex and expensive than MacPherson but gives BETTER HANDLING — allows precise control of camber during cornering."
+  },
+  {
+    q: "The BALL JOINT in a suspension system allows:",
+    options: ["Axial rotation only in one plane", "MULTI-DIRECTIONAL MOVEMENT — like a human ball-and-socket joint — allowing steering and suspension motion", "The spring to compress and extend only", "The axle to drive the wheel"],
+    answer: 1,
+    explanation: "BALL JOINT: connects control arm to steering knuckle. Like a ball-and-socket joint → allows wheel to move UP/DOWN (suspension travel) AND turn LEFT/RIGHT (steering) simultaneously. Upper and lower ball joints in double-wishbone; one ball joint in MacPherson."
+  },
+  {
+    q: "RUBBER BUSHINGS (suspension bushings) at control arm pivot points:",
+    options: ["Transmit road noise directly to body for maximum feel", "ISOLATE vibration and noise from road to body, allow controlled movement, and require no lubrication", "Need frequent greasing to prevent seizing", "Are replaced with solid metal for performance"],
+    answer: 1,
+    explanation: "RUBBER BUSHINGS: rubber-bonded inserts at pivot points of control arms, anti-roll bars, and sub-frames. Functions: (1) ISOLATE NVH (noise, vibration, harshness), (2) Allow controlled flexing, (3) NO LUBRICATION needed, (4) Self-aligning under load."
+  },
+  {
+    q: "The ANTI-ROLL BAR (stabilizer bar) connects:",
+    options: ["Left and right front suspension arms", "OPPOSITE SIDES of the suspension (left to right) via end links — resists differential movement", "Rear axle to front axle", "Shock absorber to chassis"],
+    answer: 1,
+    explanation: "ANTI-ROLL BAR (ARB/sway bar): U-shaped bar connecting LEFT and RIGHT suspension arms via end links. Normally inactive. During CORNERING, one side compresses while other extends → ARB TWISTS → resists the difference → reduces body roll."
+  },
+  {
+    q: "The KINGPIN INCLINATION (KPI) angle in a steering/suspension system:",
+    options: ["Angle of wheel tilt from vertical (camber)", "INWARD TILT of the steering axis from vertical — reduces steering effort and improves returnability", "Angle of wheel toe-in/toe-out", "Tilt of shock absorber from vertical"],
+    answer: 1,
+    explanation: "KPI: steering axis tilts inward at the top when viewed from the front. Creates SELF-CENTERING effect — geometry means wheel must lift vehicle body slightly to turn → weight brings it back to straight. Reduces steering effort needed."
+  },
+  {
+    q: "CASTER ANGLE in wheel alignment refers to:",
+    options: ["Side tilt of wheel from vertical (camber)", "FORE-AFT tilt of the steering axis from vertical when viewed from the side — positive caster = top tilted rearward", "Wheel toe setting", "Camber change during suspension travel"],
+    answer: 1,
+    explanation: "CASTER: steering axis tilt in the longitudinal (front-rear) direction. POSITIVE CASTER: top of steering axis tilts rearward → creates TRAIL → wheels self-center after turns → straight-line stability. Like the front fork angle on a bicycle."
+  },
+  {
+    q: "TOE-IN means the front of the tyres are pointed:",
+    options: ["Outward (away from each other)", "INWARD (toward each other) — measured at axle height", "Straight ahead exactly", "Upward at an angle"],
+    answer: 1,
+    explanation: "TOE-IN: front of tyres pointing INWARD (toward each other) when viewed from above. Compensates for suspension geometry changes under driving forces. Too much toe → outer tyre feathering. Toe-out → inner tyre feathering. Spec: typically 0-4mm toe-in."
+  },
+  {
+    q: "Which component connects the steering rack or pitman arm to the wheel steering knuckle?",
+    options: ["Anti-roll bar", "Tie rod", "Control arm", "Torsion bar"],
+    answer: 1,
+    explanation: "TIE ROD: transmits steering motion from the rack (rack-and-pinion) or relay rod (recirculating ball) to the wheel steering knuckles. Adjusting tie rod length sets TOE alignment. Worn tie rod ends → loose steering, toe out of spec."
+  },
+  {
+    q: "INDEPENDENT SUSPENSION (each wheel moves independently) compared to SOLID AXLE suspension offers:",
+    options: ["Simpler design and lower cost only", "BETTER RIDE and HANDLING — one wheel hitting a bump doesn't disturb the opposite wheel", "Better for heavy loads always", "More ground clearance always"],
+    answer: 1,
+    explanation: "INDEPENDENT: each wheel moves independently — bump on LEFT wheel doesn't transmit to RIGHT wheel. ADVANTAGES: better ride comfort, better road holding, lower unsprung weight, allows front-wheel drive. SOLID AXLE advantage: simpler, stronger for heavy loads."
+  },
+  {
+    q: "SOLID AXLE (beam axle, rigid axle) suspension is preferred in:",
+    options: ["Luxury passenger cars for best ride", "HEAVY DUTY off-road and commercial vehicles — simpler, stronger, better for high loads and rough terrain", "Sports cars for best handling", "Front-wheel drive cars"],
+    answer: 1,
+    explanation: "SOLID AXLE: both wheels on one rigid beam. Both wheels always parallel. ADVANTAGES: strong, simple, durable, can carry heavy loads, maintained easily, good for off-road (large wheel articulation). Used in: trucks, 4WD rear axles, SUV rear axles."
+  },
+  {
+    q: "The TRAILING ARM suspension (used in many small cars' rear suspension):",
+    options: ["Controls wheel movement with two wishbones", "SINGLE ARM pivoting from chassis, trailing rearward — simple, cheap, good for rear-wheel drive cars", "Uses a solid axle beam", "Requires no spring or damper"],
+    answer: 1,
+    explanation: "TRAILING ARM: single arm per wheel, fixed to chassis at front pivot, extends rearward to wheel. Simple, compact, cheap. Used in small cars (Citroën 2CV, VW Golf Mk1 rear). Disadvantage: toe and camber change with suspension travel."
+  },
+  {
+    q: "The MULTI-LINK suspension system uses:",
+    options: ["One arm per wheel only", "MULTIPLE LINKS (3-5 per corner) — can independently control toe, camber, and track during suspension travel", "A single large casting per corner", "MacPherson strut at all four corners"],
+    answer: 1,
+    explanation: "MULTI-LINK: 3-5 separate links per wheel, each controlling a specific degree of freedom. Can precisely control wheel geometry during suspension travel and cornering. COMPLEX and expensive but BEST geometry control. Used in: BMW, Mercedes, high-end vehicles."
+  },
+  {
+    q: "The SUBFRAME (cradle) in a modern vehicle:",
+    options: ["Is the same as the main chassis", "A SECONDARY STRUCTURAL FRAME to which suspension and engine mount — isolates vibration from main body", "Only holds the spare tyre", "The roof structure of the vehicle"],
+    answer: 1,
+    explanation: "SUBFRAME: bolt-on secondary frame under the front (or rear) of the vehicle. Suspension wishbones, steering rack, and engine mount to it. Rubber MOUNTS isolate vibration from the body. In accidents, subframe absorbs energy protecting the occupant cell."
+  },
+  {
+    q: "WHEEL BEARINGS in the suspension system must be:",
+    options: ["Loose to allow free rotation always", "PROPERLY PRELOADED and lubricated — worn bearings cause noise, vibration, handling problems, and wheel wobble", "Replaced at every tyre change", "Only lubricated with engine oil"],
+    answer: 1,
+    explanation: "WHEEL BEARINGS support the wheel/hub assembly on the stub axle. SYMPTOMS of worn bearings: humming/grinding noise that changes with speed (not engine RPM), vibration, wheel wobble, ABS errors (damaged encoder ring). Check by lifting wheel and feeling for play."
+  },
+
+  // ── 8.3 TROUBLESHOOTING AND MAINTENANCE ──────────────────────
+  {
+    q: "WHEEL ALIGNMENT should be checked and adjusted when:",
+    options: ["Every time fuel is added", "After hitting a large pothole or kerb, suspension work, new tyres, or if vehicle pulls or tyres wear unevenly", "Only when changing engine oil", "Every 1000 km regardless"],
+    answer: 1,
+    explanation: "Alignment check: after IMPACT (pothole, kerb), after suspension/steering repair, after new tyres, if vehicle PULLS one direction, if UNEVEN TYRE WEAR develops. Out-of-spec alignment = tyre wear, fuel waste, poor handling, safety risk."
+  },
+  {
+    q: "The BOUNCE TEST for shock absorber condition involves:",
+    options: ["Bouncing on the seat to test comfort", "PUSHING DOWN ON EACH CORNER of the vehicle and releasing — should rebound once and stop; continuous bouncing = worn shocks", "Driving over speed bumps at high speed", "Testing with electronic diagnostic equipment only"],
+    answer: 1,
+    explanation: "BOUNCE TEST (push-down test): push vehicle corner down firmly, release. Good shocks: ONE REBOUND and settle. Worn shocks: TWO OR MORE bounces. Also: park uphill — worn shocks allow continued bouncing for several seconds. Not 100% accurate but quick check."
+  },
+  {
+    q: "GREASE NIPPLES (zerk fittings) on suspension ball joints and kingpins must be greased because:",
+    options: ["They are decorative only", "GREASE LUBRICATION prevents metal-to-metal contact and corrosion in these high-load pivoting joints", "Air enters through them", "They measure suspension wear"],
+    answer: 1,
+    explanation: "GREASE NIPPLES: regular greasing of ball joints, kingpins, tie rod ends keeps lubricating film between metal surfaces. DRY JOINTS: metal-to-metal contact → rapid wear → looseness → poor handling → JOINT FAILURE. Grease every 10,000 km or per schedule."
+  },
+  {
+    q: "A CLUNKING noise from the front suspension when going over bumps usually indicates:",
+    options: ["Normal suspension operation", "Worn or loose BALL JOINTS, control arm bushings, or shock absorber mounts", "Engine mount failure", "Loose wheel nuts only"],
+    answer: 1,
+    explanation: "CLUNKING over bumps: metal-to-metal contact in worn suspension. DIAGNOSE: lift vehicle, check BALL JOINTS for play (push/pull wheel), check BUSHINGS for cracking/movement, check SHOCK TOP MOUNTS (strut mount bearing). Don't ignore — affects steering and safety."
+  },
+  {
+    q: "CAMBER WEAR (one-sided tyre wear) can be corrected by:",
+    options: ["Inflating tyres to higher pressure", "CAMBER ADJUSTMENT — using eccentric bolts, adjustable control arms, or shims to restore correct wheel angle", "Rotating tyres only — no adjustment possible", "Replacing all four tyres simultaneously"],
+    answer: 1,
+    explanation: "CAMBER correction: some vehicles have adjustable camber (eccentric bolts on lower control arm, adjustable top mounts). Others have FIXED geometry — if camber is wrong, check for bent components or worn bushings. Tyre rotation slows wear but doesn't fix the cause."
+  },
+  {
+    q: "FEATHERING of tyre tread (each tread block tapered/feathered) indicates:",
+    options: ["Correct alignment and tyre condition", "TOE misalignment — excessive toe-in or toe-out causes tread blocks to scrub sideways", "Overinflation of the tyre", "Worn shock absorber camber effect"],
+    answer: 1,
+    explanation: "FEATHERING: individual tread blocks tapered on one side (sharp edge on one side, rounded on other). Run hand across tread — feels smooth one way, sawtooth the other. DIAGNOSIS: TOE misalignment → tyre scrubs sideways as it rolls. Toe-in = outer feathering; toe-out = inner feathering."
+  },
+  {
+    q: "Vehicle BODY ROLL during cornering can be reduced by:",
+    options: ["Softer springs only", "STIFFER SPRINGS or ANTI-ROLL BARS — both resist the weight transfer that causes body lean", "Higher tyre pressure only", "Lower driving speed is the only solution"],
+    answer: 1,
+    explanation: "BODY ROLL reduction: (1) STIFFER SPRINGS resist compression under lateral load, (2) ANTI-ROLL BARS create torsional resistance to differential suspension compression, (3) SPORT DAMPERS with higher compression force. Trade-off: stiffer = less comfort on straight roads."
+  },
+  {
+    q: "WHEEL WOBBLE or SHIMMY at certain speeds is caused by:",
+    options: ["Correct wheel balance", "WHEEL IMBALANCE — mass unevenly distributed around wheel — fixed by wheel balancing (adding weights to rim)", "Correct tyre pressure", "New shock absorbers fitted"],
+    answer: 1,
+    explanation: "WHEEL SHIMMY: at specific speeds (typically 80-120 km/h for static imbalance, any speed for dynamic imbalance), unbalanced wheel generates centrifugal force that oscillates → steering wheel wobble. WHEEL BALANCING: add small weights on opposite side of heavy spot."
+  },
+  {
+    q: "SUSPENSION GEOMETRY CHANGES when the vehicle is loaded because:",
+    options: ["Springs are incompressible", "Added weight COMPRESSES SPRINGS → ride height drops → camber, toe, and caster angles all change from design position", "Shock absorbers prevent any movement", "Tyres flatten without change"],
+    answer: 1,
+    explanation: "LOAD EFFECT: heavy load → springs compress → body drops → suspension links move to different angles → camber, toe, and caster change. This is why alignment specs are checked at curb weight. Self-leveling suspension (air/hydropneumatic) corrects for this."
+  },
+  {
+    q: "SQUEAKING from the suspension when going over small bumps (without steering) indicates:",
+    options: ["Worn shock absorbers needing replacement", "DRY RUBBER BUSHINGS — rubber dried and cracked, or rubber-to-metal contact, needing lubrication or replacement", "Ball joint failure imminent", "Correct normal suspension sound"],
+    answer: 1,
+    explanation: "SQUEAKING over bumps: DRY or CRACKED rubber bushings (control arms, anti-roll bar links) making metal-to-metal or rubber squeak. Spray silicone lubricant on bushings to confirm — squeak disappears temporarily. Replace cracked bushings — they affect alignment."
+  },
+  {
+    q: "The purpose of WHEEL ALIGNMENT (tracking) service is to:",
+    options: ["Balance the tyre weight around the wheel", "RESTORE all alignment angles (camber, toe, caster) to manufacturer specifications for correct handling and tyre wear", "Check tyre pressure", "Adjust spring preload"],
+    answer: 1,
+    explanation: "WHEEL ALIGNMENT (4-wheel alignment): computer measures camber, toe, caster, and thrust angle at all four wheels. Adjustments made to restore manufacturer specs. Results: CORRECT HANDLING (no pull), EVEN TYRE WEAR, FUEL ECONOMY (reduced rolling resistance)."
+  },
+  {
+    q: "HYDROPNEUMATIC SUSPENSION (as used in Citroën vehicles) uses:",
+    options: ["Only coil springs with standard dampers", "A pressurized fluid and nitrogen gas system — self-leveling, adjustable ride height, very smooth ride", "Air bags only without fluid", "Leaf springs with hydraulic dampers only"],
+    answer: 1,
+    explanation: "HYDROPNEUMATIC: high-pressure hydraulic fluid and nitrogen gas spheres act as spring and damper. ADVANTAGES: self-leveling under any load, adjustable ride height (raises for rough terrain), very soft comfortable ride. Citroën's unique system since 1954."
+  },
+  {
+    q: "ELECTRONIC SUSPENSION (adaptive/semi-active) changes:",
+    options: ["Spring rate electronically", "DAMPER STIFFNESS electronically — ECU adjusts damping force in real-time based on road and driving conditions", "Wheel alignment automatically", "Tyre pressure automatically"],
+    answer: 1,
+    explanation: "ADAPTIVE/SEMI-ACTIVE SUSPENSION: electronically controlled dampers (CDC, MRC) adjust stiffness from SOFT (comfort) to FIRM (sport) in milliseconds based on: road roughness, speed, steering input, braking. Examples: BMW EDC, Mercedes AIRMATIC, Lotus CES."
+  },
+  {
+    q: "MAGNETORHEOLOGICAL (MR) shock absorbers change their damping because:",
+    options: ["Temperature changes the oil viscosity", "MAGNETIC FIELD applied to special fluid (iron particles in oil) — instantly changes viscosity from liquid to near-solid", "Mechanical valve changes restriction", "Electronic motor adjusts a bypass valve"],
+    answer: 1,
+    explanation: "MR DAMPERS: fluid contains iron particles. Apply magnetic field → particles align → fluid STIFFENS instantly (ms response) → high damping force. Remove field → fluid returns to normal → soft damping. Fastest-responding adaptive damper. Used in Cadillac, Ferrari."
+  },
+  {
+    q: "PROGRESSIVE RATE springs (used in some sports vehicles) become:",
+    options: ["Softer the more they compress", "STIFFER as compression increases — soft at first for comfort, progressively firmer for large bumps and hard cornering", "Always the same rate throughout travel", "Softer in hot weather, stiffer when cold"],
+    answer: 1,
+    explanation: "PROGRESSIVE SPRINGS: varying coil pitch or diameter → spring rate increases as spring compresses. BENEFITS: (1) comfortable on small bumps (low initial rate), (2) resists bottoming on large bumps (high rate when compressed), (3) better load compensation."
+  },
+  {
+    q: "NEGATIVE CAMBER (top of wheel tilted INWARD) on a sports car is beneficial because:",
+    options: ["It makes the car wider", "IMPROVES CORNERING GRIP — as car leans outward during cornering, negative camber keeps tyre more vertical = larger contact patch", "Reduces tyre wear always", "Makes steering lighter"],
+    answer: 1,
+    explanation: "NEGATIVE CAMBER: during cornering, body ROLLS OUTWARD → suspension geometry tilts outer wheel positively → reduces contact patch. Pre-setting NEGATIVE CAMBER compensates → when cornering, outer tyre stays more vertical → MORE LATERAL GRIP. Trade-off: inner tyre wear when going straight."
+  },
+  {
+    q: "The THRUST ANGLE in 4-wheel alignment refers to:",
+    options: ["The angle of the steering axis from vertical", "The angle of the REAR AXLE thrust line relative to the vehicle centerline — affects straight-line tracking", "The angle between front and rear camber", "The anti-dive geometry angle"],
+    answer: 1,
+    explanation: "THRUST ANGLE: the direction rear tyres push the car versus the vehicle's geometric centerline. Off-center thrust → car tracks diagonally (dog-tracks). 4-WHEEL ALIGNMENT adjusts rear toe so thrust angle = 0°. Critical for proper tracking and handling."
+  },
+  {
+    q: "BUMP STEER occurs when:",
+    options: ["The steering wheel vibrates over bumps", "The wheel STEERS (toe changes) as the suspension travels over a bump — without any driver input", "The front springs bottom out", "The anti-roll bar engages"],
+    answer: 1,
+    explanation: "BUMP STEER: as suspension compresses or extends, the tie rod moves in a different arc than the steering knuckle → toe angle changes → vehicle steers without driver input. Dangerous at high speed. Corrected by proper tie rod geometry or adjustable tie rods."
+  },
+  {
+    q: "ANTI-SQUAT geometry in a suspension system refers to:",
+    options: ["Preventing front end from lifting during braking", "Geometry designed to resist REAR SQUAT (rear sinking) during acceleration — suspension links angled to create anti-lift force", "Anti-roll bar geometry during turning", "Camber control during cornering"],
+    answer: 1,
+    explanation: "ANTI-SQUAT: during hard acceleration, weight transfers rearward → rear suspension SQUATS (compresses). Anti-squat geometry (control arm angles) creates a lifting reaction force that partially counteracts this → more stable acceleration → better traction."
+  },
+  {
+    q: "The WATT'S LINKAGE (or Panhard rod) in a rear solid axle suspension:",
+    options: ["Is a type of spring", "Controls LATERAL MOVEMENT of the solid axle — prevents sideways shifting while allowing up/down movement", "Connects front and rear suspension", "Is a type of shock absorber mount"],
+    answer: 1,
+    explanation: "PANHARD ROD / WATTS LINKAGE: solid axle suspensions need lateral location. These linkages connect axle to chassis, preventing lateral movement while allowing vertical travel. Without them, solid axle would shift sideways under lateral loads."
+  },
+  {
+    q: "A vehicle has NOSE DIVE during hard braking because:",
+    options: ["Rear springs are too stiff", "Weight transfers FORWARD under braking → front suspension compresses → anti-dive geometry limits this", "Tyres are over-inflated", "Engine braking is too strong"],
+    answer: 1,
+    explanation: "NOSE DIVE: inertia under braking transfers weight forward → front suspension COMPRESSES, rear EXTENDS. ANTI-DIVE geometry (control arm angles create rearward-angled forces under braking) limits this. Sports cars have aggressive anti-dive to maintain handling during braking."
+  },
+  {
+    q: "SWAY (lateral body movement) on a highway at high speed is most likely caused by:",
+    options: ["Correct tyre pressure", "WORN SHOCK ABSORBERS — cannot control body movement on gentle undulations at speed", "Correct wheel alignment", "New springs fitted"],
+    answer: 1,
+    explanation: "High-speed SWAY: gentle highway undulations create low-frequency inputs. WORN SHOCKS cannot damp these → body sways left-right → vehicle feels unstable. This is the primary safety symptom of worn shocks — replace before they cause accident."
+  },
+  {
+    q: "The RIDE HEIGHT of a vehicle (unladen, measured chassis-to-ground) is important because:",
+    options: ["Only affects appearance", "Determines suspension geometry — wrong height = wrong camber, toe, caster = handling problems + tyre wear", "Only affects fuel economy", "Has no effect on handling"],
+    answer: 1,
+    explanation: "RIDE HEIGHT: all suspension geometry (camber, caster, toe) is designed around the correct unladen ride height. SAGGING SPRINGS lower ride height → geometry goes out of design range → alignment specs not achievable → tyre wear and poor handling."
+  },
+  {
+    q: "BROKEN SPRING symptoms include:",
+    options: ["Gradual loss of power only", "ONE CORNER OF VEHICLE SITS LOWER — often sudden drop after hitting a bump or pothole, or spring breaks in cold weather", "All four corners drop equally", "Engine noise from spring area"],
+    answer: 1,
+    explanation: "BROKEN SPRING: usually breaks suddenly (hitting pothole, cold weather brittleness). Symptoms: ONE CORNER DROPS (vehicle leans to that corner), spring-like scraping noise over bumps, reduced handling. SAFETY RISK: sharp broken spring can puncture tyre. Replace immediately."
+  },
+  {
+    q: "The correct TYRE PRESSURE for a vehicle is specified because:",
+    options: ["It is just a recommendation that can be ignored", "Correct pressure maintains correct tyre CONTACT PATCH size — too high/low causes wear, handling problems, and fuel waste", "Only affects ride comfort not safety", "Same pressure suits all vehicles"],
+    answer: 1,
+    explanation: "TYRE PRESSURE affects: WEAR pattern (under/over → edge or centre wear), HANDLING (overinflated = slippery, underinflated = heavy), FUEL ECONOMY (underinflated = +3% consumption), LOAD CAPACITY. Check COLD (driven <2 km) as specified on door jamb sticker."
+  }  ,
+  {
+    q: "WHEEL BEARING noise (humming/grinding) is distinguished from tyre noise because:",
+    options: ["Bearing noise is always louder than tyre noise", "BEARING NOISE changes with vehicle SPEED (not engine RPM) and may change when vehicle leans left or right (cornering)", "Tyre noise is always higher frequency", "They cannot be distinguished"],
+    answer: 1,
+    explanation: "WHEEL BEARING diagnosis: (1) noise changes with VEHICLE SPEED not engine RPM, (2) CHANGES when turning — loading one bearing more intensifies noise, other direction reduces it, (3) LIFT WHEEL and spin by hand — feel roughness. Replace if play or roughness found."
+  },
+  {
+    q: "SUSPENSION INSPECTION should include checking for:",
+    options: ["Only visual damage to springs", "ALL components: springs for sag/cracks, shock absorbers for leaking oil/bounce test, ball joints for play, bushings for cracks, tyres for uneven wear", "Only shock absorber function", "Only tyre pressure and rotation"],
+    answer: 1,
+    explanation: "Complete suspension check: SPRINGS (visual cracks, sag), SHOCK ABSORBERS (oil leaks, bounce test), BALL JOINTS (wiggle test for play), CONTROL ARM BUSHINGS (visual cracks, movement), STEERING LINKAGES (play), TIE ROD ENDS (play), TYRE WEAR PATTERNS."
+  },
+  {
+    q: "The SUSPENSION SYSTEM of construction equipment (excavator, bulldozer) differs from vehicle suspension because:",
+    options: ["Construction equipment has better suspension than cars", "Most TRACK-TYPE construction equipment has NO conventional spring suspension — the rubber track pads and undercarriage flex provide minimal cushioning", "All construction equipment uses air suspension", "Construction equipment uses hydropneumatic suspension always"],
+    answer: 1,
+    explanation: "CONSTRUCTION EQUIPMENT: track-type dozers and excavators have NO conventional suspension — the undercarriage track tension and rubber pads provide minimal cushioning. Wheel loaders and graders may have articulated frames and softer tyres that provide some compliance."
+  },
+  {
+    q: "Hydraulic STRUT MOUNT at the top of a MacPherson strut contains:",
+    options: ["Only a rubber mounting", "A BEARING that allows the strut to rotate with steering, plus rubber isolation between strut top and chassis", "Only a steel bolt", "A spring helper for ride height adjustment"],
+    answer: 1,
+    explanation: "STRUT MOUNT (top mount): (1) BEARING allows the strut assembly to rotate when steering without binding, (2) RUBBER ISOLATOR absorbs vibration and shock between strut top and body. WORN MOUNT: clunking or creak when turning steering wheel, vibration through steering."
+  },
+  {
+    q: "What is the function of SUSPENSION BUMP STOPS (jounce bumpers)?",
+    options: ["Provide extra spring force always", "LIMIT SUSPENSION TRAVEL at maximum compression — prevent metal-to-metal contact between spring/strut and chassis", "Reduce noise from the road", "Adjust ride height"],
+    answer: 1,
+    explanation: "BUMP STOPS (jounce bumpers): rubber or polyurethane blocks that LIMIT FULL COMPRESSION of suspension. Without them: metal-to-metal contact damages suspension components. They provide PROGRESSIVE resistance near full compression — like a soft secondary spring."
+  },
+  {
+    q: "Suspension component TORQUE specifications (bolt tightening) must be followed because:",
+    options: ["It only affects appearance", "CORRECT TORQUE ensures joint integrity — under-tightened joints loosen causing dangerous looseness; over-tightened crushes bushings", "Only relevant for new vehicles", "Approximate torque is acceptable for suspension"],
+    answer: 1,
+    explanation: "SUSPENSION TORQUE SPECS: critical safety issue. UNDER-TORQUED: control arm bolts loosen → wheel geometry changes → handling failure. OVER-TORQUED: bushing rubber pre-stressed incorrectly → bushing fails prematurely. ALWAYS use torque wrench, often torque to spec WITH SUSPENSION AT RIDE HEIGHT."
+  },
+  {
+    q: "Replacing only ONE shock absorber (instead of replacing in pairs) is not recommended because:",
+    options: ["Suppliers only sell in pairs", "NEW shock on one side + WORN on other = unequal damping = vehicle pulls toward worn side and handles unpredictably", "Shock absorbers are always same price in pairs", "Only aesthetics are affected"],
+    answer: 1,
+    explanation: "REPLACE IN PAIRS (both fronts or both rears): new shock = high damping, old shock = low damping → IMBALANCED handling → vehicle pulls, unstable in emergencies. Even if only one shock appears failed, the other side has equal wear and will fail soon. Pairs: safety and cost-efficiency."
+  },
+  {
+    q: "Suspension component replacement requires alignment AFTER because:",
+    options: ["It is just good practice with no actual need", "Any suspension work changes the relationship between components — alignment MUST be checked to restore correct geometry", "Alignment can be done months later", "Only new vehicles need alignment"],
+    answer: 1,
+    explanation: "ALWAYS ALIGN after: control arm replacement, ball joint replacement, tie rod replacement, strut replacement, or any suspension adjustment. Even correct new parts at slightly different positions can change alignment. BEFORE ALIGNING: check that all NEW components are correct and torqued."
+  },
+  {
+    q: "सस्पेन्सन प्रणालीको मर्मत गर्दा कुन कुरामा ध्यान दिनु पर्छ? (What should be noted when maintaining the suspension system?)",
+    options: ["केवल स्प्रिङ बदल्नु (Only replace springs)", "सही टर्क स्पेसिफिकेसन र पेयरमा भाग बदल्नु (Correct torque specs and replace parts in pairs)", "केवल टायर चाप मापन गर्नु (Only check tyre pressure)", "ब्रेक फ्लुइड हाल्नु (Add brake fluid)"],
+    answer: 1,
+    explanation: "सस्पेन्सन मर्मतमा: सही टर्क स्पेसिफिकेसन पालना, जोडीमा भाग बदल्ने (shock absorbers), र मर्मत पछि wheel alignment जाँच गर्नु अत्यावश्यक छ। (Suspension maintenance: correct torque, replace in pairs, check alignment after any work.)"
+  },
+  {
+    q: "Handling problem 'DARTING' (sudden direction changes on highway without driver input) indicates:",
+    options: ["Normal high-speed vehicle behaviour", "EXCESSIVE TOE VARIATION — worn tie rod ends or loose steering causing toe to change randomly with road inputs", "Correct alignment but wrong tyres", "Overinflated rear tyres only"],
+    answer: 1,
+    explanation: "DARTING: vehicle suddenly changes direction without driver input, especially on crowned roads or slight undulations. Causes: WORN TIE ROD ENDS (toe changes with bumps), LOOSE STEERING BOX, INCORRECT CASTER (not enough self-centering). Dangerous — fix immediately."
+  },
+  {
+    q: "After replacing SUSPENSION COMPONENTS, a vehicle should be test driven to verify:",
+    options: ["Only straight-line driving at low speed", "ALL aspects: no unusual noise, correct steering feel, vehicle tracks straight, no pull, stable over bumps, alignment confirmed", "Only that wheels are attached", "Just that suspension doesn't bottom out"],
+    answer: 1,
+    explanation: "POST-REPAIR TEST DRIVE: (1) NO NOISE (knock, squeak, rattle), (2) STRAIGHT tracking (no pull), (3) Correct STEERING WEIGHT and feel, (4) Stable over BUMPS (no shimmy, no wandering), (5) Confirm ALIGNMENT was done and specs achieved. Road test before returning to customer."
+  }
         ];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
