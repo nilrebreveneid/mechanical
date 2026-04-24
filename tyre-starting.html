@@ -1034,181 +1034,566 @@
     <script>
 const quizConfig = { quizId: "tyre-starting", quizTitle: "Logsewa Tyre, Wheel, and Starting System Mock Test", displayTitle: "Logsewa Tyre, Wheel, and Starting System Mock Test", topicName: "Public Service" };
 const rawQuestions = [
-//   {
-//     q: "What is the primary purpose of tyres on a vehicle?",
-//     options: ["To enhance engine power", "To provide grip and absorb shocks", "To cool the brakes", "To increase vehicle weight"],
-//     answer: 1,
-//     explanation: "Tyres provide traction, support vehicle load, absorb road shocks, and help in maintaining road grip."
-//   },
-//   {
-//     q: "A tyre is marked as 175/65 R14 82 S. What does 65 represent?",
-//     options: ["Rim diameter", "Aspect ratio", "Load index", "Speed rating"],
-//     answer: 1,
-//     explanation: "The aspect ratio is the height of the sidewall expressed as a percentage of the tyre's width. Here, 65 means the sidewall height is 65% of 175mm."
-//   },
-//   {
-//     q: "Which wheel type is incompatible with tubeless tyres?",
-//     options: ["Alloy wheel", "Wire wheel", "Steel wheel", "Magnesium wheel"],
-//     answer: 1,
-//     explanation: "Tubeless tyres require an airtight rim, which wire wheels cannot provide due to their spoke construction."
-//   },
-//   {
-//     q: "In a truck tyre marked 10.00x20-14 ply, what does 20 signify?",
-//     options: ["Tyre width in cm", "Rim diameter in inches", "Ply rating", "Load capacity"],
-//     answer: 1,
-//     explanation: "In this format, '20' represents the rim diameter in inches on which the tyre must be mounted."
-//   },
-//   {
-//     q: "What is the purpose of tyre rotation on a vehicle?",
-//     options: ["To prevent ply separation", "To equalize wear", "To increase speed", "To reduce noise"],
-//     answer: 1,
-//     explanation: "Rotating tyres periodically ensures even wear across all tyres, extending tyre life and maintaining handling."
-//   },
-//   {
-//     q: "गाडीको टायरको दाब मापन गर्न कुन उपकरण प्रयोग गरिन्छ?",
-//     options: ["टायर इन्फ्लेटर", "प्रेशर गेज", "हाईड्रोलिक पंप", "स्पीडोमीटर"],
-//     answer: 1,
-//     explanation: "टायरको दाब जाँच गर्न प्रेशर गेज प्रयोग गरिन्छ जसले हावाको दाब देखाउँछ।"
-//   },
-//   {
-//     q: "गाडीको टायर चिप्लिन नदिन के गर्नुपर्छ?",
-//     options: ["तेल हाल्नु", "हावा घटाउनु", "ग्रिप राम्रो बनाउने", "ब्रेक खोल्नु"],
-//     answer: 2,
-//     explanation: "टायरको ग्रिप राम्रो बनाउन टायर डिजाइन र कम्पाउन्ड सुधार्नु पर्छ ताकि चिप्लिने सम्भावना कम होस्।"
-//   },
-//   {
-//     q: "What does the ‘R’ in a tyre designation like 205/55 R16 signify?",
-//     options: ["Radial construction", "Rim width", "Rolling resistance", "Road suitability"],
-//     answer: 0,
-//     explanation: "‘R’ stands for Radial construction, which means the tyre’s internal ply cords are arranged radially from the center."
-//   },
-//   {
-//     q: "Why are tubeless tyres preferred in modern vehicles?",
-//     options: ["They are cheaper", "They allow lower inflation pressure", "They resist sudden air loss during puncture", "They require inner tubes"],
-//     answer: 2,
-//     explanation: "Tubeless tyres do not deflate suddenly when punctured, improving safety by allowing more controlled stops."
-//   },
-//   {
-//     q: "What is the function of the tread pattern on a tyre?",
-//     options: ["Reduce fuel consumption", "Improve aesthetics", "Channel water away", "Increase tyre temperature"],
-//     answer: 2,
-//     explanation: "Tread patterns are designed to expel water from under the tyre, preventing hydroplaning and improving grip on wet roads."
-//   },
-//   {
-//     q: "What happens if tyres are overinflated?",
-//     options: ["Improved comfort", "Increased tread wear in the center", "Reduced fuel efficiency", "Better traction"],
-//     answer: 1,
-//     explanation: "Overinflated tyres bulge in the center, causing uneven tread wear and reducing grip."
-//   },
-//   {
-//     q: "What does the 'ply rating' of a tyre indicate?",
-//     options: ["Number of steel belts", "Tyre’s load carrying capacity", "Speed rating", "Rim compatibility"],
-//     answer: 1,
-//     explanation: "Ply rating reflects the strength of the tyre and how much load it can safely support."
-//   },
-//   {
-//     q: "Which of the following tyre defects is caused by underinflation?",
-//     options: ["Center tread wear", "Sidewall cracks", "Shoulder wear", "Tread delamination"],
-//     answer: 2,
-//     explanation: "Underinflated tyres cause more wear on the shoulders (edges) of the tyre due to excess flexing."
-//   },
-//   {
-//     q: "Tyre balancing is important to:",
-//     options: ["Increase acceleration", "Prevent steering vibration", "Enhance braking", "Reduce emissions"],
-//     answer: 1,
-//     explanation: "Unbalanced tyres can cause vibrations in the steering and reduce comfort and control."
-//   },
-//   {
-//     q: "What type of tyre is most commonly used in passenger vehicles?",
-//     options: ["Bias-ply", "Cross-ply", "Radial-ply", "Solid rubber"],
-//     answer: 2,
-//     explanation: "Radial-ply tyres are preferred for passenger vehicles due to better ride comfort and fuel economy."
-//   },
-//   {
-//     q: "Tyre tread depth should be checked to ensure:",
-//     options: ["Better fuel efficiency", "Correct load rating", "Proper grip and safety", "Silent operation"],
-//     answer: 2,
-//     explanation: "Worn tread reduces grip, especially on wet roads, leading to safety issues like skidding."
-//   },
-//   {
-//     q: "In tyre code 185/70 R14 88T, what does 88 indicate?",
-//     options: ["Speed rating", "Tyre pressure", "Load index", "Tread depth"],
-//     answer: 2,
-//     explanation: "The load index 88 indicates the maximum load the tyre can support, which is 560 kg in this case."
-//   },
-//   {
-//     q: "What is the ideal method to repair a tubeless tyre puncture?",
-//     options: ["Filling with water", "Using tube", "Patch from inside", "String plug repair"],
-//     answer: 3,
-//     explanation: "For quick roadside repairs, string plug kits are commonly used for tubeless tyres."
-//   },
-//   {
-//     q: "What could be a reason for one-sided tyre wear?",
-//     options: ["Overinflation", "Underinflation", "Improper wheel alignment", "Balanced wheels"],
-//     answer: 2,
-//     explanation: "Misalignment causes tyres to wear unevenly, typically more on one side of the tread."
-//   },
-//   {
-//     q: "The tyre pressure of a car is measured in which unit?",
-//     options: ["Newton", "Bar", "Pascal", "Pound"],
-//     answer: 1,
-//     explanation: "Tyre pressure is commonly measured in bar or psi; 1 bar ≈ 14.5 psi."
-//   },
-//   {
-//     q: "In cold weather, tyre pressure usually:",
-//     options: ["Increases", "Decreases", "Remains constant", "Becomes unstable"],
-//     answer: 1,
-//     explanation: "Air contracts in cold weather, reducing tyre pressure."
-//   },
-//   {
-//     q: "What is the legal minimum tread depth in most countries for car tyres?",
-//     options: ["1.0 mm", "1.6 mm", "2.5 mm", "3.0 mm"],
-//     answer: 1,
-//     explanation: "1.6 mm is the standard minimum tread depth legally required for safe driving in most countries."
-//   },
-//   {
-//     q: "For maximum safety and performance, tyres should be checked:",
-//     options: ["Yearly", "Every 10,000 km", "Weekly", "Before every long journey"],
-//     answer: 3,
-//     explanation: "It is safest to inspect tyre pressure and condition before any long trip to avoid failure."
-//   },
-//   {
-//     q: "Tyre sidewall bulges may indicate:",
-//     options: ["Overuse", "Internal damage", "Worn treads", "Improper inflation"],
-//     answer: 1,
-//     explanation: "Sidewall bulges indicate structural damage due to impact or manufacturing defect—tyre replacement is needed."
-//   },
-//   {
-//     q: "Retreading of tyres is done to:",
-//     options: ["Increase load capacity", "Improve wet grip", "Extend tyre life", "Reduce weight"],
-//     answer: 2,
-//     explanation: "Retreading involves applying a new tread layer on the worn tyre to reuse it safely and economically."
-//   },
-//   {
-//     q: "Bias-ply tyres differ from radial tyres mainly in:",
-//     options: ["Rubber compound", "Tread design", "Internal ply orientation", "Size"],
-//     answer: 2,
-//     explanation: "In bias-ply tyres, plies are crisscrossed diagonally; in radial tyres, plies run perpendicularly across."
-//   },
-//   {
-//     q: "What causes cupping or scalloping on tyres?",
-//     options: ["Balanced wheels", "Worn suspension", "Correct inflation", "New tyres"],
-//     answer: 1,
-//     explanation: "Cupping is caused by worn or faulty suspension components leading to bouncing and uneven wear."
-//   },
-//   {
-//     q: "A tyre marked 'T' in its rating (e.g., 88T) indicates:",
-//     options: ["Tube type", "Tread width", "Speed rating", "Temperature range"],
-//     answer: 2,
-//     explanation: "'T' indicates a speed rating of up to 190 km/h as per tyre speed rating chart."
-//   },
-//   {
-//     q: "What is the best practice after fitting new tyres?",
-//     options: ["Drive at high speed", "Immediate braking test", "Check alignment and balancing", "Inflate to max pressure"],
-//     answer: 2,
-//     explanation: "After new tyres are installed, wheel alignment and balancing should be checked to ensure performance and safety."
-//   }
-// ];
+  {
+    q: "What is the primary purpose of tyres on a vehicle?",
+    options: ["To enhance engine power", "To provide grip and absorb shocks", "To cool the brakes", "To increase vehicle weight"],
+    answer: 1,
+    explanation: "Tyres provide traction, support vehicle load, absorb road shocks, and help in maintaining road grip."
+  },
+  {
+    q: "A tyre is marked as 175/65 R14 82 S. What does 65 represent?",
+    options: ["Rim diameter", "Aspect ratio", "Load index", "Speed rating"],
+    answer: 1,
+    explanation: "The aspect ratio is the height of the sidewall expressed as a percentage of the tyre's width. Here, 65 means the sidewall height is 65% of 175mm."
+  },
+  {
+    q: "Which wheel type is incompatible with tubeless tyres?",
+    options: ["Alloy wheel", "Wire wheel", "Steel wheel", "Magnesium wheel"],
+    answer: 1,
+    explanation: "Tubeless tyres require an airtight rim, which wire wheels cannot provide due to their spoke construction."
+  },
+  {
+    q: "In a truck tyre marked 10.00x20-14 ply, what does 20 signify?",
+    options: ["Tyre width in cm", "Rim diameter in inches", "Ply rating", "Load capacity"],
+    answer: 1,
+    explanation: "In this format, '20' represents the rim diameter in inches on which the tyre must be mounted."
+  },
+  {
+    q: "What is the purpose of tyre rotation on a vehicle?",
+    options: ["To prevent ply separation", "To equalize wear", "To increase speed", "To reduce noise"],
+    answer: 1,
+    explanation: "Rotating tyres periodically ensures even wear across all tyres, extending tyre life and maintaining handling."
+  },
+  {
+    q: "गाडीको टायरको दाब मापन गर्न कुन उपकरण प्रयोग गरिन्छ?",
+    options: ["टायर इन्फ्लेटर", "प्रेशर गेज", "हाईड्रोलिक पंप", "स्पीडोमीटर"],
+    answer: 1,
+    explanation: "टायरको दाब जाँच गर्न प्रेशर गेज प्रयोग गरिन्छ जसले हावाको दाब देखाउँछ।"
+  },
+  {
+    q: "गाडीको टायर चिप्लिन नदिन के गर्नुपर्छ?",
+    options: ["तेल हाल्नु", "हावा घटाउनु", "ग्रिप राम्रो बनाउने", "ब्रेक खोल्नु"],
+    answer: 2,
+    explanation: "टायरको ग्रिप राम्रो बनाउन टायर डिजाइन र कम्पाउन्ड सुधार्नु पर्छ ताकि चिप्लिने सम्भावना कम होस्।"
+  },
+  {
+    q: "What does the ‘R’ in a tyre designation like 205/55 R16 signify?",
+    options: ["Radial construction", "Rim width", "Rolling resistance", "Road suitability"],
+    answer: 0,
+    explanation: "‘R’ stands for Radial construction, which means the tyre’s internal ply cords are arranged radially from the center."
+  },
+  {
+    q: "Why are tubeless tyres preferred in modern vehicles?",
+    options: ["They are cheaper", "They allow lower inflation pressure", "They resist sudden air loss during puncture", "They require inner tubes"],
+    answer: 2,
+    explanation: "Tubeless tyres do not deflate suddenly when punctured, improving safety by allowing more controlled stops."
+  },
+  {
+    q: "What is the function of the tread pattern on a tyre?",
+    options: ["Reduce fuel consumption", "Improve aesthetics", "Channel water away", "Increase tyre temperature"],
+    answer: 2,
+    explanation: "Tread patterns are designed to expel water from under the tyre, preventing hydroplaning and improving grip on wet roads."
+  },
+  {
+    q: "What happens if tyres are overinflated?",
+    options: ["Improved comfort", "Increased tread wear in the center", "Reduced fuel efficiency", "Better traction"],
+    answer: 1,
+    explanation: "Overinflated tyres bulge in the center, causing uneven tread wear and reducing grip."
+  },
+  {
+    q: "What does the 'ply rating' of a tyre indicate?",
+    options: ["Number of steel belts", "Tyre’s load carrying capacity", "Speed rating", "Rim compatibility"],
+    answer: 1,
+    explanation: "Ply rating reflects the strength of the tyre and how much load it can safely support."
+  },
+  {
+    q: "Which of the following tyre defects is caused by underinflation?",
+    options: ["Center tread wear", "Sidewall cracks", "Shoulder wear", "Tread delamination"],
+    answer: 2,
+    explanation: "Underinflated tyres cause more wear on the shoulders (edges) of the tyre due to excess flexing."
+  },
+  {
+    q: "Tyre balancing is important to:",
+    options: ["Increase acceleration", "Prevent steering vibration", "Enhance braking", "Reduce emissions"],
+    answer: 1,
+    explanation: "Unbalanced tyres can cause vibrations in the steering and reduce comfort and control."
+  },
+  {
+    q: "What type of tyre is most commonly used in passenger vehicles?",
+    options: ["Bias-ply", "Cross-ply", "Radial-ply", "Solid rubber"],
+    answer: 2,
+    explanation: "Radial-ply tyres are preferred for passenger vehicles due to better ride comfort and fuel economy."
+  },
+  {
+    q: "Tyre tread depth should be checked to ensure:",
+    options: ["Better fuel efficiency", "Correct load rating", "Proper grip and safety", "Silent operation"],
+    answer: 2,
+    explanation: "Worn tread reduces grip, especially on wet roads, leading to safety issues like skidding."
+  },
+  {
+    q: "In tyre code 185/70 R14 88T, what does 88 indicate?",
+    options: ["Speed rating", "Tyre pressure", "Load index", "Tread depth"],
+    answer: 2,
+    explanation: "The load index 88 indicates the maximum load the tyre can support, which is 560 kg in this case."
+  },
+  {
+    q: "What is the ideal method to repair a tubeless tyre puncture?",
+    options: ["Filling with water", "Using tube", "Patch from inside", "String plug repair"],
+    answer: 3,
+    explanation: "For quick roadside repairs, string plug kits are commonly used for tubeless tyres."
+  },
+  {
+    q: "What could be a reason for one-sided tyre wear?",
+    options: ["Overinflation", "Underinflation", "Improper wheel alignment", "Balanced wheels"],
+    answer: 2,
+    explanation: "Misalignment causes tyres to wear unevenly, typically more on one side of the tread."
+  },
+  {
+    q: "The tyre pressure of a car is measured in which unit?",
+    options: ["Newton", "Bar", "Pascal", "Pound"],
+    answer: 1,
+    explanation: "Tyre pressure is commonly measured in bar or psi; 1 bar ≈ 14.5 psi."
+  },
+  {
+    q: "In cold weather, tyre pressure usually:",
+    options: ["Increases", "Decreases", "Remains constant", "Becomes unstable"],
+    answer: 1,
+    explanation: "Air contracts in cold weather, reducing tyre pressure."
+  },
+  {
+    q: "What is the legal minimum tread depth in most countries for car tyres?",
+    options: ["1.0 mm", "1.6 mm", "2.5 mm", "3.0 mm"],
+    answer: 1,
+    explanation: "1.6 mm is the standard minimum tread depth legally required for safe driving in most countries."
+  },
+  {
+    q: "For maximum safety and performance, tyres should be checked:",
+    options: ["Yearly", "Every 10,000 km", "Weekly", "Before every long journey"],
+    answer: 3,
+    explanation: "It is safest to inspect tyre pressure and condition before any long trip to avoid failure."
+  },
+  {
+    q: "Tyre sidewall bulges may indicate:",
+    options: ["Overuse", "Internal damage", "Worn treads", "Improper inflation"],
+    answer: 1,
+    explanation: "Sidewall bulges indicate structural damage due to impact or manufacturing defect—tyre replacement is needed."
+  },
+  {
+    q: "Retreading of tyres is done to:",
+    options: ["Increase load capacity", "Improve wet grip", "Extend tyre life", "Reduce weight"],
+    answer: 2,
+    explanation: "Retreading involves applying a new tread layer on the worn tyre to reuse it safely and economically."
+  },
+  {
+    q: "Bias-ply tyres differ from radial tyres mainly in:",
+    options: ["Rubber compound", "Tread design", "Internal ply orientation", "Size"],
+    answer: 2,
+    explanation: "In bias-ply tyres, plies are crisscrossed diagonally; in radial tyres, plies run perpendicularly across."
+  },
+  {
+    q: "What causes cupping or scalloping on tyres?",
+    options: ["Balanced wheels", "Worn suspension", "Correct inflation", "New tyres"],
+    answer: 1,
+    explanation: "Cupping is caused by worn or faulty suspension components leading to bouncing and uneven wear."
+  },
+  {
+    q: "A tyre marked 'T' in its rating (e.g., 88T) indicates:",
+    options: ["Tube type", "Tread width", "Speed rating", "Temperature range"],
+    answer: 2,
+    explanation: "'T' indicates a speed rating of up to 190 km/h as per tyre speed rating chart."
+  },
+  {
+    q: "What is the best practice after fitting new tyres?",
+    options: ["Drive at high speed", "Immediate braking test", "Check alignment and balancing", "Inflate to max pressure"],
+    answer: 2,
+    explanation: "After new tyres are installed, wheel alignment and balancing should be checked to ensure performance and safety."
+  },
+    
+
+
+
+  // ── FROM NEW PSC PAPER 2081/3/12 ─────────────────────────────
+  {
+    q: "A tyre is designated as 175/65 R14 82S. The ASPECT RATIO of the tyre is:",
+    options: ["175", "65", "14", "82"],
+    answer: 1,
+    explanation: "175/65 R14 82S: 175 = section width (mm), 65 = ASPECT RATIO (sidewall height as % of width = 65% of 175mm = 113.75mm), R = Radial, 14 = rim diameter (inches), 82 = load index, S = speed rating. From new PSC Senior paper Q35 — confirmed."
+  },
+  {
+    q: "Which of the following is NOT a type of wheel used in automobiles?",
+    options: ["Wire wheel", "Light alloy cast wheel", "Rim wheel", "Pressed steel disc wheel"],
+    answer: 2,
+    explanation: "'RIM WHEEL' is not a recognized standard automobile wheel type. Standard types: WIRE SPOKE wheels (older/bicycles), LIGHT ALLOY CAST (aluminium alloy), PRESSED STEEL DISC (standard factory). From new PSC Senior Mechanics paper Q36 — confirmed."
+  },
+  {
+    q: "Compared to the life of a spark plug in a TWO-STROKE engine, the spark plug life of a FOUR-STROKE engine is approximately:",
+    options: ["Same", "Twice as long", "Half as long", "None of the above"],
+    answer: 1,
+    explanation: "4-stroke spark plug fires ONCE every 2 crankshaft revolutions. 2-stroke fires ONCE per revolution. At same RPM, 4-stroke plug fires HALF as often → TWICE THE LIFE. From new PSC Senior paper Q34 — confirmed repeat."
+  },
+
+
+  // ── FROM as-mechanics.pdf PSC 2082 ───────────────────────────
+  {
+    q: "The slip angle of a tyre is the angle through which the wheel must turn to:",
+    options: ["Change gear ratio", "Sustain a lateral (side) force during cornering", "Align with the road camber", "Reduce rolling resistance"],
+    answer: 1,
+    explanation: "SLIP ANGLE: when a tyre is subjected to lateral force (cornering), it moves in a direction slightly different from where it points — this angular difference is the SLIP ANGLE. From as-mechanics.pdf PSC 2082 Q45 — confirmed."
+  },
+  {
+    q: "In a tyre size marking like 205/55 R16, the number '205' represents:",
+    options: ["Tyre diameter in inches", "Aspect ratio of the tyre", "Tyre section WIDTH in millimeters", "Load rating of the tyre"],
+    answer: 2,
+    explanation: "205 = section WIDTH in millimeters. 55 = aspect ratio. R = Radial. 16 = rim diameter in inches. From as-mechanics.pdf PSC 2082 Q40 and saja_yatayat.pdf — confirmed repeated question."
+  },
+  {
+    q: "The number '205' in tyre marking 205/55 R16 represents — what does '16' represent?",
+    options: ["Load index", "Speed rating", "Rim diameter in inches", "Section width in cm"],
+    answer: 2,
+    explanation: "In 205/55 R16: 16 = RIM DIAMETER in inches. The tyre must be mounted on a 16-inch rim. Tyre width (205mm) and rim (16 inches) use different unit systems — a common source of confusion."
+  },
+  {
+    q: "The advantage of a tubeless tyre over a tubed tyre is:",
+    options: ["Slower air leakage only", "Less chances of running flat AND slow air leakage if punctured", "Faster air leakage", "Lower durability"],
+    answer: 1,
+    explanation: "Tubeless tyre advantages: (1) SLOW air leakage — puncturing object seals around itself, gradual deflation instead of sudden blowout, (2) LESS CHANCE of flat — often can be driven carefully to a workshop. From as-mechanics.pdf PSC 2082 Q49 and saja_yatayat.pdf — confirmed."
+  },
+  {
+    q: "The low air pressure inside a tyre causes:",
+    options: ["Rapid tyre wear at center", "Slow tyre wear overall", "Excessive tyre wear at center", "Excessive tyre wear at EDGES (both shoulders)"],
+    answer: 3,
+    explanation: "UNDER-INFLATED tyre: sidewalls flex excessively → tyre edges (shoulders) carry more load than center → EDGE WEAR on both shoulders. OVER-INFLATED → center wear. CORRECT pressure → even tread wear across full width. From as-mechanics.pdf PSC 2082 Q39 — confirmed."
+  },
+
+
+  // ── FROM saja_yatayat.pdf ─────────────────────────────────────
+  {
+    q: "In comparison with a RADIAL PLY tyre, one advantage of a CROSS PLY tyre is:",
+    options: ["Longer life", "Smoother ride at LOWER SPEEDS", "Better fuel efficiency", "Higher speed capability"],
+    answer: 1,
+    explanation: "CROSS PLY tyre: flexible sidewalls → smoother ride at lower speeds. Disadvantage: worse at high speeds, more heat buildup, shorter life. RADIAL PLY: better at higher speeds, better fuel economy, longer life — now standard. From saja_yatayat.pdf confirmed."
+  },
+  {
+    q: "The advantage of a WHEEL-MOUNTED machine over a TRACK-MOUNTED machine is:",
+    options: ["Better traction on rough terrain", "IT IS EASY TO MOBILIZE on roads", "Higher load capacity", "Lower maintenance cost"],
+    answer: 1,
+    explanation: "WHEEL-MOUNTED machines: faster travel speed, easier to move on public roads between sites, lower damage to pavement. TRACK-MOUNTED: better traction on soft/rough terrain, lower ground pressure. From saja_yatayat.pdf confirmed."
+  },
+  {
+    q: "Track life of a crawler machine is mainly affected by the condition of:",
+    options: ["Bushings only", "Sprockets only", "Rollers only", "ALL OF THE ABOVE — bushings, sprockets, AND rollers"],
+    answer: 3,
+    explanation: "Track life affected by ALL: BUSHINGS (pin-bushing wear at each link = most critical), SPROCKETS (tooth wear), ROLLERS (bottom and carrier roller wear). ALL wear together and all affect total track life. From saja_yatayat.pdf confirmed — ALL OF ABOVE pattern."
+  },
+  {
+    q: "For which of the following does a dozer NOT use its blade?",
+    options: ["Leveling ground", "Deep excavation below machine level", "Pushing earth", "Clearing debris"],
+    answer: 1,
+    explanation: "Dozer blade works at or near ground level — cannot excavate BELOW its own level. For deep excavation (trenches, pits), an excavator or backhoe is needed. From saja_yatayat.pdf construction equipment question."
+  },
+
+
+  // ── FROM Sewa_sambandi.pdf ────────────────────────────────────
+  {
+    q: "Tyre rotation is usually done to:",
+    options: ["Equalize wear across all tyres — extends total tyre life", "Reduce maintenance cost only", "Get a better ride only", "None of the above"],
+    answer: 0,
+    explanation: "TYRE ROTATION equalizes wear patterns. Front tyres (steering, more lateral forces) wear differently from rear (drive forces). Rotating every 8-12,000 km ensures all four wear evenly → maximum total life. From Sewa_sambandi.pdf confirmed."
+  },
+
+
+  // ── 12.1 INTRODUCTION AND FEATURES ───────────────────────────
+  {
+    q: "The PRIMARY functions of a vehicle tyre are:",
+    options: ["Only aesthetic appearance", "SUPPORT LOAD, PROVIDE TRACTION, ABSORB ROAD SHOCKS, and ENABLE STEERING — all simultaneously", "Only protect the wheel rim", "Only provide a smooth ride"],
+    answer: 1,
+    explanation: "TYRE FUNCTIONS: (1) SUPPORT vehicle weight via air pressure, (2) TRANSMIT traction and braking forces to road, (3) ABSORB road surface irregularities (together with suspension), (4) STEER the vehicle — tyres must do all four simultaneously under varying conditions."
+  },
+  {
+    q: "The TYRE CONTACT PATCH (footprint) is approximately the size of:",
+    options: ["The entire tyre surface", "A POSTCARD (about 15×20 cm) per tyre — the only part in contact with road at any moment", "Half the tread area", "The entire rim diameter area"],
+    answer: 1,
+    explanation: "CONTACT PATCH: each tyre contacts the road over an area roughly the size of a hand or postcard (150-200 cm²). This tiny area must simultaneously transmit: braking force, acceleration force, AND lateral cornering force — it cannot do all three at maximum simultaneously."
+  },
+  {
+    q: "RADIAL TYRE construction has plies running:",
+    options: ["At 45° angles across the tyre (bias/cross ply)", "PERPENDICULAR (radially) from bead to bead, with steel belts under the tread", "Parallel to the tread surface only", "Diagonally in a criss-cross pattern"],
+    answer: 1,
+    explanation: "RADIAL construction: cords run at 90° to the direction of travel (radially). STEEL BELTS under the tread stabilize it. Benefits: FLEXIBLE SIDEWALL (better comfort), STIFFER TREAD (better grip), LESS HEAT (better fuel economy), LONGER LIFE. Now standard on virtually all vehicles."
+  },
+  {
+    q: "BIAS PLY (cross ply) tyre construction has plies running:",
+    options: ["Perpendicular to direction of travel", "At 30-45° DIAGONALLY across the tyre — alternating layers cross each other", "Parallel to the tread surface", "Only under the tread, not in sidewall"],
+    answer: 1,
+    explanation: "BIAS PLY: plies run at 30-45° to the direction of travel, alternating layers cross each other → 'cross ply'. RESULT: stiff sidewall AND stiff tread together → cannot flex independently. Less efficient than radial. Still used in: some off-road, agricultural, and vintage vehicle applications."
+  },
+  {
+    q: "The BEAD of a tyre is the:",
+    options: ["Outer surface that contacts the road", "WIRE BUNDLE at the inner edge of the tyre that locks onto the wheel rim", "Sidewall reinforcement belt", "Tread pattern element"],
+    answer: 1,
+    explanation: "BEAD: high-strength steel wire bundles wrapped at each inner edge of the tyre. When inflated, the bead SEATS against the rim's bead seat — preventing the tyre from separating from the rim under pressure and load. The bead gives the tyre its sealed, airtight fit to the rim."
+  },
+  {
+    q: "The TYRE CARCASS (body plies) provides:",
+    options: ["The road contact surface", "The STRUCTURAL STRENGTH of the tyre — the framework that contains air pressure and supports load", "Traction in wet conditions", "Heat dissipation from braking"],
+    answer: 1,
+    explanation: "CARCASS: the internal skeleton of the tyre. Fabric or steel cords bonded in rubber layers. Must: CONTAIN air pressure (4-10 bar), SUPPORT vehicle weight (500+ kg per tyre), RESIST deformation during cornering and braking. The carcass is the fundamental structural element."
+  },
+  {
+    q: "The BELT PACKAGE under the tread in a radial tyre is made of:",
+    options: ["Nylon fabric only", "STEEL CORDS embedded in rubber — stabilizes the tread, prevents tread squirm, and improves high-speed stability", "Rubber only for flexibility", "Carbon fibre for lightweight strength"],
+    answer: 1,
+    explanation: "STEEL BELT: 2-4 layers of steel cord at shallow angles under the tread. Functions: (1) STABILIZE tread — prevents squirming (improves handling), (2) PUNCTURE RESISTANCE — steel resists nail penetration, (3) HIGH SPEED STABILITY — limits tread expansion at speed, (4) SEPARATES from carcass if overloaded/overheated → delamination."
+  },
+  {
+    q: "NITROGEN INFLATION (instead of air) in tyres offers:",
+    options: ["Higher inflation pressure always", "MORE STABLE PRESSURE — nitrogen molecules are larger and permeate slower, and no moisture content means less pressure variation with temperature", "Lower tyre temperatures", "Better traction on wet roads"],
+    answer: 1,
+    explanation: "NITROGEN advantages: (1) MOLECULES LARGER than oxygen → SLOWER permeation through rubber → less pressure loss over time, (2) NO MOISTURE → less pressure variation with temperature (moist air expands/contracts more), (3) LESS OXIDATION of rim and inner liner. Used in: aircraft, racing, some premium vehicles."
+  },
+
+
+  // ── 12.2 TYRE SIZES AND RATING ────────────────────────────────
+  {
+    q: "In tyre marking 225/45 R17 91W, what does '91' represent?",
+    options: ["Speed rating", "LOAD INDEX — maximum load capacity per tyre (91 = 615 kg)", "Aspect ratio", "Rim diameter"],
+    answer: 1,
+    explanation: "LOAD INDEX 91 = 615 kg maximum load per tyre. Vehicle with 4 tyres × 615 kg = 2,460 kg maximum. Load index must meet or exceed vehicle's Gross Vehicle Weight ÷ 4. Must match or exceed original equipment specification."
+  },
+  {
+    q: "In tyre marking 225/45 R17 91W, what does 'W' represent?",
+    options: ["Width indicator", "Winter tyre designation", "SPEED RATING — maximum sustained speed of 270 km/h", "Wet grip rating"],
+    answer: 2,
+    explanation: "SPEED RATING W = maximum SUSTAINED speed of 270 km/h. Common ratings: S=180, T=190, H=210, V=240, W=270, Y=300 km/h. Must match or exceed vehicle's maximum speed. Fitting lower speed-rated tyres = illegal and unsafe."
+  },
+  {
+    q: "A truck tyre marked '11R22.5' means:",
+    options: ["Width 11 inches, radial, 22.5 inch rim", "11 ply rating, rim 22.5 cm", "Load index 11, speed R, rim 22.5", "All wrong — not a standard format"],
+    answer: 0,
+    explanation: "TRUCK TYRE FORMAT '11R22.5': 11 = nominal section WIDTH in inches, R = Radial construction, 22.5 = RIM DIAMETER in inches. Common on medium/heavy trucks. The 22.5-inch rim is standard for most commercial trucks. Alternative format: 275/70R22.5 (metric section width)."
+  },
+  {
+    q: "TYRE SPEED RATINGS are important because:",
+    options: ["Only affect aesthetics", "MAXIMUM SAFE SUSTAINED SPEED — exceeding speed rating overheats tyre → delamination, blowout, loss of control at speed", "Only affect load capacity", "Only matter for racing vehicles"],
+    answer: 1,
+    explanation: "SPEED RATING: tyre is designed and tested for sustained use up to the rated speed. EXCEEDING rating → excessive heat buildup → tread delamination, sidewall failure, blowout at speed. Using lower-rated tyres than OEM specification = safety violation and insurance risk."
+  },
+  {
+    q: "LOAD INDEX TABLE: Load Index 100 means maximum load per tyre of:",
+    options: ["450 kg", "600 kg", "800 kg", "1,000 kg"],
+    answer: 2,
+    explanation: "LOAD INDEX 100 = 800 kg per tyre. Key values: LI 80 = 450 kg, LI 90 = 600 kg, LI 100 = 800 kg, LI 110 = 1,060 kg, LI 121 = 1,450 kg (truck tyres). Multiply by 4 for total vehicle capacity. Always meet or exceed OEM load index."
+  },
+  {
+    q: "The 'TEMPERATURE RESISTANCE' grade on a tyre (A, B, C) indicates:",
+    options: ["Ambient temperature for use", "TYRE'S ABILITY TO DISSIPATE HEAT under sustained high speed — A is best, C is minimum legal requirement", "Tyre compound temperature range", "Road surface temperature tolerance"],
+    answer: 1,
+    explanation: "TEMPERATURE GRADE (A/B/C): tyre's ability to resist heat buildup at sustained speeds. GRADE A: highest heat dissipation (best for high-speed sustained driving). GRADE C: minimum legal standard. Poor heat resistance → internal heat buildup → delamination. Usually found on US DOT rating."
+  },
+  {
+    q: "The 'TRACTION' rating on a tyre (AA, A, B, C) indicates:",
+    options: ["Off-road capability", "WET BRAKING PERFORMANCE on straight road surfaces — AA is best", "Dry road cornering ability", "Snow traction capability"],
+    answer: 1,
+    explanation: "US TRACTION GRADE: measures tyre's ability to STOP on wet asphalt and concrete in a straight line (not cornering). AA = highest wet braking. C = minimum acceptable. Does NOT measure: dry traction, cornering, hydroplaning resistance, or snow performance."
+  },
+  {
+    q: "TREADWEAR rating on a tyre (e.g., 300, 400, 500) means:",
+    options: ["Minimum tread depth in microns", "COMPARATIVE WEAR LIFE — higher number = longer tread life (baseline 100 = government standard test tyre)", "Maximum mileage guaranteed", "Tread pattern complexity"],
+    answer: 1,
+    explanation: "TREADWEAR NUMBER: comparative index. Treadwear 400 lasts roughly 4× longer than the government baseline tyre (100). NOT a mileage guarantee — depends on conditions, alignment, inflation, driving style. Useful for comparing tyres of same brand/line. Ratings vary by manufacturer's testing methods."
+  },
+  {
+    q: "The 'M+S' or 'M/S' marking on a tyre means:",
+    options: ["Metric and Standard sizing", "Miles per Second speed capability", "MUD AND SNOW — the tyre meets minimum standards for mud and snow traction", "Manufacturer and Supplier designation"],
+    answer: 2,
+    explanation: "M+S (MUD AND SNOW): tyre meets minimum self-certification requirements for mud and snow traction. Does NOT mean it is equivalent to dedicated winter/snow tyres. Three-peak mountain snowflake symbol (3PMSF) indicates a more stringent winter performance test — better for serious winter use."
+  },
+  {
+    q: "The THREE-PEAK MOUNTAIN SNOWFLAKE (3PMSF) symbol on a tyre indicates:",
+    options: ["The tyre is made in a cold country", "CERTIFIED WINTER PERFORMANCE — passed standardized test showing ≥10% better acceleration on snow than reference all-season tyre", "The tyre has three-ply construction", "Mountain terrain suitability only"],
+    answer: 1,
+    explanation: "3PMSF SYMBOL: meaningful winter certification. Tyre tested on snow — must show at least 10% BETTER TRACTION than reference all-season tyre. Required in many European countries for winter use. Different from M+S (which is just self-certified minimum standard)."
+  },
+  {
+    q: "TYRE UNIFORMITY (balance) has two types — STATIC and DYNAMIC balance:",
+    options: ["Static = weight distribution, Dynamic = same thing at speed", "STATIC = weight balanced in one plane (prevents up-down vibration); DYNAMIC = weight balanced in two planes (prevents wobble/shimmy at speed)", "They are identical — same test procedure", "Dynamic is for front tyres only, static for rear"],
+    answer: 1,
+    explanation: "STATIC IMBALANCE: weight concentrated at one point → up-down vibration (tramp) at speed. DYNAMIC IMBALANCE: weight offset in two planes → SHIMMY (side-to-side oscillation) at speed. Modern balancers correct BOTH simultaneously by adding weights at specific positions on both inner and outer rim flanges."
+  },
+
+
+  // ── 12.3 TROUBLESHOOTING AND MAINTENANCE ──────────────────────
+  {
+    q: "FEATHERING of tyre tread (sawtooth wear pattern on individual blocks) indicates:",
+    options: ["Correct tyre inflation", "TOE MISALIGNMENT — tyre is scrubbing sideways as it rolls, causing each tread block to wear with a sharp and rounded edge", "Overinflation causing center wear", "Worn shock absorbers causing bounce wear"],
+    answer: 1,
+    explanation: "FEATHERING: run hand across tread — smooth one way, sharp sawtooth the other. Diagnosis: TOE misalignment. Toe-in → outer edge feathering. Toe-out → inner edge feathering. Correct by adjusting toe alignment. Distinct from cupping (worn shocks) and center/edge wear (pressure)."
+  },
+  {
+    q: "CUPPING (scalloped dips in tread) is caused by:",
+    options: ["Incorrect tyre pressure", "WORN SHOCK ABSORBERS — wheel bounces at speed, periodically lifting and dropping → tyres wear in scalloped pattern at bounce contact points", "Incorrect toe alignment", "Overloading"],
+    answer: 1,
+    explanation: "CUPPING/SCALLOPING: circular worn spots around the tread circumference. DIAGNOSIS: worn shock absorbers cause wheel to BOUNCE and lose contact periodically → worn where it lands. Also: worn ball joints or wheel bearings. Fix shocks/suspension first, then replace tyres."
+  },
+  {
+    q: "DIAGONAL WEAR (worn patches at diagonal around circumference) indicates:",
+    options: ["Worn shock absorbers", "WHEEL IMBALANCE — heavy spot periodically contacts road with more force → diagonal wear pattern matching rotation", "Toe misalignment", "Camber misalignment"],
+    answer: 1,
+    explanation: "DIAGONAL/SPOTTY WEAR from imbalance: heavy spot on wheel contacts road with extra force on every revolution → wears opposite to imbalance point. Distinguish from cupping (shocks) by: imbalance wear is more REGULAR, cupping is more RANDOM/SCALLOPED."
+  },
+  {
+    q: "TYRE HYDROPLANING occurs when:",
+    options: ["Tyres are overinflated", "A WEDGE OF WATER builds under the tyre faster than the tread can expel it → tyre rides on water film → complete loss of traction and steering", "Tyres are correctly inflated", "Brake pads are wet"],
+    answer: 1,
+    explanation: "HYDROPLANING: at speed on wet roads, tread cannot expel water fast enough → tyre lifts onto water film → ZERO traction. Begins around 80 km/h with worn tyres. Prevention: adequate tread depth (channels), correct inflation (harder tyre cuts through water better), slower speed in rain."
+  },
+  {
+    q: "TYRE PRESSURE MONITORING SYSTEM (TPMS) warns the driver when:",
+    options: ["Tyre tread is worn to minimum depth", "TYRE PRESSURE DROPS below 25% of recommended pressure — direct type uses wheel sensors, indirect type uses ABS wheel speed difference", "Tyre balancing is required", "Tyre rotation is due"],
+    answer: 1,
+    explanation: "TPMS: DIRECT type — pressure sensor in each wheel transmits wirelessly to dash. INDIRECT type — uses ABS wheel speed sensors to detect smaller wheel (underinflated tyre has smaller effective radius, rotates faster → ABS detects speed difference). Warning light illuminates when 25% below recommended pressure."
+  },
+  {
+    q: "When a tyre BLOWS OUT at high speed, the correct response is to:",
+    options: ["Brake hard immediately to stop quickly", "HOLD STEERING FIRMLY with both hands, DO NOT BRAKE suddenly, let vehicle slow gradually using gentle engine braking, then carefully pull over", "Accelerate briefly to regain control", "Immediately steer to the side of the road"],
+    answer: 1,
+    explanation: "BLOWOUT RESPONSE: (1) GRIP steering firmly — vehicle will pull to blowout side, (2) DO NOT BRAKE HARD — weight transfer makes steering worse, (3) GENTLE ACCELERATION briefly can counteract the pull, (4) Gradually EASE OFF throttle, (5) SAFELY PULL OVER. Panic braking = loss of control = accident."
+  },
+  {
+    q: "RADIAL vs CROSS PLY tyres — can they be mixed on the same vehicle?",
+    options: ["Yes freely — any combination is safe", "GENERALLY NO — mixing gives unpredictable handling. If necessary: same type on same axle. Most manufacturers prohibit mixing. Radials on front, cross ply on rear is most dangerous (rear oversteer)", "Yes, but only on rear axle", "Only allowed in cold weather"],
+    answer: 1,
+    explanation: "MIXING TYRES: Radial and bias-ply have VERY DIFFERENT handling characteristics. RADIAL front + CROSS PLY rear → unpredictable rear end (oversteer tendency). CROSS PLY front + RADIAL rear is safer (understeer tendency). BEST: same type on all four wheels. Same type on same axle is minimum requirement."
+  },
+  {
+    q: "TRACK TENSION on a crawler machine must be maintained because:",
+    options: ["Tight track = better grip always", "MANUFACTURER-SPECIFIED SAG — too tight = stress on bushings, pins, sprockets → premature wear; too loose = track derailment risk and chain slapping damage", "Track tension has no effect on wear", "Only matters on slopes"],
+    answer: 1,
+    explanation: "CORRECT TRACK TENSION (measured as specified sag at midpoint): TOO TIGHT → extreme stress on pins, bushings, rollers, and sprockets → rapid wear and possible breakage. TOO LOOSE → track derails on turns, CHAIN SLAPPING damages idler and rollers. Check specification in mm of sag on level ground."
+  },
+  {
+    q: "The TRACK IDLER (front idler) on a crawler machine functions to:",
+    options: ["Drive the track chain", "GUIDE and TENSION the track at the front — adjusted for correct track tension, absorbs rock strikes", "Lubricate the track pins", "Support the machine weight directly"],
+    answer: 1,
+    explanation: "FRONT IDLER: (1) GUIDES track at front of machine, (2) TENSIONED by a hydraulic/spring recoil mechanism — sets track sag, (3) RECOIL SPRING absorbs impacts from rocks to protect undercarriage. The SPROCKET (rear) DRIVES the track — the idler only guides and tensions."
+  },
+  {
+    q: "The SPROCKET in a crawler track system:",
+    options: ["Only guides the track at the front", "DRIVES the track chain by meshing with track links — driven by final drive motor from engine", "Sets track tension only", "Supports the machine weight"],
+    answer: 1,
+    explanation: "SPROCKET: toothed wheel at the REAR of the undercarriage. Powered by FINAL DRIVE (hydraulic motor or mechanical gear). Teeth mesh with track link bushing → pulls track → machine moves. Sprocket wear: teeth wear and can jump track when worn → replace sprocket and bushings together."
+  },
+  {
+    q: "TRACK LINK PINS AND BUSHINGS in a crawler undercarriage wear because:",
+    options: ["They are not lubricated (sealed for life)", "METAL-TO-METAL PIVOTING at each link joint — pivoting motion causes inside-to-outside wear of bushing bore and pin OD", "Only the sprocket causes wear", "Track tension alone causes failure"],
+    answer: 1,
+    explanation: "PIN-BUSHING WEAR: at every track link pivot, the pin rotates slightly in the bushing each time the link articulates around sprocket and idler. Thousands of cycles per hour → WEAR of pin OD and bushing bore → pitch increases → mismatches sprocket tooth spacing → jumping. 'TURN' bushings (rotate 180°) extends life."
+  },
+  {
+    q: "TRACK SHOES (grouser bars) are replaced when:",
+    options: ["Every 1000 hours regardless of wear", "GROUSERS WORN BELOW SPECIFIED HEIGHT — traction is lost; also when cracks or breakage occur in the shoe body", "Only when track is replaced", "Only if they make noise"],
+    answer: 1,
+    explanation: "GROUSER REPLACEMENT: measured with a groove gauge or straight edge. Worn below spec height → reduced TRACTION (dozer cannot push, excavator tracks spin on slopes). Also replace: CRACKED SHOES (structural failure), BROKEN GROUSERS (track imbalance, vibration). Reshoe track or replace individual shoes."
+  },
+  {
+    q: "RUBBER TRACK vs STEEL TRACK on compact excavators and mini dozers:",
+    options: ["Steel track is always better", "RUBBER TRACK: less damage to paved surfaces, quieter, lower vibration; STEEL TRACK: more durable in rocks/sharp debris, better traction on slopes and loose soil", "Rubber track has better traction always", "Steel track cannot be used on lawns"],
+    answer: 1,
+    explanation: "RUBBER TRACK advantages: PAVEMENT FRIENDLY (less damage to asphalt/tiles), QUIETER, SMOOTHER ride, LESS VIBRATION. STEEL TRACK advantages: MORE DURABLE against sharp rocks, rebar, rough terrain — rubber cuts through. Steel better for SLOPES and LOOSE SOIL. Choose based on job site surface."
+  },
+  {
+    q: "WHEEL RIM DAMAGE (bent rim) can cause:",
+    options: ["Better tyre seating", "AIR LEAKAGE from tyre-rim seal, VIBRATION, and TYRE DAMAGE from uneven stress distribution — replace damaged rims", "No effect on tyre performance", "Improved tyre wear pattern"],
+    answer: 1,
+    explanation: "BENT RIM: (1) AIR LOSS — bead cannot seal against deformed rim flange, (2) VIBRATION at speed — runout causes rhythmic force, (3) TYRE DAMAGE — tyre flexes unevenly over bent area → fatigue failure. MINOR BENDS can be repaired by rim straightening; SEVERE bends require rim replacement."
+  },
+  {
+    q: "WHEEL NUT TORQUE must be applied in a STAR PATTERN because:",
+    options: ["It is faster than sequential tightening", "STAR PATTERN draws the wheel evenly onto the hub — sequential tightening can COCK the wheel and distort the brake disc/drum", "Only for aesthetic reasons", "Required only for alloy wheels"],
+    answer: 1,
+    explanation: "STAR PATTERN (cross-pattern): tightening one nut, then the diametrically opposite, then next diagonally, etc. → ensures wheel draws SQUARELY and EVENLY onto hub. SEQUENTIAL tightening (1,2,3,4) → hub tilts slightly → uneven clamping → disc warp → brake judder. Always: torque to spec in star pattern."
+  },
+  {
+    q: "WHEEL BEARING CHECK procedure:",
+    options: ["Only visual inspection from outside", "LIFT WHEEL FREE OF GROUND, grasp at 12 and 6 o'clock and ROCK — vertical play indicates hub bearing; grasp at 3 and 9 o'clock and rock — horizontal indicates tie rod end", "Only listen for noise while driving", "Replace at fixed intervals only"],
+    answer: 1,
+    explanation: "WHEEL BEARING TEST: lift wheel. (1) ROCK AT 12/6 → vertical play = WHEEL BEARING (or ball joint). (2) ROCK AT 3/9 → horizontal play = TIE ROD END. (3) SPIN WHEEL by hand — roughness or grinding = BEARING. Knocking = major bearing failure. Early bearing detection = inexpensive replacement; late = axle damage."
+  },
+  {
+    q: "HYDROPLANING risk is REDUCED by:",
+    options: ["Using wider tyres always", "ADEQUATE TREAD DEPTH (channels water), CORRECT INFLATION (harder tyre cuts through), and REDUCED SPEED in wet conditions", "Increasing speed to plane over water", "Using narrower grooves on tread"],
+    answer: 1,
+    explanation: "HYDROPLANING PREVENTION: (1) TREAD DEPTH — deep grooves pump water through and away, (2) CORRECT PRESSURE — slightly higher pressure makes tyre stiffer → cuts through water film better, (3) SPEED REDUCTION — slower speed means less water needs to be displaced per second, (4) NARROW TYRES — more ground pressure per cm² cuts through water."
+  },
+  {
+    q: "When FITTING a tyre on a rim, the tyre must be fitted so the ROTATION ARROW (if present) points:",
+    options: ["In any direction — the arrow is decorative", "IN THE DIRECTION OF FORWARD TRAVEL — directional tyres must rotate in the marked direction for correct water expulsion and noise characteristics", "Opposite to vehicle travel for breaking in", "Toward the vehicle centreline"],
+    answer: 1,
+    explanation: "DIRECTIONAL TYRES: tread pattern designed to rotate in ONE DIRECTION only. Arrow marked on sidewall must point in DIRECTION OF TRAVEL. Fitting backwards: water channels pump water INWARD instead of outward → HYDROPLANING risk increases dramatically. Cannot be swapped side-to-side — only front-to-rear on same side."
+  },
+  {
+    q: "A TYRE'S 'DOT CODE' on the sidewall provides:",
+    options: ["Daily operating temperature", "Tyre identification including MANUFACTURER, PLANT, SIZE CODE, and MANUFACTURE WEEK AND YEAR — last 4 digits = week/year", "Only load rating information", "Speed rating information"],
+    answer: 1,
+    explanation: "DOT CODE: US Department of Transportation code. Last 4 digits are most important: '1523' = week 15 (April), year 2023. TYRE AGE matters: rubber degrades even if unused → recommended replacement at 6-10 years regardless of tread depth. Used to recall specific production batches."
+  },
+  {
+    q: "TYRE STORAGE best practice requires:",
+    options: ["Storing in sunlight to keep rubber flexible", "COOL, DRY, DARK storage away from ozone sources (electric motors), and stored vertically (unmounted) or hanging — prevent distortion", "Storing flat stacked horizontally always", "Storing near the engine for warmth"],
+    answer: 1,
+    explanation: "TYRE STORAGE: (1) COOL and DRY — heat and humidity degrade rubber, (2) DARK — UV light causes ozone cracking, (3) AWAY FROM OZONE SOURCES (motors, welders, fluorescent lights emit ozone → cracks rubber), (4) UNMOUNTED: stored vertically or hung, (5) MOUNTED: inflate to 1.5× normal and store vertically."
+  },
+  {
+    q: "RIM WIDTH must match tyre section width because:",
+    options: ["Only for appearance purposes", "INCORRECT RIM WIDTH distorts tyre profile — too narrow → pinched sidewall → overheating and sidewall failure; too wide → stretched bead → potential unseating and blowout", "Only matters for heavy vehicles", "Any rim width is acceptable for any tyre"],
+    answer: 1,
+    explanation: "RIM-TYRE FITMENT: each tyre has a recommended rim width range. TOO NARROW RIM → sidewall bulges inward → understeer, overheating, cracking. TOO WIDE RIM → tyre is stretched → thin sidewall → vulnerable to impact damage and bead unseating. Manufacturer specifies range (e.g., 6.5J-8.5J for a 225mm tyre)."
+  },
+  {
+    q: "TYRE SIDEWALL MARKINGS 'XL' or 'RF' (Reinforced) indicate:",
+    options: ["Extra Long tyre for large vehicles only", "REINFORCED sidewall construction — higher load index than standard tyre of same size, suitable for heavier vehicles or low profile (wider) fitments", "Extra low rolling resistance", "Racing tyre designation"],
+    answer: 1,
+    explanation: "XL/REINFORCED: tyre has strengthened sidewall construction allowing HIGHER INFLATION PRESSURE → HIGHER LOAD CARRYING CAPACITY. Common on: SUVs, MPVs, performance cars with wide/low profile tyres that would otherwise need a larger size. Must be inflated to correct higher pressure specified for XL fitment."
+  },
+  {
+    q: "The correct TYRE INFLATION PRESSURE is found on:",
+    options: ["The tyre sidewall maximum pressure", "VEHICLE DOOR JAMB STICKER or OWNER'S MANUAL — NOT the maximum pressure on tyre sidewall which is the absolute maximum, not the recommended pressure", "The wheel rim", "The dashboard information display always"],
+    answer: 1,
+    explanation: "CORRECT PRESSURE: on DOOR JAMB STICKER (driver's door or B-pillar) or OWNER'S MANUAL. This is the RECOMMENDED pressure for that vehicle with that tyre size for optimum: ride comfort, handling, fuel economy, and tyre life. TYRE SIDEWALL shows MAXIMUM pressure — filling to max causes center wear and harsh ride."
+  },
+  {
+    q: "गाडीको टायरमा सही हावाको दाब नराख्दा के हुन्छ? (What happens if incorrect tyre pressure is maintained?)",
+    options: ["केवल टायरको आयु कम हुन्छ (Only tyre life reduces)", "अनियमित टायर घिसाइ, इन्धन खपत बढ्नु, र सुरक्षा जोखिम (Uneven tyre wear, increased fuel consumption, AND safety risks)", "केवल ईन्धन खपत बढ्छ (Only fuel consumption increases)", "कुनै असर हुँदैन (No effect)"],
+    answer: 1,
+    explanation: "गलत टायर दाबका असर: (1) UNEVEN WEAR — कम दाब = किनार घिसाइ, बढी दाब = केन्द्र घिसाइ, (2) FUEL EFFICIENCY — कम दाब = बढी रोलिङ रेजिस्टेन्स = बढी इन्धन, (3) SAFETY — hydroplaning, handling problems, blowout risk. All three are affected."
+  },
+  {
+    q: "क्रलर मेसिनको ट्र्याक टेन्सन कसरी जाँच्ने? (How is crawler machine track tension checked?)",
+    options: ["केवल आँखाले हेरेर (Only visual inspection)", "ट्र्याकको मध्यमा SAG (सक्कल) मापन गरी निर्माताको स्पेसिफिकेसनसँग तुलना गर्ने (Measure SAG at mid-point and compare with manufacturer specification)", "ट्र्याकको आवाजले मापन गर्ने (Measure by sound)", "ईन्जिन RPM मापन गरेर (By measuring engine RPM)"],
+    answer: 1,
+    explanation: "Track tension check: level ground मा मेसिन राख्ने → ट्र्याकको मध्य भागमा straight edge राखेर SAG मापन गर्ने → manufacturer specification (सामान्यतः 25-50mm) सँग तुलना गर्ने। धेरै कसिलो = bearing damage; धेरै ढिलो = derailment risk।"
+  },
+  {
+    q: "WHEEL ALIGNMENT — which THREE parameters constitute a complete wheel alignment?",
+    options: ["Tyre pressure, load index, speed rating", "CAMBER, TOE, and CASTER — the three fundamental angles that define wheel orientation relative to vehicle", "Tread depth, rim width, tyre age", "Balancing weights, hub offset, PCD"],
+    answer: 1,
+    explanation: "THREE MAIN ALIGNMENT ANGLES: (1) CAMBER — wheel tilt from vertical (front view), (2) TOE — wheel pointing in/out (top view), (3) CASTER — steering axis tilt front-to-back (side view). Additional: kingpin inclination, thrust angle. All must be within spec for correct handling and tyre wear."
+  },
+  {
+    q: "PCD (Pitch Circle Diameter) or BOLT CIRCLE of a wheel refers to:",
+    options: ["The rim diameter for tyre fitting", "THE DIAMETER OF THE CIRCLE on which the wheel bolt holes are arranged — must match hub exactly", "The centre bore diameter", "The overall wheel diameter"],
+    answer: 1,
+    explanation: "PCD (BOLT CIRCLE): diameter of the imaginary circle passing through the centres of all wheel bolt holes. Example: 5×114.3 = 5 bolts on a 114.3mm pitch circle. PCD MUST MATCH HUB exactly — wrong PCD means wheel will not fit or fit incorrectly → wheel separation risk."
+  },
+  {
+    q: "WHEEL OFFSET (ET value) determines:",
+    options: ["How much weight the wheel can carry", "HOW FAR THE WHEEL HUB MOUNTING FACE is offset from the wheel centerline — affects track width and clearance", "The rim depth for tyre fitting", "The PCD bolt circle"],
+    answer: 1,
+    explanation: "OFFSET (ET/ETTO): distance between wheel's mounting face and its geometric centre. POSITIVE OFFSET (most cars): mounting face toward road → wheels tucked in → narrower track. NEGATIVE OFFSET: mounting face toward car → wheels stick out → wider track. Correct offset ensures: correct track width, no fouling of suspension/brakes."
+  }
+
+
+];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
     const answer = Number(question.answer);
