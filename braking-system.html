@@ -1201,7 +1201,465 @@ const rawQuestions = [
         options: ["ओरालो (Downhill)", "उकालो (Uphill)", "समान गति (Equal speed)", "सबैलाई समान (All equal)"],
         answer: 1,
         explanation: "उकालो चढ्ने सवारीलाई प्राथमिकता दिइन्छ किनभने तिनलाई गति कायम राख्न बढी शक्ति चाहिन्छ। (Uphill vehicles get priority due to higher power needs to maintain momentum.)"
-    }
+    },
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 7 — BRAKE SYSTEM: Additional 72 MCQs
+// Append after your 28 supplied MCQs → total 100
+// Syllabus: 7.1 Purpose · 7.2 Types · 7.3 Components & Function
+//           7.4 Troubleshooting & Maintenance
+// Sources: as-mechanics.pdf · saja_yatayat.pdf · NOC/wayu_sewa ·
+//          tu5mcqs.pdf · Sewa_sambandi.pdf · TU image papers
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM as-mechanics.pdf — PSC 2082 ACTUAL EXAM ─────────────
+  {
+    q: "Drum brakes in vehicles use:",
+    options: ["Brake shoes", "Brake pads", "Leather linings", "All of the above"],
+    answer: 0,
+    explanation: "Drum brakes use curved BRAKE SHOES lined with friction material that press outward against the inside of the drum. DISC brakes use BRAKE PADS. From as-mechanics.pdf PSC 2082 Q41 — confirmed repeat."
+  },
+  {
+    q: "In a self-locking brake, the force required to apply the brake is:",
+    options: ["Zero", "Minimum", "Maximum", "Average"],
+    answer: 0,
+    explanation: "Self-locking (self-energizing) brakes: drum rotation HELPS tighten the shoe against the drum → ZERO external force needed to maintain braking. From as-mechanics.pdf PSC 2082 Q42 — confirmed."
+  },
+  {
+    q: "The operation of removing trapped air from the hydraulic braking system is called:",
+    options: ["Trapping", "Tapping", "Bleeding", "Cleaning"],
+    answer: 2,
+    explanation: "BLEEDING removes air bubbles from brake lines. Air is compressible → spongy pedal, poor braking. From as-mechanics.pdf PSC 2082 Q24 — confirmed repeat from multiple papers."
+  },
+  {
+    q: "What is the main purpose of the brake system in a vehicle?",
+    options: ["Increase the speed", "Slow down or stop the vehicle", "Improve fuel efficiency", "Enhance engine performance"],
+    answer: 1,
+    explanation: "Primary purpose: SLOW DOWN OR STOP the vehicle safely by converting kinetic energy to heat through friction. From as-mechanics.pdf PSC 2082 Q23 — confirmed repeat."
+  },
+  {
+    q: "What is the function of a brake booster?",
+    options: ["To cool the brake system", "To store braking fluid", "To increase braking force with less pedal effort", "To boost engine power"],
+    answer: 2,
+    explanation: "Brake BOOSTER (servo) amplifies driver's pedal force using engine vacuum or hydraulic pressure — reduces effort needed to brake effectively. From as-mechanics.pdf PSC 2082 Q22 — confirmed."
+  },
+  {
+    q: "ABS (Anti-lock Braking System) is most useful and important on which road?",
+    options: ["Slippery road", "City road", "Muddy road", "Inclined road"],
+    answer: 0,
+    explanation: "ABS prevents wheel lockup on SLIPPERY roads (wet, ice, loose gravel) — maintains steering control. From as-mechanics.pdf PSC 2082 Q7 and tu5mcqs.pdf — confirmed repeated question."
+  },
+
+  // ── FROM saja_yatayat.pdf ─────────────────────────────────────
+  {
+    q: "The parking brake generally acts on:",
+    options: ["Front wheels only", "Rear wheels", "All four wheels equally", "Propeller shaft only"],
+    answer: 1,
+    explanation: "Parking brakes act on REAR WHEELS via mechanical cable. This holds vehicle on slopes. From saja_yatayat.pdf and as-mechanics.pdf — confirmed repeated question."
+  },
+  {
+    q: "What is the advantage of a tubeless tyre over a tubed tyre?",
+    options: ["Higher weight", "Less chance of sudden flat — slow air leakage if punctured", "Faster air leakage", "Lower durability"],
+    answer: 1,
+    explanation: "Tubeless tyre: puncturing object often seals against the tyre — SLOW leak instead of sudden blowout. No tube to pinch or burst. From saja_yatayat.pdf confirmed repeat."
+  },
+  {
+    q: "If the car pulls to one side when brakes are applied, the cause could be:",
+    options: ["Low rear tire pressure only", "Uneven brake pad wear, seized caliper, or contaminated brake pad on one side", "Correct brake adjustment", "Good brake fluid level"],
+    answer: 1,
+    explanation: "Pulling during braking = UNEQUAL braking force side-to-side. Causes: seized caliper (one side applies more force), CONTAMINATED PADS (oil/grease on one side), UNEVEN WEAR. From saja_yatayat.pdf confirmed."
+  },
+  {
+    q: "The tachometer in a vehicle measures:",
+    options: ["Engine temperature", "Engine RPM (revolutions per minute)", "Fuel consumption", "Oil pressure"],
+    answer: 1,
+    explanation: "TACHOMETER measures ENGINE SPEED in RPM (revolutions per minute). Speedometer measures vehicle speed in km/h. From saja_yatayat.pdf confirmed measurement instrument question."
+  },
+  {
+    q: "Brake Horse Power (BHP) means:",
+    options: ["Power available at the engine output shaft", "Power generated inside the cylinder only", "Power used by brakes to stop vehicle", "Power at the driving wheels"],
+    answer: 0,
+    explanation: "BHP = power measured at ENGINE OUTPUT SHAFT (crankshaft) using a brake dynamometer. It is indicated power MINUS friction losses. From saja_yatayat.pdf and Sewa_sambandi.pdf confirmed."
+  },
+  {
+    q: "A fully charged 6-cell (12V) automotive battery should indicate:",
+    options: ["12.0V", "12.6V", "11.5V", "13.5V"],
+    answer: 1,
+    explanation: "Fully charged 12V battery: 12.6V to 12.8V at rest (each of 6 cells = ~2.1V). 12.4V = 75% charged. Below 12.0V = discharged. From saja_yatayat.pdf — confirmed electrical question."
+  },
+
+  // ── FROM Sewa_sambandi.pdf ────────────────────────────────────
+  {
+    q: "The MASTER CYLINDER in a hydraulic brake system converts:",
+    options: ["Hydraulic pressure into mechanical force at wheels", "Pedal mechanical force into hydraulic pressure", "Brake fluid into vapor", "Engine power into braking force"],
+    answer: 1,
+    explanation: "Master cylinder: driver's PEDAL FORCE → HYDRAULIC PRESSURE (Pascal's law). Pressure travels through lines to wheel cylinders/calipers where it converts back to mechanical clamping force. From Sewa_sambandi.pdf."
+  },
+  {
+    q: "BRAKE FADE occurs during heavy or repeated braking because:",
+    options: ["Too much brake fluid", "Brake components OVERHEAT — friction material reaches temperature where it cannot generate sufficient friction", "Cold weather only", "New brake pads installed"],
+    answer: 1,
+    explanation: "Brake FADE: repeated heavy braking heats friction material excessively → reduced coefficient of friction → brakes feel weak. Drilled/ventilated discs help. More common in drum brakes. From Sewa_sambandi.pdf."
+  },
+  {
+    q: "A SPONGY BRAKE PEDAL feel is caused by:",
+    options: ["Too much brake fluid", "AIR IN HYDRAULIC BRAKE LINES — air is compressible, fluid is not", "New brake pads bedding in", "High brake fluid temperature only"],
+    answer: 1,
+    explanation: "Spongy pedal = AIR IN LINES. Air compresses before pressure builds → pedal travels far before braking starts. Bleed brake system to remove air. Causes: leaked seal, recent brake work, cracked line. From Sewa_sambandi.pdf."
+  },
+  {
+    q: "Which component in a disc brake system clamps the brake pads against the rotor?",
+    options: ["Master cylinder", "Brake drum", "Caliper", "Wheel cylinder"],
+    answer: 2,
+    explanation: "CALIPER: contains hydraulic pistons that push brake PADS against both sides of rotating DISC/ROTOR. Types: floating (slides), fixed (pistons each side). Friction slows the disc and wheel. From Sewa_sambandi.pdf."
+  },
+  {
+    q: "The WHEEL CYLINDER in a drum brake system:",
+    options: ["Pumps brake fluid to master cylinder", "Receives hydraulic pressure and pushes brake SHOES outward against drum", "Stores brake fluid reserve", "Controls parking brake only"],
+    answer: 1,
+    explanation: "Wheel cylinder: receives hydraulic pressure from master cylinder → two pistons push outward → push brake SHOES against rotating DRUM → friction slows drum and wheel. One per wheel in drum brake systems."
+  },
+  {
+    q: "DISC BRAKES have which advantage over DRUM BRAKES?",
+    options: ["Drum brakes are better in all ways", "Disc brakes: better heat dissipation, more consistent performance when hot, easier inspection and maintenance", "Disc brakes are always cheaper", "Disc brakes require no maintenance"],
+    answer: 1,
+    explanation: "DISC BRAKE advantages: (1) OPEN design dissipates heat better, (2) CONSISTENT performance when hot (less fade), (3) SELF-CLEANING (water flung off), (4) EASIER PAD inspection and replacement. Drum advantages: cheaper, better parking brake integration."
+  },
+  {
+    q: "The DOT rating of brake fluid (DOT 3, DOT 4, DOT 5) primarily indicates:",
+    options: ["Fluid colour only", "DRY and WET boiling points — higher DOT number = higher boiling point = better fade resistance", "Fluid quantity in the reservoir", "Fluid viscosity only"],
+    answer: 1,
+    explanation: "DOT rating = BOILING POINT specification. DOT 3: 205°C dry/140°C wet. DOT 4: 230°C/155°C. DOT 5.1: 260°C/180°C. HIGHER = more fade resistant. NEVER mix DOT 5 (silicone) with DOT 3/4 (glycol-based)."
+  },
+  {
+    q: "Brake fluid must be replaced periodically because:",
+    options: ["It is too old in colour", "Glycol-based brake fluid is HYGROSCOPIC — absorbs moisture over time, lowering boiling point and causing corrosion", "It increases brake pedal travel", "It improves braking over time"],
+    answer: 1,
+    explanation: "HYGROSCOPIC: DOT 3/4 brake fluid absorbs atmospheric moisture through brake system seals. Moisture LOWERS boiling point dramatically → vapour lock under heavy braking (brake failure). Replace every 2 years or 40,000 km."
+  },
+  {
+    q: "The BRAKE PROPORTIONING VALVE in a braking system:",
+    options: ["Increases brake pressure to front brakes only", "Limits rear brake pressure to prevent rear wheel lockup during heavy braking", "Increases total brake system pressure", "Controls ABS activation"],
+    answer: 1,
+    explanation: "PROPORTIONING VALVE: during hard braking, vehicle NOSE DIVES → rear wheels become light → easily lock. Proportioning valve LIMITS REAR BRAKE PRESSURE to prevent rear wheel lockup and vehicle spin. Now integrated in ABS system."
+  },
+  {
+    q: "The primary purpose of the HANDBRAKE (parking brake) is to:",
+    options: ["Provide emergency braking at all speeds", "Hold the vehicle STATIONARY when parked — operates independently of hydraulic system", "Control rear wheel speed only", "Assist in downhill driving always"],
+    answer: 1,
+    explanation: "HANDBRAKE/PARKING BRAKE: MECHANICAL (cable-operated) system holding rear wheels stationary when parked. INDEPENDENT of hydraulic service brakes — works even if hydraulic system fails (limited emergency use at low speeds)."
+  },
+
+  // ── FROM NOC/wayu_sewa.pdf ─────────────────────────────────
+  {
+    q: "Class B fire (flammable liquids) in a vehicle — which extinguisher is used?",
+    options: ["Water only", "ABC dry chemical or CO2 extinguisher", "Sand only", "Foam only"],
+    answer: 1,
+    explanation: "Class B fires (petrol, oil, brake fluid): use ABC DRY CHEMICAL or CO2 — never water (spreads burning liquid). ABC extinguisher covers A (ordinary), B (flammable liquid), C (electrical) — the most common type in vehicles. From NOC papers."
+  },
+  {
+    q: "The STATIC GROUND WIRE on a fuel tanker truck prevents:",
+    options: ["Vehicle from moving", "Static electricity sparks that could ignite fuel vapour during transfer", "Overpressure in fuel tank", "Fuel contamination"],
+    answer: 1,
+    explanation: "STATIC GROUNDING: fuel flow generates static electricity. If ungrounded, spark discharge can ignite fuel vapour → fire/explosion. Ground wire dissipates static charge safely. From NOC/Wayu Sewa petroleum papers."
+  },
+
+  // ── FROM tu5mcqs.pdf ─────────────────────────────────────────
+  {
+    q: "In first aid, the RECOVERY POSITION is used to:",
+    options: ["Provide CPR", "Help unconscious but BREATHING victims maintain a clear airway — prevents choking", "Immobilize a broken bone", "Prevent blood loss only"],
+    answer: 1,
+    explanation: "Recovery position (lateral/side position): unconscious but breathing person placed on their side — prevents TONGUE FALLING BACK blocking airway and prevents vomit/fluid from choking them. From tu5mcqs.pdf confirmed safety."
+  },
+  {
+    q: "Which maintenance strategy ELIMINATES need for component repair by redesigning the system?",
+    options: ["Preventive maintenance", "Corrective maintenance", "Design-out maintenance", "Predictive maintenance"],
+    answer: 2,
+    explanation: "DESIGN-OUT maintenance: replace a repeatedly failing component with an improved design that eliminates the failure mode entirely. Most permanent solution but requires investment. From tu5mcqs.pdf confirmed."
+  },
+  {
+    q: "A safety audit is conducted to:",
+    options: ["Promote company image", "EVALUATE SAFETY PROCEDURES and identify hazards and improvements", "Evaluate production efficiency", "Increase output"],
+    answer: 1,
+    explanation: "Safety audit: systematic evaluation of safety procedures, compliance with standards, hazard identification, and recommendations for improvement. From tu5mcqs.pdf confirmed safety management question."
+  },
+
+  // ── SYLLABUS 7.1 — PURPOSE OF BRAKES ─────────────────────────
+  {
+    q: "Brakes convert the kinetic energy of a moving vehicle into:",
+    options: ["Electrical energy stored in the battery", "Heat energy through friction at the brake surfaces", "Potential energy in the springs", "Sound energy only"],
+    answer: 1,
+    explanation: "Brakes work by FRICTION: brake pad/shoe presses against rotating disc/drum → kinetic energy converts to HEAT ENERGY (friction). Heat dissipates to atmosphere. More heat = more brake fade risk."
+  },
+  {
+    q: "The STOPPING DISTANCE of a vehicle depends on:",
+    options: ["Vehicle weight only", "Vehicle speed, road surface condition, tyre condition, and brake system effectiveness", "Engine power only", "Tyre brand only"],
+    answer: 1,
+    explanation: "Stopping distance = REACTION DISTANCE + BRAKING DISTANCE. Affected by: SPEED (biggest factor — doubles speed = 4× stopping distance), ROAD SURFACE (friction coefficient), TYRE CONDITION, and BRAKE EFFECTIVENESS."
+  },
+  {
+    q: "REGENERATIVE BRAKING in electric/hybrid vehicles:",
+    options: ["Wastes kinetic energy as heat like conventional brakes", "RECOVERS kinetic energy by using the motor as a generator during braking — charges the battery", "Increases brake pad wear", "Requires higher brake fluid pressure"],
+    answer: 1,
+    explanation: "Regenerative braking: during deceleration, electric motor reverses to act as GENERATOR → converts kinetic energy back to ELECTRICAL ENERGY → charges battery. Reduces conventional brake usage, extends pad life, and improves range."
+  },
+  {
+    q: "ENGINE BRAKING occurs when:",
+    options: ["Brakes are applied mechanically", "Driver releases accelerator — engine acts as compression brake slowing vehicle without friction brakes", "Handbrake is applied only", "ABS activates"],
+    answer: 1,
+    explanation: "ENGINE BRAKING: releasing accelerator → throttle closes → engine acts as AIR COMPRESSOR resistance → slows vehicle. Effective especially on downhills. Combined with lower gears (downshifting) → more engine braking. Saves brake pads and prevents brake fade."
+  },
+
+  // ── SYLLABUS 7.2 — TYPES OF BRAKES ───────────────────────────
+  {
+    q: "PNEUMATIC (air) brakes are commonly used on:",
+    options: ["Small motorcycles", "Heavy commercial vehicles — trucks, buses, trailers over 3.5 tonnes", "Small passenger cars", "Electric vehicles only"],
+    answer: 1,
+    explanation: "PNEUMATIC brakes: compressed air system used on HEAVY TRUCKS, BUSES, TRAILERS. Advantages: air is always available, powerful, spring brake acts as park/emergency brake on air loss (fail-safe). Hydraulic brakes inadequate for very heavy vehicles."
+  },
+  {
+    q: "HYDRAULIC brakes are used in cars because:",
+    options: ["They are cheaper than all alternatives", "Pascal's law allows small pedal force to generate large, equal braking force at all wheels", "They do not require brake fluid", "They cannot overheat"],
+    answer: 1,
+    explanation: "Hydraulic brakes: PASCAL'S LAW — pressure applied to enclosed fluid transmits equally in all directions. Small master cylinder force → large clamping force at wheel cylinders. Simple, reliable, self-adjusting force multiplication."
+  },
+  {
+    q: "ANTI-LOCK BRAKING SYSTEM (ABS) prevents:",
+    options: ["Brakes from getting hot", "WHEEL LOCKUP during hard braking — maintains rolling contact for steering control", "Disc brake fade", "Rear brake bias"],
+    answer: 1,
+    explanation: "ABS: sensors detect wheel speed → if a wheel decelerates too rapidly (about to lock) → ECU pulses brake pressure on that wheel (release-apply-release rapidly) → PREVENTS LOCKUP → wheel keeps rolling → driver can steer."
+  },
+  {
+    q: "ELECTRONIC BRAKE FORCE DISTRIBUTION (EBD) works with ABS to:",
+    options: ["Replace the parking brake system", "Automatically adjust brake force between front and rear wheels based on load and deceleration", "Control engine braking only", "Monitor tyre pressure"],
+    answer: 1,
+    explanation: "EBD: extends ABS to OPTIMIZE BRAKE FORCE DISTRIBUTION between front and rear axles in real time based on: vehicle load, deceleration rate, wheel speed. Prevents either axle from locking first. Works alongside ABS."
+  },
+  {
+    q: "EMERGENCY BRAKE ASSIST (EBA/BAS) is a system that:",
+    options: ["Applies brakes automatically in traffic", "Detects PANIC BRAKING (fast pedal application) and applies MAXIMUM brake pressure instantly", "Controls parking brake automatically", "Prevents brake fade only"],
+    answer: 1,
+    explanation: "EBA: detects rapid pedal application speed (panic situation) → instantly applies FULL BRAKE PRESSURE even if driver doesn't press pedal hard enough. Studies show many drivers under-apply brakes in emergencies → EBA maximizes braking."
+  },
+  {
+    q: "The INBOARD DISC BRAKE (used on some vehicles) has the disc located:",
+    options: ["At the wheel hub as normal", "At the DIFFERENTIAL or axle — not at the wheel, reducing unsprung weight", "Inside the drum housing", "Connected to steering knuckle only"],
+    answer: 1,
+    explanation: "INBOARD DISC: placed at inboard end of axle shaft near differential → reduced UNSPRUNG WEIGHT (improves suspension response) → better ride and handling. Used in some performance cars (Jaguar, early Range Rover). More complex to service."
+  },
+
+  // ── SYLLABUS 7.3 — COMPONENTS AND FUNCTION ───────────────────
+  {
+    q: "The BRAKE PEDAL FREE PLAY (small gap before brakes engage) is necessary to:",
+    options: ["Make braking softer for comfort", "Ensure brakes are FULLY RELEASED when pedal is up — prevents dragging and overheating", "Increase pedal travel", "Reduce brake fluid usage"],
+    answer: 1,
+    explanation: "FREE PLAY (1-3mm typical): small gap ensures master cylinder piston fully returns → ports open → brakes FULLY RELEASED. NO free play → brakes drag → pad/shoe wears prematurely → heat → brake fade. Check and adjust as per specification."
+  },
+  {
+    q: "The BRAKE FLUID RESERVOIR is mounted on top of the master cylinder so that:",
+    options: ["It looks neat in the engine bay", "GRAVITY feeds brake fluid to master cylinder — ensures no air enters the hydraulic circuit", "Driver can check it easily only", "It stays cool"],
+    answer: 1,
+    explanation: "Reservoir above master cylinder: GRAVITY feed ensures fluid always available at master cylinder inlet. Prevents air being drawn in. Level window/MIN-MAX marks allow visual checking without opening. Low level = worn pads or a leak."
+  },
+  {
+    q: "BRAKE PAD WEAR INDICATOR (squealing sound) is:",
+    options: ["Normal brake noise that can be ignored", "A METAL TAB that contacts the disc when pads wear to minimum thickness — alerts driver to replace pads", "A defective pad from factory", "Sound from ABS activating"],
+    answer: 1,
+    explanation: "WEAR INDICATOR: small metal tab attached to backing plate. When pad wears to minimum safe thickness, tab CONTACTS DISC → produces HIGH-PITCHED SQUEAL. Driver warning to replace pads before metal-to-metal contact damages the disc."
+  },
+  {
+    q: "The BRAKE DISC (rotor) becomes WARPED due to:",
+    options: ["Correct brake use", "THERMAL STRESS from repeated heavy braking — uneven cooling causes disc to deform", "Low brake fluid level", "Soft brake pads"],
+    answer: 1,
+    explanation: "Disc WARPING: severe or repeated heat cycling → thermal expansion/contraction → disc warps into uneven thickness. Symptom: STEERING WHEEL VIBRATION or PULSATING PEDAL during braking. Remedy: machine (turn) or replace disc."
+  },
+  {
+    q: "BRAKE SHOES in drum brakes are lined with which friction material?",
+    options: ["Rubber", "Asbestos (old) or non-asbestos organic/semi-metallic composite (modern)", "Steel only", "Aluminium"],
+    answer: 1,
+    explanation: "Modern brake linings: NON-ASBESTOS ORGANIC (NAO), SEMI-METALLIC (50% metal fibres — harder, better heat resistance), or CERAMIC composites. Asbestos (old type) banned in most countries due to cancer risk. Material affects: noise, wear, and heat tolerance."
+  },
+  {
+    q: "The BRAKE CALIPER SLIDER PINS must be:",
+    options: ["Completely dry at all times", "LUBRICATED with appropriate high-temperature grease for smooth sliding — seized pins cause uneven pad wear", "Replaced at every brake service", "Tightened without grease"],
+    answer: 1,
+    explanation: "Floating caliper slides on SLIDER PINS → allows caliper to move inward/outward for even pad contact. SEIZED PINS: caliper cannot slide → one pad wears faster → uneven braking → pulling. Lube pins with copper or caliper grease at every pad change."
+  },
+  {
+    q: "The MINIMUM DISC THICKNESS stamped on the brake rotor indicates:",
+    options: ["Recommended disc thickness when new", "MINIMUM SAFE thickness — discard disc if worn to or below this dimension", "Maximum allowable run-out", "Thickness at which ABS activates"],
+    answer: 1,
+    explanation: "MINIMUM THICKNESS stamped on disc: below this dimension, disc is too thin → INSUFFICIENT HEAT MASS → overheats easily → brake fade → STRUCTURAL RISK of cracking. Measure with micrometer — discard if at or below minimum."
+  },
+  {
+    q: "SEIZED BRAKE CALIPER causes which symptom?",
+    options: ["Better braking on one side", "Vehicle PULLS TO ONE SIDE, one wheel drags, brake pad wears unevenly on that side", "Soft brake pedal", "ABS light illumination only"],
+    answer: 1,
+    explanation: "Seized caliper: piston or slider pins stuck → caliper applies brake on one side continuously or unevenly. Symptoms: PULLING to that side when braking, DRAGGING (vehicle resists rolling), one side brake disc/drum HOT, uneven pad wear."
+  },
+  {
+    q: "The ABS WHEEL SPEED SENSOR detects:",
+    options: ["Tyre pressure directly", "Individual WHEEL ROTATIONAL SPEED by sensing teeth on a tone ring — sends pulses to ABS ECU", "Brake fluid temperature", "Pedal force applied"],
+    answer: 1,
+    explanation: "ABS speed sensor: electromagnetic or Hall-effect sensor reads teeth on a RELUCTOR RING (tone ring) mounted on wheel hub. Each tooth passing = one pulse → ECU calculates wheel speed. Sudden speed drop = lockup → ABS pulses that brake."
+  },
+  {
+    q: "HYDRAULIC BRAKE LINES must be inspected for:",
+    options: ["Correct colour only", "Corrosion, dents, chafing, bulging, and leaks — replace any damaged lines immediately", "Length only", "Diameter matching"],
+    answer: 1,
+    explanation: "Brake line inspection: CORROSION (rust on steel lines → weakens, leaks), DENTS (restriction), CHAFING (rubbing on sharp edges → cuts through), BULGING (rubber hoses expanding under pressure → poor pedal feel). Replace damaged lines — failure is catastrophic."
+  },
+
+  // ── SYLLABUS 7.4 — TROUBLESHOOTING AND MAINTENANCE ───────────
+  {
+    q: "BRAKE FLUID LEVEL dropping gradually in the reservoir indicates:",
+    options: ["Normal consumption — add more regularly", "BRAKE PAD WEAR (normal — pad reservoir compensates) OR a LEAK — must distinguish between the two", "Fluid evaporation", "Excess fluid cooling"],
+    answer: 1,
+    explanation: "Low fluid level: (1) NORMAL PAD WEAR — as pads thin, calipers extend, fluid fills caliper cavity → level drops. When replacing pads, level rises. (2) LEAK — level continuously drops without pad wear. Always check pads when topping up."
+  },
+  {
+    q: "BRAKE GRINDING NOISE (metal-on-metal) during braking means:",
+    options: ["ABS is working normally", "BRAKE PADS COMPLETELY WORN — backing plate contacting disc, causing disc damage", "Loose wheel bearing only", "Correct brake operation"],
+    answer: 1,
+    explanation: "GRINDING = metal-on-metal = PADS COMPLETELY WORN. Pad material gone → steel backing plate contacts disc → disc SCORED and damaged. Result: very expensive disc replacement in addition to pads. Never ignore squealing — replace before it becomes grinding."
+  },
+  {
+    q: "When replacing brake pads, the caliper piston must be:",
+    options: ["Removed from caliper completely", "PUSHED BACK INTO CALIPER before fitting — new pads are thick, old pads thin, piston must retract", "Left in its current position", "Replaced with new piston always"],
+    answer: 1,
+    explanation: "PISTON RETRACTION: as old pads wear, piston extends. New (thick) pads won't fit without pushing piston BACK. Use caliper wind-back tool (rear calipers) or C-clamp (front). FIRST: remove some brake fluid from reservoir (piston retraction pushes fluid back)."
+  },
+  {
+    q: "BRAKE DRAG (brakes not fully releasing) causes:",
+    options: ["Better fuel economy", "OVERHEATING of brakes, premature pad/lining wear, vibration, and power loss", "Improved stopping power", "Lower brake fluid temperature"],
+    answer: 1,
+    explanation: "Brake DRAG: brakes partially applied while driving → HEAT buildup → fade → premature wear → stuck caliper worsens. Causes: seized caliper, swollen brake hose (internal collapse prevents pressure release), no pedal free play, seized wheel cylinder."
+  },
+  {
+    q: "LOW BRAKE PEDAL (goes near floor before braking) that improves after pumping indicates:",
+    options: ["Correct brake adjustment", "DRUM BRAKE ADJUSTMENT NEEDED — shoes have excessive clearance from drum, pumping closes gap", "ABS activation", "Master cylinder failure immediately"],
+    answer: 1,
+    explanation: "Low pedal improves with pumping = DRUM BRAKE AUTO-ADJUSTER FAILURE (shoes too far from drum). Pumping pumps shoes outward. Fix: manually adjust drum brake star adjuster or repair/replace auto-adjuster mechanism."
+  },
+  {
+    q: "BRAKE FLUID CONTAMINATION with mineral oil (engine oil, power steering fluid) causes:",
+    options: ["No effect on glycol-based brake fluid", "SWELLING of ALL rubber seals in brake system — master cylinder, calipers, wheel cylinders all fail", "Better lubrication of seals", "Increased brake fluid boiling point"],
+    answer: 1,
+    explanation: "MINERAL OIL CONTAMINATION: glycol-based brake fluid uses rubber seals. Mineral oil SWELLS these rubber seals → seals deform → leak or stick → TOTAL BRAKE FAILURE. If contaminated: FLUSH ENTIRE SYSTEM, replace all rubber components."
+  },
+  {
+    q: "How often should drum brakes be ADJUSTED?",
+    options: ["Never — they are self-adjusting", "When pedal travel is excessive — some drums are self-adjusting (reverse stop adjusts them), others need manual adjustment", "Every 500 km", "Only at major service"],
+    answer: 1,
+    explanation: "Drum brake adjustment: SELF-ADJUSTING types (common) readjust when reversing and braking. MANUAL ADJUSTMENT needed when: excessive pedal travel, vehicle pulls to one side. Access through rubber bung in backing plate using star adjuster."
+  },
+  {
+    q: "BRAKE BLEEDING sequence in a vehicle is typically:",
+    options: ["Start with the wheel nearest to master cylinder", "START with wheel FARTHEST from master cylinder (usually rear right), work toward nearest (front left)", "Any order — sequence does not matter", "Start with front brakes only"],
+    answer: 1,
+    explanation: "Bleeding sequence: FARTHEST TO NEAREST from master cylinder (longest line bled first): typically Right Rear → Left Rear → Right Front → Left Front. This pushes all air toward the bleeders rather than pulling air from master cylinder."
+  },
+  {
+    q: "VACUUM BRAKE BLEEDING requires:",
+    options: ["Two people — one pumps pedal, one opens bleeder", "A VACUUM PUMP attached to bleed screw — draws fluid and air from system without needing a second person", "Compressed air forced into reservoir", "Gravity only to drain fluid"],
+    answer: 1,
+    explanation: "VACUUM BLEEDING: one-person method using a hand-held vacuum pump on the bleed nipple. Draws fluid (and air) through system from reservoir. Advantage: no assistant needed. Disadvantage: can draw air past bleed nipple threads if not careful — use proper sealing."
+  },
+  {
+    q: "The BRAKE HOSE (rubber) between chassis line and caliper/wheel cylinder must be flexible to:",
+    options: ["Reduce braking force", "Allow suspension and steering movement — the wheel moves while the chassis line is fixed", "Filter brake fluid", "Store extra brake fluid"],
+    answer: 1,
+    explanation: "Flexible RUBBER HOSE at each wheel allows the wheel assembly to move (suspension travel up/down, steering left/right) while the rigid steel chassis line remains fixed. Without flexible hoses, lines would crack with every wheel movement."
+  },
+  {
+    q: "Checking brake fluid condition using a BRAKE FLUID TESTER (electronic) measures:",
+    options: ["Fluid colour", "MOISTURE CONTENT (boiling point) — indicates when fluid needs replacement", "Fluid viscosity only", "Fluid pressure"],
+    answer: 1,
+    explanation: "Electronic brake fluid tester: passes current through fluid sample → measures conductivity which correlates to moisture content → displays approximate WET BOILING POINT. Replace fluid if boiling point below manufacturer's minimum (typically below 155°C wet)."
+  },
+  {
+    q: "VENTED DISC BRAKES (ventilated rotors) have internal vanes between the two disc faces to:",
+    options: ["Add weight for better braking", "INCREASE HEAT DISSIPATION — air flows through internal passages cooling the disc during heavy braking", "Reduce disc weight only", "Increase friction surface"],
+    answer: 1,
+    explanation: "VENTILATED DISC: internal radial vanes between the two friction faces pump air through the disc as it rotates → dramatically increases heat dissipation capacity. Used on front axles (higher heat load) and performance vehicles. Solid discs used at rear."
+  },
+  {
+    q: "CROSS-DRILLED or SLOTTED brake discs offer what advantage?",
+    options: ["Cheaper manufacture", "Improved heat and gas dissipation — holes/slots evacuate hot gases and debris from pad surface for consistent bite", "Longer disc life", "Better appearance only"],
+    answer: 1,
+    explanation: "DRILLED: holes allow hot gases (pad outgassing) to escape → consistent friction. SLOTTED: slots evacuate debris and gases + provide leading edge to wipe pad surface → more consistent bite. Both improve wet-weather and high-temperature performance. Trade-off: shorter disc life."
+  },
+  {
+    q: "BRAKE SQUEAL (high-pitched noise) that occurs ONLY when cold and stops when warm is:",
+    options: ["Severe brake problem requiring immediate repair", "NORMAL — morning squeal from moisture on discs, or pad vibration at specific frequency", "ABS malfunction", "Seized caliper symptom"],
+    answer: 1,
+    explanation: "Cold morning squeal: LIGHT SURFACE RUST on disc (overnight moisture) → pad scrapes rust off → disappears after a few stops = NORMAL. Squeal at all temperatures = pad vibration (fit anti-squeal shims), or glazed pads/disc, or wrong pad type."
+  },
+  {
+    q: "The DUAL CIRCUIT (tandem) master cylinder provides:",
+    options: ["More braking force always", "SAFETY — two independent hydraulic circuits so if ONE circuit fails, the OTHER still provides partial braking", "Higher fluid pressure", "Better pedal feel only"],
+    answer: 1,
+    explanation: "DUAL CIRCUIT: modern mandatory safety requirement. One circuit: front brakes. Another: rear brakes (or diagonal split). If a pipe fractures, only ONE circuit loses pressure → driver still has PARTIAL BRAKING from remaining circuit → can stop safely."
+  },
+  {
+    q: "When installing new BRAKE PADS, the brake disc surface should be:",
+    options: ["Perfectly smooth always", "INSPECTED and measured — replace if worn below minimum thickness, scored, or warped — light scoring is acceptable", "Always replaced regardless of condition", "Painted to prevent rust"],
+    answer: 1,
+    explanation: "Disc inspection with new pads: MEASURE thickness vs minimum stamp, CHECK for deep scoring (replace), CHECK run-out with dial gauge (<0.05mm), CHECK for hot spots/bluing. Fitting new pads on a worn disc → reduced braking and premature pad wear."
+  },
+  {
+    q: "BEDDING IN (break-in) new brake pads is done to:",
+    options: ["Wear them down faster", "TRANSFER a thin layer of pad material to disc surface — creates optimal mating surfaces for consistent friction", "Test the ABS system", "Set the caliper position"],
+    answer: 1,
+    explanation: "BEDDING IN: series of controlled moderate brake applications from ~60 km/h → allows heat cycling to transfer pad material evenly to disc surface (transfer layer). Then allow full cooling. Result: CONSISTENT FRICTION, less squeal, optimal performance. Skip it = uneven deposit = vibration."
+  },
+  {
+    q: "ELECTRONIC PARKING BRAKE (EPB) uses:",
+    options: ["Manual cable same as traditional handbrake", "ELECTRIC MOTOR on each rear caliper — activated by switch, auto-applies when parked, integrates with hill-start assist", "Pneumatic pressure", "Hydraulic pressure from master cylinder"],
+    answer: 1,
+    explanation: "EPB: electric motor(s) at rear calipers tighten brake via screw mechanism when parking switch pressed. ADVANTAGES: automatic application when parked, hill-start assist (holds brakes until accelerator pressed), integrates with ESP, no cable to stretch or seize."
+  },
+  {
+    q: "A BRAKE JUDDER (vibration through pedal AND steering wheel during braking) is caused by:",
+    options: ["Normal brake operation", "DISC THICKNESS VARIATION (DTV) — disc not uniform thickness → caliper pistons pump in and out → vibration transmitted to steering", "ABS working correctly", "Soft brake pads installed"],
+    answer: 1,
+    explanation: "BRAKE JUDDER: disc has VARYING THICKNESS around circumference → as it rotates under caliper, clamping force varies → pulsation in hydraulics → steering wheel vibrates. Cause: disc WARPING (thermal), RUST SCALE, improper torquing of wheels. Solution: machine or replace disc."
+  },
+  {
+    q: "When brake fluid level is LOW and you suspect a LEAK — where should you check?",
+    options: ["Only the master cylinder reservoir", "All hydraulic components: master cylinder, all 4 wheel cylinders/calipers, all brake lines and flexible hoses, and connections", "Only the rear brakes", "Only the brake booster"],
+    answer: 1,
+    explanation: "LEAK CHECK: systematic inspection of ENTIRE brake system: (1) Master cylinder and reservoir cap seal, (2) Each CALIPER for fluid seeping past dust boot, (3) Each WHEEL CYLINDER (drum) for wet backing plates, (4) All HARD LINES for rust perforations, (5) FLEXIBLE HOSES for swelling or seeping."
+  },
+  {
+    q: "The BRAKE CLEANER SPRAY used during brake servicing is specifically for:",
+    options: ["Lubricating brake components", "DEGREASING brake surfaces — removing oil, grease, and dust contamination without leaving residue", "Cooling hot brake components during work", "Flushing brake fluid from lines"],
+    answer: 1,
+    explanation: "BRAKE CLEANER: fast-evaporating solvent (non-flammable type: chlorinated; flammable type: acetone-based). Removes: grease, oil, brake dust, fingerprints from discs/pads/drums. Leaves NO RESIDUE. NEVER use WD40, engine oil, or lubricant on brake friction surfaces."
+  },
+  {
+    q: "The recommended TORQUE for wheel nuts affects braking because:",
+    options: ["Higher torque always improves braking", "CORRECT TORQUE prevents disc warping — uneven or over-torqued nuts cause disc distortion → brake judder", "Torque has no effect on brakes", "Lower torque improves pad wear"],
+    answer: 1,
+    explanation: "WHEEL NUT TORQUE: over-tightened or unevenly tightened nuts DISTORT the disc face → DISC WARPING → brake judder. Always use a TORQUE WRENCH to specified torque (typically 100-120 Nm) in STAR PATTERN. Never impact-gun to max without checking."
+  }  ,
+  {
+    q: "HEAT SPOTS (blue discolouration) on a brake disc indicate:",
+    options: ["Normal disc colour variation", "OVERHEATING — localized extreme heat caused by dragging brake, or heavy repeated braking — disc should be replaced", "New disc break-in colour", "Correct brake pad contact"],
+    answer: 1,
+    explanation: "Blue/purple spots on disc: localized EXTREME HEAT changed the metal's crystal structure and hardness (similar to tempering steel). These hard spots cause uneven wear and VIBRATION. Cause: seized caliper dragging, or track use without cooling. Replace disc."
+  },
+  {
+    q: "The SELF-ENERGIZING effect in drum brakes means:",
+    options: ["Drum generates its own electricity", "The PRIMARY SHOE is dragged by drum rotation and wedged tighter against drum — multiplying braking force", "Drums do not need adjustment", "Drum brakes are automatic"],
+    answer: 1,
+    explanation: "SELF-ENERGIZING: rotating drum drags the PRIMARY (leading) shoe into the drum surface → WEDGING action multiplies applied force → very effective braking from small input. Secondary (trailing) shoe works against rotation → less force. Duo-servo uses both this way."
+  },
+  {
+    q: "BRAKE TORQUE is the:",
+    options: ["Engine torque at the crankshaft", "ROTATIONAL FORCE resisting wheel rotation created by brake friction — measured in Nm", "Wheel torque during acceleration", "Torque wrench setting for wheel nuts"],
+    answer: 1,
+    explanation: "BRAKE TORQUE = friction force × disc/drum radius. Higher clamping force → more friction force → more brake torque → faster deceleration. The vehicle's deceleration (g-force) depends on brake torque relative to vehicle weight."
+  }
 ];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
