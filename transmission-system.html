@@ -1183,7 +1183,488 @@ const rawQuestions = [
                 options: ["Worn clutch or synchronizers", "Low tire pressure", "Dirty fuel filter", "Weak battery"],
                 answer: 0,
                 explanation: "Worn clutch or synchronizers cause rough gear shifts, leading to jerking."
-            }
+            },
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 10 — TRANSMISSION SYSTEM: Additional 75 MCQs
+// Append after your 25 supplied MCQs → total 100
+// Syllabus: 10.1 Function · 10.2 Components (gearbox, clutch,
+//           propeller shaft, universal joint, differential) ·
+//           10.3 Torque Converter · 10.4 Troubleshooting
+// Sources: as-mechanics.pdf · new PSC 2081/3/12 · saja_yatayat ·
+//          Sewa_sambandi.pdf · all supplied papers
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM NEW PSC PAPER 2081/3/12 ─────────────────────────────
+  {
+    q: "The basic function of a clutch in a vehicle is to:",
+    options: ["Transmit the TORQUE of engine to transmission", "Transmit speed only to transmission", "Let the vehicle run at uniform speed", "Facilitate vehicle for acceleration only"],
+    answer: 0,
+    explanation: "Clutch transmits ENGINE TORQUE to the transmission, allowing the driver to engage/disengage power for gear changes without stalling. From new PSC Senior Mechanics paper 2081/3/12 Q29 — confirmed."
+  },
+  {
+    q: "The engine crankshaft is automatically engaged and disengaged with the clutch shaft in a:",
+    options: ["Single plate clutch", "Multi plate clutch", "Centrifugal clutch", "None of the above"],
+    answer: 2,
+    explanation: "CENTRIFUGAL CLUTCH automatically engages when engine RPM rises above a set speed (centrifugal weights fly outward → friction contact). No pedal needed. Used in: scooters, mopeds, go-karts, chainsaws. From new PSC paper Q30."
+  },
+  {
+    q: "Basic principle of a hydraulic system used in transmission is that:",
+    options: ["Liquid provides greater increase in workforce", "Liquid transmits applied pressure in all directions", "Liquid will not compress", "All of the above"],
+    answer: 3,
+    explanation: "Hydraulic system (Pascal's law): ALL three are true — (1) liquid transmits pressure equally in ALL DIRECTIONS, (2) liquid is INCOMPRESSIBLE (unlike air), (3) this creates FORCE MULTIPLICATION. From new PSC Senior paper Q31 — ALL OF ABOVE."
+  },
+  {
+    q: "Water is a _____ fluid in hydraulic systems.",
+    options: ["Real", "Ideal", "Newtonian", "Non-Newtonian"],
+    answer: 1,
+    explanation: "Water is considered an IDEAL fluid (incompressible, no viscosity in theoretical analysis). In practice, all real fluids have viscosity, but water's low viscosity makes it approximately ideal for calculations. From new PSC paper Q32."
+  },
+  {
+    q: "The purpose of a gearbox in an automobile is to:",
+    options: ["Multiply torque being transmitted by engine", "Cool the engine", "Charge the battery", "Reduce exhaust emissions"],
+    answer: 0,
+    explanation: "Gearbox MULTIPLIES TORQUE and adjusts engine speed to suit driving conditions. Lower gears = more torque multiplication; higher gears = less multiplication, more speed. From new PSC Senior paper Q29 variant — confirmed repeat."
+  },
+
+  // ── FROM as-mechanics.pdf PSC 2082 ───────────────────────────
+  {
+    q: "The purpose of the TRANSMISSION SYSTEM in an automobile is to:",
+    options: ["Vary the speed of the automobile", "Vary the TORQUE at the wheels", "Vary the power of the automobile", "None of the above"],
+    answer: 1,
+    explanation: "Transmission varies TORQUE at wheels. Lower gear = high torque multiplication (climbing, acceleration). Higher gear = less torque, more speed (cruising). Power output remains roughly constant. From as-mechanics.pdf PSC 2082 — confirmed."
+  },
+  {
+    q: "Which component connects the piston to the crankshaft in an engine?",
+    options: ["Camshaft", "Gudgeon pin", "Flywheel", "Connecting rod"],
+    answer: 3,
+    explanation: "CONNECTING ROD connects piston (via gudgeon/wrist pin) to crankshaft crank pin. Converts piston's reciprocating motion to crankshaft rotation. From tu5mcqs.pdf and as-mechanics.pdf — confirmed engine/transmission interface."
+  },
+  {
+    q: "The correct sequence of POWER TRANSMISSION in a vehicle is:",
+    options: ["Engine → Clutch → Gearbox → Propeller shaft → Differential → Drive axles → Wheels", "Engine → Gearbox → Clutch → Propeller shaft → Wheels", "Engine → Propeller shaft → Clutch → Gearbox → Wheels", "Clutch → Engine → Differential → Gearbox → Wheels"],
+    answer: 0,
+    explanation: "Power flow: ENGINE → CLUTCH → GEARBOX → PROPELLER SHAFT → DIFFERENTIAL → DRIVE AXLES → WHEELS. The clutch always comes immediately after the engine flywheel. From Sewa_sambandi.pdf — confirmed power flow question."
+  },
+  {
+    q: "The differential in a vehicle's drivetrain allows:",
+    options: ["Both rear wheels to receive equal torque while running at different speeds when cornering", "Engine power to be increased", "Vehicle speed to be reduced only", "Both wheels to always run at same speed"],
+    answer: 0,
+    explanation: "DIFFERENTIAL: (1) splits torque EQUALLY to both drive wheels, (2) allows each wheel to rotate at DIFFERENT SPEEDS when cornering (outer wheel travels further). Without differential, both wheels forced at same speed → tyre scrub on turns. From multiple PSC papers."
+  },
+
+  // ── FROM saja_yatayat.pdf ─────────────────────────────────────
+  {
+    q: "Diesel plants (generators) are mainly used as:",
+    options: ["Base load plants only", "Stand-by power plants only", "Peak load plants only", "Both peak load and stand-by power plants"],
+    answer: 3,
+    explanation: "Diesel generators serve as BOTH peak load and standby/emergency power plants — they start quickly and run intermittently. From saja_yatayat.pdf — confirmed vehicle/power system question."
+  },
+  {
+    q: "The V-belt drive is best when the belt touches the pulley groove at:",
+    options: ["The bottom of the groove", "The SIDES (flanks) of the groove only — not the bottom", "Both sides and bottom equally", "Only at one side"],
+    answer: 1,
+    explanation: "V-belt WEDGES in groove sides for grip. If belt touches BOTTOM of groove, it loses wedging grip and slips. Belt should NEVER contact the groove bottom — correct groove depth is critical. From saja_yatayat.pdf confirmed."
+  },
+  {
+    q: "The firing order of a 4-cylinder engine affects transmission smoothness because:",
+    options: ["It has no effect on transmission", "Even firing intervals (1-3-4-2) minimize torque pulses that cause transmission vibration and jerking", "Only affects fuel consumption", "Only relevant to ignition system"],
+    answer: 1,
+    explanation: "FIRING ORDER 1-3-4-2: alternating cylinders fire evenly every 180° → smooth power delivery → minimal torque pulses reaching transmission → less jerking and vibration in drivetrain. Uneven firing order would cause rough power delivery."
+  },
+
+  // ── FROM Sewa_sambandi.pdf (229 pages) ────────────────────────
+  {
+    q: "In a single dry plate clutch, torsional vibrations from the engine are absorbed by:",
+    options: ["The pressure plate material", "COIL SPRINGS in the clutch disc between hub and disc plate", "The flywheel mass", "The release bearing"],
+    answer: 1,
+    explanation: "TORSIONAL DAMPER SPRINGS in clutch disc: coil springs between the disc's friction material and its hub absorb torsional (twisting) vibrations before they reach the gearbox — preventing gearbox rattle and wear. From Sewa_sambandi.pdf and new PSC paper Q23."
+  },
+  {
+    q: "Tyre rotation is usually done to:",
+    options: ["Equalize wear across all tyres extending tyre life", "Reduce tyre maintenance cost only", "Get a better ride only", "None of the above"],
+    answer: 0,
+    explanation: "TYRE ROTATION equalizes wear patterns — front tyres (steering/braking wear) and rear tyres (drive force wear) experience different stresses. Rotating every 8-12,000 km maximizes total tyre life. From Sewa_sambandi.pdf confirmed."
+  },
+  {
+    q: "The indicated power of an engine is the power developed:",
+    options: ["At the flywheel output shaft", "INSIDE THE ENGINE CYLINDER by combustion gases", "After all friction losses", "At the driving wheels"],
+    answer: 1,
+    explanation: "INDICATED POWER = total power developed inside cylinder by combustion gases (measured by pressure-volume diagram). BRAKE POWER = at crankshaft (after friction). Mechanical efficiency = BP/IP. From Sewa_sambandi.pdf confirmed."
+  },
+
+  // ── 10.1 FUNCTION OF TRANSMISSION SYSTEM ─────────────────────
+  {
+    q: "The transmission system is necessary in a vehicle because:",
+    options: ["IC engines produce maximum torque at maximum speed — but vehicle needs high torque at LOW speed for starting", "Engine power is insufficient without it", "Wheels cannot be attached without it", "Only to reduce fuel consumption"],
+    answer: 0,
+    explanation: "IC ENGINE MISMATCH: engine produces best power at certain RPM ranges but wheels need HIGH TORQUE at LOW speed (starting, climbing) and HIGH SPEED with less torque (cruising). Transmission bridges this mismatch through gear ratios."
+  },
+  {
+    q: "The GEAR RATIO of a transmission is defined as:",
+    options: ["Output speed ÷ input speed", "Input speed ÷ output speed (or input torque ÷ output torque in reverse)", "Number of gear teeth only", "Output power ÷ input power"],
+    answer: 1,
+    explanation: "GEAR RATIO = input speed ÷ output speed = output torque ÷ input torque (ignoring losses). First gear: high ratio (e.g., 3.5:1) → output speed = 1/3.5 of input, but torque × 3.5. Top gear: ratio near 1:1 or overdrive <1:1."
+  },
+  {
+    q: "OVERDRIVE in a gearbox means:",
+    options: ["A very low gear for maximum torque", "The output shaft rotates FASTER than the input shaft — ratio less than 1:1 — reduces engine RPM at highway speed", "The same as direct drive", "A gear used only for reverse"],
+    answer: 1,
+    explanation: "OVERDRIVE gear: ratio e.g., 0.75:1 → output rotates FASTER than input → engine runs at lower RPM at highway speed → better fuel economy, less engine wear, quieter. Modern 6-speed+ gearboxes have multiple overdrive ratios."
+  },
+  {
+    q: "DIRECT DRIVE in a gearbox refers to:",
+    options: ["1st gear always", "A gear where ratio = 1:1 — input and output rotate at same speed, no torque multiplication", "The highest gear always", "When clutch is fully disengaged"],
+    answer: 1,
+    explanation: "DIRECT DRIVE: ratio exactly 1:1 → engine connects almost directly to propeller shaft → minimal transmission losses → most efficient gear. In many 4-speed gearboxes, 4th gear = direct drive. Modern gearboxes may use 4th or 5th as direct drive."
+  },
+
+  // ── 10.2 GEARBOX ─────────────────────────────────────────────
+  {
+    q: "SLIDING MESH gearbox (oldest type) requires the driver to:",
+    options: ["Only press the clutch once for each shift", "Use DOUBLE DE-CLUTCHING — disengage clutch, select neutral, re-engage/rev engine to match speeds, disengage, select gear", "Simply push gear lever with no special technique", "Only use overdrive gears"],
+    answer: 1,
+    explanation: "SLIDING MESH: straight-cut spur gears slide to mesh — no synchronizers. Gears must be at EQUAL SPEEDS to mesh without grinding → DOUBLE DE-CLUTCHING technique required. Obsolete in cars but still used in some heavy trucks and racing gearboxes."
+  },
+  {
+    q: "CONSTANT MESH gearbox differs from sliding mesh because:",
+    options: ["All gears are always in contact but only selected gear is locked to shaft via DOG CLUTCH", "No gears are ever in contact", "Uses hydraulic pressure to change gears", "Has no neutral position"],
+    answer: 0,
+    explanation: "CONSTANT MESH: all gears always rotate, meshed together on mainshaft. DOG CLUTCH (sleeve) slides to LOCK the desired gear to the shaft → transmits power. Smoother than sliding mesh but still needs careful gear speed matching (or synchronizers)."
+  },
+  {
+    q: "SYNCHROMESH gearbox includes SYNCHRONIZER RINGS to:",
+    options: ["Lock the differential", "MATCH THE SPEED of the gear sleeve and gear before dog teeth engage — smooth, crunch-free shifting", "Provide overdrive function", "Automatically select the optimal gear"],
+    answer: 1,
+    explanation: "SYNCHRONIZER (baulk ring): conical friction surface contacts the gear's cone → friction brings gear and sleeve to SAME SPEED before dog teeth engage → NO CRUNCH. Modern standard in all passenger car manual gearboxes. Makes double-declutching unnecessary."
+  },
+  {
+    q: "The GEAR SELECTION MECHANISM in a manual gearbox uses:",
+    options: ["Hydraulic pistons", "SELECTOR FORKS that slide along selector rails → engage the required synchronizer sleeve", "Electric motors", "Cables connected directly to gear teeth"],
+    answer: 1,
+    explanation: "SELECTOR FORKS: as driver moves gear lever → linkage moves a fork → fork slides its sleeve on the synchronizer → sleeve locks to chosen gear. Multiple forks on parallel rails — each controls specific gear pairs. Detent balls lock into position to prevent accidental gear slip."
+  },
+  {
+    q: "A TRANSFER CASE in a 4WD vehicle:",
+    options: ["Is the same as the main gearbox", "SPLITS ENGINE POWER between front and rear axles — provides 2H, 4H, and 4L positions", "Only controls the rear differential", "Replaces the main gearbox in off-road vehicles"],
+    answer: 1,
+    explanation: "TRANSFER CASE: fitted between main gearbox and front/rear propeller shafts. Positions: 2H (2WD high — normal road), 4H (4WD high — slippery/loose surfaces), 4L (4WD low — very low ratio for rock crawling, heavy pulling). Selects 2WD or 4WD."
+  },
+  {
+    q: "In a FINAL DRIVE of a construction machine, the purpose is to:",
+    options: ["Further reduce speed and increase torque between the main gearbox/transmission and the drive wheels/tracks", "Connect engine to hydraulic pump", "Drive the cooling fan", "Control the blade/bucket"],
+    answer: 0,
+    explanation: "FINAL DRIVE: last gear reduction before power reaches wheels/tracks. LARGE reduction ratio (e.g., 6:1 to 20:1) provides maximum traction force. Construction equipment: final drive (often planetary gears) + sprocket = track drive or wheel motor."
+  },
+  {
+    q: "The GEAR WHINE noise from a gearbox is caused by:",
+    options: ["Correct gear meshing", "WORN GEAR TEETH or incorrect gear backlash — tooth profile worn → uneven contact → noise at certain speeds", "New gearbox oil added", "Correct shaft alignment"],
+    answer: 1,
+    explanation: "GEAR WHINE: worn or damaged gear teeth, incorrect backlash (too tight or too loose), or wrong lubricant. Whine changes with vehicle speed (not engine RPM if in direct drive). Diagnostic: vary speed to see if whine changes → gearbox noise vs other sources."
+  },
+  {
+    q: "MANUAL TRANSMISSION FLUID (MTF) specification is important because:",
+    options: ["Any oil can be used in a manual gearbox", "WRONG FLUID causes: poor synchronizer performance (glazing), gear whine, wear, and seal deterioration", "Manual gearboxes need no fluid", "Only viscosity matters, not type"],
+    answer: 1,
+    explanation: "MTF TYPE MATTERS: API GL-4 for most manual gearboxes (synchronizer compatible), GL-5 for heavy-duty/hypoid — but GL-5 can DAMAGE YELLOW METAL synchronizer rings in some boxes. ATF sometimes specified for light duty boxes. Always use manufacturer-specified type."
+  },
+
+  // ── 10.2 PROPELLER SHAFT AND UNIVERSAL JOINT ─────────────────
+  {
+    q: "The propeller shaft is typically HOLLOW (tubular) rather than solid because:",
+    options: ["It is cheaper to manufacture hollow", "A hollow shaft is LIGHTER yet has similar torsional strength — reduces unsprung weight and rotational inertia", "Hollow allows oil flow inside", "Solid shafts cannot be balanced"],
+    answer: 1,
+    explanation: "HOLLOW SHAFT: for a given weight, a hollow shaft has greater resistance to torsion than a solid shaft of equal weight. Or for equal torsional strength, hollow weighs much less. Also: long solid shaft would SAG at high speed — hollow (larger diameter) is stiffer."
+  },
+  {
+    q: "The SLIP JOINT in a propeller shaft allows:",
+    options: ["The shaft to bend at angles", "The SHAFT TO CHANGE LENGTH as suspension moves — absorbs the lengthening/shortening effect of suspension travel", "The shaft to rotate at different speeds", "Power to transfer at 90° angles"],
+    answer: 1,
+    explanation: "SLIP JOINT (sliding spline): as rear suspension compresses or extends, the distance between gearbox and differential CHANGES slightly. Slip joint accommodates this change in length — prevents binding or compression of shaft. Usually a splined sleeve over a splined shaft."
+  },
+  {
+    q: "A SINGLE HOOKE'S (Cardan) UNIVERSAL JOINT causes VELOCITY VARIATION when:",
+    options: ["Operating at any angle", "Operating at an ANGLE — output speed pulsates (fast-slow-fast) once per revolution at angles greater than ~3°", "Operating at 0° angle only", "Only at high RPM"],
+    answer: 1,
+    explanation: "CARDAN JOINT VELOCITY: at an angle, output speed varies ±(angle²/2) per revolution even though input is constant. TWO U-JOINTS in a shaft (equal angles, phased 90°) CANCEL this variation → constant velocity output. Important for smooth driveshaft operation."
+  },
+  {
+    q: "CONSTANT VELOCITY (CV) JOINTS are used in FRONT-WHEEL DRIVE vehicles because:",
+    options: ["They are cheaper than universal joints", "They transmit power at VARIABLE STEERING ANGLES without velocity variation — wheels must steer AND drive simultaneously", "They can transmit more torque than U-joints", "They need no lubrication"],
+    answer: 1,
+    explanation: "CV JOINTS: front-wheel drive wheels must STEER (change angle constantly) while transmitting drive torque. A Cardan U-joint at steering angles causes severe vibration. CV joints (Rzeppa, tripod types) transmit power at any angle with CONSTANT velocity → smooth drive."
+  },
+  {
+    q: "CV JOINT GREASE (inside the rubber boot) is essential because:",
+    options: ["It is only for the rubber boot's preservation", "CV joints have precision ball tracks that require SPECIFIC GREASE — if lost (torn boot), joint wears rapidly and fails", "Any grease type works", "The joint is self-lubricating metal"],
+    answer: 1,
+    explanation: "CV JOINT BOOT: protects grease inside and keeps dirt out. TORN BOOT → grease flings out → dirt enters → RAPID WEAR of precision ball tracks → joint fails (clicking, vibration on turns). CHEAP REPAIR: replace boot early. EXPENSIVE: replace entire CV joint."
+  },
+  {
+    q: "PROPELLER SHAFT BALANCE is important because an unbalanced shaft at high RPM causes:",
+    options: ["Better torque transmission", "SEVERE VIBRATION that can damage universal joints, gearbox, differential, and floor panel", "No effect below 100 km/h", "Better fuel economy"],
+    answer: 1,
+    explanation: "SHAFT BALANCE: small imbalance × high RPM² = large centrifugal force → VIBRATION. Symptoms: vibration at specific speed range (50-100 km/h typical), worse under load. Balance weights are added/removed. Bent shaft, worn U-joints, or loose flange cause similar symptoms."
+  },
+
+  // ── 10.2 DIFFERENTIAL ─────────────────────────────────────────
+  {
+    q: "The OPEN DIFFERENTIAL (standard type) has which limitation?",
+    options: ["It cannot allow different wheel speeds", "TORQUE goes to the wheel with LEAST traction — one wheel spins freely while other gets no torque (useless in mud/ice)", "It is too heavy", "It cannot be serviced"],
+    answer: 1,
+    explanation: "OPEN DIFF limitation: torque distribution follows path of least resistance → spinning wheel gets all torque, gripped wheel gets none. On ice/mud, one wheel spins useless while other is stationary. Solution: LIMITED SLIP DIFFERENTIAL (LSD) or LOCKING differential."
+  },
+  {
+    q: "A LIMITED SLIP DIFFERENTIAL (LSD) improves traction by:",
+    options: ["Eliminating the differential completely", "Using clutch packs, viscous coupling, or Torsen gears to LIMIT SPEED DIFFERENCE between wheels — sends more torque to gripping wheel", "Increasing differential gear ratio", "Reducing wheel torque on both sides"],
+    answer: 1,
+    explanation: "LSD: when one wheel begins to spin faster (lose traction), the LSD mechanism RESISTS the speed difference → some torque is redirected to the slower (gripping) wheel → better traction. Types: clutch pack, viscous, Torsen (gear-based, fully mechanical)."
+  },
+  {
+    q: "The LOCKING DIFFERENTIAL (diff lock) used in construction equipment and 4WD vehicles:",
+    options: ["Prevents the differential from working at all speeds", "LOCKS both axle shafts to rotate together — equal speed and torque both sides — maximum traction on loose ground", "Only engages at high speed", "Is the same as LSD"],
+    answer: 1,
+    explanation: "DIFF LOCK: completely LOCKS the differential → both wheels rotate at same speed regardless. Maximum traction on loose/uneven terrain (one wheel can be fully in the air, other still drives). DANGER on paved roads: tyre scrub, handling issues → disengage on pavement."
+  },
+  {
+    q: "The HYPOID BEVEL GEAR in a rear-wheel drive differential:",
+    options: ["Has perpendicular intersecting shafts like a regular bevel gear", "Has the PINION OFFSET BELOW the ring gear centerline — allows lower propeller shaft = lower floor = better handling", "Is the same as spiral bevel gear", "Is used only in front-wheel drive"],
+    answer: 1,
+    explanation: "HYPOID GEAR: pinion axis offset below ring gear center → propeller shaft can be lower → lower vehicle floor → better handling (lower CG). Also: more tooth contact area → quieter, stronger. Requires HYPOID GEAR OIL (GL-5) — extreme pressure additives needed for sliding tooth contact."
+  },
+  {
+    q: "DIFFERENTIAL OIL must be changed because:",
+    options: ["It lasts forever if sealed", "Over time: additive depletion, metal particle contamination, moisture ingress — causes bearing and gear wear", "Only changed if leaking externally", "Only at major overhaul after 200,000 km"],
+    answer: 1,
+    explanation: "DIFF OIL service: typically every 40-60,000 km or per manufacturer spec. Old oil: DEPLETED extreme pressure additives → metal contact, METAL PARTICLES from normal wear act as ABRASIVE, MOISTURE ingress corrodes bearings. Change more frequently when towing or off-roading."
+  },
+  {
+    q: "AXLE SHAFT FAILURE in a solid axle rear-wheel drive causes:",
+    options: ["Gradual loss of power only", "COMPLETE LOSS OF DRIVE to that wheel — wheel may separate from vehicle if half shaft breaks inside drum/disc", "Only noise without performance loss", "Transmission to lock up"],
+    answer: 1,
+    explanation: "BROKEN AXLE SHAFT: in a full-floating axle — wheel stays on (retained by bearing housing), only drive lost. In SEMI-FLOATING axle — axle shaft ALSO locates the wheel → if shaft breaks at flange → WHEEL CAN SEPARATE from vehicle → catastrophic safety event."
+  },
+
+  // ── 10.3 TORQUE CONVERTER ─────────────────────────────────────
+  {
+    q: "The TORQUE CONVERTER in an automatic transmission consists of three main elements:",
+    options: ["Pump, turbine, and stator", "Clutch pack, band, and sun gear", "Pump, valve, and accumulator", "Ring gear, planet carrier, and sun gear"],
+    answer: 0,
+    explanation: "TORQUE CONVERTER: (1) PUMP IMPELLER (driven by engine) — throws fluid outward, (2) TURBINE (driven by fluid — connected to transmission input shaft), (3) STATOR — redirects returning fluid to multiply torque. At stall ratio, torque multiplication up to 2-3:1."
+  },
+  {
+    q: "The STALL TORQUE RATIO of a torque converter refers to:",
+    options: ["The ratio at direct drive (lock-up)", "MAXIMUM TORQUE MULTIPLICATION when output is stalled (vehicle stationary, engine revving) — typically 2-3:1", "The gear ratio of the transmission", "The hydraulic pressure in the converter"],
+    answer: 1,
+    explanation: "STALL RATIO: when vehicle is stationary (turbine not moving), the stator redirects ALL returning fluid to assist pump → maximum torque multiplication. As vehicle accelerates → turbine spins faster → multiplication reduces → approaches 1:1 at cruising speed."
+  },
+  {
+    q: "The LOCK-UP CLUTCH in a modern torque converter:",
+    options: ["Only works in reverse gear", "MECHANICALLY LOCKS pump to turbine at highway speed — eliminates fluid slip, improves fuel economy by 5-10%", "Prevents the converter from overheating", "Controls gear selection in the transmission"],
+    answer: 1,
+    explanation: "LOCK-UP CLUTCH (torque converter clutch): at cruise speed, a hydraulic clutch inside the converter LOCKS pump and turbine together → 100% mechanical efficiency (no fluid slip losses). ECU controls engagement/disengagement based on speed, load, and temperature."
+  },
+  {
+    q: "AUTOMATIC TRANSMISSION FLUID (ATF) performs which functions?",
+    options: ["Only lubricates gears", "HYDRAULIC FLUID (clutch control), LUBRICANT (gears, bearings), COOLANT (heat removal), and FRICTION MODIFIER (clutch performance)", "Only cools the transmission", "Same as engine oil — can be substituted"],
+    answer: 1,
+    explanation: "ATF is a highly engineered multi-function fluid: (1) HYDRAULIC medium controlling clutches and bands, (2) LUBRICATION for gears and bearings, (3) COOLING of friction elements, (4) FRICTION MODIFIERS for smooth clutch engagement. NEVER substitute engine oil — causes immediate damage."
+  },
+  {
+    q: "PLANETARY GEAR SETS in an automatic transmission provide multiple ratios because:",
+    options: ["They use different sized external gears for each ratio", "Different elements (sun, planet, ring) can be held, driven, or free — each combination gives a different ratio", "Hydraulic pressure changes the ratio", "The number of planet gears changes"],
+    answer: 1,
+    explanation: "PLANETARY GEARS: with three members (SUN, PLANET CARRIER, RING GEAR) — hold one, drive another, output from third → different gear ratios. Same set of gears gives: different ratios depending on which element is input, which is held by brake band/clutch pack, which is output."
+  },
+  {
+    q: "BAND BRAKES in an automatic transmission are used to:",
+    options: ["Stop the vehicle in emergency", "HOLD a planetary gear member stationary — activated by hydraulic servo to select specific gear ratio", "Control vehicle speed only", "Replace the main vehicle brakes"],
+    answer: 1,
+    explanation: "BAND BRAKE: a metal band lined with friction material wraps around a drum connected to a planetary member. Hydraulic servo tightens the band → HOLDS the member stationary → determines which gear ratio is active. Alternative to clutch packs for holding planetary members."
+  },
+  {
+    q: "CONTINUOUSLY VARIABLE TRANSMISSION (CVT) uses:",
+    options: ["Fixed gear steps like a manual gearbox", "TWO VARIABLE-DIAMETER PULLEYS and a steel belt/chain — ratio changes CONTINUOUSLY, no steps, always optimal ratio", "A torque converter without gears", "Friction discs only without belts"],
+    answer: 1,
+    explanation: "CVT: primary pulley (engine side) and secondary pulley (wheel side), both with adjustable v-shaped faces. Moving faces together/apart changes EFFECTIVE PULLEY DIAMETER → ratio changes CONTINUOUSLY. Engine always runs at optimal RPM for efficiency. Used in many modern small cars."
+  },
+  {
+    q: "DUAL CLUTCH TRANSMISSION (DCT) has which advantage over conventional automatic?",
+    options: ["No clutch at all", "TWO CLUTCHES (one for odd gears, one for even) — next gear pre-selected → virtually instantaneous gear changes with no torque interruption", "Manual gear selection only", "Uses a torque converter instead of clutches"],
+    answer: 1,
+    explanation: "DCT: clutch 1 = gears 1,3,5; clutch 2 = gears 2,4,6. When in 3rd gear, 4th is already engaged (but clutch 2 is open). Upshift: release clutch 1, engage clutch 2 → VIRTUALLY INSTANT change. Combines manual efficiency with automatic convenience. Used in VW DSG, Ford PowerShift."
+  },
+
+  // ── 10.4 TROUBLESHOOTING ──────────────────────────────────────
+  {
+    q: "TRANSMISSION OVERHEATING in a vehicle causes:",
+    options: ["Better performance in hot conditions", "ATF BREAKDOWN → clutch slippage → harsh shifts → accelerated wear → seals harden and leak → transmission failure", "Automatic downshifting only", "No effect if cooled later"],
+    answer: 1,
+    explanation: "ATF overheats above ~130°C: (1) OXIDIZES → turns dark, smells burnt, (2) CLUTCH PLATES slip (glazing), (3) SEALS HARDEN and crack → leaks, (4) SOLENOIDS and valve body corrode. ATF COOLER (in radiator or separate) is critical for preventing overheating."
+  },
+  {
+    q: "DELAYED ENGAGEMENT in an automatic transmission (lever moved to D but vehicle doesn't move for 2-3 seconds) indicates:",
+    options: ["Normal cold start behaviour always", "LOW ATF LEVEL, WORN CLUTCH PACKS, or STICKING VALVE BODY — insufficient pressure to quickly engage forward clutch", "Correct transmission operation", "Engine idle speed too low only"],
+    answer: 1,
+    explanation: "DELAYED ENGAGEMENT: forward clutch pack takes too long to hydraulically engage. Causes: LOW FLUID (insufficient pressure), WORN CLUTCH PACKS (reduced friction material), STICKY VALVE BODY (delayed pressure routing). Also check: fluid type (wrong fluid = slippage)."
+  },
+  {
+    q: "SLIPPING (engine revs rise but vehicle speed doesn't increase) in an automatic transmission indicates:",
+    options: ["Correct transmission operation under load", "WORN/BURNT CLUTCH PACKS or INCORRECT ATF — friction material gone → clutch cannot fully engage → slips under load", "Normal CVT behaviour", "Engine problem only"],
+    answer: 1,
+    explanation: "AUTOMATIC SLIPPING: burnt ATF (dark, smells), worn clutch pack friction material, wrong fluid type, low pressure from worn pump. Check fluid first (condition and level). BURNT FLUID with slipping = overhaul likely needed. Early stage: correct fluid and level check first."
+  },
+  {
+    q: "HARSH/HARD SHIFTS in an automatic transmission are caused by:",
+    options: ["Correct adjustment of line pressure", "HIGH LINE PRESSURE (faulty pressure regulator), WRONG ATF type, or ECU/SOLENOID fault — clutch engages too quickly/firmly", "Low vehicle speed", "New transmission fluid just added"],
+    answer: 1,
+    explanation: "HARSH SHIFTS: too-rapid clutch engagement. Causes: HIGH LINE PRESSURE (stuck pressure regulator valve), WRONG ATF (incorrect friction properties), FAULTY SHIFT SOLENOID (wrong timing), or ECU fault. Check fluid type first, then line pressure."
+  },
+  {
+    q: "MANUAL TRANSMISSION HARD TO SHIFT (stiff gear changes) is caused by:",
+    options: ["Correct clutch adjustment", "WORN SYNCHRONIZERS, damaged selector forks, incorrect gear oil viscosity, or clutch not fully disengaging", "New gearbox oil just added", "High engine compression"],
+    answer: 1,
+    explanation: "HARD SHIFTING: (1) WORN SYNCHRONIZERS — can't match speeds → grinding on engagement, (2) BENT SELECTOR FORKS — mechanical resistance, (3) WRONG OIL VISCOSITY — too thick → fluid drag, (4) CLUTCH NOT FULLY RELEASING — dragging clutch = same as trying to shift without clutch."
+  },
+  {
+    q: "GEARBOX JUMPING OUT OF GEAR (pops into neutral while driving) is caused by:",
+    options: ["Driver error always", "WORN DETENTS (springs/balls not holding gear in position), worn selector fork, or worn synchro hub engagement teeth", "Too much gearbox oil", "New clutch recently installed"],
+    answer: 1,
+    explanation: "JUMPING OUT: gear won't stay engaged. Causes: WORN DETENT MECHANISM (spring-loaded ball should lock selector in gear), WORN SELECTOR FORK (not fully engaging sleeve), WORN DOG TEETH on synchro (teeth worn to slope → load pushes out). Worse under engine torque or overrun."
+  },
+  {
+    q: "DIFFERENTIAL WHINE (humming noise from rear that changes with speed and load) indicates:",
+    options: ["Normal differential operation", "WORN or DAMAGED RING AND PINION GEARS — tooth profile worn → noise under drive load, changes or disappears on overrun", "Correct differential setup", "Low tyre pressure on rear tyres"],
+    answer: 1,
+    explanation: "DIFF WHINE: gear noise that changes with vehicle speed AND changes with load (accelerating vs coasting). Drive whine vs coast whine helps diagnose. Causes: WORN gear teeth, INCORRECT BACKLASH, wrong hypoid oil (GL-4 in hypoid = rapid wear), or worn bearings."
+  },
+  {
+    q: "VIBRATION that occurs ONLY AT A SPECIFIC SPEED RANGE and is felt through the floor (not steering wheel) typically indicates:",
+    options: ["Wheel imbalance (felt through steering wheel)", "PROPELLER SHAFT IMBALANCE or worn UNIVERSAL JOINTS — shaft vibration transmitted to floor/body at resonance speed", "Engine misfire", "Tyre pressure issue"],
+    answer: 1,
+    explanation: "PROPELLER SHAFT VIBRATION: felt through FLOOR/SEAT (not primarily steering). Occurs at specific speed → resonance. Causes: IMBALANCE (balance weights missing/shifted), WORN U-JOINTS (vibration from velocity variation), BENT SHAFT, or loose centre bearing on two-piece shaft."
+  },
+  {
+    q: "WHINING NOISE that changes with vehicle SPEED when turning (not when going straight) indicates:",
+    options: ["Transmission gear wear", "WORN WHEEL BEARING — load shifts to bearing as vehicle corners → worn bearing makes noise under load", "Correct wheel bearing operation", "Low power steering fluid"],
+    answer: 1,
+    explanation: "WHEEL BEARING vs DIFFERENTIAL diagnosis: if noise changes when TURNING (weight shifts to one bearing), it's the WHEEL BEARING on the LIGHTLY LOADED side (opposite to turn direction). If noise is constant regardless of steering angle, check differential or shaft."
+  },
+  {
+    q: "OIL LEAK from the DIFFERENTIAL PINION SEAL causes:",
+    options: ["Only cosmetic oil stain with no mechanical effect", "HYPOID OIL LOSS → eventual gear and bearing destruction from oil starvation, and contamination of rear brakes if running forward to drum brakes", "Only minor drip that is normal", "Improved differential cooling"],
+    answer: 1,
+    explanation: "PINION SEAL LEAK: oil runs forward along propeller shaft → can contaminate REAR BRAKE linings (drum brakes) → BRAKE FADE. Also: if enough oil lost → DIFFERENTIAL RUNS DRY → ring and pinion gear and bearing DESTRUCTION. Replace seal promptly — inexpensive prevention."
+  },
+  {
+    q: "WHEN TO CHANGE MANUAL GEARBOX OIL:",
+    options: ["Never — sealed for life always", "Per MANUFACTURER INTERVAL (typically 40-80,000 km) and always when oil appears dark, smells burnt, or contains metal particles", "Only when gearbox whines loudly", "Every 5,000 km like engine oil"],
+    answer: 1,
+    explanation: "Manual gearbox oil SERVICE: most manufacturers specify 40-80,000 km intervals. Check: COLOUR (dark = oxidized), SMELL (burnt = overheated), FEEL (metallic particles = wear). Some 'sealed for life' boxes still benefit from oil change at 80,000 km. Change more frequently under severe use."
+  }  ,
+  {
+    q: "The TORQUE CONVERTER cannot be REBUILT by the average workshop because:",
+    options: ["It is cheap enough to just replace", "It is a SEALED WELDED UNIT containing precision-balanced components filled with ATF — requires specialist equipment to disassemble, clean, rebuild, and re-weld", "It never fails", "Only the fluid needs changing"],
+    answer: 1,
+    explanation: "TORQUE CONVERTER: sealed by welding — not bolted together. Internal components (pump, turbine, stator, lock-up clutch) require precision balancing after rebuild. Specialist rebuilders have the tooling. Most workshops exchange for a remanufactured unit."
+  },
+  {
+    q: "AUTOMATIC TRANSMISSION FLUID (ATF) level should be checked:",
+    options: ["When cold, engine off like engine oil", "WARM (operating temperature), engine RUNNING, vehicle on level ground — transmission in Park or Neutral", "Only when shifting problems occur", "Only by transmission specialist"],
+    answer: 1,
+    explanation: "ATF LEVEL CHECK: check HOT (10-15 minutes driving), engine RUNNING (fluid circulates to operating level), in PARK or NEUTRAL, on LEVEL GROUND. COLD check reads falsely low (fluid contracts). Some sealed units have no dipstick — specialist check needed."
+  },
+  {
+    q: "A CLICKING SOUND from the front of a FWD vehicle during tight slow turns indicates:",
+    options: ["Normal tyre scrub during turning", "WORN OUTER CV JOINT — clicking is the worn ball track jumping under load during steering angle", "Low power steering fluid", "Loose wheel nuts"],
+    answer: 1,
+    explanation: "CV JOINT CLICK: at tight turning angles, worn ball track cannot maintain constant velocity → CLICKING on every revolution. Outer CV joint (wheel side) is more common — it operates at greater angles. Drive in tight circle — click increases with angle. Replace boot early to prevent this."
+  },
+  {
+    q: "FOUR-WHEEL DRIVE (4WD) should NOT be used on DRY PAVED ROADS because:",
+    options: ["4WD reduces vehicle speed on pavement", "BINDING/WIND-UP occurs — front and rear axles locked at same speed but travel different distances in corners → stress builds in drivetrain → can cause damage or handling issues", "4WD uses more fuel on pavement only", "4WD cannot engage on pavement"],
+    answer: 1,
+    explanation: "TRANSMISSION WIND-UP: in 4WD on pavement, front and rear axles are locked together. During turns, front and rear axles travel different arc lengths → they want to rotate at different speeds but can't → STRESS BUILDS in shafts, gearbox, and transfer case. Can cause binding, vibration, or damage."
+  },
+  {
+    q: "The PROPELLER SHAFT on a two-piece design uses a CENTRE BEARING to:",
+    options: ["Lubricate the centre of the shaft", "SUPPORT THE MIDDLE of a long two-piece shaft — prevents excessive vibration and sag at high RPM", "Connect the two shaft pieces electrically", "Act as a slip joint"],
+    answer: 1,
+    explanation: "CENTRE BEARING (carrier bearing): a rubber-mounted ball bearing attached to the vehicle floor/chassis. Supports the centre of a two-piece propeller shaft. Prevents the shaft from resonating (whipping) at high RPM. WORN centre bearing → vibration at specific speeds."
+  },
+  {
+    q: "What NOISE indicates worn universal joints in a propeller shaft?",
+    options: ["High-pitched whine at all speeds", "CLUNK when changing from drive to reverse or vice versa, and vibration that worsens with speed", "Clicking during turns only", "Grinding during braking"],
+    answer: 1,
+    explanation: "WORN U-JOINT: (1) CLUNK on drive-to-reverse (loose joint has play → clunks as direction reverses), (2) VIBRATION at specific speeds (velocity variation from worn joint), (3) METALLIC SOUND on acceleration (joint binding). Check by grabbing shaft and rocking — no play should exist."
+  },
+  {
+    q: "ट्रान्समिसन प्रणालीको मर्मत गर्दा के जाँच्नु पर्छ? (What should be checked when maintaining the transmission system?)",
+    options: ["केवल गियर अयल (Gear oil only)", "गियर अयल, क्लच एडजस्टमेन्ट, प्रपेलर शाफ्ट र युनिभर्सल जोइन्ट, र डिफरेन्सियल (Gear oil, clutch, propeller shaft/UJ, and differential)", "केवल क्लच पेडल (Clutch pedal only)", "केवल इन्जिन अयल (Engine oil only)"],
+    answer: 1,
+    explanation: "ट्रान्समिसन मर्मतमा: (1) गियर अयल लेभल र अवस्था, (2) क्लच एडजस्टमेन्ट र अवस्था, (3) प्रपेलर शाफ्ट र युनिभर्सल जोइन्टमा खोज, (4) डिफरेन्सियल अयल, (5) अक्सल सिलमा लिकेज जाँच्नु पर्छ। (All transmission components must be checked during service.)"
+  },
+  {
+    q: "PARKING on a SLOPE with a manual transmission vehicle — correct procedure is:",
+    options: ["Park in Neutral only with handbrake", "Apply HANDBRAKE, leave in GEAR (1st or Reverse depending on slope direction), AND chock the wheels", "Only use handbrake — gearbox gear not needed", "Only use gear — handbrake not needed"],
+    answer: 1,
+    explanation: "SLOPE PARKING (manual): THREE safeguards — (1) HANDBRAKE (primary hold), (2) LEAVE IN GEAR (engine compression backup — 1st for uphill, reverse for downhill), (3) TURN WHEELS toward kerb. If handbrake fails, gearbox holds. Multiple backups = safety."
+  },
+  {
+    q: "GEAR SELECTION in a synchromesh gearbox should be done:",
+    options: ["As quickly as possible with maximum force", "SMOOTHLY and FIRMLY — allow synchronizer time to match speeds — no need for double-declutching", "With engine revved to maximum first", "Only at low RPM regardless of conditions"],
+    answer: 1,
+    explanation: "SYNCHROMESH SHIFTING: apply STEADY FIRM PRESSURE on gear lever — allow 0.5-1 second for synchronizer cone to match gear speed → move into gear smoothly. FORCING or RUSHING causes synchronizer wear → eventually grinding. Smooth shifting extends synchro life."
+  },
+  {
+    q: "The OVERALL GEAR RATIO of a vehicle's transmission is the product of:",
+    options: ["Only the gearbox ratio", "GEARBOX RATIO × FINAL DRIVE (differential) RATIO — determines the relationship between engine RPM and wheel RPM", "Engine displacement × gearbox ratio", "Tyre circumference only"],
+    answer: 1,
+    explanation: "OVERALL RATIO = gearbox ratio × final drive ratio. Example: 1st gear 3.5:1, final drive 4.0:1 → overall 14:1 (engine turns 14 times per wheel turn). Higher overall ratio = more torque multiplication at wheels = more traction but lower top speed."
+  },
+  {
+    q: "A VEHICLE THAT MOVES WITHOUT PRESSING THE ACCELERATOR (creep) in an automatic transmission is due to:",
+    options: ["Transmission fault requiring repair", "NORMAL TORQUE CONVERTER function — at idle, pump impeller creates fluid flow against turbine → small torque transmitted → vehicle creeps", "Stuck throttle mechanism", "Overfilled ATF"],
+    answer: 1,
+    explanation: "CREEP: normal in vehicles with torque converter automatic transmissions. At idle, engine turns pump → fluid moves turbine → small torque reaches wheels → vehicle creeps forward in Drive. This is why you must hold the brake at traffic lights. Manual transmission and some DCTs do not creep."
+  },
+  {
+    q: "TRANSMISSION RANGE SENSOR (PRNDL switch) in an automatic transmission:",
+    options: ["Has no effect on transmission operation", "Tells ECU which GEAR RANGE is selected (P, R, N, D etc.) — affects: starter enable (P/N only), backup lights (R), shift strategy", "Only controls the dashboard display", "Controls the ABS system"],
+    answer: 1,
+    explanation: "RANGE SENSOR (inhibitor switch/PRNDL switch): (1) STARTER ONLY enables in Park/Neutral (safety), (2) REVERSE LIGHTS activate, (3) ECU adjusts SHIFT STRATEGY based on selected range (D vs L), (4) CRUISE CONTROL may disengage if gear position wrong. Faulty switch → starter won't work or wrong reverse lights."
+  },
+  {
+    q: "AXLE RATIO (final drive ratio) selection for a vehicle depends on:",
+    options: ["Only the driver's preference", "INTENDED USE: low ratio (3.0:1) for high-speed highway use; high ratio (4.5:1) for towing/off-road — balance between top speed and pulling power", "Only the engine size", "Tyre size only"],
+    answer: 1,
+    explanation: "AXLE RATIO selection: LOW RATIO (numerically small, e.g. 3.08): high top speed, low traction, better fuel economy. HIGH RATIO (numerically large, e.g. 4.56): low top speed, high traction, more fuel used. Towing packages: higher axle ratio for pulling power. Changed by swapping differential gears."
+  },
+  {
+    q: "ELECTRONIC STABILITY CONTROL (ESC/ESP) interacts with the transmission to:",
+    options: ["Change gear ratios automatically", "REDUCE ENGINE TORQUE and selectively APPLY INDIVIDUAL BRAKES to correct oversteer/understeer — transmission must not override this", "Lock the differential permanently", "Control clutch engagement"],
+    answer: 1,
+    explanation: "ESC INTERACTION: when ESC detects yaw deviation → ECU reduces engine torque (via throttle, ignition, or injection cuts) AND applies individual wheel brakes → corrects slide. Transmission MUST follow torque reduction commands. On AT: may also downshift to engine-brake. Critical that transmission ECU cooperates with ESC ECU."
+  },
+  {
+    q: "TORQUE STEER in a front-wheel drive vehicle (during hard acceleration) is reduced by:",
+    options: ["Increasing tyre pressure", "EQUAL-LENGTH DRIVESHAFTS or intermediate shaft — ensures equal torque angle to both front wheels", "Reducing engine power only", "Using conventional open differential"],
+    answer: 1,
+    explanation: "TORQUE STEER: unequal-length FWD driveshafts (short right, long left) → different cornering angles → different torque reactions → vehicle pulls one side under acceleration. SOLUTION: INTERMEDIATE SHAFT to make effective driveshaft angles equal → neutral straight-line acceleration."
+  },
+  {
+    q: "What is the GEAR WHINE DIAGNOSIS RULE using road test?",
+    options: ["Whine that stays same in all conditions = transmission fault", "DRIVE whine (accelerating) vs COAST whine (overrun) vs both = different gear surfaces or backlash — direction of load on teeth changes", "Any whine = replace all gears immediately", "Whine only at startup = normal"],
+    answer: 1,
+    explanation: "WHINE DIAGNOSIS: (1) DRIVE whine only (accelerating) = drive face of teeth worn, (2) COAST whine only (overrun) = coast face worn, (3) BOTH drive and coast = excessive/insufficient backlash or worn bearings, (4) WHINE changes with temperature = bearing. This narrows repair scope before disassembly."
+  },
+  {
+    q: "In a MANUAL TRANSMISSION, the NEUTRAL position means:",
+    options: ["Engine is disconnected from transmission by clutch", "ALL GEARS DISENGAGED from mainshaft — no drive transmitted even with clutch engaged — engine runs but vehicle does not move", "Vehicle is in parking mode", "Same as reverse gear in function"],
+    answer: 1,
+    explanation: "NEUTRAL: all synchronizer sleeves in MID position — no gear is locked to mainshaft. Even if clutch is FULLY ENGAGED, no power flows to propeller shaft. Allows engine to run without moving the vehicle — e.g., during warm-up, stopped in traffic with clutch released."
+  }
+    
         ];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
