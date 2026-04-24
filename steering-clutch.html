@@ -1334,6 +1334,322 @@ const rawQuestions = [
         answer: 0,
         explanation: "Regular wheel alignment ensures even tire wear and reduces steering component stress."
     },
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 9 — STEERING SYSTEM: Additional 50 MCQs
+// Append after your 50 supplied MCQs → total 100
+// Syllabus: 9.1 Introduction · 9.2 Power Steering Mechanism
+//           9.3 Troubleshooting & Maintenance
+// Sources: as-mechanics.pdf · NEW paper (2081/3/12 Senior Mechanics)
+//          saja_yatayat.pdf · Sewa_sambandi.pdf · all supplied papers
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM NEW PSC PAPER 2081/3/12 ─────────────────────────────
+  {
+    q: "The basic function of a clutch in a vehicle is to:",
+    options: ["Transmit the torque of the engine to the transmission", "Transmit the speed of engine to transmission", "Let the vehicle run at uniform speed", "Facilitate the vehicle for acceleration only"],
+    answer: 0,
+    explanation: "Clutch transmits ENGINE TORQUE to the transmission — not just speed. It allows smooth engagement/disengagement for gear changes. From new PSC Senior Mechanics paper Q29 — confirmed repeat."
+  },
+  {
+    q: "The engine crankshaft is automatically engaged and disengaged with the clutch shaft in a:",
+    options: ["Single plate clutch", "Multi plate clutch", "Centrifugal clutch", "None of the above"],
+    answer: 2,
+    explanation: "CENTRIFUGAL CLUTCH: automatically engages when engine speed rises above a set RPM (centrifugal weights fly outward → engage friction). No pedal needed. Used in: scooters, mopeds, go-karts, chainsaws. From new PSC Senior paper Q30."
+  },
+  {
+    q: "Compared to a 2-stroke engine, the spark plug life of a 4-stroke engine is approximately:",
+    options: ["The same", "Twice as long", "Half as long", "None of the above"],
+    answer: 1,
+    explanation: "4-stroke spark plug fires ONCE per 2 crankshaft revolutions (once per cycle). 2-stroke fires ONCE per revolution. So 4-stroke plug fires half as often → TWICE THE LIFE. From new PSC Senior paper Q34."
+  },
+  {
+    q: "In a rack-and-pinion steering system, which component converts the rotational motion of the steering wheel into linear motion?",
+    options: ["Tie rod", "Steering knuckle", "Rack gear", "Pitman arm"],
+    answer: 2,
+    explanation: "RACK GEAR: pinion (connected to steering column) rotates → meshes with rack (linear gear) → rack moves LEFT or RIGHT. Tie rods then push/pull wheel knuckles. From as-mechanics.pdf PSC 2082 — confirmed repeat."
+  },
+  {
+    q: "Hard steering (heavy effort required to turn the wheel) can result from:",
+    options: ["Low power steering fluid only", "Worn power steering pump only", "Incorrect tyre pressure only", "All of the above"],
+    answer: 3,
+    explanation: "Hard steering causes: (1) LOW PS FLUID → insufficient hydraulic pressure, (2) WORN PUMP → reduced output pressure, (3) LOW TYRE PRESSURE → increased rolling resistance/scrub. Any or all can contribute. ALL OF ABOVE pattern."
+  },
+  {
+    q: "Steering 'wander' (vehicle needs constant correction to go straight) is caused by:",
+    options: ["Correct wheel alignment", "Incorrect alignment, worn tie rod ends, or unequal tyre pressure", "Fully charged battery", "Fresh engine oil"],
+    answer: 1,
+    explanation: "STEERING WANDER: incorrect caster/toe alignment, worn tie rod ends (allow steering to wander freely), or unequal tyre pressures (one side has more rolling resistance). From as-mechanics.pdf and saja_yatayat.pdf confirmed."
+  },
+
+  // ── FROM as-mechanics.pdf PSC 2082 ───────────────────────────
+  {
+    q: "The steering system is used to control:",
+    options: ["Acceleration of engine", "Gear shift timing", "Direction of the automobile", "Variation of automobile speed"],
+    answer: 2,
+    explanation: "Steering system controls the DIRECTION of the automobile — allows driver to guide vehicle left/right. From as-mechanics.pdf PSC 2082 Q46 — directly confirmed."
+  },
+  {
+    q: "Which component of the steering system converts rotational motion of the steering column into wheel movement?",
+    options: ["Tie rod", "Steering column", "Steering gear (gearbox)", "Drop arm"],
+    answer: 2,
+    explanation: "STEERING GEARBOX/GEAR: converts driver's rotational input (via steering wheel and column) into the lateral or angular movement needed to turn the wheels. Types: rack-and-pinion, recirculating ball, worm-and-roller."
+  },
+  {
+    q: "The PITMAN ARM (drop arm) in a conventional steering system connects:",
+    options: ["Steering wheel to steering column", "Steering gearbox output shaft to steering linkage (drag link)", "Tie rod to wheel knuckle", "Power steering pump to steering gearbox"],
+    answer: 1,
+    explanation: "PITMAN ARM: bolted to the steering gearbox output (sector shaft). Converts the gearbox's rotary output into movement of the drag link → relay rod → tie rods → wheels. Used in recirculating ball steering systems."
+  },
+  {
+    q: "The IDLER ARM in a parallelogram steering linkage:",
+    options: ["Controls the throttle position", "Supports the relay rod on the opposite side from the pitman arm — maintains geometry", "Is the same as the pitman arm", "Connects engine to steering pump"],
+    answer: 1,
+    explanation: "IDLER ARM: mirrors the pitman arm on the opposite side of the relay rod. Maintains correct geometry of the steering linkage — ensures tie rods move parallel to keep both wheels in correct relationship. Worn idler arm = loose, wandering steering."
+  },
+  {
+    q: "ACKERMANN STEERING GEOMETRY ensures that:",
+    options: ["All four wheels turn the same angle", "Inner wheel turns at a GREATER ANGLE than outer wheel during cornering — all wheels trace different radii correctly", "Wheels always remain parallel", "Rear wheels also steer"],
+    answer: 1,
+    explanation: "ACKERMANN: during a turn, the inner wheel must turn SHARPER (greater angle) than outer because inner traces a smaller radius. Ackermann geometry ensures all wheels follow concentric arcs → reduces tyre scrub during low-speed turns."
+  },
+  {
+    q: "POWER STEERING FLUID in a hydraulic system serves which functions?",
+    options: ["Only lubrication", "HYDRAULIC FORCE TRANSMISSION + lubrication of pump and valve components + cooling", "Only cooling", "Only seal conditioning"],
+    answer: 1,
+    explanation: "PS FLUID functions: (1) TRANSMIT hydraulic force from pump to steering cylinder/rack, (2) LUBRICATE pump vanes/rotors, control valve, and piston, (3) COOL components, (4) CONDITION seals. Use specified type — different base oils have different seal compatibility."
+  },
+  {
+    q: "The VARIABLE RATIO rack-and-pinion steering system has:",
+    options: ["Constant tooth spacing across the rack", "VARYING TOOTH SPACING — fewer teeth in centre (lighter effort straight ahead), more teeth at edges (more precision during turning)", "An electronic motor only", "No rack — purely electronic"],
+    answer: 1,
+    explanation: "VARIABLE RATIO rack: centre of rack has coarser pitch (faster ratio) → light steering when going straight. Edges have finer pitch (slower ratio) → more precision and feedback during cornering. Compromise between comfort and handling."
+  },
+  {
+    q: "ELECTRIC POWER STEERING (EPS) compared to hydraulic has which advantage?",
+    options: ["Always provides heavier steering feel", "BETTER FUEL ECONOMY — no hydraulic pump running continuously from engine; electric motor only activates when needed", "Requires more maintenance", "Cannot provide variable assistance"],
+    answer: 1,
+    explanation: "EPS fuel economy: hydraulic pump runs CONTINUOUSLY from engine belt (wastes 1-3 HP even when going straight). Electric motor ONLY ACTIVATES when steering input detected → fuel saving of up to 0.5 L/100 km. Also: no fluid, no leaks, variable feel programmable by ECU."
+  },
+  {
+    q: "ACTIVE STEERING (variable gear ratio electronic steering) can:",
+    options: ["Only reduce steering effort", "VARY STEERING RATIO based on speed — quick ratio at low speed (parking) to slower ratio at high speed (stability)", "Replace ABS system", "Automatically change direction without driver input"],
+    answer: 1,
+    explanation: "ACTIVE STEERING (BMW example): electric actuator in steering column varies the effective ratio. LOW SPEED (parking): quick ratio → fewer turns lock-to-lock → easy parking. HIGH SPEED: slower ratio → more stable, less twitchy response to inputs."
+  },
+  {
+    q: "STEERING WHEEL SHIMMY (oscillation/vibration) at certain speeds is caused by:",
+    options: ["Correct wheel balance", "WHEEL IMBALANCE or worn tie rod ends — oscillation transmitted through steering linkage to wheel", "Correct tyre pressure", "New power steering fluid"],
+    answer: 1,
+    explanation: "SHIMMY: at specific speeds, imbalanced wheel's centrifugal force oscillates. If tie rod ends or steering linkage is loose/worn → oscillation is transmitted and amplified at the steering wheel. Fix: balance wheels AND replace worn steering components."
+  },
+  {
+    q: "The STEERING COLUMN COLLAPSIBLE DESIGN in modern vehicles is a safety feature that:",
+    options: ["Makes steering feel softer in normal use", "COLLAPSES on impact — prevents steering wheel from being forced into the driver's chest in a frontal collision", "Allows height adjustment only", "Reduces steering effort in normal use"],
+    answer: 1,
+    explanation: "COLLAPSIBLE (energy-absorbing) COLUMN: in frontal crash, engine pushes rearward. Non-collapsible column → steering wheel impales driver. Collapsible column FOLDS/TELESCOPES on impact → absorbs energy → reduces chest injury. Mandatory safety requirement."
+  },
+  {
+    q: "TORQUE STEER in a front-wheel drive vehicle causes:",
+    options: ["Better straight-line acceleration", "STEERING WHEEL PULLING to one side under hard acceleration — unequal torque applied through steering wheels", "Neutral handling during acceleration", "Rear wheel spin only"],
+    answer: 1,
+    explanation: "TORQUE STEER: in FWD, unequal-length driveshafts → different cornering angles under torque → vehicle pulls toward the longer shaft side during acceleration. Worse in high-power FWD cars. Remedies: equal-length shafts, sub-frame geometry, electronic torque vectoring."
+  },
+  {
+    q: "FOUR-WHEEL STEERING (4WS) system in some vehicles:",
+    options: ["Replaces front steering completely", "ALSO STEERS THE REAR WHEELS — low speed: rear steers opposite to front (smaller turning radius); high speed: same direction (stability)", "Only increases tyre wear", "Is the same as Ackermann geometry"],
+    answer: 1,
+    explanation: "4WS: at LOW SPEED — rear wheels turn OPPOSITE to front → much smaller turning circle → easier parking. At HIGH SPEED — rear wheels turn SAME direction as front → improved lane change stability. Electronic control determines mode based on speed."
+  },
+  {
+    q: "The WORM AND SECTOR steering gearbox works by:",
+    options: ["A rack meshing with a pinion gear", "A WORM GEAR (on steering shaft) rotating against a sector (partial gear) on the drop arm shaft — converts rotation to arc movement", "Recirculating steel balls in a worm groove", "An electric motor moving a rack"],
+    answer: 1,
+    explanation: "WORM AND SECTOR: steering shaft has worm → sector (partial gear arc) meshes with worm → sector shaft rotates → pitman arm moves. Simple, robust, used in older and some commercial vehicles. High self-locking (less road feedback). "
+  },
+  {
+    q: "RECIRCULATING BALL steering gearbox uses:",
+    options: ["Direct gear tooth contact between worm and nut", "STEEL BALLS that circulate between worm groove on steering shaft and nut — reduces friction vs direct contact", "Rack and pinion principle", "Hydraulic fluid to move a piston"],
+    answer: 1,
+    explanation: "RECIRCULATING BALL: steel balls fill the groove between worm and ball nut → balls ROLL instead of sliding → low friction, long life, can handle high loads. Used in trucks, SUVs, older cars. Less road feel than rack-and-pinion but smoother."
+  },
+  {
+    q: "STEER-BY-WIRE (no mechanical connection) steering systems:",
+    options: ["Are currently illegal everywhere", "Use sensors and electric motors ONLY — no steering shaft mechanical connection — purely electronic control of wheel angle", "Use hydraulics only without electronics", "Are only used in racing cars"],
+    answer: 1,
+    explanation: "STEER-BY-WIRE: eliminates the mechanical steering column entirely. Sensors read driver's wheel input → ECU → electric motors at wheels steer them. Advantages: programmable feel, variable ratio, no column in crash zone. Now appearing in production vehicles (Infiniti Q50 first)."
+  },
+  {
+    q: "The STEERING PUMP in a hydraulic power steering system is driven by:",
+    options: ["Battery", "ENGINE via V-belt or serpentine belt from crankshaft — runs whenever engine runs", "Electric motor only", "Transmission output shaft"],
+    answer: 1,
+    explanation: "Hydraulic PS PUMP driven by engine belt → runs CONTINUOUSLY even when not steering → parasitic power loss. This continuous drain is why EPS (electric) saves fuel — motor only runs when needed. If belt breaks → immediately heavy steering."
+  },
+  {
+    q: "CASTOR TRAIL (mechanical trail) in steering geometry refers to:",
+    options: ["The angle of the steering axis from vertical (caster angle)", "The HORIZONTAL DISTANCE between the steering axis contact point and the tyre contact centre — creates self-centering", "The distance from front to rear axle", "The steering wheel free play distance"],
+    answer: 1,
+    explanation: "CASTOR TRAIL: positive caster creates a trail — steering axis meets ground AHEAD of where tyre contacts ground. This means the wheel drags behind the steering pivot → SELF-CENTERING effect (like a shopping trolley castor). More trail = more self-centering."
+  },
+  {
+    q: "Steering maintenance includes checking the power steering fluid for:",
+    options: ["Colour only", "LEVEL, colour (dark/contaminated = replace), foaming (air in system), and consistency — also check hoses for leaks", "Only the level", "Only hose condition"],
+    answer: 1,
+    explanation: "PS FLUID inspection: (1) LEVEL — low = leak, (2) COLOUR — dark, burnt smell = replace, (3) FOAMING — air in system = pump cavitating, (4) CONTAMINATION — milky = water ingress. Check hoses/connections for seeping fluid."
+  },
+  {
+    q: "A GROANING noise from the power steering pump when turning lock-to-lock indicates:",
+    options: ["Normal pump operation", "LOW FLUID LEVEL causing pump to cavitate (draw air) — check and top up fluid, inspect for leaks", "Correct steering adjustment", "The steering is aligned correctly"],
+    answer: 1,
+    explanation: "Groaning/moaning during full-lock turns = PS PUMP CAVITATION. Cause: LOW FLUID (most common), or steering held at full lock too long (heat builds up, fluid aerates). Top up fluid. NEVER hold steering at full lock under power — damages pump."
+  },
+  {
+    q: "BUMP STEER (wheel steers as suspension moves) affects the steering system because:",
+    options: ["It improves cornering response", "TIE ROD length and angle mismatch causes toe to change as suspension moves — vehicle steers without driver input", "It is a normal feature of all cars", "Only affects rear wheel drive vehicles"],
+    answer: 1,
+    explanation: "BUMP STEER: if tie rod does not move in the same arc as the control arm → as suspension compresses over a bump → toe changes → vehicle steers unexpectedly. Corrected by adjusting tie rod length and mounting height. Performance cars use adjustable tie rods."
+  },
+  {
+    q: "In HYDRAULIC POWER STEERING, the control valve opens to supply fluid when:",
+    options: ["Engine accelerates", "STEERING WHEEL IS TURNED — the torsion bar in the valve senses steering effort and ports fluid to assist", "Brakes are applied", "Vehicle exceeds 60 km/h"],
+    answer: 1,
+    explanation: "PS CONTROL VALVE: a torsion bar in the steering column twists when the driver applies steering torque. This twist opens ports → hydraulic fluid flows to correct side of rack/cylinder → assists turning. No steering input → valve closed → no assistance (centred)."
+  },
+  {
+    q: "VEHICLE PULLING TO ONE SIDE WITHOUT BRAKING can be caused by:",
+    options: ["Engine power imbalance", "TYRE PRESSURE DIFFERENCE, unequal camber, or dragging brake on one side", "Correct alignment always", "New tyres on all four corners"],
+    answer: 1,
+    explanation: "Pulling without braking: (1) UNEQUAL TYRE PRESSURE (more pressure on one side = more rolling resistance pulling opposite way), (2) UNEQUAL CAMBER, (3) DRAGGING BRAKE caliper (most common — one side always braking). Check pressures first, then alignment, then brakes."
+  },
+  {
+    q: "The SELF-CENTERING of the steering wheel after a turn is due to:",
+    options: ["Driver muscle memory", "POSITIVE CASTOR geometry and camber thrust — creates a restoring force that returns wheels to straight ahead", "Spring in the steering column", "Power steering pump pressure"],
+    answer: 1,
+    explanation: "SELF-CENTERING: positive caster creates castor trail → when wheel is steered, it must climb slightly against gravity to turn → weight naturally pushes it back to straight. Camber THRUST also contributes. This is why racing cars with zero caster need constant driver input."
+  },
+  {
+    q: "LOCKED STEERING (steering wheel will not move after parking) is caused by:",
+    options: ["Clutch failure", "STEERING COLUMN LOCK engaging — a safety feature when key removed, or fault in EPS/lock mechanism", "Dead battery only", "Flat tyres"],
+    answer: 1,
+    explanation: "STEERING LOCK: anti-theft device in steering column engages when ignition key removed. If key turned with wheels at lock → lock engages under pressure → wheel seems stuck. FIX: simultaneously turn key AND gently rock steering wheel to release pressure. NOT a fault — normal feature."
+  },
+  {
+    q: "The correct procedure for CHECKING POWER STEERING FLUID is to:",
+    options: ["Check when engine is cold and pump is not running", "Check WARM (engine at operating temperature after a few turns lock-to-lock) and at correct MIN-MAX range on dipstick", "Only check when steering feels stiff", "Check only by measuring leaks under vehicle"],
+    answer: 1,
+    explanation: "PS fluid check: RUN ENGINE until warm, turn lock-to-lock a few times (circulates fluid through system), TURN OFF ENGINE, check dipstick immediately. Dipstick has HOT and COLD marks — check against hot mark. Add correct TYPE of fluid if below MIN."
+  },
+  {
+    q: "STEERING ALIGNMENT — CAMBER affects:",
+    options: ["Straight-line fuel economy only", "TYRE WEAR (positive camber → inner wear; negative → outer wear) AND cornering grip AND steering return force", "Only the suspension geometry", "Only high-speed stability"],
+    answer: 1,
+    explanation: "CAMBER effects: (1) TYRE WEAR — incorrect camber causes one-sided wear, (2) LATERAL FORCE — cambered tyre generates lateral thrust (camber thrust), (3) CORNERING — slightly negative camber improves lateral grip during cornering, (4) affects self-centering."
+  },
+  {
+    q: "Which STEERING GEOMETRY angle most affects HIGH-SPEED STABILITY?",
+    options: ["Toe angle", "Camber angle", "CASTER ANGLE — more positive caster = more directional stability and self-centering at speed", "Kingpin inclination"],
+    answer: 2,
+    explanation: "CASTER most affects high-speed stability. Insufficient caster → vehicle wanders at speed, poor self-centering. Too much caster → heavy steering, too much kickback on rough roads. Modern cars use 4-8° positive caster. SUVs/trucks: more caster for stability with heavy loads."
+  },
+  {
+    q: "ELECTRONIC STABILITY CONTROL (ESC) interfaces with the steering system to:",
+    options: ["Only control engine power", "DETECT oversteer/understeer via yaw rate sensor AND apply individual wheel brakes AND reduce power to correct vehicle path", "Automatically steer the vehicle independently", "Only affect the front axle"],
+    answer: 1,
+    explanation: "ESC: yaw rate sensor detects unwanted rotation → compares to driver's intended direction (steering angle sensor) → if diverging → applies individual wheel brakes (slows the sliding axle) + reduces engine power → corrects vehicle path. Works in conjunction with steering input."
+  },
+  {
+    q: "Inspection of STEERING BALL JOINTS should be done by:",
+    options: ["Visual inspection only from outside the car", "LIFTING the wheel free of the ground and checking for movement when pushed/pulled and tilted in all directions", "Only measuring toe alignment", "Replacing at fixed intervals regardless of condition"],
+    answer: 1,
+    explanation: "BALL JOINT check: lift wheel free of load. For UPPER/LOWER ball joints: push/pull VERTICALLY — measure play. For TIE ROD ENDS: push/pull HORIZONTALLY. ANY noticeable play = replace. Also check for torn dust boots (contamination causes rapid wear). Check per suspension geometry type."
+  },
+  {
+    q: "STEERING COLUMN UNIVERSAL JOINT (u-joint) wear causes:",
+    options: ["Smooth consistent steering effort throughout rotation", "VARIABLE STEERING EFFORT — stiff spots at certain rotation angles (Cardan joint velocity variation)", "No effect on steering feel", "Automatic adjustment to compensate"],
+    answer: 1,
+    explanation: "Steering column U-JOINTS: at angles greater than ~15°, a single Cardan joint causes velocity variation (fast-slow-fast per revolution). In worn u-joints this is felt as NOTCHY or STIFF SPOTS in steering rotation. Double-cardan (constant velocity) joints eliminate this."
+  },
+  {
+    q: "In a HYDRAULIC POWER STEERING RACK, the rack has:",
+    options: ["Only gear teeth for steering", "GEAR TEETH for steering input AND a hydraulic cylinder with piston — fluid assists rack movement", "Only a hydraulic cylinder without teeth", "Electronic sensors only"],
+    answer: 1,
+    explanation: "HYDRAULIC RACK: integrated design combining rack gear teeth (mechanical steering backup) with a hydraulic cylinder. Fluid pressure from pump assists the piston which is integral to the rack — reduces driver effort needed on the rack teeth."
+  },
+  {
+    q: "LANE KEEP ASSIST (LKA) and LANE DEPARTURE WARNING (LDW) systems use the steering system to:",
+    options: ["Completely replace driver steering", "DETECT lane markings via cameras AND apply small corrective steering inputs (EPS motor) to keep vehicle in lane", "Only warn driver with audible alert without touching steering", "Only work at speeds below 30 km/h"],
+    answer: 1,
+    explanation: "LKA: camera detects lane markings → if vehicle drifts → EPS motor applies gentle corrective torque to steering → guides vehicle back to centre. LDW only warns (alarm). LANE CENTERING actively steers continuously (part of autonomous driving systems)."
+  },
+  {
+    q: "The purpose of STEERING GEAR RATIO (e.g., 15:1) means:",
+    options: ["Tyre rotates 15 times per steering wheel turn", "Steering wheel must rotate 15° to turn wheels 1° — lower ratio = quicker but heavier; higher = lighter but slower", "Power steering pressure is 15 bar", "There are 15 gear teeth"],
+    answer: 1,
+    explanation: "STEERING RATIO: degrees of steering wheel rotation ÷ degrees of wheel turn. 15:1 = steering wheel turns 15° to steer wheels 1°. LOW RATIO (quick): sportier, more precise, heavier. HIGH RATIO (slow): lighter effort, less precise — used in trucks. Power steering allows lower ratio without heavy effort."
+  },
+  {
+    q: "What happens to power steering assist if the ENGINE STALLS while driving?",
+    options: ["EPS continues normally, hydraulic continues normally", "HYDRAULIC PS: immediately becomes heavy (pump stops) — driver can still steer with effort. EPS: may continue briefly on battery", "Both systems fail completely and steering locks", "Power steering assist increases when engine stalls"],
+    answer: 1,
+    explanation: "Engine stall effect: HYDRAULIC PS pump stops → NO hydraulic assist → HEAVY steering (still steerable — just manual effort). EPS: motor runs from battery → may continue briefly but ECU may reduce assist. Vehicle CAN be steered and stopped — important to know for safety."
+  },
+  {
+    q: "स्टेरिङ प्रणालीमा प्रयोग गरिने RACK AND PINION को फाइदा के हो? (What is the advantage of rack and pinion used in the steering system?)",
+    options: ["भारी गाडीमा मात्र उपयुक्त (Suitable only for heavy vehicles)", "सरल संरचना, सटीक नियन्त्रण, र कम भार (Simple structure, precise control, and lighter weight)", "कुनै पावर स्टेरिङ आवश्यक पर्दैन (No power steering needed)", "गियर बक्ससँग जोडिन्छ (Connects to gearbox)"],
+    answer: 1,
+    explanation: "Rack and pinion advantages: SIMPLE design (fewer parts), DIRECT and PRECISE response (driver feels road), LIGHTER than recirculating ball, COMPACT. Ideal for passenger cars. From multiple PSC papers — confirmed steering system question."
+  },
+  {
+    q: "क्लच स्लिपेजको लक्षण के हो? (What is a symptom of clutch slippage?)",
+    options: ["इन्जिनको RPM बढ्छ तर गाडीको गति बढ्दैन (Engine RPM increases but vehicle speed does not)", "स्टेरिङ कडा हुन्छ (Steering becomes stiff)", "ब्रेक पेडल खस्कन्छ (Brake pedal sinks)", "इन्जिन बन्द हुन्छ (Engine stops)"],
+    answer: 0,
+    explanation: "क्लच स्लिपेज: इन्जिन RPM बढ्छ तर गाडीले गति लिँदैन — क्लच डिस्कले प्रेसर प्लेट र फ्लाईव्हीलमा पकड राख्न सक्दैन। (Clutch slippage: engine revs but vehicle doesn't accelerate proportionally — worn disc cannot grip flywheel.)"
+  },
+  {
+    q: "The RELEASE BEARING (throw-out bearing) in a clutch system is typically:",
+    options: ["A grease-packed sealed bearing that must be replaced when clutch is serviced", "A SEALED BEARING — no lubrication needed, replace when clutch disc is replaced (labour already done)", "A plain bush needing regular oil lubrication", "A roller bearing that can be reused many times"],
+    answer: 1,
+    explanation: "THROW-OUT/RELEASE BEARING: sealed pre-lubricated bearing. ALWAYS replace when doing clutch disc work — the labour cost of splitting the gearbox is the same whether you replace the bearing or not. Leaving old bearing risks early failure and repeat full clutch job."
+  },
+  {
+    q: "CLUTCH JUDDER (vibration when releasing clutch) is caused by:",
+    options: ["Correct clutch adjustment", "OIL CONTAMINATION on clutch disc or pressure plate, or warped/scored flywheel — causes uneven engagement", "Low fuel level", "Worn tyres"],
+    answer: 1,
+    explanation: "CLUTCH JUDDER: harsh vibration/shudder when clutch is released from standstill. Causes: OIL or grease on clutch friction surfaces (causes intermittent grip), WARPED FLYWHEEL (uneven clamping pressure), or WORN CLUTCH DISC. Fix: find oil source, replace clutch, resurface flywheel."
+  },
+  {
+    q: "HYDRAULIC CLUTCH SYSTEM (slave and master cylinder) has which advantage over cable clutch?",
+    options: ["Cheaper to manufacture and repair", "SELF-ADJUSTING — hydraulic system compensates for clutch wear automatically; consistent pedal feel throughout clutch life", "Easier to bleed than brakes", "Never needs any maintenance"],
+    answer: 1,
+    explanation: "HYDRAULIC CLUTCH advantages: (1) SELF-ADJUSTING — as disc wears, hydraulic system automatically maintains correct pedal engagement point, (2) MORE CONSISTENT feel, (3) Better durability in hot climates (no cable stretch from heat), (4) Works on more severe angles between pedal and clutch."
+  },
+  {
+    q: "CLUTCH CHATTER specifically occurs when:",
+    options: ["Clutch is fully engaged at high speed", "Clutch is being engaged from standstill — rapid grab-slip-grab cycle causes chassis vibration and noise", "Clutch pedal is fully depressed only", "Vehicle is reversing"],
+    answer: 1,
+    explanation: "CLUTCH CHATTER: rapid alternating engagement-slip-engagement during clutch release → chassis vibrates. Cause: glazed or contaminated friction surface, loose flywheel, worn or broken disc damper springs, or engine/drivetrain mounts — vibration path amplified to chassis."
+  },
+  {
+    q: "FLYWHEEL RESURFACING (machining) is done during clutch replacement when:",
+    options: ["Always — must be machined every time", "FLYWHEEL SHOWS HEAT CRACKS, SCORING, HOT SPOTS (blue spots), or is warped beyond specification", "Only if it has surface rust", "Never needed — flywheels last engine life"],
+    answer: 1,
+    explanation: "FLYWHEEL SURFACE CONDITION: if SCORED (deep grooves from worn clutch), HOT SPOTS (blue/hard areas from overheating), or WARPED → resurface or replace. A rough or warped flywheel → clutch judder with new disc. Minimum thickness spec must be met after machining."
+  }  ,
+  {
+    q: "DUAL MASS FLYWHEEL (DMF) in modern diesel vehicles:",
+    options: ["Is lighter than a conventional flywheel", "Has TWO MASSES connected by springs — primary mass bolts to engine, secondary to clutch — absorbs engine vibration", "Only used in electric vehicles", "Is the same as a standard flywheel with more mass"],
+    answer: 1,
+    explanation: "DUAL MASS FLYWHEEL: primary mass (engine side) and secondary mass (clutch side) separated by coil springs. Springs absorb low-frequency torsional vibrations from diesel engines → smooth power delivery → reduces gearbox noise and wear. EXPENSIVE to replace — check condition when doing clutch."
+  },
+  {
+    q: "SLAVE CYLINDER in a hydraulic clutch system is located:",
+    options: ["At the clutch pedal", "At the CLUTCH — internal (inside bellhousing) or external (mounted on gearbox casing) — activates the release fork/bearing", "In the brake system", "At the master cylinder reservoir"],
+    answer: 1,
+    explanation: "SLAVE CYLINDER: converts hydraulic pressure (from master cylinder via pipe) back to mechanical force to operate release fork or bearing. EXTERNAL: mounted outside, accessible, can be replaced without splitting gearbox. INTERNAL (concentric): lighter, more efficient but gearbox removal needed."
+  }
+
+
+    
         ];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
