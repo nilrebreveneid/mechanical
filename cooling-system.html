@@ -1225,7 +1225,432 @@ const rawQuestions = [
         options: ["इन्धन जलाउनु (Burn fuel)", "ताप निकाल्नु (Dissipate heat)", "गति बढाउनु (Increase speed)", "ब्रेक लागाउनु (Apply brakes)"],
         answer: 1,
         explanation: "रेडिएटरले इन्जिनको तापलाई कूल्याण्ट मार्फत बाहिर निकाल्छ। (The radiator dissipates engine heat through the coolant.)"
-    }
+    },
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 6 — COOLING SYSTEM: Additional 68 MCQs
+// Append after your 32 supplied MCQs → total 100
+// Syllabus: 6.1 Importance & Purpose · 6.2 Components & Function
+//           6.3 Antifreeze · 6.4 Troubleshooting & Maintenance
+// Sources: as-mechanics.pdf · saja_yatayat.pdf · NOC/wayu_sewa ·
+//          tu5mcqs.pdf · Sewa_sambandi.pdf · TU image papers
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM as-mechanics.pdf — PSC 2082 ACTUAL EXAM ─────────────
+  {
+    q: "The thermostat valve in an engine cooling system opens when:",
+    options: ["Engine is cold", "Engine temperature is HIGH", "Oil pressure is low", "Coolant level drops"],
+    answer: 1,
+    explanation: "Thermostat CLOSES when cold (warms engine fast), OPENS at high temperature (~80-90°C) allowing coolant to flow through the radiator. Direct from as-mechanics.pdf PSC 2082 Q39 — confirmed repeat."
+  },
+  {
+    q: "The first thing to be checked for an overheated engine is:",
+    options: ["Coolant level", "Function of thermostat", "Tension of radiator fan belt", "Blockage of radiator fins"],
+    answer: 0,
+    explanation: "Always check COOLANT LEVEL first when engine overheats. If low or empty, that is the likely cause. Never open hot radiator cap — scalding steam ejects. From as-mechanics.pdf PSC 2082 Q40 — confirmed repeat."
+  },
+  {
+    q: "What is a common cause of coolant leakage in an engine?",
+    options: ["Faulty spark plug", "Damaged radiator hose or gasket", "Low oil pressure", "Thick engine oil"],
+    answer: 1,
+    explanation: "Coolant leakage causes: DAMAGED RADIATOR HOSE or GASKET (head gasket, water pump gasket). Confirmed repeat from TU Sewa Aayog image paper Q19 — appeared in multiple papers."
+  },
+
+  // ── FROM saja_yatayat.pdf ─────────────────────────────────────
+  {
+    q: "A turbocharged engine is more efficient because:",
+    options: ["It is less efficient due to power absorbed", "It uses energy from exhaust gas to boost intake air", "It requires more coolant", "It produces less torque"],
+    answer: 1,
+    explanation: "Turbocharger uses waste EXHAUST GAS energy to drive a compressor → forces denser air into engine → more power from same displacement. From saja_yatayat.pdf — confirmed thermodynamics repeat."
+  },
+  {
+    q: "Turbochargers are classified as:",
+    options: ["Reciprocating compressors", "Centrifugal compressors", "Axial fans", "Positive displacement blowers"],
+    answer: 1,
+    explanation: "Turbochargers are CENTRIFUGAL compressors — rotating impeller accelerates air outward, then a diffuser converts velocity to pressure. From saja_yatayat.pdf confirmed classification question."
+  },
+  {
+    q: "Which cooling method is commonly used for motorcycle engines?",
+    options: ["Air cooling", "Oil cooling", "Water cooling", "Nitrogen cooling"],
+    answer: 0,
+    explanation: "AIR COOLING is most common for motorcycle engines — fins on the cylinder increase surface area, air flow dissipates heat. Simple, lightweight, no coolant needed. From saja_yatayat.pdf confirmed repeat."
+  },
+  {
+    q: "In an air cooling system, FINS are used to:",
+    options: ["Pump coolant through the engine", "Increase surface area for heat dissipation to the atmosphere", "Store coolant for the radiator", "Control thermostat operation"],
+    answer: 1,
+    explanation: "FINS cast into the cylinder block/head INCREASE SURFACE AREA exposed to airflow. More surface area = more heat transferred from metal to air. Essential in air-cooled engines (motorcycles, small generators)."
+  },
+  {
+    q: "The thermostat valve starts to open at approximately:",
+    options: ["60°C", "70°C", "82°C", "100°C"],
+    answer: 2,
+    explanation: "Standard thermostat BEGINS OPENING at approximately 82°C and is FULLY OPEN by about 95°C. This precise temperature maintains engine at optimal operating range. From saja_yatayat.pdf confirmed question."
+  },
+  {
+    q: "What is the correct way to add antifreeze to a cooling system?",
+    options: ["When engine is hot, open radiator cap", "When engine is COLD, add to the coolant reservoir tank", "While engine is running", "Only when radiator has no water at all"],
+    answer: 1,
+    explanation: "ALWAYS add coolant/antifreeze when engine is COLD to reservoir tank. Adding to hot system: (1) risk of scalding steam burn when opening cap, (2) thermal shock to hot components. From Sewa_sambandi.pdf."
+  },
+  {
+    q: "Cylinder of an IC engine is measured in terms of its:",
+    options: ["Displacement and efficiency", "Bore and stroke", "Weight and material", "Compression ratio only"],
+    answer: 1,
+    explanation: "Cylinder is described by BORE (internal diameter) and STROKE (piston travel from TDC to BDC). Swept volume = π/4 × bore² × stroke. From saja_yatayat.pdf confirmed engineering question."
+  },
+  {
+    q: "Carbon deposits in the cylinder are removed by:",
+    options: ["Ignition system cleaning", "Decarbonizing (chemical or mechanical cleaning)", "Fuel injection flushing alone", "Coolant flush only"],
+    answer: 1,
+    explanation: "DECARBONIZING removes carbon deposits from cylinder head, piston crown, valves, and combustion chamber. Methods: chemical (carbon solvent), mechanical (scraper), or walnut blasting. From Sewa_sambandi.pdf."
+  },
+
+  // ── FROM Sewa_sambandi.pdf ────────────────────────────────────
+  {
+    q: "The most commonly used antifreeze solution in an automobile engine is:",
+    options: ["Carbon disulphate", "Ethylene glycol", "Distilled water only", "Glycerine"],
+    answer: 1,
+    explanation: "ETHYLENE GLYCOL mixed with water (typically 50/50) is the standard automotive antifreeze. Lowers freezing point to -37°C, raises boiling point, contains corrosion inhibitors. From Sewa_sambandi.pdf — confirmed repeat."
+  },
+  {
+    q: "Water jacket in the engine cooling system surrounds the:",
+    options: ["Radiator", "Engine block and cylinder head", "Fuel tank", "Exhaust manifold"],
+    answer: 1,
+    explanation: "WATER JACKET: passages cast into the ENGINE BLOCK and CYLINDER HEAD through which coolant circulates, absorbing heat from combustion. From Sewa_sambandi.pdf — cooling system component confirmed."
+  },
+  {
+    q: "The 'milky' coloured engine oil indicates:",
+    options: ["Oil is due for change", "Coolant has mixed with engine oil — likely blown head gasket", "Oil is perfectly clean", "Oil sump is overfilled"],
+    answer: 1,
+    explanation: "MILKY/CREAMY OIL = coolant contamination. Blown HEAD GASKET (most common), cracked cylinder head, or cracked block allows coolant to mix with oil. Needs immediate attention — stop engine to prevent bearing damage."
+  },
+  {
+    q: "What is the purpose of the expansion tank (overflow bottle) in a modern cooling system?",
+    options: ["Store extra fuel", "Collect coolant when it expands on heating, return it when engine cools", "Filter the coolant", "Cool the engine oil"],
+    answer: 1,
+    explanation: "EXPANSION TANK: as coolant heats and expands, excess flows into the tank. As engine cools and coolant contracts, it is drawn BACK into the radiator — maintaining correct level automatically in a sealed system."
+  },
+  {
+    q: "The PRESSURE CAP on a radiator increases the boiling point of coolant because:",
+    options: ["It adds chemicals to coolant", "Pressurizing the system raises the boiling point above 100°C (approximately 15 PSI raises it by ~25°C)", "It reduces coolant flow speed", "It cools coolant before it enters the radiator"],
+    answer: 1,
+    explanation: "PRESSURE CAP maintains system at 0.9-1.4 bar above atmospheric. By DALTON'S LAW, higher pressure = higher boiling point (~120-130°C). Prevents boiling at normal operating temperature and improves cooling efficiency."
+  },
+  {
+    q: "A BLOCKED RADIATOR causes:",
+    options: ["Engine to run colder than normal", "Engine overheating, especially at low speed or when stationary", "Better fuel economy", "Higher oil pressure"],
+    answer: 1,
+    explanation: "Blocked radiator: restricted coolant flow and reduced heat transfer area → insufficient cooling → ENGINE OVERHEATING. Worst at low speed (no ram air) or stationary (no air flow). Flush or replace blocked radiator."
+  },
+  {
+    q: "What happens if the thermostat STICKS CLOSED?",
+    options: ["Engine warms up slowly but runs cool always", "Engine OVERHEATS rapidly — coolant cannot circulate to radiator", "Engine idles normally but loses power only", "No effect on engine temperature"],
+    answer: 1,
+    explanation: "Thermostat stuck CLOSED: coolant cannot flow to radiator → engine overheats rapidly. Hot warning light illuminates. If ignored, head gasket failure, warped head. Always replace thermostat if overheating cause is suspected."
+  },
+  {
+    q: "What happens if the thermostat STICKS OPEN?",
+    options: ["Engine overheats", "Engine runs COLD — never reaches operating temperature, poor fuel economy, white smoke", "No effect", "Better cooling efficiency always"],
+    answer: 1,
+    explanation: "Thermostat stuck OPEN: coolant always circulates through radiator → engine stays COLD. Results: poor fuel economy (rich running), slow heater output, white smoke, increased wear (engine needs operating temp for oil viscosity). Replace thermostat."
+  },
+  {
+    q: "The water pump in a cooling system is driven by:",
+    options: ["Battery", "Engine via V-belt or timing chain from crankshaft", "Exhaust gas energy", "Electric motor always"],
+    answer: 1,
+    explanation: "Water pump is MECHANICALLY driven by the engine via serpentine belt or timing belt/chain from the crankshaft. If belt breaks, pump stops → immediate overheating. Some modern engines use electric water pumps for better control."
+  },
+  {
+    q: "The RADIATOR FAN in a vehicle is necessary because:",
+    options: ["It drives the water pump", "At low speeds or when stationary, insufficient ram air enters radiator — fan draws air through it", "It cools the engine oil only", "It increases engine compression"],
+    answer: 1,
+    explanation: "At LOW SPEED or STATIONARY: no ram airflow through radiator. FAN (belt-driven or electric) draws air through radiator fins to maintain cooling. Electric fans: controlled by temperature sensor → only runs when needed."
+  },
+  {
+    q: "The BELT driving the water pump and other accessories must be checked for:",
+    options: ["Only colour change", "Correct tension, cracks, fraying, and glazing — replace if worn", "Oil contamination only", "Alignment only"],
+    answer: 1,
+    explanation: "Belt inspection: TENSION (too loose = slip, squeal; too tight = bearing damage), CRACKS (ageing), FRAYING (edge wear), GLAZING (slipping makes it shiny). Preventive replacement per manufacturer interval (typically 60-100,000 km)."
+  },
+  {
+    q: "COOLANT FLUSH and replacement should be done because:",
+    options: ["Coolant never degrades", "Coolant additives (corrosion inhibitors) deplete over time — causing radiator and water pump corrosion", "Only when engine overheats", "Only when coolant colour changes"],
+    answer: 1,
+    explanation: "Coolant additives DEPLETE over time: (1) corrosion inhibitors fail → aluminium and iron corrosion, (2) pH drops → acidic coolant attacks seals and gaskets. Replace per interval (typically every 2 years or 40,000 km). Use correct type (OAT, HOAT, IAT)."
+  },
+  {
+    q: "What type of water is RECOMMENDED for use in a vehicle cooling system?",
+    options: ["Normal tap water", "River water", "Distilled or deionized water mixed with antifreeze", "Boiled tap water only"],
+    answer: 2,
+    explanation: "DISTILLED/DEIONIZED WATER: free of minerals that cause scale (calcium, magnesium deposits) on radiator tubes and water jacket walls. Scale reduces heat transfer and restricts flow. Always mix with antifreeze — never use water alone."
+  },
+  {
+    q: "The HOSES in a cooling system should be replaced when:",
+    options: ["They become a different colour", "They feel soft and spongy, hard and cracked, or show swelling/bulging", "After every oil change", "Only when they leak externally"],
+    answer: 1,
+    explanation: "Hose replacement indicators: SOFT/SPONGY = internal collapse possible under suction, HARD/CRACKED = aged and brittle (will crack soon), SWELLING/BULGING = weak spot about to fail. Preventive replacement every 4-5 years."
+  },
+  {
+    q: "The function of ANTIFREEZE (ethylene glycol) in a cooling system is to:",
+    options: ["Only prevent freezing in winter", "BOTH lower freezing point AND raise boiling point — plus corrosion protection", "Only improve heat transfer", "Only prevent corrosion"],
+    answer: 1,
+    explanation: "ETHYLENE GLYCOL mixture: (1) LOWERS freezing point to -37°C (50/50 mix), (2) RAISES boiling point to ~108°C unpressurized (~130°C pressurized), (3) CORROSION INHIBITORS protect all metals, (4) LUBRICATES water pump seal."
+  },
+  {
+    q: "The CORRECT MIXING RATIO of antifreeze to water for most climates is:",
+    options: ["10% antifreeze, 90% water", "30% antifreeze, 70% water", "50% antifreeze, 50% water", "100% antifreeze only"],
+    answer: 2,
+    explanation: "50/50 mixture is STANDARD for most climates: freezing protection to -37°C, boiling protection to 108°C+. 100% antifreeze actually gives LESS freeze protection than 50/50. Never use less than 30% or more than 70% antifreeze."
+  },
+  {
+    q: "To check antifreeze concentration in the cooling system, a _____ is used:",
+    options: ["Pressure gauge", "Hydrometer or refractometer", "Thermometer only", "Voltmeter"],
+    answer: 1,
+    explanation: "HYDROMETER (float type) or REFRACTOMETER (optical) measures coolant specific gravity or refractive index, which directly indicates the antifreeze concentration and the freeze/boil protection level. Essential for maintenance."
+  },
+  {
+    q: "What is the correct procedure for checking coolant level?",
+    options: ["Open radiator cap when engine is hot and look inside", "Check the TRANSPARENT COOLANT RESERVOIR when engine is COLD — level should be between MIN and MAX marks", "Check by removing the lower radiator hose", "Only check during oil changes"],
+    answer: 1,
+    explanation: "Check coolant RESERVOIR level when COLD (between MIN and MAX marks). Never open hot radiator cap — sudden pressure release ejects scalding steam and coolant. Modern sealed systems: coolant level in reservoir IS the coolant level."
+  },
+  {
+    q: "The COOLING SYSTEM PRESSURE TEST is done to:",
+    options: ["Check coolant concentration", "Detect coolant leaks — system is pressurized and checked for pressure drop indicating leaks", "Check thermostat opening temperature", "Measure water pump flow"],
+    answer: 1,
+    explanation: "Pressure test: special cap adapter pressurizes system to 1-1.5 bar and holds. PRESSURE DROP = leak. Helps find: leaking hoses (visible), head gasket leaks (combustion gas detected), internal leaks (invisible without pressure)."
+  },
+
+  // ── FROM TU Sewa Aayog papers + NOC/Wayu Sewa ─────────────
+  {
+    q: "Which cooling system type is used in EXCAVATORS and BULLDOZERS?",
+    options: ["Air cooling only", "Liquid (water/coolant) cooling with pressurized system", "Oil cooling only", "No cooling system needed"],
+    answer: 1,
+    explanation: "Construction equipment engines use LIQUID COOLING with pressurized coolant system, thermostat, water pump, radiator, and hydraulic oil cooler. Air cooling is inadequate for high-power diesel engines used in construction equipment."
+  },
+  {
+    q: "The radiator OVERFLOW PIPE leads to the:",
+    options: ["Engine oil sump", "Expansion/overflow tank to collect and return coolant", "Fuel tank", "Exhaust system"],
+    answer: 1,
+    explanation: "OVERFLOW PIPE connects radiator to expansion tank. Hot coolant expands → overflow to tank. Cold engine contracts → coolant drawn back via same pipe. Prevents loss of coolant and maintains correct level automatically."
+  },
+  {
+    q: "What does the temperature gauge needle in the RED ZONE indicate?",
+    options: ["Engine is at optimal temperature", "Engine is dangerously OVERHEATED — stop engine immediately", "Thermostat is working correctly", "Coolant level is correct"],
+    answer: 1,
+    explanation: "RED ZONE = CRITICAL OVERHEATING. STOP ENGINE IMMEDIATELY — further running causes: head gasket failure, warped cylinder head, seized pistons, connecting rod bearing damage. Never ignore red zone temperature warning."
+  },
+  {
+    q: "What does it mean when the temperature gauge needle is always in the COLD zone after engine warm-up?",
+    options: ["Cooling system working perfectly", "Thermostat stuck OPEN — engine never reaches operating temperature", "Coolant level is correct", "Water pump is working too well"],
+    answer: 1,
+    explanation: "Gauge always cold after warm-up = thermostat stuck OPEN. Engine stays cold: poor fuel economy (ECU enriches mixture), heater blows cold air, increased engine wear, white condensation from exhaust. Replace thermostat."
+  },
+  {
+    q: "The HYDRAULIC OIL COOLER in a construction machine:",
+    options: ["Cools the hydraulic oil using engine coolant or air to prevent overheating of hydraulic system", "Filters hydraulic oil", "Pressurizes the hydraulic system", "Is part of the brake system"],
+    answer: 0,
+    explanation: "HYDRAULIC OIL COOLER: cools hydraulic oil which overheats during heavy work (lifting, digging). Cooled by air (air-to-oil) or engine coolant (water-to-oil). Overheated hydraulic oil degrades, loses viscosity, damages seals and pumps."
+  },
+  {
+    q: "SCALE (mineral deposits) inside a radiator:",
+    options: ["Improves heat transfer", "REDUCES heat transfer efficiency and restricts coolant flow — causes overheating", "Has no effect on cooling", "Is normal and expected"],
+    answer: 1,
+    explanation: "Scale from tap water minerals (calcium, magnesium) deposits on radiator tube walls and water jacket. Acts as INSULATOR — reduces heat transfer. Also narrows tubes, reducing flow. Use distilled water + antifreeze to prevent scale."
+  },
+  {
+    q: "What should you do BEFORE starting an engine that has overheated and cooled down?",
+    options: ["Start immediately and drive to check if it is fixed", "CHECK the cause of overheating first — coolant level, hoses, belt, leaks — then add coolant and restart carefully", "Add only water and drive", "Replace the entire radiator immediately"],
+    answer: 1,
+    explanation: "Before restarting: (1) FIND AND FIX the cause — check coolant level, leaks, hose condition, belt tension, thermostat, (2) ADD correct coolant when cold, (3) Start engine with heater ON to monitor temperature, (4) Check for coolant leaks with engine running."
+  },
+  {
+    q: "The WATER PUMP WEEP HOLE is designed to:",
+    options: ["Add coolant to the system", "Drain coolant leaking past the water pump seal — indicates seal failure when wet", "Vent air from the pump", "Lubricate the pump bearing"],
+    answer: 1,
+    explanation: "WEEP HOLE: small hole in water pump housing between the seal and bearing. When the pump shaft seal FAILS, coolant leaks out through weep hole → visible drip/stain. This prevents coolant from contaminating and destroying the pump BEARING."
+  },
+  {
+    q: "The INTERCOOLER (charge air cooler) on a turbocharged engine is part of the:",
+    options: ["Fuel system", "Intake air cooling system — cools compressed air from turbo before entering engine", "Engine lubrication system", "Exhaust system only"],
+    answer: 1,
+    explanation: "INTERCOOLER: cools compressed, hot air from the turbocharger. Hot compressed air is less dense. Cooling increases AIR DENSITY → more oxygen → more fuel → more power. Reduces intake temperature and NOx formation."
+  },
+  {
+    q: "Coolant CONTAMINATION with engine oil (seen as brown sludge) indicates:",
+    options: ["Normal mixing that happens over time", "Head gasket failure, cracked head, or cracked block allowing oil and coolant to mix", "Water pump seal failure only", "Correct coolant type used"],
+    answer: 1,
+    explanation: "OIL IN COOLANT (brownish sludge/mayonnaise in expansion tank): HEAD GASKET FAILURE (most common), CRACKED CYLINDER HEAD, or CRACKED BLOCK. Very serious — oil loses lubricity, coolant loses heat transfer. Stop engine immediately, do not drive."
+  },
+  {
+    q: "The COOLING SYSTEM must be FLUSHED when:",
+    options: ["Every week during summer", "At manufacturer-specified intervals OR when coolant is contaminated, old, or discoloured", "Only when radiator is blocked", "Never — coolant lasts engine life"],
+    answer: 1,
+    explanation: "Flush schedule: MANUFACTURER INTERVAL (typically every 2 years or 40-60,000 km), WHEN CONTAMINATED (oil, rust, brown discolouration), WHEN pH drops acidic (test with pH strip). Use flush chemical, drain, refill with fresh mixture."
+  },
+  {
+    q: "RUST in a cooling system is caused by:",
+    options: ["Using correct antifreeze", "Using plain water without antifreeze, or depleted corrosion inhibitors in old coolant", "Low engine temperature", "High engine speed"],
+    answer: 1,
+    explanation: "Rust causes: (1) PLAIN WATER without inhibitors → oxygen + iron = rust, (2) DEPLETED COOLANT ADDITIVES → inhibitors exhausted → corrosion, (3) WRONG COOLANT TYPE. Rust clogs radiator, destroys water pump impeller, and blocks passages."
+  },
+  {
+    q: "The HEATER CORE in a vehicle is part of the cooling system and works by:",
+    options: ["Burning fuel to generate heat", "Passing hot engine coolant through a small radiator inside the cabin to heat the passenger compartment", "Using electricity to heat air", "Recycling exhaust heat directly"],
+    answer: 1,
+    explanation: "HEATER CORE: a small radiator inside the dashboard. HOT COOLANT from engine flows through it → blower fan forces cabin air through heater core → hot air enters cabin. Also helps cool engine slightly by adding another heat exchanger."
+  },
+  {
+    q: "What happens when the COOLANT LEVEL is too LOW?",
+    options: ["Engine runs cooler", "Insufficient heat removal → engine OVERHEATS → head gasket failure, warped head possible", "Better fuel economy", "No effect if level is only slightly low"],
+    answer: 1,
+    explanation: "Low coolant: less fluid to absorb heat → OVERHEATING. Also: air pockets form in system → localized hot spots → head gasket failure. ALSO: water pump may draw in air → cavitation → impeller damage. Always maintain correct level."
+  },
+  {
+    q: "Which COOLING SYSTEM PROBLEM causes white steam from the exhaust when the engine is fully warmed?",
+    options: ["Normal condensation", "Blown head gasket allowing coolant into combustion chamber → burns and exits as WHITE STEAM", "Dirty air filter", "Low engine oil"],
+    answer: 1,
+    explanation: "WHITE STEAM from exhaust (when warm) = COOLANT BURNING = BLOWN HEAD GASKET. Coolant enters combustion chamber through failed gasket → burns → exits as sweet-smelling white steam. Confirm with block test kit (CO2 in coolant)."
+  },
+  {
+    q: "The THERMOSTAT is located between the:",
+    options: ["Fuel tank and fuel pump", "Engine block/cylinder head and the upper radiator hose outlet", "Oil sump and oil filter", "Exhaust manifold and muffler"],
+    answer: 1,
+    explanation: "Thermostat is in the THERMOSTAT HOUSING at the engine coolant outlet (top of engine) between the engine and the UPPER RADIATOR HOSE. Some engines have thermostats at the inlet. Controls when coolant leaves engine for radiator."
+  },
+  {
+    q: "What does the COMBUSTION LEAK TEST (block test) detect in a cooling system?",
+    options: ["Coolant level", "Combustion gases (CO2) dissolved in coolant — confirms head gasket failure", "Coolant concentration", "Water pump condition"],
+    answer: 1,
+    explanation: "BLOCK TEST: chemical test fluid (blue) is held over coolant and air drawn through. If combustion gases (CO2, CO) are in coolant (from blown head gasket), fluid turns YELLOW/GREEN. Definitively confirms head gasket failure without dismantling."
+  },
+  {
+    q: "Air-cooled engines have NO THERMOSTAT but use _____ to control cylinder temperature:",
+    options: ["Oil pressure valve", "Cylinder cooling fins and engine speed (RPM) control only", "A separate electric fan thermostat", "Coolant flow restrictor"],
+    answer: 1,
+    explanation: "Air-cooled engines control temperature through: FIN SIZE AND DESIGN (fixed), ENGINE SPEED (less work = less heat), and some use OIL COOLERS with thermostat to control oil temperature. No coolant thermostat possible."
+  },
+  {
+    q: "The VISCOUS FAN COUPLING (fan clutch) on belt-driven fans:",
+    options: ["Always drives fan at full engine speed", "Drives fan at reduced speed when engine is cool, at higher speed when engine is hot — saves power and noise", "Is used only in electric fans", "Prevents fan from ever stopping"],
+    answer: 1,
+    explanation: "VISCOUS FAN CLUTCH: contains silicone fluid that couples fan to drive. COLD ENGINE: fluid is thin → fan SLIPS → low speed → saves power. HOT ENGINE: bimetal strip in clutch opens → more fluid engaged → fan SPEEDS UP → more cooling."
+  },
+  {
+    q: "Electric cooling fans in modern vehicles are controlled by:",
+    options: ["Directly by the alternator voltage", "Engine Coolant Temperature (ECT) sensor signal to the ECU or fan relay", "Oil pressure switch", "Manual switch by driver only"],
+    answer: 1,
+    explanation: "ELECTRIC FAN controlled by ECU via COOLANT TEMPERATURE SENSOR signal. Fan switches ON when coolant reaches set temperature (typically ~95-100°C). Also activates with AC on (for condenser cooling) and can run after engine off for heat soak."
+  },
+  {
+    q: "The SPECIFIC HEAT of water makes it an excellent coolant because:",
+    options: ["Water is cheap only", "Water absorbs LARGE amounts of heat per kg with small temperature rise (4.18 kJ/kg°C) — highest of common liquids", "Water boils at exactly 100°C", "Water is transparent"],
+    answer: 1,
+    explanation: "Water's HIGH SPECIFIC HEAT (4.18 kJ/kg·°C) means it absorbs large heat quantities with minimal temperature rise — excellent heat carrier. Antifreeze has lower specific heat — 50/50 mix has ~3.5 kJ/kg·°C. Hence the importance of the correct mixture ratio."
+  },
+  {
+    q: "When the temperature gauge suddenly rises to HOT while driving, the IMMEDIATE action is:",
+    options: ["Increase vehicle speed to cool engine faster", "Pull over safely, turn engine OFF, DO NOT open radiator cap — let cool for 30+ minutes", "Add cold water immediately through radiator cap", "Continue driving to nearest town"],
+    answer: 1,
+    explanation: "Overheating emergency: (1) PULL OVER SAFELY, (2) TURN ENGINE OFF immediately, (3) DO NOT open hot radiator cap (scalding steam), (4) WAIT 30+ minutes for cooling, (5) CHECK coolant level when cold, (6) Investigate cause before restarting."
+  },
+  {
+    q: "What is the purpose of PRESSURE TESTING a cooling system cap?",
+    options: ["Check coolant concentration", "Verify the cap opens at correct pressure and holds pressure — a weak cap causes coolant boiling and overflow", "Measure thermostat opening temperature", "Test the water pump flow rate"],
+    answer: 1,
+    explanation: "RADIATOR CAP TEST: special adapter tests if cap (1) opens (relief valve) at correct pressure (e.g., 15 PSI), (2) holds pressure without leaking. Weak cap → system pressure too low → coolant boils at lower temperature → overheating."
+  },
+  {
+    q: "A COOLANT TEMPERATURE SENSOR (CTS) in a modern engine:",
+    options: ["Pumps coolant to the radiator", "Monitors coolant temperature and sends signal to ECU — affects fuel injection, idle, and fan control", "Opens and closes the thermostat", "Pressurizes the cooling system"],
+    answer: 1,
+    explanation: "CTS: NTC (Negative Temperature Coefficient) thermistor — resistance DECREASES as temperature INCREASES. ECU reads this signal for: FUEL ENRICHMENT when cold, IGNITION TIMING, IDLE SPEED, ELECTRIC FAN control. Two sensors common: one for ECU, one for gauge."
+  },
+  {
+    q: "The colour of new, fresh coolant is typically:",
+    options: ["Brown or rust-coloured", "Green, orange, pink, or blue (depending on type) — dye helps identify leaks and type", "Colourless always", "Black only"],
+    answer: 1,
+    explanation: "Fresh coolant is brightly coloured: IAT (green), OAT (orange/pink), HOAT (yellow/purple). The DYE helps: (1) IDENTIFY LEAKS (coloured stains), (2) DISTINGUISH coolant type, (3) Indicate freshness (darkening = degrading). OLD coolant turns brown/rusty."
+  },
+  {
+    q: "What is the coolant FLOW PATH in a typical liquid-cooled engine?",
+    options: ["Tank → Pump → Radiator → Engine", "Water pump → Engine block → Cylinder head → Thermostat → Radiator → Water pump", "Radiator → Engine → Pump → Thermostat", "Thermostat → Pump → Engine → Radiator"],
+    answer: 1,
+    explanation: "Coolant circulation: WATER PUMP → ENGINE BLOCK (absorbs combustion heat) → CYLINDER HEAD (absorbs more heat) → THERMOSTAT (if hot, opens) → UPPER HOSE → RADIATOR (heat rejected to atmosphere) → LOWER HOSE → WATER PUMP again."
+  },
+  {
+    q: "OVERHEATING at HIGH SPEED but NORMAL TEMPERATURE at LOW SPEED usually indicates:",
+    options: ["Thermostat stuck closed", "INSUFFICIENT COOLANT FLOW — failing water pump impeller, partially blocked radiator, or collapsed hose", "Too much coolant in system", "Fan turning too fast"],
+    answer: 1,
+    explanation: "Hot at HIGH SPEED only: high-speed operation demands more cooling than the system can provide → weak water pump (worn/slipping impeller), PARTIALLY BLOCKED radiator (less area for heat transfer), or COLLAPSING LOWER HOSE under pump suction."
+  },
+  {
+    q: "Glycol-based coolant is TOXIC and must be:",
+    options: ["Poured down the drain freely", "Disposed of properly as HAZARDOUS WASTE — taken to authorized collection/recycling facility", "Buried in the ground", "Diluted with water before disposal"],
+    answer: 1,
+    explanation: "Ethylene glycol is TOXIC to animals (sweet taste attracts pets and wildlife). NEVER pour down drain, on ground, or into waterways. COLLECT in sealed container → take to authorized RECYCLING FACILITY or HAZARDOUS WASTE collection point."
+  },
+  {
+    q: "The SWIRL POT (degas bottle) in some pressurized cooling systems is used to:",
+    options: ["Mix antifreeze with water", "REMOVE AIR BUBBLES from the coolant and act as the system pressure point — prevents air locks", "Store extra coolant for emergencies", "Filter coolant particles"],
+    answer: 1,
+    explanation: "SWIRL POT/DEGAS BOTTLE: air-in-coolant causes HOT SPOTS and OVERHEATING. Swirl pot separates air bubbles by centrifugal action → air rises and is vented, bubble-free coolant returns to system. The pressure cap is on the degas bottle, not the radiator."
+  }  ,
+  {
+    q: "The ENGINE OIL COOLER in diesel engines is used to:",
+    options: ["Replace the radiator", "Cool engine oil using coolant or air — prevents oil overheating which reduces viscosity and lubrication", "Heat the engine oil during cold start", "Filter engine oil"],
+    answer: 1,
+    explanation: "OIL COOLER: engine oil overheats under heavy loads → viscosity drops → reduced film strength → bearing wear. Oil cooler (water-cooled sandwich plate under oil filter, or air-cooled external) keeps oil within safe operating temperature."
+  },
+  {
+    q: "What causes ELECTROLYTIC CORROSION in an aluminium cooling system?",
+    options: ["Correct coolant type used", "Mixing different coolant types or using depleted coolant — creates galvanic cell between dissimilar metals", "Distilled water used", "New radiator hoses fitted"],
+    answer: 1,
+    explanation: "ELECTROLYTIC CORROSION: when coolant becomes acidic or conductive (depleted inhibitors, wrong type mixed), it becomes the ELECTROLYTE in a galvanic cell between dissimilar metals (aluminium + steel/copper). Rapid corrosion of aluminium components."
+  },
+  {
+    q: "In a SEALED (pressurized) cooling system, coolant should NOT be lost. If level keeps dropping with NO visible leaks, suspect:",
+    options: ["Normal evaporation", "INTERNAL LEAK — blown head gasket consuming coolant through combustion (white exhaust steam)", "Expansion tank too small", "Thermostat stuck closed"],
+    answer: 1,
+    explanation: "Disappearing coolant with no visible leak = INTERNAL LEAK. Head gasket failure allows coolant into combustion chamber → burns and exits as white steam from exhaust. May be subtle at first — check exhaust colour and do block test."
+  },
+  {
+    q: "The LOWER RADIATOR HOSE has a SPRING INSIDE to prevent it from:",
+    options: ["Bursting under pressure", "COLLAPSING under the suction created by the water pump — collapsed hose stops coolant flow", "Overheating the radiator", "Vibrating and cracking"],
+    answer: 1,
+    explanation: "ANTI-COLLAPSE SPRING: lower hose connects radiator outlet to water pump inlet. Water pump creates SUCTION which can COLLAPSE a flexible rubber hose → blocks coolant flow → overheating. Internal spring keeps hose round under suction."
+  },
+  {
+    q: "A cooling system PRESSURE TESTER is also used to test for:",
+    options: ["Oil pressure in the sump", "EXTERNAL LEAKS in the entire cooling system — hoses, radiator, water pump, heater core, connections", "Injector spray pattern", "Tyre pressure"],
+    answer: 1,
+    explanation: "Cooling system pressure tester: pump to system pressure (e.g. 15 PSI), watch gauge. PRESSURE DROP = leak. Systematically inspect: HOSE JOINTS, RADIATOR TANK seams, WATER PUMP weep hole, HEATER CORE, THERMOSTAT HOUSING gaskets."
+  },
+  {
+    q: "Which component in the cooling system of a diesel TURBO engine often has its OWN separate cooling circuit?",
+    options: ["Radiator fan", "TURBOCHARGER — some use coolant lines to cool the bearing housing after engine shutdown", "Air filter", "Fuel filter"],
+    answer: 1,
+    explanation: "TURBO COOLING: turbocharged engines often have coolant lines to the turbo bearing housing. After shutdown, turbo remains very hot (heat soak). Coolant prevents oil from baking on bearings. Some have electric coolant pumps for post-shutdown cooling."
+  },
+  {
+    q: "What is HEAT SOAK in an engine context?",
+    options: ["Normal engine warming during operation", "After shutdown, residual heat from engine continues to raise temperatures — can boil coolant in hot spots without circulation", "Cooling system overflowing", "Thermostat opening too early"],
+    answer: 1,
+    explanation: "HEAT SOAK: when hot engine stops, coolant CIRCULATION STOPS → heat accumulates from hot exhaust manifold, turbo, etc. → coolant in those areas can BOIL. Solution: idle engine briefly before shutdown, let electric fan/pump run after shutdown."
+  },
+  {
+    q: "The RECOMMENDED COOLANT for an aluminium engine uses:",
+    options: ["IAT (Inorganic Additive Technology) green coolant only", "OAT or HOAT (Organic Acid Technology) coolant with aluminium-specific inhibitors", "Any coolant that is green or blue", "Plain distilled water only in aluminium engines"],
+    answer: 1,
+    explanation: "Modern aluminium engines require OAT or HOAT coolant: ORGANIC ACID TECHNOLOGY inhibitors protect aluminium from pitting corrosion. Traditional IAT (green) coolant depletes quickly and does not adequately protect aluminium. Use manufacturer-specified type."
+  },
+  {
+    q: "What is the purpose of the BLEED SCREWS or BLEED NIPPLES in some cooling systems?",
+    options: ["Drain the entire cooling system", "PURGE AIR POCKETS from the system after coolant replacement to prevent hot spots and airlocks", "Add coolant at a specific point", "Adjust thermostat opening temperature"],
+    answer: 1,
+    explanation: "BLEED SCREWS: air trapped in cooling system creates HOT SPOTS and prevents full coolant circulation. After coolant replacement, open bleed screws (at high points — thermostat housing, heater hose) → run engine → close when continuous coolant flows."
+  }
 ];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
