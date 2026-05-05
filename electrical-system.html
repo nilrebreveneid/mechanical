@@ -1249,7 +1249,208 @@ const rawQuestions = [
         options: ["Force", "Energy", "Power", "Current"],
         answer: 1,
         explanation: "Joule is the SI unit of energy, measuring work done or energy transferred."
-    }
+    },
+
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 14 — ELECTRICAL SYSTEM: Additional 29 MCQs
+// Append after your 36 supplied MCQs → total 65
+// Syllabus: 14.1 General knowledge · 14.2 Battery maintenance ·
+//           14.3 Lights · 14.4 Fuses & Wiring ·
+//           14.5 Troubleshooting & Maintenance
+// Sources: as-mechanics.pdf · new PSC 2081/3/12 · saja_yatayat ·
+//          khanepani.pdf · Sewa_sambandi.pdf · all supplied papers
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM NEW PSC PAPER 2081/3/12 ─────────────────────────────
+  {
+    q: "Which component is used as a HEATING COIL in an air conditioning system?",
+    options: ["Evaporator", "Compressor", "Expansion valve", "Condenser"],
+    answer: 3,
+    explanation: "CONDENSER: in a heat pump/AC system, the condenser releases heat from refrigerant to the space (heating mode). In cooling mode, it rejects heat outside. From new PSC Senior Mechanics paper Q41 — confirmed."
+  },
+  {
+    q: "Which of the following is NOT a type of refrigerant used in an air conditioning system?",
+    options: ["R12", "R22", "RF10", "R410A"],
+    answer: 2,
+    explanation: "'RF10' is NOT a standard refrigerant designation. Standard refrigerants: R12 (old, CFC, phased out), R22 (HCFC, being phased out), R410A (HFC, modern replacement), R134a (automotive AC). From new PSC Senior paper Q42 — confirmed."
+  },
+  {
+    q: "A fully charged 12V car battery should show what voltage when tested with a multimeter?",
+    options: ["12.0V or higher", "12.6V or higher", "10.5V", "13.5V"],
+    answer: 1,
+    explanation: "Fully charged 12V lead-acid battery: 12.6V to 12.8V at rest. 12.4V = ~75% charged. Below 12.0V = discharged. From TU Sewa Aayog image paper and as-mechanics.pdf — confirmed repeated question."
+  },
+
+  // ── FROM as-mechanics.pdf PSC 2082 ───────────────────────────
+  {
+    q: "What is the purpose of a relay in an electrical system?",
+    options: ["To store electrical energy", "To control a HIGH POWER circuit using a LOW POWER signal", "To increase battery voltage", "To cool the electrical system"],
+    answer: 1,
+    explanation: "RELAY: a small control current (from switch/ECU) energizes the relay coil → closes contacts → switches a large current circuit (headlights, starter, horn). From as-mechanics.pdf PSC 2082 Q44 and TU image paper Q44 — confirmed repeated."
+  },
+  {
+    q: "What causes headlights to FLICKER while driving?",
+    options: ["Faulty ignition coil", "Heated engine", "Low fuel level", "Loose wiring or poor connection"],
+    answer: 3,
+    explanation: "Flickering headlights = LOOSE WIRING or POOR CONNECTIONS (intermittent contact). Other causes: failing alternator, faulty relay. From TU Sewa Aayog image paper Q45 and as-mechanics.pdf — confirmed repeated question."
+  },
+  {
+    q: "What does the OCTANE RATING of gasoline indicate?",
+    options: ["The fuel's resistance to premature detonation (knocking)", "The colour of gasoline", "The weight of fuel per gallon", "The speed at which fuel flows"],
+    answer: 0,
+    explanation: "OCTANE RATING = resistance to PREMATURE DETONATION (knocking/pinging). Higher octane = more resistant = suitable for high-compression engines. From TU image paper Q43 — confirmed repeated question."
+  },
+
+  // ── FROM khanepani.pdf (electrical theory) ────────────────────
+  {
+    q: "In a 3-phase DELTA connection, which statement is TRUE?",
+    options: ["Line current equals phase current", "Line voltage equals phase voltage", "Line voltage equals √3 times phase voltage", "Both A and B"],
+    answer: 1,
+    explanation: "DELTA connection: LINE VOLTAGE = PHASE VOLTAGE. Line current = √3 × phase current. STAR connection: Line current = phase current. Line voltage = √3 × phase voltage. From khanepani.pdf — confirmed electrical theory."
+  },
+  {
+    q: "If a wire of resistance 2Ω has its DIAMETER REDUCED TO HALF (length same), the new resistance becomes:",
+    options: ["1Ω", "4Ω", "8Ω", "0.5Ω"],
+    answer: 2,
+    explanation: "R = ρL/A. Area ∝ diameter². Half diameter → area = (1/2)² = 1/4 of original → R = ρL/(A/4) = 4R = 4×2 = 8Ω. Resistance is INVERSELY proportional to cross-sectional area. From khanepani.pdf confirmed."
+  },
+  {
+    q: "The HUMMING NOISE in a transformer is due to:",
+    options: ["Copper winding vibration from current", "MAGNETOSTRICTION — iron core periodically changes dimensions as magnetization alternates → vibrates → 100 Hz hum", "Cooling fan noise only", "Loose terminal connections"],
+    answer: 1,
+    explanation: "TRANSFORMER HUM: magnetostriction causes iron core laminations to vibrate at twice the supply frequency (100 Hz for 50 Hz supply) → audible hum. Not the fan, not windings — it's the CORE. Tight lamination clamping and thinner laminations reduce this. From khanepani.pdf confirmed."
+  },
+  {
+    q: "When power factor of a circuit is UNITY (1.0), the reactive power is:",
+    options: ["Maximum", "Equal to real power", "Zero", "Negative"],
+    answer: 2,
+    explanation: "UNITY POWER FACTOR: voltage and current are in phase → phase angle θ = 0°. Reactive power Q = V×I×sin(0°) = ZERO. All power is REAL (watts) — none is reactive (VAR). From khanepani.pdf electrical theory confirmed."
+  },
+  {
+    q: "The torque-speed characteristic of a SERIES DC MOTOR is:",
+    options: ["Linearly rising with speed", "A rectangular hyperbola — high torque at low speed, low torque at high speed", "Constant torque at all speeds", "Linearly decreasing with speed"],
+    answer: 1,
+    explanation: "DC SERIES MOTOR: torque × speed ≈ constant (rectangular hyperbola). STARTING: very high torque. HIGH SPEED: torque drops sharply. NEVER run without load — will over-speed dangerously. Ideal for: traction (trains, cranes), car starters. From khanepani.pdf confirmed."
+  },
+  {
+    q: "Which type of motor is NOT self-starting?",
+    options: ["3-phase squirrel cage induction motor", "3-phase synchronous motor", "3-phase slip ring induction motor", "DC series motor"],
+    answer: 1,
+    explanation: "3-PHASE SYNCHRONOUS MOTOR is NOT self-starting — at standstill, rotor cannot follow rapidly rotating stator field. Needs: damper winding, pony motor, or VFD to start. Induction motors (squirrel cage, slip ring) ARE self-starting. From khanepani.pdf confirmed."
+  },
+  {
+    q: "SPEED of an AC induction motor (synchronous speed) depends on:",
+    options: ["Load and torque", "FREQUENCY and NUMBER OF POLES: Ns = 120f/P", "Supply voltage only", "Rotor resistance only"],
+    answer: 1,
+    explanation: "SYNCHRONOUS SPEED: Ns = 120f/P. Example: 4-pole, 50 Hz → Ns = 120×50/4 = 1500 RPM. Actual induction motor speed is slightly less (slip). Changing FREQUENCY (VFD) changes speed. Changing pole pairs changes speed in steps. From khanepani.pdf confirmed."
+  },
+
+  // ── FROM saja_yatayat.pdf ─────────────────────────────────────
+  {
+    q: "Which component in a HYDROPOWER PLANT converts mechanical energy to electrical energy?",
+    options: ["Pump", "Generator", "Turbine", "Transformer"],
+    answer: 1,
+    explanation: "GENERATOR: turbine shaft (mechanical rotation) → generator → electrical energy (electromagnetic induction). Transformer then steps up voltage for transmission. From saja_yatayat.pdf confirmed — same as supplied paper but from different source."
+  },
+  {
+    q: "The MOST COMMONLY USED power source for electricity production in Nepal is:",
+    options: ["Coal", "Oil", "Gas", "Water (Hydropower)"],
+    answer: 3,
+    explanation: "Nepal produces over 95% of electricity from HYDROPOWER — Himalayan rivers fed by glaciers and monsoon. From Sewa_sambandi.pdf and saja_yatayat.pdf — confirmed Nepal-specific fact."
+  },
+
+  // ── SYLLABUS 14.2 — BATTERY MAINTENANCE ──────────────────────
+  {
+    q: "Battery ELECTROLYTE LEVEL should be maintained using:",
+    options: ["Tap water — freely available", "Engine oil — for lubrication", "DISTILLED WATER ONLY — tap water minerals contaminate electrolyte", "Battery acid (H2SO4) always"],
+    answer: 2,
+    explanation: "DISTILLED WATER only: tap water contains minerals (calcium, iron) that CONTAMINATE electrolyte → accelerate plate corrosion → reduce battery life. Only add H2SO4 if electrolyte spills (rare). Normal top-up = distilled water only."
+  },
+  {
+    q: "The SPECIFIC GRAVITY of a FULLY CHARGED lead-acid battery electrolyte is approximately:",
+    options: ["1.000 (pure water)", "1.150 (discharged)", "1.265-1.280 (fully charged)", "1.500 (overcharged)"],
+    answer: 2,
+    explanation: "FULLY CHARGED: SG = 1.265-1.280. DISCHARGED: SG approaches 1.100-1.150. Hydrometer measures SG → indicates charge state. In COLD climates: keep battery fully charged (discharged battery freezes at -10°C; charged battery freezes at -65°C)."
+  },
+  {
+    q: "Battery TERMINAL CORROSION (white/blue powder) should be cleaned with:",
+    options: ["Engine oil", "BAKING SODA SOLUTION and water — neutralizes acid corrosion, then rinse and protect with terminal grease", "Petrol", "Brake fluid"],
+    answer: 1,
+    explanation: "TERMINAL CORROSION: dilute BAKING SODA (bicarbonate of soda) in water → apply to terminals → neutralizes acid deposits → fizzes → rinse with clean water → dry → apply petroleum jelly or terminal grease to prevent future corrosion. Never use acid-based cleaners."
+  },
+  {
+    q: "BATTERY LOAD TEST checks:",
+    options: ["Electrolyte level only", "BATTERY'S ABILITY TO DELIVER CURRENT UNDER LOAD — a discharged battery may show 12.6V at rest but fail under load (starting)", "Only open circuit voltage", "Only specific gravity"],
+    answer: 1,
+    explanation: "LOAD TEST: applies a large current (typically 3× CCA rating for 15 seconds) → measures voltage under load. GOOD BATTERY: voltage stays above 9.6V. WEAK BATTERY: voltage drops below 9.6V → cannot crank engine. More reliable than open circuit voltage test alone."
+  },
+
+  // ── SYLLABUS 14.3 — LIGHTS ────────────────────────────────────
+  {
+    q: "LED (Light Emitting Diode) lights in modern vehicles compared to halogen bulbs offer:",
+    options: ["Higher power consumption and shorter life", "LOWER POWER CONSUMPTION, LONGER LIFE (50,000+ hours), and FASTER RESPONSE TIME", "Same light output at same cost", "Lower brightness always"],
+    answer: 1,
+    explanation: "LED ADVANTAGES: (1) POWER: LED headlight uses ~25W vs halogen ~55W, (2) LIFE: 50,000+ hours vs 500-1,000 hours halogen, (3) RESPONSE: near-instant vs halogen's slight delay (important for brake lights), (4) COMPACT: smaller packaging enables better aerodynamic design."
+  },
+  {
+    q: "The HORN circuit in a vehicle uses a RELAY because:",
+    options: ["Relay reduces horn loudness", "Horn draws HIGH CURRENT — relay allows a small dashboard switch to control large horn current without running large wires to dash switch", "Relay makes horn louder", "Horn works without relay too — relay is optional"],
+    answer: 1,
+    explanation: "HORN RELAY: horn draws 5-10A. Running this through a small dash switch would require heavy wires and would overheat the switch contacts. RELAY allows: light switch → energizes relay coil (0.2A) → relay closes → heavy wire from battery directly powers horn. Small switch controls large current safely."
+  },
+
+  // ── SYLLABUS 14.4 — FUSES AND WIRING ─────────────────────────
+  {
+    q: "The EARTH (GROUND) wire in electrical installations is coloured:",
+    options: ["Brown", "Blue", "Yellow and green striped", "Black"],
+    answer: 2,
+    explanation: "IEC STANDARD WIRING COLOURS: EARTH = GREEN-YELLOW stripe. LIVE (phase) = BROWN. NEUTRAL = BLUE. (Old UK: earth=green, live=red, neutral=black). This standard prevents miswiring that could cause electrocution. From as-mechanics.pdf confirmed."
+  },
+  {
+    q: "A FUSE is correctly rated when:",
+    options: ["Its rating equals maximum possible short circuit current", "Its rating is SLIGHTLY ABOVE the normal operating current of the circuit it protects — allows normal use but blows on overload", "It never blows under any condition", "Its rating equals battery voltage in amps"],
+    answer: 1,
+    explanation: "FUSE SELECTION: fuse rating must be ABOVE normal operating current (or it blows normally) but BELOW the maximum current the wiring can safely carry. Example: circuit draws 8A normally → use 10A fuse → wire rated for 15A → fuse protects wire before wire overheats."
+  },
+  {
+    q: "WIRE GAUGE (thickness) in vehicle wiring: THICKER wire has:",
+    options: ["Higher resistance and lower current capacity", "LOWER RESISTANCE and HIGHER CURRENT CAPACITY — must match the load", "Same resistance as thin wire", "Higher voltage capacity"],
+    answer: 1,
+    explanation: "WIRE GAUGE: thicker wire = larger cross-sectional area = LOWER resistance = can carry MORE CURRENT without overheating. If wire too thin for the load: wire overheats → insulation melts → SHORT CIRCUIT or FIRE. Always use specified wire gauge — do not substitute thinner wire."
+  },
+
+  // ── SYLLABUS 14.5 — TROUBLESHOOTING ──────────────────────────
+  {
+    q: "DIM HEADLIGHTS while engine is running (not just at idle) indicate:",
+    options: ["Battery is fully charged", "ALTERNATOR NOT CHARGING PROPERLY — check belt, alternator output voltage (should be 13.5-14.5V), and regulator", "Correct electrical system operation", "Bulbs need replacement only"],
+    answer: 1,
+    explanation: "DIM LIGHTS WITH ENGINE RUNNING: alternator should maintain 13.5-14.5V. BELOW 13V = alternator undercharging → battery slowly drains → lights dim. Check: BELT tension/condition (broken = no alternator), ALTERNATOR OUTPUT with voltmeter, VOLTAGE REGULATOR (controls alternator output)."
+  },
+  {
+    q: "When a CIRCUIT BREAKER trips (instead of fuse blowing), the correct action is:",
+    options: ["Reset immediately and continue using circuit", "IDENTIFY AND FIX THE FAULT first — then reset. Repeated tripping = serious underlying fault", "Replace circuit breaker immediately", "Ignore — circuit breakers are self-resetting"],
+    answer: 1,
+    explanation: "CIRCUIT BREAKER TRIPS: indicates overcurrent or short circuit. RESET without finding cause → trips again → eventually causes fire or component damage. Find: WHY did it trip? Overloaded circuit, faulty component, damaged wiring? FIX THE FAULT FIRST, then reset. Advantage over fuse: can be reset; disadvantage: can be reset without fixing the cause."
+  },
+  {
+    q: "ALTERNATOR OUTPUT VOLTAGE should be checked with:",
+    options: ["Engine off and battery connected only", "VOLTMETER across battery terminals WITH ENGINE RUNNING at fast idle — reading should be 13.5-14.5V", "Hydrometer", "Ammeter in series with battery only"],
+    answer: 1,
+    explanation: "ALTERNATOR TEST: connect VOLTMETER across battery. ENGINE OFF: should read 12.6V (battery). ENGINE RUNNING (1500-2000 RPM): should read 13.5-14.5V (alternator charging). BELOW 13V: undercharging → battery runs flat. ABOVE 14.5V: overcharging → battery boils, bulbs blow. Most accurate simple test."
+  },
+  {
+    q: "विद्युत् प्रणालीमा EARTHING (GROUNDING) महत्वपूर्ण किन हुन्छ? (Why is earthing important in an electrical system?)",
+    options: ["केवल सौन्दर्यको लागि (Only for aesthetics)", "सुरक्षित विद्युत् प्रवाहको लागि र चोट/आगो रोक्न — fault current लाई सुरक्षित मार्गमा लैजान्छ (For safe current path and to prevent shock/fire)", "केवल ब्याट्री चार्ज गर्न (Only for battery charging)", "गाडीको गति बढाउन (To increase vehicle speed)"],
+    answer: 1,
+    explanation: "EARTHING/GROUNDING: (1) SAFETY — provides low-resistance path for fault current → fuse blows → circuit de-energized (vs fault current through person = electrocution), (2) RETURN PATH — in vehicles, chassis is the negative return conductor for all circuits, (3) NOISE REDUCTION — stable reference voltage prevents interference."
+  }  ,
+  {
+    q: "The CATALYTIC CONVERTER controls emission of which pollutants from vehicles?",
+    options: ["CO2, H2O, and N2 only", "CO, HC, and NOx", "CO, HC, and CO2", "CO, HC, NOx, and CO2"],
+    answer: 1,
+    explanation: "THREE-WAY CATALYTIC CONVERTER: (1) CO → CO2, (2) unburnt HC → CO2 + H2O, (3) NOx → N2. Controls CO, HC, and NOx — NOT CO2 (CO2 is a product of complete combustion, not a controlled pollutant in this system). From new PSC Senior paper Q43 — confirmed repeat."
+  }
 ];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
