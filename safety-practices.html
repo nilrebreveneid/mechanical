@@ -1278,7 +1278,384 @@ const rawQuestions = [
                 options: ["To decorate the workplace", "To warn about hazards", "To list inventory", "To track attendance"],
                 answer: 1,
                 explanation: "Safety signs alert workers to potential hazards like high voltage or slippery floors."
-            }
+            },
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 16 — SAFETY PRACTICES: Additional 60 MCQs
+// Append after your 40 supplied MCQs → total 100
+// Syllabus: 16.1 Importance of Safety · 16.2 Types of Safety
+//           16.3 Safety Tools and Devices
+// Sources: as-mechanics.pdf · new PSC 2081/3/12 · tu5mcqs.pdf ·
+//          saja_yatayat.pdf · Sewa_sambandi.pdf · all supplied papers
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM PSC PAPERS — CONFIRMED REPEATS ──────────────────────
+  {
+    q: "Which of the following is NOT part of the FIRE TRIANGLE?",
+    options: ["Fuel", "Carbon dioxide (CO2)", "Heat", "Oxygen"],
+    answer: 1,
+    explanation: "FIRE TRIANGLE = FUEL + HEAT + OXYGEN. CO2 is NOT part of the triangle — it is used in fire EXTINGUISHERS to remove oxygen and smother fires. Confirmed in as-mechanics.pdf PSC 2082 and multiple other papers."
+  },
+  {
+    q: "Which type of fire extinguisher is installed in a MACHINE SHOP?",
+    options: ["ABC type", "B type only", "C type only", "Water type only"],
+    answer: 0,
+    explanation: "ABC fire extinguisher covers: Class A (ordinary combustibles — wood, paper), Class B (flammable liquids — oil, petrol), Class C (electrical). Machine shops have all three fire types — ABC is the correct choice. From as-mechanics.pdf confirmed."
+  },
+  {
+    q: "PPE (Personal Protective Equipment) in a mechanical workshop includes:",
+    options: ["Safety helmets only", "Gloves only", "Safety boots only", "All of the above — helmets, gloves, goggles, boots, and ear protection"],
+    answer: 3,
+    explanation: "PPE includes ALL: HELMETS (head), GLOVES (hands), GOGGLES (eyes), BOOTS (feet), EAR MUFFS (hearing), face shields. When PSC asks about PPE — 'ALL OF THE ABOVE' is always correct. From as-mechanics.pdf and multiple papers confirmed."
+  },
+  {
+    q: "Which of the following is NOT a safety tool or device?",
+    options: ["Helmet", "Safety boots", "Goggles", "Bag"],
+    answer: 3,
+    explanation: "A BAG is not a safety device. Safety tools/devices: helmet, boots, goggles, gloves, ear muffs, face shields, safety harnesses, fire extinguishers. From as-mechanics.pdf PSC 2082 Q23 and TU papers — confirmed repeat."
+  },
+  {
+    q: "A safety audit is conducted to:",
+    options: ["Promote company image only", "EVALUATE SAFETY PROCEDURES and identify hazards and improvements needed", "Evaluate production efficiency", "Increase output quantity"],
+    answer: 1,
+    explanation: "SAFETY AUDIT: systematic evaluation of safety procedures, hazard identification, compliance with standards, and recommendations for improvement. From tu5mcqs.pdf PSC 5th level exam — confirmed."
+  },
+  {
+    q: "ISO 45001 is the international standard for:",
+    options: ["Quality management systems (ISO 9001)", "Environmental management (ISO 14001)", "OCCUPATIONAL HEALTH AND SAFETY MANAGEMENT SYSTEMS", "Energy management (ISO 50001)"],
+    answer: 2,
+    explanation: "ISO 45001 = Occupational Health and Safety (OHS) Management System. ISO 9001 = Quality. ISO 14001 = Environmental. ISO 50001 = Energy. From tu5mcqs.pdf and as-mechanics.pdf — confirmed key safety standard."
+  },
+  {
+    q: "Fire extinguishers must be inspected:",
+    options: ["Only after use", "Every 5 years only", "When leakage is suspected only", "MONTHLY (quick visual check) AND annually by qualified person"],
+    answer: 3,
+    explanation: "Fire extinguisher inspection: MONTHLY visual check (pressure gauge, pin, seal intact, no damage), ANNUAL full service by qualified technician. Extinguisher must be immediately serviceable — cannot wait until 'suspected problem'. From tu5mcqs.pdf confirmed."
+  },
+  {
+    q: "Which of the following is an example of a 'CAUGHT-IN' mechanical accident?",
+    options: ["A person slipping on oil", "A WORKER'S HAND CAUGHT IN A CONVEYOR BELT", "A falling object hitting someone", "Electric shock from a machine"],
+    answer: 1,
+    explanation: "CAUGHT-IN accidents: trapped, pinched, or crushed between or in moving machinery parts. Worker's hand in conveyor belt = classic caught-in. Prevention: machine guards, safe working distances, never reach into running machinery. From tu5mcqs.pdf confirmed."
+  },
+  {
+    q: "Machine safeguarding is necessary because:",
+    options: ["It makes the machine look attractive", "It improves operator skill", "IT MINIMIZES THE RISK OF ACCIDENT for the operator", "It balances the machine properly"],
+    answer: 2,
+    explanation: "Machine safeguarding — guards, covers, interlocks, barriers — PREVENTS accidental contact with moving, hot, sharp, or electrically live parts. PRIMARY PURPOSE = SAFETY → minimize accident risk. From new PSC Senior paper Q49 — confirmed."
+  },
+  {
+    q: "An activity where people practice leaving a building quickly is called:",
+    options: ["Fire play", "Fire extinguish", "FIRE DRILL", "Fire plug"],
+    answer: 2,
+    explanation: "FIRE DRILL: practiced evacuation exercise familiarizing personnel with exit routes, assembly points, and procedures. Required regularly in all workplaces. From new PSC Senior paper Q50 — confirmed."
+  },
+  {
+    q: "Good housekeeping in the workshop PREVENTS:",
+    options: ["Machine overheating", "ACCIDENTS FROM SLIPS, TRIPS, AND FIRES", "Engine wear", "Tool rusting"],
+    answer: 1,
+    explanation: "GOOD HOUSEKEEPING prevents: SLIP hazards (oil/fluid spills on floor), TRIP hazards (tools, cables on floor), FIRE hazards (combustible waste near heat sources). Also improves productivity and professionalism. From as-mechanics.pdf PSC 2082 Q48 — confirmed repeat."
+  },
+
+  // ── 16.1 IMPORTANCE OF SAFETY (additional) ───────────────────
+  {
+    q: "The HIERARCHY OF HAZARD CONTROL (most to least effective) is:",
+    options: ["PPE → Engineering → Elimination", "ELIMINATION → Substitution → Engineering → Administrative → PPE", "Administrative → PPE → Elimination", "PPE is always the first choice"],
+    answer: 1,
+    explanation: "HIERARCHY: (1) ELIMINATE the hazard (best — remove it entirely), (2) SUBSTITUTE with something less hazardous, (3) ENGINEERING CONTROLS (guards, ventilation), (4) ADMINISTRATIVE CONTROLS (training, procedures), (5) PPE (last resort — protects worker but doesn't remove hazard). PPE is the LEAST effective control."
+  },
+  {
+    q: "A NEAR MISS (near-hit) incident in a workshop should be:",
+    options: ["Ignored — nothing happened so no action needed", "REPORTED AND INVESTIGATED — near misses indicate a hazard that will eventually cause injury if not corrected", "Only reported if witnessed by supervisor", "Only reported if expensive equipment was involved"],
+    answer: 1,
+    explanation: "NEAR MISS REPORTING: a near miss is a warning — the hazard exists, luck prevented injury this time. Every unreported near miss = opportunity for a future SERIOUS INJURY. Report and investigate → find root cause → implement corrective action. 'Near miss today = accident tomorrow' if ignored."
+  },
+  {
+    q: "RISK ASSESSMENT in a workshop involves:",
+    options: ["Buying more safety equipment only", "IDENTIFYING HAZARDS, assessing the likelihood and consequence of harm, and implementing controls to reduce risk to acceptable level", "Only training workers on existing rules", "Only emergency response planning"],
+    answer: 1,
+    explanation: "RISK ASSESSMENT process: (1) IDENTIFY hazards (what could cause harm?), (2) IDENTIFY who is at risk, (3) EVALUATE risk (likelihood × severity = risk level), (4) IMPLEMENT CONTROLS (eliminate, reduce), (5) REVIEW and update regularly. Required by occupational health regulations."
+  },
+  {
+    q: "An UNSAFE ACT differs from an UNSAFE CONDITION in that:",
+    options: ["They are the same thing", "UNSAFE ACT = human behaviour (rushing, bypassing guard, not wearing PPE); UNSAFE CONDITION = physical hazard (wet floor, broken guard, poor lighting)", "Unsafe conditions are more dangerous always", "Unsafe acts are always intentional"],
+    answer: 1,
+    explanation: "Heinrich's triangle: UNSAFE ACTS (worker behaviour — rushing, distraction, shortcuts) and UNSAFE CONDITIONS (environment — defective tools, poor guarding) both cause accidents. Most accidents have BOTH: unsafe condition + unsafe act. Correct BOTH to prevent accidents."
+  },
+  {
+    q: "The HEINRICH TRIANGLE (accident pyramid) states that for every fatal accident there are approximately:",
+    options: ["10 minor injuries and 100 near misses", "29 LOST-TIME INJURIES, 300 MINOR INJURIES, and 3,000 NEAR MISSES (ratio varies by industry)", "1 serious injury and 10 near misses", "5 injuries and 50 property damage events"],
+    answer: 1,
+    explanation: "HEINRICH'S TRIANGLE: for every serious/fatal accident, there are many minor injuries and many more near misses below it. The principle: PREVENT NEAR MISSES → reduce minor injuries → prevent serious injuries. Investigation of near misses is cost-effective accident prevention."
+  },
+  {
+    q: "TOOLBOX TALKS (pre-shift safety briefings) are conducted to:",
+    options: ["Only review production targets", "DISCUSS SAFETY HAZARDS specific to that day's work, remind workers of controls, and share lessons from recent incidents", "Only introduce new workers to the team", "Only review lunch schedules"],
+    answer: 1,
+    explanation: "TOOLBOX TALKS: 5-15 minute safety briefings before each shift. Cover: hazards specific to today's tasks, safety procedures, PPE requirements, lessons from recent incidents. Short, focused, relevant → most effective safety communication tool for front-line workers."
+  },
+
+  // ── 16.2 TYPES OF SAFETY (additional) ────────────────────────
+  {
+    q: "CHEMICAL SAFETY in a workshop requires which information source before handling any chemical?",
+    options: ["Previous worker's verbal instructions", "SAFETY DATA SHEET (SDS/MSDS) — contains hazard information, handling precautions, PPE required, and emergency procedures", "Chemical colour and smell only", "Manufacturer's advertisement"],
+    answer: 1,
+    explanation: "SAFETY DATA SHEET (SDS): mandatory document for every hazardous chemical. Contains: (1) Physical/chemical properties, (2) HEALTH HAZARDS, (3) FIRST AID measures, (4) PPE required, (5) Storage and handling, (6) Emergency procedures, (7) Disposal. Must be accessible to all workers using the chemical."
+  },
+  {
+    q: "ERGONOMIC SAFETY in a workshop is concerned with:",
+    options: ["Machine alignment only", "DESIGNING WORK, TOOLS, AND WORKSTATIONS to fit the human body — preventing musculoskeletal injuries from repetitive strain, awkward postures, and heavy lifting", "Only height of workbenches", "Chemical exposure only"],
+    answer: 1,
+    explanation: "ERGONOMICS: fitting the job to the person. Prevents: MUSCULOSKELETAL DISORDERS (back injury, carpal tunnel, tendinitis) from: repetitive motions, awkward postures (bending, twisting), excessive force, vibration. Ergonomic controls: adjustable workbenches, proper lifting technique, tool design, job rotation."
+  },
+  {
+    q: "MANUAL HANDLING safety requires using which technique when lifting heavy objects?",
+    options: ["Bend at the waist and lift with back muscles only", "BEND KNEES, KEEP BACK STRAIGHT, HOLD LOAD CLOSE TO BODY, LIFT WITH LEGS — not back", "Twist the body while lifting for reach", "Lift quickly to reduce muscle strain time"],
+    answer: 1,
+    explanation: "SAFE MANUAL LIFTING: (1) ASSESS load weight and path, (2) FEET shoulder-width apart, close to load, (3) BEND KNEES (squat), (4) STRAIGHT BACK (natural curve maintained), (5) HOLD CLOSE to body, (6) LIFT with LEGS (not back), (7) NO TWISTING during lift — turn feet instead. Prevents back injury."
+  },
+  {
+    q: "WORKING AT HEIGHT (above 1.8m) requires which PRIMARY control?",
+    options: ["Working faster to minimize exposure time", "FALL PROTECTION: guard rails, safety harness/lanyard, safety net, or working platform — depending on task and duration", "Only verbal warning to people below", "Hard hat is sufficient protection when working at height"],
+    answer: 1,
+    explanation: "HEIGHT SAFETY: falls from height are the LEADING CAUSE of workplace fatalities. Controls (hierarchy): (1) ELIMINATE need to work at height, (2) COLLECTIVE PROTECTION (guard rails, platforms — protects everyone), (3) PERSONAL PROTECTION (harness — last resort, protects only the wearer). Hard hat protects from falling objects, NOT falls."
+  },
+  {
+    q: "CONFINED SPACE entry (tanks, pits, culverts) requires:",
+    options: ["Only adequate lighting before entry", "PERMIT-TO-WORK, atmospheric testing (O2, toxic gas, flammable gas), ventilation, communications, rescue plan, and attendant outside", "Only telling a supervisor before entering", "Only wearing a hard hat and gloves"],
+    answer: 1,
+    explanation: "CONFINED SPACE HAZARDS: oxygen deficiency, toxic gases, flammable atmosphere, engulfment. ENTRY REQUIREMENTS: (1) PERMIT-TO-WORK, (2) ATMOSPHERIC TESTING (O2 ≥19.5%, no toxic/flammable gas), (3) CONTINUOUS VENTILATION, (4) COMMUNICATIONS system, (5) RESCUE PLAN and equipment ready, (6) ATTENDANT stationed outside at all times."
+  },
+  {
+    q: "NOISE-INDUCED HEARING LOSS (NIHL) in workshops is caused by:",
+    options: ["Brief exposure to quiet machinery", "PROLONGED EXPOSURE TO NOISE ABOVE 85 dB — hearing damage is permanent and cumulative", "Only impulsive (impact) noise", "Only high-frequency noise"],
+    answer: 1,
+    explanation: "NIHL: exposure above 85 dB over time → permanent hair cell damage in cochlea → irreversible hearing loss. CUMULATIVE: each exposure adds to total damage. PREVENTION: ENGINEERING (quieter machines, enclosures), ADMINISTRATIVE (job rotation, exposure time limits), PPE (earplugs reduce by 25-30 dB, earmuffs 30-35 dB)."
+  },
+  {
+    q: "What CLASS of fire involves ELECTRICAL equipment?",
+    options: ["Class A — ordinary combustibles", "Class B — flammable liquids", "Class C — electrical equipment", "Class D — metals"],
+    answer: 2,
+    explanation: "FIRE CLASSES: A = ordinary combustibles (wood, paper, plastic). B = flammable liquids (petrol, oil, grease). C = electrical equipment (NEVER use water on Class C — electrocution risk). D = combustible metals (magnesium, titanium). F/K = cooking oils. Use CO2 or dry powder on Class C."
+  },
+  {
+    q: "STATIC ELECTRICITY hazard during FUEL TRANSFER is controlled by:",
+    options: ["Transferring fuel quickly to minimize exposure", "BONDING AND GROUNDING — connecting fuel nozzle and tank with a wire BEFORE transfer begins to equalize charge", "Using plastic containers which are non-conductive", "Only working in wet weather to dissipate charge"],
+    answer: 1,
+    explanation: "STATIC ELECTRICITY GROUNDING: fuel flowing through a hose generates static charge. If vessel and nozzle at different potentials → SPARK at connection → ignites fuel vapour. BONDING: connect nozzle to container first (equalizes charge). GROUNDING: connect container to earth. Mandatory before all petroleum product transfers."
+  },
+  {
+    q: "The colour of a PROHIBITION safety sign (must NOT do) is:",
+    options: ["Yellow triangle", "RED circle with diagonal bar", "Blue circle", "Green rectangle"],
+    answer: 1,
+    explanation: "SAFETY SIGN COLOURS: RED circular with diagonal bar = PROHIBITION (e.g., NO SMOKING, NO ENTRY). YELLOW/AMBER triangle = WARNING/HAZARD. BLUE circle = MANDATORY (must do — e.g., WEAR PPE). GREEN rectangle = SAFE CONDITION/EMERGENCY (exit signs, first aid). These are ISO 7010 / ISO 3864 standards."
+  },
+  {
+    q: "MANDATORY safety signs (must wear PPE) use which colour?",
+    options: ["Red", "Yellow", "BLUE circle", "Green"],
+    answer: 2,
+    explanation: "BLUE CIRCLE = MANDATORY sign: positive obligation — MUST do this action. Examples: MUST WEAR HARD HAT, MUST WEAR SAFETY GLASSES, MUST WEAR EAR PROTECTION. Contrast with RED (prohibition — must NOT) and YELLOW (warning — be aware of hazard)."
+  },
+
+  // ── 16.3 SAFETY TOOLS AND DEVICES (additional) ───────────────
+  {
+    q: "The ABC fire extinguisher uses which extinguishing agent?",
+    options: ["Water", "CO2 only", "DRY CHEMICAL POWDER (mono-ammonium phosphate) — works by chemical chain reaction interruption", "Foam only"],
+    answer: 2,
+    explanation: "ABC DRY CHEMICAL POWDER: contains mono-ammonium phosphate. Works by: coating burning material (smothering), and chemical CHAIN REACTION INTERRUPTION (breaks the combustion cycle). Leaves white powder residue. DISADVANTAGE: corrosive to electronics. For electronics: use CO2 instead (leaves no residue)."
+  },
+  {
+    q: "CO2 fire extinguisher is preferred for ELECTRICAL and ELECTRONIC fires because:",
+    options: ["It is cheaper than other types", "CO2 LEAVES NO RESIDUE — will not damage sensitive electronics, and is non-conductive (safe on live electrical equipment)", "It has higher pressure than others", "It works on all fire classes"],
+    answer: 1,
+    explanation: "CO2 ADVANTAGES for electrical fires: (1) NO RESIDUE — dry powder leaves white mess damaging electronics; CO2 evaporates completely, (2) NON-CONDUCTIVE — safe to use on live electrical equipment (dry powder is also non-conductive but leaves residue), (3) Works by COOLING and DISPLACING OXYGEN. DISADVANTAGE: no cooling effect after discharge — can re-ignite."
+  },
+  {
+    q: "RESPIRATORY PROTECTION — an N95 mask protects against:",
+    options: ["Only large dust particles above 10 microns", "AT LEAST 95% of airborne particles ≥0.3 microns — effective against dust, mists, and fumes (but not vapors/gases)", "Only chemical vapors", "No protection — only for medical use"],
+    answer: 1,
+    explanation: "N95 RESPIRATOR: filters at least 95% of 0.3-micron airborne particles (the most penetrating size). Protects against: DUST, MISTS, BIOLOGICAL PARTICLES, WELDING FUMES. Does NOT protect against: gases and vapors (need chemical cartridge respirator). Must be FIT-TESTED to work properly — gaps defeat the protection."
+  },
+  {
+    q: "SAFETY DATA SHEET (SDS) Section 4 contains:",
+    options: ["Chemical properties", "FIRST AID MEASURES — what to do if someone is exposed to the chemical", "PPE requirements", "Storage conditions"],
+    answer: 1,
+    explanation: "SDS SECTION 4: FIRST AID MEASURES. Section 1: Identification. Section 2: Hazards. Section 3: Composition. Section 4: FIRST AID. Section 5: Firefighting. Section 6: Spill/release. Section 7: Handling/storage. Section 8: Exposure/PPE. Knowing section 4 is critical for emergency response."
+  },
+  {
+    q: "A CLASS B fire (flammable liquids) should NEVER be fought with:",
+    options: ["CO2 extinguisher", "Dry powder extinguisher", "WATER — water spreads burning liquid and causes dangerous spattering/steam explosion", "Foam extinguisher"],
+    answer: 2,
+    explanation: "WATER ON CLASS B FIRES: EXTREMELY DANGEROUS. Water sinks into burning oil/fuel → instantly vaporizes → STEAM EXPLOSION scatters burning liquid widely → fire spreads. Also: petrol/oil floats on water → burning liquid spreads. CORRECT: CO2, dry powder, or foam to smother Class B fires. NEVER water."
+  },
+  {
+    q: "ARC EYE (welder's flash) is caused by:",
+    options: ["Debris striking the eye during welding", "UV and IR RADIATION from the welding arc burning the cornea — extremely painful, occurs 6-12 hours after exposure", "Heat from welding torch only", "Welding fumes entering the eyes"],
+    answer: 1,
+    explanation: "ARC EYE (photokeratitis): UV radiation from the arc burns the cornea (like sunburn of the eye). DELAYED ONSET: pain, redness, tears appear 6-12 hours AFTER exposure. Prevention: correct WELDING HELMET filter shade (shade 10-13 depending on current), NEVER watch arc without proper filter — even briefly."
+  },
+  {
+    q: "GRINDING WHEEL safety requires the wheel to be:",
+    options: ["Any wheel that fits the grinder shaft is acceptable", "RING TESTED before mounting (tap with mallet — clear ring = sound, dull thud = cracked → discard), guard fitted, and speed not exceeding marked RPM", "Run without guard for visibility", "Operated above marked RPM for efficiency"],
+    answer: 1,
+    explanation: "GRINDING WHEEL SAFETY: (1) RING TEST — tap wheel lightly, listen for clear ring (sound) vs dull thud (cracked → discard), (2) NEVER EXCEED marked maximum RPM — centrifugal forces at excessive speed can shatter wheel, (3) GUARD must be fitted covering ≥270° of wheel, (4) Eye protection always, (5) Never grind on side of wheel (designed for face only)."
+  },
+  {
+    q: "When using an ANGLE GRINDER, which PPE is MOST critical?",
+    options: ["Hearing protection only", "FULL FACE SHIELD AND SAFETY GOGGLES — disc fragments, sparks, and swarf can cause blindness and facial injury", "Only leather gloves", "Safety boots only"],
+    answer: 1,
+    explanation: "ANGLE GRINDER PPE: one of the most dangerous hand tools. (1) FACE SHIELD (minimum) — disc fragments travel at extremely high velocity, (2) SAFETY GOGGLES under face shield for double protection, (3) LEATHER GLOVES, (4) EAR PROTECTION (high noise), (5) DUST MASK if grinding creates harmful dust. Disc can shatter without warning."
+  },
+  {
+    q: "HYDRAULIC LEAK detection — the correct method when checking for high-pressure leaks is:",
+    options: ["Run your hand along hoses while pressurized", "USE A PIECE OF CARDBOARD — NEVER use hands (fluid injection injury is life-threatening — looks like pinprick but destroys tissue)", "Look for drips only at low pressure", "Use a tissue paper to find the stream"],
+    answer: 1,
+    explanation: "HIGH-PRESSURE HYDRAULIC LEAK (200-400 bar): a pin-hole leak is INVISIBLE but DEADLY. High-pressure fluid penetrates skin painlessly but causes massive internal damage (fluid injection injury) → amputation risk → death if untreated. CARDBOARD TEST: run cardboard past suspected area, look for hole where fluid penetrates. If skin injection occurs: IMMEDIATE HOSPITAL."
+  },
+  {
+    q: "BEFORE working on any electrical equipment, you MUST:",
+    options: ["Wear rubber gloves and continue working on live circuit", "ISOLATE (lockout/tagout) — switch off, lock isolator, attach tag, TEST that power is off before touching", "Reduce voltage by removing some fuses", "Only inform supervisor and proceed"],
+    answer: 1,
+    explanation: "ELECTRICAL ISOLATION (LOTO): (1) SWITCH OFF at isolator, (2) LOCK isolator in off position (prevent someone turning it on), (3) ATTACH TAG (name, date, reason), (4) TEST voltage at work point with tester — confirm DEAD. This sequence MUST be followed every time — 230V household electricity can be fatal."
+  },
+  {
+    q: "The purpose of a DEAD MAN'S SWITCH (emergency stop) on construction equipment is:",
+    options: ["To limit maximum engine speed", "IMMEDIATELY STOP all dangerous movement if the operator becomes incapacitated or releases the control — fail-safe design", "To prevent fuel waste when not operating", "To activate the parking brake automatically"],
+    answer: 1,
+    explanation: "DEAD MAN'S SWITCH (operator presence control): if operator releases the switch/pedal/seat → machine IMMEDIATELY STOPS. Prevents runaway machine if operator: falls from seat, has medical emergency, or is thrown from the machine. Required on: ride-on mowers, some industrial equipment, certain construction machines."
+  },
+  {
+    q: "PERMIT-TO-WORK (PTW) system is used for:",
+    options: ["Planning routine maintenance only", "HIGH-RISK NON-ROUTINE WORK — provides a formal authorization process confirming all precautions are in place before starting", "Tracking tool inventory", "Scheduling regular shift work"],
+    answer: 1,
+    explanation: "PERMIT-TO-WORK: formal written document for: HOT WORK (welding near flammables), CONFINED SPACE ENTRY, ELECTRICAL WORK on live systems, WORKING AT HEIGHT, EXCAVATION near services. PTW confirms: hazards identified, controls in place, responsible person signed off. Prevents accidents from inadequate preparation."
+  },
+  {
+    q: "WELDING FUMES are dangerous because:",
+    options: ["They only smell unpleasant with no health effects", "METAL FUMES (zinc, manganese, chromium, nickel) cause serious lung disease, cancer, and metal fume fever — respiratory protection and ventilation essential", "They reduce welding quality only", "Only visible smoke is hazardous — invisible fumes are safe"],
+    answer: 1,
+    explanation: "WELDING FUME HAZARDS: (1) METAL FUME FEVER (zinc from galvanized steel — flu-like illness), (2) MANGANESE → Parkinson's-like neurological damage, (3) CHROMIUM VI (stainless steel) → CARCINOGENIC (lung cancer), (4) GENERAL LUNG DISEASE from particulate accumulation. Prevention: LOCAL EXHAUST VENTILATION (LEV) always preferred over respiratory protection."
+  },
+  {
+    q: "The 5S WORKPLACE ORGANIZATION system stands for:",
+    options: ["Safety, Security, Standards, Systems, Supervision", "SORT, SET IN ORDER, SHINE, STANDARDIZE, SUSTAIN — a systematic approach to workplace organization and cleanliness", "Speed, Skill, Strength, Sequence, Safety", "Supply, Store, Sort, Secure, Sustain"],
+    answer: 1,
+    explanation: "5S SYSTEM (Japanese manufacturing method): (1) SORT (Seiri) — remove unnecessary items, (2) SET IN ORDER (Seiton) — organize remaining items, (3) SHINE (Seiso) — clean and maintain, (4) STANDARDIZE (Seiketsu) — create standards for the first 3S, (5) SUSTAIN (Shitsuke) — maintain discipline. Creates safe, efficient, organized workplaces."
+  },
+  {
+    q: "HIGH-VISIBILITY (hi-vis) clothing is required when:",
+    options: ["Only during night work", "WORKING NEAR MOVING VEHICLES or PLANT — any environment where workers may not be visible to equipment operators or drivers", "Only for supervisors", "Only in rain or fog"],
+    answer: 1,
+    explanation: "HI-VIS CLOTHING: fluorescent background (bright yellow/orange) + RETROREFLECTIVE STRIPS (reflects headlights). Required: road construction (near traffic), site work near plant (excavators, loaders), rail work, warehouses with forklift traffic. Purpose: ensure workers are VISIBLE to operators — prevent being struck by moving machinery."
+  },
+  {
+    q: "Eye and face injuries in workshops can be prevented by:",
+    options: ["Working quickly to minimize exposure", "SAFETY GLASSES for impact protection, GOGGLES for chemical splash, FACE SHIELD for grinding/cutting — choosing correct protection for the specific hazard", "Regular medical eye checks only", "Working behind a colleague"],
+    answer: 1,
+    explanation: "EYE PROTECTION SELECTION: SAFETY GLASSES (side shields) — flying particles from drilling, grinding. GOGGLES (sealed) — dust, chemical splash, battery acid. FACE SHIELD — grinding, cutting (adds face protection). WELDING HELMET — UV/IR from arc. Always match protection level to SPECIFIC HAZARD — safety glasses do not protect against chemical splash."
+  },
+  {
+    q: "When should a SAFETY HARNESS be inspected?",
+    options: ["Only when visibly damaged", "BEFORE EVERY USE (visual pre-use check) AND annually by competent person AND immediately after any fall arrest event (retire the harness)", "Only during annual safety audit", "Every 5 years"],
+    answer: 1,
+    explanation: "HARNESS INSPECTION: (1) PRE-USE CHECK every time: stitching, webbing, buckles, D-rings, connectors for cuts, abrasion, burns, chemical damage, UV deterioration, (2) ANNUAL formal inspection by competent person, (3) AFTER FALL ARREST: harness absorbs shock energy → retire immediately even if undamaged visibly (internal damage)."
+  },
+  {
+    q: "CARBON MONOXIDE (CO) poisoning risk in workshops comes from:",
+    options: ["Compressed air tools only", "RUNNING INTERNAL COMBUSTION ENGINES INDOORS — forklifts, generators, vehicles in enclosed spaces without adequate ventilation", "Electrical equipment sparking", "Hydraulic oil leakage"],
+    answer: 1,
+    explanation: "CO HAZARD: colourless, odourless gas. Running PETROL/DIESEL ENGINES indoors: forklift trucks, generators, vehicles warming up in garages → CO accumulates rapidly → DEADLY at 1,600 ppm (within 2 hours at 200 ppm). Prevention: NEVER run IC engines indoors without exhaust extraction. Install CO DETECTORS in workshops."
+  },
+  {
+    q: "BATTERY ACID HANDLING safety requires:",
+    options: ["Bare hands are acceptable as acid is dilute", "ACID-RESISTANT GLOVES, FACE SHIELD, AND PROTECTIVE CLOTHING — if splashed: immediately flush with large amounts of water for 15-20 minutes", "Only safety glasses are needed", "No special PPE — use baking soda if splashed"],
+    answer: 1,
+    explanation: "BATTERY ACID (H2SO4 dilute): causes chemical burns to skin and eyes. If contact: FLUSH IMMEDIATELY with large amounts of water for 15-20 minutes — do not stop early. PREVENTION: acid-resistant gloves, face shield (not just goggles — face protection needed), protective apron. Remove contaminated clothing immediately."
+  },
+  {
+    q: "SAFE DISPOSAL of used engine oil, hydraulic oil, and lubricants requires:",
+    options: ["Pouring down storm drains (dilutes in water)", "COLLECTION IN SEALED CONTAINERS and delivery to AUTHORIZED RECYCLING or DISPOSAL FACILITIES — never pour on ground or in drains", "Burning in waste burner", "Mixing with soil to decompose naturally"],
+    answer: 1,
+    explanation: "USED OIL DISPOSAL: used engine/hydraulic oil is HAZARDOUS WASTE — contains heavy metals, combustion products. It is ILLEGAL to pour into drains, waterways, or soil. Collect in sealed containers → take to authorized recycler (oil can be re-refined). 1 litre of oil can contaminate 1 million litres of water."
+  },
+  {
+    q: "An EMERGENCY EYEWASH STATION must be:",
+    options: ["Only in the supervisor's office", "WITHIN 10 SECONDS TRAVEL TIME (approximately 15-20 metres) from any area where corrosive chemicals or irritants are used", "Only installed if chemicals are stored", "In an area that can be locked"],
+    answer: 1,
+    explanation: "EYEWASH STATION LOCATION: ANSI Z358.1 requires eyewash within 10 seconds travel (unobstructed path) from where chemicals are used. Time matters — flushing must begin IMMEDIATELY after chemical eye contact. Station must be: plumbed (tepid water 16-38°C), or sealed self-contained unit if no plumbing, inspected weekly."
+  },
+  {
+    q: "HEARING PROTECTION must be worn when noise level exceeds:",
+    options: ["60 dB (A) — same as normal conversation", "85 dB (A) — exposure above this level causes hearing damage over time", "100 dB (A) — only extreme noise", "70 dB (A) — office noise level"],
+    answer: 1,
+    explanation: "85 dB(A) THRESHOLD: ILO/WHO guideline — exposure above 85 dB(A) averaged over 8 hours causes progressive NOISE-INDUCED HEARING LOSS. At 85 dB: hearing protection required. At 90 dB: engineering controls also required. At 100 dB: exposure time limited to 2 hours/day. Damage is PERMANENT and CUMULATIVE."
+  },
+  {
+    q: "The CORRECT RESPONSE when you discover an injured colleague at work is:",
+    options: ["Immediately move the injured person to a safer area", "ASSESS for danger first, call for help, DO NOT MOVE (possible spinal injury), provide first aid if trained, keep patient calm and warm until medical help arrives", "Offer water and encourage them to walk it off", "Leave immediately to find the supervisor before doing anything"],
+    answer: 1,
+    explanation: "FIRST RESPONDER: (1) CHECK FOR DANGER (don't become a victim), (2) CALL FOR HELP (shout or use emergency communication), (3) DO NOT MOVE (suspected spinal/neck injury — moving can cause paralysis), (4) APPLY FIRST AID (stop bleeding, recovery position if unconscious and breathing), (5) STAY WITH PATIENT until EMS arrives."
+  },
+  {
+    q: "सुरक्षा कार्यक्रम लागू गर्दा व्यवस्थापनको भूमिका के हो? (What is management's role in implementing a safety program?)",
+    options: ["केवल जरिमाना तिर्ने (Only pay fines)", "सुरक्षा नीति बनाउनु, स्रोत उपलब्ध गराउनु, र उदाहरण देखाउनु (Create safety policy, provide resources, and lead by example)", "केवल कर्मचारीलाई दोष दिने (Only blame workers)", "केवल सुरक्षा सूचना टाँस्ने (Only post safety notices)"],
+    answer: 1,
+    explanation: "व्यवस्थापनको सुरक्षा भूमिका: (1) सुरक्षा POLICY बनाउने र लागू गर्ने, (2) RESOURCES उपलब्ध गराउने (PPE, training, time), (3) LEADERSHIP BY EXAMPLE — व्यवस्थापकहरू स्वयं PPE लगाउने, (4) ACCOUNTABILITY — सुरक्षा पालना नगरेमा उत्तरदायी बनाउने। Safety culture starts from the TOP."
+  },
+  {
+    q: "TOOL AND EQUIPMENT INSPECTION before use is important because:",
+    options: ["It is required to fill paperwork only", "DEFECTIVE TOOLS CAUSE ACCIDENTS — chisels with mushroomed heads, cracked handles, frayed electrical leads, damaged guards must be removed from service BEFORE use", "Only new tools need inspection", "Inspection slows down work unnecessarily"],
+    answer: 1,
+    explanation: "PRE-USE INSPECTION: DEFECTIVE TOOLS are a major accident cause. Examples: MUSHROOMED CHISEL HEAD → chips fly when struck, CRACKED HAMMER HANDLE → head separates, FRAYED ELECTRICAL LEAD → electrocution, DAMAGED GUARD → exposure to blade. Remove from service immediately → repair or destroy (don't leave damaged tools where others can use them)."
+  }  ,
+  {
+    q: "SPILL CONTAINMENT in a workshop with hydraulic oil or fuel should use:",
+    options: ["Newspaper or cloth only", "ABSORBENT MATERIAL (sand, kitty litter, oil-dry), collect in sealed container, label as hazardous waste — clean immediately (slip hazard and fire risk)", "Water hose to wash spill to drain", "Cover with dirt and leave"],
+    answer: 1,
+    explanation: "OIL SPILL RESPONSE: (1) CONTAIN the spill (prevent spreading), (2) ABSORB with oil-dry/sand/absorbent pads, (3) COLLECT in sealed labeled waste container, (4) DISPOSE as hazardous waste, (5) CLEAN residue with detergent. NEVER wash to drain (environmental violation). IMMEDIATE cleanup = preventing SLIP ACCIDENT and FIRE HAZARD."
+  },
+  {
+    q: "SAFETY INDUCTION for a new worker at a workshop must cover:",
+    options: ["Only where the toilets are", "EMERGENCY PROCEDURES (fire, first aid, evacuation), site hazards, PPE requirements, rules and prohibited actions, and who to report to", "Only the production targets", "Only the pay and benefits"],
+    answer: 1,
+    explanation: "SAFETY INDUCTION (first day training): (1) EMERGENCY PROCEDURES — fire alarm, evacuation routes, assembly point, first aid, (2) SITE-SPECIFIC HAZARDS, (3) PPE requirements for each area/task, (4) RULES and prohibited actions, (5) Reporting procedures for hazards and accidents. Legal requirement in most jurisdictions — must be done BEFORE any work begins."
+  },
+  {
+    q: "SAFETY SIGNAGE colour coding — GREEN rectangular signs indicate:",
+    options: ["Prohibition — must not do this", "Warning — be aware of hazard", "SAFE CONDITION — emergency exits, first aid, safe routes, safe areas", "Mandatory — must do this"],
+    answer: 2,
+    explanation: "GREEN = SAFE CONDITION SIGNS: emergency exit directions, first aid kit location, safety shower location, emergency assembly point. Green = go/safe. These signs must be clearly visible, illuminated in low light, and on the primary escape route. Green is intuitive — green means safety/go."
+  },
+  {
+    q: "When storing GAS CYLINDERS (oxygen, acetylene) safely:",
+    options: ["Store oxygen and acetylene together for convenience", "STORE SEPARATELY (min 6m apart or fire-resistant barrier), UPRIGHT AND CHAINED, valve caps on, away from heat sources, and in ventilated area", "Store horizontally to save space", "No special storage requirements — they are just metal cylinders"],
+    answer: 1,
+    explanation: "CYLINDER STORAGE: (1) SEPARATE O2 from fuel gases (6m or fire barrier — if mixed fire occurs, both cylinders = explosion), (2) UPRIGHT AND CHAINED (prevent falling), (3) VALVE CAPS on all unused cylinders, (4) AWAY FROM HEAT (>50°C increases pressure → valve failure), (5) VENTILATED AREA (leaks dissipate), (6) FULL and EMPTY cylinders marked and separated."
+  },
+  {
+    q: "TRIP AND SLIP hazard prevention in workshops includes:",
+    options: ["Only installing good lighting", "CLEAN DRY FLOORS (oil spills immediately cleaned), CABLES AND HOSES managed not trailing across walkways, ADEQUATE LIGHTING, CLEAR WALKWAYS free from stored materials", "Only wearing safety boots", "Only painting floor markings"],
+    answer: 1,
+    explanation: "SLIP/TRIP PREVENTION: (1) IMMEDIATE OIL SPILL CLEANUP (most critical), (2) CABLE MANAGEMENT (route overhead or through cable trays, not across floor), (3) GOOD HOUSEKEEPING (tools returned to storage, materials not blocking walkways), (4) ADEQUATE LIGHTING (poor lighting hides hazards), (5) ANTI-SLIP FLOORING in work areas, (6) SAFETY FOOTWEAR with slip-resistant soles."
+  },
+  {
+    q: "The GOLDEN RULE in construction site safety is:",
+    options: ["Production always comes first before safety", "IF IN DOUBT — STOP. Never proceed with a task if you are unsure it is safe. Ask your supervisor.", "Work quickly to get tasks done before safety rules apply", "Safety rules only apply when supervisors are watching"],
+    answer: 1,
+    explanation: "GOLDEN RULE: 'IF IN DOUBT, DON'T.' Any worker who feels a task is unsafe has the RIGHT and RESPONSIBILITY to STOP work, secure the area, and inform their supervisor. No production pressure justifies taking an unsafe risk. The cost of an accident ALWAYS exceeds the cost of a brief stop to address a safety concern."
+  },
+  {
+    q: "SAFE WORK METHOD STATEMENT (SWMS) / JOB SAFETY ANALYSIS (JSA) is prepared to:",
+    options: ["Only document work for legal compliance", "IDENTIFY HAZARDS for each task step, determine controls for each hazard, and communicate the safe method BEFORE starting high-risk work", "Only for supervisors to read — not for workers", "Replace the need for training and PPE"],
+    answer: 1,
+    explanation: "JSA/SWMS PROCESS: (1) LIST each task step, (2) IDENTIFY hazards at each step, (3) DETERMINE CONTROLS for each hazard, (4) REVIEW with ALL workers doing the task, (5) Keep accessible during work. Turns safety from reactive to PROACTIVE. Especially required for: non-routine tasks, high-risk activities, new workers doing unfamiliar tasks."
+  },
+  {
+    q: "सुरक्षाको ABC भनेको के हो? (What is the ABC of safety?)",
+    options: ["Always Be Careful", "Attitude, Behaviour, Culture — सुरक्षाको मनोवृत्ति, व्यवहार र संस्कृति", "Accident, Breakdown, Crisis", "Alert, Bold, Careful"],
+    answer: 1,
+    explanation: "SAFETY ABC: ATTITUDE (मनोवृत्ति — believing safety matters), BEHAVIOUR (व्यवहार — acting safely even when no one is watching), CULTURE (संस्कृति — the entire organization values and practices safety). Systems and procedures are only effective when supported by the right attitude, behaviour, and safety culture at ALL levels."
+  }
         ];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
