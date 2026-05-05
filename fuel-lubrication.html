@@ -1333,7 +1333,171 @@ const rawQuestions = [
         options: ["Heavy gear oil", "Light mineral oil", "Engine oil", "Hydraulic oil"],
         answer: 1,
         explanation: "Light mineral oil is used for delicate mechanisms like sewing machines due to its low viscosity."
-    }
+    },
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 17 — COOLANTS AND LUBRICANTS: Additional 25 MCQs
+// Append after your 50 supplied MCQs → total 75
+// Syllabus: 17.1 Metal working fluid · 17.2 Types of lubricants ·
+//           17.3 Cutting fluids & types · 17.4 Function ·
+//           17.5 Qualities of good cutting fluids
+// Sources: as-mechanics.pdf · new PSC 2081/3/12 · khanepani.pdf ·
+//          saja_yatayat.pdf · Sewa_sambandi.pdf
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM PSC PAPERS — CONFIRMED REPEATS ──────────────────────
+  {
+    q: "The MOST IMPORTANT property of any lubricant is:",
+    options: ["Density", "Viscosity", "Specific heat", "Specific gravity"],
+    answer: 1,
+    explanation: "VISCOSITY is the most important lubricant property — determines the oil film thickness between moving surfaces. Confirmed in as-mechanics.pdf PSC 2082 Q50 as the FINAL and most important question, and 9+ other organization papers."
+  },
+  {
+    q: "SAE 50 is the _____ viscosity oil among the following:",
+    options: ["Lowest", "Highest", "Medium", "Same as SAE 30"],
+    answer: 1,
+    explanation: "SAE 50 has the HIGHEST viscosity among common SAE grades (SAE 10, 20, 30, 40, 50). Higher SAE number = thicker oil = higher viscosity. From saja_yatayat.pdf and Sewa_sambandi.pdf — confirmed repeat."
+  },
+  {
+    q: "The purpose of adding VISCOSITY INDEX IMPROVERS to multigrade oil is to:",
+    options: ["Make oil darker for identification", "REDUCE VISCOSITY CHANGE with temperature — keeps oil from being too thin when hot or too thick when cold", "Increase oil density", "Prevent oil from burning"],
+    answer: 1,
+    explanation: "VISCOSITY INDEX IMPROVERS (polymer additives): expand when hot → increase viscosity when hot (prevent thinning). In cold oil they contract → don't increase cold viscosity. Result: smaller viscosity change across temperature range = HIGHER viscosity index = better multigrade oil."
+  },
+  {
+    q: "FLASH POINT of a lubricant is the temperature at which:",
+    options: ["Oil solidifies and stops flowing", "Oil VAPOUR IGNITES MOMENTARILY when a small flame is applied — indicates fire/safety risk at high temperatures", "Oil changes colour from amber to black", "Oil's viscosity equals water"],
+    answer: 1,
+    explanation: "FLASH POINT: minimum temperature at which oil vapour above the surface can be momentarily ignited. LOW flash point = fire hazard at lower temperatures. Engine oils: flash point typically 200-240°C. Never heat oil above its flash point — fire risk."
+  },
+  {
+    q: "FIRE POINT of oil is:",
+    options: ["Same as flash point", "Temperature at which oil CONTINUES TO BURN for at least 5 seconds after ignition — typically 10-30°C ABOVE flash point", "Below flash point", "Temperature of complete combustion"],
+    answer: 1,
+    explanation: "FIRE POINT: slightly ABOVE flash point. At fire point, oil releases enough vapour to sustain continuous combustion (not just a brief flash). Relevant for: fire safety analysis, selection of high-temperature lubricants. Pour point < Cloud point < Flash point < Fire point (in increasing order)."
+  },
+  {
+    q: "CLOUD POINT of a lubricant is:",
+    options: ["Temperature at which oil starts to burn", "Temperature at which OIL BECOMES CLOUDY as WAX CRYSTALS begin to form — limits low-temperature use", "Boiling point of oil", "Point at which oil loses colour"],
+    answer: 1,
+    explanation: "CLOUD POINT: as temperature drops, dissolved paraffin wax crystals begin to precipitate → oil turns CLOUDY/HAZY. Below cloud point, wax can block filters and fuel lines. Always above the pour point. Relevant for: diesel fuel in cold weather, hydraulic oils in cold environments."
+  },
+  {
+    q: "ANTI-WEAR (AW) additives in engine oil function by:",
+    options: ["Making oil darker to show contamination", "FORMING A PROTECTIVE FILM on metal surfaces at moderate temperatures — activates when metal-to-metal contact occurs", "Increasing oil viscosity only", "Preventing oil from oxidizing"],
+    answer: 1,
+    explanation: "AW ADDITIVES (e.g., ZDDP — zinc dialkyldithiophosphate): chemically react with metal surfaces under boundary lubrication conditions → form a sacrificial protective film → reduces metal wear. Active at moderate temperatures. Different from EP (extreme pressure) additives which activate at higher temperatures."
+  },
+  {
+    q: "DETERGENT additives in engine oil are designed to:",
+    options: ["Clean the external body of the engine", "KEEP ENGINE SURFACES CLEAN by preventing sludge and deposit formation — neutralize acids from combustion", "Increase oil viscosity at high temperatures", "Filter solid particles from oil"],
+    answer: 1,
+    explanation: "DETERGENT additives: (1) NEUTRALIZE ACIDS from combustion blow-by (sulfuric acid from sulfur in fuel), (2) KEEP METAL SURFACES CLEAN — prevent varnish and sludge adhering to pistons, rings, and bearings, (3) SUSPEND CONTAMINANTS for filter removal. Not the same as household detergent."
+  },
+  {
+    q: "DISPERSANT additives in engine oil function by:",
+    options: ["Breaking down large oil molecules", "KEEPING INSOLUBLE CONTAMINANTS SUSPENDED in oil (not letting them settle/agglomerate) — soot, combustion products", "Lowering oil viscosity for cold start", "Providing extreme pressure protection"],
+    answer: 1,
+    explanation: "DISPERSANTS: keep soot, combustion by-products, and oxidation products DISPERSED as tiny particles in oil → carried to oil filter rather than settling as sludge in sump. Often confused with detergents. Detergents clean surfaces; dispersants keep contaminants in suspension."
+  },
+  {
+    q: "The DIFFERENCE between a MINERAL oil and SYNTHETIC oil is:",
+    options: ["Colour — synthetic is always clearer", "ORIGIN AND STRUCTURE: mineral = refined from crude petroleum (natural hydrocarbon chains); synthetic = chemically engineered molecules for superior performance", "Price only — performance is same", "Synthetic cannot be used in engines"],
+    answer: 1,
+    explanation: "SYNTHETIC OIL advantages: more UNIFORM MOLECULE SIZE (better viscosity index), better HIGH TEMP stability (less oxidation), better LOW TEMP flow (better cold start), longer drain intervals. Disadvantage: more expensive. Full synthetic, synthetic blend, and mineral are the three main categories."
+  },
+  {
+    q: "GREASE NLGI GRADE (National Lubricating Grease Institute) — what does a higher number mean?",
+    options: ["Thinner/softer grease", "THICKER/STIFFER grease — NLGI 000 is liquid, NLGI 6 is solid-like", "Lower temperature range", "More water resistant"],
+    answer: 1,
+    explanation: "NLGI GRADES: 000 = semi-fluid (differential gear grease), 0/1 = soft (centralized systems), 2 = MOST COMMON (wheel bearings, chassis) — medium stiffness, 3 = slightly stiffer, 4/5/6 = very stiff (high speed bearings). Higher NLGI = thicker/stiffer consistency."
+  },
+  {
+    q: "EP (EXTREME PRESSURE) additives in gear oil are needed because:",
+    options: ["Gear oil needs to be darker than engine oil", "GEAR TOOTH CONTACT generates EXTREME LOCAL PRESSURES AND TEMPERATURES — normal oil film cannot survive; EP additives form protective layer under extreme conditions", "Gearbox runs hotter than engine always", "Gear oil has lower viscosity than engine oil"],
+    answer: 1,
+    explanation: "EP ADDITIVES (sulfur-phosphorus compounds): under extreme gear tooth contact pressure → local temperatures reach 500-700°C → normal oil film vaporizes → EP compounds react with metal surface → form iron sulfide sacrificial layer → prevents welding/scuffing of gear teeth. API GL-5 = strong EP protection."
+  },
+
+  // ── CUTTING FLUIDS (17.3-17.5) ───────────────────────────────
+  {
+    q: "The PRIMARY FUNCTIONS of cutting fluid in machining are:",
+    options: ["Only cooling the workpiece", "COOLING (removes heat), LUBRICATION (reduces friction), CHIP FLUSHING (removes chips), and SURFACE FINISH improvement", "Only lubricating the cutting tool", "Only preventing rust on the workpiece"],
+    answer: 1,
+    explanation: "CUTTING FLUID FUNCTIONS: (1) COOLING — removes 60-80% of cutting heat, (2) LUBRICATION — reduces friction between tool and chip, (3) CHIP FLUSHING — removes chips from cutting zone, (4) SURFACE FINISH — better surface quality, (5) TOOL LIFE EXTENSION, (6) CORROSION PROTECTION of workpiece and machine."
+  },
+  {
+    q: "SOLUBLE OIL (emulsified cutting fluid) is prepared by:",
+    options: ["Mixing oil and water directly", "Adding mineral oil concentrate to water — oil emulsifies into tiny droplets suspended in water (milky appearance)", "Heating straight cutting oil with water", "Adding soap to hydraulic oil"],
+    answer: 1,
+    explanation: "SOLUBLE OIL (cutting fluid): add oil concentrate to WATER (not water to oil) → emulsifier causes oil to form stable microscopic droplets → milky white emulsion. Typical concentration: 5-10% oil in water. GOOD COOLING (high water content), MODERATE LUBRICATION. Most widely used cutting fluid type."
+  },
+  {
+    q: "STRAIGHT CUTTING OIL (neat cutting oil) is preferred for which operations?",
+    options: ["All operations — always best", "HEAVY DUTY CUTTING and THREAD CUTTING — excellent lubrication where finish quality is critical (tapping, threading, gear hobbing)", "Only light aluminum cutting", "Grinding operations only"],
+    answer: 1,
+    explanation: "STRAIGHT/NEAT OIL: undiluted mineral oil with additives. SUPERIOR LUBRICATION (no water dilution). Used for: THREADING (tapping), GEAR CUTTING, BROACHING, DEEP HOLE DRILLING — where surface finish and tool life take priority over cooling. Disadvantage: POOR COOLING (no water), fire risk, expensive."
+  },
+  {
+    q: "GRINDING FLUID differs from turning/milling fluid because:",
+    options: ["Grinding uses no fluid at all", "GRINDING REQUIRES HIGH FLOW OF LOW-VISCOSITY FLUID — to flush fine abrasive and metal particles from wheel and prevent thermal damage ('burning')", "Grinding uses straight oil only", "Same fluid works equally for all operations"],
+    answer: 1,
+    explanation: "GRINDING FLUIDS: (1) HIGH FLOW RATE — flood application clears abrasive particles from wheel pores, (2) LOW VISCOSITY — flows into tight spaces between wheel and workpiece, (3) PRIMARY FUNCTION IS COOLING — grinding generates intense localized heat causing surface burning/metallurgical changes if not cooled."
+  },
+  {
+    q: "A GOOD CUTTING FLUID must have which qualities?",
+    options: ["High viscosity and dark colour", "GOOD COOLING, GOOD LUBRICATION, CHEMICALLY STABLE, non-toxic, non-corrosive, rust-inhibiting, easy to separate from chips, and low cost", "Only be clear and colourless", "Only prevent rust — cooling is not important"],
+    answer: 1,
+    explanation: "GOOD CUTTING FLUID QUALITIES: (1) GOOD COOLING (high heat capacity), (2) GOOD LUBRICATION (reduces friction), (3) CHEMICAL STABILITY (doesn't decompose rapidly), (4) NON-TOXIC and non-irritating to operators, (5) NON-CORROSIVE to machine and workpiece, (6) RUST INHIBITING, (7) Transparent (operator can see work), (8) ECONOMICAL."
+  },
+  {
+    q: "CUTTING FLUID MAINTENANCE in a machine shop requires:",
+    options: ["Never change it — top up as needed indefinitely", "REGULAR CHECKS of concentration (refractometer), pH, bacteria count, and skimming of tramp oil — replace when contaminated beyond service limits", "Change weekly regardless of condition", "Only adding more water when it evaporates"],
+    answer: 1,
+    explanation: "CUTTING FLUID MAINTENANCE: (1) CONCENTRATION — check with refractometer daily (water evaporates, concentration changes), (2) pH — below 8.5 = bacteria growth (smelly fluid), (3) BACTERIA count — contaminated fluid smells and causes skin problems, (4) TRAMP OIL — skim hydraulic/way oil contamination, (5) Replace when beyond service limits."
+  },
+  {
+    q: "For ALUMINIUM MACHINING, which cutting fluid is preferred?",
+    options: ["Sulfurized cutting oil (used for steel)", "WATER-SOLUBLE OIL or KEROSENE — aluminum is reactive to some additives; sulfur-chlorine EP additives stain aluminum", "Heavy duty EP gear oil", "No fluid needed for aluminium"],
+    answer: 1,
+    explanation: "ALUMINIUM CUTTING FLUID: use SOLUBLE OIL (low sulfur/chlorine content) or KEROSENE for turning. AVOID: high EP (sulfur/chlorine) additives — chemically attack aluminum surface causing black staining. For aluminum grinding: use petroleum-based or water-based fluid free of aggressive additives."
+  },
+  {
+    q: "BIODEGRADABLE cutting fluids are preferred in modern workshops because:",
+    options: ["They are always cheaper than mineral oil fluids", "ENVIRONMENTAL RESPONSIBILITY — easier and cheaper to dispose of, less environmental impact when spilled, worker-friendly (less toxic)", "They always perform better than mineral fluids", "They last longer without maintenance"],
+    answer: 1,
+    explanation: "BIODEGRADABLE CUTTING FLUIDS (vegetable ester-based): break down naturally by microorganisms → less environmental damage when spilled → LOWER DISPOSAL COST. Also: generally LOWER TOXICITY to workers. Trade-off: may have shorter sump life, narrower application range vs mineral oil-based fluids."
+  },
+  {
+    q: "MIST COOLING (minimum quantity lubrication — MQL) uses:",
+    options: ["Flood of coolant at maximum flow", "TINY MIST of oil-air mixture at the cutting point — reduces fluid consumption by 90%+ while maintaining adequate lubrication", "Only compressed air with no oil", "Steam as the cooling medium"],
+    answer: 1,
+    explanation: "MQL/MIST COOLING: highly compressed air + tiny oil quantity → fine mist directed precisely at cutting zone. Uses as little as 50-100 ml/hour vs 20-50 litres/hour for flood cooling. Benefits: less waste, dry chips (easier recycling), less coolant contamination of environment. Used in modern 'near-dry' machining."
+  },
+  {
+    q: "ANTI-OXIDANT additives in lubricating oil prevent:",
+    options: ["Oil from being too thick in cold weather", "OIL OXIDATION — reaction of oil with oxygen at high temperatures → acidic by-products, sludge, varnish deposits on engine surfaces", "Oil from foaming at high speeds", "Oil from conducting electricity"],
+    answer: 1,
+    explanation: "OXIDATION of oil: heat + oxygen → oil molecules break into acidic compounds (aldehydes, carboxylic acids) → corrode metal → sludge and varnish deposits. ANTI-OXIDANTS (phenolic, amine types) interrupt the oxidation chain reaction → extend oil life. Without anti-oxidants, oil degrades rapidly at operating temperatures."
+  },
+  {
+    q: "RUST AND CORROSION INHIBITORS in cutting fluids protect:",
+    options: ["Only the cutting tool from wear", "MACHINE SURFACES and WORKPIECE from rust during and after machining — especially when water-based fluids are used", "The cutting fluid from evaporating", "Workshop walls from humidity"],
+    answer: 1,
+    explanation: "RUST INHIBITORS in cutting fluid: water-based fluids would cause immediate rusting of cast iron machine surfaces and steel workpieces without inhibitors. Inhibitors form a thin protective film on metal surfaces. Check concentration regularly — below spec = RUST on machine beds, slideways, and finished workpieces."
+  },
+  {
+    q: "The VISCOSITY of oil is measured using a:",
+    options: ["Hydrometer (for density)", "VISCOMETER (Ostwald, Saybolt, or Redwood type) — measures time for oil to flow through a standard orifice at a standard temperature", "Refractometer", "Barometer"],
+    answer: 1,
+    explanation: "VISCOMETER: measures oil viscosity by timing flow through a calibrated orifice at standard temperatures (40°C and 100°C for ISO grades). SAYBOLT Universal Viscosity (SUV in seconds), REDWOOD seconds, KINEMATIC viscosity in cSt (centistokes). Refractometer measures cutting fluid concentration. Hydrometer measures density/specific gravity."
+  }  ,
+  {
+    q: "SULPHURIZED cutting oil is most suitable for machining:",
+    options: ["Aluminium (soft non-ferrous)", "FERROUS METALS (steel, cast iron) — sulfur EP additives prevent welding of metal to tool at high cutting pressures", "Copper (causes staining)", "Plastics and rubber"],
+    answer: 1,
+    explanation: "SULPHURIZED OIL: sulfur compounds react at high tool-chip interface temperatures → form iron sulfide (FeS) protective layer on tool → prevents chip welding and built-up edge → better tool life. Used for: STEEL, CAST IRON cutting. AVOID on copper, brass (sulfur stains), and aluminium."
+  }
 ];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
