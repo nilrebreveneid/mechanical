@@ -1249,7 +1249,247 @@ const rawQuestions = [
         options: ["Combustion chamber", "Compressor", "Fuel pump", "Radiator"],
         answer: 1,
         explanation: "कम्प्रेसर रेफ्रिजेरेसन र AC सिस्टमको मुख्य कम्पोनेन्ट हो। (The compressor is a key component in refrigeration and AC systems.)"
-    }
+    },
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UNIT 18 — AIR CONDITIONING: Additional 36 MCQs
+// Append after your 39 supplied MCQs → total 75
+// Syllabus: 18.1 Psychometry · 18.2 Human Comfort ·
+//           18.3 AC System · 18.4 Equipment & Controls ·
+//           18.5 AC Tools · 18.6 Safety Precautions
+// Sources: as-mechanics.pdf · new PSC 2081/3/12 · khanepani.pdf ·
+//          saja_yatayat.pdf · Sewa_sambandi.pdf
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // ── FROM PSC PAPERS — CONFIRMED REPEATS ──────────────────────
+  {
+    q: "Which of the following is NOT a type of refrigerant used in AC systems?",
+    options: ["R12", "R22", "RF10", "R410A"],
+    answer: 2,
+    explanation: "'RF10' is NOT a standard refrigerant. Standard types: R12 (CFC, phased out), R22 (HCFC, being phased out), R410A (HFC, modern), R134a (automotive AC). From new PSC Senior Mechanics paper Q42 — confirmed."
+  },
+  {
+    q: "The component used as a HEATING COIL in an air conditioning system is:",
+    options: ["Evaporator", "Compressor", "Expansion valve", "Condenser"],
+    answer: 3,
+    explanation: "CONDENSER acts as heating coil in HEAT PUMP mode — releases heat absorbed from outdoors into indoor space. In cooling mode: evaporator absorbs indoor heat, condenser rejects it outdoors. From new PSC Senior paper Q41 — confirmed."
+  },
+  {
+    q: "The FOUR MAIN COMPONENTS of a vapor compression refrigeration system in correct order are:",
+    options: ["Evaporator → Compressor → Condenser → Expansion valve", "COMPRESSOR → Condenser → Expansion valve → Evaporator (following refrigerant flow)", "Condenser → Evaporator → Compressor → Expansion valve", "Expansion valve → Condenser → Compressor → Evaporator"],
+    answer: 1,
+    explanation: "REFRIGERANT CYCLE: COMPRESSOR (low → high pressure gas) → CONDENSER (gas → liquid, rejects heat) → EXPANSION VALVE (high → low pressure liquid) → EVAPORATOR (liquid → gas, absorbs heat) → back to compressor. From khanepani.pdf and multiple PSC papers confirmed."
+  },
+  {
+    q: "The COMPRESSOR in a refrigeration system:",
+    options: ["Removes heat from refrigerant", "COMPRESSES low-pressure refrigerant vapour to high pressure AND high temperature — the HEART of the refrigeration system", "Expands refrigerant to lower pressure", "Transfers heat to evaporator"],
+    answer: 1,
+    explanation: "COMPRESSOR: (1) COMPRESSES low-pressure vapour from evaporator to HIGH PRESSURE and HIGH TEMPERATURE, (2) Pumps refrigerant around the circuit. Called the 'heart' of refrigeration system. Types: reciprocating, rotary, scroll, centrifugal. Driven by electric motor or engine."
+  },
+  {
+    q: "The CONDENSER in a refrigeration system:",
+    options: ["Absorbs heat from the room to be cooled", "REJECTS HEAT from refrigerant to outdoor atmosphere — changes refrigerant from hot vapour to liquid", "Reduces refrigerant pressure", "Removes moisture from refrigerant"],
+    answer: 1,
+    explanation: "CONDENSER: receives hot high-pressure vapour from compressor → cooling air (or water) flows over condenser coils → REMOVES HEAT from refrigerant → refrigerant CONDENSES to liquid. Heat rejected to outdoor environment = 'why outdoor AC unit feels hot.'"
+  },
+  {
+    q: "The EVAPORATOR in an AC system:",
+    options: ["Rejects heat to the environment", "ABSORBS HEAT from the room air — refrigerant evaporates (liquid → vapour) by absorbing indoor heat — cooling the room", "Compresses the refrigerant", "Controls refrigerant flow rate"],
+    answer: 1,
+    explanation: "EVAPORATOR: low-pressure cold refrigerant liquid enters → ABSORBS heat from warm room air flowing over coils → liquid EVAPORATES to vapour → room air is cooled and dehumidified. The evaporator is the INDOOR unit's heat exchanger — where actual cooling happens."
+  },
+  {
+    q: "The EXPANSION VALVE (or capillary tube) in a refrigeration system:",
+    options: ["Increases refrigerant pressure for circulation", "REDUCES REFRIGERANT PRESSURE rapidly — converts high-pressure warm liquid to low-pressure cold mixture, enabling evaporation", "Compresses refrigerant from low to high pressure", "Removes moisture and contaminants"],
+    answer: 1,
+    explanation: "EXPANSION DEVICE: (1) REDUCES PRESSURE from high (condenser) to low (evaporator), (2) TEMPERATURE drops sharply (flash cooling), (3) Some liquid FLASHES to vapour. Result: cold low-pressure mixture enters evaporator. Types: thermostatic expansion valve (TXV) — most precise; capillary tube — simple, fixed."
+  },
+
+  // ── 18.1 PSYCHOMETRY ─────────────────────────────────────────
+  {
+    q: "DRY BULB TEMPERATURE (DBT) is measured by:",
+    options: ["A thermometer with wet wick around bulb", "AN ORDINARY THERMOMETER exposed to air — measures actual air temperature without moisture effect", "A hygrometer", "A sling psychrometer only"],
+    answer: 1,
+    explanation: "DBT (Dry Bulb Temperature): temperature measured by ordinary thermometer shielded from radiation. Represents ACTUAL AIR TEMPERATURE. Compare with WBT (wet bulb — wet wick allows evaporation → lower reading due to evaporative cooling). DBT - WBT = depression of wet bulb = indicator of humidity."
+  },
+  {
+    q: "RELATIVE HUMIDITY (RH) is defined as:",
+    options: ["Total moisture content in kg/kg of dry air", "RATIO of actual water vapour pressure to saturated vapour pressure at same temperature × 100%", "Temperature at which air becomes saturated", "Mass of water vapour per cubic metre of air"],
+    answer: 1,
+    explanation: "RELATIVE HUMIDITY: RH% = (actual vapour pressure / saturation pressure at same temp) × 100. RH 100% = air fully saturated. RH 0% = completely dry. HUMAN COMFORT: 40-60% RH. HIGH RH (>70%) → sweating ineffective (sweat doesn't evaporate) → feels hot and sticky."
+  },
+  {
+    q: "DEW POINT TEMPERATURE is the temperature at which:",
+    options: ["Air reaches maximum temperature", "AIR BECOMES SATURATED (RH = 100%) when cooled at constant pressure — moisture begins to condense", "Refrigerant begins to evaporate", "Human comfort is maximum"],
+    answer: 1,
+    explanation: "DEW POINT: if air is cooled at constant pressure, when it reaches the dew point → RH reaches 100% → moisture CONDENSES as liquid (dew, fog, or condensation on cold surfaces). AC systems cool air below dew point → DEHUMIDIFICATION occurs. Cold surfaces below dew point collect condensation."
+  },
+  {
+    q: "SPECIFIC HUMIDITY (humidity ratio) is expressed as:",
+    options: ["% of water vapour in total air volume", "KG OF WATER VAPOUR per kg of dry air — absolute measure not affected by temperature", "°C of dew point temperature", "Relative percentage of moisture"],
+    answer: 1,
+    explanation: "SPECIFIC HUMIDITY (W): mass of water vapour per unit mass of dry air (kg/kg). Unlike relative humidity, specific humidity does NOT change as temperature changes (unless moisture is added/removed). More useful for AC calculations. At 100% RH, 25°C: W ≈ 0.020 kg/kg dry air."
+  },
+  {
+    q: "The PSYCHROMETRIC CHART displays which properties of moist air?",
+    options: ["Only temperature and pressure", "DBT, WBT, RH, dew point, specific humidity, enthalpy, specific volume — ALL air properties on one chart", "Only temperature and humidity", "Only enthalpy and density"],
+    answer: 1,
+    explanation: "PSYCHROMETRIC CHART: graphical tool showing all moist air properties simultaneously. X-axis: DBT. Y-axis: specific humidity. Lines: WBT, RH, dew point, enthalpy, specific volume. ANY TWO known properties → locate point on chart → read ALL other properties. Essential for AC system design and analysis."
+  },
+
+  // ── 18.2 HUMAN COMFORT ───────────────────────────────────────
+  {
+    q: "The COMFORTABLE TEMPERATURE and HUMIDITY condition for humans is approximately:",
+    options: ["35°C and 80% RH", "20-26°C DRY BULB and 40-60% RELATIVE HUMIDITY — the human comfort zone", "15°C and 20% RH", "30°C and 100% RH"],
+    answer: 1,
+    explanation: "HUMAN COMFORT ZONE: temperature 20-26°C DBT (summer 24-26°C, winter 20-22°C), humidity 40-60% RH. Above 60% RH → stuffy, sweat ineffective. Below 30% RH → dry skin, irritated mucous membranes. AC aims to maintain conditions within this zone."
+  },
+  {
+    q: "Human body heat loss occurs through:",
+    options: ["Only sweating", "RADIATION, CONVECTION, CONDUCTION, and EVAPORATION (sweating) — all four modes simultaneously", "Only radiation", "Only convection"],
+    answer: 1,
+    explanation: "BODY HEAT LOSS MODES: (1) RADIATION — infrared to cooler surroundings (about 45%), (2) CONVECTION — air flowing over skin (about 30%), (3) EVAPORATION — sweat evaporation (about 25%), (4) CONDUCTION — contact with cool surfaces (minimal). AC controls all four by adjusting air temperature, humidity, and airflow."
+  },
+
+  // ── 18.3 AC SYSTEM ───────────────────────────────────────────
+  {
+    q: "The COEFFICIENT OF PERFORMANCE (COP) of a refrigeration system is defined as:",
+    options: ["Work input / Heat rejected at condenser", "REFRIGERATING EFFECT / WORK INPUT — higher COP = more efficient system", "Heat rejected / Heat absorbed at evaporator", "Evaporator capacity / Condenser capacity"],
+    answer: 1,
+    explanation: "COP (refrigeration) = Q_evaporator / W_compressor = refrigerating effect / work input. Good AC system: COP 3-5 (for every 1 kW electrical input → 3-5 kW cooling). Higher COP = more efficient. Heat pump COP = COP_refrigeration + 1 (includes rejected heat)."
+  },
+  {
+    q: "1 TON OF REFRIGERATION equals:",
+    options: ["1,000 watts of cooling", "3,517 WATTS (3.517 kW) — derived from heat required to melt 1 ton (2000 lb US) of ice in 24 hours", "1 kW of cooling", "12,000 BTU per year"],
+    answer: 1,
+    explanation: "1 TON OF REFRIGERATION: cooling capacity to melt 2000 lb (US) = 907 kg of ice in 24 hours. Calculation: 907 kg × 335 kJ/kg ÷ 86,400 s = 3.517 kW. ALSO: 12,000 BTU/hour or 200 BTU/min. Common AC capacity unit. 1.5 ton AC = 5.275 kW cooling capacity."
+  },
+  {
+    q: "OZONE DEPLETION POTENTIAL (ODP) — which refrigerant has ODP = 0 (no ozone damage)?",
+    options: ["R12 (ODP = 1.0 — high depletion)", "R22 (ODP = 0.05 — moderate)", "R11 (ODP = 1.0)", "R134a (ODP = 0) and R410A (ODP = 0) — HFCs have zero ODP"],
+    answer: 3,
+    explanation: "ODP: R12 and R11 (CFCs) = 1.0 (baseline). R22 (HCFC) = 0.05. HFCs like R134a, R410A, R32 = ZERO ODP (no chlorine, cannot destroy ozone). Montreal Protocol: eliminated CFCs by 2000, phasing out HCFCs. HFCs have zero ODP but HIGH GWP → now being replaced by HFOs."
+  },
+  {
+    q: "GLOBAL WARMING POTENTIAL (GWP) concerns which refrigerants?",
+    options: ["Only CFC refrigerants", "HFC REFRIGERANTS (R134a, R410A) — zero ODP but HIGH GWP (1430 and 2088 respectively) — being replaced by low-GWP alternatives", "Only natural refrigerants", "Ammonia and CO2 only"],
+    answer: 1,
+    explanation: "GWP: measure of greenhouse gas effect relative to CO2 (GWP=1). R410A GWP=2088 (one kg = 2088 kg CO2 effect). R134a GWP=1430. Kigali Amendment to Montreal Protocol: phasing down HFCs. REPLACEMENT: HFOs (R1234yf, GWP<1), CO2 (R744), ammonia (R717), propane (R290) — natural low-GWP refrigerants."
+  },
+  {
+    q: "REFRIGERANT HANDLING requires which safety precaution?",
+    options: ["Refrigerants are harmless — no special precautions needed", "PROTECTIVE GOGGLES AND GLOVES — refrigerant liquid at atmospheric pressure is extremely cold (-26°C for R410A) causing cryogenic burns; refrigerant gas can displace oxygen causing suffocation", "Only fire extinguisher nearby", "Only in ventilated area but no PPE needed"],
+    answer: 1,
+    explanation: "REFRIGERANT SAFETY: (1) CRYOGENIC BURNS — liquid refrigerant at atmospheric pressure is extremely cold (R410A liquid = -51°C) → cold burns to skin and eyes on contact, (2) OXYGEN DISPLACEMENT — refrigerant gas is heavier than air, accumulates in low areas → asphyxiation risk in confined spaces, (3) FLAMMABILITY — R32, propane, HFOs are mildly or highly flammable."
+  },
+
+  // ── 18.4 AC EQUIPMENT AND CONTROLS ──────────────────────────
+  {
+    q: "The FILTER-DRIER in a refrigeration system removes:",
+    options: ["Compressor oil only", "MOISTURE AND SOLID PARTICLES — moisture causes copper plating, freezing at expansion valve, acid formation; particles damage valves and compressor", "Only solid particles — refrigerants are dry", "Only oil contamination"],
+    answer: 1,
+    explanation: "FILTER-DRIER: (1) DESICCANT (molecular sieve or silica gel) absorbs moisture → prevents: expansion valve freeze-up, acid formation, copper plating in compressor, (2) FILTER MESH removes solid particles → protects expansion valve and compressor. Must be replaced whenever system is opened or if moisture contamination is suspected."
+  },
+  {
+    q: "RECEIVER (liquid receiver) in a refrigeration system is located:",
+    options: ["After the evaporator", "AFTER THE CONDENSER — stores liquid refrigerant, ensuring steady liquid supply to expansion valve regardless of load changes", "Before the compressor", "Between evaporator and compressor"],
+    answer: 1,
+    explanation: "RECEIVER: storage vessel after condenser. Functions: (1) STORES surplus liquid refrigerant during low load periods, (2) Ensures STEADY LIQUID SUPPLY to expansion valve at all loads, (3) Allows the system to be PUMPED DOWN (run compressor until low-pressure side is empty — for servicing). Required in commercial/large systems."
+  },
+  {
+    q: "HIGH PRESSURE SWITCH in an AC system cuts out the compressor when:",
+    options: ["Low pressure is detected", "DISCHARGE PRESSURE EXCEEDS SAFE LIMIT — prevents compressor damage from: blocked condenser, overcharge, non-condensables (air) in system", "Evaporator temperature drops too low", "Thermostat reaches set point normally"],
+    answer: 1,
+    explanation: "HIGH PRESSURE CUTOUT: SAFETY SWITCH — opens compressor circuit when discharge pressure exceeds set value. CAUSES of high pressure: BLOCKED CONDENSER (fins blocked, fan failed), OVERCHARGE of refrigerant, AIR IN SYSTEM (non-condensable gases raise head pressure), AMBIENT TEMPERATURE too high."
+  },
+  {
+    q: "LOW PRESSURE SWITCH in an AC system cuts out when:",
+    options: ["High side pressure is too high", "SUCTION PRESSURE DROPS TOO LOW — prevents: compressor running with insufficient refrigerant (overheating), evaporator freezing over, compressor motor burn-out from low voltage/current", "Normal refrigerant level", "Thermostat reaches setpoint"],
+    answer: 1,
+    explanation: "LOW PRESSURE CUTOUT: SAFETY SWITCH — opens compressor circuit when suction pressure drops below set value. CAUSES: LOW REFRIGERANT CHARGE (leak), BLOCKED SUCTION FILTER, EXPANSION VALVE STUCK CLOSED, EVAPORATOR ICED OVER. Prevents compressor running without refrigerant (compressor uses refrigerant for cooling its motor)."
+  },
+  {
+    q: "The THERMOSTAT in a room AC unit controls:",
+    options: ["Compressor speed directly", "ROOM TEMPERATURE by starting and stopping the compressor when setpoint is reached — on-off control in simple systems", "Refrigerant flow rate continuously", "Fan speed only"],
+    answer: 1,
+    explanation: "THERMOSTAT: senses room temperature → compares to setpoint → if room too warm: STARTS COMPRESSOR (cooling cycle) → when room reaches setpoint: STOPS COMPRESSOR. Simple on-off control. INVERTER AC: compressor runs continuously at variable speed for more precise temperature control and better efficiency."
+  },
+
+  // ── 18.5 AC TOOLS ─────────────────────────────────────────────
+  {
+    q: "A MANIFOLD GAUGE SET is used in AC work to:",
+    options: ["Measure refrigerant temperature only", "MEASURE BOTH HIGH AND LOW SIDE PRESSURES simultaneously — essential for: diagnosis, charging, evacuating, and recovering refrigerant", "Only add refrigerant to system", "Only measure airflow from vents"],
+    answer: 1,
+    explanation: "MANIFOLD GAUGE SET: (1) BLUE GAUGE — low pressure side (suction/evaporator), (2) RED GAUGE — high pressure side (discharge/condenser), (3) YELLOW hose — connects to refrigerant cylinder or vacuum pump. Used for: SYSTEM DIAGNOSIS (pressures indicate charge level, blockages, non-condensables), CHARGING, EVACUATION, RECOVERY."
+  },
+  {
+    q: "A VACUUM PUMP in AC service is used to:",
+    options: ["Add refrigerant to the system", "EVACUATE AIR AND MOISTURE from the system before charging — creates deep vacuum (below 500 microns) to boil off moisture at low temperature", "Test compressor efficiency", "Measure refrigerant charge level"],
+    answer: 1,
+    explanation: "VACUUM PUMP: mandatory BEFORE charging any AC system that has been opened. Deep vacuum (<500 microns/0.5 Torr) causes moisture to BOIL OFF at room temperature → removed by pump. Air and moisture in system causes: NON-CONDENSABLE GAS (raises head pressure), ACID FORMATION, COPPER PLATING, EXPANSION VALVE FREEZE-UP."
+  },
+  {
+    q: "REFRIGERANT RECOVERY MACHINE is required because:",
+    options: ["Refrigerant can be recycled endlessly without recovery", "ENVIRONMENTAL LAW — releasing refrigerant to atmosphere is illegal; recovery machine captures refrigerant for recycling or proper disposal", "Only for commercial systems — domestic AC can vent freely", "Recovery is optional if small quantity"],
+    answer: 1,
+    explanation: "REFRIGERANT RECOVERY: releasing HFC refrigerants is ILLEGAL (environmental damage, global warming). Recovery machine: compresses refrigerant from system into a certified recovery cylinder. Recovered refrigerant can be: RECLAIMED (purified and recharged), RECYCLED (basic cleanup for reuse), or DESTROYED. Mandatory for all certified AC technicians."
+  },
+  {
+    q: "LEAK DETECTION in an AC system can be done using:",
+    options: ["Only visual inspection for oil stains", "ELECTRONIC LEAK DETECTOR, UV DYE + UV LAMP, soap bubbles, or nitrogen pressure test — each method suits different situations", "Only by checking pressure gauges", "Only by smelling for refrigerant"],
+    answer: 1,
+    explanation: "LEAK DETECTION METHODS: (1) ELECTRONIC DETECTOR — most sensitive, detects HFCs electronically, (2) UV DYE — add fluorescent dye to system, inspect with UV lamp (green glow at leak), (3) SOAP BUBBLES — simple, for large leaks, (4) NITROGEN PRESSURE TEST — pressurize with dry nitrogen, check for pressure drop (not refrigerant). Do NOT use oxygen — explosion risk."
+  },
+  {
+    q: "The REFRIGERANT CHARGING PROCEDURE requires:",
+    options: ["Connect cylinder and open valve fully and quickly", "EVACUATE system first, charge LIQUID refrigerant through high side (or vapour through low side with engine running), weigh charge amount for accuracy", "Add refrigerant until gauge reads maximum", "Only check suction pressure — no need to evacuate"],
+    answer: 1,
+    explanation: "CHARGING PROCEDURE: (1) EVACUATE to 500 microns (vacuum), (2) CLOSE vacuum pump valve, (3) Check vacuum holds (no leaks), (4) Connect refrigerant cylinder, (5) CHARGE by weight (most accurate) — manufacturer's specification, (6) LIQUID through high side (engine off) or VAPOUR through low side (engine running at low speed for automotive AC)."
+  },
+
+  // ── 18.6 SAFETY PRECAUTIONS ───────────────────────────────────
+  {
+    q: "When working on AC systems, OXYGEN must NEVER be used for:",
+    options: ["Measuring system pressure", "PRESSURIZING OR LEAK TESTING — oxygen + refrigerant oil = EXPLOSIVE MIXTURE — risk of violent explosion", "Evacuating the system", "Charging the system"],
+    answer: 1,
+    explanation: "OXYGEN + REFRIGERANT OIL = EXPLOSION HAZARD. Oxygen reacts violently with compressor lubricating oil → can cause catastrophic explosion. ALWAYS use DRY NITROGEN for: pressure testing, purging, leak detection with pressure. Never use compressed air (contains moisture and oxygen)."
+  },
+  {
+    q: "REFRIGERANT CYLINDERS must be stored:",
+    options: ["Horizontally in sunlight for easy access", "UPRIGHT, IN COOL SHADED AREA, away from heat sources — temperature >50°C can raise pressure to dangerous levels causing relief valve to open or cylinder to rupture", "Any position — cylinders are always safe", "Near the boiler room for warmth in winter"],
+    answer: 1,
+    explanation: "CYLINDER STORAGE: (1) UPRIGHT position (some cylinders: dip tube extracts liquid — wrong orientation causes liquid to enter system as vapour or vice versa), (2) AWAY FROM HEAT — cylinders have pressure relief valves but heat still dangerous, (3) CHAINED/SECURED to prevent falling, (4) COOL AREA — refrigerant pressure is temperature-dependent."
+  },
+  {
+    q: "रेफ्रिजरेसन प्रणालीमा काम गर्दा कुन सुरक्षा सावधानी अपनाउनु पर्छ? (What safety precautions must be taken when working on refrigeration systems?)",
+    options: ["कुनै सुरक्षा आवश्यक छैन (No safety needed)", "सुरक्षा चश्मा, पन्जा लगाउनु, र हावादार ठाउँमा काम गर्नु (Wear safety goggles, gloves, and work in ventilated area)", "केवल हेल्मेट लगाउनु (Only wear helmet)", "केवल बिजुली काट्नु (Only disconnect electricity)"],
+    answer: 1,
+    explanation: "Refrigeration safety: (1) GOGGLES — cold burn from liquid refrigerant to eyes, (2) INSULATED GLOVES — cryogenic burns, (3) VENTILATION — refrigerant displaces oxygen → suffocation risk, (4) NEVER use oxygen for testing, (5) Recover refrigerant — do not vent. Chemical-resistant gloves for ammonia systems."
+  },
+  {
+    q: "The MAINTENANCE of an AC system includes:",
+    options: ["Only changing refrigerant annually", "FILTER CLEANING (monthly), COIL CLEANING (annually), refrigerant level check, electrical connection inspection, belt and pulley check, condensate drain cleaning", "Only external cleaning of unit", "Only checking thermostat setting"],
+    answer: 1,
+    explanation: "AC MAINTENANCE SCHEDULE: MONTHLY: clean/replace air filter (blocked filter → reduced airflow → ice on evaporator). ANNUALLY: clean evaporator and condenser coils (dust insulates → reduced efficiency), check refrigerant charge, clean condensate drain (algae blockage → water overflow damage), check electrical connections and capacitors."
+  }  ,
+  {
+    q: "INVERTER AC vs NON-INVERTER AC — which is more energy efficient and why?",
+    options: ["Non-inverter is more efficient — simpler technology", "INVERTER AC is more efficient — variable speed compressor runs continuously at right speed vs non-inverter's constant on-off cycling (30-50% energy saving)", "Both are equally efficient", "Inverter is only more efficient in summer"],
+    answer: 1,
+    explanation: "INVERTER AC: variable frequency drive changes compressor motor speed to match exact cooling demand. ADVANTAGES: (1) 30-50% ENERGY SAVING vs non-inverter, (2) MORE PRECISE TEMPERATURE CONTROL (±0.5°C vs ±2°C), (3) QUIETER operation (no sudden start/stop), (4) LONGER COMPRESSOR LIFE (less mechanical stress). Higher initial cost but lower running cost."
+  },
+  {
+    q: "The SEASONAL ENERGY EFFICIENCY RATIO (SEER) or EER rating of an AC unit measures:",
+    options: ["Cost of electricity per month", "ENERGY EFFICIENCY — cooling output (BTU) per watt-hour of electrical input — higher SEER = more efficient", "Maximum cooling capacity in tonnes", "Refrigerant type used"],
+    answer: 1,
+    explanation: "SEER/EER: measure of AC energy efficiency. EER = BTU/hour ÷ Watts (at single condition). SEER = seasonal average EER (across range of temperatures). Higher rating = more efficient. SEER 14 minimum is common regulatory requirement; SEER 20+ = high efficiency. Look for BEE star ratings in Nepal/India."
+  },
+  {
+    q: "ICE FORMATION on the evaporator coil of an AC is caused by:",
+    options: ["Correct system operation in cold weather", "LOW REFRIGERANT CHARGE (low suction pressure drops below 0°C), BLOCKED AIR FILTER (insufficient airflow over coil), or EXPANSION VALVE STUCK OPEN (too much refrigerant, low evaporator temperature)", "Normal operation requiring no action", "High ambient outdoor temperature"],
+    answer: 1,
+    explanation: "EVAPORATOR ICING CAUSES: (1) LOW REFRIGERANT — suction pressure drops → evaporator temperature drops below 0°C → moisture in air freezes on coil, (2) BLOCKED FILTER — insufficient warm air over coil → coil temperature drops below 0°C, (3) LOW AIRFLOW (fan fault). ACTION: defrost the unit, fix the root cause before restarting."
+  }
 ];
 const questions = rawQuestions.map((question) => {
     const options = Array.isArray(question.options) ? question.options.map((option) => String(option)) : [];
