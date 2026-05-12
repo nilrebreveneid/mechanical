@@ -1,0 +1,3263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Mock test 5 Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, 2%) scale(1.05); }
+            66% { transform: translate(-1%, 1%) scale(0.95); }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4), transparent 70%);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header-glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(99, 102, 241, 0.6); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        /* Timer & Progress */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timer::before {
+            content: '⏱';
+            font-size: 1rem;
+            animation: tick 1s ease-in-out infinite;
+        }
+
+        @keyframes tick {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Question Cards */
+        .question-wrapper {
+            perspective: 1000px;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotateX(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+
+        .option-indicator {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+        }
+
+        .option-btn:hover:not(:disabled) .option-indicator {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .option-btn.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.correct .option-indicator {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            animation: shake 0.5s ease;
+        }
+
+        .option-btn.wrong .option-indicator {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        /* Explanation */
+        .explanation {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        .explanation::before {
+            content: '💡';
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-skip {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            flex: 0 0 auto;
+        }
+
+        .btn-skip:hover:not(:disabled) {
+            background: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Score Container */
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .score-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Results Section */
+        .results-panel {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            animation: cardEnter 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .results-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-correct {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-wrong {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--error);
+        }
+
+        .status-skipped {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+        }
+
+        .status-not-attempted {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .explanation-cell {
+            max-width: 300px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Streak indicator */
+        .streak-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .streak-badge.show {
+            transform: translateX(0);
+        }
+
+        .streak-badge::before {
+            content: '🔥';
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+
+            .header-glass {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .question-text {
+                font-size: 1rem;
+            }
+
+            .option-btn {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .action-bar {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .results-panel {
+                padding: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2.5rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.75rem;
+            }
+
+            .explanation-cell {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .question-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .option-indicator {
+                width: 20px;
+                height: 20px;
+            }
+
+            .streak-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Dark mode support (system preference) */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-dark: #f8fafc;
+                --bg-card: rgba(255, 255, 255, 0.8);
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border: rgba(0, 0, 0, 0.1);
+            }
+
+            body {
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%);
+            }
+
+            .option-btn {
+                background: rgba(255, 255, 255, 0.6);
+            }
+
+            .option-btn:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .option-btn:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Loading state */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">⚡</div>
+                    <div>
+                        <h1>Mock test 5</h1>
+                        <div class="subtitle">Mock Test</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="current-score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-answered">0</span>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="questions-total">0</span>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="accuracy">0%</span>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progress-text">0/0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Question</th>
+                                    <th>Your Answer</th>
+                                    <th>Correct</th>
+                                    <th>Status</th>
+                                    <th>Explanation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" id="restart-btn">
+                        <span>↻</span> Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+
+    <script>
+const quizConfig = {
+  "quizId": "mock5",
+  "quizTitle": "Mock test 5 Quiz",
+  "displayTitle": "Mock test 5",
+  "topicName": "Mock Test",
+  "questionsPerPage": 5
+};
+const rawQuestions = [
+
+// ══════════════════════════════════════════════════════════════════════
+// SOURCE: Key(A) - Rajapatr Anankित द्वितीय श्रेणी, मेकानिक्स (PSC Paper)
+// GENERAL KNOWLEDGE & PUBLIC ADMINISTRATION (Q1–Q20)
+// ══════════════════════════════════════════════════════════════════════
+
+{
+  q: "नेपालको हिमाली क्षेत्रमा समुद्री सतहबाट ६००० मिटरभन्दा बढी उचाईका कतिवटा चुचुरा रहेका छन्?",
+  options: ["१३११", "३१११", "११३१", "१११३"],
+  answer: 0,
+  explanation: "नेपालको हिमाली क्षेत्रमा समुद्री सतहबाट ६००० मिटरभन्दा बढी उचाईका १३११ चुचुरा रहेका छन्।"
+},
+{
+  q: "नेपालमा कहिलेदेखि श्री ५ को सरकारको सट्टा नेपाल सरकार लेख्न शुरू गरियो?",
+  options: ["२०६३ वैशाख ११", "२०६३ जेठ ४", "२०६३ असार १५", "२०६३ साउन २५"],
+  answer: 1,
+  explanation: "२०६३ जेठ ४ देखि श्री ५ को सरकारको सट्टा नेपाल सरकार लेख्न शुरू गरियो।"
+},
+{
+  q: "सोहौं आवधिक योजना (२०८१/०८२–२०८५/०८६) को दीर्घकालीन सोंच देहायको मध्ये कुन हो?",
+  options: ["समृद्ध नेपाल, सुखी नेपाली", "सुखी नेपाली, समृद्ध राष्ट्र", "विकास, सुशासन र समृद्धि", "सुशासन, सामाजिक न्याय र समृद्धि"],
+  answer: 1,
+  explanation: "सोहौं आवधिक योजनाको दीर्घकालीन सोंच 'सुखी नेपाली, समृद्ध राष्ट्र' हो।"
+},
+{
+  q: "अन्नपूर्ण संरक्षण क्षेत्रलाई संरक्षण क्षेत्रका रूपमा घोषणा गरी राजपत्रमा कहिले प्रकाशित गरिएको हो?",
+  options: ["२०४९।५।१४", "२०५०।१।१५", "२०४९।१४।१५", "२०५०।५।१४"],
+  answer: 0,
+  explanation: "अन्नपूर्ण संरक्षण क्षेत्रलाई संरक्षण क्षेत्रका रूपमा घोषणा गरी राजपत्रमा २०४९।५।१४ मा प्रकाशित गरिएको हो।"
+},
+{
+  q: "AI को पूर्णरूप के हो?",
+  options: ["Artificially Intelligent", "Artificial Intelligence", "Advance Intelligence", "Artificially Intelligence"],
+  answer: 1,
+  explanation: "AI को पूर्णरूप Artificial Intelligence हो।"
+},
+{
+  q: "Riboflavin ले कुन Vitamin लाई जनाउँछ?",
+  options: ["Vitamin B1", "Vitamin B2", "Vitamin B6", "Vitamin B12"],
+  answer: 1,
+  explanation: "Riboflavin ले Vitamin B2 लाई जनाउँछ।"
+},
+{
+  q: "नेपालको संविधानमा 'उपभोक्ताको हक' कुन धारामा रहेको छ?",
+  options: ["२४", "३०", "३४", "४४"],
+  answer: 3,
+  explanation: "नेपालको संविधानमा 'उपभोक्ताको हक' धारा ४४ मा रहेको छ।"
+},
+{
+  q: "संयुक्त राष्ट्र संघ वातावरण कार्यक्रम (United Nations Environment Programme) को मुख्यालय कहाँ रहेको छ?",
+  options: ["न्यूयोर्क, संयुक्त राज्य अमेरिका", "पेरिस, फ्रान्स", "नैरोबी, केन्या", "रोम, ईटाली"],
+  answer: 2,
+  explanation: "UNEP को मुख्यालय नैरोबी, केन्यामा रहेको छ।"
+},
+{
+  q: "तलका मध्ये कुन क्षेत्रीय सहयोग संगठनमा एउटै मुद्रा सबैको साझा मुद्राको रूपमा प्रचलनमा छ?",
+  options: ["युरोपियन युनियन (EU)", "दक्षिण पूर्वी एशियाली राष्ट्रहरूको संगठन (ASEAN)", "दक्षिण एशियाली क्षेत्रीय सहयोग संगठन (SAARC)", "BIMSTEC"],
+  answer: 0,
+  explanation: "युरोपियन युनियन (EU) मा एउटै मुद्रा Euro सबैको साझा मुद्राको रूपमा प्रचलनमा छ।"
+},
+{
+  q: "हालै नेपालले सहयोगको सम्झौता गरेको High Impact Community Development Project (HICDP) कुन देशको सहयोगमा सञ्चालन हुने परियोजना हो?",
+  options: ["भारत", "चीन", "फ्रान्स", "संयुक्त राज्य अमेरिका"],
+  answer: 3,
+  explanation: "HICDP संयुक्त राज्य अमेरिकाको सहयोगमा सञ्चालन हुने परियोजना हो।"
+},
+{
+  q: "कार्यालय व्यवस्थापनका विशेषता/हरू कुन हो/हुन्?",
+  options: ["निश्चित लक्ष्य", "कर्मचारी व्यवस्थापन", "व्यवस्थापकीय कार्य", "माथिका सबै"],
+  answer: 3,
+  explanation: "कार्यालय व्यवस्थापनका विशेषताहरूमा निश्चित लक्ष्य, कर्मचारी व्यवस्थापन र व्यवस्थापकीय कार्य सबै पर्दछन्।"
+},
+{
+  q: "निजामती सेवाको पदपूर्ति गर्ने सन्दर्भमा राजपत्र अनंकित द्वितीय श्रेणीको पदमा कति प्रतिशत पद खुलावाट पदपूर्ति गर्ने व्यवस्था रहेको छ?",
+  options: ["२५%", "५०%", "७०%", "१००%"],
+  answer: 2,
+  explanation: "राजपत्र अनंकित द्वितीय श्रेणीको पदमा ७०% पद खुलावाट पदपूर्ति गर्ने व्यवस्था छ।"
+},
+{
+  q: "कर्मचारी प्रशासन सम्बन्धी केन्द्रीय निकाय भन्नाले कुन निकायलाई जनाउँछ?",
+  options: ["प्रधानमन्त्री तथा मन्त्रिपरिषदको कार्यालय", "संघीय मामिला तथा सामान्य प्रशासन मन्त्रालय", "गृह मन्त्रालय", "निजामती किताबखाना"],
+  answer: 1,
+  explanation: "कर्मचारी प्रशासन सम्बन्धी केन्द्रीय निकाय संघीय मामिला तथा सामान्य प्रशासन मन्त्रालय हो।"
+},
+{
+  q: "संवैधानिक निकायको पदाधिकारीको लागि कति वर्ष उमेर पूरा भएको हुनुपर्ने व्यवस्था छ?",
+  options: ["१८", "२१", "३५", "४५"],
+  answer: 2,
+  explanation: "संवैधानिक निकायको पदाधिकारीको लागि ३५ वर्ष उमेर पूरा भएको हुनुपर्ने व्यवस्था छ।"
+},
+{
+  q: "सर्वप्रथम कार्यक्रम बजेटको शुरूवात कुन देशबाट भएको हो?",
+  options: ["अमेरिका", "बेलायत", "फ्रान्स", "भारत"],
+  answer: 0,
+  explanation: "सर्वप्रथम कार्यक्रम बजेटको शुरूवात अमेरिकाबाट भएको हो।"
+},
+{
+  q: "मानव अधिकारको विश्वव्यापी घोषणा (Universal Declaration of Human Rights) मा कति धारा छन्?",
+  options: ["१५", "२०", "२५", "३०"],
+  answer: 3,
+  explanation: "मानव अधिकारको विश्वव्यापी घोषणामा ३० धारा छन्।"
+},
+{
+  q: "सूचनाको हकभित्र तलका मध्ये कुन पर्दैन?",
+  options: [
+    "सार्वजनिक महत्त्वको सूचना माग्ने र पाउने अधिकार",
+    "सार्वजनिक निकायमा रहेको लिखतको अध्ययन र अवलोकन गर्ने",
+    "सार्वजनिक महत्त्वको निर्माण कार्य भइरहेको स्थलको अवलोकन गर्ने",
+    "अनुसन्धानको क्रममा रहेको विषयको कागजात माग गर्ने"
+  ],
+  answer: 3,
+  explanation: "अनुसन्धानको क्रममा रहेको विषयको कागजात माग गर्ने सूचनाको हकभित्र पर्दैन।"
+},
+{
+  q: "सुशासन (व्यवस्थापन तथा सञ्चालन) ऐन बमोजिम नागरिक बडापत्रमा तलका मध्ये सबैभन्दा माथिल्लो क्रममा कुन रहन्छ?",
+  options: [
+    "सेवा प्राप्त गर्न कुनै दस्तुर तथा अन्य रकम लाग्ने भए सोको विवरण",
+    "सेवा प्रदान गर्ने पदाधिकारी र निजको कार्यकक्षको विवरण",
+    "सेवा प्राप्त गर्न लाग्ने समयावधि",
+    "सेवाग्राहीले सेवा प्राप्त गर्न पूरा गर्नुपर्ने कार्यविधि"
+  ],
+  answer: 3,
+  explanation: "नागरिक बडापत्रमा सबैभन्दा माथिल्लो क्रममा 'सेवाग्राहीले सेवा प्राप्त गर्न पूरा गर्नुपर्ने कार्यविधि' रहन्छ।"
+},
+{
+  q: "उत्प्रेरणाको Existence, Relatedness, Growth (ERG) सिद्धान्तका प्रतिपादक को हुन्?",
+  options: ["Frederick Herzberg", "David McClelland", "McGregor", "Clayton Alderfer"],
+  answer: 3,
+  explanation: "ERG सिद्धान्तका प्रतिपादक Clayton Alderfer हुन्।"
+},
+{
+  q: "नेपालको संविधानको धारा ४८ मा उल्लिखित नागरिकको पहिलो कर्तव्य तलका मध्ये कुन हो?",
+  options: [
+    "सार्वजनिक सम्पत्तिको सुरक्षा र संरक्षण गर्नु",
+    "संविधान र कानूनको पालना गर्नु",
+    "राष्ट्रप्रति निष्ठावान हुँदै नेपालको राष्ट्रियता, सार्वभौमसत्ता र अखण्डताको रक्षा गर्नु",
+    "राज्यले चाहेको बखत अनिवार्य सेवा गर्नु"
+  ],
+  answer: 2,
+  explanation: "नेपालको संविधानको धारा ४८ अनुसार पहिलो कर्तव्य 'राष्ट्रप्रति निष्ठावान हुँदै नेपालको राष्ट्रियता, सार्वभौमसत्ता र अखण्डताको रक्षा गर्नु' हो।"
+},
+
+// ══════════════════════════════════════════════════════════════════════
+// SOURCE: Key(A) - SERVICE RELATED TECHNICAL KNOWLEDGE (Q21–Q50)
+// ══════════════════════════════════════════════════════════════════════
+
+{
+  q: "A ring gauge is used to",
+  options: [
+    "check the diameter of shafts or studs",
+    "test the accuracy of holes",
+    "check the clearance between two mating surfaces",
+    "all of the above"
+  ],
+  answer: 0,
+  explanation: "A ring gauge is used to check the diameter of shafts or studs. It is a 'go/no-go' gauge for external dimensions."
+},
+{
+  q: "A neutral flame in oxy-acetylene welding means the ratio of acetylene and oxygen gas by volume is",
+  options: ["1:1", "1:1.5", "1:2", "2:1"],
+  answer: 0,
+  explanation: "A neutral flame uses equal volumes of acetylene and oxygen (1:1). It is used for welding most metals."
+},
+{
+  q: "Which part of the lathe machine is called Live Centre?",
+  options: ["Carriage", "Tail stock", "Head stock", "None of the above"],
+  answer: 2,
+  explanation: "The Live Centre is located in the Head stock spindle. It rotates with the workpiece, unlike the dead centre in the tail stock."
+},
+{
+  q: "Brazing is used for joining metal pieces by",
+  options: ["heating", "arc", "beating", "all of the above"],
+  answer: 0,
+  explanation: "Brazing joins metal pieces by heating them and using a filler metal (brass/bronze) that melts above 450°C but below the base metal melting point."
+},
+{
+  q: "What is the name of joint if two members welded in the same plane?",
+  options: ["Lap joint", "Butt joint", "Tee joint", "Edge joint"],
+  answer: 1,
+  explanation: "When two members are welded end-to-end in the same plane, it is called a Butt joint."
+},
+{
+  q: "Gray cast iron is best welded by",
+  options: ["TIG", "ARC", "MIG", "Oxy-acetylene"],
+  answer: 3,
+  explanation: "Gray cast iron is best welded by Oxy-acetylene welding because it allows slow, controlled heating and cooling, reducing the risk of cracking."
+},
+{
+  q: "Which of the following metal forming process is best suitable for making the wires?",
+  options: ["Forging", "Extrusion", "Drawing", "Rolling"],
+  answer: 2,
+  explanation: "Drawing is the metal forming process used for making wires. The metal is pulled through a die to reduce its cross-section."
+},
+{
+  q: "Idler is a component of",
+  options: ["wheel loader", "motor grader", "tipper truck", "track excavator"],
+  answer: 3,
+  explanation: "An idler is a component of a track excavator. It guides and maintains the tension of the track chain."
+},
+{
+  q: "A ...... is used to level the ground and spread the loose material.",
+  options: ["tractor", "excavator", "grader", "roller"],
+  answer: 2,
+  explanation: "A grader is used to level the ground and spread loose material. It is widely used in road construction."
+},
+{
+  q: "Which of the following is not present in petrol engine?",
+  options: ["Spark plug", "Fuel injector", "Carburetor", "None of the above"],
+  answer: 1,
+  explanation: "Fuel injector is typically used in diesel engines. Petrol engines traditionally use carburetors (or port fuel injection), not diesel-type fuel injectors."
+},
+{
+  q: "In two stroke cycle engine, the operations are completed in the number of revolutions of crankshaft equal to",
+  options: ["1", "2", "3", "4"],
+  answer: 0,
+  explanation: "In a two-stroke engine, the complete cycle (suction, compression, power, exhaust) is completed in 1 revolution of the crankshaft."
+},
+{
+  q: "Where does the power for mechanical fuel pump come from?",
+  options: ["Camshaft", "Crankshaft", "Distributor shaft", "Propeller shaft"],
+  answer: 0,
+  explanation: "The mechanical fuel pump is driven by an eccentric lobe on the camshaft."
+},
+{
+  q: "The quantity of fuel delivery varies in running diesel engine by",
+  options: ["plunger", "control sleeve", "control rack", "injection"],
+  answer: 2,
+  explanation: "In a diesel injection pump, the control rack rotates the plunger to vary the effective stroke, thus controlling the quantity of fuel delivered."
+},
+{
+  q: "A radiator cap contains",
+  options: ["pressure valve", "thermostat valve", "blow-off valve", "pressure and vacuum valve"],
+  answer: 3,
+  explanation: "A radiator cap contains both a pressure valve (to raise boiling point) and a vacuum valve (to prevent collapse of hoses when cooling)."
+},
+{
+  q: "...... is the main purpose of cooling system in IC engine.",
+  options: [
+    "To cool down the engine when it is hot",
+    "To warm up the engine when it is cold",
+    "To maintain the temperature of engine necessary for its running",
+    "To prolong the changing interval of engine oil"
+  ],
+  answer: 2,
+  explanation: "The main purpose of the cooling system is to maintain the optimum operating temperature required for efficient engine running — not just to cool or warm."
+},
+{
+  q: "What is meant by ABS?",
+  options: ["Avoid brake system", "Anti-lock braking system", "Actual brake system", "Automatic brake system"],
+  answer: 1,
+  explanation: "ABS stands for Anti-lock Braking System. It prevents wheel lock-up during sudden braking, maintaining steering control."
+},
+{
+  q: "An air bleeder valve is provided at the",
+  options: ["master cylinder", "wheel cylinder", "master cylinder and wheel cylinder", "any where in the brake line"],
+  answer: 1,
+  explanation: "Air bleeder valves are provided at the wheel cylinders to bleed air from the hydraulic brake system."
+},
+{
+  q: "In leaf spring, one end of the spring is fixed and the other end of spring is attached to",
+  options: ["V-bolt", "I-bolt", "Shackle", "Axle shaft"],
+  answer: 2,
+  explanation: "In a leaf spring, one end is fixed to the chassis and the other end is attached to a shackle, which allows the spring to change length when deflecting."
+},
+{
+  q: "Which of the following is not a component of suspension system?",
+  options: ["Coil spring", "Leaf spring", "Shock absorber", "Connecting rod"],
+  answer: 3,
+  explanation: "Connecting rod is a component of the engine, not the suspension system. Suspension components include springs and shock absorbers."
+},
+{
+  q: "The tilting of the front wheels away from the vertical is called",
+  options: ["caster", "camber", "toe-in", "toe-out"],
+  answer: 1,
+  explanation: "Camber is the tilting of wheels away from vertical. Positive camber tilts outward; negative camber tilts inward."
+},
+{
+  q: "The possible cause for hard steering is",
+  options: ["tight tie rod", "bent wheel spindle", "low tyre pressure", "none of the above"],
+  answer: 2,
+  explanation: "Low tyre pressure is a common cause of hard steering as it increases rolling resistance and requires more effort to steer."
+},
+{
+  q: "Hard shifting of gears is due to",
+  options: [
+    "leakage of oil from gear box",
+    "worn out splines on the main shaft",
+    "high speed",
+    "over loading"
+  ],
+  answer: 1,
+  explanation: "Worn out splines on the main shaft cause hard shifting of gears as the synchronizer or gear sleeves cannot engage smoothly."
+},
+{
+  q: "What are known as poppet valve?",
+  options: ["Seat valves", "Slide valves", "Pressure reducing valves", "Directional control valves"],
+  answer: 0,
+  explanation: "Poppet valves (also called seat valves) are the type used in engine intake and exhaust, opening and closing against a seat."
+},
+{
+  q: "The overinflated tyre in a vehicle results in",
+  options: [
+    "more wear on the center than on the edges",
+    "more wear on the center than on the center",
+    "equal wear along the surfaces of the tyre",
+    "none of the above"
+  ],
+  answer: 0,
+  explanation: "An overinflated tyre bulges at the center, causing more wear on the center tread than on the edges."
+},
+{
+  q: "Which is the multigrade engine oil?",
+  options: ["SAE 30", "SAE 40", "SAE 15W-40", "SAE 80W"],
+  answer: 2,
+  explanation: "SAE 15W-40 is a multigrade oil — the 'W' stands for Winter. It performs like a 15 weight oil in cold and 40 weight oil when hot."
+},
+{
+  q: "Initial charging of un-charged new battery is charged after",
+  options: ["filling with acid", "filling with water", "filling with oil", "none of the above"],
+  answer: 0,
+  explanation: "A new uncharged battery is first filled with electrolyte (dilute sulfuric acid) and then given an initial charge."
+},
+{
+  q: "Which of the following is not recorded in the maintenance job card of a machine?",
+  options: [
+    "types and quantity of spare parts used for repairs",
+    "types and quantity of lubricants used for repairs",
+    "types and quantity of consumables used for repairs",
+    "purchase cost of machine"
+  ],
+  answer: 3,
+  explanation: "The purchase cost of the machine is not recorded in the maintenance job card. The job card records parts, lubricants, and consumables used during a specific job."
+},
+{
+  q: "Which of the following is not considered personal protective equipment (PPE)?",
+  options: ["Safety goggles", "Ear protection", "Machine guards", "Safety gloves"],
+  answer: 2,
+  explanation: "Machine guards are engineering controls, not personal protective equipment. PPE is worn by individuals — goggles, ear protection, and gloves are all PPE."
+},
+{
+  q: "Which type of lubricant is grease?",
+  options: ["Semi-solid type", "Solid type", "Liquid type", "Gas type"],
+  answer: 0,
+  explanation: "Grease is a semi-solid lubricant consisting of a base oil thickened with a soap or non-soap thickener."
+},
+{
+  q: "...... is not the factor related to human comfort in air conditioning system.",
+  options: ["Air temperature", "Rooms lighting", "Air speed", "Humidity"],
+  answer: 1,
+  explanation: "Rooms lighting is not a factor of human comfort in an air conditioning system. AC comfort factors include air temperature, air speed, and humidity."
+},
+
+// ══════════════════════════════════════════════════════════════════════
+// SOURCE: Key(B) - Rajapatr Anankित द्वितीय श्रेणी, मेकानिक्स
+// GENERAL KNOWLEDGE (Q1–Q20)
+// ══════════════════════════════════════════════════════════════════════
+
+{
+  q: "नेपालमा सर्वप्रथम बजेट कहिले प्रस्तुत गरिएको थियो?",
+  options: ["२००८ असार १", "२००८ माघ २१", "२००९ असार १", "२००७ माघ २१"],
+  answer: 2,
+  explanation: "नेपालमा सर्वप्रथम बजेट २००९ असार १ मा प्रस्तुत गरिएको थियो।"
+},
+{
+  q: "सर्वसाधारण नागरिकले पाउनुपर्ने सेवा छिटो, छरितो र कम खर्चिलो ढंगबाट पाउने अवस्था सृजना गर्न प्रशासनिक कार्यको सञ्चालन र जिम्मेवारी कुन कानूनमा स्पष्ट निर्धारण गरिएको छ?",
+  options: [
+    "सुशासन (व्यवस्थापन तथा सञ्चालन) ऐन, २०६४",
+    "सूचनाको हक सम्बन्धी ऐन, २०६४",
+    "निजामती सेवा ऐन, २०४९",
+    "स्थानीय प्रशासन ऐन, २०२८"
+  ],
+  answer: 0,
+  explanation: "सुशासन (व्यवस्थापन तथा सञ्चालन) ऐन, २०६४ मा प्रशासनिक कार्यको सञ्चालन र जिम्मेवारी स्पष्ट निर्धारण गरिएको छ।"
+},
+{
+  q: "सुशासन (व्यवस्थापन तथा सञ्चालन) नियमावलीको नियम ३५ अनुसार 'अति जरुरी' लेखिएको चिठीको जवाफ कति दिनभित्र पठाउनुपर्छ?",
+  options: ["५", "७", "१०", "१५"],
+  answer: 0,
+  explanation: "सुशासन नियमावलीको नियम ३५ अनुसार 'अति जरुरी' लेखिएको चिठीको जवाफ ५ दिनभित्र पठाउनुपर्छ।"
+},
+{
+  q: "सार्वजनिक बडापत्रको शुरुवात गर्ने तलका मध्ये को हुन्?",
+  options: ["मार्गरेट थ्याचर", "जोन मेजर", "अल गोर", "रोनाल्ड रेगन"],
+  answer: 1,
+  explanation: "सार्वजनिक बडापत्रको शुरुवात जोन मेजरले गरेका हुन्।"
+},
+{
+  q: "मानवमा भएका 'इमानदारिता, प्रेम, दया, सद्भाव एवं विश्वास' तलका मध्ये के हो?",
+  options: ["अनुशासन", "नागरिक कर्तव्य", "मनोवैज्ञानिक मूल्य", "व्यक्तिको दायित्व"],
+  answer: 2,
+  explanation: "इमानदारिता, प्रेम, दया, सद्भाव एवं विश्वास मनोवैज्ञानिक मूल्यहरू हुन्।"
+},
+{
+  q: "चुरे पर्वत श्रेणी समुद्र सतहदेखि कति उचाइसम्म रहेको छ?",
+  options: ["६१० मि. – १८७२ मि. सम्म", "६०० मि. – १२०० मि. सम्म", "७०० मि. – १५७२ मि. सम्म", "५५० मि. – १८७२ मि. सम्म"],
+  answer: 0,
+  explanation: "चुरे पर्वत श्रेणी समुद्र सतहदेखि ६१० मि. – १८७२ मि. सम्म उचाइमा रहेको छ।"
+},
+{
+  q: "नेपालको प्राचीन इतिहासमा कुन शासनकाललाई स्वर्णयुग मानिन्छ?",
+  options: ["गोपालवंशको शासनकाल", "लिच्छविकालीन शासनकाल", "आभिरवंशको शासनकाल", "किराँतवंशको शासनकाल"],
+  answer: 1,
+  explanation: "नेपालको प्राचीन इतिहासमा लिच्छविकालीन शासनकाललाई स्वर्णयुग मानिन्छ।"
+},
+{
+  q: "चालू सोहौं आवधिक योजनाका समृद्धिका राष्ट्रिय लक्ष्य अन्तर्गत गरिबीको रेखामुनि रहेको (निरपेक्ष गरिबी) जनसंख्या कति प्रतिशतमा झार्ने लक्ष्य रहेको छ?",
+  options: ["१०", "११", "१२", "१३"],
+  answer: 1,
+  explanation: "सोहौं आवधिक योजनाअन्तर्गत गरिबीको रेखामुनि रहेको जनसंख्या ११% मा झार्ने लक्ष्य रहेको छ।"
+},
+{
+  q: "दिगो विकासको सिद्धान्त (Principle of Sustainable Development) तलका मध्ये कुन होइन?",
+  options: [
+    "जैविक विविधताको संरक्षण",
+    "पृथ्वीको वहन क्षमताको सीमालाई ख्याल राख्ने",
+    "भएका प्राकृतिक स्रोत साधनको प्रयोग नगरी भविष्यका लागि संरक्षण गर्ने",
+    "जनसहभागिताको बढोत्तरी"
+  ],
+  answer: 2,
+  explanation: "प्राकृतिक स्रोत साधनको प्रयोग नगरी भविष्यका लागि मात्र संरक्षण गर्नु दिगो विकासको सिद्धान्त होइन; दिगो विकासले वर्तमान र भविष्य दुवैको आवश्यकता पूरा गर्छ।"
+},
+{
+  q: "विज्ञान र प्रविधिको क्षेत्रमा हासिल भएको पछिल्लो महत्त्वपूर्ण उपलब्धि तलका मध्ये कुन हो?",
+  options: [
+    "वायरलेस मोबाइल प्रविधिको विकास",
+    "कृत्रिम बौद्धिकता",
+    "रोबर्टको विकास र प्रयोग",
+    "द्रुत गतिको इन्टरनेट"
+  ],
+  answer: 1,
+  explanation: "विज्ञान र प्रविधिको क्षेत्रमा हासिल भएको पछिल्लो महत्त्वपूर्ण उपलब्धि कृत्रिम बौद्धिकता (AI) हो।"
+},
+{
+  q: "विश्वमा जनस्वास्थ्य सम्बन्धी पहिलो कानून बनाउने राष्ट्र कुन हो?",
+  options: ["जापान", "बेलायत", "अमेरिका", "फ्रान्स"],
+  answer: 1,
+  explanation: "विश्वमा जनस्वास्थ्य सम्बन्धी पहिलो कानून बनाउने राष्ट्र बेलायत हो।"
+},
+{
+  q: "नेपालको संविधान बमोजिम संघ र प्रदेशको साझा अधिकार अनुसूची कतिमा उल्लेख गरिएको छ?",
+  options: ["५", "६", "७", "८"],
+  answer: 2,
+  explanation: "नेपालको संविधान बमोजिम संघ र प्रदेशको साझा अधिकार अनुसूची ७ मा उल्लेख गरिएको छ।"
+},
+{
+  q: "संयुक्त राष्ट्र संघको बडापत्रमा कति धारा रहेका छन्?",
+  options: ["११०", "१११", "११२", "११३"],
+  answer: 1,
+  explanation: "संयुक्त राष्ट्र संघको बडापत्रमा १११ धारा रहेका छन्।"
+},
+{
+  q: "युरोपेयन युनियनबाट अलग भएको देश तलका मध्ये कुन हो?",
+  options: ["फ्रान्स", "डेनमार्क", "रोमानिया", "बेलायत"],
+  answer: 3,
+  explanation: "बेलायत (Brexit) युरोपेयन युनियनबाट अलग भएको देश हो।"
+},
+{
+  q: "सन् २०२४ को नोबेल शान्ति पुरस्कार कुन संस्थालाई प्रदान गरियो?",
+  options: [
+    "Center for Civil Liberties",
+    "World Food Program",
+    "Nihon Hidankyo",
+    "European Union"
+  ],
+  answer: 2,
+  explanation: "सन् २०२४ को नोबेल शान्ति पुरस्कार Nihon Hidankyo (जापानी परमाणु बम सर्भाइभर्स संगठन) लाई प्रदान गरियो।"
+},
+{
+  q: "सहायिक कर्मचारीका मुख्य कार्यहरू मध्ये तलका कुन होइन?",
+  options: ["दर्ता, चलानी", "फाइलिङ, पंजिका", "पत्र मस्यौदा", "गुनासो व्यवस्थापन"],
+  answer: 3,
+  explanation: "गुनासो व्यवस्थापन सहायिक कर्मचारीका मुख्य कार्यहरू मध्ये होइन।"
+},
+{
+  q: "कुनै पनि कार्यालयमा प्राप्त हुने चिठीपत्रहरूको शुरु अभिलेख राख्ने कार्यलाई के भनिन्छ?",
+  options: ["दर्ता", "चलानी", "परिपत्र", "अभिलेख व्यवस्थापन"],
+  answer: 0,
+  explanation: "कार्यालयमा प्राप्त हुने चिठीपत्रहरूको शुरु अभिलेख राख्ने कार्यलाई दर्ता भनिन्छ।"
+},
+{
+  q: "निजामती सेवा ऐन, २०४९ को परिच्छेद २ मा कतिवटा समूहका निजामती सेवाको गठन सम्बन्धी व्यवस्था गरिएको पाइन्छ?",
+  options: ["९", "१०", "११", "१२"],
+  answer: 1,
+  explanation: "निजामती सेवा ऐन, २०४९ को परिच्छेद २ मा १० वटा समूहका निजामती सेवाको गठन सम्बन्धी व्यवस्था गरिएको छ।"
+},
+{
+  q: "निजामती सेवा ऐन, २०४९ (संशोधन सहित) ले निजामती कर्मचारीलाई कति प्रकारका सामान्य सजाय हुनसक्ने व्यवस्था गरेको छ?",
+  options: ["२", "३", "४", "५"],
+  answer: 1,
+  explanation: "निजामती सेवा ऐन, २०४९ अनुसार निजामती कर्मचारीलाई ३ प्रकारका सामान्य सजाय हुनसक्ने व्यवस्था छ।"
+},
+{
+  q: "तलका मध्ये कुन संवैधानिक निकाय होइन?",
+  options: ["लोक सेवा आयोग", "महालेखापरीक्षकको कार्यालय", "महालेखा नियन्त्रक कार्यालय", "अख्तियार दुरुपयोग अनुसन्धान आयोग"],
+  answer: 2,
+  explanation: "महालेखा नियन्त्रक कार्यालय संवैधानिक निकाय होइन; यो सरकारी कार्यालय हो। बाँकी सबै संवैधानिक निकाय हुन्।"
+},
+
+// ══════════════════════════════════════════════════════════════════════
+// SOURCE: Key(B) - SERVICE TECHNICAL KNOWLEDGE (Q21–Q50)
+// ══════════════════════════════════════════════════════════════════════
+
+{
+  q: "The preferred method of recharging a dead battery is",
+  options: ["fast charging", "slow charging", "trickle charging", "none of the above"],
+  answer: 1,
+  explanation: "Slow charging is the preferred method as it allows full chemical reaction without heat buildup, extending battery life."
+},
+{
+  q: "Maintenance detail are recorded in a standard format which is known as",
+  options: ["Blue book", "Complaint book", "Job card", "Register"],
+  answer: 0,
+  explanation: "Maintenance details are recorded in a Blue book (or service book), which is the standard format for recording vehicle/machine maintenance history."
+},
+{
+  q: "Which of the following is not a safety tool or device?",
+  options: ["Helmet", "Boots", "Goggles", "Bag"],
+  answer: 3,
+  explanation: "A bag is not a safety tool or device. Helmets, boots, and goggles are all personal protective equipment (PPE)."
+},
+{
+  q: "What is the basic function of coolant in machining?",
+  options: [
+    "Job will be machined fast",
+    "To cool the work materials and tool",
+    "Job should not get rust",
+    "To get good surface finish on job"
+  ],
+  answer: 1,
+  explanation: "The basic function of coolant (cutting fluid) in machining is to cool the work material and cutting tool, reducing heat and tool wear."
+},
+{
+  q: "Which type of flow mode is selected if outside is dusty and contaminated in Car AC system?",
+  options: ["Recirculation mode", "Fresh mode", "Heating mode", "Defroster mode"],
+  answer: 0,
+  explanation: "Recirculation mode is selected when outside air is dusty or contaminated. It recirculates inside air, preventing outside pollutants from entering."
+},
+{
+  q: "Clearance between the mating parts is measured using",
+  options: ["dial gauge", "go gauge", "no-go gauge", "feeler gauge"],
+  answer: 3,
+  explanation: "A feeler gauge is used to measure the clearance (gap) between mating surfaces such as valve clearance and spark plug gaps."
+},
+{
+  q: "The unit of work is same as the unit of .......",
+  options: ["power", "force", "energy", "none of the above"],
+  answer: 2,
+  explanation: "Work and energy have the same unit — Joule (J). Work = Force × Distance, and energy is the capacity to do work."
+},
+{
+  q: "Shaper machine is used for making",
+  options: ["gears", "holes", "flat surfaces", "all of the above"],
+  answer: 2,
+  explanation: "A shaper machine uses a single-point cutting tool to produce flat surfaces (horizontal, vertical, or inclined)."
+},
+{
+  q: "The purpose of using flux in soldering is to",
+  options: [
+    "increase fluidity of solder metal",
+    "prevent oxides formation",
+    "wash away the surplus solder",
+    "lowering the melting temperature of solder"
+  ],
+  answer: 1,
+  explanation: "Flux prevents oxide formation on the metal surfaces during soldering/brazing, ensuring a clean bond."
+},
+{
+  q: "Mallet is made of",
+  options: ["hard wood", "lead", "cast iron", "brass"],
+  answer: 0,
+  explanation: "A mallet is made of hard wood (or rubber). It is used for striking chisels and for assembly work where metal hammers would cause damage."
+},
+{
+  q: "Welding by melting of the workpieces at the joint is",
+  options: ["forge welding", "arc welding", "resistance welding", "cold welding"],
+  answer: 1,
+  explanation: "Arc welding melts the workpieces at the joint using the heat of an electric arc. Both base metal and filler metal are melted."
+},
+{
+  q: "The gas flame containing relatively more amount of oxygen than acetylene is called",
+  options: ["carburizing flame", "neutral flame", "oxidizing flame", "nitriding flame"],
+  answer: 2,
+  explanation: "An oxidizing flame has excess oxygen over acetylene. It is used for welding brass and bronze."
+},
+{
+  q: "Which of the following machine compacts soil, gravel and asphalt in road construction?",
+  options: ["Grader", "Dozer", "Roller", "Truck"],
+  answer: 2,
+  explanation: "A roller (road roller/compactor) is used to compact soil, gravel, and asphalt in road construction."
+},
+{
+  q: "...... are usually mounted on two or four pneumatic tyred wheels.",
+  options: ["Scraper", "Backactor", "Elevator", "Escalator"],
+  answer: 0,
+  explanation: "Scrapers are earthmoving machines mounted on pneumatic tyred wheels (two or four axles), used for cutting, hauling and spreading material."
+},
+{
+  q: "Which of the following engines have valves?",
+  options: ["Four stroke engines", "Two stroke engines", "Electric motors", "Water turbines"],
+  answer: 0,
+  explanation: "Four stroke engines have intake and exhaust valves (poppet valves). Two stroke engines use ports instead of valves."
+},
+{
+  q: "The component that takes care of fluctuation of the cyclic variation in speed is known as",
+  options: ["governor", "flywheel", "camshaft", "fuel pump"],
+  answer: 1,
+  explanation: "The flywheel stores rotational energy during the power stroke and releases it during other strokes, smoothing cyclic speed variation."
+},
+{
+  q: "Fuel injection pump is used to pump",
+  options: ["diesel fuel", "petrol fuel", "both A and B", "none of the above"],
+  answer: 0,
+  explanation: "Fuel injection pump is specifically used to pump diesel fuel at high pressure to the injectors in diesel engines."
+},
+{
+  q: "What is the function of carburetor?",
+  options: [
+    "For mixing air and petrol",
+    "For mixing air and diesel",
+    "For mixing air and water",
+    "For mixing air and steam"
+  ],
+  answer: 0,
+  explanation: "The carburetor mixes air and petrol (gasoline) in the correct ratio for combustion in a petrol engine."
+},
+{
+  q: "In which condition does thermostat valve open?",
+  options: [
+    "Low temperature of engine",
+    "High temperature of engine",
+    "Operating temperature of engine",
+    "Freezing temperature of engine"
+  ],
+  answer: 1,
+  explanation: "The thermostat valve opens when the engine reaches high operating temperature, allowing coolant to flow to the radiator for cooling."
+},
+{
+  q: "The first thing to be checked for an overheated engine would be",
+  options: [
+    "coolant level",
+    "function of thermostat",
+    "tension of radiator's fan belt",
+    "blockage of radiator fins"
+  ],
+  answer: 0,
+  explanation: "The first check for an overheated engine is the coolant level, as low coolant is the most common and easily checked cause."
+},
+{
+  q: "Drum brakes in vehicles use",
+  options: ["brake shoes", "brake pads", "leather linings", "all of the above"],
+  answer: 0,
+  explanation: "Drum brakes use brake shoes with friction lining that press against the inside of the drum. Brake pads are used in disc brakes."
+},
+{
+  q: "In a self-locking brake, force required to apply the brake is",
+  options: ["zero", "minimum", "maximum", "average"],
+  answer: 0,
+  explanation: "In a self-locking brake, the braking action is self-energizing — once applied, it locks by itself and requires zero additional force."
+},
+{
+  q: "A vehicle has excessive inside tyre wear on the right rear tyre. The cause of this problem could be",
+  options: [
+    "a bent rear spindle",
+    "excessive negative caster",
+    "excessive positive camber",
+    "worn out front struts"
+  ],
+  answer: 0,
+  explanation: "A bent rear spindle causes the wheel to run at an angle, causing excessive inside tyre wear on that specific wheel."
+},
+{
+  q: "Leaf spring absorbs shocks by",
+  options: ["expanding", "bending", "compression", "twisting"],
+  answer: 1,
+  explanation: "Leaf springs absorb road shocks by bending — the leaves flex to absorb energy and return to shape, dampening vibrations."
+},
+{
+  q: "What is the name of the angle through which the wheel has to turn to sustain the side slip?",
+  options: ["slip angle", "castor angle", "camber", "kingpin inclination"],
+  answer: 0,
+  explanation: "The slip angle is the angle between the direction the wheel is pointing and the actual direction of travel."
+},
+{
+  q: "Steering system is used to control",
+  options: [
+    "acceleration of engine",
+    "gear shift",
+    "direction of automobile",
+    "variation of automobile"
+  ],
+  answer: 2,
+  explanation: "The steering system controls the direction of travel of the automobile by controlling the angle of the front wheels."
+},
+{
+  q: "Which of the following is not a type of gearbox?",
+  options: [
+    "Linear mesh gearbox",
+    "Sliding mesh gearbox",
+    "Constant mesh gearbox",
+    "Synchro mesh gearbox"
+  ],
+  answer: 0,
+  explanation: "Linear mesh gearbox is not a real type. The main types are sliding mesh, constant mesh, and synchromesh gearboxes."
+},
+{
+  q: "Which type of pump consists of two spur or helical gears?",
+  options: ["External gear pump", "Internal gear pump", "Rotary pump", "Vane pump"],
+  answer: 0,
+  explanation: "An external gear pump uses two meshing spur or helical gears to pump fluid. Fluid is carried in the spaces between gear teeth."
+},
+{
+  q: "What do the permissible of mixing cross-ply and radial-ply automobile tires allow?",
+  options: [
+    "Cross-ply tires on left wheels",
+    "Cross-ply tires on right wheels",
+    "Cross-ply tires on front wheels",
+    "Cross-ply tires on rear wheels"
+  ],
+  answer: 3,
+  explanation: "If mixing is necessary (not recommended), cross-ply tires may be placed on rear wheels with radial-ply on the front, but never the reverse."
+},
+{
+  q: "The most important quality of any lubricant is",
+  options: ["viscosity", "emulsification", "specific heat", "specific gravity"],
+  answer: 0,
+  explanation: "Viscosity is the most important property of a lubricant. It determines the oil film thickness and ability to protect surfaces under load."
+},
+
+// ══════════════════════════════════════════════════════════════════════
+// SOURCE: Senior Mechanic/Senior Welder Paper - Key(A) - (Q1–Q50)
+// ══════════════════════════════════════════════════════════════════════
+
+{
+  q: "Which of the following is not part of a shaper?",
+  options: ["Tapper box", "Ram", "Table", "Cross slide"],
+  answer: 0,
+  explanation: "A Tapper box is not part of a shaper. Shaper components include Ram, Table, and Cross slide."
+},
+{
+  q: "Which of the following gauge is used to test accuracy of holes?",
+  options: ["Ring gauge", "Snap gauge", "Plug gauge", "All of the above"],
+  answer: 2,
+  explanation: "A Plug gauge is used to test the accuracy (diameter) of holes — it checks if the hole is within tolerance."
+},
+{
+  q: "To take measurement of the height of store rack you will use",
+  options: ["Vernier caliper", "Try square", "Bevel protector", "Scale"],
+  answer: 3,
+  explanation: "A scale (steel rule) is the most practical tool for measuring the overall height of a store rack."
+},
+{
+  q: "Which of the following operation can't be performed in the lathe?",
+  options: ["Chamfering", "Knurling", "Drilling", "None of the above"],
+  answer: 3,
+  explanation: "Chamfering, Knurling, and Drilling can all be performed on a lathe. So 'None of the above' is correct — all operations listed can be done on a lathe."
+},
+{
+  q: "Lathe spindle has got",
+  options: ["internal threads", "external threads", "tapper threads", "no threads"],
+  answer: 2,
+  explanation: "The lathe spindle has a taper (Morse taper) inside it to accept the live centre and other tapered accessories."
+},
+{
+  q: "A cylinder is drilled with two through holes of same size from top to bottom face. What is the minimum possible number of hidden lines that will appear in front view of the cylinder?",
+  options: ["0", "2", "4", "None of the above"],
+  answer: 1,
+  explanation: "Two through holes create 2 hidden lines (the bottom edges of each hole) visible in the front view of the cylinder."
+},
+{
+  q: "Orthographic projection is associated with",
+  options: [
+    "Side view projection",
+    "Front view projection",
+    "Plan view projection",
+    "All of the above"
+  ],
+  answer: 3,
+  explanation: "Orthographic projection includes all three views: Front view, Side view, and Plan (top) view — all projected at 90° to each other."
+},
+{
+  q: "Which of the following is kind of resistance welding?",
+  options: [
+    "Metal arc welding",
+    "Spot welding",
+    "Oxy-acetylene welding",
+    "Submerged arc welding"
+  ],
+  answer: 1,
+  explanation: "Spot welding is a type of resistance welding. It uses electrical resistance heat generated when current flows through the workpieces."
+},
+{
+  q: "A neutral flame is obtained by supplying",
+  options: [
+    "equal volume of oxygen and acetylene",
+    "more volume of oxygen then acetylene",
+    "more volume of acetylene and less volume of oxygen",
+    "None of the above"
+  ],
+  answer: 0,
+  explanation: "A neutral flame is produced by supplying equal volumes of oxygen and acetylene. It is the most commonly used flame for welding."
+},
+{
+  q: "This is a male and female joint",
+  options: [
+    "Riveting of two work pieces",
+    "Arc welding of two work pieces",
+    "Nuts and bolt joints of two work pieces",
+    "Gas welding joints of two work pieces"
+  ],
+  answer: 2,
+  explanation: "Nuts and bolt joints are male-female joints — the bolt (male) engages with the nut (female) thread."
+},
+{
+  q: "A joint made by fastening two edges of sheet metal together is called ....",
+  options: ["hem", "seam", "joint", "none of the above"],
+  answer: 1,
+  explanation: "A seam joint is made by fastening two edges of sheet metal together, commonly used in sheet metal work and tin fabrication."
+},
+{
+  q: "The main component to drive the track chain of an excavator is",
+  options: ["idler", "sprocket", "heavy duty belt", "scarifier teeth"],
+  answer: 1,
+  explanation: "The sprocket is the main drive component for the track chain of an excavator. It is driven by the final drive motor."
+},
+{
+  q: "If a 100 kVA diesel generator is to be loaded in a truck, which equipment should be used?",
+  options: ["Loader", "Crane", "Excavator", "All of the above"],
+  answer: 1,
+  explanation: "A crane is the appropriate equipment for lifting and loading heavy equipment like a 100 kVA diesel generator onto a truck."
+},
+{
+  q: "If four cylinder engine has capacity of 2.0 liter, what is swept volume of single cylinder?",
+  options: ["800 cc", "500 cc", "200 cc", "400 cc"],
+  answer: 1,
+  explanation: "Total capacity 2.0 L = 2000 cc. Divided by 4 cylinders = 500 cc per cylinder."
+},
+{
+  q: "Diesel engine has been classified as",
+  options: [
+    "reciprocating internal combustion engine",
+    "rotary internal combustion engine",
+    "reciprocating external combustion engine",
+    "rotary external combustion engine"
+  ],
+  answer: 0,
+  explanation: "A diesel engine is a reciprocating internal combustion engine — fuel burns inside the cylinder and pistons move back and forth."
+},
+{
+  q: "In diesel engine, during suction stroke .... is drawn in the cylinder.",
+  options: ["air and fuel", "only fuel", "only air", "none of the above"],
+  answer: 2,
+  explanation: "In a diesel engine, only air is drawn during the suction stroke. Fuel is injected separately at the end of compression stroke."
+},
+{
+  q: "The connecting rod connects the piston and ....",
+  options: ["cylinder head", "camshaft", "crankshaft", "cylinder block"],
+  answer: 2,
+  explanation: "The connecting rod connects the piston to the crankshaft, converting reciprocating motion to rotary motion."
+},
+{
+  q: "The otto cycle is also known as",
+  options: [
+    "constant temperature cycle",
+    "constant pressure cycle",
+    "constant volume cycle",
+    "none of the above"
+  ],
+  answer: 2,
+  explanation: "The Otto cycle (used in petrol engines) is also known as the constant volume cycle because heat addition occurs at constant volume."
+},
+{
+  q: "Heat transfer from cold body to hot body is not possible without external work. This is",
+  options: [
+    "zeroth law of thermodynamics",
+    "first law of thermodynamics",
+    "second law of thermodynamics",
+    "none of the above"
+  ],
+  answer: 2,
+  explanation: "The second law of thermodynamics states that heat cannot flow spontaneously from a cold body to a hot body without external work input."
+},
+{
+  q: "The thermostat in engine's cooling system keeps the engine",
+  options: ["cool", "at desired temperature", "hot", "none of the above"],
+  answer: 1,
+  explanation: "The thermostat maintains the engine at its desired (optimal) operating temperature by regulating coolant flow."
+},
+{
+  q: "The main purpose of cooling system of an IC engine is",
+  options: [
+    "to cool the engine when it is hot",
+    "to maintain the temperature required for engine running",
+    "to prolong the changing interval of engine oil",
+    "to heat the engine when it is cold"
+  ],
+  answer: 1,
+  explanation: "The main purpose is to maintain the engine at the optimal operating temperature — not merely to cool it."
+},
+{
+  q: "The main function of brake fluid is",
+  options: ["lubrication", "power transmission", "cooling", "none of the above"],
+  answer: 1,
+  explanation: "The main function of brake fluid is power transmission — it transmits the force from the brake pedal to the brake cylinders hydraulically."
+},
+{
+  q: "Rubber parts of the brake system is better cleaned by using",
+  options: ["Petrol", "Diesel", "Acid", "Fresh brake fluid"],
+  answer: 3,
+  explanation: "Rubber brake parts (seals, hoses) should be cleaned with fresh brake fluid. Petrol or diesel degrade rubber components."
+},
+{
+  q: "The provision made to allow a leaf spring to vary its length is a",
+  options: ["Swinging shackle", "Sliding center bolt", "U bolt mounting", "All of the above"],
+  answer: 0,
+  explanation: "A swinging shackle is provided at one end of the leaf spring to allow it to change length as it deflects under load."
+},
+{
+  q: "In independent suspension system",
+  options: [
+    "rise and fall of one wheel has little effect on other",
+    "rise and fall of one wheel has equal effect on other",
+    "rise and fall of one wheel has no effect on other",
+    "effect of rise and fall of one wheel to other depends upon the road surface"
+  ],
+  answer: 2,
+  explanation: "In independent suspension, each wheel moves independently — rise and fall of one wheel has no effect on the other wheel."
+},
+{
+  q: "The angle formed by the wheel with the vertical when the top of the wheel slants outward is called ....",
+  options: ["Positive camber", "Negative camber", "Positive castor", "Negative castor"],
+  answer: 0,
+  explanation: "Positive camber is when the top of the wheel tilts outward from the vertical. It helps the wheel carry loads more effectively."
+},
+{
+  q: "The function of the steering system is",
+  options: [
+    "to achieve angular motion of the front wheel",
+    "to provide directional stability of the vehicle",
+    "to facilitate recovery of front wheels after completing a turn",
+    "all of the above"
+  ],
+  answer: 3,
+  explanation: "The steering system performs all three functions: controlling wheel angle, providing directional stability, and enabling wheel return after a turn."
+},
+{
+  q: "The function of an universal joint is to allow the propeller shaft to",
+  options: ["change length", "bend sideways", "transfer torque at an angle", "all of the above"],
+  answer: 2,
+  explanation: "A universal joint (U-joint) allows torque to be transferred at an angle between shafts that are not in a straight line."
+},
+{
+  q: "The basic function of clutch of a vehicle is",
+  options: [
+    "to transmit the torque of engine to transmission",
+    "to transmit the speed of engine to transmission",
+    "to let the vehicle run at uniform speed",
+    "to facilitate the vehicle for acceleration"
+  ],
+  answer: 0,
+  explanation: "The basic function of a clutch is to transmit (or interrupt) the engine torque to the transmission system."
+},
+{
+  q: "The engine crank shaft is automatically engaged with the clutch shaft and disengaged from it in",
+  options: ["single plate clutch", "multi plate clutch", "centrifugal clutch", "none of the above"],
+  answer: 2,
+  explanation: "In a centrifugal clutch, the crankshaft automatically engages and disengages with the clutch shaft based on engine speed (centrifugal force)."
+},
+{
+  q: "Basic principle of hydraulic system is that",
+  options: [
+    "liquid provides greater increase in workforce",
+    "liquid transmits applied pressure in all directions",
+    "liquid will not compress",
+    "all of the above"
+  ],
+  answer: 3,
+  explanation: "All three principles apply to hydraulic systems: Pascal's law (pressure transmitted equally), incompressibility of fluid, and force multiplication."
+},
+{
+  q: "Water is a ...... fluid.",
+  options: ["real", "ideal", "newtonian", "non-newtonian"],
+  answer: 2,
+  explanation: "Water is a Newtonian fluid — its viscosity remains constant regardless of applied shear stress."
+},
+{
+  q: "What would be the problem if the starting motor pinion engages with flywheel teeth but cannot crank the flywheel?",
+  options: [
+    "Defective over running clutch",
+    "Discharged battery",
+    "Damage teeth of flywheel",
+    "Defective armature of starting motor"
+  ],
+  answer: 1,
+  explanation: "If the pinion engages but cannot crank the flywheel, the battery is discharged — there is insufficient electrical energy to produce enough torque."
+},
+{
+  q: "Compared to the life of a spark plug of two stroke engine, the spark plug life of a four stroke engine is approximately .....",
+  options: ["same", "twice", "half", "none of the above"],
+  answer: 1,
+  explanation: "In a 4-stroke engine, the spark plug fires once every 2 revolutions; in a 2-stroke, it fires every revolution. So the 4-stroke plug lasts approximately twice as long."
+},
+{
+  q: "A tyre is designated as 175/65 R14 82 S, then aspect ratio of tyre is",
+  options: ["175", "65", "14", "82"],
+  answer: 1,
+  explanation: "In tyre designation 175/65 R14 82S: 175=width(mm), 65=aspect ratio (%), R=radial, 14=rim diameter, 82=load index, S=speed rating."
+},
+{
+  q: "This is not the type of wheel used in automobile",
+  options: [
+    "wire wheel",
+    "light alloy cast wheel",
+    "rim wheel",
+    "pressed steel disc wheel"
+  ],
+  answer: 2,
+  explanation: "Rim wheel is not a standard type of automobile wheel. Automobile wheels include wire wheels, alloy wheels, and pressed steel disc wheels."
+},
+{
+  q: "As octane number of fuel increases, the knocking tendency of petrol engine ......",
+  options: ["increases", "decreases", "remains same", "first decrease then increases"],
+  answer: 1,
+  explanation: "Higher octane number means higher resistance to knocking (detonation). So as octane number increases, knocking tendency decreases."
+},
+{
+  q: "The secondary dry type filter element of an engine of excavator is cleaned by",
+  options: [
+    "Directing the compressed air nozzle to outer surface of element",
+    "Directing the compressed air nozzle to inner surface of element",
+    "Tapping on tyre",
+    "It is not cleaned but only changed as required"
+  ],
+  answer: 3,
+  explanation: "The secondary (safety) filter element is NOT cleaned — it is only replaced when required, as cleaning may damage it."
+},
+{
+  q: "Which of the following test is performed in the battery using hydrometer?",
+  options: [
+    "Open circuit voltage test",
+    "PH test",
+    "Specific gravity test",
+    "High rate discharge test"
+  ],
+  answer: 2,
+  explanation: "A hydrometer measures the specific gravity of the battery electrolyte, which indicates the state of charge of the battery."
+},
+{
+  q: "A 12 volt battery has how many cells?",
+  options: ["12", "6", "4", "3"],
+  answer: 1,
+  explanation: "A 12V lead-acid battery has 6 cells, each producing approximately 2V. 6 × 2V = 12V."
+},
+{
+  q: "Which of the following component is used as heating coil in air conditioning system?",
+  options: ["Evaporator", "Compressor", "Expansion valve", "Condenser"],
+  answer: 3,
+  explanation: "The condenser acts as the heating coil in an AC system — it releases heat from the refrigerant to the surrounding air."
+},
+{
+  q: "This is not the type of refrigerant used in the air conditioning system.",
+  options: ["R 12", "R 22", "RF 10", "R 410 A"],
+  answer: 2,
+  explanation: "RF 10 is not a standard refrigerant. R12, R22, and R410A are all standard refrigerants used in air conditioning systems."
+},
+{
+  q: "The catalytic converter controls emission of ..... from vehicles.",
+  options: [
+    "CO, HC and NOx",
+    "CO, HC and CO2",
+    "CO and NOx",
+    "CO, HC, NOx and CO2"
+  ],
+  answer: 0,
+  explanation: "The catalytic converter controls CO (carbon monoxide), HC (hydrocarbons), and NOx (nitrogen oxides) emissions from vehicles."
+},
+{
+  q: "Nepal Vehicle Mass Emission Standard 2069 is associated with the emission standard",
+  options: ["Euro I", "Euro II", "Euro III", "Euro IV"],
+  answer: 1,
+  explanation: "Nepal Vehicle Mass Emission Standard 2069 BS is equivalent to Euro II emission standard."
+},
+{
+  q: "V belt of a radiator fan in a vehicle is broken, it needs to be replaced and this type of maintenance is",
+  options: [
+    "preventive maintenance",
+    "shutdown maintenance",
+    "corrective maintenance",
+    "timely maintenance"
+  ],
+  answer: 2,
+  explanation: "Replacing a broken V-belt is corrective maintenance — it is done after a failure has occurred to restore the machine to working condition."
+},
+{
+  q: "With increase in cost of preventive maintenance, the breakdown maintenance cost will ....",
+  options: ["decrease", "increase", "no change", "increase at faster rate"],
+  answer: 0,
+  explanation: "As preventive maintenance investment increases, equipment is better maintained, reducing breakdowns and therefore breakdown maintenance costs decrease."
+},
+{
+  q: "Pricing of a product is based on",
+  options: [
+    "total cost incurred for production",
+    "profit margin",
+    "prevalent market price of the same product of other company",
+    "All of the above"
+  ],
+  answer: 3,
+  explanation: "Product pricing considers all factors: production cost, desired profit margin, and market competitive price."
+},
+{
+  q: "A book published by manufactures which contains the illustrations, part numbers and other relevant data for their products is called .....",
+  options: ["service manual", "parts catalogue", "log sheet", "owner's manual"],
+  answer: 1,
+  explanation: "A parts catalogue (spare parts book) contains illustrations, part numbers, and data for all serviceable parts of a product."
+},
+{
+  q: "Machine safeguarding is necessary because",
+  options: [
+    "It makes the machine look attractive",
+    "It improves the skill of machine operator",
+    "It minimizes the risk of accident for operator",
+    "It helps to balance the machine properly"
+  ],
+  answer: 2,
+  explanation: "Machine safeguarding (guards, shields) is necessary to minimize the risk of accidents and injuries to machine operators."
+},
+{
+  q: "An activity in which people practice leaving a building quickly is called",
+  options: ["fire play", "fire extinguish", "fire drill", "fire plug"],
+  answer: 2,
+  explanation: "A fire drill is a practice activity where people practice quickly and safely evacuating a building in case of fire."
+},
+
+// ══════════════════════════════════════════════════════════════════════
+// SOURCE: Senior Mechanic Key(C) Paper - GENERAL KNOWLEDGE (Q1–Q11)
+// ══════════════════════════════════════════════════════════════════════
+
+{
+  q: "नागरिक बडापत्र (Citizen Charter) को शुरुवात कसले गरेका हुन्?",
+  options: ["जोन मेज", "विड्रो विल्सन", "मार्गरेट थ्याचर", "लि.तोड.पिङ"],
+  answer: 0,
+  explanation: "नागरिक बडापत्रको शुरुवात जोन मेजरले सन् १९९१ मा बेलायतमा गरेका हुन्।"
+},
+{
+  q: "नेपालको संविधानको धारा ४८ मा उल्लिखित नागरिकको कर्तव्य मध्ये तलका कुन पर्दैन?",
+  options: [
+    "संविधानको पालना गर्नु",
+    "राज्यले चाहेको बखत अनिवार्य सेवा गर्नु",
+    "सामाजिक र सांस्कृतिक रुपान्तरण गर्नु",
+    "सार्वजनिक सम्पत्तिको सुरक्षा र संरक्षण गर्नु"
+  ],
+  answer: 2,
+  explanation: "सामाजिक र सांस्कृतिक रुपान्तरण गर्नु संविधानको धारा ४८ को नागरिक कर्तव्यमा पर्दैन।"
+},
+{
+  q: "व्यवस्थापनमा उत्प्रेरणाको Hierarchy of Need's Theory का प्रणेता को हुन्?",
+  options: ["म्याक्स ग्रेगर", "अब्राहम मास्लो", "जिम्मी कार्टर", "म्याक्स वेबर"],
+  answer: 1,
+  explanation: "Hierarchy of Needs Theory का प्रणेता अब्राहम मास्लो हुन्।"
+},
+{
+  q: "नेपालको संविधानको कुन धारामा 'सूचनाको हक' सम्बन्धी व्यवस्था गरिएको छ?",
+  options: ["२५", "२६", "२७", "२८"],
+  answer: 2,
+  explanation: "नेपालको संविधानको धारा २७ मा 'सूचनाको हक' सम्बन्धी व्यवस्था गरिएको छ।"
+},
+{
+  q: "आर्थिक वर्ष २०८१/८२ का लागि नेपाल सरकारको आय अनुमान कति रहेको छ?",
+  options: ["१७ खर्ब ६० अर्ब", "१८ खर्ब ६० अर्ब", "१९ खर्ब १९ अर्ब", "२० खर्ब २० अर्ब"],
+  answer: 1,
+  explanation: "आर्थिक वर्ष २०८१/८२ का लागि नेपाल सरकारको आय अनुमान १८ खर्ब ६० अर्ब रहेको छ।"
+},
+{
+  q: "निजामती सेवा ऐन, २०४९ बमोजिम राजपत्र अनंकित श्रेणीमा तलका मध्ये कुन चाहिँ श्रेणीको व्यवस्था छैन?",
+  options: ["प्रथम", "द्वितीय", "तृतीय", "चौथो"],
+  answer: 3,
+  explanation: "राजपत्र अनंकित श्रेणीमा प्रथम, द्वितीय र तृतीय श्रेणी छन्; चौथो श्रेणीको व्यवस्था छैन।"
+},
+{
+  q: "पत्र व्यवहार गर्दा ध्यान दिनुपर्ने कुरा मध्ये तलका कुन ठीक होइन?",
+  options: [
+    "पत्रको भाषा सरल र स्पष्ट हुनुपर्छ",
+    "पत्र दोहोरो अर्थ लाग्ने हुनुपर्छ",
+    "पत्र आदरसूचक भाषामा लेखिएको हुनुपर्छ",
+    "पत्रको मिति, विषय उल्लेख हुनुपर्छ"
+  ],
+  answer: 1,
+  explanation: "पत्र दोहोरो अर्थ लाग्ने हुनु हुँदैन; पत्रको भाषा स्पष्ट र एकार्थी हुनुपर्छ।"
+},
+{
+  q: "कुनै पदाधिकारीले निजामती सेवा नियमावलीको प्रयोग गर्दा गरेको व्याख्याबाट कुनै कर्मचारीलाई मर्का परेमा कुन निकायमा निवेदन दिन सक्दछ?",
+  options: [
+    "प्रशासकीय अदालत",
+    "प्रधानमन्त्री तथा मन्त्रिपरिषदको कार्यालय",
+    "सङ्घीय मामिला तथा सामान्य प्रशासन मन्त्रालय",
+    "कर्मचारी, न्याय तथा संसदीय मामिला मन्त्रालय"
+  ],
+  answer: 3,
+  explanation: "यस्तो अवस्थामा कर्मचारी, न्याय तथा संसदीय मामिला मन्त्रालयमा निवेदन दिन सकिन्छ।"
+},
+{
+  q: "निजामती कर्मचारीले प्रत्येक वर्ष विरामी बिदा कति दिन पाउँछन्?",
+  options: ["१२", "१५", "३०", "३२"],
+  answer: 0,
+  explanation: "निजामती कर्मचारीले प्रत्येक वर्ष १२ दिन विरामी बिदा पाउँछन्।"
+},
+{
+  q: "सुशासन (व्यवस्थापन तथा सञ्चालन) ऐन, २०६४ को मुख्य उद्देश्य तलका मध्ये कुन ठीक हो?",
+  options: [
+    "कार्यालयमा पारदर्शिता कायम गर्ने",
+    "कर्मचारीको दक्षता बृद्धि गर्ने",
+    "लागतमा कटौती गर्ने",
+    "हरेक विषयमा गोपनीयता कायम गर्ने"
+  ],
+  answer: 0,
+  explanation: "सुशासन ऐन, २०६४ को मुख्य उद्देश्य कार्यालयमा पारदर्शिता, जवाफदेहिता र सुशासन कायम गर्नु हो।"
+},
+{
+  q: "प्रशिद्ध 'Dreams from My Father' कृतिका लेखक को हुन्?",
+  options: ["बाराक ओबामा", "हेलेन केलर", "दलाई लामा", "नेल्सन मण्डेला"],
+  answer: 0,
+  explanation: "'Dreams from My Father' बाराक ओबामाद्वारा लिखित आत्मकथा हो।"
+},
+
+// ══════════════════════════════════════════════════════════════════════
+// SOURCE: Senior Mechanic Key(C) Paper - SERVICE KNOWLEDGE (Q21–Q50)
+// ══════════════════════════════════════════════════════════════════════
+
+{
+  q: "What is the voltage required for starting a heavy vehicle?",
+  options: ["12V", "9V", "32V", "24V"],
+  answer: 3,
+  explanation: "Heavy vehicles (trucks, buses) use 24V electrical systems for starting, as they require more power to crank large diesel engines."
+},
+{
+  q: "A front stabilizer bar is used to",
+  options: [
+    "increase vehicle load carrying capacity",
+    "provide a softer ride",
+    "control suspension movement and body roll",
+    "all of the above"
+  ],
+  answer: 2,
+  explanation: "A front stabilizer (anti-roll) bar controls suspension movement and reduces body roll when cornering."
+},
+{
+  q: "What type of fluid is commonly used in hydraulic system due to its excellent lubricating properties and resistance to compression?",
+  options: ["Water", "Oil", "Air", "Gasoline"],
+  answer: 1,
+  explanation: "Oil is used in hydraulic systems because it is virtually incompressible and provides excellent lubrication to seals and moving parts."
+},
+{
+  q: "With the increase of battery temperature, the specific gravity of electrolyte ...",
+  options: ["increases", "decreases", "remain the same", "none of the above"],
+  answer: 1,
+  explanation: "As battery temperature increases, the electrolyte expands, reducing its specific gravity (density decreases). Hydrometer readings must be temperature-corrected."
+},
+{
+  q: "What component of the air conditioning system removes heat from the refrigerant?",
+  options: ["Condenser", "Evaporator", "Compressor", "Expansion valve"],
+  answer: 0,
+  explanation: "The condenser removes heat from the refrigerant — the hot high-pressure refrigerant releases heat to the surrounding air as it condenses."
+},
+{
+  q: "In diesel engines, the control of black smoke in the exhaust can be achieved by a. Running the engine at lower load. b. Maintaining the injection system perfect. c. Using diesel fuel of higher cetane no. Which alternative correct regarding above statements?",
+  options: ["a, b and c all", "a and b only", "a and c only", "b and c only"],
+  answer: 1,
+  explanation: "Both running at lower load and maintaining perfect injection help control black smoke. Higher cetane reduces ignition delay but doesn't directly control black smoke in the same way."
+},
+{
+  q: "Maintenance consists of the ..... actions.",
+  options: [
+    "replacement of components",
+    "repair of components",
+    "service components",
+    "all of the above"
+  ],
+  answer: 3,
+  explanation: "Maintenance includes all three actions: replacement of worn components, repair of damaged components, and servicing components."
+},
+{
+  q: "Parts to be replaced can be easily order using",
+  options: ["workshop manual", "instruction manual", "parts catalogue", "all of the above"],
+  answer: 2,
+  explanation: "A parts catalogue contains part numbers and diagrams needed to order replacement parts. Workshop and instruction manuals contain procedures."
+},
+{
+  q: "Which paper would give you detail maintenance report with maintenance cost?",
+  options: ["Job card", "Maintenance book", "Log book", "None of the above"],
+  answer: 1,
+  explanation: "The Maintenance book contains detailed maintenance reports including costs, parts used, and work performed."
+},
+{
+  q: "Which type of safety focuses on protecting employees from physical harm and injury?",
+  options: ["Occupational safety", "Health safety", "Environmental safety", "Fire safety"],
+  answer: 0,
+  explanation: "Occupational safety focuses on protecting employees from physical harm, injuries, and accidents in the workplace."
+},
+{
+  q: "What is the function of the tool post on a lathe machine?",
+  options: [
+    "to provide mounting point for cutting tools",
+    "to support the tail stock",
+    "to control spindle speed",
+    "to guide the carriage along the bed"
+  ],
+  answer: 0,
+  explanation: "The tool post on a lathe provides the mounting point for cutting tools, allowing them to be securely held and adjusted."
+},
+{
+  q: "In which machine single point cutting tool is used?",
+  options: ["Shaper", "Milling", "Grinding", "Broaching"],
+  answer: 0,
+  explanation: "A shaper uses a single-point cutting tool that reciprocates to produce flat surfaces, similar to a lathe tool."
+},
+{
+  q: "What is the primary purpose of a section view in machine drawing?",
+  options: [
+    "to reveal the internal features not visible in the external view",
+    "to show the material thickness variation",
+    "to indicate the type of finishing",
+    "to indicate tolerance of making objects"
+  ],
+  answer: 0,
+  explanation: "A section view cuts through the object to reveal internal features (holes, slots, bores) that are not visible in external views."
+},
+{
+  q: "Dimension line is drawn slightly away from the object, about",
+  options: ["4 to 6 mm", "2 to 4 mm", "6 to 8 mm", "8 to 10 mm"],
+  answer: 3,
+  explanation: "According to drawing standards, dimension lines are drawn 8 to 10 mm away from the object outline."
+},
+{
+  q: "Which of the following welding process uses non-consumable electrodes?",
+  options: ["TIG welding", "MIG welding", "Manual Arc welding", "Submerged Arc welding"],
+  answer: 0,
+  explanation: "TIG (Tungsten Inert Gas) welding uses a non-consumable tungsten electrode. Filler metal is added separately if needed."
+},
+{
+  q: "TIG welding is best suited for",
+  options: ["mild welding", "stainless steel", "carbon steel", "aluminum"],
+  answer: 1,
+  explanation: "TIG welding is best suited for stainless steel, aluminum, and other precision metals requiring high-quality, clean welds."
+},
+{
+  q: "What type of dozer blade is best suitable for pushing soft-density soil material across a long distance?",
+  options: ["Straight blade", "Brush blade", "V blade", "U blade"],
+  answer: 3,
+  explanation: "A U-blade (universal blade) has a curved profile with side wings, making it best for pushing loose/soft material over long distances."
+},
+{
+  q: "The basic part of the engine to which the other engine parts are attached or assembled is the",
+  options: ["cylinder head", "cylinder block", "crank shaft", "oil pan"],
+  answer: 1,
+  explanation: "The cylinder block is the main structural component of the engine to which all other parts (head, crankshaft, pistons) are assembled."
+},
+{
+  q: "In a four stroke cycle, the minimum temperature inside the engine cylinder occurs at the",
+  options: [
+    "beginning of suction stroke",
+    "end of suction stroke",
+    "beginning of exhaust stroke",
+    "end of exhaust stroke"
+  ],
+  answer: 0,
+  explanation: "The minimum cylinder temperature occurs at the beginning of the suction stroke, just as the piston starts to draw in fresh cool air/mixture."
+},
+{
+  q: "Compression ratio of compression ignition engine is",
+  options: ["less than 5", "12 to 22", "10 to 15", "5 to 10"],
+  answer: 1,
+  explanation: "Diesel (compression ignition) engines have compression ratios of 12 to 22:1, much higher than petrol engines, to achieve the heat needed for ignition."
+},
+{
+  q: "The primary function of the thermostat in engine cooling system is to",
+  options: [
+    "maintain constant temperature",
+    "circulate coolant",
+    "maintain pressure in system",
+    "allow the engine to reach its optimal operating temperature quickly"
+  ],
+  answer: 3,
+  explanation: "The thermostat's primary function is to allow the engine to warm up quickly by blocking coolant flow until optimal temperature is reached."
+},
+{
+  q: "The component in the radiator of an automobile that increases the boiling point of water is",
+  options: ["drain plug", "water jacket", "vacuum valve", "pressure cap"],
+  answer: 3,
+  explanation: "The pressure cap (radiator cap) increases the boiling point of coolant by raising the system pressure — under pressure, water boils at a higher temperature."
+},
+{
+  q: "The purpose of brake bleeding is to",
+  options: [
+    "clean and lubricate brake component",
+    "remove air bubbles trapped in brake line",
+    "increase the pressure in the brake system",
+    "adjust automatic brake pad wear sensor"
+  ],
+  answer: 1,
+  explanation: "Brake bleeding removes air bubbles from the hydraulic brake lines. Air is compressible and causes a spongy brake pedal."
+},
+{
+  q: "The fading of brakes occur",
+  options: [
+    "at high speed",
+    "at low speed",
+    "when brake lining is worn",
+    "during continuous brake application"
+  ],
+  answer: 3,
+  explanation: "Brake fade occurs during continuous/repeated braking — heat builds up in the brake linings, reducing friction and braking effectiveness."
+},
+{
+  q: "Which of the following type of spring is most commonly used for suspension in heavy vehicles?",
+  options: [
+    "coil spring",
+    "quarter elliptic leaf spring",
+    "semi elliptic leaf spring",
+    "shock absorber"
+  ],
+  answer: 2,
+  explanation: "Semi-elliptic leaf springs are most commonly used in heavy vehicle suspension due to their high load-carrying capacity and durability."
+},
+{
+  q: "In vehicles tilt steering, the steering column is pivoted in",
+  options: ["upper bracket", "lower bracket", "tilt bracket", "steering yoke joint"],
+  answer: 2,
+  explanation: "In tilt steering, the steering column is pivoted at a tilt bracket, allowing the column angle to be adjusted for driver comfort."
+},
+{
+  q: "What component of the transmission system engages and disengages power transmission from the engine to the gearbox?",
+  options: ["Gearbox", "Differential", "Clutch", "Drive shaft"],
+  answer: 2,
+  explanation: "The clutch engages and disengages power transmission between the engine and the gearbox, allowing gear changes and vehicle to stop."
+},
+{
+  q: "The need of universal joint is",
+  options: [
+    "to change inclination",
+    "to transfer torque at an angle",
+    "to change length",
+    "to bend sideways"
+  ],
+  answer: 1,
+  explanation: "A universal joint transfers torque at an angle between two shafts that are not in perfect alignment."
+},
+{
+  q: "... converts pressure energy into linear movement in hydraulic system.",
+  options: ["Pump", "Cylinder", "Motor", "Directional control valve"],
+  answer: 1,
+  explanation: "A hydraulic cylinder converts fluid pressure energy into linear (straight-line) mechanical motion."
+},
+{
+  q: "The ignition coil is used to",
+  options: ["step up current", "step down current", "step up voltage", "step down voltage"],
+  answer: 2,
+  explanation: "The ignition coil is a step-up transformer — it converts the 12V battery voltage to 15,000–45,000V needed to fire the spark plugs."
+},
+
+// ══════════════════════════════════════════════════════════════════════
+// SOURCE: Province Lok Sewa - Key(B) - Junior Foreman Paper
+// ══════════════════════════════════════════════════════════════════════
+
+{
+  q: "In machining, which of the following is the feed rate?",
+  options: [
+    "The rate at which the cutting tool advances into the workpiece",
+    "The speed at which the cutting tool rotates",
+    "The amount of material removed per rotation",
+    "The rate at which the electricity is supplied to the machine"
+  ],
+  answer: 0,
+  explanation: "Feed rate is the rate at which the cutting tool advances along the workpiece per revolution — it determines depth of cut per pass."
+},
+{
+  q: "What is the purpose of the coating on an arc welding electrode?",
+  options: [
+    "To make it shiny",
+    "To provide insulation",
+    "To create a shielding gas",
+    "To increase its weight"
+  ],
+  answer: 2,
+  explanation: "The coating (flux) on arc welding electrodes burns to create a shielding gas that protects the weld pool from atmospheric contamination."
+},
+{
+  q: "If 'd' is the diameter of the drill, then the formula for depth of cut in drilling is ...........",
+  options: ["d/4", "d/2", "d", "2d"],
+  answer: 0,
+  explanation: "The depth of cut (point height) in drilling is d/4, where d is the drill diameter. This determines how much the drill tip protrudes."
+},
+{
+  q: "Which of the following tools is used to measure the thickness of an object with high precision?",
+  options: ["Micrometer", "Protractor", "Vernier calipers", "Multimeter"],
+  answer: 0,
+  explanation: "A micrometer measures thickness with the highest precision (0.001mm or 0.0001 inch), making it the best choice for precise thickness measurement."
+},
+{
+  q: "Which machine tool uses a rotating multi-point cutter to remove material from a workpiece?",
+  options: ["Lathe Machine", "Drilling Machine", "Milling Machine", "Shaping Machine"],
+  answer: 2,
+  explanation: "A milling machine uses a rotating multi-point cutter (milling cutter) to remove material and produce flat, contoured, and complex surfaces."
+},
+{
+  q: "Which tool is used for removing metal chips and burrs from a workpiece?",
+  options: ["Pliers", "File", "Chisel", "Saw"],
+  answer: 1,
+  explanation: "A file is used to remove burrs, smooth rough edges, and clean up metal chips from a machined workpiece."
+},
+{
+  q: "Which of the following is a derived unit?",
+  options: ["Second", "Meter", "Kelvin", "Volt"],
+  answer: 3,
+  explanation: "Volt is a derived unit (V = W/A = kg·m²·A⁻¹·s⁻³). Second, Meter, and Kelvin are all SI base units."
+},
+{
+  q: "Which of the following is a basic unit of measurement in the SI units?",
+  options: ["Inch", "Meter", "Foot", "Pound"],
+  answer: 1,
+  explanation: "Meter is the SI base unit of length. Inch, foot, and pound are imperial units, not SI base units."
+},
+{
+  q: "The shape of warning sign is:",
+  options: ["Circular", "Square", "Rectangular", "Triangular"],
+  answer: 3,
+  explanation: "Warning signs are triangular in shape (e.g., hazard warning signs in Europe). Prohibition signs are circular, mandatory signs are also circular."
+},
+{
+  q: "Which hazard is characterized by excessive noise levels that may cause hearing damage?",
+  options: ["Physical hazard", "Chemical hazard", "Ergonomic hazard", "Biological hazard"],
+  answer: 0,
+  explanation: "Excessive noise is a physical hazard. Physical hazards include noise, vibration, extreme temperatures, radiation, and similar physical agents."
+},
+{
+  q: "What should be checked to prevent excessive wear on a conveyor belt?",
+  options: [
+    "Belt width",
+    "Belt tracking and alignment",
+    "Pulley diameter",
+    "Electrical connections"
+  ],
+  answer: 1,
+  explanation: "Belt tracking and alignment should be checked regularly — a misaligned belt wears excessively on one edge and can cause premature failure."
+},
+{
+  q: "Which of the following is NOT the major component of a refrigeration system?",
+  options: ["Absorber", "Compressor", "Condenser", "Evaporator"],
+  answer: 0,
+  explanation: "The major components of a standard vapour compression refrigeration system are: Compressor, Condenser, Expansion valve, and Evaporator. An Absorber is part of absorption refrigeration systems."
+},
+{
+  q: "In a series circuit, what is the total resistance?",
+  options: [
+    "Equal to the sum of the individual resistances",
+    "Equal to two times the sum of individual resistances",
+    "Equal to the largest of all the resistances",
+    "Zero"
+  ],
+  answer: 0,
+  explanation: "In a series circuit, total resistance R = R1 + R2 + R3 + ... (sum of all individual resistances)."
+},
+{
+  q: "Which of the following is the cheapest plant in operation and maintenance?",
+  options: [
+    "Thermal power plant",
+    "Hydro-power plant",
+    "Diesel power plant",
+    "All of the above"
+  ],
+  answer: 1,
+  explanation: "Hydro-power plants have the lowest operation and maintenance costs after initial construction, as they use free flowing water with no fuel cost."
+},
+{
+  q: "What is a disadvantage of using diesel power plants for electricity generation?",
+  options: [
+    "High initial capital cost",
+    "High emissions and environmental pollution",
+    "Low energy efficiency",
+    "Limited fuel availability"
+  ],
+  answer: 1,
+  explanation: "Diesel power plants produce high levels of emissions (NOx, SOx, particulates) causing significant environmental pollution."
+},
+{
+  q: "Which of the following is the main disadvantage of a biomass power plant?",
+  options: [
+    "Fuel cost is high",
+    "May cause deforestation",
+    "Emits more carbon dioxide than coal",
+    "Limited land for biomass production"
+  ],
+  answer: 1,
+  explanation: "The main disadvantage of biomass power plants is that large-scale use may cause deforestation if biomass is not sustainably sourced."
+},
+{
+  q: "If your vehicle's battery terminals are corroded, what is the most likely issue it will cause?",
+  options: [
+    "Overheating of the engine",
+    "Difficulty starting the vehicle",
+    "Reduced fuel efficiency",
+    "Loss of power steering"
+  ],
+  answer: 1,
+  explanation: "Corroded battery terminals increase electrical resistance, reducing current flow to the starter motor, causing difficulty starting the vehicle."
+},
+{
+  q: "The component that connects the steering rack to the knuckles is ..........",
+  options: ["Tie-rod", "Sector gear", "Pivot", "Spline"],
+  answer: 0,
+  explanation: "Tie-rods connect the steering rack (or steering gear) to the steering knuckles at each wheel, transmitting steering movement."
+},
+{
+  q: "Engine misfiring is likely to result from ...........",
+  options: [
+    "Spark plug gap too small",
+    "Spark plug gap too wide",
+    "Vapour lock in the fuel only",
+    "Incorrect fuel air mixture"
+  ],
+  answer: 1,
+  explanation: "A spark plug gap too wide causes misfiring because the ignition system cannot produce a strong enough spark to jump the larger gap consistently."
+},
+{
+  q: "Which of the following automobile parts require regular lubrication?",
+  options: [
+    "Brake pads",
+    "Pistons and camshaft",
+    "Car body panel",
+    "Steering wheel"
+  ],
+  answer: 1,
+  explanation: "Pistons and the camshaft are moving parts under high friction and heat — they require regular lubrication from engine oil."
+},
+{
+  q: "Overheating of an engine can cause damage to which component?",
+  options: ["Exhaust pipe", "Radiator", "Spark plug", "Air filter"],
+  answer: 1,
+  explanation: "Overheating can cause the radiator to boil over, solder joints to fail, and internal radiator damage. It can also warp the head gasket."
+},
+{
+  q: "The problems caused by the wheel imbalance are ...............",
+  options: [
+    "Hard steering and hard ride",
+    "Poor acceleration and hard steering",
+    "Steering wheel vibrations and uneven tyre wear",
+    "Poor acceleration and reduced fuel efficiency"
+  ],
+  answer: 2,
+  explanation: "Wheel imbalance causes steering wheel vibrations (shimmy) and uneven tyre wear — heavier spots create centrifugal wobble at speed."
+},
+{
+  q: "What is the most common sign that lubricant needs to be changed?",
+  options: [
+    "Decreased machine noise",
+    "Increased fuel efficiency",
+    "Contamination or change in color or viscosity",
+    "Lower operating temperature"
+  ],
+  answer: 2,
+  explanation: "Contamination (dirt, metal particles) or change in color and viscosity of lubricant are the most common signs it needs replacement."
+},
+{
+  q: "Which of the following is a characteristic of a good lubricant?",
+  options: [
+    "High viscosity at all temperatures",
+    "Ability to solidify quickly",
+    "Resistance to oxidation and breakdown",
+    "High flammability"
+  ],
+  answer: 2,
+  explanation: "A good lubricant should resist oxidation and thermal breakdown, maintaining its properties over a wide temperature range and service life."
+},
+{
+  q: "Which of the following would be most useful for tracking raw material usage in a workshop?",
+  options: [
+    "Material requisition form",
+    "Machine maintenance report",
+    "Material performance appraisal",
+    "Material handling policy document"
+  ],
+  answer: 0,
+  explanation: "A material requisition form records the materials requested and issued for each job, making it ideal for tracking raw material usage."
+},
+{
+  q: "Which of the following can be tracked by using a job card?",
+  options: [
+    "Time spent on each task",
+    "Economic order quantity",
+    "Lead time",
+    "Electricity consumption per maintenance task"
+  ],
+  answer: 0,
+  explanation: "A job card tracks time spent on each task, materials used, and work performed — it is the primary document for job cost tracking."
+},
+
+// ══════════════════════════════════════════════════════════════════════
+// SOURCE: Province Paper (B-3) - Junior Foreman (Q27–Q39)
+// ══════════════════════════════════════════════════════════════════════
+
+{
+  q: "Why is it important to record data accurately in an operation log sheet?",
+  options: [
+    "To impress supervisors with detailed information",
+    "To ensure accurate troubleshooting and analysis of operational issues",
+    "To record production data",
+    "To record personal history"
+  ],
+  answer: 1,
+  explanation: "Accurate log sheet data enables proper troubleshooting and analysis of equipment operational issues and trends."
+},
+{
+  q: "What is the symbol for centerline in engineering drawings?",
+  options: [
+    "A dashed line",
+    "A long-short-long dashed line",
+    "A continuous thin line",
+    "A solid thick line"
+  ],
+  answer: 1,
+  explanation: "The centerline symbol in engineering drawings is represented by a long-short-long (chain) dashed line (also called a center line or dash-dot line)."
+},
+{
+  q: "Which of the following is a temporary joint?",
+  options: ["Welded joint", "Brazed joint", "Soldered joint", "Bolted joint"],
+  answer: 3,
+  explanation: "A bolted joint is a temporary joint — it can be disassembled without damaging the parts. Welded, brazed, and soldered joints are permanent."
+},
+{
+  q: "What is the standard unit used in engineering drawings?",
+  options: ["Meters", "Centimeters", "Millimeters", "Inches"],
+  answer: 2,
+  explanation: "Millimeters (mm) is the standard unit used in engineering/technical drawings as per ISO and international standards."
+},
+
+// ══════════════════════════════════════════════════════════════════════
+// SOURCE: Senior Mechanic Key(C) - General Knowledge (Q12–Q20)
+// ══════════════════════════════════════════════════════════════════════
+
+{
+  q: "तलका मध्ये कुन देश BIMSTEC को सदस्य रहेको छैन?",
+  options: ["नेपाल", "भुटान", "थाईल्याण्ड", "सिंगापुर"],
+  answer: 3,
+  explanation: "सिंगापुर BIMSTEC को सदस्य होइन। BIMSTEC का सदस्यहरू: बंगलादेश, भारत, म्यान्मार, श्रीलंका, थाईल्याण्ड, नेपाल र भुटान हुन्।"
+},
+{
+  q: "संयुक्त राष्ट्र संघका वर्तमान महासचिव एन्टोनियो गुटेरेस कुन मुलुकका नागरिक हुन्?",
+  options: ["अस्ट्रिया", "स्वीडेन", "घाना", "पोर्चुगल"],
+  answer: 3,
+  explanation: "UN महासचिव एन्टोनियो गुटेरेस पोर्चुगलका नागरिक हुन्।"
+},
+{
+  q: "Anopheles नामक पोथी लामखुट्टेको टोकाईबाट सर्ने रोग कुन हो?",
+  options: ["औलो", "म्यादी ज्वरो", "रेबिज", "डेंगु"],
+  answer: 0,
+  explanation: "Anopheles पोथी लामखुट्टेको टोकाईबाट औलो (Malaria) सर्दछ।"
+},
+{
+  q: "नेपालको संविधानको अनुसूची बमोजिम स्थानीय तहलाई कतिवटा अधिकारहरू प्रदान गरिएको छ?",
+  options: ["३५", "२२", "२१", "२५"],
+  answer: 0,
+  explanation: "नेपालको संविधानमा स्थानीय तहलाई ३५ वटा एकल अधिकारहरू प्रदान गरिएको छ।"
+},
+{
+  q: "कम्प्युटरका आविष्कारक को हुन्?",
+  options: ["चार्ल्स ब्याबेज", "मेडम क्युरी", "थोमस अल्बा एडिसन", "माकोंनी"],
+  answer: 0,
+  explanation: "कम्प्युटरका आविष्कारक चार्ल्स ब्याबेज हुन्। उनलाई 'Father of Computer' पनि भनिन्छ।"
+},
+{
+  q: "वातावरण संरक्षण गर्न तल दिइएका मध्ये कुनलाई पहिलो प्राथमिकतामा राख्नुपर्छ?",
+  options: [
+    "हावापानीको संरक्षण",
+    "वनजङ्गलको संरक्षण",
+    "चराचुरुङ्गीको संरक्षण",
+    "बाढी पहिरो नियन्त्रण"
+  ],
+  answer: 1,
+  explanation: "वनजङ्गलको संरक्षण वातावरण संरक्षणमा पहिलो प्राथमिकतामा राखिन्छ किनकि यसले हावापानी, जैविक विविधता र भू-क्षय सबैलाई प्रभावित गर्दछ।"
+},
+{
+  q: "नेपालको प्रथम पञ्चवर्षीय योजनाको अवधि कुन ठीक हो?",
+  options: ["वि.सं. २०११–२०१६", "वि.सं. २०१२–२०१७", "वि.सं. २०१३–२०१८", "वि.सं. २०१४–२०१९"],
+  answer: 0,
+  explanation: "नेपालको प्रथम पञ्चवर्षीय योजना वि.सं. २०११–२०१६ सम्म चलेको थियो।"
+},
+{
+  q: "तलका मध्ये कुन जोडा ठीक छैन?",
+  options: [
+    "घटु नाच - गुरुङ",
+    "पाहाँदुर नाच - सतार",
+    "चाँच्रे नाच - थारू",
+    "च्याब्रुङ नाच - लिम्बु"
+  ],
+  answer: 1,
+  explanation: "पाहाँदुर नाच - सतार जोडा गलत हो। पाहाँदुर नाच थारू समुदायको नाच हो।"
+},
+{
+  q: "लाङटाङ हिमाल कुन जिल्लामा पर्दछ?",
+  options: ["धादिङ", "रसुवा", "सिन्धुपाल्चोक", "दोलखा"],
+  answer: 1,
+  explanation: "लाङटाङ हिमाल रसुवा जिल्लामा पर्दछ।"
+}
+
+
+
+console.log(`Total questions extracted: ${questions.length}`);
+ ];
+
+const questions = rawQuestions.map((item, index) => {
+    const options = Array.isArray(item.options) ? item.options.map(option => String(option)) : [];
+    const parsedAnswer = Number(item.answer);
+    const answerIndex = Number.isInteger(parsedAnswer) && parsedAnswer >= 0 ? parsedAnswer : 0;
+    return {
+        q: String(item.q ?? item.question ?? `Question ${index + 1}`),
+        options,
+        answer: Math.min(answerIndex, Math.max(options.length - 1, 0)),
+        explanation: String(item.explanation ?? 'No explanation provided.')
+    };
+}).filter(question => question.q && question.options.length > 0);
+
+const quizEl = document.getElementById('quiz');
+const scoreEl = document.getElementById('score');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+const progressTextEl = document.getElementById('progress-text');
+const currentScoreEl = document.getElementById('current-score');
+const questionsAnsweredEl = document.getElementById('questions-answered');
+const questionsTotalEl = document.getElementById('questions-total');
+const accuracyEl = document.getElementById('accuracy');
+const resultsEl = document.getElementById('results');
+const resultsBody = document.getElementById('results-body');
+const streakBadge = document.getElementById('streak-badge');
+const correctSound = document.getElementById('correct-sound');
+const wrongSound = document.getElementById('wrong-sound');
+const restartBtn = document.getElementById('restart-btn');
+
+const QUESTIONS_PER_PAGE = Math.max(1, Number(quizConfig.questionsPerPage) || 5);
+const ANSWER_DELAY = 700;
+let currentIndex = 0;
+let score = 0;
+let timerSeconds = 0;
+let timerInterval = null;
+let currentStreak = 0;
+let maxStreak = 0;
+let quizFinished = false;
+let pendingTimeout = null;
+let userAnswers = questions.map(() => null);
+
+questionsTotalEl.textContent = questions.length;
+progressTextEl.textContent = `0/${questions.length}`;
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timerSeconds += 1;
+        timerEl.textContent = formatTime(timerSeconds);
+    }, 1000);
+}
+
+function updateStats() {
+    const answeredCount = userAnswers.filter(answer => answer !== null).length;
+    const correctCount = userAnswers.filter(answer => answer && answer.isCorrect).length;
+    currentScoreEl.textContent = String(correctCount);
+    questionsAnsweredEl.textContent = String(answeredCount);
+    accuracyEl.textContent = `${answeredCount ? Math.round((correctCount / answeredCount) * 100) : 0}%`;
+    progressTextEl.textContent = `${answeredCount}/${questions.length}`;
+    progressEl.style.width = `${questions.length ? (answeredCount / questions.length) * 100 : 0}%`;
+}
+
+function updateStreak(isCorrect) {
+    if (isCorrect) {
+        currentStreak += 1;
+        maxStreak = Math.max(maxStreak, currentStreak);
+        if (currentStreak >= 3) {
+            streakBadge.textContent = `Streak: ${currentStreak}`;
+            streakBadge.classList.add('show');
+            setTimeout(() => streakBadge.classList.remove('show'), 1800);
+        }
+    } else {
+        currentStreak = 0;
+    }
+}
+
+function playSound(audioEl) {
+    try {
+        audioEl.currentTime = 0;
+        audioEl.play().catch(() => {});
+    } catch (error) {
+        // Ignore autoplay restrictions.
+    }
+}
+
+function drawConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = Array.from({ length: 150 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        vx: (Math.random() - 0.5) * 4,
+        vy: Math.random() * 3 + 2,
+        color: ['#6366f1', '#06b6d4', '#f59e0b', '#10b981', '#ec4899'][Math.floor(Math.random() * 5)],
+        size: Math.random() * 6 + 2,
+        rotation: Math.random() * 360
+    }));
+
+    let animationId;
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let active = false;
+        particles.forEach(particle => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.rotation += 2;
+            if (particle.y < canvas.height + 20) {
+                active = true;
+                ctx.save();
+                ctx.translate(particle.x, particle.y);
+                ctx.rotate((particle.rotation * Math.PI) / 180);
+                ctx.fillStyle = particle.color;
+                ctx.fillRect(-particle.size / 2, -particle.size / 2, particle.size, particle.size);
+                ctx.restore();
+            }
+        });
+        if (active) {
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+    animate();
+    setTimeout(() => cancelAnimationFrame(animationId), 5000);
+}
+
+function createActionButton(label, className, onClick) {
+    const button = document.createElement('button');
+    button.className = className;
+    button.innerHTML = label;
+    button.addEventListener('click', onClick);
+    return button;
+}
+
+function renderQuestion() {
+    if (quizFinished) return;
+    quizEl.innerHTML = '';
+    scoreEl.textContent = '';
+    resultsEl.classList.add('hidden');
+
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    const pageEnd = Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length);
+
+    for (let questionIndex = pageStart; questionIndex < pageEnd; questionIndex += 1) {
+        const question = questions[questionIndex];
+        const questionWrapper = document.createElement('div');
+        questionWrapper.className = 'question-wrapper';
+
+        const questionCard = document.createElement('div');
+        questionCard.className = 'question-card';
+        questionCard.dataset.index = String(questionIndex);
+
+        const questionHeader = document.createElement('div');
+        questionHeader.className = 'question-header';
+        questionHeader.innerHTML = `
+            <div class="question-number">${questionIndex + 1}</div>
+            <div class="question-text">${question.q}</div>
+        `;
+
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'options';
+
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.textContent = question.explanation;
+
+        const shuffledOptions = shuffle(question.options.map((text, optionIndex) => ({ text, optionIndex })));
+
+        shuffledOptions.forEach((option, displayIndex) => {
+            const button = document.createElement('button');
+            button.className = 'option-btn';
+            button.innerHTML = `
+                <span class="option-indicator">${String.fromCharCode(65 + displayIndex)}</span>
+                <span>${option.text}</span>
+            `;
+            button.addEventListener('click', () => handleAnswer(questionIndex, option.optionIndex, option.text, button, optionsContainer, explanationDiv));
+            optionsContainer.appendChild(button);
+        });
+
+        questionCard.appendChild(questionHeader);
+        questionCard.appendChild(optionsContainer);
+        questionCard.appendChild(explanationDiv);
+        questionWrapper.appendChild(questionCard);
+        quizEl.appendChild(questionWrapper);
+    }
+
+    const actionBar = document.createElement('div');
+    actionBar.className = 'action-bar';
+    actionBar.appendChild(createActionButton('⊘ Skip Remaining', 'btn btn-skip', skipRemainingQuestionsOnPage));
+    quizEl.appendChild(actionBar);
+}
+
+function lockOptions(optionsContainer) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        button.disabled = true;
+    });
+}
+
+function revealCorrectAnswer(optionsContainer, correctIndex, questionIndex) {
+    optionsContainer.querySelectorAll('.option-btn').forEach(button => {
+        const optionText = button.querySelector('span:last-child').textContent;
+        if (optionText === questions[questionIndex].options[correctIndex]) {
+            button.classList.add('correct');
+        }
+    });
+}
+
+function moveNext() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+
+    if (currentIndex < questions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+        updateStats();
+    } else {
+        finishQuiz();
+    }
+}
+
+function getCurrentPageBounds() {
+    const pageStart = Math.floor(currentIndex / QUESTIONS_PER_PAGE) * QUESTIONS_PER_PAGE;
+    return {
+        pageStart,
+        pageEnd: Math.min(pageStart + QUESTIONS_PER_PAGE, questions.length)
+    };
+}
+
+function isCurrentPageComplete() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] === null) return false;
+    }
+    return true;
+}
+
+function scheduleNextStep() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+    }
+    pendingTimeout = setTimeout(() => {
+        if (isCurrentPageComplete()) {
+            const { pageEnd } = getCurrentPageBounds();
+            if (pageEnd >= questions.length) {
+                finishQuiz();
+            } else {
+                currentIndex = pageEnd;
+                renderQuestion();
+                updateStats();
+            }
+        }
+    }, ANSWER_DELAY);
+}
+
+function skipRemainingQuestionsOnPage() {
+    const { pageStart, pageEnd } = getCurrentPageBounds();
+    for (let i = pageStart; i < pageEnd; i += 1) {
+        if (userAnswers[i] !== null) continue;
+        const card = quizEl.querySelector(`.question-card[data-index="${i}"]`);
+        if (!card) continue;
+        const explanationDiv = card.querySelector('.explanation');
+        const optionsContainer = card.querySelector('.options');
+        skipQuestion(i, explanationDiv, optionsContainer);
+    }
+}
+
+function handleAnswer(questionIndex, selectedIndex, selectedText, clickedButton, optionsContainer, explanationDiv) {
+    if (userAnswers[questionIndex] !== null) return;
+
+    const question = questions[questionIndex];
+    const isCorrect = selectedIndex === question.answer;
+    lockOptions(optionsContainer);
+    revealCorrectAnswer(optionsContainer, question.answer, questionIndex);
+
+    if (!isCorrect) {
+        clickedButton.classList.add('wrong');
+        playSound(wrongSound);
+    } else {
+        clickedButton.classList.add('correct');
+        playSound(correctSound);
+        score += 1;
+    }
+
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText,
+        isCorrect,
+        skipped: false
+    };
+    currentIndex = questionIndex;
+    updateStreak(isCorrect);
+    updateStats();
+    scheduleNextStep();
+}
+
+function skipQuestion(questionIndex, explanationDiv, optionsContainer) {
+    if (userAnswers[questionIndex] !== null) return;
+    lockOptions(optionsContainer);
+    explanationDiv.style.display = 'block';
+    userAnswers[questionIndex] = {
+        selectedText: 'Skipped',
+        isCorrect: false,
+        skipped: true
+    };
+    currentIndex = questionIndex;
+    updateStreak(false);
+    updateStats();
+    scheduleNextStep();
+}
+
+function finishQuiz() {
+    quizFinished = true;
+    clearInterval(timerInterval);
+    quizEl.innerHTML = '';
+
+    const percentage = questions.length ? ((score / questions.length) * 100).toFixed(1) : '0.0';
+    let message = 'Keep learning! You\'ll improve!';
+    let emoji = '📚';
+
+    if (Number(percentage) >= 90) {
+        message = 'Outstanding! You\'re a master!';
+        emoji = '🏆';
+        drawConfetti();
+    } else if (Number(percentage) >= 70) {
+        message = 'Great job! Well done!';
+        emoji = '🌟';
+    } else if (Number(percentage) >= 50) {
+        message = 'Good effort! Keep practicing!';
+        emoji = '💪';
+    }
+
+    scoreEl.innerHTML = `
+        <div style="font-size: 4rem; margin-bottom: 1rem; animation: cardEnter 0.6s ease;">${emoji}</div>
+        <div class="score-display">${percentage}%</div>
+        <div class="score-label">${message}</div>
+        <div style="margin-top: 1rem; color: var(--text-secondary);">
+            ${score} correct out of ${questions.length} questions<br>
+            Time: ${formatTime(timerSeconds)} | Best Streak: ${maxStreak}
+        </div>
+    `;
+
+    resultsBody.innerHTML = questions.map((question, index) => {
+        const answer = userAnswers[index];
+        const userAnswer = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.selectedText;
+        const status = !answer ? 'Not attempted' : answer.skipped ? 'Skipped' : answer.isCorrect ? 'Correct' : 'Wrong';
+        const statusClass = status.toLowerCase().replace(' ', '-');
+        const statusIcon = status === 'Correct' ? '✓' : status === 'Wrong' ? '✗' : status === 'Skipped' ? '⊘' : '•';
+        return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${question.q}</td>
+                <td>${userAnswer}</td>
+                <td>${question.options[question.answer] ?? ''}</td>
+                <td><span class="status-badge status-${statusClass}">${statusIcon} ${status}</span></td>
+                <td class="explanation-cell">${question.explanation}</td>
+            </tr>
+        `;
+    }).join('');
+
+    resultsEl.classList.remove('hidden');
+}
+
+function restartQuiz() {
+    if (pendingTimeout) {
+        clearTimeout(pendingTimeout);
+        pendingTimeout = null;
+    }
+    clearInterval(timerInterval);
+    currentIndex = 0;
+    score = 0;
+    timerSeconds = 0;
+    currentStreak = 0;
+    maxStreak = 0;
+    quizFinished = false;
+    userAnswers = questions.map(() => null);
+    timerEl.textContent = '00:00';
+    streakBadge.classList.remove('show');
+    updateStats();
+    renderQuestion();
+    startTimer();
+}
+
+restartBtn.addEventListener('click', restartQuiz);
+window.addEventListener('resize', () => {
+    const canvas = document.getElementById('confetti-canvas');
+    if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+});
+
+updateStats();
+renderQuestion();
+startTimer();
+    </script>
+</body>
+</html>
