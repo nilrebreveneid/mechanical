@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>pub-mock3 | सार्वजनिक व्यवस्थापन</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --primary: #6366f1; --primary-light: #818cf8; --primary-dark: #4f46e5;
+    --secondary: #06b6d4; --accent: #f59e0b; --success: #10b981;
+    --error: #ef4444; --bg-glass: rgba(255,255,255,0.05);
+    --text-primary: #f1f5f9; --text-secondary: #94a3b8;
+    --border: rgba(255,255,255,0.1); --shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); background-attachment: fixed; color: var(--text-primary); min-height: 100vh; overflow-x: hidden; }
+.bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+.bg-animation::before { content: ''; position: absolute; width: 150%; height: 150%; top: -25%; left: -25%; background: radial-gradient(circle at 20% 80%, rgba(99,102,241,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(6,182,212,0.15) 0%, transparent 50%); animation: bgPulse 15s ease-in-out infinite; }
+@keyframes bgPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.orb { position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.4; z-index: -1; animation: float 20s infinite ease-in-out; }
+.orb-1 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(99,102,241,0.4), transparent 70%); top: 10%; left: 10%; }
+.orb-2 { width: 250px; height: 250px; background: radial-gradient(circle, rgba(6,182,212,0.4), transparent 70%); top: 60%; right: 10%; animation-delay: -5s; }
+.orb-3 { width: 200px; height: 200px; background: radial-gradient(circle, rgba(245,158,11,0.3), transparent 70%); bottom: 10%; left: 30%; animation-delay: -10s; }
+@keyframes float { 0%,100% { transform: translate(0,0) scale(1); } 25% { transform: translate(30px,-30px) scale(1.1); } 50% { transform: translate(-20px,20px) scale(0.9); } 75% { transform: translate(20px,10px) scale(1.05); } }
+.quiz-container { max-width: 900px; margin: 0 auto; padding: 1.5rem; position: relative; z-index: 1; }
+.header-glass { background: var(--bg-glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+.header-glass::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); }
+.logo-section { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: 1rem; }
+.brand-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(99,102,241,0.4); animation: iconPulse 2s ease-in-out infinite; }
+@keyframes iconPulse { 0%,100% { box-shadow: 0 4px 15px rgba(99,102,241,0.4); } 50% { box-shadow: 0 4px 25px rgba(99,102,241,0.6); } }
+h1 { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; background: linear-gradient(135deg, #fff 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.02em; }
+.subtitle { color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.stat-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 1rem; text-align: center; transition: all 0.3s ease; }
+.stat-card:hover { background: rgba(255,255,255,0.06); transform: translateY(-2px); }
+.stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--primary-light); display: block; }
+.stat-label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.25rem; }
+.progress-section { margin-bottom: 2rem; }
+.progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-size: 0.875rem; font-weight: 500; }
+.timer { display: flex; align-items: center; gap: 0.5rem; color: var(--accent); font-family: 'Space Grotesk', monospace; font-weight: 600; font-size: 1.1rem; }
+.timer::before { content: '⏱'; font-size: 1rem; animation: tick 1s ease-in-out infinite; }
+@keyframes tick { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+.progress-bar { width: 100%; height: 8px; background: rgba(255,255,255,0.05); border-radius: 100px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); border-radius: 100px; transition: width 0.5s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 0 10px rgba(99,102,241,0.5); }
+.question-wrapper { perspective: 1000px; margin-bottom: 1.5rem; }
+.question-card { background: var(--bg-glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; box-shadow: var(--shadow); animation: cardEnter 0.6s cubic-bezier(0.16,1,0.3,1); position: relative; overflow: hidden; }
+.question-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent)); opacity: 0; transition: opacity 0.3s ease; }
+.question-card:hover::before { opacity: 1; }
+@keyframes cardEnter { from { opacity: 0; transform: translateY(20px) rotateX(-5deg); } to { opacity: 1; transform: translateY(0) rotateX(0); } }
+.question-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+.question-number { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; width: 36px; height: 36px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.875rem; flex-shrink: 0; box-shadow: 0 4px 12px rgba(99,102,241,0.3); }
+.question-text { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; font-weight: 600; line-height: 1.5; color: var(--text-primary); flex: 1; }
+.options { display: flex; flex-direction: column; gap: 0.75rem; }
+.option-btn { position: relative; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 1rem 1.25rem; font-size: 0.95rem; color: var(--text-primary); cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); text-align: left; display: flex; align-items: center; gap: 1rem; overflow: hidden; font-family: 'Inter', sans-serif; }
+.option-btn:hover:not(:disabled) { background: rgba(255,255,255,0.06); border-color: rgba(99,102,241,0.3); transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.option-indicator { width: 24px; height: 24px; border: 2px solid var(--text-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s ease; font-size: 0.75rem; font-weight: 700; color: transparent; }
+.option-btn:hover:not(:disabled) .option-indicator { border-color: var(--primary-light); color: var(--primary-light); }
+.option-btn.correct { background: rgba(16,185,129,0.1); border-color: var(--success); animation: correctPulse 0.5s ease; }
+.option-btn.correct .option-indicator { background: var(--success); border-color: var(--success); color: white; }
+.option-btn.wrong { background: rgba(239,68,68,0.1); border-color: var(--error); animation: shake 0.5s ease; }
+.option-btn.wrong .option-indicator { background: var(--error); border-color: var(--error); color: white; }
+.option-btn:disabled { cursor: not-allowed; opacity: 0.8; }
+@keyframes correctPulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16,185,129,0.4); } 50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16,185,129,0); } 100% { transform: scale(1); } }
+@keyframes shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-8px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
+.explanation { display: none; margin-top: 1.5rem; padding: 1.25rem; background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); border-radius: 16px; color: var(--text-primary); font-size: 0.9rem; line-height: 1.6; animation: slideDown 0.4s ease; }
+.explanation::before { content: '💡'; margin-right: 0.5rem; font-size: 1.1rem; }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.action-bar { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+.btn { padding: 1rem 2rem; border: none; border-radius: 16px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; position: relative; overflow: hidden; }
+.btn-skip { background: rgba(245,158,11,0.1); color: var(--accent); border: 1px solid rgba(245,158,11,0.3); }
+.btn-skip:hover { background: rgba(245,158,11,0.2); transform: translateY(-2px); }
+.score-container { text-align: center; margin-top: 2rem; }
+.score-display { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; font-weight: 700; background: linear-gradient(135deg, var(--primary-light), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 1rem 0; }
+.score-label { color: var(--text-secondary); font-size: 1rem; }
+.results-panel { background: var(--bg-glass); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; margin-top: 2rem; box-shadow: var(--shadow); animation: cardEnter 0.6s ease; }
+.results-header { text-align: center; margin-bottom: 2rem; }
+.results-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #fff, var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.results-table-wrapper { overflow-x: auto; border-radius: 16px; border: 1px solid var(--border); margin-top: 1.5rem; }
+.results-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 600px; }
+.results-table th { background: rgba(99,102,241,0.1); color: var(--primary-light); font-weight: 600; padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.results-table td { padding: 1rem; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+.results-table tr:last-child td { border-bottom: none; }
+.results-table tr:hover td { background: rgba(255,255,255,0.02); }
+.status-badge { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.8rem; font-weight: 600; }
+.status-correct { background: rgba(16,185,129,0.15); color: var(--success); }
+.status-wrong { background: rgba(239,68,68,0.15); color: var(--error); }
+.status-skipped { background: rgba(245,158,11,0.15); color: var(--accent); }
+.status-not-attempted { background: rgba(148,163,184,0.15); color: var(--text-secondary); }
+.explanation-cell { max-width: 300px; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+.restart-btn { background: linear-gradient(135deg, var(--success), #059669); color: white; padding: 1rem 3rem; border: none; border-radius: 16px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; margin: 2rem auto 0; display: block; box-shadow: 0 4px 15px rgba(16,185,129,0.3); }
+.restart-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16,185,129,0.4); }
+.hidden { display: none !important; }
+.streak-badge { position: fixed; top: 20px; right: 20px; background: linear-gradient(135deg, var(--accent), #d97706); color: white; padding: 0.75rem 1.5rem; border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(245,158,11,0.4); transform: translateX(150%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); z-index: 100; display: flex; align-items: center; gap: 0.5rem; }
+.streak-badge.show { transform: translateX(0); }
+.streak-badge::before { content: '🔥'; }
+#confetti-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1000; }
+@media (max-width: 768px) {
+    .quiz-container { padding: 1rem; } h1 { font-size: 1.4rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); } .question-card { padding: 1.5rem; }
+    .question-text { font-size: 1rem; } .option-btn { padding: 0.875rem 1rem; font-size: 0.9rem; }
+    .action-bar { flex-direction: column; } .btn { width: 100%; } .score-display { font-size: 2.5rem; }
+}
+@media (prefers-color-scheme: light) {
+    :root { --bg-dark: #f8fafc; --text-primary: #1e293b; --text-secondary: #64748b; --border: rgba(0,0,0,0.1); }
+    body { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0e7ff 100%); }
+    .option-btn { background: rgba(255,255,255,0.6); }
+}
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; } }
+.option-btn:focus-visible, .btn:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 2px; }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+    <canvas id="confetti-canvas"></canvas>
+    <div class="streak-badge" id="streak-badge">Streak: 0</div>
+    <div class="quiz-container">
+        <div class="header-glass">
+            <div class="logo-section">
+                <div class="brand">
+                    <div class="brand-icon">📋</div>
+                    <div>
+                        <h1>Public Management Mock 3</h1>
+                        <div class="subtitle">सार्वजनिक व्यवस्थापन &nbsp;|&nbsp; Mock Test 3 of 5</div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><span class="stat-value" id="current-score">0</span><div class="stat-label">Score</div></div>
+                <div class="stat-card"><span class="stat-value" id="questions-answered">0</span><div class="stat-label">Answered</div></div>
+                <div class="stat-card"><span class="stat-value" id="questions-total">0</span><div class="stat-label">Total</div></div>
+                <div class="stat-card"><span class="stat-value" id="accuracy">0%</span><div class="stat-label">Accuracy</div></div>
+            </div>
+        </div>
+        <div class="progress-section">
+            <div class="progress-header"><span>Progress</span><span id="progress-text">0/0</span></div>
+            <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+        </div>
+        <div id="quiz"></div>
+        <div class="score-container">
+            <div class="score-display" id="score"></div>
+            <div id="results" class="hidden">
+                <div class="results-panel">
+                    <div class="results-header">
+                        <h2>Quiz Results</h2>
+                        <p style="color:var(--text-secondary);margin-top:0.5rem">Review your performance below</p>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table">
+                            <thead><tr><th>#</th><th>Question</th><th>Your Answer</th><th>Correct</th><th>Status</th><th>Explanation</th></tr></thead>
+                            <tbody id="results-body"></tbody>
+                        </table>
+                    </div>
+                    <button class="restart-btn" id="restart-btn">↻ Restart Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+const quizConfig = {
+  quizId: "pub-mock3",
+  quizTitle: "pub-mock3 | सार्वजनिक व्यवस्थापन",
+  displayTitle: "Public Management Mock 3",
+  topicName: "सार्वजनिक व्यवस्थापन",
+  questionsPerPage: 1
+};
+const rawQuestions = [
+  {
+    "q": "सार्वजनिक निकायले खरिद व्यवस्थापन सम्बन्धी कार्य गर्नको लागि तयार गरेको कानून तलको मध्ये कुन हो?",
+    "options": [
+      "सार्वजनिक खरिद ऐन, २०६३",
+      "सार्वजनिक खरिद नियमावली, २०६४",
+      "माथिका दुबै",
+      "कुनै पनि होइन"
+    ],
+    "answer": 2,
+    "explanation": "सार्वजनिक खरिद व्यवस्थापनका लागि सार्वजनिक खरिद ऐन, २०६३ र सार्वजनिक खरिद नियमावली, २०६४ — दुवै कानून तयार भएका छन्।"
+  },
+  {
+    "q": "निजामती कर्मचारीले पालना गर्नुपर्ने आचरणहरुको बारेमा नि.से.ऐन २०४९ को कति परिच्छेदमा व्यवस्था गरिएको छ ?",
+    "options": [
+      "परिच्छेद ५",
+      "परिच्छेद ६",
+      "परिच्छेद ७",
+      "परिच्छेद ८"
+    ],
+    "answer": 2,
+    "explanation": "निजामती कर्मचारीले पालना गर्नुपर्ने आचरणहरूको बारेमा निजामती सेवा ऐन, २०४९ को परिच्छेद ७ मा व्यवस्था गरिएको छ।"
+  },
+  {
+    "q": "तलका मध्ये सहायक कर्मचारीले मुख्य रूपमा कुन कार्य गर्नु पर्दैन?",
+    "options": [
+      "निर्णय निर्माण गर्ने कार्य (Decision making) अख्तियार प्राप्त अधिकारी वा कार्यालय प्रमुख",
+      "निर्णय कार्यान्वयन गर्ने कार्य",
+      "सूचना आदान प्रदान गर्ने कार्य",
+      "प्रतिवेदन गर्ने कार्य"
+    ],
+    "answer": 0,
+    "explanation": "निर्णय निर्माण गर्ने अधिकार (Decision Making) अख्तियार प्राप्त अधिकारी वा कार्यालय प्रमुखमा रहन्छ। सहायक कर्मचारीले निर्णय कार्यान्वयन गर्ने, सूचना आदानप्रदान गर्ने र प्रतिवेदन गर्ने काम गर्छन्।"
+  },
+  {
+    "q": "तलका ...... प्रवाह गर्न मिल्दैन।",
+    "options": [
+      "व्यक्तिगत गोपनीयतासम्बन्धी सूचना",
+      "कार्यालयको लक्ष्य र प्रगतिसम्बन्धी सूचना",
+      "गाडी खरिदसम्बन्धी सूचना",
+      "सेवाग्राहीसँग असूल गर्ने सेवा शुल्कसम्बन्धी सूचना"
+    ],
+    "answer": 0,
+    "explanation": "व्यक्तिगत गोपनीयतासम्बन्धी सूचना प्रवाह गर्न मिल्दैन (Key A अनुसार)।"
+  },
+  {
+    "q": "मानवीय मूल्य र मान्यताले कुन पक्षलाई जोड दिन्छ?",
+    "options": [
+      "असल गुणको विकास",
+      "मित्रतापूर्ण व्यवहार र परस्पर सहयोग",
+      "व्यक्ति समाज र राष्ट्रप्रति सद्भाव",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "मानवीय मूल्य र मान्यताले असल गुण विकास, मित्रतापूर्ण व्यवहार र राष्ट्रप्रति सद्भाव — तीनै पक्षलाई जोड दिन्छ।"
+  },
+  {
+    "q": "बजेट भनेको के हो?",
+    "options": [
+      "राजस्व र व्ययको विवरण",
+      "स्रोत साधनको व्यवस्थापन",
+      "कर्मचारी भर्ना प्रक्रिया",
+      "नीति तर्जुमा प्रक्रिया"
+    ],
+    "answer": 0,
+    "explanation": "बजेटले आगामी आर्थिक वर्षको राजस्व र व्ययको योजनाबद्ध विवरण प्रस्तुत गर्छ।"
+  },
+  {
+    "q": "सार्वजनिक-निजी साझेदारी (PPP) को मुख्य उद्देश्य के हो?",
+    "options": [
+      "केन्द्रीय नियन्त्रण बढाउने",
+      "सेवा प्रभावकारिता र दक्षता बढाउने",
+      "कर्मचारी भर्ना गर्ने",
+      "नीति तर्जुमा गर्ने"
+    ],
+    "answer": 1,
+    "explanation": "PPP ले निजी क्षेत्रको दक्षतासँग सार्वजनिक सेवाको प्रभावकारिता बढाउँछ।"
+  },
+  {
+    "q": "लिच्छवीकालमा विकसित गाउँलाई के भनिन्थ्यो ?",
+    "options": [
+      "ग्राम",
+      "तल",
+      "विषय",
+      "द्रङ्ग"
+    ],
+    "answer": 3,
+    "explanation": "लिच्छवीकालमा विकसित गाउँलाई 'द्रङ्ग' भनिन्थ्यो (Key D अनुसार)।"
+  },
+  {
+    "q": "राष्ट्रिय सूचना आयोगको स्थापना कहिले भएको हो?",
+    "options": [
+      "वि.सं. २०६४ वैशाख २२",
+      "वि.सं. २०६४ असोज २२",
+      "वि.सं. २०६५ वैशाख २२",
+      "वि.सं. २०६५ असोज २२"
+    ],
+    "answer": 0,
+    "explanation": "राष्ट्रिय सूचना आयोगको स्थापना वि.सं. २०६४ वैशाख २२ गते भएको हो।"
+  },
+  {
+    "q": "सार्वजनिक खरिद नियमावली कहिले जारी गरिएको हो ?",
+    "options": [
+      "२०६३।१।१३०",
+      "२०६४।०५।०३",
+      "२०६४।०९।१३०",
+      "२०६४।११।१२०"
+    ],
+    "answer": 1,
+    "explanation": "सार्वजनिक खरिद नियमावली, २०६४ मिति २०६४।०५।०३ मा जारी भएको हो।"
+  },
+  {
+    "q": "दक्षिण एशियाली क्षेत्रीय सहयोग संगठन (SAARC) मा नेपालको तर्फबाट महासचिव हुने प्रथम व्यक्ति को हुन् ?",
+    "options": [
+      "अर्जुन बहादुर थापा",
+      "शिलकान्त शर्मा",
+      "भेष बहादुर थापा",
+      "यादव कान्त सिलवाल"
+    ],
+    "answer": 0,
+    "explanation": "SAARC मा नेपालको तर्फबाट महासचिव हुने प्रथम व्यक्ति अर्जुन बहादुर थापा हुन् (Key D अनुसार)।"
+  },
+  {
+    "q": "टिप्पणी सदर भए पिछे त्यसले के को स्वरुप लिन्छ?",
+    "options": [
+      "प्रतिवेदन",
+      "प्रस्ताव",
+      "निर्णय",
+      "माथिका सबै"
+    ],
+    "answer": 2,
+    "explanation": "टिप्पणी सदर भएपछि त्यसले 'निर्णय' को स्वरूप लिन्छ। सदर भएको टिप्पणी नै आधिकारिक निर्णय बन्छ।"
+  },
+  {
+    "q": "नेपालमा पहिलो बजेट कहिले प्रस्तुत गरिएको थियो?",
+    "options": [
+      "वि.स. २००५ माघ २१",
+      "वि.स. २०१० माघ २१",
+      "वि.स. २०००माघ २१",
+      "वि.स. २०१५ माघ २१"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको पहिलो बजेट वि.सं. २००५ माघ २१ गते प्रस्तुत भएको थियो।"
+  },
+  {
+    "q": "विश्व बन्धुत्वको भावना, सहअस्तित्व बोध, अहस्तक्षेप कस्तो मूल्य र मान्यता ...........हो?",
+    "options": [
+      "आध्यात्मिक मूल्य र मान्यता",
+      "नैतिक मूल्य र मान्यता",
+      "पारिवारिक मूल्य र मान्यता",
+      "अन्तर्राष्ट्रिय मूल्य र मान्यता"
+    ],
+    "answer": 3,
+    "explanation": "विश्व बन्धुत्व, सहअस्तित्व र अहस्तक्षेप 'अन्तर्राष्ट्रिय मूल्य र मान्यता' हो।"
+  },
+  {
+    "q": "नियन्त्रण प्रक्रियाको पहिलो चरण कुन हो?",
+    "options": [
+      "मापदण्ड स्थापना",
+      "कार्यान्वयन",
+      "मूल्यांकन",
+      "सुधार"
+    ],
+    "answer": 0,
+    "explanation": "मापदण्ड स्थापना नियन्त्रणको पहिलो चरण हो।"
+  },
+  {
+    "q": "सार्वजनिक प्रशासनमा नेतृत्वको मुख्य भूमिका के हो?",
+    "options": [
+      "कर्मचारी भर्ना",
+      "संगठनलाई दिशानिर्देश गर्ने",
+      "स्रोत परिचालन",
+      "नीति परिवर्तन"
+    ],
+    "answer": 1,
+    "explanation": "नेतृत्वले संगठनलाई दिशानिर्देश र प्रेरणा प्रदान गर्छ।"
+  },
+  {
+    "q": "सबै भन्दा प्रभावकारी संचारको माध्यम कुन हो ?",
+    "options": [
+      "व्यक्तिगत",
+      "सामुदायिक",
+      "लिखित",
+      "माथिका सबै"
+    ],
+    "answer": 0,
+    "explanation": "व्यक्तिगत (Face-to-face) संचार सबैभन्दा प्रभावकारी हुन्छ किनकि यसमा तत्काल प्रतिक्रिया, भावनात्मक सम्बन्ध र गलतफहमी कम हुने सम्भावना रहन्छ।"
+  },
+  {
+    "q": "सार्वजनिक खरिद ऐन कहिले जारी गरिएको हो ?",
+    "options": [
+      "२०६३।१।१३०",
+      "२०६३।२।१३०",
+      "२०६३।०९।१३०",
+      "२०६३।१।०।३०"
+    ],
+    "answer": 2,
+    "explanation": "सार्वजनिक खरिद ऐन, २०६३ मिति २०६३।०९।१३० मा जारी भएको हो।"
+  },
+  {
+    "q": "मुख्य सचिवको पदावधी कति वर्षको हुन्छ ?",
+    "options": [
+      "२ वर्ष",
+      "३ वर्ष",
+      "४ वर्ष",
+      "५ वर्ष"
+    ],
+    "answer": 1,
+    "explanation": "मुख्य सचिवको पदावधि ३ वर्षको हुन्छ।"
+  },
+  {
+    "q": "एक कार्यालयबाट अर्को कार्यालयमा पत्रको माध्यमबाट विभिन्न कुराहरुको जानकारीका लागि सम्पर्क गर्ने क्रियाकलापलाई के भनिन्छ ?",
+    "options": [
+      "तोक आदेश",
+      "परिपत्र",
+      "दर्ता र चलानी",
+      "पत्र व्यवहार"
+    ],
+    "answer": 3,
+    "explanation": "एक कार्यालयबाट अर्को कार्यालयमा पत्रमार्फत जानकारी आदानप्रदान गर्ने क्रियाकलाप 'पत्र व्यवहार' हो।"
+  },
+  {
+    "q": "कार्यालयमा चिठी पत्र लेख्कको लागि कुन सफ्टव्यरको प्रयोग गरिन्छ?",
+    "options": [
+      "Ms. Word",
+      "Ms. Excel",
+      "Ms. Powerpoint",
+      "All of the above"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालयमा चिठीपत्र लेख्नका लागि Ms. Word सफ्टवेयर प्रयोग गरिन्छ।"
+  },
+  {
+    "q": "शान्ति, सुरक्षा, रक्षा, राजश्व जस्ता विषयका सेवा प्रवाह कस्तो प्रकारको सार्वजनिक सेवा प्रवाह अन्तर्गत पर्दछन्?",
+    "options": [
+      "आकस्मिक सेवा",
+      "आधारभूत सेवा",
+      "परम्परागत सेवा",
+      "कल्याणकारी सेवा"
+    ],
+    "answer": 2,
+    "explanation": "शान्ति, सुरक्षा, रक्षा र राजश्व जस्ता परम्परागत राज्य कार्य 'परम्परागत सेवा' अन्तर्गत पर्दछन्।"
+  },
+  {
+    "q": "सार्वजनिक सेवा प्रवाहको बारेमा कुन भनाइ गलत रहेको छ?",
+    "options": [
+      "सार्वजनिक सेवा प्रवाहबाट जनताले राज्यको महशुस गर्दछ",
+      "यो राज्य र जनता जोड्ने सेतु हो",
+      "सार्वजनिक सेवा प्रवाहमा सरकार र सरकारका साझेदारहरुले सेवा प्रवाह गर्दछन्",
+      "सार्वजनिक सेवा प्रवाहले निशुल्क रूपमा हुने सेवा प्रवाहलाई जनाउँछ"
+    ],
+    "answer": 3,
+    "explanation": "सार्वजनिक सेवा निशुल्क मात्र हुँदैन। सशुल्क, निशुल्क वा मिश्रित — सबै प्रकारका सेवा सार्वजनिक सेवा हुन सक्छ। त्यसैले यो कथन गलत हो।"
+  },
+  {
+    "q": "नेपालमा कर्मचारी प्रशासनसम्बन्धी केन्द्रीय निकायको रूपमा तलका मध्ये कुन निकाय कार्य गर्छ ?",
+    "options": [
+      "लोक सेवा आयोग",
+      "प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय",
+      "सङ्घीय मामिला तथा सामान्य प्रशासन मन्त्रालय",
+      "गृह मन्त्रालय"
+    ],
+    "answer": 2,
+    "explanation": "नेपालमा कर्मचारी प्रशासनसम्बन्धी केन्द्रीय निकाय सङ्घीय मामिला तथा सामान्य प्रशासन मन्त्रालय हो (Key B अनुसार)।"
+  },
+  {
+    "q": "सार्वजनिक बढापत्रको अवधारणा कुन देशबाट सुरुवात भयो ?",
+    "options": [
+      "अमेरिका",
+      "बेलायत",
+      "जापान",
+      "फ्रान्स"
+    ],
+    "answer": 1,
+    "explanation": "सार्वजनिक बढापत्र (Citizen's Charter) को अवधारणा बेलायतबाट सुरुवात भयो।"
+  },
+  {
+    "q": "नेपालमा जलवायु परिवर्तनको सबैभन्दा बढी प्रभाव कुन क्षेत्रमा देखिएको छ ?",
+    "options": [
+      "चुरे",
+      "हिमाली",
+      "पहाडी",
+      "तराई"
+    ],
+    "answer": 3,
+    "explanation": "नेपालमा जलवायु परिवर्तनको सबैभन्दा बढी प्रभाव तराई क्षेत्रमा देखिएको छ (Key D अनुसार)।"
+  },
+  {
+    "q": "नेपालको संविधान अनुसार वैदेशिक सहायता र ऋण लिने अधिकार कसको हुने व्यवस्था रहेको छ ?",
+    "options": [
+      "नेपाल सरकार",
+      "प्रदेश सरकार",
+      "अर्थ मन्त्रालय",
+      "A र B दुवै"
+    ],
+    "answer": 3,
+    "explanation": "नेपालको संविधान अनुसार वैदेशिक सहायता र ऋण लिने अधिकार नेपाल सरकार र प्रदेश सरकार दुवैको हुने व्यवस्था रहेको छ (Key D अनुसार)।"
+  },
+  {
+    "q": "एउटा कार्यालयबाट कुनै चिठी अर्को कार्यालयमा छिटो छरितो रुपमा पठाउँदा कुन विधि प्रयोग गरी पठाइन्छ?",
+    "options": [
+      "Email",
+      "Internet",
+      "व्यक्ति मार्फत",
+      "हुलाक"
+    ],
+    "answer": 0,
+    "explanation": "छिटो र तत्काल पठाउनका लागि Email (इलेक्ट्रोनिक मेल) सबैभन्दा उपयुक्त माध्यम हो।"
+  },
+  {
+    "q": "निजामती कर्मचारीको लागि आवश्यक शैक्षिक योग्यता निर्धारण गर्ने निकाय कुन हो ?",
+    "options": [
+      "प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय",
+      "लोक सेवा आयोग",
+      "सङ्घीय मामिला तथा सामान्य प्रशासन मन्त्रालय",
+      "अख्तियार दुरुपयोग अनुसन्धान आयोग"
+    ],
+    "answer": 1,
+    "explanation": "निजामती कर्मचारीको लागि आवश्यक शैक्षिक योग्यता निर्धारण गर्ने निकाय लोक सेवा आयोग हो (Key A अनुसार)।"
+  },
+  {
+    "q": "प्रत्येक सरकारी कार्यालयमा सबैले देख्नेगरी नागरिक वडापत्र राख्नुपर्ने व्यवस्था कुन कानुनमा रहेको छ ?",
+    "options": [
+      "सुशासन (व्यवस्थापन तथा सञ्चालन) ऐन",
+      "भ्रष्टाचार निवारण ऐन",
+      "निजामती सेवा ऐन",
+      "नेपालको संविधान"
+    ],
+    "answer": 0,
+    "explanation": "प्रत्येक सरकारी कार्यालयमा सबैले देख्नेगरी नागरिक वडापत्र राख्नुपर्ने व्यवस्था सुशासन (व्यवस्थापन तथा सञ्चालन) ऐनमा रहेको छ।"
+  },
+  {
+    "q": "कार्यालय कार्यविधि अन्तर्गत के कस्ता कार्यविधि पर्दछन् ?",
+    "options": [
+      "प्रशासनिक कार्यविधि",
+      "न्यायिक कार्यविधि",
+      "आर्थिक कार्यविधि",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "कार्यालय कार्यविधि अन्तर्गत प्रशासनिक, न्यायिक र आर्थिक — तीनै प्रकारका कार्यविधि पर्दछन्।"
+  },
+  {
+    "q": "Select correct stands of XML",
+    "options": [
+      "Extra Markup Language",
+      "Extended Markup Language",
+      "Excellent Markup Language",
+      "Excellent Markup links"
+    ],
+    "answer": 1,
+    "explanation": "XML को पूर्ण रूप 'Extended Markup Language' हो। यो डेटा संरचना र साझा गर्नका लागि प्रयोग गरिने भाषा हो।"
+  },
+  {
+    "q": "निजामती कर्मचारीले घर विदा कति पाउँछ ?",
+    "options": [
+      "काम गरेको १० दिनको निम्ति १ दिन",
+      "काम गरेको १२ दिनको निम्ति १ दिन",
+      "काम गरेको १५ दिनको निम्ति १ दिन",
+      "काम गरेको २० दिनको निम्ति १ दिन"
+    ],
+    "answer": 1,
+    "explanation": "निजामती कर्मचारीले काम गरेको १२ दिनको निम्ति १ दिनका दरले घर विदा पाउँछ।"
+  },
+  {
+    "q": "लोक सेवा आयोग सम्बन्धी व्यवस्था नेपालको संविधानको कुन धारामा गरिएको छ ?",
+    "options": [
+      "धारा 239",
+      "धारा 240",
+      "धारा 241",
+      "धारा 242"
+    ],
+    "answer": 1,
+    "explanation": "लोक सेवा आयोग सम्बन्धी व्यवस्था नेपालको संविधानको धारा 240 मा गरिएको छ (Key A अनुसार)।"
+  },
+  {
+    "q": "युवा क्लबको कार्यालय कस्तो प्रकृतिको कार्यालय हो?",
+    "options": [
+      "सकारी",
+      "निजी",
+      "सामुदायिक",
+      "कुर्नै पनि होईन"
+    ],
+    "answer": 2,
+    "explanation": "युवा क्लब एक सामुदायिक संगठन हो। यस्ता संगठनका कार्यालयहरू सामुदायिक प्रकृतिका हुन्छन् — न सरकारी, न पूर्णतः निजी।"
+  },
+  {
+    "q": "तलका मध्ये कुन स्थायी कार्यालय अन्तगत पर्दैन ?",
+    "options": [
+      "मन्त्रालय",
+      "विभाग",
+      "संस्थान",
+      "परियोजनाका कार्यालय"
+    ],
+    "answer": 3,
+    "explanation": "परियोजनाका कार्यालयहरू परियोजना सकिएपछि बन्द हुन्छन्, त्यसैले ती स्थायी कार्यालय होइनन्। मन्त्रालय, विभाग र संस्थान चाहिँ स्थायी प्रकृतिका हुन्छन्।"
+  },
+  {
+    "q": "प्रसुती विदा कति दिन पाउने व्यवस्था छ ?",
+    "options": [
+      "प्रसूतीको अघि र पछि गरी ६० दिन",
+      "प्रसूतीको अघि र पछि गरी ९८ दिन र ६ महिनासम्म बेतलबी विदा",
+      "प्रसूतीको अघि र पछि गरी १२० दिन",
+      "प्रसूतीको अघि र पछि गरी ९० दिन र ३ महिनासम्म बेतलबी विदा"
+    ],
+    "answer": 1,
+    "explanation": "प्रसूती विदा प्रसूतीको अघि र पछि गरी ९८ दिन र थप ६ महिनासम्म बेतलबी विदा पाउने व्यवस्था छ।"
+  },
+  {
+    "q": "सार्वजनिक कार्यालयमा समय व्यवस्थापनको मुख्य फाइदा के हो?",
+    "options": [
+      "कर्मचारी भर्ना",
+      "कार्यदक्षता र उत्पादकत्व बढाउने",
+      "स्रोत परिचालन",
+      "नीति परिवर्तन"
+    ],
+    "answer": 1,
+    "explanation": "समय व्यवस्थापनले कार्यदक्षता र उत्पादकत्व बढाउँछ।"
+  },
+  {
+    "q": "महालेखापरीक्षकले अन्तिम लेखापरीक्षण गर्दा नियमितता, मितव्ययीता, लगायत तलको कुन सिद्धान्तको आधारमा लेखापरीक्षण गर्दछ ?",
+    "options": [
+      "कार्यदक्षता",
+      "प्रभावकारिता",
+      "औचित्य",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "महालेखापरीक्षकले अन्तिम लेखापरीक्षण गर्दा नियमितता, मितव्ययीता, कार्यदक्षता, प्रभावकारिता र औचित्य — सबैको आधारमा लेखापरीक्षण गर्दछ।"
+  },
+  {
+    "q": "सार्वजनिक प्रशासनमा नैतिकताको कुन सिद्धान्तले कर्मचारीलाई निष्पक्ष बनाउँछ?",
+    "options": [
+      "राजनीतिक प्रभाव",
+      "निष्पक्षता र तटस्थता",
+      "व्यक्तिगत लाभ",
+      "गोपनीयता"
+    ],
+    "answer": 1,
+    "explanation": "निष्पक्षता र तटस्थताले कर्मचारीलाई निष्पक्ष र नैतिक बनाउँछ।"
+  },
+  {
+    "q": "कार्यालयको सबैभन्दा केन्द्रविन्दु पक्ष के हो ?",
+    "options": [
+      "कर्मचारी",
+      "बजेट",
+      "काम",
+      "स्रोत साधन"
+    ],
+    "answer": 2,
+    "explanation": "कार्यालयको सबैभन्दा केन्द्रविन्दु पक्ष 'काम' (Work) हो। कर्मचारी, बजेट र स्रोत साधन सबै काम सम्पादनका लागि परिचालित हुन्छन्।"
+  },
+  {
+    "q": "निजामती सेवाको पदमा पदपूर्ति गर्ने क्रममा पिछडिएको क्षेत्र अन्तर्गत तलका नघ्ने कुन जिल्लालाई समेटिएको छैन ?",
+    "options": [
+      "ढोल्पा",
+      "बझाङ",
+      "दार्चुला",
+      "बाजुरा"
+    ],
+    "answer": 2,
+    "explanation": "निजामती सेवाको पदपूर्ति गर्ने क्रममा पिछडिएको क्षेत्रका जिल्लाहरूमा दार्चुला समेटिएको छैन (Key C अनुसार)।"
+  },
+  {
+    "q": "नेपालको संविधानको कुन धारामा नागरिकका कर्तव्य उल्लेख गरेको छ ?",
+    "options": [
+      "47",
+      "48",
+      "49",
+      "50"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधानको धारा 48 मा नागरिकका कर्तव्य उल्लेख गरेको छ (Key A अनुसार)।"
+  },
+  {
+    "q": "निजामती कर्मचारीले सेवा अवधि भरीमा बढीमा कति वर्षसम्म असाधारण विदा लिन सक्छ ?",
+    "options": [
+      "एक पटकमा १ वर्ष नबढाई बढीमा २ वर्ष",
+      "एक पटकमा १ वर्ष नबढाई बढीमा ३ वर्ष",
+      "एक पटकमा २ वर्ष नबढाई बढीमा ५ वर्ष",
+      "एक पटकमा ६ महिना नबढाई बढीमा २ वर्ष"
+    ],
+    "answer": 1,
+    "explanation": "निजामती कर्मचारीले सेवा अवधि भरीमा एक पटकमा १ वर्ष नबढाई बढीमा ३ वर्षसम्म असाधारण विदा लिन सक्छ।"
+  },
+  {
+    "q": "सुशासन (व्यवस्थापन तथा सञ्चालन) ऐन, २०६४ ले मुख्यतः कुन क्षेत्र समेट्छ?",
+    "options": [
+      "नीति योजना मात्र",
+      "प्रशासनिक सुधार मात्र",
+      "अनुसन्धान मात्र",
+      "पारदर्शिता, जवाफदेहिता र सेवा प्रवाह सुधार"
+    ],
+    "answer": 3,
+    "explanation": "सुशासन ऐन, २०६४ ले सार्वजनिक प्रशासनमा पारदर्शिता, जवाफदेहिता र सेवा प्रवाह सुधारलाई मुख्य रूपमा समेट्छ।"
+  },
+  {
+    "q": "Who is the father of computer",
+    "options": [
+      "Charles Babbage",
+      "Alexander Graham Bell",
+      "Vinton Cerf and Bob Kahn",
+      "Dr. Martin Cooper"
+    ],
+    "answer": 0,
+    "explanation": "Charles Babbage (चार्ल्स ब्याभेज) लाई 'कम्प्युटरका जनक' भनिन्छ। उनले Difference Engine र Analytical Engine को अवधारणा विकास गरे।"
+  },
+  {
+    "q": "कार्यालय सञ्चालनका लागि आवश्यक पर्ने कार्य तथा औपचारिक कियाकलापहरूको व्यवस्थित विधि तथा चरणलाई के भनिन्छ?",
+    "options": [
+      "कार्यालय व्यवस्थापन",
+      "पत्र व्यवहार",
+      "कार्यालय कार्यविधि",
+      "चलानी"
+    ],
+    "answer": 2,
+    "explanation": "कार्यालय कार्यविधि भनेको औपचारिक कार्यहरूको व्यवस्थित विधि हो, जुन व्यवस्थापन वा पत्र व्यवहारभन्दा फरक छ।"
+  },
+  {
+    "q": "नेपालमा कर्मचारी प्रशासनसम्बन्धी केन्द्रीय निकायको रूपमा काम गर्ने निकाय कुन हो ?",
+    "options": [
+      "लोक सेवा आयोग",
+      "प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय",
+      "सङ्घीय मामिला तथा सामान्य प्रशासन मन्त्रालय",
+      "गृह मन्त्रालय"
+    ],
+    "answer": 2,
+    "explanation": "नेपालमा कर्मचारी प्रशासनसम्बन्धी केन्द्रीय निकाय सङ्घीय मामिला तथा सामान्य प्रशासन मन्त्रालय हो (Key C अनुसार)।"
+  },
+  {
+    "q": "कुनै पत्र वा पत्र वा आवेदनमा किन तोक आदेश आवश्यक पर्दछ ?",
+    "options": [
+      "कुनै पनि कागजातको कारबाहीको अधिकार प्राप्तीको लागि तोक आदेश आवश्यक पर्दछ",
+      "पत्र, परिपत्र, निवेदनलाई वैधानिक रूपमा कार्यान्वयनमा लैजान पनि तोक आदेश हुनु पर्दछ",
+      "यसले कुनै काममा स्पष्ट मार्गदर्शन प्रदान गर्छ",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "तोक आदेश अधिकार स्थापित गर्न, वैधानिक कार्यान्वयनका लागि र स्पष्ट मार्गदर्शनका लागि — तीनै उद्देश्यका लागि आवश्यक छ।"
+  },
+  {
+    "q": "सार्वजनिक बढापत्रमा देहायकामध्ये हुनपर्ने के हो ?",
+    "options": [
+      "सेवाको प्रकार, परिणाम, समय एवं जिम्मेवार व्यक्ति",
+      "सेवा प्रवाहको लागि समूहकार्य",
+      "उर्जा गर्ने तथा सुन्ने निकाय",
+      "सेवा प्रवाह गर्ने निकाय वा व्यक्तिको ठेगाना"
+    ],
+    "answer": 0,
+    "explanation": "सार्वजनिक बढापत्रमा सेवाको प्रकार, परिणाम, समय एवं जिम्मेवार व्यक्ति हुनुपर्दछ।"
+  },
+  {
+    "q": "संयुक्त राष्ट्रसंघ",
+    "options": [
+      "महासभा",
+      "आर्थिक तथा सामाजिक परिषद्",
+      "सुरक्षा परिषद्",
+      "अन्तर्राष्ट्रिय न्यायालय"
+    ],
+    "answer": 0,
+    "explanation": "मानव अधिकारको विश्वव्यापी घोषणापत्र संयुक्त राष्ट्रसंघको महासभाले तयार गरेको हो (Key B अनुसार)।"
+  },
+  {
+    "q": "निजामती कर्मचारीले पालना गर्नुपर्ने आचरणमा कुन समावेश छैन?",
+    "options": [
+      "समय पालना",
+      "अनुशासन",
+      "राजनीतिमा भाग लिने",
+      "सरकारी आलोचना नगर्ने"
+    ],
+    "answer": 2,
+    "explanation": "निजामती कर्मचारीलाई राजनीतिमा भाग लिन निषेध छ — यो उनको आचरणमा समावेश हुने कुरा होइन, बरु निषेधित कुरा हो।"
+  },
+  {
+    "q": "कुनै पनि कार्यालयसँग सम्बन्धित शाखा वा फाँटमा रहने कार्यालय सहायकलाई के भनिन्छ?",
+    "options": [
+      "फाँटवाला",
+      "निजी सहायक",
+      "सम्पर्क सहायक",
+      "शाखा अधिकृत"
+    ],
+    "answer": 0,
+    "explanation": "कुनै पनि कार्यालयको शाखा वा फाँटमा रहेर काम गर्ने कार्यालय सहायकलाई 'फाँटवाला' भनिन्छ।"
+  },
+  {
+    "q": "सार्वजनिक निकायले खरिद गर्दा कसरी गर्नु पर्दछ?",
+    "options": [
+      "अन्तराष्ट्रिय स्तरमा खुल्ला बोलपत्र आवहान गरी",
+      "राष्ट्रिय स्तरमा खुला बोलपत्र आह्ववान गरी",
+      "सिल्बन्दी दरभाउ पत्र आह्ववान गरी",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "सार्वजनिक खरिदको लागि रकम र प्रकृति अनुसार अन्तर्राष्ट्रिय, राष्ट्रिय वा सिल्बन्दी — जुन पद्धति उपयुक्त हो त्यो प्रयोग गर्न सकिन्छ।"
+  },
+  {
+    "q": "Full form of Internet",
+    "options": [
+      "Interconnected Network",
+      "Computer connected network",
+      "Internal connection",
+      "All of the above"
+    ],
+    "answer": 0,
+    "explanation": "Internet को पूर्ण रूप 'Interconnected Network' हो — अर्थात् आपसमा जोडिएका कम्प्युटर नेटवर्कहरूको जाल।"
+  },
+  {
+    "q": "राजपत्राङ्कित कर्मचारी सेवा निवृत्त हुँदा कति महिना बराबरको तलब उपचार खर्च बापत प्राप्त गर्दछन् ?",
+    "options": [
+      "६ महिना",
+      "१२ महिना",
+      "१८ महिना",
+      "२१ महिना"
+    ],
+    "answer": 1,
+    "explanation": "राजपत्राङ्कित कर्मचारी सेवा निवृत्त हुँदा १२ महिना बराबरको तलब उपचार खर्च बापत प्राप्त गर्दछन्।"
+  },
+  {
+    "q": "सार्वजनिक सेवा प्रवाह भन्नाले तलका मध्ये कुनलाई जनाउँदछ ?",
+    "options": [
+      "सरकारी निकायहरूबाट प्रवाह हुने सेवा",
+      "सार्वजनिक क्षेत्रबाट हुने सेवा",
+      "सामुदायिक संस्थाबाट प्रवाह हुने सेवा",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "सार्वजनिक सेवा प्रवाह भन्नाले सरकारी निकाय, सार्वजनिक क्षेत्र र सामुदायिक संस्था — सबैबाट प्रवाह हुने सेवा जनाउँछ (Key B अनुसार)।"
+  },
+  {
+    "q": "तलको मध्ये कुन अभिलेख व्यवस्थापनको सिद्धान्त हो ?",
+    "options": [
+      "प्रभावकारिताको सिद्धान्त",
+      "सुरक्षाको सिद्धान्त",
+      "उपयोगको सिद्धान्त",
+      "माथीका सबै"
+    ],
+    "answer": 3,
+    "explanation": "अभिलेख व्यवस्थापनका सिद्धान्तमा प्रभावकारिता, सुरक्षा र उपयोग — तीनै पर्दछन्।"
+  },
+  {
+    "q": "सरकारी निकायको अन्तिम लेखापरीक्षण गर्ने निकाय तलका मध्ये कुन हो ?",
+    "options": [
+      "महालेखापरीक्षकको कार्यालय",
+      "महालेखा नियन्त्रकको कार्यालय",
+      "कोष तथा लेखा नियन्त्रकको कार्यालय",
+      "अर्थ मन्त्रालय"
+    ],
+    "answer": 0,
+    "explanation": "सरकारी निकायको अन्तिम लेखापरीक्षण गर्ने निकाय महालेखापरीक्षकको कार्यालय हो।"
+  },
+  {
+    "q": "सत्य, क्षमा, परोपकार, अहिंसा, उपकार भलाइ जस्ता मूल्य र मान्यता कस्तो मूल्य मान्यता हुन्?",
+    "options": [
+      "आध्यमिक",
+      "नैतिक",
+      "धार्मिक",
+      "अन्तर्राष्ट्रिय"
+    ],
+    "answer": 0,
+    "explanation": "सत्य, क्षमा, परोपकार, अहिंसा जस्ता मूल्य 'आध्यात्मिक मूल्य र मान्यता' अन्तर्गत पर्दछन्।"
+  },
+  {
+    "q": "खर्च भएर नजाने जिन्सीलाई कुन म.ले.प.फा.नं. फाराम अनुसार राखिन्छ ?",
+    "options": [
+      "म.ले.प.फा.नं. ४०५",
+      "म.ले.प.फा.नं. ४०६",
+      "म.ले.प.फा.नं. ४०७",
+      "म.ले.प.फा.नं. ४०८"
+    ],
+    "answer": 3,
+    "explanation": "खर्च भएर नजाने जिन्सीको अभिलेख म.ले.प.फा.नं. ४०८ अनुसार राखिन्छ।"
+  },
+  {
+    "q": "नेपालको पहिलो बजेटको राजस्व कति थियो?",
+    "options": [
+      "रु. ३.०४ करोड",
+      "रु. ४.२४ करोड",
+      "रु. २.५० करोड",
+      "रु. ५.०० करोड"
+    ],
+    "answer": 0,
+    "explanation": "नेपालको पहिलो बजेटको राजस्व रु. ३.०४ करोड थियो।"
+  },
+  {
+    "q": "निजामती सेवा दिवस कहिले मनाइन्छ ?",
+    "options": [
+      "हरेक वर्ष भाद्र २२ मा",
+      "हरेक वर्ष असार २८ मा",
+      "हरेक वर्ष जेठ ४ मा",
+      "हरेक वर्ष माघ १ मा"
+    ],
+    "answer": 0,
+    "explanation": "निजामती सेवा दिवस हरेक वर्ष भाद्र २२ गते मनाइन्छ।"
+  },
+  {
+    "q": "राष्ट्रिय सूचना आयोगको प्रमुख आयुक्त र अन्य आयुक्तको कार्यकाल कति वर्षको हुन्छ?",
+    "options": [
+      "२ वर्ष",
+      "३ वर्ष",
+      "४ वर्ष",
+      "५ वर्ष"
+    ],
+    "answer": 2,
+    "explanation": "राष्ट्रिय सूचना आयोगका प्रमुख आयुक्त र आयुक्तहरूको कार्यकाल ४ वर्षको हुन्छ।"
+  },
+  {
+    "q": "सञ्चारको पहिलो तत्व कुन हो?",
+    "options": [
+      "सन्देश",
+      "प्रेषक",
+      "माध्यम",
+      "प्राप्तकर्ता"
+    ],
+    "answer": 1,
+    "explanation": "प्रेषकले सञ्चार प्रक्रिया शुरू गर्छ, जुन पहिलो तत्व हो (SMCR मोडेलको S = Source/Sender)।"
+  },
+  {
+    "q": "विश्वमा आधुनिक सञ्चारको पहिलो माध्यम तलकामध्ये केलाई मानिन्छ?",
+    "options": [
+      "चिठीपत्र",
+      "हुलाक",
+      "पत्रव्यवहार",
+      "इन्टरनेट"
+    ],
+    "answer": 1,
+    "explanation": "हुलाक प्रणाली विश्वको पहिलो आधुनिक सञ्चार माध्यम मानिन्छ, जो इन्टरनेट भन्दा धेरै पहिले स्थापित भएको थियो।"
+  },
+  {
+    "q": "महिला कर्मचारीको परिक्षण काल (Probation Period) कति हुन्छ?",
+    "options": [
+      "६ महिना",
+      "१२ महिना",
+      "१८ महिना",
+      "२४ महिना"
+    ],
+    "answer": 0,
+    "explanation": "महिला कर्मचारीको परिक्षण काल ६ महिना हुन्छ, पुरुषको हकमा १ वर्ष हुन्छ।"
+  },
+  {
+    "q": "नेपालको सार्वजनिक क्षेत्रमा कर्मचारीहरूको कार्यसम्पादन मुल्याङ्कन गर्ने सूचकको सन्दर्भमा तलको मध्ये कुन ठीक होईन।",
+    "options": [
+      "सम्पादित कामको परिणाम",
+      "सम्पादित कामको लागत",
+      "सम्पादित कामप्रतिको ईमान्दारीता",
+      "सम्पादित काममा लागेको समय"
+    ],
+    "answer": 1,
+    "explanation": "सम्पादित कामको लागत कार्यसम्पादन मूल्याङ्कनको सूचक ठीक होइन — यो वित्तीय पक्ष हो, कार्यसम्पादन मूल्याङ्कनको होइन।"
+  },
+  {
+    "q": "निजामती सेवा ऐन २०४९ ले कुन तह सम्मको निजामती कर्मचारीले ट्रेड युनियनको सदस्यता लिन सक्ने व्यवस्था गरेको छ ?",
+    "options": [
+      "राजपत्रअनंकित प्रथम श्रेणी सम्मको",
+      "राजपत्राङ्कित तृतिय श्रेणी सम्मको",
+      "राजपत्राङ्कित द्वितिय श्रेणी सम्मको",
+      "सबै तहका कर्मचारीले"
+    ],
+    "answer": 1,
+    "explanation": "निजामती सेवा ऐन, २०४९ ले राजपत्राङ्कित तृतीय श्रेणीसम्मको निजामती कर्मचारीले ट्रेड युनियनको सदस्यता लिन सक्ने व्यवस्था गरेको छ।"
+  },
+  {
+    "q": "नेपालको संविधानमा उल्लेख भए अनुसार तलका मध्ये नागरिकको कर्तव्य कुन होइन ?",
+    "options": [
+      "संविधान र कानूनको पालना गर्नु",
+      "राज्यले चाहेका बखत अनिवार्य सेवा गर्नु",
+      "सार्वजनिक सम्पत्तिको सुरक्षा र संरक्षण गर्नु",
+      "नियम र आचरणको पालना गर्नु"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधानमा 'राज्यले चाहेका बखत अनिवार्य सेवा गर्नु' नागरिकको कर्तव्य होइन (Key A अनुसार)।"
+  },
+  {
+    "q": "\"अपर तामाकोशी\" जलविद्युत आयोजनाको विद्युत उत्पादन क्षमता कति मेगावाट रहेको छ ?",
+    "options": [
+      "356",
+      "456",
+      "567",
+      "367"
+    ],
+    "answer": 2,
+    "explanation": "अपर तामाकोशी जलविद्युत आयोजनाको विद्युत उत्पादन क्षमता ५६७ मेगावाट रहेको छ (Key D अनुसार)।"
+  },
+  {
+    "q": "व्यवस्थापन परीक्षणको कार्य कुन निकायले गर्दछ ?",
+    "options": [
+      "राष्ट्रिय योजना आयोग",
+      "सार्वजनिक खरिद अनुगमन कार्यालय",
+      "सङ्घीय मामिला तथा सामान्य प्रशासन मन्त्रालय",
+      "राष्ट्रिय सतर्कता केन्द्र"
+    ],
+    "answer": 2,
+    "explanation": "व्यवस्थापन परीक्षणको कार्य सङ्घीय मामिला तथा सामान्य प्रशासन मन्त्रालयले गर्दछ।"
+  },
+  {
+    "q": "देशको प्रशासन संचालन गर्न संघीय निजामती सेवा र आवश्यकता अनुसार अन्य सरकारी सेवाहरु गठन गर्न सक्ने नेपालको संविधानको कुन धारामा उल्लेख छ?",
+    "options": [
+      "धारा 280",
+      "धारा 285",
+      "धारा 290",
+      "धारा 295"
+    ],
+    "answer": 1,
+    "explanation": "नेपालको संविधानको धारा २८५ मा संघीय निजामती सेवा र अन्य सरकारी सेवाहरू गठन गर्न सक्ने व्यवस्था उल्लेख छ।"
+  },
+  {
+    "q": "विरामी विदा बढीमा कति दिन सम्म संचित गरि राख्न सकिन्छ ?",
+    "options": [
+      "९० दिन सम्म",
+      "१२० दिन सम्म",
+      "१५० दिन सम्म",
+      "जति पनि संचित गर्न पाउँछ"
+    ],
+    "answer": 3,
+    "explanation": "विरामी विदा जति पनि संचित गर्न पाउँछ — यसको संचय गर्ने हदको सीमा छैन।"
+  },
+  {
+    "q": "5 वर्षभन्दा बढी तर 10 वर्षभन्दा कम सेवा गरेको कर्मचारी अवकाश भएमा प्रत्येक वर्ष कति तलब बराबर उपदान प्राप्त गर्दछ ?",
+    "options": [
+      "आधा महिनाको तलब",
+      "एक महिनाको तलब",
+      "डेढ महिनाको तलब",
+      "दुई महिनाको तलब"
+    ],
+    "answer": 0,
+    "explanation": "5 वर्षभन्दा बढी तर 10 वर्षभन्दा कम सेवा गरेको कर्मचारी अवकाश भएमा प्रत्येक वर्ष आधा महिनाको तलब बराबर उपदान प्राप्त गर्दछ।"
+  },
+  {
+    "q": "उत्प्रेरणाको सिद्धान्तहरूमध्ये हर्जबर्गको Two Factors Theory अन्तर्गत उत्प्रेरक तत्वहरूमा तलका मध्ये कुन पर्दैन ?",
+    "options": [
+      "प्राप्ति",
+      "विकास",
+      "चुनौतीपूर्ण काम",
+      "कार्य वातावरण"
+    ],
+    "answer": 3,
+    "explanation": "हर्जबर्गको Two Factors Theory अन्तर्गत 'कार्य वातावरण' उत्प्रेरक (Motivator) होइन — यो Hygiene factor हो।"
+  },
+  {
+    "q": "परिपत्र कस्तो अवस्थामा गरिन्छ?",
+    "options": [
+      "माथिल्लो निकायले मातहतका निकायलाई एकै विषयको जानकारी लिखित रूपमा दिन परिपत्र गरिन्छ",
+      "माथिल्लो निकायले तल्लो निकायलाई निर्देशनको लागि परिपत्र गरिन्छ",
+      "सूचना दिन, जानकारी गराउन, मार्गदर्शन गर्न परिपत्र गरिन्छ",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "परिपत्र सूचना, जानकारी, मार्गदर्शन र निर्देशन — सबै उद्देश्यका लागि गरिन्छ।"
+  },
+  {
+    "q": "In the context of dispute resolution, 'conciliation' is characterized by",
+    "options": [
+      "investigation into workplace for criminal activities",
+      "a third party imposing legally binding decision",
+      "a third party assisting the parties to reach voluntary agreement",
+      "firing of striking workers"
+    ],
+    "answer": 2,
+    "explanation": "Conciliation मा तेस्रो पक्षले दुई पक्षलाई स्वैच्छिक सहमतिमा पुग्न सहयोग गर्दछ (Key D अनुसार)।"
+  },
+  {
+    "q": "कार्यालयमा प्राप्त चिठ्ठी पत्रहरुको सुरुको अभिलेख राख्ने कार्यालयलाई के भनिन्छ ?",
+    "options": [
+      "अभिलेख",
+      "दर्ता",
+      "चलानी",
+      "पत्र संख्या"
+    ],
+    "answer": 1,
+    "explanation": "कार्यालयमा प्राप्त पत्रहरूको सुरुको अभिलेख 'दर्ता' किताबमा राखिन्छ। दर्ता भनेको आउने पत्र दर्ता गर्ने प्रक्रिया हो।"
+  },
+  {
+    "q": "निम्न मध्ये चिठ्ठी पत्रको अंशमा कुन कुरा पर्दैन ?",
+    "options": [
+      "शीर्षक वा पत्रको विषय",
+      "पत्र संख्या र चलानी नम्बर",
+      "अन्तिम सम्बोधन वा अभिवादन",
+      "प्रतिवेदन"
+    ],
+    "answer": 3,
+    "explanation": "प्रतिवेदन (Report) चिठीपत्रको अंश होइन — यो छुट्टै कागजातको प्रकार हो। चिठीको मुख्य अंशमा शीर्षक, पत्र संख्या, सम्बोधन पर्दछन्।"
+  },
+  {
+    "q": "भौगोलिक सीमानाको आधारमा 'राष्ट्रिय कार्यालय' को उदाहरण कुन हो?",
+    "options": [
+      "यूनेस्को",
+      "विश्व बैंक",
+      "मानव अधिकार आयोग",
+      "स्थानीय तह कार्यालय"
+    ],
+    "answer": 2,
+    "explanation": "मानव अधिकार आयोग राष्ट्रिय स्तरको कार्यालय हो, जबकि यूनेस्को र विश्व बैंक अन्तर्राष्ट्रिय र स्थानीय तह स्थानीय हुन्।"
+  },
+  {
+    "q": "क्षयरोगको उपचारमा प्रयोगमा ल्याइएको विधि DOTS को पूरा रुप के हो ?",
+    "options": [
+      "Directly Observe Treatment Short Course",
+      "Directly Observe Treatment System",
+      "Directly Observe Therapy System Course",
+      "Daily Observation Treatment System"
+    ],
+    "answer": 0,
+    "explanation": "DOTS को पूरा रुप Directly Observe Treatment Short Course हो (Key D अनुसार)।"
+  },
+  {
+    "q": "स्रोत साधन कार्यालयमा कुन समयमा आवश्यक पर्दछ ?",
+    "options": [
+      "कार्य संचालनको सुरुवातमा",
+      "कार्य संचालन सुरु गर्नु पूर्व",
+      "कार्य संचालनको अन्त्यमा",
+      "जुनसुकै बखत"
+    ],
+    "answer": 3,
+    "explanation": "स्रोत साधन कार्यालयमा सधैँ — कार्य सुरु हुनुअघि, सञ्चालनमा र अन्त्यमा पनि आवश्यक पर्छ। त्यसैले 'जुनसुकै बखत' सही उत्तर हो।"
+  },
+  {
+    "q": "नेपालमा सुशासनको सन्दर्भमा विकास भएका नवीनतम विधिहरू कुन कुन हुन्?",
+    "options": [
+      "सामाजिक परीक्षण",
+      "सार्वजनिक परीक्षण",
+      "सार्वजनिक सुनुवाइ",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "नेपालमा सुशासन प्रवर्द्धनका लागि सामाजिक परीक्षण, सार्वजनिक परीक्षण र सार्वजनिक सुनुवाइ — तीनै नवीनतम विधि अवलम्बन भएका छन्।"
+  },
+  {
+    "q": "कार्यालयमा वार्षिक प्रगतिको प्रस्तुतीको (Presentation) लागि कुन सफ्टव्यरको प्रयोग गरिन्छ?",
+    "options": [
+      "Ms. Word",
+      "Ms. Excel",
+      "Ms. Powerpoint",
+      "All of the above"
+    ],
+    "answer": 2,
+    "explanation": "कार्यालयमा प्रस्तुतीकरण (Presentation) को लागि Ms. Powerpoint प्रयोग गरिन्छ।"
+  },
+  {
+    "q": "तहका मध्ये कुन कार्य सहायक कर्मचारीको प्रथामिकतामा पर्दछ ?",
+    "options": [
+      "प्रक्रियाको पालन गर्ने",
+      "समन्वय गर्ने",
+      "सहयोग र सहकार्य",
+      "संस्थाको लक्ष्य तथा उद्देश्य प्राप्ति गर्ने"
+    ],
+    "answer": 3,
+    "explanation": "सहायक कर्मचारीको सर्वोच्च प्राथमिकता संस्थाको लक्ष्य तथा उद्देश्य प्राप्त गर्नु हो। प्रक्रिया, समन्वय र सहकार्य यही उद्देश्य प्राप्तिका साधन हुन्।"
+  },
+  {
+    "q": "कार्यालयमा प्रतिवेदन लेख्कको लागि कुन सफ्टव्यरको प्रयोग गरिन्छ?",
+    "options": [
+      "Ms. Word",
+      "Ms. Excel",
+      "Ms. Powerpoint",
+      "All of the above"
+    ],
+    "answer": 0,
+    "explanation": "कार्यालयमा प्रतिवेदन लेख्नका लागि Ms. Word सफ्टवेयर प्रयोग गरिन्छ।"
+  },
+  {
+    "q": "सार्वजनिक वडापत्रको अवधारणा पहिलो पटक लागू गर्ने मुलुक कुन हो?",
+    "options": [
+      "अमेरिका",
+      "बेलायत",
+      "अष्ट्रेलिया",
+      "रसिया"
+    ],
+    "answer": 1,
+    "explanation": "सार्वजनिक वडापत्रको अवधारणा पहिलो पटक बेलायतमा लागू गरिएको थियो (सन् १९९१ मा)।"
+  },
+  {
+    "q": "नेपालको सार्वजनिक प्रशासनमा प्रयोग भईआएको नागरिक वडापत्रको उद्देश्य तलका मध्ये कुन हो/हुन् ?",
+    "options": [
+      "सार्वजनिक प्रशासनलाई जनउत्तरदायी बनाउने र सरकारी काम कारबाहीमा पारदर्शिता तथा सुदृढ प्रत्याभूति गर्ने",
+      "प्रशासनमा ढिलासुस्ती रोकन र कर्मचारीलाई कामप्रति अभिप्रेरित गर्ने",
+      "सेवाग्राही र सेवा प्रदायकको धन र समय बचत गर्दै सुमधुर सम्बन्ध कायम गर्ने",
+      "माथिका सबै"
+    ],
+    "answer": 3,
+    "explanation": "नागरिक वडापत्रको उद्देश्य जनउत्तरदायित्व, पारदर्शिता, ढिलासुस्ती रोकथाम र सुमधुर सम्बन्ध कायम गर्ने — सबै हो (Key B अनुसार)।"
+  },
+  {
+    "q": "शान्ति, सुरक्षा, रक्षा, राजश्व जस्ता विषयका सेवा कस्तो प्रकारका सार्वजनिक सेवा प्रवाह अन्तर्गत पर्दछन् ?",
+    "options": [
+      "आकस्मिक सेवा",
+      "परम्परागत सेवा",
+      "आधारभूत सेवा",
+      "कल्याणकारी सेवा"
+    ],
+    "answer": 1,
+    "explanation": "शान्ति, सुरक्षा, रक्षा, राजश्व जस्ता विषयका सेवा परम्परागत सेवा अन्तर्गत पर्दछन् (Key C अनुसार)।"
+  }
+];
+
+const questions = rawQuestions.map((item, idx) => {
+  const opts = Array.isArray(item.options) ? item.options.map(o => String(o)) : [];
+  const ai = Math.min(Number.isInteger(Number(item.answer)) && Number(item.answer) >= 0 ? Number(item.answer) : 0, Math.max(opts.length - 1, 0));
+  return { q: String(item.q || item.question || `Q${idx+1}`), options: opts, answer: ai, explanation: String(item.explanation || 'No explanation.') };
+}).filter(q => q.q && q.options.length > 0);
+
+const quizEl = document.getElementById('quiz');
+const scoreEl = document.getElementById('score');
+const timerEl = document.getElementById('timer');
+const progressEl = document.getElementById('progress');
+const progressTextEl = document.getElementById('progress-text');
+const currentScoreEl = document.getElementById('current-score');
+const questionsAnsweredEl = document.getElementById('questions-answered');
+const questionsTotalEl = document.getElementById('questions-total');
+const accuracyEl = document.getElementById('accuracy');
+const resultsEl = document.getElementById('results');
+const resultsBody = document.getElementById('results-body');
+const streakBadge = document.getElementById('streak-badge');
+const restartBtn = document.getElementById('restart-btn');
+
+let currentIndex = 0, score = 0, timerSeconds = 0, timerInterval = null;
+let currentStreak = 0, maxStreak = 0, quizFinished = false, pendingTimeout = null;
+let userAnswers = questions.map(() => null);
+
+questionsTotalEl.textContent = questions.length;
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+function formatTime(s) { return `${Math.floor(s/60).toString().padStart(2,'0')}:${(s%60).toString().padStart(2,'0')}`; }
+function startTimer() { clearInterval(timerInterval); timerInterval = setInterval(() => { timerSeconds++; timerEl.textContent = formatTime(timerSeconds); }, 1000); }
+
+function updateStats() {
+  const answered = userAnswers.filter(a => a !== null).length;
+  const correct = userAnswers.filter(a => a && a.isCorrect).length;
+  currentScoreEl.textContent = correct;
+  questionsAnsweredEl.textContent = answered;
+  accuracyEl.textContent = answered ? Math.round(correct/answered*100) + '%' : '0%';
+  progressTextEl.textContent = `${answered}/${questions.length}`;
+  progressEl.style.width = (questions.length ? answered/questions.length*100 : 0) + '%';
+}
+
+function updateStreak(ok) {
+  if (ok) { currentStreak++; maxStreak = Math.max(maxStreak, currentStreak); if (currentStreak >= 3) { streakBadge.textContent = `Streak: ${currentStreak}`; streakBadge.classList.add('show'); setTimeout(() => streakBadge.classList.remove('show'), 1800); } }
+  else currentStreak = 0;
+}
+
+function drawConfetti() {
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+  const particles = Array.from({length:150}, () => ({
+    x: Math.random()*canvas.width, y: Math.random()*canvas.height - canvas.height,
+    vx: (Math.random()-0.5)*4, vy: Math.random()*3+2,
+    color: ['#6366f1','#06b6d4','#f59e0b','#10b981','#ec4899'][Math.floor(Math.random()*5)],
+    size: Math.random()*6+2, rotation: Math.random()*360
+  }));
+  let aid;
+  function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    let active = false;
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy; p.rotation += 2;
+      if (p.y < canvas.height+20) { active = true; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180); ctx.fillStyle=p.color; ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size); ctx.restore(); }
+    });
+    if (active) aid = requestAnimationFrame(animate);
+  }
+  animate();
+  setTimeout(() => cancelAnimationFrame(aid), 5000);
+}
+
+function renderQuestion() {
+  if (quizFinished) return;
+  quizEl.innerHTML = ''; scoreEl.textContent = ''; resultsEl.classList.add('hidden');
+  const pageStart = Math.floor(currentIndex) * 1;
+  const qi = currentIndex;
+  const question = questions[qi];
+  const wrapper = document.createElement('div'); wrapper.className = 'question-wrapper';
+  const card = document.createElement('div'); card.className = 'question-card'; card.dataset.index = qi;
+  const hdr = document.createElement('div'); hdr.className = 'question-header';
+  hdr.innerHTML = `<div class="question-number">${qi+1}</div><div class="question-text">${question.q}</div>`;
+  const optsEl = document.createElement('div'); optsEl.className = 'options';
+  const expEl = document.createElement('div'); expEl.className = 'explanation'; expEl.textContent = question.explanation;
+  const shuffled = shuffle(question.options.map((t,i) => ({text:t,optionIndex:i})));
+  shuffled.forEach((opt, di) => {
+    const btn = document.createElement('button'); btn.className = 'option-btn';
+    btn.innerHTML = `<span class="option-indicator">${String.fromCharCode(65+di)}</span><span>${opt.text}</span>`;
+    btn.addEventListener('click', () => handleAnswer(qi, opt.optionIndex, opt.text, btn, optsEl, expEl));
+    optsEl.appendChild(btn);
+  });
+  card.appendChild(hdr); card.appendChild(optsEl); card.appendChild(expEl);
+  wrapper.appendChild(card); quizEl.appendChild(wrapper);
+  const bar = document.createElement('div'); bar.className = 'action-bar';
+  const skipBtn = document.createElement('button'); skipBtn.className = 'btn btn-skip'; skipBtn.innerHTML = '⊘ Skip Question';
+  skipBtn.addEventListener('click', () => skipQuestion(qi, expEl, optsEl));
+  bar.appendChild(skipBtn); quizEl.appendChild(bar);
+}
+
+function lockOptions(c) { c.querySelectorAll('.option-btn').forEach(b => b.disabled = true); }
+function revealCorrect(c, ai, qi) { c.querySelectorAll('.option-btn').forEach(b => { if (b.querySelector('span:last-child').textContent === questions[qi].options[ai]) b.classList.add('correct'); }); }
+
+function scheduleNext() {
+  if (pendingTimeout) clearTimeout(pendingTimeout);
+  pendingTimeout = setTimeout(() => {
+    if (userAnswers[currentIndex] !== null) {
+      if (currentIndex + 1 >= questions.length) finishQuiz();
+      else { currentIndex++; renderQuestion(); updateStats(); }
+    }
+  }, 700);
+}
+
+function handleAnswer(qi, si, st, btn, opts, exp) {
+  if (userAnswers[qi] !== null) return;
+  const ok = si === questions[qi].answer;
+  lockOptions(opts); revealCorrect(opts, questions[qi].answer, qi);
+  btn.classList.add(ok ? 'correct' : 'wrong');
+  if (ok) score++;
+  exp.style.display = 'block';
+  userAnswers[qi] = {selectedText: st, isCorrect: ok, skipped: false};
+  currentIndex = qi; updateStreak(ok); updateStats(); scheduleNext();
+}
+
+function skipQuestion(qi, exp, opts) {
+  if (userAnswers[qi] !== null) return;
+  lockOptions(opts); exp.style.display = 'block';
+  userAnswers[qi] = {selectedText: 'Skipped', isCorrect: false, skipped: true};
+  currentIndex = qi; updateStreak(false); updateStats(); scheduleNext();
+}
+
+function finishQuiz() {
+  quizFinished = true; clearInterval(timerInterval); quizEl.innerHTML = '';
+  const pct = questions.length ? (score/questions.length*100).toFixed(1) : '0.0';
+  let msg = "Keep learning! You'll improve!", emoji = '📚';
+  if (Number(pct) >= 90) { msg = "Outstanding! You're a master!"; emoji = '🏆'; drawConfetti(); }
+  else if (Number(pct) >= 70) { msg = 'Great job! Well done!'; emoji = '🌟'; }
+  else if (Number(pct) >= 50) { msg = 'Good effort! Keep practicing!'; emoji = '💪'; }
+  scoreEl.innerHTML = `<div style="font-size:4rem;margin-bottom:1rem">${emoji}</div><div class="score-display">${pct}%</div><div class="score-label">${msg}</div><div style="margin-top:1rem;color:var(--text-secondary)">${score} correct out of ${questions.length} questions<br>Time: ${formatTime(timerSeconds)} | Best Streak: ${maxStreak}</div>`;
+  resultsBody.innerHTML = questions.map((q, i) => {
+    const a = userAnswers[i];
+    const ua = !a ? 'Not attempted' : a.skipped ? 'Skipped' : a.selectedText;
+    const st = !a ? 'Not attempted' : a.skipped ? 'Skipped' : a.isCorrect ? 'Correct' : 'Wrong';
+    const sc = st.toLowerCase().replace(' ', '-');
+    const si = st === 'Correct' ? '✓' : st === 'Wrong' ? '✗' : st === 'Skipped' ? '⊘' : '•';
+    return `<tr><td>${i+1}</td><td>${q.q}</td><td>${ua}</td><td>${q.options[q.answer]||''}</td><td><span class="status-badge status-${sc}">${si} ${st}</span></td><td class="explanation-cell">${q.explanation}</td></tr>`;
+  }).join('');
+  resultsEl.classList.remove('hidden');
+}
+
+function restartQuiz() {
+  if (pendingTimeout) { clearTimeout(pendingTimeout); pendingTimeout = null; }
+  clearInterval(timerInterval);
+  currentIndex = 0; score = 0; timerSeconds = 0; currentStreak = 0; maxStreak = 0; quizFinished = false;
+  userAnswers = questions.map(() => null);
+  timerEl.textContent = '00:00'; streakBadge.classList.remove('show');
+  updateStats(); renderQuestion(); startTimer();
+}
+
+restartBtn.addEventListener('click', restartQuiz);
+window.addEventListener('resize', () => { const c = document.getElementById('confetti-canvas'); if (c) { c.width = window.innerWidth; c.height = window.innerHeight; } });
+updateStats(); renderQuestion(); startTimer();
+    </script>
+</body>
+</html>
