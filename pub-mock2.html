@@ -166,7 +166,7 @@ const quizConfig = {
   quizTitle: "pub-mock2 | सार्वजनिक व्यवस्थापन",
   displayTitle: "Public Management Mock 2",
   topicName: "सार्वजनिक व्यवस्थापन",
-  questionsPerPage: 1
+  questionsPerPage: 20
 };
 const rawQuestions = [
   {
@@ -1181,8 +1181,10 @@ const resultsBody = document.getElementById('results-body');
 const streakBadge = document.getElementById('streak-badge');
 const restartBtn = document.getElementById('restart-btn');
 
-let currentIndex = 0, score = 0, timerSeconds = 0, timerInterval = null;
-let currentStreak = 0, maxStreak = 0, quizFinished = false, pendingTimeout = null;
+let currentPage = 0, score = 0, timerSeconds = 0, timerInterval = null;
+let currentStreak = 0, maxStreak = 0, quizFinished = false;
+const itemsPerPage = Number(quizConfig.questionsPerPage) || 20;
+const totalPages = Math.max(1, Math.ceil(questions.length / itemsPerPage));
 let userAnswers = questions.map(() => null);
 
 questionsTotalEl.textContent = questions.length;
@@ -1236,44 +1238,57 @@ function drawConfetti() {
   setTimeout(() => cancelAnimationFrame(aid), 5000);
 }
 
-function renderQuestion() {
+function renderPage() {
   if (quizFinished) return;
   quizEl.innerHTML = ''; scoreEl.textContent = ''; resultsEl.classList.add('hidden');
-  const pageStart = Math.floor(currentIndex) * 1;
-  const qi = currentIndex;
-  const question = questions[qi];
-  const wrapper = document.createElement('div'); wrapper.className = 'question-wrapper';
-  const card = document.createElement('div'); card.className = 'question-card'; card.dataset.index = qi;
-  const hdr = document.createElement('div'); hdr.className = 'question-header';
-  hdr.innerHTML = `<div class="question-number">${qi+1}</div><div class="question-text">${question.q}</div>`;
-  const optsEl = document.createElement('div'); optsEl.className = 'options';
-  const expEl = document.createElement('div'); expEl.className = 'explanation'; expEl.textContent = question.explanation;
-  const shuffled = shuffle(question.options.map((t,i) => ({text:t,optionIndex:i})));
-  shuffled.forEach((opt, di) => {
-    const btn = document.createElement('button'); btn.className = 'option-btn';
-    btn.innerHTML = `<span class="option-indicator">${String.fromCharCode(65+di)}</span><span>${opt.text}</span>`;
-    btn.addEventListener('click', () => handleAnswer(qi, opt.optionIndex, opt.text, btn, optsEl, expEl));
-    optsEl.appendChild(btn);
-  });
-  card.appendChild(hdr); card.appendChild(optsEl); card.appendChild(expEl);
-  wrapper.appendChild(card); quizEl.appendChild(wrapper);
-  const bar = document.createElement('div'); bar.className = 'action-bar';
-  const skipBtn = document.createElement('button'); skipBtn.className = 'btn btn-skip'; skipBtn.innerHTML = '⊘ Skip Question';
-  skipBtn.addEventListener('click', () => skipQuestion(qi, expEl, optsEl));
-  bar.appendChild(skipBtn); quizEl.appendChild(bar);
+  const start = currentPage * itemsPerPage;
+  const end = Math.min(questions.length, start + itemsPerPage);
+  for (let qi = start; qi < end; qi++) {
+    const question = questions[qi];
+    const wrapper = document.createElement('div'); wrapper.className = 'question-wrapper';
+    const card = document.createElement('div'); card.className = 'question-card'; card.dataset.index = qi;
+    const hdr = document.createElement('div'); hdr.className = 'question-header';
+    hdr.innerHTML = `<div class="question-number">${qi+1}</div><div class="question-text">${question.q}</div>`;
+    const optsEl = document.createElement('div'); optsEl.className = 'options';
+    const expEl = document.createElement('div'); expEl.className = 'explanation'; expEl.textContent = question.explanation;
+    const shuffled = shuffle(question.options.map((t,i) => ({text:t,optionIndex:i})));
+    shuffled.forEach((opt, di) => {
+      const btn = document.createElement('button'); btn.className = 'option-btn';
+      btn.innerHTML = `<span class="option-indicator">${String.fromCharCode(65+di)}</span><span>${opt.text}</span>`;
+      btn.addEventListener('click', () => handleAnswer(qi, opt.optionIndex, opt.text, btn, optsEl, expEl));
+      optsEl.appendChild(btn);
+    });
+    card.appendChild(hdr); card.appendChild(optsEl); card.appendChild(expEl);
+    wrapper.appendChild(card); quizEl.appendChild(wrapper);
+    const bar = document.createElement('div'); bar.className = 'action-bar';
+    const skipBtn = document.createElement('button'); skipBtn.className = 'btn btn-skip'; skipBtn.innerHTML = '⊘ Skip Question';
+    skipBtn.addEventListener('click', () => skipQuestion(qi, expEl, optsEl));
+    bar.appendChild(skipBtn); quizEl.appendChild(bar);
+  }
+
+  const pager = document.createElement('div'); pager.style.display = 'flex'; pager.style.justifyContent = 'space-between'; pager.style.marginTop = '1rem';
+  const left = document.createElement('div');
+  const prevBtn = document.createElement('button'); prevBtn.className = 'btn'; prevBtn.textContent = '← Previous';
+  prevBtn.disabled = currentPage === 0;
+  prevBtn.addEventListener('click', () => { if (currentPage>0) { currentPage--; renderPage(); } });
+  left.appendChild(prevBtn);
+  const pageInfo = document.createElement('div'); pageInfo.style.alignSelf = 'center'; pageInfo.textContent = `Page ${currentPage+1} of ${totalPages}`;
+  const right = document.createElement('div');
+  const nextBtn = document.createElement('button'); nextBtn.className = 'btn'; nextBtn.textContent = 'Next →';
+  nextBtn.disabled = currentPage >= totalPages-1;
+  nextBtn.addEventListener('click', () => { if (currentPage < totalPages-1) { currentPage++; renderPage(); } });
+  const finishBtn = document.createElement('button'); finishBtn.className = 'btn'; finishBtn.textContent = 'Finish Quiz'; finishBtn.style.marginLeft = '0.5rem';
+  finishBtn.addEventListener('click', () => finishQuiz());
+  right.appendChild(nextBtn); right.appendChild(finishBtn);
+  pager.appendChild(left); pager.appendChild(pageInfo); pager.appendChild(right);
+  quizEl.appendChild(pager);
 }
 
 function lockOptions(c) { c.querySelectorAll('.option-btn').forEach(b => b.disabled = true); }
 function revealCorrect(c, ai, qi) { c.querySelectorAll('.option-btn').forEach(b => { if (b.querySelector('span:last-child').textContent === questions[qi].options[ai]) b.classList.add('correct'); }); }
 
-function scheduleNext() {
-  if (pendingTimeout) clearTimeout(pendingTimeout);
-  pendingTimeout = setTimeout(() => {
-    if (userAnswers[currentIndex] !== null) {
-      if (currentIndex + 1 >= questions.length) finishQuiz();
-      else { currentIndex++; renderQuestion(); updateStats(); }
-    }
-  }, 700);
+function checkComplete() {
+  if (userAnswers.every(a => a !== null)) finishQuiz();
 }
 
 function handleAnswer(qi, si, st, btn, opts, exp) {
@@ -1284,14 +1299,14 @@ function handleAnswer(qi, si, st, btn, opts, exp) {
   if (ok) score++;
   exp.style.display = 'block';
   userAnswers[qi] = {selectedText: st, isCorrect: ok, skipped: false};
-  currentIndex = qi; updateStreak(ok); updateStats(); scheduleNext();
+  updateStreak(ok); updateStats(); checkComplete();
 }
 
 function skipQuestion(qi, exp, opts) {
   if (userAnswers[qi] !== null) return;
   lockOptions(opts); exp.style.display = 'block';
   userAnswers[qi] = {selectedText: 'Skipped', isCorrect: false, skipped: true};
-  currentIndex = qi; updateStreak(false); updateStats(); scheduleNext();
+  updateStreak(false); updateStats(); checkComplete();
 }
 
 function finishQuiz() {
@@ -1324,7 +1339,7 @@ function restartQuiz() {
 
 restartBtn.addEventListener('click', restartQuiz);
 window.addEventListener('resize', () => { const c = document.getElementById('confetti-canvas'); if (c) { c.width = window.innerWidth; c.height = window.innerHeight; } });
-updateStats(); renderQuestion(); startTimer();
+updateStats(); renderPage(); startTimer();
     </script>
 </body>
 </html>
