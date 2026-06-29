@@ -1,435 +1,1629 @@
 <!DOCTYPE html>
 <html lang="ne">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Public Management Study Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSC Loksewa Prep — सम्पूर्ण अध्ययन गाइड २०८२/८३</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0D1117;
+  --surface: #161B22;
+  --surface2: #21262D;
+  --surface3: #2D333B;
+  --border: #30363D;
+  --border2: #444C56;
+  --primary: #F78166;
+  --primary-dim: rgba(247,129,102,0.12);
+  --secondary: #58A6FF;
+  --secondary-dim: rgba(88,166,255,0.1);
+  --accent: #3FB950;
+  --accent-dim: rgba(63,185,80,0.1);
+  --gold: #E3B341;
+  --gold-dim: rgba(227,179,65,0.1);
+  --red: #FF7B72;
+  --red-dim: rgba(255,123,114,0.1);
+  --text: #E6EDF3;
+  --text-muted: #8B949E;
+  --text-dim: #6E7681;
+  --radius: 10px;
+  --radius-lg: 16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-size:14px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+.nep{font-family:'Noto Sans Devanagari',sans-serif;}
+.mono{font-family:'JetBrains Mono',monospace;}
 
-        body {
-            background: linear-gradient(to right, #e0f7fa, #b2f5ea);
-            color: #2c3e50;
-            min-height: 100vh;
-            padding: 2rem;
-        }
+/* ── TOP NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,17,23,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 24px;
+  display:flex;align-items:center;gap:8px;
+  height:52px;overflow-x:auto;white-space:nowrap;
+}
+nav .logo{
+  font-weight:700;font-size:13px;
+  color:var(--primary);margin-right:16px;flex-shrink:0;
+  display:flex;align-items:center;gap:6px;
+}
+nav .logo span{font-size:18px;}
+.nav-link{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 12px;border-radius:20px;
+  font-size:12px;font-weight:500;
+  color:var(--text-muted);text-decoration:none;
+  transition:all 0.2s;flex-shrink:0;
+  border:1px solid transparent;
+}
+.nav-link:hover,.nav-link.active{
+  color:var(--text);background:var(--surface2);
+  border-color:var(--border2);
+}
+.search-wrap{margin-left:auto;flex-shrink:0;}
+#globalSearch{
+  background:var(--surface2);border:1px solid var(--border);
+  color:var(--text);padding:5px 12px;border-radius:20px;
+  font-size:12px;width:180px;outline:none;
+  font-family:'Inter',sans-serif;
+}
+#globalSearch:focus{border-color:var(--secondary);width:220px;transition:width 0.2s;}
 
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+/* ── HERO ── */
+.hero{
+  padding:48px 24px 36px;
+  text-align:center;
+  background:radial-gradient(ellipse 80% 50% at 50% 0%, rgba(247,129,102,0.08) 0%, transparent 70%);
+  border-bottom:1px solid var(--border);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--primary-dim);border:1px solid rgba(247,129,102,0.3);
+  color:var(--primary);padding:4px 14px;border-radius:20px;
+  font-size:11px;font-weight:600;letter-spacing:0.5px;
+  margin-bottom:20px;text-transform:uppercase;
+}
+.hero h1{
+  font-size:clamp(24px,4vw,42px);font-weight:700;
+  line-height:1.2;margin-bottom:12px;
+  font-family:'Noto Sans Devanagari',sans-serif;
+}
+.hero h1 .highlight{color:var(--primary);}
+.hero p{color:var(--text-muted);font-size:14px;max-width:600px;margin:0 auto 28px;}
+.hero-stats{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:16px;
+  margin-top:24px;
+}
+.hstat{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:14px 20px;min-width:140px;
+  text-align:center;
+}
+.hstat .val{
+  font-family:'JetBrains Mono',monospace;
+  font-size:22px;font-weight:700;color:var(--gold);display:block;
+}
+.hstat .lbl{font-size:11px;color:var(--text-muted);margin-top:2px;
+  font-family:'Noto Sans Devanagari',sans-serif;}
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+/* ── LAYOUT ── */
+.main-wrap{
+  max-width:1200px;margin:0 auto;
+  padding:24px;
+  display:grid;grid-template-columns:1fr 300px;gap:24px;
+}
+@media(max-width:900px){.main-wrap{grid-template-columns:1fr;}}
 
-        .note {
-            font-style: italic;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
+/* ── SIDEBAR ── */
+.sidebar{position:sticky;top:68px;align-self:start;display:flex;flex-direction:column;gap:16px;}
+.sidebar-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:18px;
+}
+.sidebar-card h4{
+  font-size:11px;text-transform:uppercase;letter-spacing:1px;
+  color:var(--text-dim);margin-bottom:12px;font-weight:600;
+}
 
-        .search-bar {
-            margin: 1.5rem auto;
-            max-width: 600px;
-            position: relative;
-        }
+/* ── SECTION CARDS ── */
+.section{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);margin-bottom:20px;overflow:hidden;
+}
+.section-header{
+  display:flex;align-items:center;gap:10px;
+  padding:16px 20px;cursor:pointer;
+  border-bottom:1px solid var(--border);
+  transition:background 0.2s;user-select:none;
+}
+.section-header:hover{background:var(--surface2);}
+.section-icon{
+  width:32px;height:32px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;
+}
+.section-title{flex:1;}
+.section-title h2{font-size:15px;font-weight:600;font-family:'Noto Sans Devanagari',sans-serif;}
+.section-title p{font-size:11px;color:var(--text-muted);margin-top:1px;}
+.toggle-icon{color:var(--text-muted);font-size:12px;transition:transform 0.2s;flex-shrink:0;}
+.section.collapsed .toggle-icon{transform:rotate(-90deg);}
+.section-body{padding:20px;}
+.section.collapsed .section-body{display:none;}
 
-        .search-bar input {
-            width: 100%;
-            padding: 0.8rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+/* ── TABLES ── */
+.data-table{width:100%;border-collapse:collapse;font-size:13px;}
+.data-table th{
+  background:var(--surface2);color:var(--text-muted);
+  font-size:10px;text-transform:uppercase;letter-spacing:0.5px;
+  padding:8px 12px;text-align:left;border-bottom:1px solid var(--border2);
+  font-weight:600;
+}
+.data-table td{
+  padding:9px 12px;border-bottom:1px solid var(--border);
+  vertical-align:top;
+  font-family:'Noto Sans Devanagari',sans-serif;
+}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:hover td{background:var(--surface2);}
+.data-table .val{
+  font-family:'JetBrains Mono',monospace;
+  color:var(--gold);font-weight:600;font-size:13px;
+}
+.data-table .cat{color:var(--text-muted);font-size:11px;}
 
-        .quick-reference {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 1.5rem auto;
-            max-width: 900px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+/* ── TAGS & CHIPS ── */
+.chip{
+  display:inline-block;padding:2px 8px;border-radius:12px;
+  font-size:11px;font-weight:600;margin:2px;
+}
+.chip-red{background:var(--red-dim);color:var(--red);}
+.chip-green{background:var(--accent-dim);color:var(--accent);}
+.chip-blue{background:var(--secondary-dim);color:var(--secondary);}
+.chip-gold{background:var(--gold-dim);color:var(--gold);}
+.chip-orange{background:var(--primary-dim);color:var(--primary);}
 
-        .quick-reference h2 {
-            font-size: 1.8rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
+/* ── ALERT BOXES ── */
+.alert{
+  border-radius:var(--radius);padding:14px 16px;
+  margin-bottom:14px;border-left:3px solid;
+  font-size:13px;
+}
+.alert-gold{background:var(--gold-dim);border-color:var(--gold);}
+.alert-red{background:var(--red-dim);border-color:var(--red);}
+.alert-green{background:var(--accent-dim);border-color:var(--accent);}
+.alert-blue{background:var(--secondary-dim);border-color:var(--secondary);}
+.alert strong{font-weight:700;}
 
-        .quick-reference table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+/* ── TWO-COL GRID ── */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+@media(max-width:600px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
+@media(max-width:800px){.grid-3{grid-template-columns:1fr 1fr;}.grid-4{grid-template-columns:1fr 1fr;}}
 
-        .quick-reference th, .quick-reference td {
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
+/* ── STAT MINI CARDS ── */
+.mini-card{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:12px 14px;
+}
+.mini-card .mc-val{
+  font-family:'JetBrains Mono',monospace;
+  font-size:20px;font-weight:700;
+}
+.mini-card .mc-lbl{font-size:11px;color:var(--text-muted);margin-top:2px;
+  font-family:'Noto Sans Devanagari',sans-serif;line-height:1.4;}
 
-        .quick-reference th {
-            background: #3498db;
-            color: white;
-        }
+/* ── THEORY CARDS ── */
+.theory-card{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:14px;
+  border-top:3px solid;
+}
+.theory-card h4{font-size:13px;font-weight:700;margin-bottom:6px;}
+.theory-card .theorist{font-size:11px;color:var(--text-muted);margin-bottom:8px;}
+.theory-card p{font-size:12px;color:var(--text-muted);
+  font-family:'Noto Sans Devanagari',sans-serif;line-height:1.5;}
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+/* ── PROGRESS BAR ── */
+.progress-bar{background:var(--surface2);border-radius:4px;height:6px;overflow:hidden;margin:4px 0;}
+.progress-fill{height:100%;border-radius:4px;background:var(--primary);}
 
-        .section {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.5s ease-in-out;
-        }
+/* ── WEEK PLAN ── */
+.week-item{
+  display:flex;gap:14px;padding:12px 0;
+  border-bottom:1px solid var(--border);
+}
+.week-item:last-child{border-bottom:none;}
+.week-num{
+  width:48px;height:48px;border-radius:10px;
+  background:var(--surface2);border:1px solid var(--border2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.week-num span:first-child{font-size:9px;text-transform:uppercase;color:var(--text-muted);}
+.week-num span:last-child{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;color:var(--gold);}
+.week-content h4{font-size:13px;font-weight:600;margin-bottom:4px;
+  font-family:'Noto Sans Devanagari',sans-serif;}
+.week-content p{font-size:12px;color:var(--text-muted);line-height:1.5;}
 
-        .section h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 0.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* ── MCQ TACTIC CARDS ── */
+.tactic{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:14px;
+  display:flex;gap:12px;align-items:flex-start;
+  margin-bottom:10px;
+}
+.tactic-num{
+  background:var(--primary);color:white;
+  width:24px;height:24px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;
+}
+.tactic h4{font-size:13px;font-weight:600;margin-bottom:4px;}
+.tactic p{font-size:12px;color:var(--text-muted);line-height:1.5;}
 
-        .section h2::after {
-            content: '▼';
-            font-size: 1rem;
-        }
+/* ── FACTS LIST ── */
+.fact-item{
+  display:flex;gap:10px;padding:8px 0;
+  border-bottom:1px solid var(--border);align-items:baseline;
+}
+.fact-item:last-child{border-bottom:none;}
+.fact-q{flex:1;font-size:12px;color:var(--text-muted);
+  font-family:'Noto Sans Devanagari',sans-serif;}
+.fact-a{
+  font-family:'JetBrains Mono',monospace;
+  color:var(--accent);font-weight:600;font-size:12px;
+  text-align:right;min-width:80px;
+}
 
-        .section.collapsed h2::after {
-            content: '▶';
-        }
+/* ── CHECKLIST ── */
+.checklist{list-style:none;}
+.checklist li{
+  display:flex;gap:8px;padding:7px 0;
+  border-bottom:1px solid var(--border);
+  font-size:12px;align-items:flex-start;
+  font-family:'Noto Sans Devanagari',sans-serif;
+}
+.checklist li:last-child{border-bottom:none;}
+.checklist li::before{
+  content:'☐';font-size:14px;color:var(--text-dim);flex-shrink:0;
+  cursor:pointer;
+}
+.checklist li.done::before{content:'☑';color:var(--accent);}
 
-        .section.collapsed .content {
-            display: none;
-        }
+/* ── SEARCH HIGHLIGHT ── */
+.search-highlight{background:rgba(227,179,65,0.3);border-radius:2px;}
 
-        h3 {
-            color: #34495e;
-            margin-top: 1rem;
-        }
+/* ── SIDEBAR NAV ── */
+.snav-item{
+  display:flex;align-items:center;gap:8px;
+  padding:7px 10px;border-radius:6px;
+  font-size:12px;color:var(--text-muted);
+  cursor:pointer;transition:all 0.2s;
+  text-decoration:none;
+}
+.snav-item:hover{background:var(--surface2);color:var(--text);}
+.snav-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--border2);flex-shrink:0;transition:background 0.2s;
+}
+.snav-item.active .snav-dot{background:var(--primary);}
 
-        ul {
-            margin: 1rem 0;
-            padding-left: 20px;
-        }
+/* ── SCORE METER ── */
+.score-meter{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:14px;margin-bottom:12px;
+}
+.score-meter .label{font-size:11px;color:var(--text-muted);margin-bottom:6px;
+  font-family:'Noto Sans Devanagari',sans-serif;}
+.score-meter .bar-row{display:flex;align-items:center;gap:8px;}
+.score-meter .bar-wrap{flex:1;background:var(--border);border-radius:4px;height:6px;overflow:hidden;}
+.score-meter .bar-fill{height:100%;border-radius:4px;}
+.score-meter .pct{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);width:35px;text-align:right;}
 
-        li {
-            margin-bottom: 0.8rem;
-            position: relative;
-        }
+/* ── ARTICLE MAP ── */
+.art-row{
+  display:flex;gap:8px;padding:6px 0;
+  border-bottom:1px solid var(--border);
+  align-items:center;
+}
+.art-row:last-child{border-bottom:none;}
+.art-num{
+  font-family:'JetBrains Mono',monospace;
+  color:var(--secondary);font-weight:600;font-size:12px;width:65px;flex-shrink:0;
+}
+.art-title{font-size:12px;font-family:'Noto Sans Devanagari',sans-serif;flex:1;}
+.art-tag{font-size:10px;color:var(--text-dim);text-align:right;}
 
-        .highlight {
-            background: #e6fffa;
-            padding: 0.2rem;
-            border-radius: 4px;
-        }
+/* ── ORG TABLE ── */
+.org-row{
+  display:grid;grid-template-columns:130px 1fr 80px;
+  gap:8px;padding:7px 0;border-bottom:1px solid var(--border);
+  font-size:12px;align-items:center;
+}
+.org-row:last-child{border-bottom:none;}
+.org-name{font-weight:600;color:var(--secondary);}
+.org-hq{color:var(--text-muted);font-family:'Noto Sans Devanagari',sans-serif;}
+.org-est{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:11px;}
 
-        li:hover .tooltip {
-            visibility: visible;
-        }
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
+::-webkit-scrollbar-thumb:hover{background:var(--text-dim);}
 
-        .tooltip {
-            visibility: hidden;
-            background: #2c3e50;
-            color: white;
-            font-size: 0.9rem;
-            padding: 0.5rem;
-            border-radius: 6px;
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            z-index: 10;
-        }
+/* ── RESPONSIVE NAV ── */
+@media(max-width:600px){nav{padding:0 12px;}.main-wrap{padding:12px;}}
 
-        .links {
-            text-align: center;
-            margin: 2rem 0;
-        }
+/* ── COPY TO CLIPBOARD TOOLTIP ── */
+.copy-btn{
+  background:none;border:none;color:var(--text-dim);
+  cursor:pointer;font-size:11px;padding:2px 6px;
+  border-radius:4px;transition:all 0.2s;
+}
+.copy-btn:hover{background:var(--surface2);color:var(--text);}
 
-        .links a {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin: 0.5rem;
-            transition: background 0.3s;
-        }
+/* ── 2083 UPDATE BADGE ── */
+.update-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  background:linear-gradient(90deg,rgba(63,185,80,0.2),rgba(88,166,255,0.1));
+  border:1px solid rgba(63,185,80,0.3);color:var(--accent);
+  padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;
+}
 
-        .links a:hover {
-            background: #2a5298;
-        }
+/* ── FLOATING QUICK NUMBERS ── */
+#floatBadge{
+  position:fixed;bottom:20px;right:20px;
+  background:var(--surface2);border:1px solid var(--border2);
+  border-radius:var(--radius-lg);padding:12px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5);
+  z-index:50;max-width:200px;
+  display:none;
+}
+#floatBadge.show{display:block;}
+#floatBadge .fb-title{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);margin-bottom:6px;}
+#floatBadge .fb-fact{font-size:12px;font-family:'Noto Sans Devanagari',sans-serif;color:var(--gold);line-height:1.4;}
+#floatBadge .fb-close{
+  position:absolute;top:6px;right:8px;
+  background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:14px;
+}
 
-        .exam-tips {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem auto;
-            max-width: 900px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .exam-tips h2 {
-            font-size: 1.8rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #2c3e50;
-            color: white;
-            width: 100%;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .search-bar input {
-                font-size: 0.9rem;
-            }
-
-            .section {
-                padding: 1rem;
-            }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-    <script>
-        // Collapsible Sections
-        document.querySelectorAll('.section h2').forEach(header => {
-            header.addEventListener('click', () => {
-                const section = header.parentElement;
-                section.classList.toggle('collapsed');
-            });
-        });
-
-        // Search Functionality
-        function filterContent() {
-            const input = document.getElementById('search').value.toLowerCase();
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                const content = section.textContent.toLowerCase();
-                section.style.display = content.includes(input) ? '' : 'none';
-            });
-        }
-
-        // Highlight Feature
-        document.querySelectorAll('li').forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('highlight');
-                localStorage.setItem(`highlight-${item.textContent}`, item.classList.contains('highlight'));
-            });
-            if (localStorage.getItem(`highlight-${item.textContent}`) === 'true') {
-                item.classList.add('highlight');
-            }
-        });
-    </script>
+/* ── PRINT ── */
+@media print{nav,#floatBadge,.sidebar{display:none!important;}
+.main-wrap{grid-template-columns:1fr;}.section{page-break-inside:avoid;}}
+</style>
 </head>
 <body>
-    <header>
-        <h1>🖥️ सार्वजनिक व्यवस्थापन अध्ययन गाइड</h1>
-        <p class="note">नेपाल लोक सेवा आयोगको परीक्षाको लागि तयार गरिएको (मे १५, २०२५)</p>
-    </header>
 
-    <div class="search-bar">
-        <input type="text" id="search" placeholder="खोज्नुहोस् (जस्तै: बजेट, सञ्चार)..." oninput="filterContent()">
+<!-- ── NAV ── -->
+<nav>
+  <div class="logo"><span>🏛️</span>PSC Prep 2083</div>
+  <a href="#civil-service" class="nav-link">नि.से.ऐन</a>
+  <a href="#constitution" class="nav-link">संविधान</a>
+  <a href="#office-mgmt" class="nav-link">कार्यालय</a>
+  <a href="#theories" class="nav-link">Theory</a>
+  <a href="#budget" class="nav-link">बजेट/लेखा</a>
+  <a href="#gk-geography" class="nav-link">भूगोल</a>
+  <a href="#intl-orgs" class="nav-link">अन्तर्राष्ट्रिय</a>
+  <a href="#history" class="nav-link">इतिहास</a>
+  <a href="#current" class="nav-link">समसामयिक</a>
+  <a href="#study-plan" class="nav-link">Study Plan</a>
+  <a href="#mcq-tactics" class="nav-link">MCQ Tactics</a>
+  <div class="search-wrap">
+    <input type="text" id="globalSearch" placeholder="🔍 खोज्नुहोस्..." oninput="doSearch(this.value)">
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-badge">🎯 Evidence-Based · 754 MCQ Analysis</div>
+  <h1><span class="highlight">लोक सेवा परीक्षा</span><br>सम्पूर्ण अध्ययन गाइड</h1>
+  <p>PSC Technical Level — सामान्य ज्ञान र सार्वजनिक व्यवस्थापन | प्रमाणित तथ्यहरूमा आधारित, २०८२/८३ अद्यावधिक</p>
+  <div class="hero-stats">
+    <div class="hstat"><span class="val">50</span><div class="lbl">प्रश्नहरू प्रति पेपर</div></div>
+    <div class="hstat"><span class="val">40</span><div class="lbl">GK+PM अंक (हस्तान्तरणयोग्य)</div></div>
+    <div class="hstat"><span class="val">25%</span><div class="lbl">नि.से.ऐन बाट मात्र</div></div>
+    <div class="hstat"><span class="val">B</span><div class="lbl">सही उत्तर सबैभन्दा बढी</div></div>
+    <div class="hstat"><span class="val">+0.2</span><div class="lbl">Random guess EV</div></div>
+  </div>
+</div>
+
+<!-- ── MAIN LAYOUT ── -->
+<div class="main-wrap">
+<div class="main-content">
+
+<!-- ████ SECTION 1: CIVIL SERVICE ACT ████ -->
+<div class="section" id="civil-service">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--primary-dim);color:var(--primary);">⚖️</div>
+    <div class="section-title">
+      <h2>निजामती सेवा ऐन/नियमावली — सर्वाधिक महत्वपूर्ण</h2>
+      <p>सबै PM प्रश्नको ~25% यहीँबाट — यो एक पेज सबभन्दा पहिले</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <div class="alert alert-gold">
+      <strong>🔥 Finding #3:</strong> नि.से.ऐन, २०४९ र नियमावली, २०५० — यो एउटा ऐन सबभन्दा बढी सोधिन्छ। आरक्षण%, उमेर, परीक्षणकाल, बढुवा अंक — सबै याद गर्नुहोस्।
     </div>
 
-    <div class="quick-reference">
-        <h2>महत्त्वपूर्ण बुँदाहरू</h2>
-        <table>
-            <tr>
-                <th>विषय</th>
-                <th>मुख्य बुँदा</th>
-            </tr>
-            <tr>
-                <td>कार्यालय प्रकार</td>
-                <td>स्वामित्व: सार्वजनिक (जस्तै: मन्त्रालय), निजी (जस्तै: बैंक); संरचना: स्थानीय, प्रादेशिक, केन्द्रीय</td>
-            </tr>
-            <tr>
-                <td>सहायक कर्मचारीका कार्य</td>
-                <td>अभिलेख व्यवस्थापन, दर्ता/चलानी, सेवा प्रवाह, सूचना व्यवस्थापन</td>
-            </tr>
-            <tr>
-                <td>सञ्चारका तत्व</td>
-                <td>प्रेषक, सन्देश, माध्यम, प्राप्तकर्ता, प्रतिक्रिया</td>
-            </tr>
-            <tr>
-                <td>बजेट (२०७९/८०)</td>
-                <td>कुल: रु. १७.९३ खर्ब; चालु: रु. ७.७२ खर्ब; पूँजीगत: रु. ३.८० खर्ब</td>
-            </tr>
-            <tr>
-                <td>निजामती सेवा आचरण</td>
-                <td>समय पालना, अनुशासन, राजनीतिक तटस्थता, सरकारी आलोचना नगर्ने</td>
-            </tr>
+    <div class="grid-2">
+      <!-- RESERVATION -->
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;" class="nep">समावेशी आरक्षण (खुला ४५% लाई १००% मानेर)</h3>
+        <table class="data-table">
+          <thead><tr><th>समूह</th><th>प्रतिशत</th><th>Rank</th></tr></thead>
+          <tbody>
+            <tr><td class="nep">महिला</td><td class="val">३३%</td><td><span class="chip chip-orange">1st</span></td></tr>
+            <tr><td class="nep">आदिवासी जनजाति</td><td class="val">२७%</td><td><span class="chip chip-blue">2nd</span></td></tr>
+            <tr><td class="nep">मधेशी</td><td class="val">२२%</td><td><span class="chip chip-green">3rd</span></td></tr>
+            <tr><td class="nep">दलित</td><td class="val">९%</td><td></td></tr>
+            <tr><td class="nep">अपाङ्गता</td><td class="val">५%</td><td></td></tr>
+            <tr><td class="nep">पिछडिएको क्षेत्र</td><td class="val">४%</td><td></td></tr>
+            <tr><td class="nep" style="color:var(--gold);font-weight:600;">जम्मा</td><td class="val" style="color:var(--gold);">१००%</td><td></td></tr>
+          </tbody>
         </table>
+        <div class="alert alert-blue" style="margin-top:10px;font-size:11px;">
+          <strong>पिछडिएको क्षेत्र:</strong> डोल्पा, हुम्ला, जुम्ला, मुगु, कालिकोट, बझाङ, बाजुरा, जाजरकोट र अछाम — ९ जिल्ला
+        </div>
+      </div>
+
+      <!-- AGE LIMITS -->
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;" class="nep">उमेर हद</h3>
+        <table class="data-table">
+          <thead><tr><th>विवरण</th><th>उमेर</th></tr></thead>
+          <tbody>
+            <tr><td class="nep">रा.अनं. पदमा उम्मेदवार</td><td class="val">१८ वर्ष</td></tr>
+            <tr><td class="nep">रा.ं. पदमा उम्मेदवार</td><td class="val">२१ वर्ष</td></tr>
+            <tr><td class="nep">पुरुषको अधिकतम</td><td class="val">३५ वर्ष</td></tr>
+            <tr><td class="nep">महिला/अपाङ्गको अधिकतम</td><td class="val">४० वर्ष</td></tr>
+            <tr><td class="nep">अनिवार्य अवकाश</td><td class="val">५८ वर्ष</td></tr>
+            <tr><td class="nep">संवैधानिक निकाय पदाधिकारी (न्यून)</td><td class="val">३५ वर्ष</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-size:13px;color:var(--text-muted);margin:14px 0 8px;text-transform:uppercase;letter-spacing:0.5px;" class="nep">परीक्षणकाल (Probation)</h3>
+        <table class="data-table">
+          <thead><tr><th>वर्ग</th><th>अवधि</th></tr></thead>
+          <tbody>
+            <tr><td class="nep">पुरुष उम्मेदवार</td><td class="val">१ वर्ष</td></tr>
+            <tr><td class="nep">महिला उम्मेदवार</td><td class="val">६ महिना</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <div class="container">
-        <div class="section">
-            <h2>🖥️ कार्यालय व्यवस्थापन</h2>
-            <div class="content">
-                <h3>परिचय र महत्त्व</h3>
-                <ul>
-                    <li>कार्यालय: संगठित रूपमा काम गर्ने स्थान (ल्याटिन "officium" बाट); सेवा, सूचना, सञ्चार, समन्वय, नियन्त्रण, समरण, मध्यस्थताको केन्द्र। <span class="tooltip">कार्यालयले प्रशासनिक कार्यलाई सहज बनाउँछ।</span></li>
-                    <li>महत्त्व: सेवा, सूचना, सञ्चार, समन्वय, नियन्त्रण, समरण, मध्यस्थताको केन्द्र।</li>
-                </ul>
-                <h3>कार्यहरू</h3>
-                <ul>
-                    <li>आधारभूत: सूचना संकलन, अभिलेखन, प्रशोधन, सञ्चार, आपूर्ति, संरक्षण, प्रशासन, सम्पर्क।</li>
-                    <li>व्यवस्थापकीय: नीति तर्जुमा, मानव संसाधन, स्रोत व्यवस्थापन, सम्पत्ति सुरक्षा, अभिलेख, बजेट, न्याय, सुरक्षा, अनुगमन, समन्वय।</li>
-                </ul>
-                <h3>प्रकारहरू</h3>
-                <ul>
-                    <li>स्वामित्व: सार्वजनिक (जस्तै: मन्त्रालय), निजी (जस्तै: बुद्ध एयर)।</li>
-                    <li>संरचना: स्थानीय (७५३), प्रादेशिक (६ प्रदेश), केन्द्रीय।</li>
-                    <li>भौगोलिक: राष्ट्रिय (जस्तै: मानव अधिकार आयोग), अन्तर्राष्ट्रिय (जस्तै: यूनेस्को)।</li>
-                    <li>संगठन: अगाडि (जस्तै: मालपोत), मध्य (जस्तै: जिल्ला समन्वय), पछाडि (जस्तै: योजना आयोग)।</li>
-                    <li>प्रकृति: स्थायी (जस्तै: जिल्ला प्रशासन), अस्थायी (जस्तै: जनगणना कार्यालय)।</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>👥 कर्मचारी व्यवस्थापन</h2>
-            <div class="content">
-                <h3>कर्मचारीका प्रकार</h3>
-                <ul>
-                    <li>निजामती ऐन: राजपत्रांकित (सचिव, उपसचिव), राजपत्र अनंकित (नायब सुब्बा, खरिदार)।</li>
-                    <li>कामको प्रकृति: प्राविधिक, अप्राविधिक।</li>
-                    <li>स्थायित्व: स्थायी, अस्थायी।</li>
-                    <li>स्तर: अधिकृत, सहायक।</li>
-                </ul>
-                <h3>सहायक कर्मचारी</h3>
-                <ul>
-                    <li>प्रकार: फाँटवाला, पी.ए., सम्पर्क सहायक।</li>
-                    <li>कार्यहरू: अभिलेख, दर्ता/चलानी, सेवा प्रवाह, सूचना व्यवस्थापन, निर्देशन पालना, सम्पत्ति संरक्षण, नीति कार्यान्वयन, प्रतिवेदन, सक्रियता, जिन्सी व्यवस्थापन, तथ्यांक संकलन, विकास सहयोग।</li>
-                    <li>गुणहरू: सकारात्मक सोच, नैतिकता, नियम पालना, गतिशीलता, सदाचार, संयम, शिष्टाचार, नियमितता, गोपनीयता, आत्मविश्वास।</li>
-                </ul>
-                <h3>निजामती सेवा</h3>
-                <ul>
-                    <li>सेवाहरू: आर्थिक योजना, इन्जिनियरिङ, कृषि, न्याय, प्रशासन, लेखा, वन, शिक्षा।</li>
-                    <li>भर्ना प्रक्रिया: पाठ्यक्रम प्रकाशन, रिक्त पद माग, परीक्षा, सिफारिस।</li>
-                    <li>आचरण: समय पालना, अनुशासन, राजनीतिक तटस्थता, सरकारी आलोचना नगर्ने, उपहार लिन नहुने, व्यापार नगर्ने।</li>
-                    <li>अवकाश: ५८ वर्षमा; पेन्सन: (अन्तिम तलब × सेवा वर्ष) / ५०।</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>📦 कार्यालय स्रोत साधन</h2>
-            <div class="content">
-                <ul>
-                    <li>प्रकार: मानवीय (प्रशासनिक, प्राविधिक), भौतिक (भवन, फर्निचर), वित्तीय, उपकरण (गाडी, मेसिन), प्राविधिक (कम्प्युटर, इन्टरनेट), बौद्धिक।</li>
-                    <li>वर्गीकरण: सजीव/निर्जीव, मानवीय/अमानवीय, देखिने/नदेखिने, चालु/पूँजीगत।</li>
-                    <li>आवश्यकता: स्रोत परिचालन, लक्ष्य प्राप्ति, सेवा प्रवाह, गुणस्तर, भौतिक निर्माण, ICT प्रयोग।</li>
-                    <li>समस्याहरू: नेतृत्व, उपयोग, उपलब्धता, अनुगमन, सुशासन।</li>
-                    <li>समाधान: नेतृत्व सुधार, उपयोग सुधार, उपलब्धता, प्रभावकारी अनुगमन, सुशासन।</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>📢 सञ्चार</h2>
-            <div class="content">
-                <ul>
-                    <li>परिभाषा: दुई वा बढी पक्षबीच सूचना आदानप्रदान।</li>
-                    <li>तत्वहरू: प्रेषक, सन्देश, माध्यम, प्राप्तकर्ता, प्रतिक्रिया।</li>
-                    <li>महत्त्व: ज्ञान वृद्धि, जागरूकता, सुशासन, निर्णय प्रभावकारिता, सम्बन्ध, पहुँच, सहभागिता, योजना, अनुगमन।</li>
-                    <li>माध्यमहरू: लिखित (पत्र, प्रतिवेदन), मौखिक (टेलिफोन, बैठक), संकेत (ट्राफिक लाइट), अन्य (रेडियो, इमेल)।</li>
-                    <li>प्रकारहरू: मौखिक, लिखित, श्रव्य-दृश्य, औपचारिक, अनौपचारिक, एकतर्फी, दुतर्फी।</li>
-                    <li>गुणहरू: स्पष्टता, एकरूपता, शिष्टता, उद्देश्यपूर्ण, वास्तविकता, समयबद्धता, विश्वसनीयता, पर्याप्तता, निरन्तरता।</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>📜 कार्यालय कार्यविधि</h2>
-            <div class="content">
-                <h3>पत्र व्यवहार</h3>
-                <ul>
-                    <li>उद्देश्य: औपचारिक सम्पर्क, अभिलेख, समन्वय, सूचना आदानप्रदान, प्रमाण।</li>
-                    <li>गुणहरू: सरल भाषा, स्पष्टता, संक्षिप्तता, शिष्टता, पूर्णता, मौलिकता, शुद्धता, सान्दर्भिकता।</li>
-                    <li>प्रकार: व्यक्तिगत, व्यवसायिक, सरकारी, आवेदन; प्राथमिकता: साधारण (७ दिन), जसरी (४ दिन), अति जसरी (३ दिन), शीघ्र, गोप्य।</li>
-                </ul>
-                <h3>दर्ता र चलानी</h3>
-                <ul>
-                    <li>चलानीको महत्त्व: अभिलेख, ट्र्याकिङ, सुरक्षा, समय बचत, प्रमाण।</li>
-                    <li>चलानी किताब: मिति, नम्बर, पत्र विवरण, प्राप्तकर्ता, विषय, समय, हस्ताक्षर।</li>
-                </ul>
-                <h3>परिपत्र</h3>
-                <ul>
-                    <li>परिभाषा: मातहतका कार्यालयलाई सूचना/निर्देशन; जस्तै: गृह मन्त्रालयबाट जिल्ला प्रशासनलाई।</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>💰 बजेट, लेखा, लेखापरीक्षण</h2>
-            <div class="content">
-                <ul>
-                    <li>बजेट: राजस्व-व्यय विवरण; नेपालमा पहिलो बजेट २००८ माघ २१ (रु. ३.०४ करोड राजस्व, रु. ४.२४ करोड व्यय)।</li>
-                    <li>प्रकार: सन्तुलित, घाटा, बचत; चालु, पूँजीगत, वित्तीय; कार्यक्रम, कार्यसम्पादन, शून्य आधारित।</li>
-                    <li>२०७९/८० बजेट: कुल रु. १७.९३ खर्ब; चालु: रु. ७.७२ खर्ब; पूँजीगत: रु. ३.८० खर्ब; वित्तीय: रु. ३.३० खर्ब; प्रादेशिक/स्थानीय: रु. ४.२९ खर्ब।</li>
-                    <li>स्वास्थ्य बजेट: रु. १.३१ खर्ब (४.४४%); निःशुल्क औषधि, पोषण खर्च, ट्रमा सेन्टर।</li>
-                </ul>
-            </div>
-        </div>
+    <!-- PROMOTION SCORING -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;text-transform:uppercase;letter-spacing:0.5px;" class="nep">कार्यक्षमता मूल्यांकन बढुवा — अंक विभाजन (कुल १०० अंक)</h3>
+    <div class="grid-4">
+      <div class="mini-card"><div class="mc-val" style="color:var(--primary);">४०</div><div class="mc-lbl">कार्य सम्पादन मूल्यांकन</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--gold);">३०</div><div class="mc-lbl">ज्येष्ठता</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--secondary);">१६</div><div class="mc-lbl">भौगोलिक क्षेत्र अनुभव</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--accent);">१२</div><div class="mc-lbl">शैक्षिक योग्यता</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--text-muted);">२</div><div class="mc-lbl">तालिम</div></div>
     </div>
 
-    <div class="links">
-        <a href="quiz-portal.html">क्विज पोर्टल</a>
-        <a href="mock-page.html">मक टेस्ट (५० प्रश्न)</a>
-        <a href="formulas.html">फर्मुला सूची</a>
+    <div class="grid-2" style="margin-top:16px;">
+      <!-- LEAVE -->
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;" class="nep">विदाहरू</h3>
+        <table class="data-table">
+          <thead><tr><th>विदा प्रकार</th><th>व्यवस्था</th></tr></thead>
+          <tbody>
+            <tr><td class="nep">भैपरी आउने + पर्व</td><td class="val">१२ दिन/वर्ष</td></tr>
+            <tr><td class="nep">विरामी विदा</td><td class="val">१२ दिन/वर्ष</td></tr>
+            <tr><td class="nep">घर विदा</td><td><span class="mono" style="color:var(--gold);">१ दिन/१२ दिन; बढीमा १५०</span></td></tr>
+            <tr><td class="nep">प्रसूती विदा</td><td class="val">९८ दिन</td></tr>
+            <tr><td class="nep">किरिया विदा</td><td class="val">१५ दिन</td></tr>
+            <tr><td class="nep">असाधारण विदा</td><td class="val">एकपटक १ वर्ष, बढीमा ३ वर्ष</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PUNISHMENT -->
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;" class="nep">विभागीय सजाय</h3>
+        <table class="data-table">
+          <thead><tr><th>कारण</th><th>सजाय</th></tr></thead>
+          <tbody>
+            <tr><td class="nep">बरबुझारथ नगरेमा</td><td class="nep">नसिहत / बढीमा २ तलब / २ वर्ष बढुवा रोक्का</td></tr>
+            <tr><td class="nep">अनुशासनहीन काम</td><td class="nep">२–५ वर्ष बढुवा रोक्का</td></tr>
+            <tr><td class="nep">आचरण बराबर उल्लंघन</td><td class="nep" style="color:var(--red);">सेवाबाट बर्खास्त</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-size:13px;color:var(--text-muted);margin:14px 0 8px;text-transform:uppercase;letter-spacing:0.5px;" class="nep">बढुवाको लागि न्यूनतम सेवा अवधि</h3>
+        <table class="data-table">
+          <thead><tr><th>श्रेणी</th><th>अवधि</th></tr></thead>
+          <tbody>
+            <tr><td class="nep">रा.अनं. पद</td><td class="val">३ वर्ष</td></tr>
+            <tr><td class="nep">रा.ं. पद</td><td class="val">५ वर्ष</td></tr>
+            <tr><td class="nep">आरक्षित समूह छुट</td><td class="nep">अन्यभन्दा १ वर्ष कम</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <div class="exam-tips">
-        <h2>परीक्षा तयारी टिप्स</h2>
-        <ul>
-            <li>बजेटका आँकडा याद गर्नुहोस् (जस्तै: रु. १७.९३ खर्ब कुल बजेट)।</li>
-            <li>सहायक कर्मचारीका कार्य र गुणहरूमा ध्यान दिनुहोस् (MCQ मा सोधिन्छ)।</li>
-            <li>सञ्चारका प्रकार र गुणहरू अभ्यास गर्नुहोस्।</li>
-            <li>निजामती आचरण (जस्तै: राजनीतिक तटस्थता) र पेन्सन गणना (अन्तिम तलब × सेवा वर्ष / ५०) याद गर्नुहोस्।</li>
-            <li>मक टेस्ट अभ्यास गर्नुहोस् (५० प्रश्न, ६० मिनेट)।</li>
+    <!-- CIVIL SERVICE STRUCTURE -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;text-transform:uppercase;letter-spacing:0.5px;" class="nep">निजामती सेवा — गठन र संरचना</h3>
+    <div class="grid-2">
+      <div>
+        <table class="data-table">
+          <thead><tr><th>राजपत्राङ्कित</th><th>राजपत्र अनंकित</th></tr></thead>
+          <tbody>
+            <tr><td class="nep">विशिष्ट श्रेणी (सचिव)</td><td class="nep">प्रथम (नायब सुब्बा)</td></tr>
+            <tr><td class="nep">प्रथम श्रेणी (स.सचिव)</td><td class="nep">द्वितीय (खरिदार)</td></tr>
+            <tr><td class="nep">द्वितीय (उपसचिव)</td><td class="nep">तृतीय (मुखिया)</td></tr>
+            <tr><td class="nep">तृतीय (शाखा अधिकृत)</td><td class="nep">चतुर्थ (बैदार) / पाँचौ (का.स.)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table class="data-table">
+          <thead><tr><th>निजामती सेवाहरू (१०)</th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="nep">नेपाल आर्थिक योजना तथा तथ्याङ्क सेवा</td><td><span class="chip chip-blue">दोस्रो संशोधन</span></td></tr>
+            <tr><td class="nep">नेपाल इन्जिनियरिङ सेवा</td><td></td></tr>
+            <tr><td class="nep">नेपाल कृषि सेवा / न्याय सेवा</td><td></td></tr>
+            <tr><td class="nep">नेपाल परराष्ट्र / प्रशासन सेवा</td><td></td></tr>
+            <tr><td class="nep">नेपाल लेखा परीक्षण / वन सेवा</td><td></td></tr>
+            <tr><td class="nep">नेपाल विविध सेवा / शिक्षक सेवा</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PENSION FORMULA -->
+    <div class="alert alert-gold" style="margin-top:14px;">
+      <strong>🧮 निवृत्तभरण सूत्र:</strong> <code class="mono" style="font-size:13px;"> (अन्तिम मासिक तलब × सेवा अवधि वर्ष) ÷ ५०</code>
+      &nbsp;&nbsp;|&nbsp;&nbsp; <strong>अवकाश उमेर:</strong> ५८ वर्ष &nbsp;|&nbsp; <strong>पेन्सन सुरु:</strong> राणा प्रधानमन्त्री जुद्ध शमशेरबाट
+    </div>
+
+    <!-- KEY ACTS INFO -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;text-transform:uppercase;letter-spacing:0.5px;" class="nep">ऐन/नियमावली — महत्वपूर्ण तथ्यहरू</h3>
+    <div class="grid-2">
+      <div>
+        <div class="fact-item"><span class="fact-q">नि.से.ऐन, २०४९ — परिच्छेद</span><span class="fact-a">१०</span></div>
+        <div class="fact-item"><span class="fact-q">नि.से.ऐन, २०४९ — दफा</span><span class="fact-a">७६</span></div>
+        <div class="fact-item"><span class="fact-q">नि.से.ऐन पहिलो पटक</span><span class="fact-a">२०१३ भदौ २२</span></div>
+        <div class="fact-item"><span class="fact-q">हाल लागू भएको ऐन</span><span class="fact-a">२०४९</span></div>
+        <div class="fact-item"><span class="fact-q">हाल लागू नियमावली</span><span class="fact-a">२०५०</span></div>
+        <div class="fact-item"><span class="fact-q">निजामती दिवस</span><span class="fact-a">भदौ २२</span></div>
+      </div>
+      <div>
+        <div class="fact-item"><span class="fact-q">नि.से. नियमावली — परिच्छेद</span><span class="fact-a">१६</span></div>
+        <div class="fact-item"><span class="fact-q">नि.से. नियमावली — दफा</span><span class="fact-a">१३८</span></div>
+        <div class="fact-item"><span class="fact-q">नि.से. नियमावली — अनुसूची</span><span class="fact-a">१९</span></div>
+        <div class="fact-item"><span class="fact-q">रा.अनं. द्वितीय — खुला %</span><span class="fact-a">५०%</span></div>
+        <div class="fact-item"><span class="fact-q">कायम मुकायम — अधिकतम</span><span class="fact-a">६ महिना</span></div>
+        <div class="fact-item"><span class="fact-q">संवैधानिक निकाय पदावधि</span><span class="fact-a">६ वर्ष</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ████ SECTION 2: CONSTITUTION ████ -->
+<div class="section" id="constitution">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--secondary-dim);color:var(--secondary);">📜</div>
+    <div class="section-title">
+      <h2>नेपालको संविधान — धाराहरू र मौलिक हक</h2>
+      <p>जारी: २०७२ असोज ३ | ३५ भाग, ३०८ धारा, ९ अनुसूची</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <div class="grid-2">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-weight:600;" class="nep">भागहरू (बारम्बार सोधिने)</h3>
+        <table class="data-table">
+          <thead><tr><th>धारा</th><th>विषय</th><th>नोट</th></tr></thead>
+          <tbody>
+            <tr><td class="art-num">धारा १४–४६</td><td class="art-title">मौलिक हक</td><td></td></tr>
+            <tr><td class="art-num">धारा १६</td><td class="art-title">सम्मानपूर्वक बाँच्ने हक</td><td><span class="chip chip-red">मृत्युदण्ड निषेध</span></td></tr>
+            <tr><td class="art-num">धारा १७</td><td class="art-title">स्वतन्त्रताको हक</td><td></td></tr>
+            <tr><td class="art-num">धारा १८</td><td class="art-title">समानताको हक</td><td></td></tr>
+            <tr><td class="art-num">धारा २४</td><td class="art-title">छुवाछुत विरुद्धको हक</td><td></td></tr>
+            <tr><td class="art-num">धारा २७</td><td class="art-title">सूचनाको हक</td><td><span class="chip chip-gold">★ बारम्बार</span></td></tr>
+            <tr><td class="art-num">धारा ३०</td><td class="art-title">उपभोक्ताको हक</td><td></td></tr>
+            <tr><td class="art-num">धारा ३५</td><td class="art-title">स्वास्थ्य सम्बन्धी हक</td><td></td></tr>
+            <tr><td class="art-num">धारा ३६</td><td class="art-title">खाद्य सम्बन्धी हक</td><td></td></tr>
+            <tr><td class="art-num">धारा ३८</td><td class="art-title">महिलाको हक</td><td><span class="chip chip-orange">पैतृक सम्पत्ति</span></td></tr>
+            <tr><td class="art-num">धारा ४४</td><td class="art-title">उपभोक्ताको हक</td><td></td></tr>
+            <tr><td class="art-num">धारा ४८</td><td class="art-title">नागरिकका कर्तव्य</td><td><span class="chip chip-gold">★★ सबभन्दा बढी</span></td></tr>
+            <tr><td class="art-num">धारा ५१</td><td class="art-title">राज्यका निर्देशक सिद्धान्त</td><td><span class="chip chip-blue">भाग ४</span></td></tr>
+            <tr><td class="art-num">धारा १०१</td><td class="art-title">महाअभियोग प्रस्ताव</td><td><span class="chip chip-red">★ बारम्बार</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-weight:600;" class="nep">धारा ४८ — नागरिकका कर्तव्य (परीक्षामा सबभन्दा बढी)</h3>
+        <div class="alert alert-red">
+          <strong>⚠️ परीक्षाको Trap:</strong> "कुन पर्दैन?" भन्ने सोधिन्छ!
+        </div>
+        <ul class="checklist">
+          <li>राष्ट्रप्रति निष्ठावान हुँदै राष्ट्रियता, सार्वभौमसत्ता र अखण्डताको रक्षा गर्नु <span class="chip chip-gold">पहिलो</span></li>
+          <li>संविधान र कानूनको पालना गर्नु</li>
+          <li>राज्यले चाहेको बखत अनिवार्य सेवा गर्नु</li>
+          <li>सार्वजनिक सम्पत्तिको सुरक्षा र संरक्षण गर्नु</li>
+          <li>नियमित रूपमा कर तिर्नु</li>
         </ul>
+        <div class="alert alert-gold" style="margin-top:10px;font-size:12px;">
+          ❌ <strong>पर्दैन:</strong> "सामाजिक सुसम्बन्ध आधारित समाजको निर्माण गर्नु" — यो संविधानको धारा ४८ मा छैन
+        </div>
+
+        <h3 style="font-size:13px;color:var(--text-muted);margin:14px 0 8px;font-weight:600;" class="nep">संवैधानिक निकाय — महत्वपूर्ण तथ्यहरू</h3>
+        <table class="data-table">
+          <thead><tr><th>निकाय</th><th>तथ्य</th></tr></thead>
+          <tbody>
+            <tr><td class="nep">लोक सेवा आयोग</td><td class="nep">अध्यक्ष + ३–६ सदस्य; संवैधानिक परिषद्को सिफारिसमा</td></tr>
+            <tr><td class="nep">रा.प्रा.स्रो. तथा वित्त आयोग</td><td class="nep">अध्यक्षसहित बढीमा ५; नियुक्तिले ६ वर्ष</td></tr>
+            <tr><td class="nep">रा. मानव अधिकार आयोग</td><td class="nep">स्थापना: वि.सं. २०५७; राष्ट्रपतिबाट नियुक्ति</td></tr>
+            <tr><td class="nep">सबै संवैधानिक निकाय</td><td class="nep">पदावधि: ६ वर्ष | न्यून उमेर: ३५ वर्ष</td></tr>
+            <tr><td class="nep">महाअभियोग प्रस्ताव</td><td><span class="mono" style="color:var(--red);">धारा १०१</span></td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-size:13px;color:var(--text-muted);margin:14px 0 8px;font-weight:600;" class="nep">अनुसूचीहरू</h3>
+        <div class="fact-item"><span class="fact-q">अनुसूची ४</span><span class="fact-a" style="color:var(--secondary);">प्रदेश र जिल्ला</span></div>
+        <div class="fact-item"><span class="fact-q">अनुसूची ५</span><span class="fact-a" style="color:var(--secondary);">संघको अधिकार</span></div>
+        <div class="fact-item"><span class="fact-q">अनुसूची ६</span><span class="fact-a" style="color:var(--secondary);">प्रदेशको अधिकार</span></div>
+        <div class="fact-item"><span class="fact-q">अनुसूची ७</span><span class="fact-a" style="color:var(--secondary);">संघ-प्रदेश साझा</span></div>
+        <div class="fact-item"><span class="fact-q">अनुसूची ८</span><span class="fact-a" style="color:var(--secondary);">स्थानीय तहको अधिकार (३५)</span></div>
+        <div class="fact-item"><span class="fact-q">अनुसूची ९</span><span class="fact-a" style="color:var(--secondary);">सबैको साझा</span></div>
+        <div class="alert alert-blue" style="margin-top:8px;font-size:11px;">
+          अवशिष्ट अधिकार (सूचीमा नपरेको) → <strong>संघको</strong> अधिकार क्षेत्र
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ████ SECTION 3: OFFICE MANAGEMENT ████ -->
+<div class="section" id="office-mgmt">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--gold-dim);color:var(--gold);">🏢</div>
+    <div class="section-title">
+      <h2>कार्यालय व्यवस्थापन — दर्ता, चलानी, टिप्पणी</h2>
+      <p>George R. Terry, James Stephenson, POSDCORB र कार्यविधि</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <div class="alert alert-gold">
+      <strong>★ परीक्षा भाषा:</strong> George R. Terry — "कार्यालय भन्नाले त्यस्तो स्थानलाई बुझाउँछ जहाँ संगठनलाई <em>नियन्त्रण</em> गर्ने संयन्त्र रहेको हुन्छ।"<br>
+      James Stephenson — "कार्यालय भनेको व्यवसायिक संस्थाको त्यो भाग हो, जहाँ गतिविधिहरूको <em>निर्देशन र समन्वय</em> गरिन्छ।"
     </div>
 
-    <footer>
-        © २०२५ BerlinNeverDie | नेपाल लोक सेवा आयोग परीक्षा तयारी
-    </footer>
+    <!-- OFFICE PROCEDURE CARDS -->
+    <div class="grid-3" style="margin:14px 0;">
+      <div class="theory-card" style="border-color:var(--primary);">
+        <h4>📥 दर्ता (Registration)</h4>
+        <div class="theorist">बाहिरबाट आएका पत्र/कागजात प्राप्त हुनासाथ</div>
+        <p>कार्यालयमा आएका चिठीपत्र, निवेदन, प्रतिवेदनको शुरुको अभिलेख राख्ने कार्य। दर्ता नम्बर, मिति, पत्र संख्या, विषय, पठाउने कार्यालयको नाम उल्लेख।</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--secondary);">
+        <h4>📤 चलानी (Dispatch)</h4>
+        <div class="theorist">कार्यालयबाट बाहिर पठाउने पत्र</div>
+        <p>कार्यालयबाट बाहिर पठाउने चिठीपत्रलाई क्रमबद्ध रूपमा अभिलेख राखी पठाउने। चलानी नम्बर, मिति, पत्र विषय, प्राप्तकर्ता, समय उल्लेख।</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--gold);">
+        <h4>📝 टिप्पणी (Note Writing)</h4>
+        <div class="theorist">कुनै विषयमा निर्णयका लागि राय सहित</div>
+        <p>कुनै विषयमा निर्णय गर्नका लागि माथिल्लो निकायको स्वीकृति आवश्यक पर्दा सम्बन्धित विषयको पृष्ठभूमि, कानूनी व्यवस्था, विश्लेषण, विकल्प र स्पष्ट राय/सिफारिससहित पेस गरिने लिखित मस्यौदा।</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--accent);">
+        <h4>📢 परिपत्र (Circular)</h4>
+        <div class="theorist">एकभन्दा बढी कार्यालयलाई एकैसाथ</div>
+        <p>एउटा कार्यालयले आफ्ना मातहतका कार्यालयलाई सूचना/निर्देशन दिन पठाउने सरकारी पत्र। जस्तै: गृह मन्त्रालयले ७७ जिल्लाका जिल्ला प्रशासन कार्यालयलाई।</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--text-dim);">
+        <h4>✍️ तोक आदेश (Order)</h4>
+        <div class="theorist">माथिल्लो तहबाट तल्लोलाई</div>
+        <p>प्राप्त भएको पत्र वा निवेदनमाथि अधिकार प्राप्त अधिकारीले के-कस्तो काम गर्ने भनी सम्बन्धित कर्मचारी वा शाखालाई लिखित रूपमा निर्देशन दिने।</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--red);">
+        <h4>📋 बोधार्थ vs. जानकारी</h4>
+        <div class="theorist">⚠️ परीक्षाको Trap</div>
+        <p><strong>बोधार्थ:</strong> एकैसाथ धेरैलाई पत्राचार = <span style="color:var(--red);">गलत परिभाषा!</span><br><strong>सिसि/CC:</strong> जानकारीका लागि<br>बोधार्थ = ज्ञानका लागि पठाइएको</p>
+      </div>
+    </div>
+
+    <!-- CORRESPONDENCE QUALITIES -->
+    <div class="grid-2">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">असल पत्रव्यवहारका गुणहरू</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <span class="chip chip-blue">स्पष्टता (Clarity)</span>
+          <span class="chip chip-blue">एकरूपता (Consistency)</span>
+          <span class="chip chip-blue">शिष्टता (Courtesy)</span>
+          <span class="chip chip-blue">उद्देश्यपूर्ण (Purposeful)</span>
+          <span class="chip chip-blue">वास्तविकता (Reality Based)</span>
+          <span class="chip chip-blue">समयबद्धता (Timeliness)</span>
+          <span class="chip chip-blue">विश्वसनीयता (Reliability)</span>
+          <span class="chip chip-blue">पर्याप्तता (Adequacy)</span>
+          <span class="chip chip-blue">निरन्तरता (Continuity)</span>
+          <span class="chip chip-red">❌ क्लिष्टता पर्दैन</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">कार्यालयका प्रकारहरू (स्वामित्व)</h3>
+        <div class="fact-item"><span class="fact-q">सार्वजनिक/सरकारी</span><span class="fact-a" style="color:var(--secondary);">मन्त्रालय</span></div>
+        <div class="fact-item"><span class="fact-q">निजी/गैरसरकारी</span><span class="fact-a" style="color:var(--secondary);">बुद्ध एयर, बैंक</span></div>
+        <div class="fact-item"><span class="fact-q">स्थानीय तह</span><span class="fact-a" style="color:var(--secondary);">७५३ वटा</span></div>
+        <div class="fact-item"><span class="fact-q">प्रदेश</span><span class="fact-a" style="color:var(--secondary);">७ प्रदेश</span></div>
+        <div class="fact-item"><span class="fact-q">स्वामित्व आधारमा — छैन</span><span class="fact-a" style="color:var(--red);">स्थानीय कार्यालय</span></div>
+        <div class="alert alert-gold" style="margin-top:8px;font-size:11px;">
+          <strong>सहायक कर्मचारी प्रकार:</strong> फाँटवाला, पि.ए., सम्पर्क सहायक — ३ प्रकार
+        </div>
+      </div>
+    </div>
+
+    <!-- RECORD RETENTION -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:16px 0 10px;text-transform:uppercase;" class="nep">सरकारी कागजात ध्वलाउने नियमहरू २०२७</h3>
+    <div class="grid-4">
+      <div class="mini-card"><div class="mc-val" style="color:var(--accent);">१ वर्ष</div><div class="mc-lbl">दैनिक प्रतिवेदन, सरुवा पत्र, बैठक बस्ने पत्र, विदा निवेदन</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--secondary);">३ वर्ष</div><div class="mc-lbl">निर्माण ठेका, अनुदान, लेखापरीक्षण सम्पन्न</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--gold);">५ वर्ष</div><div class="mc-lbl">कर्मचारी हाजिरी, प्रगति प्रतिवेदन, परिपत्र</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--primary);">१०+ वर्ष</div><div class="mc-lbl">हातहतियार इजाजत, कर्मचारी दरबन्दी, राहदानी, निर्माण</div></div>
+    </div>
+
+    <!-- POSDCORB -->
+    <div class="alert alert-green" style="margin-top:14px;">
+      <strong>POSDCORB</strong> (Luther Gulick) = <span class="mono">P</span>lanning · <span class="mono">O</span>rganizing · <span class="mono">S</span>taffing · <span class="mono">D</span>irecting · <span class="mono">CO</span>ordinating · <span class="mono">R</span>eporting · <span class="mono">B</span>udgeting<br>
+      <strong>CO = Coordination</strong> (परीक्षामा बारम्बार CO को अर्थ सोधिन्छ)
+    </div>
+  </div>
+</div>
+
+<!-- ████ SECTION 4: THEORIES ████ -->
+<div class="section" id="theories">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--accent-dim);color:var(--accent);">🧠</div>
+    <div class="section-title">
+      <h2>व्यवस्थापन सिद्धान्त — Name-Attribution Flash Cards</h2>
+      <p>9+ पटक दोहोरिएको — कसले के सिद्धान्त दिए भनेर याद गर्नुस्</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="alert alert-blue">
+      <strong>💡 PSC Pattern:</strong> "सिद्धान्तका प्रतिपादक को हुन्?" — यो प्रश्न गहन बुझाइभन्दा नाम-सिद्धान्त जोडा याद गर्नु बढी महत्वपूर्ण!
+    </div>
+    <div class="grid-3">
+      <div class="theory-card" style="border-color:var(--primary);">
+        <h4>Abraham Maslow</h4>
+        <div class="theorist">Hierarchy of Needs Theory</div>
+        <p>शारीरिक → सुरक्षा → सामाजिक → सम्मान → आत्मसन्तुष्टि। सबभन्दा पहिलो = <strong>शारीरिक आवश्यकता</strong></p>
+      </div>
+      <div class="theory-card" style="border-color:var(--secondary);">
+        <h4>Frederick Herzberg</h4>
+        <div class="theorist">Dual Factors / Two Factor Theory</div>
+        <p>Motivators (संतुष्टि) + Hygiene Factors (असंतुष्टि)। दुई कारक सिद्धान्त।</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--gold);">
+        <h4>Douglas McGregor</h4>
+        <div class="theorist">Theory X and Theory Y</div>
+        <p>X = कर्मचारी आलसी, Y = कर्मचारी स्वयंप्रेरित। नेतृत्व शैली निर्धारक।</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--accent);">
+        <h4>Clayton Alderfer</h4>
+        <div class="theorist">ERG Theory</div>
+        <p>Existence + Relatedness + Growth। मास्लोको संशोधित रूप। <strong>ERG = Alderfer</strong></p>
+      </div>
+      <div class="theory-card" style="border-color:var(--text-dim);">
+        <h4>Frederic Winslow Taylor</h4>
+        <div class="theorist">Scientific Management Theory</div>
+        <p>"Father of Scientific Management"। वैज्ञानिक व्यवस्थापनको जनक।</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--red);">
+        <h4>Henri Fayol</h4>
+        <div class="theorist">14 Principles of Management</div>
+        <p>व्यवस्थापन सिद्धान्तका प्रतिपादक। "Father of Modern Management"।</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--primary);">
+        <h4>Luther Gulick</h4>
+        <div class="theorist">POSDCORB</div>
+        <p>व्यवस्थापनको POSDCORB को जन्मदाता। Planning, Organizing, Staffing...</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--gold);">
+        <h4>George R. Terry</h4>
+        <div class="theorist">कार्यालयको परिभाषा</div>
+        <p>"कार्यालय = संगठनलाई <strong>नियन्त्रण</strong> गर्ने संयन्त्र रहेको स्थान"</p>
+      </div>
+      <div class="theory-card" style="border-color:var(--secondary);">
+        <h4>James Stephenson</h4>
+        <div class="theorist">कार्यालयको परिभाषा</div>
+        <p>"कार्यालय = गतिविधिहरूको <strong>निर्देशन र समन्वय</strong> हुने ठाउँ"</p>
+      </div>
+    </div>
+
+    <!-- LEADERSHIP TYPES -->
+    <div class="grid-3" style="margin-top:16px;">
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--red);font-size:14px;">Autocratic</div>
+        <div class="mc-lbl">अधिनायकवादी — आदेश दिने र पालना गराउने। कर्मचारीको राय नलिने।</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--accent);font-size:14px;">Democratic</div>
+        <div class="mc-lbl">लोकतान्त्रिक — छलफल गरेर निर्णय। कर्मचारी राय महत्व दिने।</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--text-muted);font-size:14px;">Laissez-faire</div>
+        <div class="mc-lbl">स्वतन्त्र — कर्मचारीलाई स्वतन्त्र रूपमा काम गर्न दिने।</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ████ SECTION 5: BUDGET & AUDIT ████ -->
+<div class="section" id="budget">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--primary-dim);color:var(--primary);">💰</div>
+    <div class="section-title">
+      <h2>सरकारी बजेट, लेखा र लेखापरीक्षण</h2>
+      <p>बजेट = नेपालको राजनीतिक, आर्थिक र सामाजिक घोषणापत्र</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <div class="grid-2">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">"पहिलो/शुरुवात" — सबभन्दा बढी दोहोरिने प्रश्न</h3>
+        <div class="fact-item"><span class="fact-q">नेपालको पहिलो बजेट</span><span class="fact-a">२००५ माघ २१</span></div>
+        <div class="fact-item"><span class="fact-q">पहिलो राजस्व अनुमान</span><span class="fact-a">रु. ३.०४ करोड</span></div>
+        <div class="fact-item"><span class="fact-q">पहिलो व्यय अनुमान</span><span class="fact-a">रु. ४.२४ करोड</span></div>
+        <div class="fact-item"><span class="fact-q">पहिलो बजेट पेश गर्ने</span><span class="fact-a">अर्थमन्त्री सुवर्ण शमशेर</span></div>
+        <div class="fact-item"><span class="fact-q">कार्यक्रम बजेट पहिलो</span><span class="fact-a">अमेरिका</span></div>
+        <div class="fact-item"><span class="fact-q">विश्वमा पहिलो बजेट</span><span class="fact-a">बेलायत (सन् १७३३)</span></div>
+        <div class="fact-item"><span class="fact-q">P1/P2/P3 शुरु</span><span class="fact-a">आ.व. २०५९/६०</span></div>
+        <div class="fact-item"><span class="fact-q">बजेट शब्द उत्पत्ति</span><span class="fact-a">Latin "bauge" → French "bougette"</span></div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">आ.व. २०८२/८३ को बजेट <span class="update-badge">✦ 2083 UPDATE</span></h3>
+        <div class="fact-item"><span class="fact-q">कुल बजेट</span><span class="fact-a" style="color:var(--primary);">रु. १६.४७ खर्ब</span></div>
+        <div class="fact-item"><span class="fact-q">चालुतर्फ</span><span class="fact-a" style="color:var(--gold);">५८.२%</span></div>
+        <div class="fact-item"><span class="fact-q">पूँजीगततर्फ</span><span class="fact-a">~२३%</span></div>
+        <div class="fact-item"><span class="fact-q">आर्थिक वृद्धि लक्ष्य</span><span class="fact-a" style="color:var(--accent);">६% +</span></div>
+        <div class="fact-item"><span class="fact-q">संघीय बजेट पेश</span><span class="fact-a">जेठ १५ गते</span></div>
+        <div class="fact-item"><span class="fact-q">प्रादेशिक बजेट</span><span class="fact-a">असार १ गते</span></div>
+        <div class="fact-item"><span class="fact-q">स्थानीय तह बजेट</span><span class="fact-a">असार १० गते</span></div>
+
+        <div class="alert alert-gold" style="margin-top:10px;font-size:11px;">
+          <strong>सोहौं योजना (२०८१/८२–२०८५/८६):</strong> आर्थिक वृद्धि लक्ष्य = <strong>7.3%</strong> | भ्रष्टाचार सूचकाङ्क = <strong>४३</strong> | गरिबी = <strong>१२%</strong> | बेरोजगारी = <strong>७%</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUDGET TYPES -->
+    <div class="grid-3" style="margin-top:14px;">
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--secondary);font-size:13px;">सन्तुलित बजेट</div>
+        <div class="mc-lbl">आय = व्यय। Balanced Budget।</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--red);font-size:13px;">घाटा बजेट</div>
+        <div class="mc-lbl">व्यय > आय। Deficit Budget। नेपालको वास्तविकता।</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--accent);font-size:13px;">बचत बजेट</div>
+        <div class="mc-lbl">आय > व्यय। Surplus Budget।</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--gold);font-size:13px;">कार्यक्रम बजेट</div>
+        <div class="mc-lbl">कार्यक्रम उद्देश्य अनुसार। Program Budget।</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--primary);font-size:13px;">शून्यआधारित</div>
+        <div class="mc-lbl">Zero Based Budget। हरेक वर्ष नयाँ औचित्य।</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--secondary);font-size:13px;">कार्यसम्पादन</div>
+        <div class="mc-lbl">Performance Budget। नतिजामा आधारित।</div>
+      </div>
+    </div>
+
+    <!-- AUDIT + ACCOUNTING -->
+    <div class="grid-2" style="margin-top:14px;">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">लेखापरीक्षण तथ्यहरू</h3>
+        <div class="fact-item"><span class="fact-q">महालेखापरीक्षक कार्यालय</span><span class="fact-a" style="color:var(--secondary);">३ वटा</span></div>
+        <div class="fact-item"><span class="fact-q">अर्थ मन्त्रालय अन्तर्गत पर्दैन</span><span class="fact-a" style="color:var(--red);">महालेखापरीक्षक</span></div>
+        <div class="fact-item"><span class="fact-q">अन्तिम लेखापरीक्षण गर्ने</span><span class="fact-a">महालेखापरीक्षक</span></div>
+        <div class="fact-item"><span class="fact-q">लेखा समूह सरुवा</span><span class="fact-a">महालेखा नियन्त्रक</span></div>
+        <div class="fact-item"><span class="fact-q">नेपाल लेखा प्रणाली</span><span class="fact-a">Cash Basis Double Entry</span></div>
+        <div class="fact-item"><span class="fact-q">लेखापरीक्षण वार्षिक प्रतिवेदन</span><span class="fact-a">राष्ट्रपति समक्ष → संसद</span></div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">सार्वजनिक खरिद / सुशासन</h3>
+        <div class="fact-item"><span class="fact-q">सुशासन ऐन</span><span class="fact-a" style="color:var(--secondary);">२०६४</span></div>
+        <div class="fact-item"><span class="fact-q">सूचना अधिकारी तोक्ने</span><span class="fact-a">सुशासन ऐन, २०६४</span></div>
+        <div class="fact-item"><span class="fact-q">नागरिक बडापत्र राख्ने</span><span class="fact-a">सुशासन ऐन, २०६४</span></div>
+        <div class="fact-item"><span class="fact-q">RTI ऐन</span><span class="fact-a">सूचना हक ऐन, २०६४</span></div>
+        <div class="fact-item"><span class="fact-q">सूचना वर्गीकरण समिति</span><span class="fact-a">मुख्य सचिवको अध्यक्षतामा</span></div>
+        <div class="fact-item"><span class="fact-q">RTI विश्वमा पहिलो</span><span class="fact-a">स्वीडेन (सन् १७६६)</span></div>
+        <div class="fact-item"><span class="fact-q">RTI दक्षिण एशियामा पहिलो</span><span class="fact-a">नेपाल (२०६४)</span></div>
+      </div>
+    </div>
+
+    <!-- CITIZEN CHARTER -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:16px 0 10px;text-transform:uppercase;" class="nep">नागरिक बडापत्र — KEY FACTS</h3>
+    <div class="grid-4">
+      <div class="mini-card"><div class="mc-val" style="color:var(--primary);font-size:13px;">बेलायत</div><div class="mc-lbl">विश्वमा पहिलो (जोन मेजर, सन् १९९१)</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--secondary);font-size:13px;">PM कार्यालय</div><div class="mc-lbl">नेपालमा पहिलो सुरुवात (प्रधानमन्त्री कार्यालय)</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--gold);font-size:13px;">२०७० वैशाख</div><div class="mc-lbl">नेपालमा क्षतिपूर्तिसहितको बडापत्र सुरु</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--accent);font-size:13px;">सुशासन ऐन</div><div class="mc-lbl">कानूनी आधार: सुशासन (व्यवस्थापन तथा सञ्चालन) ऐन, २०६४</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ████ SECTION 6: GK GEOGRAPHY ████ -->
+<div class="section" id="gk-geography">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:rgba(63,185,80,0.1);color:var(--accent);">🗺️</div>
+    <div class="section-title">
+      <h2>नेपालको भूगोल र जनसांख्यिकी</h2>
+      <p>जनगणना २०७८ | प्रदेश | हिमाल | नदी — Static facts, yaad garna easy</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <div class="grid-2">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">नेपाल — आधारभूत भूगोल</h3>
+        <div class="fact-item"><span class="fact-q">क्षेत्रफल</span><span class="fact-a">१,४७,१८१ वर्ग कि.मि.</span></div>
+        <div class="fact-item"><span class="fact-q">पूर्व-पश्चिम लम्बाई</span><span class="fact-a" style="color:var(--gold);">८८५ कि.मि.</span></div>
+        <div class="fact-item"><span class="fact-q">उत्तर-दक्षिण चौडाई (औसत)</span><span class="fact-a">१९३ कि.मि.</span></div>
+        <div class="fact-item"><span class="fact-q">समुद्री किनारादेखि दूरी</span><span class="fact-a">~१,०१७ कि.मि.</span></div>
+        <div class="fact-item"><span class="fact-q">सबभन्दा नजिकको समुद्र</span><span class="fact-a">बंगालको खाडी (~१,१२७)</span></div>
+        <div class="fact-item"><span class="fact-q">प्रामाणिक समय आधार</span><span class="fact-a">गौरीशंकर हिमाल (GMT+५:४५)</span></div>
+        <div class="fact-item"><span class="fact-q">SAARC मा नेपाल</span><span class="fact-a" style="color:var(--gold);">५औं ठूलो (क्षेत्रफल)</span></div>
+        <div class="fact-item"><span class="fact-q">भारत र चीन दुवैलाई छुने जिल्ला</span><span class="fact-a" style="color:var(--gold);">३ वटा</span></div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">जनगणना २०७८ — मुख्य तथ्यहरू <span class="update-badge">✦ 2078</span></h3>
+        <div class="fact-item"><span class="fact-q">कुल जनसंख्या</span><span class="fact-a" style="color:var(--primary);">२,९९,१ लाख</span></div>
+        <div class="fact-item"><span class="fact-q">जनघनत्व</span><span class="fact-a">१९८ प्रति वर्ग कि.मि.</span></div>
+        <div class="fact-item"><span class="fact-q">पहाडी क्षेत्र जनघनत्व</span><span class="fact-a">१९२</span></div>
+        <div class="fact-item"><span class="fact-q">वार्षिक वृद्धिदर (Exponential)</span><span class="fact-a" style="color:var(--gold);">०.९२%</span></div>
+        <div class="fact-item"><span class="fact-q">तराई जनसंख्या वृद्धि (2068 vs 2078)</span><span class="fact-a">+५.३४%</span></div>
+        <div class="fact-item"><span class="fact-q">साक्षरता दर</span><span class="fact-a">७६.३%</span></div>
+        <div class="fact-item"><span class="fact-q">राष्ट्रिय जनगणनामा कम्प्युटर पहिलो</span><span class="fact-a">२०२८ को जनगणना</span></div>
+        <div class="fact-item"><span class="fact-q">कम जनसंख्या: बढीदेखि कम</span><span class="fact-a">डोल्पा>हुम्ला>रसुवा>मुस्ताङ>मनाङ</span></div>
+      </div>
+    </div>
+
+    <!-- PROVINCES -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:16px 0 10px;text-transform:uppercase;" class="nep">प्रदेशहरू — तुलनात्मक तथ्यहरू</h3>
+    <table class="data-table">
+      <thead><tr><th>प्रदेश</th><th>जिल्ला</th><th>विशेषता</th></tr></thead>
+      <tbody>
+        <tr><td class="nep" style="color:var(--gold);">कोशी</td><td class="val">१४</td><td><span class="chip chip-gold">सबभन्दा बढी जिल्ला (१४)</span></td></tr>
+        <tr><td class="nep">मधेश</td><td class="val">८</td><td><span class="chip chip-blue">सबभन्दा बढी जनघनत्व</span></td></tr>
+        <tr><td class="nep">बागमती</td><td class="val">१३</td><td><span class="chip chip-green">सबभन्दा बढी आर्थिक वृद्धि (२०८१/८२)</span></td></tr>
+        <tr><td class="nep" style="color:var(--primary);">गण्डकी</td><td class="val">११</td><td></td></tr>
+        <tr><td class="nep">लुम्बिनी</td><td class="val">१२</td><td></td></tr>
+        <tr><td class="nep" style="color:var(--secondary);">कर्णाली</td><td class="val">१०</td><td><span class="chip chip-blue">सबभन्दा ठूलो क्षेत्रफल</span></td></tr>
+        <tr><td class="nep">सुदूरपश्चिम</td><td class="val">९</td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="alert alert-blue" style="margin-top:8px;font-size:11px;">
+      <strong>जनघनत्व ठूलोदेखि सानो:</strong> मधेश > बागमती > लुम्बिनी > गण्डकी
+    </div>
+
+    <!-- MOUNTAINS & RIVERS -->
+    <div class="grid-2" style="margin-top:14px;">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">हिमालहरू</h3>
+        <div class="fact-item"><span class="fact-q">सगरमाथा उचाई</span><span class="fact-a">८,८४८.८६ मि.</span></div>
+        <div class="fact-item"><span class="fact-q">अन्नपूर्ण प्रथम</span><span class="fact-a" style="color:var(--gold);">८,०९१ मि.</span></div>
+        <div class="fact-item"><span class="fact-q">८,०००+ हिमाल</span><span class="fact-a">६ वटा (Key A)</span></div>
+        <div class="fact-item"><span class="fact-q">६,०००+ चुचुरा</span><span class="fact-a">१,३११ वटा</span></div>
+        <div class="fact-item"><span class="fact-q">लाङटाङ हिमाल जिल्ला</span><span class="fact-a">रसुवा</span></div>
+        <div class="fact-item"><span class="fact-q">पचाल झरना उचाई</span><span class="fact-a">३८१ मि.</span></div>
+        <div class="fact-item"><span class="fact-q">राष्ट्रिय निकुञ्ज (२०८२)</span><span class="fact-a" style="color:var(--primary);">१३ वटा</span></div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">प्राकृतिक स्रोत र विविध</h3>
+        <div class="fact-item"><span class="fact-q">प्रमुख नदी (सहायक)</span><span class="fact-a">कोशी (७), गण्डकी (७), कर्णाली (५)</span></div>
+        <div class="fact-item"><span class="fact-q">सबभन्दा ठूलो ताल</span><span class="fact-a">रारा (हुम्ला)</span></div>
+        <div class="fact-item"><span class="fact-q">सबभन्दा गहिरो ताल</span><span class="fact-a">फोक्सुण्डो</span></div>
+        <div class="fact-item"><span class="fact-q">सबभन्दा उचो ताल</span><span class="fact-a">तिलिचो</span></div>
+        <div class="fact-item"><span class="fact-q">अपर तामाकोशी क्षमता</span><span class="fact-a" style="color:var(--gold);">५६७ मेगावाट</span></div>
+        <div class="fact-item"><span class="fact-q">नेपालमा मात्र पाइने चरा</span><span class="fact-a">कांडे भ्याकुर</span></div>
+        <div class="fact-item"><span class="fact-q">खुला प्रथा जिल्ला</span><span class="fact-a">डोल्पा</span></div>
+        <div class="fact-item"><span class="fact-q">'चासोक ताङनाम' पर्व</span><span class="fact-a">राई जाति</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ████ SECTION 7: INTERNATIONAL ORGS ████ -->
+<div class="section" id="intl-orgs">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--secondary-dim);color:var(--secondary);">🌐</div>
+    <div class="section-title">
+      <h2>अन्तर्राष्ट्रिय संगठनहरू — HQ र स्थापना वर्ष</h2>
+      <p>SAARC, UN, BIMSTEC, EU, WHO, FAO — finite set याद गर्नुस्</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <div class="grid-2">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">SAARC मुख्य तथ्यहरू</h3>
+        <div class="fact-item"><span class="fact-q">स्थापना</span><span class="fact-a">८ डिसेम्बर १९८५</span></div>
+        <div class="fact-item"><span class="fact-q">स्थापना स्थान</span><span class="fact-a">ढाका, बंगलादेश</span></div>
+        <div class="fact-item"><span class="fact-q">सचिवालय स्थापना</span><span class="fact-a">१६ जनवरी १९८७</span></div>
+        <div class="fact-item"><span class="fact-q">सचिवालय</span><span class="fact-a">काठमाडौं, नेपाल</span></div>
+        <div class="fact-item"><span class="fact-q">सदस्य राष्ट्र</span><span class="fact-a">८ (अफगानिस्तान सन् २००७)</span></div>
+        <div class="fact-item"><span class="fact-q">महासचिव पदावधि</span><span class="fact-a">३ वर्ष</span></div>
+        <div class="fact-item"><span class="fact-q">नेपालबाट पहिलो महासचिव</span><span class="fact-a">अर्जुन बहादुर थापा</span></div>
+        <div class="fact-item"><span class="fact-q">गरिबी निवारण वर्ष</span><span class="fact-a">सन् १९९१</span></div>
+        <div class="fact-item"><span class="fact-q">अफगानिस्तान सदस्यता</span><span class="fact-a">१४औं शिखर सम्मेलन</span></div>
+        <div class="fact-item"><span class="fact-q">SAARC न भएको देश</span><span class="fact-a">सिंगापुर, थाइल्याण्ड<br>(BIMSTEC मा छ)</span></div>
+        <div class="fact-item"><span class="fact-q">SAARC डकुमेन्टेशन सेन्टर</span><span class="fact-a">नयाँ दिल्ली, भारत</span></div>
+        <div class="fact-item"><span class="fact-q">SDMC (विपद् केन्द्र)</span><span class="fact-a">नयाँ दिल्ली</span></div>
+        <div class="fact-item"><span class="fact-q">SAFTA लागू</span><span class="fact-a">१ जनवरी २००६</span></div>
+        <div class="fact-item"><span class="fact-q">हस्ताक्षरकर्तामा नभएको</span><span class="fact-a">जुलियस रिचर्ड जयवर्धने</span></div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">संयुक्त राष्ट्रसंघ</h3>
+        <div class="fact-item"><span class="fact-q">स्थापना</span><span class="fact-a">२४ अक्टोबर १९४५</span></div>
+        <div class="fact-item"><span class="fact-q">मुख्यालय</span><span class="fact-a">न्युयोर्क, अमेरिका</span></div>
+        <div class="fact-item"><span class="fact-q">सदस्य राष्ट्र</span><span class="fact-a">१९३</span></div>
+        <div class="fact-item"><span class="fact-q">नेपालको सदस्यता</span><span class="fact-a">१८/२४ डिसेम्बर १९५५</span></div>
+        <div class="fact-item"><span class="fact-q">UN बडापत्र — धारा</span><span class="fact-a" style="color:var(--gold);">१११</span></div>
+        <div class="fact-item"><span class="fact-q">सुरक्षा परिषद् — कुल सदस्य</span><span class="fact-a" style="color:var(--gold);">१५</span></div>
+        <div class="fact-item"><span class="fact-q">स्थायी (VETO) सदस्य</span><span class="fact-a">५</span></div>
+        <div class="fact-item"><span class="fact-q">अस्थायी सदस्य (२ वर्ष)</span><span class="fact-a">१०</span></div>
+        <div class="fact-item"><span class="fact-q">महासचिव</span><span class="fact-a">एन्टोनियो गुटेरेस (पोर्चुगल)</span></div>
+        <div class="fact-item"><span class="fact-q">सबभन्दा बढी VETO</span><span class="fact-a">अमेरिका</span></div>
+        <div class="fact-item"><span class="fact-q">सदस्यता त्याग्ने पहिलो</span><span class="fact-a">इन्डोनेसिया</span></div>
+        <div class="fact-item"><span class="fact-q">UN नेपालसँगै सदस्य (SAARC)</span><span class="fact-a">श्रीलंका</span></div>
+        <div class="fact-item"><span class="fact-q">UDHR — धारा</span><span class="fact-a" style="color:var(--gold);">३०</span></div>
+      </div>
+    </div>
+
+    <!-- SPECIALIZED AGENCIES TABLE -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:16px 0 10px;text-transform:uppercase;" class="nep">UN विशिष्टीकृत संस्थाहरू — HQ</h3>
+    <div class="grid-2">
+      <div>
+        <div class="org-row"><span class="org-name">WHO</span><span class="org-hq">जेनेभा, स्विट्जरल्याण्ड</span><span class="org-est"></span></div>
+        <div class="org-row"><span class="org-name">FAO</span><span class="org-hq">रोम, इटाली</span><span class="org-est">कृषि</span></div>
+        <div class="org-row"><span class="org-name">UNESCO</span><span class="org-hq">पेरिस, फ्रान्स</span><span class="org-est">शिक्षा</span></div>
+        <div class="org-row"><span class="org-name">ILO</span><span class="org-hq">जेनेभा, स्विट्जरल्याण्ड</span><span class="org-est">श्रम</span></div>
+        <div class="org-row"><span class="org-name">IMF</span><span class="org-hq">वासिङ्टन DC, अमेरिका</span><span class="org-est">मुद्रा</span></div>
+        <div class="org-row"><span class="org-name">World Bank</span><span class="org-hq">वासिङ्टन DC, अमेरिका</span><span class="org-est"></span></div>
+      </div>
+      <div>
+        <div class="org-row"><span class="org-name">IFC</span><span class="org-hq">वासिङ्टन DC, अमेरिका</span><span class="org-est">World Bank Group</span></div>
+        <div class="org-row"><span class="org-name">UNEP</span><span class="org-hq">नैरोबी, केन्या</span><span class="org-est">वातावरण</span></div>
+        <div class="org-row"><span class="org-name">ICAO</span><span class="org-hq">मन्ट्रियल, क्यानाडा</span><span class="org-est">अप्रिल १९४७</span></div>
+        <div class="org-row"><span class="org-name">ITU</span><span class="org-hq">जेनेभा, स्विट्जरल्याण्ड</span><span class="org-est">दूरसञ्चार</span></div>
+        <div class="org-row"><span class="org-name">WMO</span><span class="org-hq">जेनेभा, स्विट्जरल्याण्ड</span><span class="org-est">मौसम</span></div>
+        <div class="org-row"><span class="org-name">BIMSTEC HQ</span><span class="org-hq">ढाका, बंगलादेश</span><span class="org-est">१९९७</span></div>
+      </div>
+    </div>
+
+    <div class="alert alert-red" style="margin-top:10px;font-size:11px;">
+      <strong>❌ "विश्व कृषि संगठन"</strong> — यस्तो कुनै UN विशिष्टीकृत संस्था छैन! परीक्षामा यो trap हो। FAO = खाद्य तथा कृषि संगठन।
+    </div>
+
+    <!-- EU & ASEAN -->
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--secondary);font-size:13px;">European Union</div>
+        <div class="mc-lbl">Motto: "United in Diversity" | साझा मुद्रा: युरो (१९ देशले) | सदस्य: २७ (Brexit पछि)</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--gold);font-size:13px;">G7 (Big Seven)</div>
+        <div class="mc-lbl">अमेरिका, UK, फ्रान्स, जर्मनी, इटाली, जापान, क्यानाडा। <span style="color:var(--red);">भारत G7 मा छैन।</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ████ SECTION 8: HISTORY ████ -->
+<div class="section" id="history">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:rgba(227,179,65,0.1);color:var(--gold);">⚔️</div>
+    <div class="section-title">
+      <h2>नेपालको इतिहास — लिच्छवि, मल्ल, राणा, आधुनिक</h2>
+      <p>~15% GK प्रश्न इतिहासबाट</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="grid-2">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">इतिहासका बारम्बार सोधिने तथ्यहरू</h3>
+        <div class="fact-item"><span class="fact-q">लिच्छवि — विकसित गाउँ</span><span class="fact-a" style="color:var(--gold);">द्रङ्ग</span></div>
+        <div class="fact-item"><span class="fact-q">लिच्छवि — जग्गा व्यवस्थापन अड्डा</span><span class="fact-a">कुथेर अधिकरण</span></div>
+        <div class="fact-item"><span class="fact-q">'परम भट्टारक' राजा</span><span class="fact-a">मानदेव</span></div>
+        <div class="fact-item"><span class="fact-q">लिच्छवि 'स्वर्ण युग'</span><span class="fact-a">मानदेव (प्रथम प्रामाणिक राजा)</span></div>
+        <div class="fact-item"><span class="fact-q">पाटन कृष्ण मन्दिर</span><span class="fact-a">सिद्धिनरसिंह मल्ल</span></div>
+        <div class="fact-item"><span class="fact-q">काठमाडौं राजधानी</span><span class="fact-a">२०७२ / वि.सं. १८२५ चैत १०</span></div>
+        <div class="fact-item"><span class="fact-q">कोतपर्वको समय PM</span><span class="fact-a">माथवरसिंह थापा</span></div>
+        <div class="fact-item"><span class="fact-q">राणा शासन (कुल)</span><span class="fact-a">वि.सं. १९०३–२००७ (१०४ वर्ष)</span></div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">आधुनिक नेपाल — तथ्यहरू</h3>
+        <div class="fact-item"><span class="fact-q">२००७ राणा-कांग्रेस गृहमन्त्री</span><span class="fact-a">मोहन शमशेर ज.व.रा.</span></div>
+        <div class="fact-item"><span class="fact-q">श्री ५ सरकार → नेपाल सरकार</span><span class="fact-a">२०६३ जेठ ४</span></div>
+        <div class="fact-item"><span class="fact-q">नयाँ संविधान जारी</span><span class="fact-a">२०७२ असोज ३</span></div>
+        <div class="fact-item"><span class="fact-q">लोकतान्त्रिक गणतन्त्र</span><span class="fact-a">२०६५ जेठ १५</span></div>
+        <div class="fact-item"><span class="fact-q">पोलिमर नोट शुरु</span><span class="fact-a">२०५९ असोज १४</span></div>
+        <div class="fact-item"><span class="fact-q">WTO सदस्यता</span><span class="fact-a">२३ अप्रिल २००४</span></div>
+        <div class="fact-item"><span class="fact-q">e-Visa शुरु</span><span class="fact-a">२०८० माघ</span></div>
+        <div class="fact-item"><span class="fact-q">गोपालवंशी क्रम</span><span class="fact-a">मणिगुप्त > भिमगुप्त > विष्णुगुप्त > जिनगुप्त</span></div>
+      </div>
+    </div>
+
+    <!-- HEALTH & SCIENCE -->
+    <div class="grid-2" style="margin-top:14px;">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">स्वास्थ्य/विज्ञान तथ्यहरू</h3>
+        <div class="fact-item"><span class="fact-q">DOTS को पूरा रूप</span><span class="fact-a">Directly Observed Treatment Short Course</span></div>
+        <div class="fact-item"><span class="fact-q">H5N1 Virus</span><span class="fact-a">Bird Flu (परीक्षा कुञ्जी: Swine)</span></div>
+        <div class="fact-item"><span class="fact-q">Anopheles → रोग</span><span class="fact-a">औलो (Malaria)</span></div>
+        <div class="fact-item"><span class="fact-q">आयोडिन कमी → रोग</span><span class="fact-a">गलगाँड (Goitre)</span></div>
+        <div class="fact-item"><span class="fact-q">Riboflavin</span><span class="fact-a">Vitamin B2</span></div>
+        <div class="fact-item"><span class="fact-q">Rickets</span><span class="fact-a">Vitamin D कमी</span></div>
+        <div class="fact-item"><span class="fact-q">Vitamin K कमी</span><span class="fact-a">रगत धेरै बग्ने</span></div>
+        <div class="fact-item"><span class="fact-q">Immunity बढाउने फल</span><span class="fact-a">सुन्तला (Vitamin C)</span></div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">विज्ञान र प्रविधि</h3>
+        <div class="fact-item"><span class="fact-q">सूर्यको प्रकाश पृथ्वीमा</span><span class="fact-a" style="color:var(--gold);">८ मिनेट २० सेकेण्ड</span></div>
+        <div class="fact-item"><span class="fact-q">डिजेल इन्जिन आविष्कार</span><span class="fact-a">सन् १८९५</span></div>
+        <div class="fact-item"><span class="fact-q">कम्प्युटरका आविष्कारक</span><span class="fact-a">चार्ल्स ब्याबेज</span></div>
+        <div class="fact-item"><span class="fact-q">Microscope का पिता</span><span class="fact-a">एन्टोनीभान लिउवेनहोक</span></div>
+        <div class="fact-item"><span class="fact-q">विद्युतका पिता</span><span class="fact-a">माइकल फराडे</span></div>
+        <div class="fact-item"><span class="fact-q">कागजको आविष्कार</span><span class="fact-a">चीन</span></div>
+        <div class="fact-item"><span class="fact-q">ओजोन विनाशक</span><span class="fact-a">CFC (Chloro Fluoro Carbon)</span></div>
+        <div class="fact-item"><span class="fact-q">Ecosystem Decomposer</span><span class="fact-a">ब्याक्टेरिया</span></div>
+        <div class="fact-item"><span class="fact-q">मतदानमा मसीमा</span><span class="fact-a">Silver Nitrate</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ████ SECTION 9: CURRENT AFFAIRS ████ -->
+<div class="section" id="current">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--red-dim);color:var(--red);">📰</div>
+    <div class="section-title">
+      <h2>समसामयिक घटना — ताजा तथ्यहरू <span class="update-badge">✦ 2082-83</span></h2>
+      <p>परीक्षाभन्दा ६–१२ महिना अगाडिका घटना | "हालै" शब्द = ताजा सूचना</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <div class="alert alert-red">
+      <strong>⚠️ Finding #6:</strong> प्रश्नमा "हालै" (recently) शब्द देखे — त्यो प्रश्न परीक्षाभन्दा केही महिना अगाडिको घटना सोध्छ। यो category पुरानो PYQ बाट काम गर्दैन — परीक्षाको अन्तिम ७–१० दिन मात्र पढ्नुस्!
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">२०८२/८३ मुख्य तथ्यहरू</h3>
+        <div class="fact-item"><span class="fact-q">सोहौं आवधिक योजना अवधि</span><span class="fact-a">२०८१/८२–२०८५/८६</span></div>
+        <div class="fact-item"><span class="fact-q">दीर्घकालीन सोच (सोहौं)</span><span class="fact-a">"समृद्ध नेपाल, सुखी नेपाली"</span></div>
+        <div class="fact-item"><span class="fact-q">सोहौं — आर्थिक वृद्धि लक्ष्य</span><span class="fact-a" style="color:var(--gold);">७.३%</span></div>
+        <div class="fact-item"><span class="fact-q">सोहौं — गरिबी लक्ष्य</span><span class="fact-a">१२%</span></div>
+        <div class="fact-item"><span class="fact-q">सोहौं — बेरोजगारी लक्ष्य</span><span class="fact-a">७%</span></div>
+        <div class="fact-item"><span class="fact-q">सोहौं — भ्रष्टाचार सूचकाङ्क</span><span class="fact-a">४३</span></div>
+        <div class="fact-item"><span class="fact-q">CPI 2024 (TI) नेपाल</span><span class="fact-a">१०७औं</span></div>
+        <div class="fact-item"><span class="fact-q">World Happiness 2026 नेपाल</span><span class="fact-a">९९औं</span></div>
+        <div class="fact-item"><span class="fact-q">World Happiness 2026 SAARC सर्वोच्च</span><span class="fact-a">श्रीलंका</span></div>
+        <div class="fact-item"><span class="fact-q">ICC Women T20 WC 2026</span><span class="fact-a">भारत र श्रीलंका</span></div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" class="nep">२०८२/८३ — थप घटनाहरू</h3>
+        <div class="fact-item"><span class="fact-q">G20 2025 शिखर सम्मेलन</span><span class="fact-a">दक्षिण अफ्रिका</span></div>
+        <div class="fact-item"><span class="fact-q">UEFA Euro 2024</span><span class="fact-a">जर्मनी</span></div>
+        <div class="fact-item"><span class="fact-q">Nobel Literature 2025</span><span class="fact-a">ल्यास्लो क्राज्नाहोर्काई (हंगेरी)</span></div>
+        <div class="fact-item"><span class="fact-q">Nobel Peace 2023</span><span class="fact-a">Narges Mohammadi</span></div>
+        <div class="fact-item"><span class="fact-q">ADB दक्षिण एशिया महानिर्देशक (नेपाली)</span><span class="fact-a">सोना श्रेष्ठ</span></div>
+        <div class="fact-item"><span class="fact-q">Epic Fury</span><span class="fact-a">अमेरिका-इजरायल → इरान आक्रमण</span></div>
+        <div class="fact-item"><span class="fact-q">नेपाल PM (२०८२ चैत)</span><span class="fact-a">बालेन्द्र शाह (चैत १३)</span></div>
+        <div class="fact-item"><span class="fact-q">नगरपालिका संख्या</span><span class="fact-a" style="color:var(--gold);">२९३ वटा</span></div>
+        <div class="fact-item"><span class="fact-q">राष्ट्रिय निकुञ्ज (२०८२)</span><span class="fact-a" style="color:var(--primary);">१३ वटा</span></div>
+        <div class="fact-item"><span class="fact-q">ADB रोजगारी सबभन्दा बढी</span><span class="fact-a">नेपाल विद्युत प्राधिकरण</span></div>
+      </div>
+    </div>
+
+    <!-- TRACKING CHECKLIST -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:16px 0 10px;text-transform:uppercase;" class="nep">परीक्षाको अन्तिम सातामा ट्र्याक गर्नुपर्ने</h3>
+    <ul class="checklist" id="currentChecklist">
+      <li onclick="toggleCheck(this)">Nobel Prize winners (सबै ६ category, विशेष: Peace र Literature)</li>
+      <li onclick="toggleCheck(this)">G7/G20 summit host र location</li>
+      <li onclick="toggleCheck(this)">SAARC/BIMSTEC summit — कहाँ र कहिले</li>
+      <li onclick="toggleCheck(this)">नेपाल सरकारका नयाँ मन्त्री/PM परिवर्तन</li>
+      <li onclick="toggleCheck(this)">World Happiness Index — नेपाल र SAARC ranking</li>
+      <li onclick="toggleCheck(this)">TI Corruption Perceptions Index — नेपाल ranking</li>
+      <li onclick="toggleCheck(this)">नयाँ जलविद्युत/पूर्वाधार परियोजना सम्झौता</li>
+      <li onclick="toggleCheck(this)">National Assembly election (राष्ट्रिय सभा)</li>
+      <li onclick="toggleCheck(this)">कुनै प्रमुख अन्तर्राष्ट्रिय सैनिक/कूटनीतिक घटना</li>
+      <li onclick="toggleCheck(this)">ICC/FIFA/Olympics major results</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ████ SECTION 10: STUDY PLAN ████ -->
+<div class="section" id="study-plan">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--primary-dim);color:var(--primary);">📅</div>
+    <div class="section-title">
+      <h2>८-हप्ते अध्ययन योजना — Evidence-Based</h2>
+      <p>754 MCQ विश्लेषणमा आधारित | PSC technical exam intelligence report</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <div class="alert alert-green">
+      <strong>🎯 KEY INSIGHT:</strong> पहिलो ४० अंक (Q1–20) — GK + PM — सबै technical posts मा एउटै! यो section एक पटक राम्रोसँग तयार गरे सबै future PSC exams मा काम गर्छ।
+    </div>
+
+    <!-- TOPIC FREQUENCY -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:14px 0 10px;" class="nep">PM प्रश्नको topic weightage (sample: 754 MCQ)</h3>
+    <div class="score-meter"><div class="label">नि.से.ऐन/नियमावली</div><div class="bar-row"><div class="bar-wrap"><div class="bar-fill" style="width:25%;background:var(--primary);"></div></div><div class="pct">~25%</div></div></div>
+    <div class="score-meter"><div class="label">नेपालको संविधान</div><div class="bar-row"><div class="bar-wrap"><div class="bar-fill" style="width:14%;background:var(--secondary);"></div></div><div class="pct">~14%</div></div></div>
+    <div class="score-meter"><div class="label">अन्तर्राष्ट्रिय संगठन</div><div class="bar-row"><div class="bar-wrap"><div class="bar-fill" style="width:10%;background:var(--gold);"></div></div><div class="pct">~10%</div></div></div>
+    <div class="score-meter"><div class="label">कार्यालय व्यवस्थापन</div><div class="bar-row"><div class="bar-wrap"><div class="bar-fill" style="width:9%;background:var(--accent);"></div></div><div class="pct">~9%</div></div></div>
+    <div class="score-meter"><div class="label">नागरिक बडापत्र/सुशासन/RTI</div><div class="bar-row"><div class="bar-wrap"><div class="bar-fill" style="width:8%;background:var(--text-muted);"></div></div><div class="pct">~8%</div></div></div>
+    <div class="score-meter"><div class="label">Motivation Theory (Maslow/Herzberg...)</div><div class="bar-row"><div class="bar-wrap"><div class="bar-fill" style="width:7%;background:var(--red);"></div></div><div class="pct">~7%</div></div></div>
+
+    <div class="week-item">
+      <div class="week-num"><span>Week</span><span>1–2</span></div>
+      <div class="week-content">
+        <h4>निजामती सेवा ऐन/नियमावली — सर्वाधिक महत्वपूर्ण</h4>
+        <p>ऐन एक पटक पूरा पढ्नुस् (बुझ्नको लागि)। दोस्रो pass मा: आफैले number table बनाउनुस् — आरक्षण%, उमेर, परीक्षणकाल, बढुवा अंक, बिदा। यो guide को Civil Service section को MCQ drill गर्नुस् जबसम्म हरेक प्रश्न १० सेकेण्डमा उत्तर नआउनसम्म।</p>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num"><span>Week</span><span>3–4</span></div>
+      <div class="week-content">
+        <h4>संविधान + कार्यालय व्यवस्थापन/कार्यविधि</h4>
+        <p>संविधान: धारा ४८ (नागरिक कर्तव्य), मौलिक हक list, धारा ५१, संवैधानिक निकायहरू (कति वर्ष, कति सदस्य, नियुक्ति प्रक्रिया)। कार्यालय: दर्ता vs चलानी vs टिप्पणी vs तोक आदेश vs परिपत्र — यी ५ terms contrast set मा drill गर्नुस्। नागरिक बडापत्र र सूचनाको हक।</p>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num"><span>Week</span><span>5–6</span></div>
+      <div class="week-content">
+        <h4>Theory Attribution + बजेट/लेखा + GK Geography/History</h4>
+        <p>Theory flashcards: Maslow/Herzberg/McGregor/Alderfer/Taylor/Fayol/Gulick/Terry/Stephenson — name→theory दुवै direction। बजेट: नेपालको पहिलो बजेट facts, current year %, बजेट प्रकार। GK geography/history: closed list — एक पटक याद गरे वर्षौं काम गर्छ।</p>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num"><span>Week</span><span>7–8</span></div>
+      <div class="week-content">
+        <h4>Full PYQ Drilling + Current Affairs + Mock Conditions</h4>
+        <p>सम्पूर्ण extracted MCQ bank (750+) कम्तीमा २ पटक drill गर्नुस् — एक पटक explanation सहित, एक पटक timed। Week 8 मा मात्र current affairs page बनाउनुस् (पहिले गरे stale हुन्छ)। कम्तीमा ३ वटा ४५ मिनेट full mock papers — notes/phone बिना।</p>
+      </div>
+    </div>
+
+    <!-- DAILY SCHEDULE -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;text-transform:uppercase;" class="nep">दैनिक तालिका (Week 1–6)</h3>
+    <table class="data-table">
+      <thead><tr><th>Block</th><th>अवधि</th><th>काम</th></tr></thead>
+      <tbody>
+        <tr><td>बिहान</td><td class="val">60–90 min</td><td class="nep">यो हप्ताको नयाँ GK/PM content</td></tr>
+        <tr><td>दिउँसो</td><td class="val">90–120 min</td><td class="nep">Technical/domain subject (आफ्नो service syllabus)</td></tr>
+        <tr><td>साँझ</td><td class="val">30–45 min</td><td class="nep">सम्पूर्ण MCQ drill (cumulative — आजको मात्र होइन)</td></tr>
+        <tr><td>सुत्नुअघि</td><td class="val">10 min</td><td class="nep">आफ्नो हातले लेखेको number table re-read (कुनै नयाँ content होइन)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ████ SECTION 11: MCQ TACTICS ████ -->
+<div class="section" id="mcq-tactics">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--accent-dim);color:var(--accent);">🎯</div>
+    <div class="section-title">
+      <h2>MCQ Solving Tactics — Proven by 754 MCQ Analysis</h2>
+      <p>+2/-0.4 marking scheme | 45 minutes | 50 questions</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <!-- MATH OF GUESSING -->
+    <div class="grid-3" style="margin-bottom:16px;">
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--red);">0</div>
+        <div class="mc-lbl">Blank छोडेमा → ० अंक। कहिल्यै blank नछोड्नुस्!</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--gold);">+0.2</div>
+        <div class="mc-lbl">Pure random guess EV (+2×0.25 − 0.4×0.75). Blank भन्दा राम्रो!</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-val" style="color:var(--accent);">+0.39</div>
+        <div class="mc-lbl">एक option eliminate गरेपछि guess EV। Eliminate गरेर guess!</div>
+      </div>
+    </div>
+
+    <div class="tactic">
+      <div class="tactic-num">1</div>
+      <div><h4>सधैं उत्तर लेख्नुस् — Blank कहिल्यै नछोड्नुस्!</h4>
+      <p>+2/−0.4 marking मा pure random guess को expected value +0.2 हो — blank भन्दा गणितीय रूपमा राम्रो। यदि कुनै elimination सम्भव छ भने त झन् राम्रो।</p></div>
+    </div>
+    <div class="tactic">
+      <div class="tactic-num">2</div>
+      <div><h4>Eliminate गरेर guess गर्नुस् — Cold guess नगर्नुस्</h4>
+      <p>एउटा option eliminate गर्दा EV +0.39 (65% सुधार), दुईटा eliminate गर्दा ~+0.73। Guess गर्नुअघि ५–१० सेकेण्ड elimination मा लगाउनुस्।</p></div>
+    </div>
+    <div class="tactic">
+      <div class="tactic-num">3</div>
+      <div><h4>"माथिका सबै" — lean toward यो!</h4>
+      <p>Evidence: corpus मा "माथिका सबै" (All of the above) option भएको प्रश्नमा यो option 25% baseline भन्दा धेरै पटक सही थियो। PM section मा multi-part processes हुन्छन् जहाँ सबै सही हुन सक्छन्। तर "होइन/पर्दैन" सोधिएको प्रश्नमा यो logic उल्टो हुन्छ!</p></div>
+    </div>
+    <div class="tactic">
+      <div class="tactic-num">4</div>
+      <div><h4>⚠️ Negation words — सबभन्दा ठूलो trap!</h4>
+      <p>"होइन", "पर्दैन", "गलत छ", "ठीक छैन" — यी words देखेमा question stem underline/flag गर्नुस्। Rushed reader ले "नागरिकको कर्तव्य" पढेर सबभन्दा राम्रो option छान्छ — तर "पर्दैन" भन्ने छुटाउँछ।</p></div>
+    </div>
+    <div class="tactic">
+      <div class="tactic-num">5</div>
+      <div><h4>Out-of-place distractor = elimination signal</h4>
+      <p>Genuine PSC distractors source document बाटै आउँछन् — सबै options एउटै legal/factual category मा हुन्छन्। यदि कुनै option structurally अलग छ (percentage जहाँ अरू name, date जहाँ अरू percentage) — त्यो eliminate गर्न सकिने option हो।</p></div>
+    </div>
+    <div class="tactic">
+      <div class="tactic-num">6</div>
+      <div><h4>Time Budget: 45 minutes = deliberate split</h4>
+      <p><strong>Q1–20 (GK+PM):</strong> १२–१४ min — drill गरेको content fast recall, overthink नगर्नुस्।<br>
+      <strong>Q21–50 (Technical):</strong> २८–३० min — genuinely harder reasoning यहाँ छ।<br>
+      <strong>Buffer/Review:</strong> ३ min — negation-word misread र blank check।<br>
+      Q1–20 मा ३०–४० सेकेण्डभन्दा बढी कुनै एक प्रश्नमा लगाए — mark गर्नुस्, best-guess गर्नुस्, अगाडि जानुस्।</p></div>
+    </div>
+    <div class="tactic">
+      <div class="tactic-num">7</div>
+      <div><h4>Position B मा bias छ — minor edge</h4>
+      <p>Corpus analysis: correct answer position B मा 32.5% — 25% baseline भन्दा बढी। यो strong signal होइन, तर pure 50-50 guess मा B लाई slightly prefer गर्न सकिन्छ।</p></div>
+    </div>
+    <div class="tactic">
+      <div class="tactic-num">8</div>
+      <div><h4>परीक्षाको अघिल्लो रात — नयाँ content पढ्न होइन!</h4>
+      <p>हल्का review मात्र: आफ्नो current affairs page र theory-attribution flashcards। नयाँ content थप्न होइन। ७+ hours सुत्नुस् — थकेको brain ले careless errors बाट PYQ cramming भन्दा बढी marks गुमाउँछ।</p></div>
+    </div>
+
+    <!-- EXAM DAY CHECKLIST -->
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;text-transform:uppercase;" class="nep">परीक्षा दिनको Protocol</h3>
+    <ul class="checklist">
+      <li onclick="toggleCheck(this)">केही खाएर परीक्षा दिनुस् — भोको brain मा 45 min sprint कठिन</li>
+      <li onclick="toggleCheck(this)">समयमा arrive गर्नुस् — ढिलाइले composure गुमाउनुस</li>
+      <li onclick="toggleCheck(this)">Calculator र Mobile NNNNEVER — सबै papers मा prohibit गरिएको छ</li>
+      <li onclick="toggleCheck(this)">Admit card, ID, pen — रात नै तयार गर्नुस्</li>
+      <li onclick="toggleCheck(this)">अन्तिम घण्टामा नयाँ content नपढ्नुस् — current affairs page मात्र</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- end main-content -->
+
+<!-- ── SIDEBAR ── -->
+<div class="sidebar">
+
+  <!-- QUICK NAV -->
+  <div class="sidebar-card">
+    <h4>Quick Nav</h4>
+    <a href="#civil-service" class="snav-item"><div class="snav-dot"></div>नि.से. ऐन</a>
+    <a href="#constitution" class="snav-item"><div class="snav-dot"></div>संविधान</a>
+    <a href="#office-mgmt" class="snav-item"><div class="snav-dot"></div>कार्यालय</a>
+    <a href="#theories" class="snav-item"><div class="snav-dot"></div>Theory</a>
+    <a href="#budget" class="snav-item"><div class="snav-dot"></div>बजेट/लेखा</a>
+    <a href="#gk-geography" class="snav-item"><div class="snav-dot"></div>भूगोल/जनसांख्यिकी</a>
+    <a href="#intl-orgs" class="snav-item"><div class="snav-dot"></div>अन्तर्राष्ट्रिय</a>
+    <a href="#history" class="snav-item"><div class="snav-dot"></div>इतिहास</a>
+    <a href="#current" class="snav-item"><div class="snav-dot"></div>समसामयिक</a>
+    <a href="#study-plan" class="snav-item"><div class="snav-dot"></div>Study Plan</a>
+    <a href="#mcq-tactics" class="snav-item"><div class="snav-dot"></div>MCQ Tactics</a>
+  </div>
+
+  <!-- SUPER NUMBERS -->
+  <div class="sidebar-card">
+    <h4>⚡ Super Numbers — याद गर्नु</h4>
+    <div class="fact-item"><span class="fact-q">आरक्षण: महिला</span><span class="fact-a">३३%</span></div>
+    <div class="fact-item"><span class="fact-q">आरक्षण: जनजाति</span><span class="fact-a">२७%</span></div>
+    <div class="fact-item"><span class="fact-q">आरक्षण: मधेशी</span><span class="fact-a">२२%</span></div>
+    <div class="fact-item"><span class="fact-q">अवकाश उमेर</span><span class="fact-a">५८ वर्ष</span></div>
+    <div class="fact-item"><span class="fact-q">पुरुष probation</span><span class="fact-a">१ वर्ष</span></div>
+    <div class="fact-item"><span class="fact-q">महिला probation</span><span class="fact-a">६ महिना</span></div>
+    <div class="fact-item"><span class="fact-q">बढुवा: कार्य सम्पादन</span><span class="fact-a">४०</span></div>
+    <div class="fact-item"><span class="fact-q">बढुवा: ज्येष्ठता</span><span class="fact-a">३०</span></div>
+    <div class="fact-item"><span class="fact-q">बढुवा: भौगोलिक</span><span class="fact-a">१६</span></div>
+    <div class="fact-item"><span class="fact-q">बढुवा: शैक्षिक</span><span class="fact-a">१२</span></div>
+    <div class="fact-item"><span class="fact-q">बढुवा: तालिम</span><span class="fact-a">२</span></div>
+    <div class="fact-item"><span class="fact-q">महाअभियोग धारा</span><span class="fact-a">१०१</span></div>
+    <div class="fact-item"><span class="fact-q">नागरिक कर्तव्य धारा</span><span class="fact-a">४८</span></div>
+    <div class="fact-item"><span class="fact-q">सूचनाको हक धारा</span><span class="fact-a">२७</span></div>
+    <div class="fact-item"><span class="fact-q">उपभोक्ताको हक धारा</span><span class="fact-a">३०</span></div>
+    <div class="fact-item"><span class="fact-q">निजामती सेवा संख्या</span><span class="fact-a">१०</span></div>
+    <div class="fact-item"><span class="fact-q">SAARC महासचिव पदावधि</span><span class="fact-a">३ वर्ष</span></div>
+    <div class="fact-item"><span class="fact-q">UN सुरक्षा परिषद् सदस्य</span><span class="fact-a">१५</span></div>
+    <div class="fact-item"><span class="fact-q">UDHR धारा</span><span class="fact-a">३०</span></div>
+    <div class="fact-item"><span class="fact-q">UN बडापत्र धारा</span><span class="fact-a">१११</span></div>
+    <div class="fact-item"><span class="fact-q">नेपाल पूर्व-पश्चिम</span><span class="fact-a">८८५ कि.मि.</span></div>
+    <div class="fact-item"><span class="fact-q">जनवृद्धिदर (2078)</span><span class="fact-a">०.९२%</span></div>
+  </div>
+
+  <!-- THEORY QUICK REF -->
+  <div class="sidebar-card">
+    <h4>🧠 Theory Flash</h4>
+    <div class="fact-item"><span class="fact-q" style="font-weight:600;">Maslow</span><span class="fact-a" style="color:var(--secondary);">Hierarchy of Needs</span></div>
+    <div class="fact-item"><span class="fact-q" style="font-weight:600;">Herzberg</span><span class="fact-a" style="color:var(--secondary);">Dual Factors</span></div>
+    <div class="fact-item"><span class="fact-q" style="font-weight:600;">McGregor</span><span class="fact-a" style="color:var(--secondary);">Theory X/Y</span></div>
+    <div class="fact-item"><span class="fact-q" style="font-weight:600;">Alderfer</span><span class="fact-a" style="color:var(--secondary);">ERG Theory</span></div>
+    <div class="fact-item"><span class="fact-q" style="font-weight:600;">Taylor</span><span class="fact-a" style="color:var(--secondary);">Scientific Mgmt</span></div>
+    <div class="fact-item"><span class="fact-q" style="font-weight:600;">Fayol</span><span class="fact-a" style="color:var(--secondary);">14 Principles</span></div>
+    <div class="fact-item"><span class="fact-q" style="font-weight:600;">Gulick</span><span class="fact-a" style="color:var(--secondary);">POSDCORB</span></div>
+    <div class="fact-item"><span class="fact-q" style="font-weight:600;">Terry</span><span class="fact-a" style="color:var(--secondary);">Control Mechanism</span></div>
+    <div class="fact-item"><span class="fact-q" style="font-weight:600;">Stephenson</span><span class="fact-a" style="color:var(--secondary);">Direction+Coord</span></div>
+  </div>
+
+  <!-- PSC EXAM INSIGHT -->
+  <div class="sidebar-card">
+    <h4>📊 PSC Pattern Analysis</h4>
+    <p style="font-size:11px;color:var(--text-muted);margin-bottom:10px;">754 MCQ, 25+ exam papers विश्लेषणबाट</p>
+    <div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;">
+        <span class="nep">नि.से.ऐन</span><span class="mono" style="color:var(--gold);">25%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:25%;background:var(--primary);"></div></div>
+    </div>
+    <div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;">
+        <span class="nep">संविधान</span><span class="mono" style="color:var(--gold);">14%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:14%;background:var(--secondary);"></div></div>
+    </div>
+    <div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;">
+        <span class="nep">अन्तर्राष्ट्रिय संगठन</span><span class="mono" style="color:var(--gold);">10%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:10%;background:var(--gold);"></div></div>
+    </div>
+    <div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;">
+        <span class="nep">कार्यालय व्यवस्थापन</span><span class="mono" style="color:var(--gold);">9%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:9%;background:var(--accent);"></div></div>
+    </div>
+    <div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;">
+        <span class="nep">नागरिक बडापत्र/RTI</span><span class="mono" style="color:var(--gold);">8%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:8%;background:var(--text-muted);"></div></div>
+    </div>
+    <div style="font-size:11px;color:var(--text-dim);margin-top:8px;border-top:1px solid var(--border);padding-top:8px;">
+      GK Geography: ~22% | Current Affairs: ~20% | History: ~15%
+    </div>
+  </div>
+
+  <!-- EXAM DAY REMINDER -->
+  <div class="sidebar-card" style="border-color:rgba(247,129,102,0.3);">
+    <h4 style="color:var(--primary);">🚨 Exam Day Rules</h4>
+    <ul style="list-style:none;font-size:12px;">
+      <li style="padding:4px 0;border-bottom:1px solid var(--border);" class="nep">❌ Calculator prohibited</li>
+      <li style="padding:4px 0;border-bottom:1px solid var(--border);" class="nep">❌ Mobile prohibited</li>
+      <li style="padding:4px 0;border-bottom:1px solid var(--border);" class="nep">✅ Admit card + ID</li>
+      <li style="padding:4px 0;border-bottom:1px solid var(--border);" class="nep">✅ खाएर जानुस्</li>
+      <li style="padding:4px 0;" class="nep">✅ Blank कहिल्यै नछोड्नुस्!</li>
+    </ul>
+  </div>
+
+</div><!-- end sidebar -->
+
+</div><!-- end main-wrap -->
+
+<!-- ── FLOATING QUICK FACT ── -->
+<div id="floatBadge">
+  <div class="fb-title">⚡ Quick Fact</div>
+  <div class="fb-fact" id="floatFact">Loading...</div>
+  <button class="fb-close" onclick="document.getElementById('floatBadge').classList.remove('show')">×</button>
+</div>
+
+<script>
+// ── SECTION TOGGLE ──
+function toggleSection(header){
+  const section = header.parentElement;
+  section.classList.toggle('collapsed');
+}
+
+// ── CHECKLIST TOGGLE ──
+function toggleCheck(el){
+  el.classList.toggle('done');
+}
+
+// ── SEARCH ──
+function doSearch(q){
+  q = q.trim().toLowerCase();
+  // Remove existing highlights
+  document.querySelectorAll('.search-highlight').forEach(el=>{
+    el.outerHTML = el.innerHTML;
+  });
+  if(!q){
+    // Show all sections
+    document.querySelectorAll('.section').forEach(s=>s.style.display='');
+    return;
+  }
+  document.querySelectorAll('.section').forEach(section=>{
+    const text = section.textContent.toLowerCase();
+    if(text.includes(q)){
+      section.style.display='';
+      if(section.classList.contains('collapsed')){
+        section.classList.remove('collapsed');
+      }
+    } else {
+      section.style.display='none';
+    }
+  });
+}
+
+// ── FLOATING QUICK FACTS ──
+const facts = [
+  "महिला आरक्षण = ३३% | जनजाति = २७% | मधेशी = २२%",
+  "बढुवा अंक: कार्य सम्पादन ४०, ज्येष्ठता ३०, भौगोलिक १६, शैक्षिक १२, तालिम २",
+  "Maslow = Hierarchy | Herzberg = Dual Factors | Alderfer = ERG",
+  "SAARC सचिवालय = काठमाडौं | BIMSTEC HQ = ढाका",
+  "नागरिक बडापत्र विश्वमा पहिलो = बेलायत (जोन मेजर, १९९१)",
+  "पुरुष probation = १ वर्ष | महिला probation = ६ महिना",
+  "महाअभियोग = धारा १०१ | नागरिक कर्तव्य = धारा ४८",
+  "SAARC महासचिव पदावधि = ३ वर्ष | UN Security Council = १५ सदस्य",
+  "नेपालको पहिलो बजेट = २००५ माघ २१ | राजस्व: रु. ३.०४ करोड",
+  "कार्यक्रम बजेट पहिलो = अमेरिका | RTI पहिलो = स्वीडेन (१७६६)",
+  "Luther Gulick = POSDCORB | CO = Coordination",
+  "सोहौं योजना आर्थिक वृद्धि लक्ष्य = ७.३%",
+  "George R. Terry = नियन्त्रण संयन्त्र | Stephenson = निर्देशन र समन्वय",
+  "अवकाश उमेर = ५८ वर्ष | संवैधानिक निकाय पदावधि = ६ वर्ष"
+];
+let factIdx = 0;
+function showNextFact(){
+  const badge = document.getElementById('floatBadge');
+  const factEl = document.getElementById('floatFact');
+  factEl.textContent = facts[factIdx % facts.length];
+  factIdx++;
+  badge.classList.add('show');
+  setTimeout(()=>badge.classList.remove('show'), 5000);
+}
+setInterval(showNextFact, 25000);
+setTimeout(showNextFact, 3000);
+
+// ── ACTIVE NAV LINK ──
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', ()=>{
+  let current = '';
+  sections.forEach(sec=>{
+    const rect = sec.getBoundingClientRect();
+    if(rect.top <= 80) current = sec.id;
+  });
+  navLinks.forEach(link=>{
+    link.classList.remove('active');
+    if(link.getAttribute('href') === '#'+current) link.classList.add('active');
+  });
+});
+</script>
 </body>
 </html>
