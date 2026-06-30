@@ -502,6 +502,37 @@ body[data-theme="dark"] .hero{background:radial-gradient(ellipse 80% 50% at 50% 
 .source-list a small{display:block;color:var(--text-muted);font-weight:500;margin-top:3px;}
 kbd{font-family:'JetBrains Mono',monospace;background:var(--surface3);border:1px solid var(--border2);border-radius:5px;padding:1px 5px;font-size:11px;color:var(--text);}
 
+
+/* Constitution deep-section helpers */
+.constitution-pills{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px;}
+.constitution-pill{background:var(--surface2);border:1px solid var(--border);border-radius:999px;padding:7px 10px;font-size:12px;font-family:'Noto Sans Devanagari',sans-serif;color:var(--text-muted);}
+.constitution-pill strong{color:var(--gold);font-family:'JetBrains Mono',monospace;}
+.right-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}
+.right-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px;min-height:78px;}
+.right-card .article{font-family:'JetBrains Mono',monospace;color:var(--secondary);font-size:12px;font-weight:700;margin-bottom:4px;}
+.right-card .name{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;font-weight:700;line-height:1.35;}
+.right-card .hint{font-family:'Noto Sans Devanagari',sans-serif;font-size:11px;color:var(--text-muted);line-height:1.35;margin-top:3px;}
+.part-map{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.part-item{display:grid;grid-template-columns:64px 1fr 72px;gap:8px;align-items:start;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:8px 10px;}
+.part-item .part-no{font-family:'JetBrains Mono',monospace;color:var(--primary);font-weight:700;font-size:12px;}
+.part-item .part-title{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;font-weight:600;line-height:1.35;}
+.part-item .part-art{font-family:'JetBrains Mono',monospace;color:var(--text-muted);font-size:11px;text-align:right;}
+.schedule-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}
+.schedule-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px;}
+.schedule-card h4{font-size:12px;color:var(--secondary);font-family:'Noto Sans Devanagari',sans-serif;margin-bottom:4px;}
+.schedule-card p{font-size:11px;color:var(--text-muted);font-family:'Noto Sans Devanagari',sans-serif;line-height:1.45;}
+.trap-row{display:grid;grid-template-columns:110px 1fr 1fr;gap:8px;padding:8px 0;border-bottom:1px solid var(--border);font-size:12px;}
+.trap-row:last-child{border-bottom:none;}
+.trap-row .key{font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:700;}
+.trap-row .ask,.trap-row .ans{font-family:'Noto Sans Devanagari',sans-serif;line-height:1.35;}
+@media(max-width:720px){
+  .right-grid,.part-map,.schedule-grid{grid-template-columns:1fr!important;}
+  .part-item{grid-template-columns:56px 1fr;}
+  .part-item .part-art{grid-column:2;text-align:left;}
+  .trap-row{grid-template-columns:1fr;gap:3px;}
+  .data-table th,.data-table td{word-break:break-word;white-space:normal;}
+}
+
 /* responsive fixes */
 @media(max-width:1000px){
   .formula-bank{grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -525,7 +556,7 @@ kbd{font-family:'JetBrains Mono',monospace;background:var(--surface3);border:1px
   .section-header{padding:13px 14px;gap:9px;}
   .section-title h2{font-size:14px;line-height:1.35;}
   .section-body{padding:14px;overflow-x:auto;}
-  .data-table{min-width:570px;}
+  .data-table{min-width:0;width:100%;}
   .data-table th,.data-table td{padding:8px 9px;}
   .grid-2,.grid-3,.grid-4,.syllabus-grid,.formula-bank,.flash-grid,.source-list{grid-template-columns:1fr!important;}
   .priority-row{grid-template-columns:70px 1fr;}
@@ -961,75 +992,273 @@ kbd{font-family:'JetBrains Mono',monospace;background:var(--surface3);border:1px
   <div class="section-header" onclick="toggleSection(this)">
     <div class="section-icon" style="background:var(--secondary-dim);color:var(--secondary);">📜</div>
     <div class="section-title">
-      <h2>नेपालको संविधान — धाराहरू र मौलिक हक</h2>
-      <p>जारी: २०७२ असोज ३ | ३५ भाग, ३०८ धारा, ९ अनुसूची</p>
+      <h2>नेपालको संविधान — Complete Exam Notes</h2>
+      <p>भाग १–५ + मौलिक हक + नागरिक कर्तव्य + अनुसूची + constitutional bodies — अब missing छैन</p>
     </div>
     <span class="toggle-icon">▼</span>
   </div>
   <div class="section-body">
 
+    <div class="alert alert-gold">
+      <strong>Final Constitution Coverage:</strong> syllabus मा खास गरी <strong>भाग १ देखि ५</strong>, <strong>मौलिक हक/कर्तव्य</strong>, <strong>राज्य संरचना</strong> र <strong>अनुसूचीहरू</strong> आउँछन्। यो section मा screenshot/pdf मा छुटेका धारा १–६०, १६–४८, ४९–५५, ५६–६०, अनुसूची १–९ र संवैधानिक निकायहरू जोडिएको छ।
+    </div>
+
+    <div class="constitution-pills">
+      <div class="constitution-pill">जारी: <strong>२०७२ असोज ३</strong></div>
+      <div class="constitution-pill">भाग: <strong>३५</strong></div>
+      <div class="constitution-pill">धारा: <strong>३०८</strong></div>
+      <div class="constitution-pill">अनुसूची: <strong>९</strong></div>
+      <div class="constitution-pill">मौलिक हक: <strong>३१ वटा</strong></div>
+      <div class="constitution-pill">नागरिक कर्तव्य: <strong>४ वटा</strong></div>
+      <div class="constitution-pill">दोस्रो संशोधन: <strong>२०७७ असार ४</strong></div>
+    </div>
+
     <div class="grid-2">
       <div>
-        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-weight:600;" class="nep">भागहरू (बारम्बार सोधिने)</h3>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-weight:700;" class="nep">भाग १ — प्रारम्भिक: धारा १–९</h3>
         <table class="data-table">
-          <thead><tr><th>धारा</th><th>विषय</th><th>नोट</th></tr></thead>
+          <thead><tr><th>धारा</th><th>विषय</th><th>Exam point</th></tr></thead>
           <tbody>
-            <tr><td class="art-num">धारा १४–४६</td><td class="art-title">मौलिक हक</td><td></td></tr>
-            <tr><td class="art-num">धारा १६</td><td class="art-title">सम्मानपूर्वक बाँच्ने हक</td><td><span class="chip chip-red">मृत्युदण्ड निषेध</span></td></tr>
-            <tr><td class="art-num">धारा १७</td><td class="art-title">स्वतन्त्रताको हक</td><td></td></tr>
-            <tr><td class="art-num">धारा १८</td><td class="art-title">समानताको हक</td><td></td></tr>
-            <tr><td class="art-num">धारा २४</td><td class="art-title">छुवाछुत विरुद्धको हक</td><td></td></tr>
-            <tr><td class="art-num">धारा २७</td><td class="art-title">सूचनाको हक</td><td><span class="chip chip-gold">★ बारम्बार</span></td></tr>
-            <tr><td class="art-num">धारा ३०</td><td class="art-title">उपभोक्ताको हक</td><td></td></tr>
-            <tr><td class="art-num">धारा ३५</td><td class="art-title">स्वास्थ्य सम्बन्धी हक</td><td></td></tr>
-            <tr><td class="art-num">धारा ३६</td><td class="art-title">खाद्य सम्बन्धी हक</td><td></td></tr>
-            <tr><td class="art-num">धारा ३८</td><td class="art-title">महिलाको हक</td><td><span class="chip chip-orange">पैतृक सम्पत्ति</span></td></tr>
-            <tr><td class="art-num">धारा ४४</td><td class="art-title">उपभोक्ताको हक</td><td></td></tr>
-            <tr><td class="art-num">धारा ४८</td><td class="art-title">नागरिकका कर्तव्य</td><td><span class="chip chip-gold">★★ सबभन्दा बढी</span></td></tr>
-            <tr><td class="art-num">धारा ५१</td><td class="art-title">राज्यका निर्देशक सिद्धान्त</td><td><span class="chip chip-blue">भाग ४</span></td></tr>
-            <tr><td class="art-num">धारा १०१</td><td class="art-title">महाअभियोग प्रस्ताव</td><td><span class="chip chip-red">★ बारम्बार</span></td></tr>
+            <tr><td class="art-num">१</td><td class="art-title">संविधान मूल कानून</td><td class="nep">बाझिएको कानून अमान्य</td></tr>
+            <tr><td class="art-num">२</td><td class="art-title">सार्वभौमसत्ता र राजकीय सत्ता</td><td class="nep">नेपाली जनतामा निहित</td></tr>
+            <tr><td class="art-num">३</td><td class="art-title">राष्ट्र</td><td class="nep">बहुजातीय, बहुभाषिक, बहुधार्मिक, बहुसांस्कृतिक</td></tr>
+            <tr><td class="art-num">४</td><td class="art-title">नेपाल राज्य</td><td class="nep">स्वतन्त्र, अविभाज्य, सार्वभौम, धर्मनिरपेक्ष, समावेशी, लोकतन्त्रात्मक, समाजवाद उन्मुख, संघीय लोकतान्त्रिक गणतन्त्र</td></tr>
+            <tr><td class="art-num">५</td><td class="art-title">राष्ट्रिय हित</td><td class="nep">स्वतन्त्रता, सार्वभौमसत्ता, भौगोलिक अखण्डता, राष्ट्रियता, स्वाधीनता, स्वाभिमान</td></tr>
+            <tr><td class="art-num">६</td><td class="art-title">राष्ट्रभाषा</td><td class="nep">नेपालमा बोलिने सबै मातृभाषा</td></tr>
+            <tr><td class="art-num">७</td><td class="art-title">सरकारी कामकाजको भाषा</td><td class="nep">देवनागरी लिपिको नेपाली; प्रदेशले बहुसंख्यक भाषालाई थप गर्न सक्छ</td></tr>
+            <tr><td class="art-num">८</td><td class="art-title">राष्ट्रिय झण्डा</td><td class="nep">दुई त्रिकोण, सिम्रिक रंग, नीलो किनारा, चन्द्र-सूर्य</td></tr>
+            <tr><td class="art-num">९</td><td class="art-title">राष्ट्रिय गान/निशान/फूल/रङ/जनावर/पंक्षी</td><td class="nep">लालीगुराँस, सिम्रिक, गाई, डाँफे</td></tr>
           </tbody>
         </table>
       </div>
       <div>
-        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-weight:600;" class="nep">धारा ४८ — नागरिकका कर्तव्य (परीक्षामा सबभन्दा बढी)</h3>
-        <div class="alert alert-red">
-          <strong>⚠️ परीक्षाको Trap:</strong> "कुन पर्दैन?" भन्ने सोधिन्छ!
-        </div>
-        <ul class="checklist">
-          <li>राष्ट्रप्रति निष्ठावान हुँदै राष्ट्रियता, सार्वभौमसत्ता र अखण्डताको रक्षा गर्नु <span class="chip chip-gold">पहिलो</span></li>
-          <li>संविधान र कानूनको पालना गर्नु</li>
-          <li>राज्यले चाहेको बखत अनिवार्य सेवा गर्नु</li>
-          <li>सार्वजनिक सम्पत्तिको सुरक्षा र संरक्षण गर्नु</li>
-          <li>नियमित रूपमा कर तिर्नु</li>
-        </ul>
-        <div class="alert alert-gold" style="margin-top:10px;font-size:12px;">
-          ❌ <strong>पर्दैन:</strong> "सामाजिक सुसम्बन्ध आधारित समाजको निर्माण गर्नु" — यो संविधानको धारा ४८ मा छैन
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-weight:700;" class="nep">भाग २ — नागरिकता: धारा १०–१५</h3>
+        <div class="fact-item"><span class="fact-q">धारा १० — नागरिकताबाट वञ्चित नगरिने</span><span class="fact-a">Right</span></div>
+        <div class="fact-item"><span class="fact-q">नेपालमा एकल संघीय नागरिकता</span><span class="fact-a">प्रदेश पहिचान सहित</span></div>
+        <div class="fact-item"><span class="fact-q">धारा ११ — नागरिकता प्राप्ति</span><span class="fact-a">वंशज/जन्म/अंगीकृत</span></div>
+        <div class="fact-item"><span class="fact-q">धारा १२ — लैंगिक पहिचान सहित नागरिकता</span><span class="fact-a">आमा/बुबा नामबाट</span></div>
+        <div class="fact-item"><span class="fact-q">धारा १४ — गैरआवासीय नेपाली नागरिकता</span><span class="fact-a">आर्थिक/सामाजिक/सांस्कृतिक अधिकार</span></div>
+        <div class="alert alert-blue" style="margin-top:12px;">
+          <strong>Memory:</strong> नागरिकता = <span class="mono">10–15</span>. Single federal citizenship + provincial identity = सबैभन्दा सोधिने one-line fact.
         </div>
 
-        <h3 style="font-size:13px;color:var(--text-muted);margin:14px 0 8px;font-weight:600;" class="nep">संवैधानिक निकाय — महत्वपूर्ण तथ्यहरू</h3>
+        <h3 style="font-size:13px;color:var(--text-muted);margin:14px 0 8px;font-weight:700;" class="nep">प्रस्तावना Keywords</h3>
+        <ul class="checklist">
+          <li onclick="toggleCheck(this)">जनताको सार्वभौम अधिकार, स्वायत्तता र स्वशासन</li>
+          <li onclick="toggleCheck(this)">स्वतन्त्रता, सार्वभौमसत्ता, भौगोलिक अखण्डता, राष्ट्रिय एकता</li>
+          <li onclick="toggleCheck(this)">सामन्ती, निरंकुश, केन्द्रीकृत, एकात्मक शासन प्रणालीको अन्त्य</li>
+          <li onclick="toggleCheck(this)">विविधतामा एकता, सामाजिक-सांस्कृतिक ऐक्यबद्धता, सहिष्णुता र सद्भाव</li>
+          <li onclick="toggleCheck(this)">संघीय लोकतान्त्रिक गणतन्त्रात्मक शासन प्रणालीद्वारा दिगो शान्ति, सुशासन, विकास र समृद्धि</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;font-weight:700;" class="nep">भाग ३ — मौलिक हक र कर्तव्य: धारा १६–४८</h3>
+    <div class="alert alert-red"><strong>Trap fix:</strong> धारा <span class="mono">१६–४६</span> = मौलिक हक; धारा <span class="mono">४७</span> = कार्यान्वयन; धारा <span class="mono">४८</span> = नागरिकका कर्तव्य।</div>
+    <div class="right-grid">
+      <div class="right-card"><div class="article">धारा १६</div><div class="name">सम्मानपूर्वक बाँच्ने हक</div><div class="hint">मृत्युदण्ड निषेध</div></div>
+      <div class="right-card"><div class="article">धारा १७</div><div class="name">स्वतन्त्रताको हक</div><div class="hint">विचार, सभा, दल, संघ, आवतजावत, पेशा</div></div>
+      <div class="right-card"><div class="article">धारा १८</div><div class="name">समानताको हक</div><div class="hint">कानून अगाडि समान; पैतृक सम्पत्ति समान</div></div>
+      <div class="right-card"><div class="article">धारा १९</div><div class="name">सञ्चारको हक</div><div class="hint">पूर्व-प्रतिबन्ध/बन्देज सम्बन्धी प्रश्न</div></div>
+      <div class="right-card"><div class="article">धारा २०</div><div class="name">न्याय सम्बन्धी हक</div><div class="hint">कानून व्यवसायी, निष्पक्ष सुनुवाइ</div></div>
+      <div class="right-card"><div class="article">धारा २१</div><div class="name">अपराध पीडितको हक</div><div class="hint">न्याय र क्षतिपूर्ति</div></div>
+      <div class="right-card"><div class="article">धारा २२</div><div class="name">यातना विरुद्धको हक</div><div class="hint">शारीरिक/मानसिक यातना निषेध</div></div>
+      <div class="right-card"><div class="article">धारा २३</div><div class="name">निवारक नजरबन्द विरुद्ध</div><div class="hint">Preventive detention</div></div>
+      <div class="right-card"><div class="article">धारा २४</div><div class="name">छुवाछुत तथा भेदभाव विरुद्ध</div><div class="hint">सार्वजनिक/निजी दुवै ठाउँ</div></div>
+      <div class="right-card"><div class="article">धारा २५</div><div class="name">सम्पत्तिको हक</div><div class="hint">कानून बमोजिम बाहेक वञ्चित नहुने</div></div>
+      <div class="right-card"><div class="article">धारा २६</div><div class="name">धार्मिक स्वतन्त्रताको हक</div><div class="hint">धर्म मान्ने/अभ्यास गर्ने</div></div>
+      <div class="right-card"><div class="article">धारा २७</div><div class="name">सूचनाको हक</div><div class="hint">आफ्नो/सार्वजनिक सरोकारको सूचना</div></div>
+      <div class="right-card"><div class="article">धारा २८</div><div class="name">गोपनीयताको हक</div><div class="hint">जीउ, आवास, सम्पत्ति, लिखत, तथ्याङ्क</div></div>
+      <div class="right-card"><div class="article">धारा २९</div><div class="name">शोषण विरुद्धको हक</div><div class="hint">मानव बेचबिखन, बाध्य श्रम निषेध</div></div>
+      <div class="right-card"><div class="article">धारा ३०</div><div class="name">स्वच्छ वातावरणको हक</div><div class="hint">क्षतिपूर्ति/पर्यावरण</div></div>
+      <div class="right-card"><div class="article">धारा ३१</div><div class="name">शिक्षा सम्बन्धी हक</div><div class="hint">आधारभूत शिक्षा</div></div>
+      <div class="right-card"><div class="article">धारा ३२</div><div class="name">भाषा तथा संस्कृतिको हक</div><div class="hint">भाषा/लिपि/संस्कृति संरक्षण</div></div>
+      <div class="right-card"><div class="article">धारा ३३</div><div class="name">रोजगारीको हक</div><div class="hint">रोजगारी छनोट</div></div>
+      <div class="right-card"><div class="article">धारा ३४</div><div class="name">श्रमको हक</div><div class="hint">उचित श्रम अभ्यास</div></div>
+      <div class="right-card"><div class="article">धारा ३५</div><div class="name">स्वास्थ्य सम्बन्धी हक</div><div class="hint">आधारभूत स्वास्थ्य सेवा</div></div>
+      <div class="right-card"><div class="article">धारा ३६</div><div class="name">खाद्य सम्बन्धी हक</div><div class="hint">खाद्य सम्प्रभुता</div></div>
+      <div class="right-card"><div class="article">धारा ३७</div><div class="name">आवासको हक</div><div class="hint">कानूनबमोजिम बाहेक हटाइँदैन</div></div>
+      <div class="right-card"><div class="article">धारा ३८</div><div class="name">महिलाको हक</div><div class="hint">सुरक्षित मातृत्व, समान वंशीय हक</div></div>
+      <div class="right-card"><div class="article">धारा ३९</div><div class="name">बालबालिकाको हक</div><div class="hint">पहिचान, पोषण, संरक्षण</div></div>
+      <div class="right-card"><div class="article">धारा ४०</div><div class="name">दलितको हक</div><div class="hint">समावेशी सहभागिता</div></div>
+      <div class="right-card"><div class="article">धारा ४१</div><div class="name">ज्येष्ठ नागरिकको हक</div><div class="hint">विशेष संरक्षण/सुरक्षा</div></div>
+      <div class="right-card"><div class="article">धारा ४२</div><div class="name">सामाजिक न्यायको हक</div><div class="hint">समावेशी सिद्धान्त</div></div>
+      <div class="right-card"><div class="article">धारा ४३</div><div class="name">सामाजिक सुरक्षाको हक</div><div class="hint">असहाय, अपाङ्ग, एकल महिला आदि</div></div>
+      <div class="right-card"><div class="article">धारा ४४</div><div class="name">उपभोक्ताको हक</div><div class="hint">गुणस्तरीय वस्तु/सेवा, क्षतिपूर्ति</div></div>
+      <div class="right-card"><div class="article">धारा ४५</div><div class="name">देश निकाला विरुद्धको हक</div><div class="hint">नागरिकलाई निर्वासन नगरिने</div></div>
+      <div class="right-card"><div class="article">धारा ४६</div><div class="name">संवैधानिक उपचारको हक</div><div class="hint">धारा १३३/१४४</div></div>
+    </div>
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-weight:700;" class="nep">धारा ४७ — मौलिक हक कार्यान्वयन</h3>
+        <div class="alert alert-blue">संविधान प्रारम्भ भएको <strong>३ वर्षभित्र</strong> आवश्यक कानूनी व्यवस्था गर्ने। यो अक्सर “कति वर्ष?” भनेर सोधिन्छ।</div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin:14px 0 8px;font-weight:700;" class="nep">धारा ४८ — नागरिकका कर्तव्य</h3>
+        <ul class="checklist">
+          <li onclick="toggleCheck(this)">राष्ट्रप्रति निष्ठावान हुँदै नेपालको राष्ट्रियता, सार्वभौमसत्ता र अखण्डताको रक्षा गर्नु</li>
+          <li onclick="toggleCheck(this)">संविधान र कानूनको पालना गर्नु</li>
+          <li onclick="toggleCheck(this)">राज्यले चाहेका बखत अनिवार्य सेवा गर्नु</li>
+          <li onclick="toggleCheck(this)">सार्वजनिक सम्पत्तिको सुरक्षा र संरक्षण गर्नु</li>
+        </ul>
+        <div class="alert alert-red" style="margin-top:10px;"><strong>Trap:</strong> नियमित कर तिर्नु सामान्य नागरिक दायित्व हो, तर धारा ४८ को listed constitutional duty मा screenshot अनुसार चार बुँदा मात्रै छन्।</div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:10px;font-weight:700;" class="nep">मौलिक हक सम्झिने Formula</h3>
+        <div class="formula-card"><div class="tag">Rights</div><div class="formula">16 जीवन → 46 उपचार</div><p>धारा १६ बाट dignity सुरु, ४६ मा constitutional remedy; बीचमा ३१ वटा मौलिक हक।</p></div>
+        <div class="formula-card" style="margin-top:10px;"><div class="tag">Most Asked</div><div class="formula">27-35-38-44-48</div><p>सूचना, स्वास्थ्य, महिला, उपभोक्ता र नागरिक कर्तव्य — MCQ मा धेरै घुमाइन्छ।</p></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;font-weight:700;" class="nep">भाग ४ — राज्यका निर्देशक सिद्धान्त, नीति तथा दायित्व: धारा ४९–५५</h3>
+    <div class="grid-2">
+      <div>
         <table class="data-table">
-          <thead><tr><th>निकाय</th><th>तथ्य</th></tr></thead>
+          <thead><tr><th>धारा</th><th>विषय</th><th>Short note</th></tr></thead>
           <tbody>
-            <tr><td class="nep">लोक सेवा आयोग</td><td class="nep">अध्यक्ष + ३–६ सदस्य; संवैधानिक परिषद्को सिफारिसमा</td></tr>
-            <tr><td class="nep">रा.प्रा.स्रो. तथा वित्त आयोग</td><td class="nep">अध्यक्षसहित बढीमा ५; नियुक्तिले ६ वर्ष</td></tr>
-            <tr><td class="nep">रा. मानव अधिकार आयोग</td><td class="nep">स्थापना: वि.सं. २०५७; राष्ट्रपतिबाट नियुक्ति</td></tr>
-            <tr><td class="nep">सबै संवैधानिक निकाय</td><td class="nep">पदावधि: ६ वर्ष | न्यून उमेर: ३५ वर्ष</td></tr>
-            <tr><td class="nep">महाअभियोग प्रस्ताव</td><td><span class="mono" style="color:var(--red);">धारा १०१</span></td></tr>
+            <tr><td class="art-num">४९</td><td class="art-title">मार्गदर्शक सिद्धान्त</td><td class="nep">शासन सञ्चालनका guideline</td></tr>
+            <tr><td class="art-num">५०</td><td class="art-title">राज्यका निर्देशक सिद्धान्त</td><td class="nep">राजनीतिक, सामाजिक-सांस्कृतिक, आर्थिक, अन्तर्राष्ट्रिय सम्बन्ध</td></tr>
+            <tr><td class="art-num">५१</td><td class="art-title">राज्यका नीतिहरू</td><td class="nep">राष्ट्रिय एकता, शासन, अर्थ, कृषि, विकास, प्राकृतिक स्रोत आदि</td></tr>
+            <tr><td class="art-num">५२</td><td class="art-title">राज्यको दायित्व</td><td class="nep">स्वतन्त्रता, सार्वभौमसत्ता, मौलिक हक, नीति कार्यान्वयन</td></tr>
+            <tr><td class="art-num">५३</td><td class="art-title">प्रतिवेदन पेश गर्ने</td><td class="nep">सरकार → राष्ट्रपति → प्रधानमन्त्रीमार्फत संसद</td></tr>
+            <tr><td class="art-num">५४</td><td class="art-title">अनुगमन</td><td class="nep">संघीय संसदमा समिति</td></tr>
+            <tr><td class="art-num">५५</td><td class="art-title">अदालतमा प्रश्न नउठ्ने</td><td class="nep">Part 4 implementation माथि court question नहुने</td></tr>
           </tbody>
         </table>
-
-        <h3 style="font-size:13px;color:var(--text-muted);margin:14px 0 8px;font-weight:600;" class="nep">अनुसूचीहरू</h3>
-        <div class="fact-item"><span class="fact-q">अनुसूची ४</span><span class="fact-a" style="color:var(--secondary);">प्रदेश र जिल्ला</span></div>
-        <div class="fact-item"><span class="fact-q">अनुसूची ५</span><span class="fact-a" style="color:var(--secondary);">संघको अधिकार</span></div>
-        <div class="fact-item"><span class="fact-q">अनुसूची ६</span><span class="fact-a" style="color:var(--secondary);">प्रदेशको अधिकार</span></div>
-        <div class="fact-item"><span class="fact-q">अनुसूची ७</span><span class="fact-a" style="color:var(--secondary);">संघ-प्रदेश साझा</span></div>
-        <div class="fact-item"><span class="fact-q">अनुसूची ८</span><span class="fact-a" style="color:var(--secondary);">स्थानीय तहको अधिकार (३५)</span></div>
-        <div class="fact-item"><span class="fact-q">अनुसूची ९</span><span class="fact-a" style="color:var(--secondary);">सबैको साझा</span></div>
-        <div class="alert alert-blue" style="margin-top:8px;font-size:11px;">
-          अवशिष्ट अधिकार (सूचीमा नपरेको) → <strong>संघको</strong> अधिकार क्षेत्र
-        </div>
       </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:8px;font-weight:700;" class="nep">धारा ५१ — State Policies: 13 Buckets</h3>
+        <div class="fact-item"><span class="fact-q">(क) राष्ट्रिय एकता र सुरक्षा</span><span class="fact-a">Security</span></div>
+        <div class="fact-item"><span class="fact-q">(ख) राजनीतिक तथा शासन व्यवस्था</span><span class="fact-a">Governance</span></div>
+        <div class="fact-item"><span class="fact-q">(ग) सामाजिक/सांस्कृतिक रूपान्तरण</span><span class="fact-a">Society</span></div>
+        <div class="fact-item"><span class="fact-q">(घ) अर्थ, उद्योग र वाणिज्य</span><span class="fact-a">Economy</span></div>
+        <div class="fact-item"><span class="fact-q">(ङ) कृषि र भूमि सुधार</span><span class="fact-a">Land</span></div>
+        <div class="fact-item"><span class="fact-q">(च) विकास सम्बन्धी नीति</span><span class="fact-a">Development</span></div>
+        <div class="fact-item"><span class="fact-q">(छ) प्राकृतिक स्रोत संरक्षण/उपयोग</span><span class="fact-a">Resources</span></div>
+        <div class="fact-item"><span class="fact-q">(ज) नागरिकका आधारभूत आवश्यकता</span><span class="fact-a">Basic needs</span></div>
+        <div class="fact-item"><span class="fact-q">(झ) श्रम र रोजगार</span><span class="fact-a">Labour</span></div>
+        <div class="fact-item"><span class="fact-q">(ञ) सामाजिक न्याय र समावेशीकरण</span><span class="fact-a">Inclusion</span></div>
+        <div class="fact-item"><span class="fact-q">(ट) न्याय र दण्ड व्यवस्था</span><span class="fact-a">Justice</span></div>
+        <div class="fact-item"><span class="fact-q">(ठ) पर्यटन</span><span class="fact-a">Tourism</span></div>
+        <div class="fact-item"><span class="fact-q">(ड) अन्तर्राष्ट्रिय सम्बन्ध</span><span class="fact-a">Foreign</span></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;font-weight:700;" class="nep">भाग ५ — राज्य संरचना र राज्य शक्तिको बाँडफाँट: धारा ५६–६०</h3>
+    <div class="grid-2">
+      <div>
+        <table class="data-table">
+          <thead><tr><th>धारा</th><th>विषय</th><th>Exam point</th></tr></thead>
+          <tbody>
+            <tr><td class="art-num">५६</td><td class="art-title">राज्य संरचना</td><td class="nep">संघ, प्रदेश, स्थानीय तह — ३ तह</td></tr>
+            <tr><td class="art-num">५७</td><td class="art-title">राज्य शक्तिको बाँडफाँट</td><td class="nep">अनुसूची ५,६,७,८,९</td></tr>
+            <tr><td class="art-num">५८</td><td class="art-title">अवशिष्ट अधिकार</td><td class="nep">कुनै सूची/अवशिष्ट अधिकार → संघ</td></tr>
+            <tr><td class="art-num">५९</td><td class="art-title">आर्थिक अधिकार प्रयोग</td><td class="nep">संघ, प्रदेश, स्थानीय तहले कानून बमोजिम</td></tr>
+            <tr><td class="art-num">६०</td><td class="art-title">राजस्व स्रोत बाँडफाँट</td><td class="nep">सन्तुलित र पारदर्शी आधार</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="formula-card"><div class="tag">Federalism</div><div class="formula">संघ → प्रदेश → स्थानीय</div><p>राज्यको मूल संरचना तीन तहको। स्थानीय तहभित्र गाउँपालिका, नगरपालिका र जिल्ला सभा।</p></div>
+        <div class="formula-card" style="margin-top:10px;"><div class="tag">Power List</div><div class="formula">5-6-7-8-9</div><p>५=संघ, ६=प्रदेश, ७=संघ+प्रदेश, ८=स्थानीय, ९=तीनै तह साझा।</p></div>
+        <div class="alert alert-blue" style="margin-top:10px;"><strong>Exam clue:</strong> सूचीमा नपरेको subject आएमा answer usually <strong>संघीय अधिकार</strong> हुन्छ — धारा ५८।</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;font-weight:700;" class="nep">अनुसूचीहरू — १ देखि ९</h3>
+    <div class="schedule-grid">
+      <div class="schedule-card"><h4>अनुसूची १</h4><p>राष्ट्रिय झण्डा बनाउने विधि</p></div>
+      <div class="schedule-card"><h4>अनुसूची २</h4><p>राष्ट्रिय गान</p></div>
+      <div class="schedule-card"><h4>अनुसूची ३</h4><p>नेपालको निशान छाप</p></div>
+      <div class="schedule-card"><h4>अनुसूची ४</h4><p>प्रदेश र सम्बन्धित जिल्लाहरू</p></div>
+      <div class="schedule-card"><h4>अनुसूची ५</h4><p>संघको अधिकार सूची</p></div>
+      <div class="schedule-card"><h4>अनुसूची ६</h4><p>प्रदेशको अधिकार सूची</p></div>
+      <div class="schedule-card"><h4>अनुसूची ७</h4><p>संघ र प्रदेशको साझा अधिकार सूची</p></div>
+      <div class="schedule-card"><h4>अनुसूची ८</h4><p>स्थानीय तहको अधिकार सूची</p></div>
+      <div class="schedule-card"><h4>अनुसूची ९</h4><p>संघ, प्रदेश र स्थानीय तहको साझा अधिकार सूची</p></div>
+    </div>
+
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;font-weight:700;" class="nep">पूरा भाग Map — ३५ भाग सम्झिने Cheat Sheet</h3>
+    <div class="part-map">
+      <div class="part-item"><div class="part-no">भाग १</div><div class="part-title">प्रारम्भिक</div><div class="part-art">१–९</div></div>
+      <div class="part-item"><div class="part-no">भाग २</div><div class="part-title">नागरिकता</div><div class="part-art">१०–१५</div></div>
+      <div class="part-item"><div class="part-no">भाग ३</div><div class="part-title">मौलिक हक र कर्तव्य</div><div class="part-art">१६–४८</div></div>
+      <div class="part-item"><div class="part-no">भाग ४</div><div class="part-title">निर्देशक सिद्धान्त, नीति तथा दायित्व</div><div class="part-art">४९–५५</div></div>
+      <div class="part-item"><div class="part-no">भाग ५</div><div class="part-title">राज्य संरचना र शक्ति बाँडफाँट</div><div class="part-art">५६–६०</div></div>
+      <div class="part-item"><div class="part-no">भाग ६</div><div class="part-title">राष्ट्रपति र उपराष्ट्रपति</div><div class="part-art">६१–७३</div></div>
+      <div class="part-item"><div class="part-no">भाग ७</div><div class="part-title">संघीय कार्यपालिका</div><div class="part-art">७४–८२</div></div>
+      <div class="part-item"><div class="part-no">भाग ८</div><div class="part-title">संघीय व्यवस्थापिका</div><div class="part-art">८३–१०८</div></div>
+      <div class="part-item"><div class="part-no">भाग ९</div><div class="part-title">संघीय व्यवस्थापन कार्यविधि</div><div class="part-art">१०९–११४</div></div>
+      <div class="part-item"><div class="part-no">भाग १०</div><div class="part-title">संघीय आर्थिक कार्यप्रणाली</div><div class="part-art">११५–१२५</div></div>
+      <div class="part-item"><div class="part-no">भाग ११</div><div class="part-title">न्यायपालिका</div><div class="part-art">१२६–१५६</div></div>
+      <div class="part-item"><div class="part-no">भाग १२</div><div class="part-title">महान्यायाधिवक्ता</div><div class="part-art">१५७–१६१</div></div>
+      <div class="part-item"><div class="part-no">भाग १३</div><div class="part-title">प्रदेश कार्यपालिका</div><div class="part-art">१६२–१७४</div></div>
+      <div class="part-item"><div class="part-no">भाग १४</div><div class="part-title">प्रदेश व्यवस्थापिका</div><div class="part-art">१७५–१९६</div></div>
+      <div class="part-item"><div class="part-no">भाग १५</div><div class="part-title">प्रदेश व्यवस्थापन कार्यविधि</div><div class="part-art">१९७–२०२</div></div>
+      <div class="part-item"><div class="part-no">भाग १६</div><div class="part-title">प्रदेश आर्थिक कार्यप्रणाली</div><div class="part-art">२०३–२१३</div></div>
+      <div class="part-item"><div class="part-no">भाग १७</div><div class="part-title">स्थानीय कार्यपालिका</div><div class="part-art">२१४–२२०</div></div>
+      <div class="part-item"><div class="part-no">भाग १८</div><div class="part-title">स्थानीय व्यवस्थापिका</div><div class="part-art">२२१–२२७</div></div>
+      <div class="part-item"><div class="part-no">भाग १९</div><div class="part-title">स्थानीय आर्थिक कार्यप्रणाली</div><div class="part-art">२२८–२३०</div></div>
+      <div class="part-item"><div class="part-no">भाग २०</div><div class="part-title">संघ, प्रदेश र स्थानीय तहको अन्तरसम्बन्ध</div><div class="part-art">२३१–२३७</div></div>
+      <div class="part-item"><div class="part-no">भाग २१</div><div class="part-title">अख्तियार दुरुपयोग अनुसन्धान आयोग</div><div class="part-art">२३८–२३९</div></div>
+      <div class="part-item"><div class="part-no">भाग २२</div><div class="part-title">महालेखा परीक्षक</div><div class="part-art">२४०–२४१</div></div>
+      <div class="part-item"><div class="part-no">भाग २३</div><div class="part-title">लोक सेवा आयोग</div><div class="part-art">२४२–२४४</div></div>
+      <div class="part-item"><div class="part-no">भाग २४</div><div class="part-title">निर्वाचन आयोग</div><div class="part-art">२४५–२४७</div></div>
+      <div class="part-item"><div class="part-no">भाग २५</div><div class="part-title">राष्ट्रिय मानव अधिकार आयोग</div><div class="part-art">२४८–२४९</div></div>
+      <div class="part-item"><div class="part-no">भाग २६</div><div class="part-title">राष्ट्रिय प्राकृतिक स्रोत तथा वित्त आयोग</div><div class="part-art">२५०–२५१</div></div>
+      <div class="part-item"><div class="part-no">भाग २७</div><div class="part-title">अन्य आयोगहरू</div><div class="part-art">२५२–२६५</div></div>
+      <div class="part-item"><div class="part-no">भाग २८</div><div class="part-title">राष्ट्रिय सुरक्षा सम्बन्धी व्यवस्था</div><div class="part-art">२६६–२६८</div></div>
+      <div class="part-item"><div class="part-no">भाग २९</div><div class="part-title">राजनीतिक दल सम्बन्धी व्यवस्था</div><div class="part-art">२६९–२७२</div></div>
+      <div class="part-item"><div class="part-no">भाग ३०</div><div class="part-title">संकटकालीन अधिकार</div><div class="part-art">२७३</div></div>
+      <div class="part-item"><div class="part-no">भाग ३१</div><div class="part-title">संविधान संशोधन</div><div class="part-art">२७४</div></div>
+      <div class="part-item"><div class="part-no">भाग ३२</div><div class="part-title">विविध</div><div class="part-art">२७५–२९४</div></div>
+      <div class="part-item"><div class="part-no">भाग ३३</div><div class="part-title">संक्रमणकालीन व्यवस्था</div><div class="part-art">२९५–३०५</div></div>
+      <div class="part-item"><div class="part-no">भाग ३४</div><div class="part-title">परिभाषा र व्याख्या</div><div class="part-art">३०६</div></div>
+      <div class="part-item"><div class="part-no">भाग ३५</div><div class="part-title">संक्षिप्त नाम, प्रारम्भ र खारेजी</div><div class="part-art">३०७–३०८</div></div>
+    </div>
+
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;font-weight:700;" class="nep">संवैधानिक निकाय — One-page Revision</h3>
+    <div class="grid-2">
+      <div>
+        <table class="data-table">
+          <thead><tr><th>निकाय/भाग</th><th>धारा</th><th>मुख्य संरचना</th></tr></thead>
+          <tbody>
+            <tr><td class="nep">अख्तियार दुरुपयोग अनुसन्धान आयोग</td><td class="art-num">२३८</td><td class="nep">प्रमुख आयुक्त + ४ आयुक्त</td></tr>
+            <tr><td class="nep">महालेखा परीक्षक</td><td class="art-num">२४०</td><td class="nep">१ महालेखा परीक्षक</td></tr>
+            <tr><td class="nep">लोक सेवा आयोग</td><td class="art-num">२४२</td><td class="nep">अध्यक्ष + ४ सदस्य</td></tr>
+            <tr><td class="nep">निर्वाचन आयोग</td><td class="art-num">२४५</td><td class="nep">प्रमुख निर्वाचन आयुक्त + ४ आयुक्त</td></tr>
+            <tr><td class="nep">राष्ट्रिय मानव अधिकार आयोग</td><td class="art-num">२४८</td><td class="nep">अध्यक्ष + ४ सदस्य</td></tr>
+            <tr><td class="nep">राष्ट्रिय प्राकृतिक स्रोत तथा वित्त आयोग</td><td class="art-num">२५०</td><td class="nep">अध्यक्षसहित बढीमा ५ सदस्य</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table class="data-table">
+          <thead><tr><th>अन्य आयोग</th><th>धारा</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td class="nep">राष्ट्रिय महिला आयोग</td><td class="art-num">२५२</td><td class="nep">अध्यक्ष + ४ सदस्य</td></tr>
+            <tr><td class="nep">राष्ट्रिय दलित आयोग</td><td class="art-num">२५५</td><td class="nep">अध्यक्ष + ४ सदस्य</td></tr>
+            <tr><td class="nep">राष्ट्रिय समावेशी आयोग</td><td class="art-num">२५८</td><td class="nep">अध्यक्ष + ४ सदस्य</td></tr>
+            <tr><td class="nep">आदिवासी जनजाति आयोग</td><td class="art-num">२६१</td><td class="nep">अध्यक्ष + ४ सदस्य</td></tr>
+            <tr><td class="nep">मधेसी आयोग</td><td class="art-num">२६२</td><td class="nep">अध्यक्ष + ४ सदस्य</td></tr>
+            <tr><td class="nep">थारु आयोग / मुस्लिम आयोग</td><td class="art-num">२६३/२६४</td><td class="nep">अध्यक्ष + ४ सदस्य</td></tr>
+          </tbody>
+        </table>
+        <div class="alert alert-gold" style="margin-top:10px;"><strong>Common:</strong> संवैधानिक आयोगका पदाधिकारीहरू राष्ट्रपतिबाट संवैधानिक परिषद्को सिफारिसमा नियुक्त; सामान्यतया पदावधि <strong>६ वर्ष</strong>, उमेर सीमा/रिक्तता सर्त अलग-अलग धारामा।</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 10px;font-weight:700;" class="nep">High-frequency Trap Table</h3>
+    <div class="trap-row"><div class="key">धारा १</div><div class="ask">संविधान कस्तो कानून?</div><div class="ans">नेपालको मूल कानून; बाझिएको कानून अमान्य</div></div>
+    <div class="trap-row"><div class="key">धारा ४</div><div class="ask">नेपाल राज्यको विशेषता?</div><div class="ans">धर्मनिरपेक्ष, समावेशी, समाजवाद उन्मुख, संघीय लोकतान्त्रिक गणतन्त्र</div></div>
+    <div class="trap-row"><div class="key">धारा ७</div><div class="ask">सरकारी कामकाजको भाषा?</div><div class="ans">देवनागरी लिपिको नेपाली; प्रदेशले थप भाषा निर्धारण गर्न सक्छ</div></div>
+    <div class="trap-row"><div class="key">धारा ४८</div><div class="ask">नागरिकका कर्तव्य कति?</div><div class="ans">४ वटा: राष्ट्रियता रक्षा, संविधान/कानून पालना, अनिवार्य सेवा, सार्वजनिक सम्पत्ति संरक्षण</div></div>
+    <div class="trap-row"><div class="key">धारा ५५</div><div class="ask">Part 4 कार्यान्वयन अदालतमा?</div><div class="ans">प्रश्न उठाउन पाइँदैन</div></div>
+    <div class="trap-row"><div class="key">धारा ५८</div><div class="ask">अवशिष्ट अधिकार?</div><div class="ans">संघको अधिकार</div></div>
+    <div class="trap-row"><div class="key">धारा १०१</div><div class="ask">महाअभियोग?</div><div class="ans">राष्ट्रपति/उपराष्ट्रपति/संवैधानिक पदाधिकारी आदि</div></div>
+    <div class="trap-row"><div class="key">धारा २७४</div><div class="ask">संविधान संशोधन?</div><div class="ans">सार्वभौमसत्ता/अखण्डताविरुद्ध संशोधन हुँदैन; सामान्यतः दुई तिहाइ</div></div>
+
+    <div class="alert alert-green" style="margin-top:16px;">
+      <strong>Final Revision Formula:</strong> <span class="mono">1–9</span> प्रारम्भिक → <span class="mono">10–15</span> नागरिकता → <span class="mono">16–48</span> हक/कर्तव्य → <span class="mono">49–55</span> नीति → <span class="mono">56–60</span> संघीय संरचना → <span class="mono">5-6-7-8-9</span> अधिकार सूची।
     </div>
   </div>
 </div>
@@ -1926,6 +2155,9 @@ function doSearch(q){
 // ── FLOATING QUICK FACTS ──
 const facts = [
   "महिला आरक्षण = ३३% | जनजाति = २७% | मधेशी = २२%",
+  "संविधान: भाग १–५ syllabus core | धारा १६–४६ मौलिक हक | धारा ४८ कर्तव्य",
+  "Power list formula: अनुसूची ५=संघ, ६=प्रदेश, ७=संघ+प्रदेश, ८=स्थानीय, ९=तीनै तह",
+  "धारा ५५: Part 4 कार्यान्वयनबारे अदालतमा प्रश्न उठ्दैन | धारा ५८: अवशिष्ट अधिकार संघ",
   "बढुवा अंक: कार्य सम्पादन ४०, ज्येष्ठता ३०, भौगोलिक १६, शैक्षिक १२, तालिम २",
   "Maslow = Hierarchy | Herzberg = Dual Factors | Alderfer = ERG",
   "SAARC सचिवालय = काठमाडौं | BIMSTEC HQ = ढाका",
