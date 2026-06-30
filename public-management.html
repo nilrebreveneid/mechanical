@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PSC Loksewa Prep — सम्पूर्ण अध्ययन गाइड २०८२/८३</title>
+<title>PSC Loksewa Prep — Final GK + Public Management Guide २०८३</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -401,13 +401,160 @@ nav .logo span{font-size:18px;}
 /* ── PRINT ── */
 @media print{nav,#floatBadge,.sidebar{display:none!important;}
 .main-wrap{grid-template-columns:1fr;}.section{page-break-inside:avoid;}}
+
+
+/* ─────────────────────────────────────────────────────────────
+   FINAL PATCH: DAY MODE + MOBILE-FIRST + STUDY UI UPGRADES
+   Keeps the old structure but fixes readability, responsiveness,
+   source mapping and exam-focused formula cards.
+───────────────────────────────────────────────────────────── */
+:root{
+  color-scheme:light;
+  --bg:#F6F8FB;
+  --surface:#FFFFFF;
+  --surface2:#F1F5F9;
+  --surface3:#E2E8F0;
+  --border:#D8E0EA;
+  --border2:#CBD5E1;
+  --primary:#E85D3D;
+  --primary-dim:rgba(232,93,61,.10);
+  --secondary:#2563EB;
+  --secondary-dim:rgba(37,99,235,.10);
+  --accent:#15803D;
+  --accent-dim:rgba(21,128,61,.10);
+  --gold:#A16207;
+  --gold-dim:rgba(161,98,7,.11);
+  --red:#DC2626;
+  --red-dim:rgba(220,38,38,.10);
+  --text:#172033;
+  --text-muted:#475569;
+  --text-dim:#64748B;
+  --shadow:0 14px 34px rgba(15,23,42,.08);
+  --shadow-soft:0 8px 22px rgba(15,23,42,.06);
+}
+body[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0D1117;
+  --surface:#161B22;
+  --surface2:#21262D;
+  --surface3:#2D333B;
+  --border:#30363D;
+  --border2:#444C56;
+  --primary:#F78166;
+  --primary-dim:rgba(247,129,102,0.12);
+  --secondary:#58A6FF;
+  --secondary-dim:rgba(88,166,255,0.1);
+  --accent:#3FB950;
+  --accent-dim:rgba(63,185,80,0.1);
+  --gold:#E3B341;
+  --gold-dim:rgba(227,179,65,0.1);
+  --red:#FF7B72;
+  --red-dim:rgba(255,123,114,0.1);
+  --text:#E6EDF3;
+  --text-muted:#AAB7C4;
+  --text-dim:#8B949E;
+  --shadow:0 14px 34px rgba(0,0,0,.35);
+  --shadow-soft:0 8px 22px rgba(0,0,0,.25);
+}
+body{background:linear-gradient(180deg,var(--bg),#fff 380px,var(--bg));}
+body[data-theme="dark"]{background:var(--bg);} 
+nav{background:rgba(255,255,255,.88);box-shadow:0 6px 18px rgba(15,23,42,.06);}
+body[data-theme="dark"] nav{background:rgba(13,17,23,0.92);box-shadow:none;}
+.section,.sidebar-card,.hstat,.mini-card,.theory-card,.tactic,.score-meter{box-shadow:var(--shadow-soft);}
+.section{scroll-margin-top:78px;}
+.hero{background:
+  radial-gradient(ellipse 90% 60% at 50% 0%, rgba(232,93,61,.12), transparent 70%),
+  linear-gradient(180deg,rgba(255,255,255,.95),rgba(246,248,251,.88));}
+body[data-theme="dark"] .hero{background:radial-gradient(ellipse 80% 50% at 50% 0%, rgba(247,129,102,0.08) 0%, transparent 70%);} 
+.nav-action{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--border);
+  background:var(--surface2);color:var(--text-muted);font-size:12px;font-weight:700;
+  cursor:pointer;white-space:nowrap;flex-shrink:0;transition:.2s ease;
+}
+.nav-action:hover{border-color:var(--secondary);color:var(--secondary);transform:translateY(-1px);}
+.quick-actions{display:flex;gap:7px;margin-left:8px;flex-shrink:0;}
+
+/* new learning components */
+.syllabus-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+.syllabus-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:14px;position:relative;overflow:hidden;}
+.syllabus-card:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--primary);}
+.syllabus-card h3{font-size:14px;margin-bottom:8px;font-family:'Noto Sans Devanagari',sans-serif;}
+.syllabus-card ol,.syllabus-card ul{padding-left:19px;margin:0;}
+.syllabus-card li{font-family:'Noto Sans Devanagari',sans-serif;font-size:12.5px;color:var(--text-muted);margin:5px 0;line-height:1.55;}
+.formula-bank{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px;}
+.formula-card{background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:14px;padding:13px;box-shadow:var(--shadow-soft);}
+.formula-card .tag{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--text-dim);font-weight:800;margin-bottom:6px;}
+.formula-card .formula{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;color:var(--primary);margin-bottom:7px;}
+.formula-card p{font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:var(--text-muted);line-height:1.55;}
+.flash-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px;}
+.flash{border:1px solid var(--border);background:var(--surface2);border-radius:12px;padding:11px;min-height:90px;}
+.flash strong{display:block;color:var(--secondary);font-size:12px;margin-bottom:5px;}
+.flash span{display:block;font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;color:var(--text-muted);line-height:1.5;}
+.priority-row{display:grid;grid-template-columns:80px 1fr 100px;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);}
+.priority-row:last-child{border-bottom:none;}
+.priority-badge{font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--gold);font-size:12px;}
+.priority-title{font-family:'Noto Sans Devanagari',sans-serif;font-size:12.5px;}
+.priority-action{font-size:11px;color:var(--text-muted);text-align:right;}
+.mobile-note{display:none;background:var(--secondary-dim);border:1px dashed rgba(37,99,235,.3);border-radius:12px;padding:10px 12px;margin:10px 0;color:var(--secondary);font-size:12px;font-family:'Noto Sans Devanagari',sans-serif;}
+.source-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.source-list a{display:block;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;text-decoration:none;color:var(--secondary);font-size:12px;font-weight:700;}
+.source-list a small{display:block;color:var(--text-muted);font-weight:500;margin-top:3px;}
+kbd{font-family:'JetBrains Mono',monospace;background:var(--surface3);border:1px solid var(--border2);border-radius:5px;padding:1px 5px;font-size:11px;color:var(--text);}
+
+/* responsive fixes */
+@media(max-width:1000px){
+  .formula-bank{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .flash-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:720px){
+  nav{height:auto;min-height:56px;align-items:flex-start;padding:8px 10px;gap:6px;flex-wrap:nowrap;overflow-x:auto;}
+  nav .logo{position:sticky;left:0;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 10px;z-index:2;margin-right:4px;box-shadow:var(--shadow-soft);}
+  .search-wrap{margin-left:0;}
+  #globalSearch{width:150px;max-width:44vw;}
+  #globalSearch:focus{width:180px;}
+  .quick-actions{margin-left:0;}
+  .hero{padding:30px 14px 24px;text-align:left;}
+  .hero h1{font-size:26px;}
+  .hero p{margin-left:0;}
+  .hero-stats{justify-content:flex-start;gap:10px;}
+  .hstat{min-width:0;flex:1 1 calc(50% - 10px);padding:11px;}
+  .hstat .val{font-size:18px;}
+  .main-wrap{padding:12px;display:block;}
+  .section{border-radius:14px;margin-bottom:14px;}
+  .section-header{padding:13px 14px;gap:9px;}
+  .section-title h2{font-size:14px;line-height:1.35;}
+  .section-body{padding:14px;overflow-x:auto;}
+  .data-table{min-width:570px;}
+  .data-table th,.data-table td{padding:8px 9px;}
+  .grid-2,.grid-3,.grid-4,.syllabus-grid,.formula-bank,.flash-grid,.source-list{grid-template-columns:1fr!important;}
+  .priority-row{grid-template-columns:70px 1fr;}
+  .priority-action{grid-column:2;text-align:left;}
+  .sidebar{position:static;margin-top:18px;}
+  #floatBadge{right:12px;bottom:12px;max-width:calc(100vw - 24px);}
+  .mobile-note{display:block;}
+}
+@media(max-width:420px){
+  body{font-size:13px;}
+  .hstat{flex-basis:100%;}
+  #globalSearch{width:130px;}
+  .section-icon{width:28px;height:28px;}
+  .formula-card .formula{font-size:13px;}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important;}}
+
 </style>
 </head>
-<body>
+<body data-theme="light">
 
 <!-- ── NAV ── -->
 <nav>
   <div class="logo"><span>🏛️</span>PSC Prep 2083</div>
+  <a href="#syllabus-map" class="nav-link">Syllabus</a>
+  <a href="#formula-tricks" class="nav-link">Formula</a>
+  <a href="#pm-deep" class="nav-link">PM Notes</a>
+  <a href="#gk-deep" class="nav-link">GK Notes</a>
+  <a href="#source-check" class="nav-link">Sources</a>
   <a href="#civil-service" class="nav-link">नि.से.ऐन</a>
   <a href="#constitution" class="nav-link">संविधान</a>
   <a href="#office-mgmt" class="nav-link">कार्यालय</a>
@@ -419,6 +566,7 @@ nav .logo span{font-size:18px;}
   <a href="#current" class="nav-link">समसामयिक</a>
   <a href="#study-plan" class="nav-link">Study Plan</a>
   <a href="#mcq-tactics" class="nav-link">MCQ Tactics</a>
+  <div class="quick-actions"><button class="nav-action" id="themeToggle" onclick="toggleTheme()">🌙 Dark</button><button class="nav-action" onclick="expandAllSections()">Expand</button><button class="nav-action" onclick="window.print()">Print</button></div>
   <div class="search-wrap">
     <input type="text" id="globalSearch" placeholder="🔍 खोज्नुहोस्..." oninput="doSearch(this.value)">
   </div>
@@ -426,9 +574,9 @@ nav .logo span{font-size:18px;}
 
 <!-- ── HERO ── -->
 <div class="hero">
-  <div class="hero-badge">🎯 Evidence-Based · 754 MCQ Analysis</div>
+  <div class="hero-badge">🎯 Syllabus mapped · PDF notes added · Mobile-first day UI</div>
   <h1><span class="highlight">लोक सेवा परीक्षा</span><br>सम्पूर्ण अध्ययन गाइड</h1>
-  <p>PSC Technical Level — सामान्य ज्ञान र सार्वजनिक व्यवस्थापन | प्रमाणित तथ्यहरूमा आधारित, २०८२/८३ अद्यावधिक</p>
+  <p>PSC Technical Level — सामान्य ज्ञान र सार्वजनिक व्यवस्थापन | पाठ्यक्रम, नोट्स, सूत्र, tricks र quick revision सहित</p>
   <div class="hero-stats">
     <div class="hstat"><span class="val">50</span><div class="lbl">प्रश्नहरू प्रति पेपर</div></div>
     <div class="hstat"><span class="val">40</span><div class="lbl">GK+PM अंक (हस्तान्तरणयोग्य)</div></div>
@@ -441,6 +589,200 @@ nav .logo span{font-size:18px;}
 <!-- ── MAIN LAYOUT ── -->
 <div class="main-wrap">
 <div class="main-content">
+
+
+
+<!-- ████ NEW SECTION: SYLLABUS MAP ████ -->
+<div class="section" id="syllabus-map">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--secondary-dim);color:var(--secondary);">🧭</div>
+    <div class="section-title">
+      <h2>पाठ्यक्रम Coverage Map — केही पनि छुट्न नदिन</h2>
+      <p>Attached syllabus screenshot अनुसार Paper I / Part I: GK + Public Management</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="mobile-note">मोबाइलमा table side-scroll हुन्छ। कार्डहरू one-column मा बदलिएका छन्, त्यसैले पढ्न सजिलो हुन्छ।</div>
+    <div class="alert alert-blue">
+      <strong>Exam Pattern:</strong> Section-A GK = <span class="val">१० प्रश्न × २ = २० अंक</span>, Section-B Public Management = <span class="val">१० प्रश्न × २ = २० अंक</span>. यानी यो भागबाट जम्मा <strong>४० अंक</strong> आउँछ।
+    </div>
+    <div class="syllabus-grid">
+      <div class="syllabus-card">
+        <h3>1. सामान्य ज्ञान (General Awareness)</h3>
+        <ol>
+          <li>नेपालको भौगोलिक अवस्था, प्राकृतिक स्रोत र साधनहरू</li>
+          <li>ऐतिहासिक, सांस्कृतिक र सामाजिक अवस्था</li>
+          <li>आर्थिक अवस्था र चालु आवधिक योजना</li>
+          <li>जैविक विविधता, दिगो विकास, वातावरण, प्रदूषण, जलवायु परिवर्तन र जनसंख्या व्यवस्थापन</li>
+          <li>मानव जीवनमा प्रभाव पार्ने विज्ञान र प्रविधिका उपलब्धिहरू</li>
+          <li>जनस्वास्थ्य, रोग, खाद्य र पोषण</li>
+          <li>संविधान: भाग १ देखि ५ र अनुसूचीहरू</li>
+          <li>संयुक्त राष्ट्रसंघ र क्षेत्रीय/अन्तर्राष्ट्रिय संस्था</li>
+          <li>क्षेत्रीय संगठन: सार्क, बिम्स्टेक, आसियान र युरोपियन संघ</li>
+          <li>राष्ट्रिय/अन्तर्राष्ट्रिय महत्त्वका समसामयिक गतिविधिहरू</li>
+        </ol>
+      </div>
+      <div class="syllabus-card">
+        <h3>2. सार्वजनिक व्यवस्थापन (Public Management)</h3>
+        <ol>
+          <li><strong>कार्यालय व्यवस्थापन:</strong> कार्यालय, सहायक कर्मचारी, स्रोत साधन, सञ्चार, कार्यविधि, अभिलेख</li>
+          <li><strong>निजामती सेवा:</strong> गठन, शर्त, पदपूर्ति, बढुवा, अवकाश, आचरण, अनुशासन</li>
+          <li>संघीय शासन तथा साझा/एकल अधिकार</li>
+          <li>सार्वजनिक निकाय सम्बन्धी जानकारी</li>
+          <li>सरकारी बजेट, लेखा र लेखापरीक्षण प्रणाली</li>
+          <li>सेवा प्रवाह गर्ने निकाय, विधि र माध्यम</li>
+          <li>सूचना व्यवस्थापन र सूचना प्रविधि</li>
+          <li>सार्वजनिक बडापत्र</li>
+          <li>व्यवस्थापन अवधारणा: निर्देशन, नियन्त्रण, समन्वय, निर्णय, उत्प्रेरणा र नेतृत्व</li>
+          <li>मानवीय मूल्य, नागरिक कर्तव्य, दायित्व र अनुशासन</li>
+        </ol>
+      </div>
+    </div>
+    <div class="alert alert-gold" style="margin-top:14px;">
+      <strong>Priority Rule:</strong> पहिले <kbd>निजामती सेवा</kbd>, <kbd>संविधान</kbd>, <kbd>Office Management</kbd>, <kbd>Budget/Accounting</kbd>, <kbd>Nepal Geography</kbd> पढ्नुहोस्। यी topics बाट question repeat/convert हुने chance बढी हुन्छ।
+    </div>
+  </div>
+</div>
+
+<!-- ████ NEW SECTION: FORMULA TRICKS ████ -->
+<div class="section" id="formula-tricks">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--gold-dim);color:var(--gold);">🧠</div>
+    <div class="section-title">
+      <h2>Formula Type Tips & Memory Tricks</h2>
+      <p>Exam मा छिटो सम्झिने छोटा सूत्रहरू — GK + Public Management</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="formula-bank">
+      <div class="formula-card"><div class="tag">Office</div><div class="formula">OFFICE = O-F-F-I-C-E</div><p>Open + Finance + Fixed time + Institution + Controlling + Equipment. Office को basic definition/role सम्झिन।</p></div>
+      <div class="formula-card"><div class="tag">Management</div><div class="formula">POSDCORB</div><p>Planning, Organizing, Staffing, Directing, Coordinating, Reporting, Budgeting — Gulick को प्रशासनिक कार्य।</p></div>
+      <div class="formula-card"><div class="tag">Communication</div><div class="formula">S → M → C → R → F</div><p>Sender, Message, Channel, Receiver, Feedback. सञ्चारका ५ तत्व।</p></div>
+      <div class="formula-card"><div class="tag">Budget Cycle</div><div class="formula">त–स्वी–का–ले–ले.प.</div><p>तयारी → स्वीकृति → कार्यान्वयन → लेखांकन → लेखापरीक्षण। बजेट/लेखा प्रश्नमा यही flow लगाउनु।</p></div>
+      <div class="formula-card"><div class="tag">Records</div><div class="formula">C-I-C-F-F-D</div><p>Classification, Indexing, Coding, Filing, Finding, Disposal. अभिलेख/फाइलिङ step सम्झिने trick।</p></div>
+      <div class="formula-card"><div class="tag">Local Level</div><div class="formula">6+11+276+460=753</div><p>महानगर + उपमहानगर + नगरपालिका + गाउँपालिका = ७५३. साथमा वडा ६७४३ र जिल्ला ७७ सम्झनु।</p></div>
+      <div class="formula-card"><div class="tag">Constitution</div><div class="formula">1-35-48-56-101</div><p>धारा १ संविधान मूल कानून, ३५ स्वास्थ्य, ४८ नागरिक कर्तव्य, ५६ राज्य संरचना, १०१ महाअभियोग।</p></div>
+      <div class="formula-card"><div class="tag">Nepal Geo</div><div class="formula">26–30 N / 80–88 E</div><p>अक्षांश २६°२२′–३०°२७′ N, देशान्तर ८०°४′–८८°१२′ E. Map questions मा काम लाग्छ।</p></div>
+      <div class="formula-card"><div class="tag">MCQ</div><div class="formula">Read → Reject → Recall → Risk</div><p>पहिले keyword पढ्ने, obvious गलत हटाउने, memory trigger गर्ने, अनि negative marking छैन भने educated guess।</p></div>
+    </div>
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 8px;text-transform:uppercase;letter-spacing:.5px;" class="nep">Last-hour Flash Memory</h3>
+    <div class="flash-grid">
+      <div class="flash"><strong>PM Theory</strong><span>Maslow = hierarchy, Herzberg = hygiene/motivator, McGregor = X/Y, Taylor = scientific management.</span></div>
+      <div class="flash"><strong>Service Delivery</strong><span>Quality सेवा = सरल + छिटो + पारदर्शी + उत्तरदायी + पहुँचयोग्य।</span></div>
+      <div class="flash"><strong>Citizen Charter</strong><span>सेवा, शुल्क, समय, जिम्मेवार कर्मचारी, गुनासो अधिकारी र क्षतिपूर्ति/उजुरी प्रक्रिया।</span></div>
+      <div class="flash"><strong>Public Values</strong><span>सत्यनिष्ठा, निष्पक्षता, पारदर्शिता, उत्तरदायित्व, अनुशासन, सेवा-भाव।</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ████ NEW SECTION: PUBLIC MANAGEMENT DEEP NOTES ████ -->
+<div class="section" id="pm-deep">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--primary-dim);color:var(--primary);">🏢</div>
+    <div class="section-title">
+      <h2>Public Management Easy Notes — PDF बाट थपिएको</h2>
+      <p>Office management, स्रोत साधन, communication, records, filing, दर्ता/चलानी, values</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="grid-2">
+      <div class="theory-card" style="border-top-color:var(--primary);">
+        <h4 class="nep">कार्यालयको अर्थ</h4>
+        <p>कार्यालय = काम गर्ने स्थान मात्र होइन; सेवा, सूचना, समन्वय, नियन्त्रण, स्मरण/अभिलेख र निर्णय प्रक्रियाको केन्द्र हो। Latin <em>officium</em> = task/performance.</p>
+      </div>
+      <div class="theory-card" style="border-top-color:var(--secondary);">
+        <h4 class="nep">कार्यालयको महत्व</h4>
+        <p>सेवा केन्द्र, सूचना केन्द्र, सञ्चार माध्यम, समन्वय केन्द्र, नियन्त्रण केन्द्र, memory centre र intermediary centre.</p>
+      </div>
+    </div>
+    <h3 style="font-size:13px;color:var(--text-muted);margin:16px 0 8px;text-transform:uppercase;letter-spacing:.5px;" class="nep">कार्यालयका कार्यहरू</h3>
+    <div class="priority-row"><div class="priority-badge">Basic</div><div class="priority-title">सूचना खोज/संकलन, अभिलेखन, संचार, संरक्षण, सूचना आपूर्ति, प्रशासन संचालन</div><div class="priority-action">Definition Q</div></div>
+    <div class="priority-row"><div class="priority-badge">Admin</div><div class="priority-title">नीति-योजना, मानव संसाधन, स्रोत व्यवस्थापन, सम्पत्ति सुरक्षा, राजस्व, न्याय, सुरक्षा, निर्देशन/नियन्त्रण</div><div class="priority-action">MCQ + Short</div></div>
+    <div class="priority-row"><div class="priority-badge">Types</div><div class="priority-title">स्वामित्व: सरकारी/निजी; संरचना: स्थानीय/प्रदेश/केन्द्रीय; geographical: national/international; प्रकृति: स्थायी/अस्थायी</div><div class="priority-action">Classification</div></div>
+    <div class="grid-2" style="margin-top:14px;">
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;" class="nep">सहायक कर्मचारी — काम र गुण</h3>
+        <ul class="checklist">
+          <li onclick="toggleCheck(this)">अभिलेख व्यवस्थापन, दर्ता/चलानी, सेवा प्रवाह, सूचना व्यवस्थापन</li>
+          <li onclick="toggleCheck(this)">निर्देशन पालना, सार्वजनिक सम्पत्तिको संरक्षण, नीति कार्यान्वयन, प्रतिवेदन</li>
+          <li onclick="toggleCheck(this)">सकारात्मक सोच, नियम-कानून पालना, गोपनीयता, समयपालन, आत्मविश्वास</li>
+          <li onclick="toggleCheck(this)">नैतिकता, शिष्टाचार, संयम, मिलनसार, नियमितता र जवाफदेहिता</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:13px;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;" class="nep">Office Resources</h3>
+        <table class="data-table">
+          <thead><tr><th>स्रोत</th><th>उदाहरण</th><th>Exam clue</th></tr></thead>
+          <tbody>
+            <tr><td>मानवीय</td><td class="nep">प्रशासनिक/प्राविधिक कर्मचारी</td><td>सबैभन्दा जीवित स्रोत</td></tr>
+            <tr><td>भौतिक</td><td class="nep">भवन, फर्निचर, मेसिन, उपकरण</td><td>Fixed assets</td></tr>
+            <tr><td>वित्तीय</td><td class="nep">बजेट, नगद, कोष</td><td>सञ्चालन आधार</td></tr>
+            <tr><td>सूचना/प्रविधि</td><td class="nep">Computer, internet, email, printer</td><td>e-governance</td></tr>
+            <tr><td>अभौतिक</td><td class="nep">नीति, नियम, प्रक्रिया, goodwill</td><td>Intangible</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="alert alert-green" style="margin-top:14px;"><strong>Answer pattern:</strong> Public management मा परिभाषा + ३ बुँदा महत्व + ३ बुँदा कार्य + १ example लेख्दा short answer/MCQ दुबैमा clarity आउँछ।</div>
+  </div>
+</div>
+
+<!-- ████ NEW SECTION: GK DEEP NOTES ████ -->
+<div class="section" id="gk-deep">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--accent-dim);color:var(--accent);">🌏</div>
+    <div class="section-title">
+      <h2>GK Deep Notes — Geography, Economy, Environment, Science</h2>
+      <p>Attached GK notes + current official facts बाट exam-ready summary</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="grid-3">
+      <div class="mini-card"><div class="mc-val" style="color:var(--secondary);">७७</div><div class="mc-lbl">जिल्ला</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--primary);">७५३</div><div class="mc-lbl">स्थानीय तह</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--gold);">६७४३</div><div class="mc-lbl">वडा</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--accent);">२९,१६४,५७८</div><div class="mc-lbl">जनसंख्या — जनगणना २०७८</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--red);">०.९२%</div><div class="mc-lbl">वार्षिक जनसंख्या वृद्धि</div></div>
+      <div class="mini-card"><div class="mc-val" style="color:var(--secondary);">७६.३%</div><div class="mc-lbl">साक्षरता दर</div></div>
+    </div>
+    <h3 style="font-size:13px;color:var(--text-muted);margin:18px 0 8px;text-transform:uppercase;letter-spacing:.5px;" class="nep">High-yield GK Areas</h3>
+    <div class="priority-row"><div class="priority-badge">1.1</div><div class="priority-title">भूगोल: अक्षांश/देशान्तर, सिमाना, हिमाल-पहाड-तराई, नदी प्रणाली, वन, खनिज, कृषि</div><div class="priority-action">Map facts</div></div>
+    <div class="priority-row"><div class="priority-badge">1.2</div><div class="priority-title">इतिहास: प्राचीन, किराँत, लिच्छवी, मल्ल, शाह, राणा, प्रजातन्त्र, गणतन्त्र timeline</div><div class="priority-action">Chronology</div></div>
+    <div class="priority-row"><div class="priority-badge">1.3</div><div class="priority-title">अर्थतन्त्र: GDP, per capita income, inflation, remittance, BOP, trade deficit, योजना</div><div class="priority-action">Current</div></div>
+    <div class="priority-row"><div class="priority-badge">1.4</div><div class="priority-title">जैविक विविधता, SDGs, EIA/IEE, pollution, climate change, NAP/LAPA, population management</div><div class="priority-action">Concept</div></div>
+    <div class="priority-row"><div class="priority-badge">1.5</div><div class="priority-title">ICT, AI, vaccines, telemedicine, GMOs, renewable energy, satellite, nano/3D printing</div><div class="priority-action">Science tech</div></div>
+    <div class="alert alert-red" style="margin-top:14px;"><strong>Province note:</strong> Uploaded GK PDF मा “बागमती प्रदेश विशेष” content पनि छ। Federal syllabus का common GK facts सँग mix नगर्नुहोस्; province-specific facts छुट्टै पढ्नुहोस्।</div>
+  </div>
+</div>
+
+<!-- ████ NEW SECTION: SOURCE CHECK ████ -->
+<div class="section" id="source-check">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--red-dim);color:var(--red);">✅</div>
+    <div class="section-title">
+      <h2>Trusted Source Check & Current Update</h2>
+      <p>Official documents को basis राखेर facts update गर्ने ठाउँ</p>
+    </div>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="alert alert-gold"><strong>Use this rule:</strong> Internet notes/handwritten notes quick revision का लागि ठीक छन्, तर कानून, बजेट, जनगणना र current facts सधैं official source बाट cross-check गर्नुहोस्।</div>
+    <div class="source-list">
+      <a href="https://lawcommission.gov.np/content/12254/12254-civil-service-act-2049/" target="_blank" rel="noopener">निजामती सेवा ऐन, २०४९ <small>Nepal Law Commission</small></a>
+      <a href="https://lawcommission.gov.np/content/12648/civil-service-rules--2050/" target="_blank" rel="noopener">निजामती सेवा नियमावली, २०५० <small>Nepal Law Commission</small></a>
+      <a href="https://lawcommission.gov.np/content/13437/nepal-s-constitution/" target="_blank" rel="noopener">नेपालको संविधान <small>Nepal Law Commission</small></a>
+      <a href="https://mof.gov.np/category/budget-speech/" target="_blank" rel="noopener">बजेट वक्तव्यहरू <small>Ministry of Finance</small></a>
+      <a href="https://censusresults.nsonepal.gov.np/" target="_blank" rel="noopener">जनगणना २०७८ results <small>National Statistics Office</small></a>
+      <a href="https://sthaniya.gov.np/gis/" target="_blank" rel="noopener">स्थानीय तह विवरण <small>MoFAGA Local Level Portal</small></a>
+      <a href="https://www.un.org/ldcportal/content/nepal-graduation-status" target="_blank" rel="noopener">Nepal LDC Graduation <small>United Nations LDC Portal</small></a>
+      <a href="https://lawcommission.gov.np/content/12571/12571-the-environment-protection-act/" target="_blank" rel="noopener">वातावरण संरक्षण ऐन, २०७६ <small>Nepal Law Commission</small></a>
+    </div>
+  </div>
+</div>
 
 <!-- ████ SECTION 1: CIVIL SERVICE ACT ████ -->
 <div class="section" id="civil-service">
@@ -1624,6 +1966,38 @@ window.addEventListener('scroll', ()=>{
     if(link.getAttribute('href') === '#'+current) link.classList.add('active');
   });
 });
+
+
+// ── FINAL PATCH: THEME, EXPAND/COLLAPSE, LOCAL STORAGE ──
+(function(){
+  const saved = localStorage.getItem('psc-theme');
+  if(saved){ document.body.dataset.theme = saved; }
+  const themeBtn = document.getElementById('themeToggle');
+  if(themeBtn){ themeBtn.textContent = document.body.dataset.theme === 'dark' ? '☀️ Day' : '🌙 Dark'; }
+})();
+function toggleTheme(){
+  const next = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.body.dataset.theme = next;
+  localStorage.setItem('psc-theme', next);
+  const btn = document.getElementById('themeToggle');
+  if(btn){ btn.textContent = next === 'dark' ? '☀️ Day' : '🌙 Dark'; }
+}
+function expandAllSections(){ document.querySelectorAll('.section').forEach(s=>s.classList.remove('collapsed')); }
+function collapseAllSections(){ document.querySelectorAll('.section').forEach(s=>s.classList.add('collapsed')); }
+function scrollToTop(){ window.scrollTo({top:0,behavior:'smooth'}); }
+
+// Add extra quick facts from the newly added syllabus and PDF notes
+try{
+  facts.push(
+    "Syllabus formula: GK २० + Public Management २० = ४० अंक",
+    "Communication = Sender → Message → Channel → Receiver → Feedback",
+    "Office types: स्वामित्व, संरचना, भौगोलिक, संगठन, प्रकृति",
+    "Local level: ६+११+२७६+४६०=७५३ | वडा ६७४३",
+    "Budget cycle: तयारी → स्वीकृति → कार्यान्वयन → लेखा → लेखापरीक्षण",
+    "GK order: भूगोल → इतिहास → अर्थतन्त्र → वातावरण → विज्ञान → स्वास्थ्य → संविधान → अन्तर्राष्ट्रिय"
+  );
+}catch(e){}
+
 </script>
 </body>
 </html>
